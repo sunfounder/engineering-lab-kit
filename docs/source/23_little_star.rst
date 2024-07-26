@@ -18,7 +18,7 @@ In this lesson, we delve into the fascinating intersection of music and technolo
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video width="600" loop autoplay>
         <source src="_static/video/23_little_star.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -95,15 +95,15 @@ Building the Circuit
      - 1 * Breadboard
      - 1 * Passive Buzzer
      - Jumper Wires
-   * - |components_uno_r3| 
-     - |components_breadboard| 
-     - |components_passive_buzzer| 
-     - |components_wire| 
+   * - |list_uno_r3| 
+     - |list_breadboard| 
+     - |list_passive_buzzer| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |components_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 

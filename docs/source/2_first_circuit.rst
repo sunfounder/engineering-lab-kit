@@ -44,16 +44,16 @@ Components Needed
      - 1 * Red LED
      - 1 * 220Ω Resistor
      - Jumper Wires
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_220ohm| 
-     - |components_wire| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      -
      -   
-   * - |components_usb_cable| 
-     - |components_breadboard| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
      -
      - 
 
@@ -84,10 +84,9 @@ From the 1960s to the 1980s, engineers experimented with wire wrapping for more 
 
 Then, in the early 1970s, Ronald J. Portugal revolutionized prototyping with the invention of the "solderless breadboard," making circuit assembly faster, easier, and requiring no soldering. This innovative tool quickly outshined wire wrapping, leading to the breadboards we know today, named for their historical predecessors but designed for the modern maker.
 
-.. image:: img/2_breadboard_half.png
+.. image:: img/2_breadboard_full+.png
     :width: 500
     :align: center
-
 
 Ever curious about what lies beneath the surface of a breadboard? Hidden behind its plastic facade and a layer of sticky foam, covered by yellow protective paper, lies the heart of the breadboard's functionality: dozens of metal strips.
 

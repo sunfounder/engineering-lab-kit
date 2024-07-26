@@ -21,7 +21,7 @@ Morse code is like a secret language using dots (.) and dashes (-) invented by S
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video width="600" loop autoplay>
         <source src="_static/video/10_morse_code.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -57,15 +57,15 @@ Building the Circuit
      - 1 * Active Buzzer
      - 1 * Breadboard
      - Jumper Wires
-   * - |components_uno_r3| 
-     - |components_active_buzzer| 
-     - |components_breadboard| 
-     - |components_wire| 
+   * - |list_uno_r3| 
+     - |list_active_buzzer| 
+     - |list_breadboard| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |components_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 

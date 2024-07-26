@@ -30,25 +30,25 @@ Build the Circuit
      - 1 * Motor
      - 4 * Button
      - 1 * L293D Chip
-   * - |components_uno_r3|
-     - |components_motor| 
-     - |components_button|
-     - |components_l293d|
+   * - |list_uno_r3|
+     - |list_motor| 
+     - |list_button|
+     - |list_l293d|
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Multimeter
-   * - |components_usb_cable|
-     - |components_breadboard|
-     - |components_wire|
-     - |components_meter|
+   * - |list_usb_cable|
+     - |list_breadboard|
+     - |list_wire|
+     - |list_meter|
    * - 1 * Breadboard Power Module
      - 1 * 9V Battery
      - 1 * Battery Cable
      - 
-   * - |components_breadboard_power_module| 
-     - |components_9v_battery| 
-     - |components_battery_cable| 
+   * - |list_power_module| 
+     - |list_battery| 
+     - |list_bat_cable| 
      -
 
 **Building Steps**
@@ -64,6 +64,10 @@ Follow the wiring diagram, or the steps below to build your circuit.
 Normally, connecting a motor's terminals directly to a battery or the GND and 5V pins on a control board will make it spin.
 
 However, to control a motor programmatically, connect it to the signal pins on an Arduino board. These pins only output about 20mA, not enough for a motor, hence the need for a motor driver like the L293D.
+
+.. image:: img/16_motor_l293d_pic.png
+  :width: 300
+  :align: center
 
 The L293D is a 4-channel driver capable of handling high voltages and currents, suitable for driving DC and stepper motors among other inductive loads. It works with standard DTL, TTL logic levels.
 
@@ -107,9 +111,12 @@ Let's now build a circuit to test this motor driver chip.
 
     In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
 
-    .. image:: img/14_dinosaur_plug_power_module.png
-        :width: 400
-        :align: center
+    .. raw:: html
+
+        <video width="600" loop muted>
+            <source src="_static/video/about_power_module.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 2. Insert the L293D chip across the middle notch of the breadboard. Make sure the notch on the chip faces left.
 
@@ -257,19 +264,19 @@ We need 4 buttons to control the motor speed, each button representing a speed s
 1. Insert 4 buttons on the breadboard, each spanning the middle groove.
 
 .. image:: img/16_motor_button.png
-  :width: 500
+  :width: 700
   :align: center
 
 2. Connect the lower left pin of each button to Arduino pins 4, 5, 6, 7 respectively.
 
 .. image:: img/16_motor_button_pin.png
-  :width: 500
+  :width: 700
   :align: center
 
 3. Finally, connect the upper right pin of each button to GND. We are not using pull-down resistors here; planning to use Arduino's internal pull-up for simpler wiring.
 
 .. image:: img/16_motor_button_gnd.png
-  :width: 500
+  :width: 700
   :align: center
 
 

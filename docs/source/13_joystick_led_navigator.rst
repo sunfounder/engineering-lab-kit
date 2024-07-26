@@ -46,17 +46,17 @@ Build the Circuit
      - 4 * LEDs with different colors
      - 4 * 220Ω Resistor
      - 1 * Joystick Module
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_220ohm| 
-     - |components_joystick_module| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_joystick_module| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
      - 
      
 **Building Steps**
@@ -205,7 +205,7 @@ The Serial Monitor is an essential tool when creating projects with Arduino. It 
 6. Now, create three variables ``xValue``, ``yValue``, and ``swValue`` to store the values from the X, Y, and SW pins respectively.
 
 .. code-block:: Arduino
-    :emphasize-lines: 8
+    :emphasize-lines: 4-6
 
     void loop() {
 
@@ -626,6 +626,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledUp, LOW);
         digitalWrite(ledDown, LOW);
     }
+
 13. Your complete code is as follows. Click "Upload" to send the code to your Arduino Uno R3.
 
 .. code-block:: Arduino

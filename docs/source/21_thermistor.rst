@@ -53,23 +53,23 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * 10KΩ Resistor
-   * - |components_uno_r3| 
-     - |components_rgb_led| 
-     - |components_220ohm| 
-     - |components_10kohm| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_10kohm| 
    * - 1 * Thermistor
      - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-   * - |components_thermistor| 
-     - |components_breadboard| 
-     - |components_wire| 
-     - |components_usb_cable| 
+   * - |list_thermistor| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
    * - 1 * Multimeter
      - 
      - 
      - 
-   * - |components_meter| 
+   * - |list_meter| 
      - 
      - 
      - 

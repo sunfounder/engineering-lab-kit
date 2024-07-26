@@ -147,16 +147,16 @@ Build the Circuit
      - 1 * 4-digit 7-segment Display
      - 4 * 220Ω Resistor
      - 1 * Multimeter
-   * - |components_uno_r3|
-     - |components_4_digit| 
-     - |components_220ohm|
-     - |components_meter|
+   * - |list_uno_r3|
+     - |list_4digit| 
+     - |list_220ohm|
+     - |list_meter|
    * - 1 * USB Cable
      - 1 * Breadboard
      - 
      -   
-   * - |components_usb_cable| 
-     - |components_breadboard| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
      - 
      - 
     

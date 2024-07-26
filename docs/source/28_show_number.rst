@@ -49,17 +49,17 @@ Building the Circuit
      - 1 * 7-segment Display
      - 1 * 220Ω Resistor
      - 1 * 74HC595
-   * - |components_uno_r3| 
-     - |components_7segment| 
-     - |components_220ohm| 
-     - |components_74hc595| 
+   * - |list_uno_r3| 
+     - |list_7segment| 
+     - |list_220ohm| 
+     - |list_74hc595| 
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
      -
-   * - |components_breadboard| 
-     - |components_wire| 
-     - |components_usb_cable| 
+   * - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
      -
 
 **Building Step-by-Step**
@@ -136,7 +136,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-12. The following tables shows the pin connections between the 74HC595, the Arduino Uno R3, the7-segment Display.
+12. The following tables shows the pin connections between the 74HC595, the Arduino Uno R3, the 7-segment Display.
 
 .. list-table::
     :widths: 20 20

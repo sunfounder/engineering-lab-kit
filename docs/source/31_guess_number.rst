@@ -31,17 +31,17 @@ Building the Circuit
      - 1 * I2C CDL1602
      - 1 * IR Receiver
      - 1 * Remote Control
-   * - |components_uno_r3| 
-     - |components_i2c_lcd1602| 
-     - |components_ir_receiver| 
-     - |components_remote_control| 
+   * - |list_uno_r3| 
+     - |list_i2c_lcd1602| 
+     - |list_receiver| 
+     - |list_remote| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
      - 
 
 **Building Step-by-Step**
@@ -86,7 +86,6 @@ To implement a number guessing game, you need to carefully consider the followin
 * **Game Limits**: Set boundaries for guesses to structure the game and adjust difficulty.
 
 Now, let's start writing the code to implement the number guessing game.
-
 
 .. note::
 

@@ -50,18 +50,18 @@ Build the Circuit
      - 1 * Red LED
      - 1 * 220Ω Resistor
      - 1 * Potentiometer
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_220ohm| 
-     - |components_potentiometer| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_potentiometer| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Multimeter
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire| 
-     - |components_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_meter|
 
 **Building Steps**
 

@@ -32,15 +32,15 @@ Build the Circuit
      - 1 * I2C LCD1602
      - 1 * Breadboard
      - 1 * USB Cable
-   * - |components_uno_r3|
-     - |components_i2c_lcd1602| 
-     - |components_breadboard|
-     - |components_usb_cable|
+   * - |list_uno_r3|
+     - |list_i2c_lcd1602| 
+     - |list_breadboard|
+     - |list_usb_cable|
    * - Jumper Wires
      - 
      - 
      - 
-   * - |components_wire|
+   * - |list_wire|
      - 
      - 
      - 

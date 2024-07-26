@@ -45,25 +45,25 @@ Building the Circuit
      - 1 * Red LED
      - 1 * Yellow LED
      - 1 * Green LED
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_yellow_led| 
-     - |components_green_led| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_yellow_led| 
+     - |list_green_led| 
    * - 1 * Push Button
      - 1 * Breadboard
      - 3 * 220Ω Resistor
      - 1 * 10K Ohm Resistor
-   * - |components_button| 
-     - |components_breadboard| 
-     - |components_220ohm| 
-     - |components_10kohm| 
+   * - |list_button| 
+     - |list_breadboard| 
+     - |list_220ohm| 
+     - |list_10kohm| 
    * - 1 * USB Cable
      - Jumper Wires
      - 1 * Multimeter
      - 
-   * - |components_usb_cable| 
-     - |components_wire| 
-     - |components_meter|
+   * - |list_usb_cable| 
+     - |list_wire| 
+     - |list_meter|
      - 
 
 

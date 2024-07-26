@@ -51,18 +51,18 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
      - 1 * Red LED
      - 1 * Yellow LED
      - 1 * Green LED
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_yellow_led| 
-     - |components_green_led| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_yellow_led| 
+     - |list_green_led| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_220ohm| 
-     - |components_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_220ohm| 
+     - |list_wire| 
 
 
 

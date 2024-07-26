@@ -12,31 +12,20 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Beginner's Lab Kit with Original Arduino Uno R3
+Inventor Lab Kit with Original Arduino Uno R3
 =================================================
 
-Thank You for Choosing the Beginner's Lab Kit
+Thank You for Choosing the Inventor Lab Kit.
 
 * :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
-Welcome to the Beginner's Lab Kit, a comprehensive starter pack designed 
-specifically for newcomers to the world of electronics and programming. 
-This kit includes an array of essential components such as LEDs, resistors, 
-a buzzer, potentiometers, photoresistors, thermistors, push buttons, digital tubes, 
-and an ultrasonic module. One of the standout features of this kit is the inclusion of a multimeter, 
-an invaluable tool that allows you to measure current, voltage, and resistance within your circuits. 
-This addition is particularly useful for deepening your understanding of how each component functions.
+Embark on your electronics journey with the Inventor Lab Kit, designed for learners and enthusiasts. Centered around the Arduino Uno R3, this kit includes everything from basic components like LEDs and buzzers to advanced modules such as RFID systems and ultrasonic sensors, along with a mini-multimeter for circuit analysis.
 
-The course sequence provided with this kit is structured around the Arduino programming syntax, 
-ensuring a logical and educational progression. 
-This structure allows you to build circuits step-by-step while learning how to write the programs that control them. 
-Throughout the course, you will encounter troubleshooting challenges that enhance your understanding of the material.
+The kit excels in educational clarity, gradually introducing beginners to programming and circuit design. Instead of pre-written code, it guides you step-by-step through writing your own scripts, enhancing understanding and retention. Projects range from simple tasks like lighting LEDs and using a joystick, to complex applications such as building a radar system and an automatic soap dispenser.
 
-For any inquiries or support, please reach out to us at service@sunfounder.com. 
-Dive into your learning journey with the Beginner's Lab Kit and start building, coding, and exploring the exciting world of electronics!
+Ideal for both beginners and those looking to expand their skills, the Inventor Lab Kit makes learning both accessible and exciting, providing all the tools needed to explore and innovate in the world of electronics.
 
-
-.. image:: img/00_bgn_lab_kit_page1.jpg
+.. image:: img/home_page.png
     :width: 800
     :align: center
 
@@ -83,7 +72,6 @@ Dive into your learning journey with the Beginner's Lab Kit and start building, 
     27_flowing_light
     28_show_number
     29_plant_monitor
-    29_guess_number
     30_radar 
     31_guess_number 
     32_stopwatch 

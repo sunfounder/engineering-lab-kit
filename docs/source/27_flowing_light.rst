@@ -98,17 +98,17 @@ Building the Circuit
      - 8 * LEDs
      - 8 * 220Ω Resistor
      - 1 * 74HC595
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_220ohm| 
-     - |components_74hc595|  
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_74hc595|  
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
      -
-   * - |components_breadboard| 
-     - |components_wire| 
-     - |components_usb_cable| 
+   * - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
      -
 
 **Building Step-by-Step**

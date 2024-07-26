@@ -156,23 +156,23 @@ Building the Circuit
      - 1 * 7-segment Display
      - 1 * 220Ω Resistor
      - 1 * 10KΩ Resistor
-   * - |components_uno_r3| 
-     - |components_7segment| 
-     - |components_220ohm| 
-     - |components_1kohm| 
+   * - |list_uno_r3| 
+     - |list_7segment| 
+     - |list_220ohm| 
+     - |list_10kohm| 
    * - 1 * Button
      - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-   * - |components_button| 
-     - |components_breadboard| 
-     - |components_wire| 
-     - |components_usb_cable| 
+   * - |list_button| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
    * - 1 * Multimeter
      - 
      - 
      - 
-   * - |components_meter| 
+   * - |list_meter| 
      - 
      - 
      - 

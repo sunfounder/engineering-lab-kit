@@ -15,10 +15,6 @@
 25. Reverse Radar System
 =====================================
 
-.. image:: img/25_reverse_packing.png
-    :width: 600
-    :align: center
-
 When reversing a car, it is crucial to be aware of obstacles behind the vehicle, especially in situations with limited visibility. 
 To enhance safety, many modern vehicles are equipped with reverse radar systems. 
 
@@ -26,7 +22,7 @@ Today, we're going to learn how to build and program an ultrasonic radar system 
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video width="600" loop autoplay>
         <source src="_static/video/25_reverse_alarm.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -59,17 +55,17 @@ Building the Circuit
      - 1 * Ultrasonic Module
      - 1 * Active Buzzer
      - 1 * I2C LCD1602
-   * - |components_uno_r3| 
-     - |components_ultrasonic| 
-     - |components_active_buzzer| 
-     - |components_i2c_lcd1602_|
+   * - |list_uno_r3| 
+     - |list_ultrasonic| 
+     - |list_active_buzzer| 
+     - |list_i2c_lcd1602|
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
      - 
 
 **Building Step-by-Step**

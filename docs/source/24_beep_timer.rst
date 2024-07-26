@@ -23,7 +23,7 @@ In this lesson, we'll explore the intersection of time management and technology
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video width="600" loop autoplay>
         <source src="_static/video/24_beep_timer.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -79,15 +79,15 @@ Building the Circuit
      - 1 * Breadboard
      - 1 * Active Buzzer
      - Jumper Wires
-   * - |components_uno_r3| 
-     - |components_breadboard| 
-     - |components_active_buzzer| 
-     - |components_wire| 
+   * - |list_uno_r3| 
+     - |list_breadboard| 
+     - |list_active_buzzer| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |components_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 

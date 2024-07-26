@@ -7,7 +7,7 @@ This project automatically waters plants by activating a water pump when the soi
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video width="600" loop autoplay>
         <source src="_static/video/29_plant_monitor.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -32,32 +32,32 @@ Building the Circuit
      - 1 * I2C LCD1602
      - 1 * Thermistor
      - 1 * Photoresistor
-   * - |components_uno_r3| 
-     - |components_i2c_lcd1602|
-     - |components_thermistor|
-     - |components_photoresistor|
+   * - |list_uno_r3| 
+     - |list_i2c_lcd1602|
+     - |list_thermistor|
+     - |list_photoresistor|
    * - Soil Moisture Module
      - 1 * Pump
      - 2 * 10KΩ Resistor
      - 1 * L293D Chip
-   * - |components_soil_moisture|
-     - |components_pump|
-     - |components_10kohm|
-     - |components_l293d|
+   * - |list_moisture_module|
+     - |list_pump|
+     - |list_10kohm|
+     - |list_l293d|
    * - Jumper Wires
      - 1 * USB Cable
      - 1 * Breadboard
      - 1 * Breadboard Power Module
-   * - |components_wire|
-     - |components_usb_cable|
-     - |components_breadboard|
-     - |components_breadboard_power_module|
+   * - |list_wire|
+     - |list_usb_cable|
+     - |list_breadboard|
+     - |list_power_module|
    * - 1 * 9V Battery
      - 1 * Battery Cable
      - 
      -  
-   * - |components_9v_battery| 
-     - |components_battery_cable| 
+   * - |list_battery| 
+     - |list_bat_cable| 
      -
      -
 
@@ -81,9 +81,12 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
     In actual wiring, you need to insert the breadboard power module from the higher number side (60-65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
 
-    .. image:: img/14_dinosaur_plug_power_module.png
-        :width: 400
-        :align: center
+    .. raw:: html
+
+        <video width="600" loop muted>
+            <source src="_static/video/about_power_module.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 2. Connect the pins of the L293D chip as follows.
 

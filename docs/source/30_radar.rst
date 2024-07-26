@@ -28,24 +28,24 @@ By the end of this lesson, you will be able to:
      - 1 * Servo
      - 1 * Ultrasonic Module
      - 
-   * - |components_uno_r3|
-     - |components_servo| 
-     - |components_ultrasonic|
+   * - |list_uno_r3|
+     - |list_servo| 
+     - |list_ultrasonic|
      - 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Breadboard Power Module
-   * - |components_usb_cable|
-     - |components_breadboard|
-     - |components_wire|
-     - |components_breadboard_power_module|
+   * - |list_usb_cable|
+     - |list_breadboard|
+     - |list_wire|
+     - |list_power_module|
    * - 1 * 9V Battery
      - 1 * Battery Cable
      - 
      -  
-   * - |components_9v_battery| 
-     - |components_battery_cable| 
+   * - |list_battery| 
+     - |list_bat_cable| 
      -
      -
 
@@ -74,9 +74,12 @@ Now let's start building the circuit.
 
     In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
 
-    .. image:: img/14_dinosaur_plug_power_module.png
-        :width: 400
-        :align: center
+    .. raw:: html
+
+        <video width="600" loop muted>
+            <source src="_static/video/about_power_module.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 * Use three short jumper wires to extend the three wires of your servo: connect the yellow wire to pin 12 of the Arduino Uno R3, the red wire to the positive rail of the breadboard, and the brown wire to the negative rail of the breadboard.
 

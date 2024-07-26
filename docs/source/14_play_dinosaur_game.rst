@@ -46,25 +46,25 @@ By the end of this lesson, you will be able to:
      - 1 * Photoresistor
      - 1 * 10KΩ Resistor
      - 1 * Servo
-   * - |components_uno_r3| 
-     - |components_photoresistor| 
-     - |components_10kohm| 
-     - |components_servo| 
+   * - |list_uno_r3| 
+     - |list_photoresistor| 
+     - |list_10kohm| 
+     - |list_servo| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Multimeter
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire| 
-     - |components_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_meter|
    * - 1 * Breadboard Power Module
      - 1 * 9V Battery
      - 1 * Battery Cable
      - 
-   * - |components_breadboard_power_module| 
-     - |components_9v_battery| 
-     - |components_battery_cable| 
+   * - |list_power_module| 
+     - |list_battery| 
+     - |list_bat_cable| 
      -
 
 .. _ar_servo_usage:
@@ -118,9 +118,12 @@ Now let's start building the circuit.
 
     In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
 
-    .. image:: img/14_dinosaur_plug_power_module.png
-        :width: 400
-        :align: center
+    .. raw:: html
+
+        <video width="600" loop muted>
+            <source src="_static/video/about_power_module.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 * Use three short jumper wires to extend the three wires of your servo: connect the yellow wire to pin 9 of the Arduino Uno R3, the red wire to the positive rail of the breadboard, and the brown wire to the negative rail of the breadboard.
 

@@ -31,18 +31,18 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * IR Receiver
-   * - |components_uno_r3| 
-     - |components_rgb_led| 
-     - |components_220ohm| 
-     - |components_ir_receiver| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_receiver| 
    * - 1 * Remote Control
      - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-   * - |components_remote_control| 
-     - |components_breadboard| 
-     - |components_wire| 
-     - |components_usb_cable| 
+   * - |list_remote| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
 
 **Building Step-by-Step**
 

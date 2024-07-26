@@ -50,17 +50,17 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |components_uno_r3| 
-     - |components_rgb_led| 
-     - |components_220ohm| 
-     - |components_wire| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 1 * Multimeter
      -
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_meter|
      -
      
 **Step-by-Step Building Instructions**

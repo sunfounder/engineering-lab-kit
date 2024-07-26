@@ -19,7 +19,7 @@
 import sphinx_rtd_theme
 import time  ###
 
-project = 'SunFounder Beginners Lab Kit'
+project = 'SunFounder Inventor Lab Kit'
 copyright = f'{time.localtime().tm_year}, SunFounder'  ###
 author = 'www.sunfounder.com'
 
@@ -177,35 +177,55 @@ rst_epilog += """
 # component pic
 rst_epilog += """
 
-.. |components_green_led| image:: /img/list_cpn/lab_list-2.png 
-.. |components_red_led| image:: /img/list_cpn/lab_list-3.png 
-.. |components_blue_led| image:: /img/list_cpn/lab_list-4.png 
-.. |components_yellow_led| image:: /img/list_cpn/lab_list-5.png 
-.. |components_white_led| image:: /img/list_cpn/lab_list-6.png 
-.. |components_rgb_led| image:: /img/list_cpn/lab_list-7.png 
-.. |components_10ohm| image:: /img/list_cpn/lab_list-8.png 
-.. |components_100ohm| image:: /img/list_cpn/lab_list-9.png 
-.. |components_220ohm| image:: /img/list_cpn/lab_list-10.png 
-.. |components_330ohm| image:: /img/list_cpn/lab_list-11.png 
-.. |components_1kohm| image:: /img/list_cpn/lab_list-12.png 
-.. |components_2kohm| image:: /img/list_cpn/lab_list-13.png 
-.. |components_5_1ohm| image:: /img/list_cpn/lab_list-14.png 
-.. |components_10kohm| image:: /img/list_cpn/lab_list-15.png 
-.. |components_100kohm| image:: /img/list_cpn/lab_list-16.png 
-.. |components_1mohm| image:: /img/list_cpn/lab_list-17.png 
-.. |components_active_buzzer| image:: /img/list_cpn/lab_list-18.png 
-.. |components_passive_buzzer| image:: /img/list_cpn/lab_list-19.png 
-.. |components_button| image:: /img/list_cpn/lab_list-20.png 
-.. |components_photoresistor| image:: /img/list_cpn/lab_list-21.png 
-.. |components_thermistor| image:: /img/list_cpn/lab_list-22.png 
-.. |components_potentiometer| image:: /img/list_cpn/lab_list-23.png 
-.. |components_7segment| image:: /img/list_cpn/lab_list-24.png 
-.. |components_74hc595| image:: /img/list_cpn/lab_list-25.png 
-.. |components_ultrasonic| image:: /img/list_cpn/lab_list-26.png 
-.. |components_meter| image:: /img/list_cpn/lab_list-27.png 
-.. |components_wire| image:: /img/list_cpn/lab_list-28.png
-.. |components_breadboard| image:: /img/list_cpn/lab_list-29.png 
-.. |components_usb_cable| image:: /img/list_cpn/lab_list-30.png
-.. |components_uno_r3| image:: /img/list_cpn/lab_list-31.png 
+.. |list_green_led| image:: /img/list_cpn/list_green_led.png 
+.. |list_red_led| image:: /img/list_cpn/list_red_led.png 
+.. |list_blue_led| image:: /img/list_cpn/list_blue_led.png 
+.. |list_yellow_led| image:: /img/list_cpn/list_yellow_led.png 
+.. |list_white_led| image:: /img/list_cpn/list_white_led.png 
+.. |list_rgb_led| image:: /img/list_cpn/list_rgb_led.png 
+.. |list_10ohm| image:: /img/list_cpn/list_10ohm.png 
+.. |list_100ohm| image:: /img/list_cpn/list_100ohm.png 
+.. |list_220ohm| image:: /img/list_cpn/list_220ohm.png 
+.. |list_330ohm| image:: /img/list_cpn/list_330ohm.png 
+.. |list_1kohm| image:: /img/list_cpn/list_1kohm.png 
+.. |list_2kohm| image:: /img/list_cpn/list_2kohm.png 
+.. |list_5_1ohm| image:: /img/list_cpn/list_5_1ohm.png 
+.. |list_10kohm| image:: /img/list_cpn/list_10kohm.png 
+.. |list_100kohm| image:: /img/list_cpn/list_100kohm.png 
+.. |list_1mohm| image:: /img/list_cpn/list_1mohm.png 
+.. |list_active_buzzer| image:: /img/list_cpn/list_active_buzzer.png 
+.. |list_passive_buzzer| image:: /img/list_cpn/list_passive_buzzer.png 
+.. |list_button| image:: /img/list_cpn/list_button.png 
+.. |list_thermistor| image:: /img/list_cpn/list_thermistor.png 
+.. |list_photoresistor| image:: /img/list_cpn/list_photoresistor.png 
+.. |list_potentiometer| image:: /img/list_cpn/list_potentiometer.png 
+.. |list_7segment| image:: /img/list_cpn/list_7segment.png 
+.. |list_74hc595| image:: /img/list_cpn/list_74hc595.png 
+.. |list_ultrasonic| image:: /img/list_cpn/list_ultrasonic.png 
+.. |list_meter| image:: /img/list_cpn/list_meter.png 
+.. |list_wire| image:: /img/list_cpn/list_wire.png
+.. |list_breadboard| image:: /img/list_cpn/list_breadboard.png 
+.. |list_usb_cable| image:: /img/list_cpn/list_usb_cable.png 
+.. |list_uno_r3| image:: /img/list_cpn/list_uno_r3.png 
+
+.. |list_4digit| image:: /img/list_cpn/list_4digit.png 
+.. |list_bat_cable| image:: /img/list_cpn/list_bat_cable.png 
+.. |list_battery| image:: /img/list_cpn/list_battery.png 
+.. |list_fan| image:: /img/list_cpn/list_fan.png 
+.. |list_joystick_module| image:: /img/list_cpn/list_joystick_module.png 
+.. |list_l293d| image:: /img/list_cpn/list_l293d.png 
+.. |list_moisture_module| image:: /img/list_cpn/list_moisture_module.png
+.. |list_motor| image:: /img/list_cpn/list_motor.png 
+.. |list_power_module| image:: /img/list_cpn/list_power_module.png 
+.. |list_pump| image:: /img/list_cpn/list_pump.png 
+.. |list_rab| image:: /img/list_cpn/list_rab.png 
+.. |list_rc522_module| image:: /img/list_cpn/list_rc522_module.png 
+.. |list_receiver| image:: /img/list_cpn/list_receiver.png 
+.. |list_relay_module| image:: /img/list_cpn/list_relay_module.png 
+.. |list_remote| image:: /img/list_cpn/list_remote.png 
+.. |list_servo| image:: /img/list_cpn/list_servo.png 
+.. |list_stepper| image:: /img/list_cpn/list_stepper.png 
+.. |list_uln2003_module| image:: /img/list_cpn/list_uln2003_module.png 
+.. |list_i2c_lcd1602| image:: /img/list_cpn/list_i2c_lcd1602.png 
 
 """

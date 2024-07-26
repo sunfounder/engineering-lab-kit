@@ -25,7 +25,7 @@ Welcome to our hands-on tutorial where you will learn how to build a relay-contr
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video width="600" loop autoplay>
         <source src="_static/video/18_on_off_lamp.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -106,18 +106,18 @@ Now let's build a circuit to drive an LED and explore the working principle of t
      - 1 * Red LED
      - 1 * 220Ω Resistor
      - 1 * Relay Module
-   * - |components_uno_r3| 
-     - |components_red_led| 
-     - |components_220ohm|  
-     - |components_relay_module| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm|  
+     - |list_relay_module| 
    * - 1 * Button
      - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
-   * - |components_button| 
-     - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire|
+   * - |list_button| 
+     - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire|
 
 
 **Building Steps**

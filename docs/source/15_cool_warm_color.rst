@@ -71,17 +71,17 @@ Build the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * Potentiometer
-   * - |components_uno_r3| 
-     - |components_rgb_led| 
-     - |components_220ohm| 
-     - |components_potentiometer| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_potentiometer| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      -
-   * - |components_usb_cable| 
-     - |components_breadboard| 
-     - |components_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
      -
      
 **Building Steps**
