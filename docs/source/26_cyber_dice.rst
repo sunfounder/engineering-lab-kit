@@ -25,7 +25,7 @@ Initially, we will delve into the operation of a 7-segment display, learning how
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/26_cycle_dice.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>

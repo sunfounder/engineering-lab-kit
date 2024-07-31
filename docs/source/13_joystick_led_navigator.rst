@@ -21,7 +21,7 @@ In this project-based course, you will learn how to interface a joystick with an
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/13_joystick_led.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -387,16 +387,16 @@ Ideally, when the joystick is centered, the values should be (1024/2=512). There
 
 However, due to possible design inaccuracies in the module or resistance in the connections, the values might deviate from 512 even when the joystick is centered. This could lead to misinterpretations by the Arduino Uno R3, such as mistakenly lighting the left indicator LED if the X value is already less than 512 without actual movement.
 
-Therefore, a threshold around the midpoint (512±200) is used:
+Therefore, a threshold around the midpoint (512±100) is used:
 
 .. image:: img/11_joystick_xy_200.png
     :width: 400
     :align: center
 
-* **Up**: Y-axis value less than 312.
-* **Down**: Y-axis value greater than 712.
-* **Left**: X-axis value less than 312.
-* **Right**: X-axis value greater than 712.
+* **Up**: Y-axis value less than 412.
+* **Down**: Y-axis value greater than 612.
+* **Left**: X-axis value less than 412.
+* **Right**: X-axis value greater than 612.
 
 1. Now start writing the sketch. Open the sketch you saved earlier, ``Lesson13_Joystick_Module``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson13_Joystick_Module_LEDs``. Click "Save".
 
@@ -492,10 +492,10 @@ Therefore, a threshold around the midpoint (512±200) is used:
 
 7. To sequentially light up each LED based on the X and Y values of the Joystick module, you will need multiple conditions. You can use ``if`` to specify actions for different ranges of potentiometer values:
   
-* If the Y-axis value is less than 312, then the "up" indicator should be lit.
-* If the Y-axis value is greater than 712, then the "down" indicator should be lit.
-* If the X-axis value is less than 312, then the "left" indicator should be lit.
-* If the X-axis value is greater than 712, then the "right" indicator should be lit.
+* If the Y-axis value is less than 412, then the "up" indicator should be lit.
+* If the Y-axis value is greater than 612, then the "down" indicator should be lit.
+* If the X-axis value is less than 412, then the "left" indicator should be lit.
+* If the X-axis value is greater than 612, then the "right" indicator should be lit.
 
 
 However, managing these conditions separately can be inefficient, as Arduino needs to check each one in every loop cycle. 
@@ -523,7 +523,7 @@ To streamline this, utilize the ``if-else if`` structure:
 
 In an ``if-else if`` structure, the first condition is tested. If it's true, the associated commands are executed, and all other conditions are skipped (even if some of them are true). If the first condition is false, it tests the second condition in the structure. If the second condition is true, it executes the commands associated with this condition and then skips the others. If it is false, it tests the third condition, and so on. In some scenarios, there can be multiple true conditions. Therefore, the order of conditions is important. Only the first true condition will have its associated commands run.
 
-8. First, when the ``yValue`` is less than 312, use the ``digitalWrite()`` function to set the "up" indicator light to ``HIGH`` to turn it on.
+8. First, when the ``yValue`` is less than 412, use the ``digitalWrite()`` function to set the "up" indicator light to ``HIGH`` to turn it on.
 
 
 .. code-block:: Arduino
@@ -536,12 +536,12 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
     digitalWrite(ledDown, LOW);
 
     // Check joystick positions and set LEDs accordingly
-    if (yValue < 312) {
+    if (yValue < 412) {
         // Joystick up
         digitalWrite(ledUp, HIGH);
     }
 
-9. Add an ``else if`` statement to light up the "down" indicator when the ``yValue`` exceeds 712.
+9. Add an ``else if`` statement to light up the "down" indicator when the ``yValue`` exceeds 612.
 
 .. code-block:: Arduino
     :emphasize-lines: 12-15
@@ -553,50 +553,50 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
     digitalWrite(ledDown, LOW);
 
     // Check joystick positions and set LEDs accordingly
-    if (yValue < 312) {
+    if (yValue < 412) {
         // Joystick up
         digitalWrite(ledUp, HIGH);
     }
-    else if (yValue > 712) {
+    else if (yValue > 612) {
         // Joystick down
         digitalWrite(ledDown, HIGH);
     } 
 
-10. To light up the "left" indicator when the ``xValue`` is below 312, insert another ``else if`` condition like this:
+10. To light up the "left" indicator when the ``xValue`` is below 412, insert another ``else if`` condition like this:
 
 
 .. code-block:: Arduino
     :emphasize-lines: 8-11
     
     // Check joystick positions and set LEDs accordingly
-    if (yValue < 312) {
+    if (yValue < 412) {
         // Joystick up
         digitalWrite(ledUp, HIGH);
-    } else if (yValue > 712) {
+    } else if (yValue > 612) {
         // Joystick down
         digitalWrite(ledDown, HIGH);
-    } else if (xValue < 312) {
+    } else if (xValue < 412) {
         // Joystick left
         digitalWrite(ledLeft, HIGH);
     }  
 
-11. Similarly, add another ``else if`` condition to light up the right indicator when the ``xValue`` exceeds 712.
+11. Similarly, add another ``else if`` condition to light up the right indicator when the ``xValue`` exceeds 612.
 
 
 .. code-block:: Arduino
     :emphasize-lines: 11-14 
 
     // Check joystick positions and set LEDs accordingly
-    if (yValue < 312) {
+    if (yValue < 412) {
         // Joystick up
         digitalWrite(ledUp, HIGH);
-    } else if (yValue > 712) {
+    } else if (yValue > 612) {
         // Joystick down
         digitalWrite(ledDown, HIGH);
-    } else if (xValue < 312) {
+    } else if (xValue < 412) {
         // Joystick left
         digitalWrite(ledLeft, HIGH);
-    } else if (xValue > 712) {
+    } else if (xValue > 612) {
         // Joystick right
         digitalWrite(ledRight, HIGH);
     }
@@ -607,16 +607,16 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
     :emphasize-lines: 14-20
 
     // Check joystick positions and set LEDs accordingly
-    if (yValue < 312) {
+    if (yValue < 412) {
         // Joystick up
         digitalWrite(ledUp, HIGH);
-    } else if (yValue > 712) {
+    } else if (yValue > 612) {
         // Joystick down
         digitalWrite(ledDown, HIGH);
-    } else if (xValue < 312) {
+    } else if (xValue < 412) {
         // Joystick left
         digitalWrite(ledLeft, HIGH);
-    } else if (xValue > 712) {
+    } else if (xValue > 612) {
         // Joystick right
         digitalWrite(ledRight, HIGH);
     } else {
@@ -673,16 +673,16 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledDown, LOW);
 
         // Check joystick positions and set LEDs accordingly
-        if (yValue < 312) {
+        if (yValue < 412) {
             // Joystick up
             digitalWrite(ledUp, HIGH);
-        } else if (yValue > 712) {
+        } else if (yValue > 612) {
             // Joystick down
             digitalWrite(ledDown, HIGH);
-        } else if (xValue < 312) {
+        } else if (xValue < 412) {
             // Joystick left
             digitalWrite(ledLeft, HIGH);
-        } else if (xValue > 712) {
+        } else if (xValue > 612) {
             // Joystick right
             digitalWrite(ledRight, HIGH);
         } else {
@@ -703,11 +703,13 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
 * **Left Indicator** lights up when the joystick is pushed left (X-axis value decreases).
 * **Right Indicator** lights up when the joystick is pushed right (X-axis value increases).
 
+**Question**
+
+1. In the last code, we controlled the corresponding LEDs based on the X and Y values of the joystick. How would you modify the code to adjust the brightness of these LEDs while they are lit?
+
+
+2. What is the difference in behavior of the LED connected to pin 8 compared to those on other pins, and why?
+
 **Summary**
 
 In this lesson, you learned about the operational principles of the Joystick module and utilized the Serial Monitor tool to read X, Y, and SW values from the joystick. You gained an understanding of the differences between analog and digital values in Arduino programming. Additionally, you mastered the use of advanced conditional statements, specifically if-else if constructs, to control hardware based on input values.
-
-
-**Question**
-
-In the last code, we controlled the corresponding LEDs based on the X and Y values of the joystick. How would you modify the code to adjust the brightness of these LEDs while they are lit?

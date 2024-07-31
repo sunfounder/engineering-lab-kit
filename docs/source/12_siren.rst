@@ -26,7 +26,7 @@ By adjusting the frequency of a passive buzzer, we can simulate the characterist
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+    <video controls style = "max-width:90%">
         <source src="_static/video/12_siren_sound.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>

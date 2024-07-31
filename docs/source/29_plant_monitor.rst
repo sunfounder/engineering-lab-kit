@@ -7,7 +7,7 @@ This project automatically waters plants by activating a water pump when the soi
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+     <video controls style = "max-width:90%">
         <source src="_static/video/29_plant_monitor.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -83,7 +83,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
     .. raw:: html
 
-        <video width="600" loop muted>
+        <video controls style = "max-width:100%">
             <source src="_static/video/about_power_module.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -180,52 +180,36 @@ Now start writing the code to read the values from the soil moisture sensor.
 
 .. code-block:: Arduino
 
-  const int moisturePin = A1;  // Soil moisture sensor
+  const int moisturePin = A1;  // Define the pin where the soil moisture sensor is connected
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);  // Start serial communication at 9600 baud
+    Serial.begin(9600);  // Initialize serial communication at 9600 baud rate
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int moistureValue = analogRead(moisturePin);
-    Serial.println(moistureValue);
-    delay(200);
+    int moistureValue = analogRead(moisturePin);  // Read the analog value from the moisture sensor
+    Serial.print("Moisture Value: ");
+    Serial.println(moistureValue);  // Output the raw sensor value to the serial monitor for observation
+
+    delay(1000);  // Delay for one second before the next reading to reduce data flooding
   }
+
 
 4. After running the code, you need to insert the soil moisture module into the soil. When you water the soil, you will notice that the displayed readings decrease. Moreover, the change in soil moisture is not linear and happens slowly.
 
 .. code-block:: Arduino
 
-  438
-  438
-  378
-  354
-  323
-  210
+  Moisture Value: 438
+  Moisture Value: 438
+  Moisture Value: 378
+  Moisture Value: 354
+  Moisture Value: 323
+  Moisture Value: 210
 
-5. Then we will convert the readings into a commonly seen soil moisture percentage. Since higher soil moisture corresponds to lower values, use the ``map()`` function to convert soil moisture to a percentage from 100 to 0.
+**Question**
 
-.. code-block:: Arduino
-  :emphasize-lines: 13
-  
-  const int moisturePin = A1;  // Soil moisture sensor
+In the code provided, we understand that higher moisture content results in a lower sensor value, and moisture is typically expressed as a percentage. How can we modify the code to display the soil moisture level as a percentage?
 
-  void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);  // Start serial communication at 9600 baud
-  }
-
-  void loop() {
-    // put your main code here, to run repeatedly:
-    int moistureValue = analogRead(moisturePin);
-    Serial.println(moistureValue);
-    // Calculate soil moisture percentage
-    float moisturePercent = map(moistureValue, 0, 1023, 100, 0);
-  }
-
-6. Now you can upload the code again, and you will find that when you water, the soil moisture percentage increases.
 
 Code Creation - Plant Monitor
 ---------------------------------------------
@@ -466,10 +450,11 @@ Now, let's write the code to see how to implement the desired effects.
 
 12. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+How you might improve or adjust the system if the sensors responded more slowly or too quickly to environmental changes.
+
 **Summary**
 
 In today's lesson, you've successfully built and programmed a Plant Monitor using Arduino. This project not only introduced you to a variety of sensors and components but also demonstrated how these elements can be integrated to create a practical device. Through hands-on learning, you've observed how data from the real world can be collected and utilized to make informed decisions about plant care. By controlling the environment of your plants actively, you've taken a big step toward automating their care and ensuring they grow in optimal conditions.
 
-**Question**
-
-How you might improve or adjust the system if the sensors responded more slowly or too quickly to environmental changes.

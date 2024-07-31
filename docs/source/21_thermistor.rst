@@ -25,7 +25,7 @@ In this lesson, we'll explore the critical role of temperature management in foo
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/21_temp_alarm.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -509,13 +509,13 @@ For example, we set three temperature ranges:
 
 14. Finally, remember to save your code and tidy up your workspace.
 
-**Summary**
-
-In today's lesson, we built a temperature alarm system that uses a thermistor to monitor the temperature of a storage area for shelf-stable foods. We learned how to read and convert resistance values from the thermistor into temperature readings in Celsius. Through our programming, we also set up conditions to change the color of an RGB LED based on the temperature, providing a visual alert for temperatures that are too low, just right, or too high.
-
 **Question**
 
 1. In the code, Kelvin and Celsius temperatures are calculated. If you also want to know the Fahrenheit temperature, what should you do?
 
 2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful?
+
+**Summary**
+
+In today's lesson, we built a temperature alarm system that uses a thermistor to monitor the temperature of a storage area for shelf-stable foods. We learned how to read and convert resistance values from the thermistor into temperature readings in Celsius. Through our programming, we also set up conditions to change the color of an RGB LED based on the temperature, providing a visual alert for temperatures that are too low, just right, or too high.
 

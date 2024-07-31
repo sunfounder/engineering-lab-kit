@@ -23,7 +23,7 @@ In this lesson, we'll explore the intersection of time management and technology
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+     <video controls style = "max-width:90%">
         <source src="_static/video/24_beep_timer.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -449,13 +449,12 @@ Next, we will program a timer that will buzz every 25 minutes to signal the end 
 
 10. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+Think about other places in your life where you can 'hear' time. List a few examples and write them in your handbook!
 
 **Summary**
 
 In today's class, we successfully built an electronic version of the Pomodoro Timer, an invaluable tool for enhancing productivity through structured work and break periods. Through this project, students learned about the utility of buzzers in time management and the practical application of the ``millis()`` function to create non-blocking timer code in Arduino. This approach enables multitasking in microcontroller applications, mirroring more complex systems in technology and industry.
-
-**Question**
-
-Think about other places in your life where you can 'hear' time. List a few examples and write them in your handbook!
 
 

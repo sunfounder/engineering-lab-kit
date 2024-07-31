@@ -23,7 +23,7 @@ Imagine every desk lamp at home, gently casting light over your evening reads or
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/9_dimmble_led.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -440,10 +440,11 @@ Think of the duty cycle like a faucet's on and off pattern that controls water f
 
 8. Finally, remember to save your code and tidy up your workspace.
 
+**Question**:
+
+If you connect the LED to a different pin, such as pin 8, and rotate the potentiometer, will the brightness of the LED still change? Why or why not?
+
 **Summary**
 
 In this lesson, we explored how to work with analog signals in Arduino projects. We learned how to read analog values from a potentiometer, how to process these values in the Arduino sketch, and how to control the brightness of LED using Pulse Width Modulation (PWM). We also delved into the use of variable to store and manipulate data within our sketches. By integrating these elements, we demonstrated the dynamic control of electronic components, bridging the gap between simple digital outputs and more nuanced control of hardware through analog input readings.
 
-**Question**:
-
-If you connect the LED to a different pin, such as pin 8, and rotate the potentiometer, will the brightness of the LED still change? Why or why not?

@@ -19,7 +19,7 @@ Welcome to the next phase of our Arduino journey. In the previous lesson, we bui
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/8_traffic_light_button.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -468,13 +468,13 @@ Observe the behavior of your traffic light. Press the button and wait for the tr
 
 Once completed, save your sketch.
 
-**Summary**
-
-In this lesson, we've delved into integrating a pedestrian button into a traffic light system, simulating a real-world scenario that balances the flow of both pedestrian and vehicular traffic. We explored the workings of a button in an electronic circuit and utilized the ``digitalRead()`` function to monitor input from the button. By implementing conditional statements with ``if`` structures, we programmed the traffic lights to respond dynamically to pedestrian input, enhancing our understanding of interactive systems. This lesson not only reinforced our skills in Arduino programming but also highlighted the practical application of these technologies in managing everyday situations efficiently.
-
 **Question:**
-
 
 During testing, you may notice that the green LED only blinks while the pedestrian button is kept pressed, 
 but pedestrians can’t cross the road while continuously pressing the button. How can you modify the code to ensure that once the pedestrian button is pressed, 
 the green LED lights up long enough for a safe crossing without requiring continuous pressing? Please write down the pseudo-code solution in your handbook.
+
+**Summary**
+
+In this lesson, we've delved into integrating a pedestrian button into a traffic light system, simulating a real-world scenario that balances the flow of both pedestrian and vehicular traffic. We explored the workings of a button in an electronic circuit and utilized the ``digitalRead()`` function to monitor input from the button. By implementing conditional statements with ``if`` structures, we programmed the traffic lights to respond dynamically to pedestrian input, enhancing our understanding of interactive systems. This lesson not only reinforced our skills in Arduino programming but also highlighted the practical application of these technologies in managing everyday situations efficiently.
+

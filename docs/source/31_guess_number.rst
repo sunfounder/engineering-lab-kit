@@ -6,7 +6,7 @@ Guessing Numbers is a fun party game where you and your friends take turns input
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/31_guess_number.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -470,17 +470,18 @@ Now, let's start writing the code to implement the number guessing game.
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/31_guess_number.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
 13. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+What additional components can be added to enhance the fun of the game? What roles do they play in the game?
+
 **Summary**
 
 In today's lesson, we successfully built a number guessing game using an Arduino board, integrating components like an IR receiver and an LCD for dynamic interaction. We explored various programming concepts such as random number generation, input handling, and conditional logic.
 
-**Question**
-
-What additional components can be added to enhance the fun of the game? What roles do they play in the game?

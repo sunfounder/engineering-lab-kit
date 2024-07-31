@@ -22,7 +22,7 @@ This lesson will transform how you play the game by integrating simple electroni
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+     <video controls style = "max-width:90%">
         <source src="_static/video/14_dinosaur_game.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -120,7 +120,7 @@ Now let's start building the circuit.
 
     .. raw:: html
 
-        <video width="600" loop muted>
+        <video controls style = "max-width:100%">
             <source src="_static/video/about_power_module.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -218,6 +218,13 @@ To control the servo, we need to include the ``Servo`` library, which provides f
     :width: 600
     :align: center
 
+**Question**
+
+If the servo is connected to pin 8 or another non-PWM pin on an Arduino, will it still operate correctly? Why or why not?
+
+You can test this first before answering.
+
+
 **3. Adjusting the Servo Angle**
 
 Since the servo arm needs to press the space bar on the keyboard, you need to attach the servo in a specific position and then use code to control the servo arm to press the space bar.
@@ -289,12 +296,12 @@ Since the servo arm needs to press the space bar on the keyboard, you need to at
 
 5. After uploading the code, check if the servo can press the space bar every time. If it can, the servo is ready.
 
-.. raw:: html
+.. .. raw:: html
 
-    <video width="600" loop autoplay>
-        <source src="_static/video/14_servo_range.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+..     <video width="600" loop autoplay>
+..         <source src="_static/video/14_servo_range.mp4" type="video/mp4">
+..         Your browser does not support the video tag.
+..     </video>
 
 .. _ar_photoresistor:
 

@@ -109,7 +109,7 @@ Now you have a series circuit with two LEDs. Follow the current through the circ
 * After leaving the second LED, it enters the 220Ω resistor, where it encounters resistance, reducing the amount of current. Without this resistor, the current through the LEDs would be too high and could burn them out.
 * It then flows back to the Arduino Uno R3's ground pin, completing the circuit.
 
-**Question:** 
+**Question** 
 
 In this series circuit, what happens if you remove one LED? Why does this occur?
 
@@ -390,7 +390,7 @@ Now, this circuit has two LEDs in a parallel configuration. There are two paths 
 * At the negative side, the two paths converge again and then flow through the black power wire to reach the ground pin on the Arduino Uno R3.
 
 
-**Question:**
+**Question**
 
 In this parallel circuit, what happens if one LED is removed? Why does this occur? 
 

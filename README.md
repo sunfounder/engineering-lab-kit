@@ -17,6 +17,9 @@ Embark on your electronics journey with the Inventor Lab Kit, designed for learn
 
 <a id="update"></a>
 ## Update:
+2024-07-31:
+- add some tips
+
 2024-07-22:
 - First Release
 

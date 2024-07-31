@@ -24,7 +24,7 @@ Welcome to this lesson, this engaging lesson bridges the gap between theoretical
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/7_traffic_light.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -281,6 +281,10 @@ It's time to refine the code you've written and add additional ``digitalWrite()`
             delay(10000);           // Wait for 10 seconds
         }
 
+**Question**
+
+Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?
+
 **Summary**
 
 Congratulations on completing Lesson 7! You've successfully translated pseudo-code into a fully functional Arduino-controlled traffic light system. Here's a brief recap of what you achieved:
@@ -291,6 +295,3 @@ Congratulations on completing Lesson 7! You've successfully translated pseudo-co
 
 This lesson has sharpened both your technical abilities and analytical thinking, equipping you for more complex projects in electronics and programming. Keep building on these skills to unlock further possibilities in technology integration!
 
-**Question**
-
-Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?

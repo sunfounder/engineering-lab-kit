@@ -22,7 +22,7 @@ Imagine if you could paint with light, blending red, green, and blue to create e
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/11_rainbow_color.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -140,7 +140,6 @@ Code Creation - Lighting Up an RGB LED
 3. Create three variables to store the three pins of the RGB LED and set them as OUTPUT.
 
 .. code-block:: Arduino
-    :emphasize-lines: 3-5
 
     const int redPin = 11;
     const int greenPin = 10;
@@ -189,7 +188,7 @@ Code Creation - Lighting Up an RGB LED
 Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want to display as ``HIGH`` and the others as ``LOW``. Each color lighting up should be given a second to shine.
 
 .. code-block:: Arduino
-    :emphasize-lines: 14-21
+    :emphasize-lines: 17-25
 
     const int redPin = 11;
     const int greenPin = 10;
@@ -278,7 +277,6 @@ Let's see how we can implement this with code.
 3. Create three variables to store the three pins of the RGB LED and set them as OUTPUT.
 
 .. code-block:: Arduino
-    :emphasize-lines: 3-5
 
     const int redPin = 11;
     const int greenPin = 10;

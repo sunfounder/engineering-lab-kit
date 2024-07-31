@@ -7,7 +7,7 @@ As Christmas approaches, many people decorate their homes with colorful lights. 
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/22_ir_rgb_led.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -442,10 +442,6 @@ Now that we know the key value of each key, remembering each key value can be qu
   FORWARD
   BACKWARD
   BACKWARD
-
-**Question**
-
-1. When pressing the keys, we often press once, but the Arduino detects multiple presses. How can we optimize the code to avoid this issue? Refer to :ref:`onoff_desk_lamp`.
 
 Code Creation - Remote-Controlled Colorful Light
 ------------------------------------------------------------

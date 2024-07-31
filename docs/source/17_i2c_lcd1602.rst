@@ -7,7 +7,7 @@ Welcome to our practical guide on using the I2C LCD1602! In this lesson, we'll u
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/17_i2c_lcd.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -307,12 +307,12 @@ Now, search for ``LiquidCrystal I2C`` on the **Library Manager**, then click **I
 
 13. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+If you want to start displaying "Let's count" at the second column of the first row on the I2C LCD1602, how should you modify the code?
+
 **Summary**
 
 In this lesson, we explored how to interact with the Arduino Uno R3 board using the I2C LCD1602 module. You are learned how to retrieve the I2C address and install the necessary libraries in the Arduino IDE to drive the LCD module. By writing and uploading code, You are successfully displayed characters and count data on the LCD. These steps not only deepened our understanding of the I2C communication protocol but also enhanced our ability to handle display devices.
 
 
-
-**Question**
-
-If you want to start displaying "Let's count" at the second column of the first row on the I2C LCD1602, how should you modify the code?

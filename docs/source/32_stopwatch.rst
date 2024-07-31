@@ -4,7 +4,7 @@ In this exciting project, we will learn how to use a 4-digit 7-segment display t
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/32.stopwatch.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -88,7 +88,7 @@ To determine whether a 4-digit 7-segment display is common cathode or common ano
 
 If you want the leftmost digit (d1) of the 4-digit 7-segment display to show "2", what should be the levels of d1~d4 and a~g pins?
 
-.. image:: img/32_stopwatch_show_2.png
+.. image:: img/32_stopwatch_show_2d1.png
   :width: 800
   :align: center
 
@@ -509,6 +509,13 @@ Here's how to use this to scroll through numbers 0~9 on one digit.
     // Turn on the selected digit (common cathode -> LOW is on)
     digitalWrite(digitPins[digit], LOW);
   }
+
+
+**Question**
+
+In programming, bitwise operations like ``AND`` and ``OR`` are crucial for manipulating individual bits of data. The bitwise ``AND`` operation (&), compares each bit of its operands, resulting in 1 if both bits are 1, and 0 otherwise. Conversely, the bitwise ``OR`` operation (``|``), results in 1 if at least one of the bits is 1, and 0 only if both bits are 0. 
+
+Given this information, consider the expression ``(B01011011 >> 2) | 1``. After right-shifting the binary number ``B01011011`` by 2 positions, what is the result of applying the bitwise OR with 1?
 
 
 Code Creation - Stopwatch

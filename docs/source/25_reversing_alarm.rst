@@ -22,7 +22,7 @@ Today, we're going to learn how to build and program an ultrasonic radar system 
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+     <video controls style = "max-width:90%">
         <source src="_static/video/25_reverse_alarm.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -397,14 +397,15 @@ Now, let's start coding to see how we can implement the functionality described 
 
 13. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+In this project, we used an active buzzer to serve as an alert mechanism, but a passive buzzer could also be used to achieve similar functionality. If you were to replace the active buzzer with a passive buzzer, how should the code be modified?
+
 **Summary**
 
 Throughout this course, we embarked on a journey from conceptual understanding to practical implementation of a reverse radar system. Starting with assembling the circuit on a breadboard, we connected an ultrasonic sensor, an active buzzer, and an LCD display to an Arduino board. Following the hardware setup, we dove into the coding aspect where you learned to manipulate sensor data to trigger auditory and visual feedback based on the distance of obstacles behind a vehicle.
 
 You've now successfully programmed your Arduino to measure distances and provide alerts through a buzzer and visual feedback via an LCD, mimicking the functionality of advanced reverse radar systems found in modern cars. This not only demonstrates your ability to integrate various electronic components but also highlights your skill in creating a system that could enhance vehicular safety.
 
-**Question**
-
-In this project, we used an active buzzer to serve as an alert mechanism, but a passive buzzer could also be used to achieve similar functionality. If you were to replace the active buzzer with a passive buzzer, how should the code be modified?
 
 

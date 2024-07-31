@@ -5,7 +5,7 @@ As summer approaches, it's the perfect time to dive into a fun and engaging proj
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+     <video muted controls style = "max-width:90%">
         <source src="_static/video/16_summer_fan.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -113,7 +113,7 @@ Let's now build a circuit to test this motor driver chip.
 
     .. raw:: html
 
-        <video width="600" loop muted>
+        <video controls style = "max-width:90%">
             <source src="_static/video/about_power_module.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -546,13 +546,13 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
 
 11. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+How should the code be modified if you want to control the motor's direction as well?
+
 **Summary**
 
 In this lesson, we delved into the working principles of the L293D motor driver chip and the basic operation of motors. You learned how to make a motor rotate and how to control its direction using Arduino. Finally, we put it all together in a complete project that simulates a fan, using four buttons to control different motor speeds.
-
-**Question**
-
-In the ``Lesson16_Summer_Fan`` code, how should the code be modified if you want to control the motor's direction as well?
 
 
 

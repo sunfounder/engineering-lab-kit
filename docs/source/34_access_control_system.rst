@@ -4,7 +4,7 @@ Welcome to our interactive workshop on building an Access Control System using A
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/34_access_control_system.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -107,7 +107,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
   .. raw:: html
 
-      <video width="600" loop muted>
+      <video controls style = "max-width:100%">
           <source src="_static/video/about_power_module.mp4" type="video/mp4">
           Your browser does not support the video tag.
       </video>
@@ -587,17 +587,18 @@ For instance, if I read ``Card ID: 23:E7:03:33``, then I replace it with ``const
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/31_access_control_system.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
 16. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+Now that a basic access control system has been set up, what additional components could be added to enhance its functionality and flexibility?
+
+
 **Summary**
 
 Throughout this course, we've taken a deep dive into the functionalities of stepper motors, RFID modules, and I2C LCD displays, culminating in the creation of a fully functional Access Control System. You have learned to integrate various components to develop a system that reads RFID tags, controls door mechanisms via stepper motors, and displays system statuses and messages on an LCD. 
-
-**Question**
-
-We have only set one ID, but if you want to set multiple IDs, so that the door will open for anyone with IDs set in the system, how would you do that?

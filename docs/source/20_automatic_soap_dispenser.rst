@@ -8,7 +8,7 @@ Welcome to our course on building an Automatic Soap Dispenser using Arduino tech
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/20_automatic_soap_dispenser.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -75,7 +75,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
     .. raw:: html
 
-        <video width="600" loop muted>
+        <video controls style = "max-width:100%">
             <source src="_static/video/about_power_module.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>

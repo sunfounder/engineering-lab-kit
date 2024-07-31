@@ -25,7 +25,7 @@ Welcome to our hands-on tutorial where you will learn how to build a relay-contr
 
 .. raw:: html
 
-    <video width="600" loop autoplay>
+     <video controls style = "max-width:90%">
         <source src="_static/video/18_on_off_lamp.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -217,7 +217,7 @@ Now, use a multimeter to measure the continuity between the COM, NO, and NC to v
    :header-rows: 1
 
    * - State
-     - Connection at COM terminal
+     - NO or NC connected to the COM terminal?
    * - Default
      - *NC*
    * - S pin High
@@ -242,7 +242,7 @@ Now, use a multimeter to measure the continuity between the COM, NO, and NC to v
    :header-rows: 1
 
    * - State
-     - Connection at COM terminal
+     - NO OR NC connected to the COM terminal?
    * - Default
      - *NC*
    * - S pin High
@@ -379,12 +379,6 @@ After the code is successfully uploaded, when you press the button, the relay cl
 
 11. Finally, remember to save your code and tidy up your workspace.
 
-**Summary**
-
-In this course, you engaged in building a relay-controlled circuit that simulates a desk lamp using an LED as a proxy for high-power loads. The project included setting up a circuit on a breadboard, wiring components, and programming an Arduino to control the relay based on button inputs. Through testing with a multimeter, you confirmed the functionality of the relay module and understood its operation under different signal conditions.
-
-The code creation segment reinforced the concept of state changes and the use of conditional logic to control physical devices through programming. By completing this course, you've enhanced your understanding of both the theoretical and practical aspects of using relays in electronic projects, enabling you to apply these concepts to more complex and diverse applications in the future.
-
 **Question**
 
 
@@ -400,3 +394,9 @@ The code creation segment reinforced the concept of state changes and the use of
     }
 
 2. If pin 7 is set only to ``INPUT``, what adjustments would need to be made to the circuit?
+
+**Summary**
+
+In this course, you engaged in building a relay-controlled circuit that simulates a desk lamp using an LED as a proxy for high-power loads. The project included setting up a circuit on a breadboard, wiring components, and programming an Arduino to control the relay based on button inputs. Through testing with a multimeter, you confirmed the functionality of the relay module and understood its operation under different signal conditions.
+
+The code creation segment reinforced the concept of state changes and the use of conditional logic to control physical devices through programming. By completing this course, you've enhanced your understanding of both the theoretical and practical aspects of using relays in electronic projects, enabling you to apply these concepts to more complex and diverse applications in the future.

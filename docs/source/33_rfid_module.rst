@@ -8,7 +8,7 @@ In this exciting lesson, we dive into the world of RFID technology using the RC5
 
 .. raw:: html
 
-    <video width="600" loop autoplay muted>
+    <video muted controls style = "max-width:90%">
         <source src="_static/video/33_rfid_lcd.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -451,6 +451,10 @@ Here, we will learn how to display the card's name and UID on an I2C LCD.
       Serial.println((char *)buffer + 1);  // Print the name on the serial monitor
     }
   }
+
+**Question**
+
+Now that you understand how to use the RC522-RFID module for reading or writing card or tag information and displaying it on an LCD, how would you design a common access control system for everyday use? Describe your design approach.
 
 
 **Summary**
