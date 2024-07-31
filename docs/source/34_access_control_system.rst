@@ -1,3 +1,17 @@
+.. note::
+
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+
+    **Why Join?**
+
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+
 34. Access Control System
 ===============================
 Welcome to our interactive workshop on building an Access Control System using Arduino! This course is designed for enthusiasts looking to delve into the world of electronics, robotics, and programming. You'll get hands-on experience with stepper motors, RFID technology, and LCD displays, creating a practical project that you can deploy in real-world scenarios. Whether you're looking to enhance your home security or just curious about electronic systems, this course offers a comprehensive guide to understanding and implementing basic automation and control systems.
