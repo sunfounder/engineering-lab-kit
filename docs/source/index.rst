@@ -17,7 +17,20 @@ Inventor Lab Kit with Original Arduino Uno R3
 
 Thank You for Choosing the Inventor Lab Kit.
 
-* :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
+.. image:: img/home_page.png
+    :width: 800
+    :align: center
+
+.. .. note::
+..     This document is available in the following languages.
+
+..         * |link_german_tutorials|
+..         * |link_jp_tutorials|
+..         * |link_en_tutorials|
+    
+..     Please click on the respective links to access the document in your preferred language.
+
+* :download:`Inventor Lab Kit Handbook with the Answers </_static/pdf/Inventor Lab Kit Handbook with the Answers.pdf>`
 
 Embark on your electronics journey with the Inventor Lab Kit, designed for learners and enthusiasts. Centered around the Arduino Uno R3, this kit includes everything from basic components like LEDs and buzzers to advanced modules such as RFID systems and ultrasonic sensors, along with a mini-multimeter for circuit analysis.
 
@@ -25,18 +38,6 @@ The kit excels in educational clarity, gradually introducing beginners to progra
 
 Ideal for both beginners and those looking to expand their skills, the Inventor Lab Kit makes learning both accessible and exciting, providing all the tools needed to explore and innovate in the world of electronics.
 
-.. image:: img/home_page.png
-    :width: 800
-    :align: center
-
-.. note::
-    This document is available in the following languages.
-
-        * |link_german_tutorials|
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
-    
-    Please click on the respective links to access the document in your preferred language.
 
 
 .. toctree::
@@ -60,7 +61,7 @@ Ideal for both beginners and those looking to expand their skills, the Inventor 
     15_cool_warm_color
     16_summer_fan
     17_i2c_lcd1602
-    18_on_off_deak_lamp
+    18_on_off_desk_lamp
     19_smart trashcan
     20_automatic_soap_dispenser
     21_thermistor
