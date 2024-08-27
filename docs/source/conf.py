@@ -232,3 +232,16 @@ rst_epilog += """
 .. |list_i2c_lcd1602| image:: /img/list_cpn/list_i2c_lcd1602.png 
 
 """
+# purchase links
+
+rst_epilog += """
+
+.. |link_Inventor_Lab_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/collections/esp32-1/products/sunfounder-esp32-ultimate-starter-kit-with-esp32-camera-extension-board-battery" target="_blank">Purchase Link for Inventor Lab Kit</a>
+
+.. |link_Inventor_kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-esp32-ultimate-starter-kit-with-esp32-camera-extension-board-battery" target="_blank">Inventor Lab Kit</a>
+
+"""
