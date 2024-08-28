@@ -1,93 +1,94 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit Gleichgesinnten ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Sonderrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu forschen und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-5. Series Circuit vs. Parallel Circuit
+
+5. Reihenschaltung vs. Parallelschaltung
 =================================================
 
-In this lesson, you will engage in building and analyzing both series and parallel circuits, learning to measure and understand how voltage behaves in different circuit configurations. Utilizing a multimeter, you will measure the voltage and resistance of the circuits you construct, gaining practical insights into circuit dynamics.
+In dieser Lektion bauen und analysieren Sie sowohl Reihen- als auch Parallelschaltungen, lernen, wie sich die Spannung in verschiedenen Schaltungsanordnungen verhält, und verwenden ein Multimeter, um die Spannung und den Widerstand der von Ihnen konstruierten Schaltungen zu messen. Sie erhalten praktische Einblicke in die Dynamik von Schaltungen.
 
-In this exciting lesson, you'll:
+In dieser spannenden Lektion lernen Sie:
 
-* Connect schematic diagrams with actual circuits.
-* Use a multimeter to measure resistance and voltage.
-* Build series and parallel circuits using a breadboard.
-* Compare the behavior of voltage in series and parallel circuits.
+* Schaltpläne mit realen Schaltungen zu verbinden.
+* Ein Multimeter zur Messung von Widerstand und Spannung zu verwenden.
+* Reihen- und Parallelschaltungen mit einem Steckbrett zu bauen.
+* Das Verhalten der Spannung in Reihen- und Parallelschaltungen zu vergleichen.
 
-These objectives will empower you to bridge the gap between theoretical knowledge and practical application, enriching your understanding of electronics through hands-on experience.
+Diese Ziele ermöglichen es Ihnen, die Lücke zwischen theoretischem Wissen und praktischer Anwendung zu schließen und Ihr Verständnis für Elektronik durch praktische Erfahrung zu vertiefen.
 
 
-Series Circuit vs. Parallel Circuit
+Reihenschaltung vs. Parallelschaltung
 ------------------------------------------
 
-In our previous lessons, we've successfully constructed a simple circuit with an Arduino Uno R3, a resistor, and an LED. The current in this setup flows in a series configuration: from the board's Pin 13 pin, through the LED, through the resistor, and back to the GND pin. This is a straightforward example of a series circuit.
+In unseren vorherigen Lektionen haben wir erfolgreich eine einfache Schaltung mit einem Arduino Uno R3, einem Widerstand und einer LED aufgebaut. Der Strom in dieser Anordnung fließt in einer Reihenschaltung: vom Pin 13 des Boards, durch die LED, durch den Widerstand und zurück zum GND-Pin. Dies ist ein einfaches Beispiel für eine Reihenschaltung.
 
-But as we delve deeper into the world of electronics, we encounter circuits that are more complex, comprising components arranged in series or parallel. To comprehend these arrangements and their implications on current and voltage, we need to familiarize ourselves with circuit diagrams, also known as schematic diagrams.
+Aber wenn wir tiefer in die Welt der Elektronik eintauchen, stoßen wir auf komplexere Schaltungen, die aus Komponenten bestehen, die in Reihe oder parallel angeordnet sind. Um diese Anordnungen und ihre Auswirkungen auf Strom und Spannung zu verstehen, müssen wir uns mit Schaltplänen, auch bekannt als Schemata, vertraut machen.
 
-**Wiring Diagrams vs. Schematic Diagrams**
+**Verdrahtungsdiagramme vs. Schaltpläne**
 
-We've been using wiring diagrams—pictorial representations that mimic the physical layout of circuit components. These diagrams are intuitive and serve well for assembly purposes:
+Wir haben bisher Verdrahtungsdiagramme verwendet – bildliche Darstellungen, die die physische Anordnung der Schaltungskomponenten nachahmen. Diese Diagramme sind intuitiv und eignen sich gut für Montagezwecke:
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
-However, to grasp a circuit's functionality and design logic, schematic diagrams are indispensable. Schematic diagrams distill circuits down to their essence, using standardized symbols to represent each component. They reveal the electrical relationships between components without the clutter of physical layouts.
+Um jedoch die Funktionalität und die logische Gestaltung einer Schaltung zu verstehen, sind Schaltpläne unerlässlich. Schaltpläne destillieren Schaltungen auf ihre Essenz und verwenden standardisierte Symbole, um jede Komponente darzustellen. Sie zeigen die elektrischen Verbindungen zwischen den Komponenten, ohne das Durcheinander der physischen Anordnung.
 
-Here are the symbols for a LED, a resistor, and a battery that you'll often find in schematics:
+Hier sind die Symbole für eine LED, einen Widerstand und eine Batterie, die Sie häufig in Schaltplänen finden werden:
 
 .. image:: img/5_led_resistor_symbol.png
   :align: center
 
-A schematic diagram based on our previous wiring would look like this, with the entire Arduino Uno R3 acting as a battery powering the circuit. From this schematic, you can clearly indicate the flow and direction of current, simplifying the complexity of physical connections.
+Ein Schaltplan, der auf unserer vorherigen Verdrahtung basiert, würde so aussehen, wobei das gesamte Arduino Uno R3 als Batterie fungiert, die die Schaltung mit Strom versorgt. Anhand dieses Schaltplans können Sie den Stromfluss und die Stromrichtung klar erkennen, was die Komplexität der physischen Verbindungen vereinfacht.
 
 .. image:: img/5_serial_circuit_1led.png
   :align: center
 
-**Series vs. Parallel Configurations**
+**Reihen- vs. Parallelkonfigurationen**
 
-In a series circuit, components are lined up in a row, so the current has a single path to follow. If one component fails, the entire circuit is interrupted—much like a string of old Christmas lights where one burnt-out bulb would darken the whole chain.
+In einer Reihenschaltung sind die Komponenten hintereinander angeordnet, sodass der Strom nur einen Weg hat, dem er folgen kann. Wenn eine Komponente ausfällt, wird der gesamte Stromkreis unterbrochen – ähnlich wie bei einer alten Lichterkette, bei der eine durchgebrannte Glühbirne die gesamte Kette dunkel werden ließ.
 
 .. image:: img/5_serial_circuit_2led.png
   :align: center
 
-A parallel circuit, on the other hand, divides the current into multiple paths. Each component operates independently, so if one path is broken, the others continue to function. Think of your home's electrical system: if you switch off a light, the TV can still be on.
+Eine Parallelschaltung hingegen teilt den Strom auf mehrere Wege auf. Jede Komponente arbeitet unabhängig, sodass, wenn ein Weg unterbrochen wird, die anderen weiterhin funktionieren. Denken Sie an das elektrische System Ihres Hauses: Wenn Sie eine Lampe ausschalten, kann der Fernseher trotzdem weiterlaufen.
 
 .. image:: img/5_parallel_circuit.png
   :align: center
 
 
-Diving into Series Circuits
-------------------------------
+In die Reihenschaltung eintauchen
+----------------------------------------
 
-Building on our understanding of the differences between series and parallel circuits, this activity focuses on constructing a series circuit with multiple LEDs. Remember, in a series circuit, the electrical current flows through a single pathway. Let's explore the unique characteristics of series circuits through this practical exercise.
+Aufbauend auf unserem Verständnis der Unterschiede zwischen Reihen- und Parallelschaltungen konzentriert sich diese Aktivität darauf, eine Reihenschaltung mit mehreren LEDs zu konstruieren. Denken Sie daran, dass in einer Reihenschaltung der elektrische Strom durch einen einzigen Pfad fließt. Lassen Sie uns die einzigartigen Eigenschaften von Reihenschaltungen durch diese praktische Übung erkunden.
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 3 * Red LEDs
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 3 * Rote LEDs
+     - 3 * 220Ω Widerstände
+     - Jumperkabel
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
      - 1 * Multimeter
      -   
    * - |list_usb_cable| 
@@ -95,323 +96,320 @@ Building on our understanding of the differences between series and parallel cir
      - |list_meter|
      - 
 
-**Building the Circuit**
+**Die Schaltung bauen**
 
-1. Adjust the previous LED circuit by removing the jumper wire between 1J and the breadboard's positive side on the right. Then, take another red LED and insert its cathode (the shorter leg) into 1J, and the anode into the breadboard's positive side, so you can serially connect another LED in the circuit.
+1. Passen Sie die vorherige LED-Schaltung an, indem Sie das Jumperkabel zwischen 1J und der positiven Seite des Steckbretts auf der rechten Seite entfernen. Nehmen Sie dann eine weitere rote LED und stecken Sie ihre Kathode (das kürzere Bein) in 1J und die Anode in die positive Seite des Steckbretts, sodass Sie eine weitere LED in die Schaltung seriell einfügen.
 
 .. image:: img/5_serial_circuit.png
 
-Now you have a series circuit with two LEDs. Follow the current through the circuit:
+Jetzt haben Sie eine Reihenschaltung mit zwei LEDs. Verfolgen Sie den Stromfluss durch die Schaltung:
 
-* Current flows from 5V on the Arduino Uno R3, through a long jumper wire to the breadboard's positive terminal.
-* Then the current flows through the first LED, lighting it up due to the flow of current.
-* The current then flows through the breadboard's metal clips to the second LED, which also lights up.
-* After leaving the second LED, it enters the 220Ω resistor, where it encounters resistance, reducing the amount of current. Without this resistor, the current through the LEDs would be too high and could burn them out.
-* It then flows back to the Arduino Uno R3's ground pin, completing the circuit.
+* Der Strom fließt von 5V auf dem Arduino Uno R3 über ein langes Jumperkabel zum positiven Anschluss des Steckbretts.
+* Dann fließt der Strom durch die erste LED, die aufgrund des Stromflusses aufleuchtet.
+* Der Strom fließt dann durch die Metallklammern des Steckbretts zur zweiten LED, die ebenfalls aufleuchtet.
+* Nachdem der Strom die zweite LED passiert hat, gelangt er in den 220Ω-Widerstand, wo er auf Widerstand trifft, der die Stromstärke reduziert. Ohne diesen Widerstand wäre der Strom durch die LEDs zu hoch und könnte sie zerstören.
+* Schließlich fließt der Strom zurück zum GND-Pin des Arduino Uno R3 und schließt damit den Stromkreis.
 
-**Question** 
+**Frage**
 
-In this series circuit, what happens if you remove one LED? Why does this occur?
+Was passiert in dieser Reihenschaltung, wenn Sie eine LED entfernen? Warum geschieht dies?
 
 .. image:: img/5_serial_circuit_remove.png
     :width: 600
     :align: center
 
 
-**Measuring Voltage**
+**Spannung messen**
 
-1. Set the multimeter to the 20 volts DC setting.
+1. Stellen Sie das Multimeter auf die Einstellung für 20 Volt DC.
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Use the multimeter to measure the voltage across the resistor.
+2. Verwenden Sie das Multimeter, um die Spannung über dem Widerstand zu messen.
 
     .. note::
         
-        Measuring a component's voltage in a circuit means checking the voltage across it. Essentially, voltage represents the energy difference between two points. So, when you measure a component's voltage, you're gauging the energy difference from one side to the other.
+        Das Messen der Spannung an einer Komponente in einem Stromkreis bedeutet, die Spannung über dieser Komponente zu prüfen. Im Wesentlichen stellt die Spannung den Energiedifferenz zwischen zwei Punkten dar. Wenn Sie die Spannung an einer Komponente messen, messen Sie die Energiedifferenz von einer Seite zur anderen.
 
 .. image:: img/5_serial_circuit_voltage_resistor.png
     :width: 600
     :align: center
 
-3. Record the voltage across the resistor, voltage unit: Volts (V).
+3. Notieren Sie die Spannung über dem Widerstand, Spannungseinheit: Volt (V).
 
 .. note::
 
-    * Mine was 1.13V, you should fill in according to your measurement.
+    * Meine betrug 1,13V, tragen Sie Ihre Messung entsprechend ein.
 
-    * Due to wiring issues and your hand's instability, you may see the voltage fluctuate. You need to keep your hand steady, then observe several times to get a fairly stable voltage value.
+    * Aufgrund von Verdrahtungsproblemen und der Instabilität Ihrer Hand kann die Spannung schwanken. Halten Sie Ihre Hand ruhig und beobachten Sie mehrmals, um einen stabilen Spannungswert zu erhalten.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+   * - Schaltung
+     - Widerstandsspannung
+     - LED1 Spannung
+     - LED2 Spannung
+     - Gesamtspannung 
    * - 2 LEDs
-     - *≈1.13 volts*
+     - *≈1.13 Volt*
      - 
      - 
      - 
 
-4. Now, measure the voltage across LED 1 in the circuit.
+4. Messen Sie nun die Spannung über der LED 1 in der Schaltung.
 
 .. image:: img/5_serial_circuit_voltage_led1.png
     :width: 600
     :align: center
 
-5. Record the voltage across LED 1 in the table.
+5. Notieren Sie die Spannung über der LED 1 in der Tabelle.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+   * - Schaltung
+     - Widerstandsspannung
+     - LED1 Spannung
+     - LED2 Spannung
+     - Gesamtspannung 
    * - 2 LEDs
-     - *≈1.13 volts*
-     - *≈1.92 volts*
+     - *≈1.13 Volt*
+     - *≈1.92 Volt*
      - 
      - 
 
-6. Measure the voltage across LED 2 in the circuit.
+6. Messen Sie die Spannung über der LED 2 in der Schaltung.
 
 .. image:: img/5_serial_circuit_voltage_led2.png
     :width: 600
     :align: center
 
-7. Record the voltage across LED 2 in the table.
+7. Notieren Sie die Spannung über der LED 2 in der Tabelle.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+   * - Schaltung
+     - Widerstandsspannung
+     - LED1 Spannung
+     - LED2 Spannung
+     - Gesamtspannung 
    * - 2 LEDs
-     - *≈1.13 volts*
-     - *≈1.92 volts*
-     - *≈1.92 volts*
+     - *≈1.13 Volt*
+     - *≈1.92 Volt*
+     - *≈1.92 Volt*
      - 
 
-8. Now measure the total voltage in the circuit.
+8. Messen Sie nun die Gesamtspannung in der Schaltung.
 
 .. image:: img/5_serial_circuit_voltage.png
     :width: 600
     :align: center
 
-9. Fill in the measured voltage into the Total Voltage column of the table.
+9. Tragen Sie die gemessene Spannung in die Spalte Gesamtspannung der Tabelle ein.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+   * - Schaltung
+     - Widerstandsspannung
+     - LED1 Spannung
+     - LED2 Spannung
+     - Gesamtspannung 
    * - 2 LEDs
-     - *≈1.13 volts*
-     - *≈1.92 volts*
-     - *≈1.92 volts*
-     - *≈4.97 volts*
+     - *≈1.13 Volt*
+     - *≈1.92 Volt*
+     - *≈1.92 Volt*
+     - *≈4.97 Volt*
 
 
-Through our measurements, you will discover:
+Durch unsere Messungen werden Sie Folgendes feststellen:
 
 .. code-block::
 
-  4.97 volts ≈ 1.13 volts + 1.92 volts + 1.92 volts
+  4,97 Volt ≈ 1,13 Volt + 1,92 Volt + 1,92 Volt
 
-  Total Voltage = Resistor Voltage + LED 1 Voltage + LED 2 Voltage
+  Gesamtspannung = Widerstandsspannung + LED 1 Spannung + LED 2 Spannung
 
-You can also calculate whether your measurement results conform to the above equation.
+Sie können auch berechnen, ob Ihre Messergebnisse dieser Gleichung entsprechen.
 
 
 .. note::
     
-    Due to wiring stability, or minor manufacturing differences in the LEDs and resistor, the sum of the resistor voltage and the two LEDs' voltages might not equal the total voltage you measured. This is also okay, as long as it's within a reasonable range.
+    Aufgrund der Stabilität der Verdrahtung oder geringfügiger Fertigungsunterschiede bei den LEDs und dem Widerstand muss die Summe der Spannung am Widerstand und den beiden LEDs möglicherweise nicht genau der gemessenen Gesamtspannung entsprechen. Dies ist auch in Ordnung, solange es sich innerhalb eines vernünftigen Bereichs bewegt.
 
 
-This is a characteristic of a series circuit, where the total voltage across the circuit is the sum of the voltages across each component.
+Dies ist ein Merkmal einer Reihenschaltung, bei der die Gesamtspannung über den Stromkreis die Summe der Spannungen über jede Komponente darstellt.
 
-**Measuring Current**
+**Strom messen**
 
-Having understood the voltage characteristics of series circuits, let's now explore the current within the circuit using a multimeter.
+Nachdem wir die Spannungseigenschaften von Reihenschaltungen verstanden haben, wollen wir nun den Stromfluss in der Schaltung mithilfe eines Multimeters untersuchen.
 
-
-1. Set the multimeter to the 20 milliamps position. The current won't exceed 20mA, so this setting is chosen. If unsure, it's recommended to start with the 200mA setting.
+1. Stellen Sie das Multimeter auf die 20 Milliampere Position ein. Der Strom wird 20 mA nicht überschreiten, daher wurde diese Einstellung gewählt. Wenn Sie unsicher sind, beginnen Sie mit der 200-mA-Einstellung.
 
 .. image:: img/multimeter_20a.png
   :width: 300
   :align: center
 
-2. For current measurement, the multimeter must be integrated into the circuit's flow path. Keep the LED's anode in hole 1F and shift its cathode (the shorter leg) from hole 1E to hole 3E.
+2. Um den Strom zu messen, muss das Multimeter in den Stromkreis integriert werden. Lassen Sie die Anode der LED in Loch 1F und verschieben Sie die Kathode (das kürzere Bein) von Loch 1E zu Loch 3E.
 
 .. image:: img/5_serial_circuit_led1_current.png
     :width: 600
     :align: center
 
-3. Measure the current across LED 1 in the circuit.
+3. Messen Sie den Strom über der LED 1 in der Schaltung.
 
 .. image:: img/5_serial_circuit_led1_current1.png
     :width: 600
     :align: center
 
-4. Record the measured current in the table.
+4. Notieren Sie den gemessenen Strom in der Tabelle.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
+   * - Schaltung
+     - LED1 Strom
+     - LED2 Strom
    * - 2 LEDs
-     - *≈4.43 milliamps*
+     - *≈4,43 Milliampere*
      - 
 
-5. Move the first LED's cathode back to its original position and shift the second LED's cathode (the shorter leg) from hole 1J to hole 2J.
+5. Setzen Sie die Kathode der ersten LED wieder in ihre ursprüngliche Position und verschieben Sie die Kathode der zweiten LED (das kürzere Bein) von Loch 1J zu Loch 2J.
 
 .. image:: img/5_serial_circuit_led2_current.png
     :width: 600
     :align: center
 
-6. Measure the current across LED 2 in the circuit.
+6. Messen Sie den Strom über der LED 2 in der Schaltung.
 
 .. image:: img/5_serial_circuit_led2_current1.png
     :width: 600
     :align: center
 
-7. Record the measured current in the table.
+7. Notieren Sie den gemessenen Strom in der Tabelle.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
+   * - Schaltung
+     - LED1 Strom
+     - LED2 Strom
    * - 2 LEDs
-     - *≈4.43 milliamps*
-     - *≈4.43 milliamps*
+     - *≈4,43 Milliampere*
+     - *≈4,43 Milliampere*
 
-Our measurements have illustrated a fundamental principle of series circuits: the current that flows through each component is identical. This consistent flow underscores the interconnectedness of components in series, where the interruption of current in one part affects the entire circuit.
+Unsere Messungen haben ein grundlegendes Prinzip von Reihenschaltungen verdeutlicht: Der Strom, der durch jede Komponente fließt, ist identisch. Dieser gleichmäßige Fluss unterstreicht die Verbundenheit der Komponenten in einer Reihenschaltung, wobei die Unterbrechung des Stroms in einem Teil die gesamte Schaltung beeinträchtigt.
 
-The exploration of voltage, current, and resistance not only enriches our understanding of series circuits but also lays the groundwork for more complex electrical engineering concepts. It's through these hands-on experiments that we bridge the gap between theory and practical application, making the learning process both engaging and informative.
+Die Untersuchung von Spannung, Strom und Widerstand bereichert nicht nur unser Verständnis von Reihenschaltungen, sondern legt auch den Grundstein für komplexere Konzepte der Elektrotechnik. Durch diese praktischen Experimente überbrücken wir die Kluft zwischen Theorie und praktischer Anwendung und machen den Lernprozess sowohl ansprechend als auch informativ.
 
+**Frage**
 
-**Question**
-
-If another LED is added to this circuit, resulting in three LEDs, how does the brightness of the LEDs change? why? How do the voltages across the three LEDs change? 
-
+Wenn eine weitere LED zu dieser Schaltung hinzugefügt wird, sodass drei LEDs vorhanden sind, wie ändert sich die Helligkeit der LEDs? Warum? Wie verändern sich die Spannungen über die drei LEDs?
 
 
-Diving into Parallel Circuits
+
+Eintauchen in Parallelschaltungen
 ---------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 * 1 * Arduino Uno R3
-* 3 * Red LEDs
-* 3 * 220Ω Resistors
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+* 3 * Rote LEDs
+* 3 * 220Ω Widerstände
+* Mehrere Jumperkabel
+* 1 * USB-Kabel
+* 1 * Steckbrett
+* 1 * Multimeter mit Messleitungen
 
-**Building the Circuit**
+**Die Schaltung bauen**
 
 .. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
   
-1. Connect a 220Ω resistor to the breadboard. One end should be in the negative terminal, and the other end should be in hole 1B.
+1. Schließen Sie einen 220Ω Widerstand an das Steckbrett an. Ein Ende sollte im negativen Anschluss sein, das andere Ende in Loch 1B.
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-2. Add a red LED to the breadboard. The LED's anode (long leg) should be in hole 1F. The cathode (short leg) should be in hole 1E.
+2. Fügen Sie eine rote LED zum Steckbrett hinzu. Die Anode der LED (langes Bein) sollte in Loch 1F sein. Die Kathode (kurzes Bein) sollte in Loch 1E sein.
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-3. Use a short jumper wire to connect the LED and the power source. One end of the jumper wire should be in hole 1J. The other end should be in the positive terminal.
+3. Verwenden Sie ein kurzes Jumperkabel, um die LED und die Stromquelle zu verbinden. Ein Ende des Jumperkabels sollte in Loch 1J sein, das andere Ende im positiven Anschluss.
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
-4. Connect the long jumper wire connected to the breadboard's positive terminal to the 5V pin on the Arduino Uno R3. The LED should turn on and stay on. The 5V pin provides a constant 5 volts DC to the circuit. This is different from pin 13, which can be programmed via the Arduino IDE software to turn on and off.
+4. Verbinden Sie das lange Jumperkabel, das mit dem positiven Anschluss des Steckbretts verbunden ist, mit dem 5V-Pin auf dem Arduino Uno R3. Die LED sollte sich einschalten und anbleiben. Der 5V-Pin liefert eine konstante Gleichspannung von 5 Volt an die Schaltung. Dies unterscheidet sich vom Pin 13, der über die Arduino IDE-Software programmiert werden kann, um ein- und auszuschalten.
 
 .. image:: img/5_parallel_circuit_5v.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
+5. Verbinden Sie den negativen Anschluss des Steckbretts mit einem der Erdungspins auf dem Arduino Uno R3. Die Erdungspins sind mit "GND" gekennzeichnet.
 
 .. image:: img/5_parallel_circuit_gnd.png
     :width: 600
     :align: center
 
-6. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
+6. Nehmen Sie einen weiteren 220Ω Widerstand, verbinden Sie ein Ende mit dem negativen Anschluss und das andere Ende mit Loch 6B.
 
 .. image:: img/5_parallel_circuit_resistor.png
     :width: 600
     :align: center
 
-7. Take another red LED. The LED's anode (long leg) should be in hole 6F. The cathode (short leg) should be in hole 6E.
+7. Nehmen Sie eine weitere rote LED. Die Anode der LED (langes Bein) sollte in Loch 6F sein. Die Kathode (kurzes Bein) sollte in Loch 6E sein.
 
 .. image:: img/5_parallel_circuit_led.png
     :width: 600
     :align: center
 
-8. Finally, place one end of a short jumper wire in hole 6J and the other end in the positive terminal. This completes the parallel circuit.
+8. Platzieren Sie schließlich ein Ende eines kurzen Jumperkabels in Loch 6J und das andere Ende im positiven Anschluss. Damit ist die Parallelschaltung vollständig.
 
 .. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
 
+Nun hat diese Schaltung zwei LEDs in einer Parallelschaltung. Es gibt zwei Wege, durch die der Strom fließen kann:
 
-Now, this circuit has two LEDs in a parallel configuration. There are two paths for current to flow through:
-
-* In the first path: current enters the first LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* In the second path: current enters the second LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* At the negative side, the two paths converge again and then flow through the black power wire to reach the ground pin on the Arduino Uno R3.
+* Im ersten Pfad: Der Strom tritt durch das Jumperkabel in die erste LED ein, fließt durch den Strombegrenzungswiderstand und dann zur negativen Seite des Steckbretts.
+* Im zweiten Pfad: Der Strom tritt durch das Jumperkabel in die zweite LED ein, fließt durch den Strombegrenzungswiderstand und dann zur negativen Seite des Steckbretts.
+* Auf der negativen Seite konvergieren die beiden Wege wieder und fließen dann durch das schwarze Stromkabel zum Erdungspin auf dem Arduino Uno R3.
 
 
-**Question**
+**Frage**
 
-In this parallel circuit, what happens if one LED is removed? Why does this occur? 
+Was passiert in dieser Parallelschaltung, wenn eine LED entfernt wird? Warum tritt dieses Phänomen auf?
 
 .. image:: img/5_parallel_circuit_remove.png
     :width: 600
     :align: center
 
 
-**Voltage Measurement Steps**
+**Schritte zur Spannungsmessung**
 
-1. Adjust the multimeter to the DC 20 volts mode.
+1. Stellen Sie das Multimeter auf den Modus 20 Volt DC ein.
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Remember, in a parallel circuit, each branch gets the entire voltage from the power source. So, each branch in your setup should show around 5 volts. Start by measuring the voltage along the first path.
+2. Denken Sie daran, dass in einer Parallelschaltung jeder Zweig die gesamte Spannung von der Stromquelle erhält. In Ihrem Aufbau sollte jeder Zweig etwa 5 Volt anzeigen. Beginnen Sie damit, die Spannung entlang des ersten Pfades zu messen.
 
 .. image:: img/5_parallel_circuit_voltage1.png
     :width: 600
@@ -421,14 +419,14 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Path1 Voltage
-     - Path2 Voltage
+   * - Schaltung
+     - Pfad1 Spannung
+     - Pfad2 Spannung
    * - 2 LEDs
-     - *≈5.00 volts*
+     - *≈5,00 Volt*
      - 
 
-3. Next, check the voltage drop across the second path. Expect it to be near 5 volts as well.
+3. Überprüfen Sie als Nächstes den Spannungsabfall entlang des zweiten Pfades. Auch hier sollten es etwa 5 Volt sein.
 
 .. image:: img/5_parallel_circuit_voltage2.png
     :width: 600
@@ -438,116 +436,116 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Path1 Voltage
-     - Path2 Voltage
+   * - Schaltung
+     - Pfad1 Spannung
+     - Pfad2 Spannung
    * - 2 LEDs
-     - *≈5.00 volts*
-     - *≈5.00 volts*
+     - *≈5,00 Volt*
+     - *≈5,00 Volt*
 
-Our voltage measurement exercise in a parallel circuit clearly demonstrates that each branch receives an equal share of the total voltage from the source, approximately 5 volts in this case. This consistency across different paths confirms the fundamental nature of parallel circuits, where voltage remains constant across each branch, despite potential minor variations due to manufacturing differences in components like LEDs and resistors.
+Unser Spannungsmessungs-Experiment in einer Parallelschaltung zeigt klar, dass jeder Zweig einen gleichen Anteil der Gesamtspannung von der Quelle erhält, in diesem Fall etwa 5 Volt. Diese Konstanz in den verschiedenen Pfaden bestätigt das grundlegende Prinzip von Parallelschaltungen, bei denen die Spannung über jeden Zweig gleich bleibt, trotz möglicher geringfügiger Abweichungen aufgrund von Fertigungstoleranzen bei Komponenten wie LEDs und Widerständen.
 
 
-**Current Measurement Steps**
+**Schritte zur Strommessung**
 
-From our previous measurements, we learned that each branch in a parallel circuit receives the full voltage from the source. But what about the current? Let's measure it now.
+Aus unseren früheren Messungen haben wir gelernt, dass jeder Zweig in einer Parallelschaltung die volle Spannung von der Quelle erhält. Aber wie sieht es mit dem Strom aus? Messen wir ihn jetzt.
 
-1. Set the multimeter to the 200 milliamps position.
+1. Stellen Sie das Multimeter auf die Position 200 Milliampere ein.
 
 .. image:: img/multimeter_200ma.png
     :width: 300
     :align: center
 
-2. For current measurement, the multimeter must be integrated into the circuit's flow path. Leave one end of the resistor on the breadboard's negative terminal and move the other end to hole 3B.
+2. Für die Strommessung muss das Multimeter in den Strompfad der Schaltung integriert werden. Lassen Sie ein Ende des Widerstands am negativen Anschluss des Steckbretts und verschieben Sie das andere Ende zu Loch 3B.
 
 .. note::
     
-    This step will cause LED 1 to turn off while LED 2 remains lit. This demonstrates a characteristic of parallel circuits: the disconnection of one path does not affect the other paths.
+    Dieser Schritt führt dazu, dass LED 1 erlischt, während LED 2 weiterhin leuchtet. Dies zeigt eine Eigenschaft von Parallelschaltungen: Die Unterbrechung eines Pfades beeinflusst die anderen Pfade nicht.
 
 .. image:: img/5_parallel_circuit_led1_current.png
     :width: 600
     :align: center
 
-3. Place the multimeter's red and black leads between the LED and the resistor, and you will see LED1 light up again.
+3. Platzieren Sie die roten und schwarzen Messleitungen des Multimeters zwischen der LED und dem Widerstand, und LED 1 wird wieder aufleuchten.
 
 .. image:: img/5_parallel_circuit_led1_current1.png
     :width: 600
     :align: center
 
-4. Record the measured current in the table.
+4. Notieren Sie den gemessenen Strom in der Tabelle.
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
+   * - Schaltung
+     - LED1 Strom
+     - LED2 Strom
+     - Gesamtstrom
    * - 2 LEDs
-     - *≈12.6 milliamps*
+     - *≈12,6 Milliampere*
      -
      - 
 
-5. Return the first resistor to its original position, and keep one end of the second resistor at the breadboard's negative terminal while moving the other end to hole 9B.
+5. Setzen Sie den ersten Widerstand wieder in seine ursprüngliche Position und lassen Sie ein Ende des zweiten Widerstands am negativen Anschluss des Steckbretts, während Sie das andere Ende zu Loch 9B verschieben.
 
 .. image:: img/5_parallel_circuit_led2_current.png
     :width: 600
     :align: center
 
-6. Now, measure the current across LED 2 in the circuit.
+6. Messen Sie nun den Strom über LED 2 in der Schaltung.
 
 .. image:: img/5_parallel_circuit_led2_current1.png
     :width: 600
     :align: center
 
-7. Record the measured current in the table.
+7. Notieren Sie den gemessenen Strom in der Tabelle.
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
+   * - Schaltung
+     - LED1 Strom
+     - LED2 Strom
+     - Gesamtstrom
    * - 2 LEDs
-     - *≈12.6 milliamps*
-     - *≈12.6 milliamps*
+     - *≈12,6 Milliampere*
+     - *≈12,6 Milliampere*
      - 
 
-8. Having measured the current in both paths, what is the total current when the paths converge? Now, move the jumper wire from the breadboard's negative terminal to hole 25C.
+8. Nachdem Sie den Strom in beiden Pfaden gemessen haben, wie hoch ist der Gesamtstrom, wenn die Pfade zusammengeführt werden? Bewegen Sie jetzt das Jumperkabel vom negativen Anschluss des Steckbretts zu Loch 25C.
 
 .. image:: img/5_parallel_circuit_total_current.png
     :width: 600
     :align: center
 
-9. Measure the total current of the circuit now.
+9. Messen Sie nun den Gesamtstrom der Schaltung.
 
 .. image:: img/5_parallel_circuit_total_current1.png
     :width: 600
     :align: center
 
-10. Fill in the measured results in the table.
+10. Tragen Sie die gemessenen Ergebnisse in die Tabelle ein.
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
+   * - Schaltung
+     - LED1 Strom
+     - LED2 Strom
+     - Gesamtstrom
    * - 2 LEDs
-     - *≈12.6 milliamps*
-     - *≈12.6 milliamps*
-     - *≈25.3 milliamps*
+     - *≈12,6 Milliampere*
+     - *≈12,6 Milliampere*
+     - *≈25,3 Milliampere*
 
-Our exploration into parallel circuits has illuminated a key aspect: the total current mirrors the sum of individual branch currents, adhering to the fundamental principles of electrical circuits. This hands-on activity not only strengthens our understanding of parallel circuitry but also highlights its distinct behavior compared to series circuits, offering a clear picture of how components in parallel share the electrical load. As we continue our journey through the world of electronics, these insights lay the groundwork for deeper investigations into circuit design and functionality.
+Unsere Untersuchung der Parallelschaltungen hat einen wichtigen Aspekt hervorgehoben: Der Gesamtstrom entspricht der Summe der Ströme der einzelnen Zweige und entspricht den grundlegenden Prinzipien elektrischer Schaltungen. Diese praktische Übung verstärkt nicht nur unser Verständnis von Parallelschaltungen, sondern zeigt auch deren spezifisches Verhalten im Vergleich zu Reihenschaltungen auf und vermittelt ein klares Bild davon, wie Komponenten in parallelen Schaltungen die elektrische Last teilen. Diese Erkenntnisse bilden die Grundlage für weitergehende Untersuchungen zur Schaltungsentwicklung und -funktionalität.
 
-**Question**:
+**Frage**:
 
-1. If another LED is added to this circuit, what happens to the brightness of the LEDs? Why? Record your answer in your handbook.
+1. Wenn eine weitere LED zu dieser Schaltung hinzugefügt wird, wie verändert sich die Helligkeit der LEDs? Warum? Notieren Sie Ihre Antwort in Ihrem Handbuch.
 
 .. image:: img/5_parallel_circuit_3led.png
     :width: 600
@@ -555,53 +553,51 @@ Our exploration into parallel circuits has illuminated a key aspect: the total c
 
 
 
-Summary of Series and Parallel Circuits
------------------------------------------------------
+Zusammenfassung von Reihen- und Parallelschaltungen
+----------------------------------------------------
 
-**Series Circuits**
+**Reihenschaltungen**
 
-* **Advantages**: Since the current throughout the circuit is the same, it's easy to control the current. If one component fails, the current will stop. Its wiring is simpler, reducing the cost of building large circuits.
-* **Disadvantages**: If one part of the circuit is damaged, the whole circuit will stop working. Since the current in the circuit is steady, you can't use components that require different currents.
+* **Vorteile**: Da der Strom im gesamten Stromkreis gleich ist, lässt sich der Strom leicht kontrollieren. Wenn eine Komponente ausfällt, stoppt der Stromfluss. Die Verdrahtung ist einfacher und reduziert die Kosten für den Bau großer Schaltungen.
+* **Nachteile**: Wenn ein Teil des Stromkreises beschädigt ist, funktioniert der gesamte Stromkreis nicht mehr. Da der Strom im Stromkreis konstant ist, können keine Komponenten verwendet werden, die unterschiedliche Ströme benötigen.
 
-**Parallel Circuits**
+**Parallelschaltungen**
 
-* **Advantages**: If any path in the circuit is disconnected, it does not affect the other branches in the circuit. A device in one branch can operate independently of other devices. More branches can be easily added to the circuit at any time.
-* **Disadvantages**: As more devices are added to the circuit, more current is drawn. This can become dangerous as the circuit heats up, potentially leading to fire. Fuses or circuit breakers are used to disconnect the circuit when the current is too high to avoid overheating. Its wiring is more complex, increasing the cost of making large circuits.
+* **Vorteile**: Wenn ein Pfad im Stromkreis unterbrochen ist, beeinflusst dies nicht die anderen Zweige des Stromkreises. Ein Gerät in einem Zweig kann unabhängig von anderen Geräten funktionieren. Weitere Zweige können jederzeit problemlos zum Stromkreis hinzugefügt werden.
+* **Nachteile**: Mit zunehmender Anzahl von Geräten im Stromkreis wird mehr Strom benötigt. Dies kann gefährlich werden, da der Stromkreis sich erhitzt und möglicherweise einen Brand auslöst. Sicherungen oder Leistungsschalter werden verwendet, um den Stromkreis bei zu hohem Strom abzuschalten, um eine Überhitzung zu vermeiden. Die Verdrahtung ist komplexer und erhöht die Kosten für den Bau großer Schaltungen.
 
-**Rules of Series and Parallel Circuits**
+**Regeln für Reihen- und Parallelschaltungen**
 
-Here are the rules for series and parallel circuits, which you can continue to verify with a multimeter:
+Hier sind die Regeln für Reihen- und Parallelschaltungen, die Sie mit einem Multimeter weiter überprüfen können:
 
 .. .. list-table::
 ..    :widths: 10 25 25 25
 ..    :header-rows: 1
 
-..    * - Circuit
-..      - Voltage
-..      - Current
-..      - Resistance  
-..    * - Series
-..      - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
-..      - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
-..      - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
+..    * - Schaltung
+..      - Spannung
+..      - Strom
+..      - Widerstand  
+..    * - Reihen
+..      - Die Gesamtspannung des Stromkreises entspricht der Summe der Spannungen, die von jeder Komponente verbraucht wird (Gesamtspannung = V1 + V2 + V3 + ...).
+..      - Der Strom an jedem Punkt des Stromkreises ist gleich (Gesamtstrom = I1 = I2 = I3 = ...).
+..      - Der Gesamtwiderstand eines Stromkreises entspricht der Summe der Widerstände jeder Komponente (Gesamtwiderstand = R1 + R2 + R3 + ...).
 ..    * - Parallel
-..      - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
-..      - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
-..      - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
+..      - Die Spannung, die von jeder Last verwendet wird, entspricht der Gesamtspannung, die vom Stromkreis verwendet wird (Gesamtspannung = V1 = V2 = V3 = ...)
+..      - Der Gesamtstrom des Stromkreises entspricht der Summe der Ströme, die von jeder Komponente verwendet werden (Gesamtstrom = I1 + I2 + I3 + ...).
+..      - Der Kehrwert des Gesamtwiderstands entspricht der Summe der Kehrwerte der Widerstände jeder Komponente (1/Gesamtwiderstand = 1/R1 + 1/R2 + 1/R3 + ...)   
 
 
-**Series**
+**Reihenschaltung**
 
-  - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
-  - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
-  - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
+  - Die Gesamtspannung des Stromkreises entspricht der Summe der Spannungen, die von jeder Komponente verbraucht wird (Gesamtspannung = V1 + V2 + V3 + ...).
+  - Der Strom an jedem Punkt des Stromkreises ist gleich (Gesamtstrom = I1 = I2 = I3 = ...).
+  - Der Gesamtwiderstand eines Stromkreises entspricht der Summe der Widerstände jeder Komponente (Gesamtwiderstand = R1 + R2 + R3 + ...).
 
-**Parallel**
+**Parallelschaltung**
 
-  - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
-  - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
-  - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
-
-
+  - Die Spannung, die von jeder Last verwendet wird, entspricht der Gesamtspannung, die vom Stromkreis verwendet wird (Gesamtspannung = V1 = V2 = V3 = ...)
+  - Der Gesamtstrom des Stromkreises entspricht der Summe der Ströme, die von jeder Komponente verwendet werden (Gesamtstrom = I1 + I2 + I3 + ...).
+  - Der Kehrwert des Gesamtwiderstands entspricht der Summe der Kehrwerte der Widerstände jeder Komponente (1/Gesamtwiderstand = 1/R1 + 1/R2 + 1/R3 + ...)   
 
 

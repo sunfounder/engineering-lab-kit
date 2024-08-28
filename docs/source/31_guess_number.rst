@@ -1,22 +1,22 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit gleichgesinnten Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-31. Guess Number
+31. Zahlenraten
 ==========================
-Welcome to today's lesson! This interactive lesson combines fun with learning as we explore the integration of an IR Remote Controller and LCD display to create a game that challenges you to guess a hidden number.
+Willkommen zur heutigen Lektion! In dieser interaktiven Lektion kombinieren wir Spaß mit Lernen, indem wir die Integration eines IR-Fernbedieners und eines LCD-Displays erforschen, um ein Spiel zu erstellen, das Sie herausfordert, eine versteckte Zahl zu erraten.
 
-Guessing Numbers is a fun party game where you and your friends take turns inputting a number (0~99). The range will be smaller with the inputting of the number till a player answers the riddle correctly. Then the player is defeated and punished. For example, if the lucky number is 51 which the players cannot see, and the player 1 inputs 50, the prompt of number range changes to 50~99; if the player 2 inputs 70, the range of number can be 50~70; if the player 3 inputs 51, he or she is the unlucky one. Here, we use IR Remote Controller to input numbers and use LCD to output outcomes.
+Zahlenraten ist ein unterhaltsames Partyspiel, bei dem Sie und Ihre Freunde abwechselnd eine Zahl (0~99) eingeben. Der Bereich wird mit jeder Eingabe kleiner, bis ein Spieler das Rätsel richtig beantwortet. Dann ist der Spieler besiegt und wird bestraft. Zum Beispiel, wenn die Glückszahl 51 ist, die Spieler jedoch nicht sehen können, und Spieler 1 die Zahl 50 eingibt, ändert sich der Bereich auf 50~99; gibt Spieler 2 70 ein, kann der Bereich 50~70 sein; wenn Spieler 3 51 eingibt, ist er oder sie der Unglückliche. Hier verwenden wir einen IR-Fernbediener, um Zahlen einzugeben, und ein LCD, um die Ergebnisse anzuzeigen.
 
 .. raw:: html
 
@@ -25,119 +25,119 @@ Guessing Numbers is a fun party game where you and your friends take turns input
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will able to:
+In dieser Lektion werden Sie in der Lage sein:
 
-* Learn how to generate random numbers that serve as the secret target in the game.
-* Implement user inputs using an infrared remote to guess numbers.
-* Use an LCD to give immediate feedback about guesses, telling if they're too high, too low, or correct.
-* Utilize conditional and loop structures to manage game logic and flow.
+* Lernen, wie man Zufallszahlen generiert, die als geheimes Ziel im Spiel dienen.
+* Benutzereingaben mithilfe einer Infrarotfernbedienung implementieren, um Zahlen zu erraten.
+* Ein LCD verwenden, um sofortiges Feedback zu den Vermutungen zu geben, ob sie zu hoch, zu niedrig oder korrekt sind.
+* Bedingungs- und Schleifenstrukturen nutzen, um die Spiellogik und den Ablauf zu steuern.
 
 
-Building the Circuit
+Aufbau der Schaltung
 --------------------------------
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * I2C CDL1602
-     - 1 * IR Receiver
-     - 1 * Remote Control
+     - 1 * I2C LCD1602
+     - 1 * IR-Empfänger
+     - 1 * Fernbedienung
    * - |list_uno_r3| 
      - |list_i2c_lcd1602| 
      - |list_receiver| 
      - |list_remote| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
+     - Jumper-Kabel
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt Aufbau**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folgen Sie dem Schaltplan oder den folgenden Schritten, um Ihre Schaltung aufzubauen.
 
 .. image:: img/31_guess_circuit.png
     :width: 700
     :align: center
 
-1. Insert the infrared receiver into the breadboard. The infrared receiver has a front and back side, with the protruding side being the front. The pin order from left to right is OUT, GND, and VCC.
+1. Setzen Sie den Infrarotempfänger in das Steckbrett ein. Der Infrarotempfänger hat eine Vorder- und Rückseite, wobei die hervorstehende Seite die Vorderseite ist. Die Reihenfolge der Pins von links nach rechts ist OUT, GND und VCC.
 
 .. image:: img/31_guess_receiver.png
     :width: 500
     :align: center
 
-2. Connect the OUT pin of the infrared receiver to pin 2 on the Arduino Uno R3, GND to the negative rail of the breadboard, and VCC to the positive rail of the breadboard.
+2. Verbinden Sie den OUT-Pin des Infrarotempfängers mit Pin 2 des Arduino Uno R3, GND mit der Minus-Schiene des Steckbretts und VCC mit der Plus-Schiene des Steckbretts.
 
 .. image:: img/31_guess_receiver_pins.png
     :width: 500
     :align: center
 
-3. Connect the I2C LCD1602 module: GND to the negative rail on the breadboard, VCC to the positive rail on the breadboard, SDA to pin A4, and SCL to pin A5.
+3. Verbinden Sie das I2C LCD1602-Modul: GND mit der Minus-Schiene des Steckbretts, VCC mit der Plus-Schiene des Steckbretts, SDA mit Pin A4 und SCL mit Pin A5.
 
 .. image:: img/31_guess_i2c_lcd1602.png
     :width: 700
     :align: center
 
-4. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails of the breadboard, respectively.
+4. Schließen Sie schließlich die GND- und 5V-Pins des Arduino Uno R3 an die Minus- und Plus-Schienen des Steckbretts an.
 
 .. image:: img/31_guess_circuit.png
     :width: 700
     :align: center
 
-Code Creation
-------------------
-To implement a number guessing game, you need to carefully consider the following aspects:
+Codeerstellung
+-------------------
+Um ein Zahlenratenspiel zu implementieren, müssen Sie die folgenden Aspekte sorgfältig berücksichtigen:
 
-* **Random Number**: Implement a method to generate a random target number.
-* **User Input**: Decide how players will input their guesses (e.g., keypad, IR remote).
-* **Feedback**: Determine how to inform players if their guess is too high, too low, or correct.
-* **Game Limits**: Set boundaries for guesses to structure the game and adjust difficulty.
+* **Zufallszahl**: Implementieren Sie eine Methode zur Generierung einer zufälligen Zielzahl.
+* **Benutzereingabe**: Entscheiden Sie, wie die Spieler ihre Vermutungen eingeben (z.B. Tastatur, IR-Fernbedienung).
+* **Feedback**: Bestimmen Sie, wie Sie die Spieler darüber informieren, ob ihre Vermutung zu hoch, zu niedrig oder korrekt ist.
+* **Spielgrenzen**: Setzen Sie Grenzen für die Vermutungen, um das Spiel zu strukturieren und die Schwierigkeit anzupassen.
 
-Now, let's start writing the code to implement the number guessing game.
+Nun beginnen wir mit dem Schreiben des Codes, um das Zahlenratenspiel zu implementieren.
 
 .. note::
 
-  If you are not familiar with the IR Receiver and I2C LCD1602, you can first learn their basic usage through the following projects:
+  Wenn Sie mit dem IR-Empfänger und dem I2C LCD1602 noch nicht vertraut sind, können Sie deren grundlegende Verwendung in den folgenden Projekten erlernen:
 
   * :ref:`ar_ir_receiver`
   * :ref:`ar_i2c_lcd1602`
 
-  ``LiquidCrystal I2C`` and ``IRremote`` libraries are used here, you can install them from the **Library Manager**.
+  Hier werden die Bibliotheken ``LiquidCrystal I2C`` und ``IRremote`` verwendet, die Sie über den **Bibliotheks-Manager** installieren können.
 
-1. Open the sketch you saved earlier, ``Lesson22_Decode_Key_Value``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson31_Guess_Number``. Click "Save".
+1. Öffnen Sie die zuvor gespeicherte Skizze ``Lesson22_Decode_Key_Value``. Klicken Sie auf "Speichern unter..." im Menü "Datei" und benennen Sie die Datei in ``Lesson31_Guess_Number`` um. Klicken Sie auf "Speichern".
 
 .. code-block:: Arduino
 
-  #include <IRremote.h>  // Include the IRremote library
+  #include <IRremote.h>  // IRremote-Bibliothek einbinden
 
-  const int receiverPin = 2;  // Define the pin number for the IR Sensor
+  const int receiverPin = 2;  // Definieren Sie die Pinnummer für den IR-Sensor
 
   void setup() {
-    // Start serial communication at a baud rate of 9600
+    // Starten Sie die serielle Kommunikation mit einer Baudrate von 9600
     Serial.begin(9600);
-    // Initialize the IR receiver on the specified pin with LED feedback enabled
+    // Initialisieren Sie den IR-Empfänger am angegebenen Pin mit LED-Rückmeldung aktiviert
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {  // Prüfen, ob der IR-Empfänger ein Signal empfangen hat
       bool result = 0;
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Den lesbaren Befehl ausgeben
         delay(100);
       }
-    IrReceiver.resume();  // Enable receiving of the next value
+    IrReceiver.resume();  // Empfang des nächsten Werts ermöglichen
     }
   }
 
-  // Function to map received IR signals to corresponding keys
+  // Funktion zur Zuordnung der empfangenen IR-Signale zu den entsprechenden Tasten
   String decodeKeyValue(long result) {
     switch (result) {
       case 0x45: return "POWER";
@@ -166,286 +166,285 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-2. Include the necessary libraries for using the LCD and initialize it with the correct I2C address and size.
+2. Binden Sie die notwendigen Bibliotheken für die Verwendung des LCD ein und initialisieren Sie es mit der richtigen I2C-Adresse und -Größe.
 
 .. code-block:: Arduino
   :emphasize-lines: 2,3,5
 
-  #include <IRremote.h>           // Include the IR remote control library
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the LCD library for I2C
+  #include <IRremote.h>           // Einbinden der IR-Fernbedienungs-Bibliothek
+  #include <Wire.h>               // Einbinden der Wire-Bibliothek für I2C-Kommunikation
+  #include <LiquidCrystal_I2C.h>  // Einbinden der LCD-Bibliothek für I2C
 
-  LiquidCrystal_I2C lcd(0x27, 16, 2);  // Set up the LCD (address 0x27, 16 columns, 2 rows)
+  LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initialisieren des LCD (Adresse 0x27, 16 Spalten, 2 Zeilen)
 
-  const int receiverPin = 2;  // IR sensor pin
+  const int receiverPin = 2;  // Pin des IR-Sensors
 
-3. Now, create four variables to store your entered number, the randomly generated target number, the upper limit of the guessing range (99), and the lower limit (0).
+3. Erstellen Sie nun vier Variablen, um die eingegebene Zahl, die zufällig generierte Zielzahl, das obere Limit des Ratebereichs (99) und das untere Limit (0) zu speichern.
 
 .. code-block:: Arduino
   :emphasize-lines: 9-12
 
-  #include <IRremote.h>           // Include the IR remote control library
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the LCD library for I2C
+  #include <IRremote.h>           // Einbinden der IR-Fernbedienungs-Bibliothek
+  #include <Wire.h>               // Einbinden der Wire-Bibliothek für I2C-Kommunikation
+  #include <LiquidCrystal_I2C.h>  // Einbinden der LCD-Bibliothek für I2C
 
-  LiquidCrystal_I2C lcd(0x27, 16, 2);  // Set up the LCD (address 0x27, 16 columns, 2 rows)
+  LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initialisieren des LCD (Adresse 0x27, 16 Spalten, 2 Zeilen)
 
-  const int receiverPin = 2;  // IR sensor pin
+  const int receiverPin = 2;  // Pin des IR-Sensors
 
-  int guessedNumber = 0;  // Number input by the user
-  int targetNumber = 0;   // Randomly generated target number
-  int upper = 99;         // Upper bound of guessing range
-  int lower = 0;          // Lower bound of guessing range
+  int guessedNumber = 0;  // Vom Benutzer eingegebene Zahl
+  int targetNumber = 0;   // Zufällig generierte Zielzahl
+  int upper = 99;         // Oberes Limit des Ratebereichs
+  int lower = 0;          // Unteres Limit des Ratebereichs
 
-4. In the ``setup()`` function, add code to initialize the LCD and generate a new target number.
+4. Fügen Sie im ``setup()``-Abschnitt Code hinzu, um das LCD zu initialisieren und eine neue Zielzahl zu generieren.
 
 .. code-block:: Arduino
   :emphasize-lines: 4-6
 
   void setup() {
-    Serial.begin(9600);                                  // Initialize serial communication at 9600 bps
-    IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);  // Initialize IR receiver with LED feedback
-    lcd.init();                                          // Initialize the LCD
-    lcd.backlight();                                     // Turn on the backlight
-    NewTargetNumber();                                   // Initialize game values
+    Serial.begin(9600);                                  // Initialisieren der seriellen Kommunikation mit 9600 bps
+    IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);  // Initialisieren des IR-Empfängers mit LED-Rückmeldung
+    lcd.init();                                          // Initialisieren des LCD
+    lcd.backlight();                                     // Einschalten der Hintergrundbeleuchtung
+    NewTargetNumber();                                   // Initialisieren der Spielwerte
   }
 
-5. In the ``loop()`` function, first create a boolean variable ``result``, and then check if the pressed key is "power". If it is, call ``NewTargetNumber()`` to generate a new target number.
+5. Erstellen Sie im ``loop()``-Abschnitt zunächst eine boolesche Variable ``result`` und prüfen Sie dann, ob die gedrückte Taste "POWER" ist. Falls ja, rufen Sie die Funktion ``NewTargetNumber()`` auf, um eine neue Zielzahl zu generieren.
 
 .. code-block:: Arduino
   :emphasize-lines: 9, 12-14
 
   void loop() {
-    if (IrReceiver.decode()) {           // Check if an IR message has been received
+    if (IrReceiver.decode()) {           // Überprüfen, ob eine IR-Nachricht empfangen wurde
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Den lesbaren Befehl ausgeben
         delay(100);
       }
 
       bool result = false;
 
-      // Check the key received and act accordingly
+      // Überprüfen der empfangenen Taste und entsprechende Aktion ausführen
       if (key == "POWER") {
-        NewTargetNumber();  // Reset game values
+        NewTargetNumber();  // Zurücksetzen der Spielwerte
       }
-    IrReceiver.resume();  // Enable receiving of the next value
+    IrReceiver.resume();  // Ermöglichen des Empfangs des nächsten Werts
     }
   }
 
-6. If you press a digit between 0 and 9, store the entered number in the variable ``guessedNumber``.
+6. Wenn eine Ziffer zwischen 0 und 9 gedrückt wird, speichern Sie die eingegebene Zahl in der Variablen ``guessedNumber``.
 
-* If the accumulated number is greater than or equal to 10, then call the ``checkGuess()`` function to determine if the guessed number matches the target number. The result (true or false) is stored in the ``result`` variable.
-* If a single digit is entered, directly call the ``displayResult()`` function to display it on the LCD.
-* ``guessedNumber = guessedNumber * 10 + key.toInt();``: This line is used to accumulate the digits typed by the user to form a complete number. For example, if the user presses '3' and then '5', guessedNumber will first be 3, and then it will become 35. ``key.toInt()`` converts the string representation of the number to an integer.
+* Wenn die kumulierte Zahl größer oder gleich 10 ist, rufen Sie die Funktion ``checkGuess()`` auf, um zu überprüfen, ob die geratene Zahl der Zielzahl entspricht. Das Ergebnis (true oder false) wird in der Variable ``result`` gespeichert.
+* Wenn eine einzelne Ziffer eingegeben wird, rufen Sie direkt die Funktion ``displayResult()`` auf, um diese auf dem LCD anzuzeigen.
+* ``guessedNumber = guessedNumber * 10 + key.toInt();``: Diese Zeile dient dazu, die vom Benutzer eingegebenen Ziffern zu einer vollständigen Zahl zu kumulieren. Zum Beispiel wird guessedNumber zuerst 3, wenn der Benutzer '3' drückt, und dann zu 35, wenn er '5' drückt. ``key.toInt()`` konvertiert die String-Darstellung der Zahl in eine Ganzzahl.
 
 .. code-block:: Arduino
   :emphasize-lines: 4-11
 
-  // Check the key received and act accordingly
+  // Überprüfen der empfangenen Taste und entsprechende Aktion ausführen
   if (key == "POWER") {
-    NewTargetNumber();  // Reset game values
+    NewTargetNumber();  // Zurücksetzen der Spielwerte
   } else if (key >= "0" && key <= "9") {
     guessedNumber = guessedNumber * 10;
-    guessedNumber += key.toInt();  // Accumulate digits typed
+    guessedNumber += key.toInt();  // Akkumulierte Eingabe
     if (guessedNumber >= 10) {
-      result = checkGuess();  // Check if guessed number is correct
+      result = checkGuess();  // Überprüfen, ob die geratene Zahl korrekt ist
     }
-    displayResult(result);  // Display input and result on LCD
+    displayResult(result);  // Eingabe und Ergebnis auf dem LCD anzeigen
   }
 
-7. If the "CYCLE" key is pressed, then call the ``checkGuess()`` function to check if the entered guessed number is correct. If it is correct, return ``true``; otherwise, return ``false``, and store the returned value in the variable ``result``. Then, call the ``displayResult()`` function to display information on the LCD.
+7. Wenn die "CYCLE"-Taste gedrückt wird, rufen Sie die Funktion ``checkGuess()`` auf, um zu überprüfen, ob die eingegebene geratene Zahl korrekt ist. Wenn sie korrekt ist, wird ``true`` zurückgegeben; andernfalls wird ``false`` zurückgegeben, und der zurückgegebene Wert in der Variablen ``result`` gespeichert. Anschließend wird die Funktion ``displayResult()`` aufgerufen, um Informationen auf dem LCD anzuzeigen.
 
 .. note::
 
-  In the previous ``else if`` statement, only if the number is greater than 10 will it be compared with the target number. For numbers less than 10, they are just displayed on the LCD.
+  Im vorherigen ``else if``-Statement wird die Zahl nur dann mit der Zielzahl verglichen, wenn sie größer oder gleich 10 ist. Bei Zahlen kleiner als 10 werden sie lediglich auf dem LCD angezeigt.
 
-  Therefore, a "CYCLE" key is added here. When you need to enter a single digit, you can press the "CYCLE" key after entering the digit to compare it with the target number.
-
+  Daher wird hier eine "CYCLE"-Taste hinzugefügt. Wenn Sie eine einzelne Ziffer eingeben möchten, können Sie nach der Eingabe der Ziffer die "CYCLE"-Taste drücken, um sie mit der Zielzahl zu vergleichen.
 
 .. code-block:: Arduino
   :emphasize-lines: 8-11
 
       } else if (key >= "0" && key <= "9") {
         guessedNumber = guessedNumber * 10;
-        guessedNumber += key.toInt();  // Accumulate digits typed
+        guessedNumber += key.toInt();  // Akkumulierte Eingabe
         if (guessedNumber >= 10) {
-          result = checkGuess();  // Check if guessed number is correct
+          result = checkGuess();  // Überprüfen, ob die geratene Zahl korrekt ist
         }
-        displayResult(result);  // Display input and result on LCD
+        displayResult(result);  // Ergebnis auf dem LCD anzeigen
       } else if (key == "CYCLE") {
-        result = checkGuess();  // Check if guessed number is correct
-        displayResult(result);  // Display result on LCD
+        result = checkGuess();  // Überprüfen, ob die geratene Zahl korrekt ist
+        displayResult(result);  // Ergebnis auf dem LCD anzeigen
       }
-      IrReceiver.resume();  // Enable receiving of the next value
+      IrReceiver.resume();  // Ermöglichen des Empfangs des nächsten Werts
     }
   }
 
-8. The ``NewTargetNumber()`` function initializes the game by generating a new target number for the user to guess. 
+8. Die Funktion ``NewTargetNumber()`` initialisiert das Spiel, indem sie eine neue Zielzahl generiert, die der Benutzer erraten soll. 
 
-* It sets the ``upper`` and ``lower`` limits of the guessing range to their initial values, clears the LCD screen, and displays a welcome message along with instructions. 
-* It also resets the guessed number and prints the target number to the serial monitor for debugging purposes.
+* Sie setzt die Grenzen des Ratebereichs auf ihre Anfangswerte zurück, löscht den LCD-Bildschirm und zeigt eine Willkommensnachricht sowie Anweisungen an.
+* Sie setzt auch die geratene Zahl zurück und druckt die Zielzahl zur Fehlerbehebung auf den seriellen Monitor.
 
 .. code-block:: Arduino
 
   void NewTargetNumber() {
-    randomSeed(analogRead(A0));    // Seed the random number generator
-    targetNumber = random(99);     // Generate a new target number
-    upper = 99;                    // Reset upper limit
-    lower = 0;                     // Reset lower limit
-    lcd.clear();                   // Clear the LCD
-    lcd.print("    Welcome!");     // Welcome message
-    lcd.setCursor(0, 1);           // Move cursor to the second line
-    lcd.print("  Guess Number!");  // Instruction message
-    guessedNumber = 0;             // Reset guessed number
+    randomSeed(analogRead(A0));    // Initialisieren des Zufallszahlengenerators
+    targetNumber = random(99);     // Neue Zielzahl generieren
+    upper = 99;                    // Oberes Limit zurücksetzen
+    lower = 0;                     // Unteres Limit zurücksetzen
+    lcd.clear();                   // LCD löschen
+    lcd.print("    Welcome!");  // Willkommensnachricht
+    lcd.setCursor(0, 1);           // Cursor auf die zweite Zeile setzen
+    lcd.print(" Guess Number!");   // Anweisungsnachricht
+    guessedNumber = 0;             // Geratene Zahl zurücksetzen
     Serial.print("point is ");
-    Serial.println(targetNumber);  // Print the target number in serial monitor for debugging
+    Serial.println(targetNumber);  // Zielzahl im seriellen Monitor zur Fehlerbehebung ausgeben
   }
 
-9. The ``checkGuess()`` function checks the user's guessed number against the target number.
+9. Die Funktion ``checkGuess()`` überprüft die vom Benutzer eingegebene Zahl im Vergleich zur Zielzahl.
 
-* If the guess is higher than the target, it updates the upper limit. 
-* If the guess is lower, it updates the lower limit. 
-* If the guess is correct, it resets the guessed number and returns ``true``. 
-* Otherwise, it resets the guessed number and returns false.
+* Wenn die Eingabe höher als die Zielzahl ist, wird das obere Limit aktualisiert.
+* Wenn die Eingabe niedriger ist, wird das untere Limit aktualisiert.
+* Wenn die Eingabe korrekt ist, wird die geratene Zahl zurückgesetzt und ``true`` zurückgegeben.
+* Andernfalls wird die geratene Zahl zurückgesetzt und ``false`` zurückgegeben.
 
 .. code-block:: Arduino
 
   bool checkGuess() {
     if (guessedNumber > targetNumber) {
-      if (guessedNumber < upper) upper = guessedNumber;  // Update upper limit
+      if (guessedNumber < upper) upper = guessedNumber;  // Oberes Limit aktualisieren
     } else if (guessedNumber < targetNumber) {
-      if (guessedNumber > lower) lower = guessedNumber;  // Update lower limit
+      if (guessedNumber > lower) lower = guessedNumber;  // Unteres Limit aktualisieren
     } else if (guessedNumber == targetNumber) {
       guessedNumber = 0;
-      return true;  // Correct guess
+      return true;  // Richtige Zahl
     }
     guessedNumber = 0;
-    return false;  // Incorrect guess
+    return false;  // Falsche Zahl
   }
 
-10. The ``displayResult()`` function updates the LCD display based on whether the user's guess is correct or not. 
+10. Die Funktion ``displayResult()`` aktualisiert das LCD-Display basierend darauf, ob die Eingabe des Benutzers korrekt ist oder nicht.
 
-* If the guess is correct, it shows a success message, pauses for 5 seconds, and then generates a new target number to reset the game. 
-* If the guess is incorrect, it shows the current guessed number and the updated guessing range.
+* Wenn die Zahl korrekt ist, zeigt das LCD eine Erfolgsmeldung an, pausiert für 5 Sekunden und generiert dann eine neue Zielzahl, um das Spiel zurückzusetzen.
+* Wenn die Zahl falsch ist, zeigt das LCD die aktuelle geratene Zahl und den aktualisierten Ratebereich an.
 
 .. code-block:: Arduino
 
   void displayResult(bool result) {
-    lcd.clear();  // Clear the LCD
+    lcd.clear();  // LCD löschen
     if (result) {
       lcd.setCursor(0, 1);
-      lcd.print(" You've got it! ");  // Display success message
-      delay(5000);                    // Pause before resetting
-      NewTargetNumber();              // Reset game values
+      lcd.print(" You've got it! ");  // Erfolgsmeldung anzeigen
+      delay(5000);                    // Pause vor dem Zurücksetzen
+      NewTargetNumber();              // Spielwerte zurücksetzen
     } else {
       lcd.print("Enter number:");
-      lcd.print(guessedNumber);  // Display the current guess
+      lcd.print(guessedNumber);  // Aktuelle geratene Zahl anzeigen
       lcd.setCursor(0, 1);
       lcd.print(lower);
       lcd.print(" < Point < ");
-      lcd.print(upper);  // Display the current range
+      lcd.print(upper);  // Aktuellen Ratebereich anzeigen
     }
   }
 
-11. Your complete code is as follows, which you can upload to your Arduino board.
+11. Der komplette Code sieht wie folgt aus und kann auf das Arduino-Board hochgeladen werden.
 
 .. code-block:: Arduino
 
-  #include <IRremote.h>           // Include the IR remote control library
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the LCD library for I2C
+  #include <IRremote.h>           // Einbinden der IR-Fernbedienungs-Bibliothek
+  #include <Wire.h>               // Einbinden der Wire-Bibliothek für I2C-Kommunikation
+  #include <LiquidCrystal_I2C.h>  // Einbinden der LCD-Bibliothek für I2C
 
-  LiquidCrystal_I2C lcd(0x27, 16, 2);  // Set up the LCD (address 0x27, 16 columns, 2 rows)
+  LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initialisieren des LCD (Adresse 0x27, 16 Spalten, 2 Zeilen)
 
-  const int receiverPin = 2;  // IR sensor pin
+  const int receiverPin = 2;  // Pin des IR-Sensors
 
-  int guessedNumber = 0;  // Number input by the user
-  int targetNumber = 0;   // Randomly generated target number
-  int upper = 99;         // Upper bound of guessing range
-  int lower = 0;          // Lower bound of guessing range
+  int guessedNumber = 0;  // Vom Benutzer eingegebene Zahl
+  int targetNumber = 0;   // Zufällig generierte Zielzahl
+  int upper = 99;         // Oberes Limit des Ratebereichs
+  int lower = 0;          // Unteres Limit des Ratebereichs
 
   void setup() {
-    Serial.begin(9600);                                  // Initialize serial communication at 9600 bps
-    IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);  // Initialize IR receiver with LED feedback
-    lcd.init();                                          // Initialize the LCD
-    lcd.backlight();                                     // Turn on the backlight
-    NewTargetNumber();                                   // Initialize game values
+    Serial.begin(9600);                                  // Initialisieren der seriellen Kommunikation mit 9600 bps
+    IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);  // Initialisieren des IR-Empfängers mit LED-Rückmeldung
+    lcd.init();                                          // Initialisieren des LCD
+    lcd.backlight();                                     // Einschalten der Hintergrundbeleuchtung
+    NewTargetNumber();                                   // Initialisieren der Spielwerte
   }
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {  // Überprüfen, ob der IR-Empfänger ein Signal erhalten hat
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Lesbares Kommando ausgeben
         delay(100);
       }
 
       bool result = false;
 
-      // Check the key received and act accordingly
+      // Überprüfen des empfangenen Befehls und entsprechende Aktion ausführen
       if (key == "POWER") {
-        NewTargetNumber();  // Reset game values
+        NewTargetNumber();  // Spielwerte zurücksetzen
       } else if (key >= "0" && key <= "9") {
         guessedNumber = guessedNumber * 10;
-        guessedNumber += key.toInt();  // Accumulate digits typed
+        guessedNumber += key.toInt();  // Eingegebene Ziffern akkumulieren
         if (guessedNumber >= 10) {
-          result = checkGuess();  // Check if guessed number is correct
+          result = checkGuess();  // Überprüfen, ob die geratene Zahl korrekt ist
         }
-        displayResult(result);  // Display input and result on LCD
+        displayResult(result);  // Eingabe und Ergebnis auf dem LCD anzeigen
       } else if (key == "CYCLE") {
-        result = checkGuess();  // Check if guessed number is correct
-        displayResult(result);  // Display result on LCD
+        result = checkGuess();  // Überprüfen, ob die geratene Zahl korrekt ist
+        displayResult(result);  // Ergebnis auf dem LCD anzeigen
       }
-      IrReceiver.resume();  // Enable receiving of the next value
+      IrReceiver.resume();  // Empfang des nächsten Werts ermöglichen
     }
   }
 
   void NewTargetNumber() {
-    randomSeed(analogRead(A0));    // Seed the random number generator
-    targetNumber = random(99);     // Generate a new target number
-    upper = 99;                    // Reset upper limit
-    lower = 0;                     // Reset lower limit
-    lcd.clear();                   // Clear the LCD
-    lcd.print("    Welcome!");     // Welcome message
-    lcd.setCursor(0, 1);           // Move cursor to the second line
-    lcd.print("  Guess Number!");  // Instruction message
-    guessedNumber = 0;             // Reset guessed number
-    Serial.print("point is ");
-    Serial.println(targetNumber);  // Print the target number in serial monitor for debugging
+    randomSeed(analogRead(A0));    // Zufallszahlengenerator initialisieren
+    targetNumber = random(99);     // Neue Zielzahl generieren
+    upper = 99;                    // Oberes Limit zurücksetzen
+    lower = 0;                     // Unteres Limit zurücksetzen
+    lcd.clear();                   // LCD löschen
+    lcd.print("    Willkommen!");  // Willkommensnachricht
+    lcd.setCursor(0, 1);           // Cursor auf die zweite Zeile setzen
+    lcd.print(" Zahl erraten!");   // Anweisungsnachricht
+    guessedNumber = 0;             // Geratene Zahl zurücksetzen
+    Serial.print("Ziel ist ");
+    Serial.println(targetNumber);  // Zielzahl im seriellen Monitor zur Fehlerbehebung ausgeben
   }
 
   bool checkGuess() {
     if (guessedNumber > targetNumber) {
-      if (guessedNumber < upper) upper = guessedNumber;  // Update upper limit
+      if (guessedNumber < upper) upper = guessedNumber;  // Oberes Limit aktualisieren
     } else if (guessedNumber < targetNumber) {
-      if (guessedNumber > lower) lower = guessedNumber;  // Update lower limit
+      if (guessedNumber > lower) lower = guessedNumber;  // Unteres Limit aktualisieren
     } else if (guessedNumber == targetNumber) {
       guessedNumber = 0;
-      return true;  // Correct guess
+      return true;  // Richtige Zahl
     }
     guessedNumber = 0;
-    return false;  // Incorrect guess
+    return false;  // Falsche Zahl
   }
 
   void displayResult(bool result) {
-    lcd.clear();  // Clear the LCD
+    lcd.clear();  // LCD löschen
     if (result) {
       lcd.setCursor(0, 1);
-      lcd.print(" You've got it! ");  // Display success message
-      delay(5000);                    // Pause before resetting
-      NewTargetNumber();              // Reset game values
+      lcd.print(" You've got it! ");  // Erfolgsmeldung anzeigen
+      delay(5000);                    // Pause vor dem Zurücksetzen
+      NewTargetNumber();              // Spielwerte zurücksetzen
     } else {
       lcd.print("Enter number:");
-      lcd.print(guessedNumber);  // Display the current guess
+      lcd.print(guessedNumber);  // Aktuelle geratene Zahl anzeigen
       lcd.setCursor(0, 1);
       lcd.print(lower);
       lcd.print(" < Point < ");
-      lcd.print(upper);  // Display the current range
+      lcd.print(upper);  // Aktuellen Ratebereich anzeigen
     }
   }
 
-  // Function to map received IR signals to corresponding keys
+  // Funktion zur Zuordnung empfangener IR-Signale zu den entsprechenden Tasten
   String decodeKeyValue(long result) {
     switch (result) {
       case 0x45: return "POWER";
@@ -474,13 +473,13 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-12. Now, you can press any digit key, and then enter numbers according to the prompted number range.
+12. Jetzt können Sie eine beliebige Zifferntaste drücken und dann Zahlen gemäß dem angezeigten Zahlenbereich eingeben.
 
-* If you enter two digits, after entering the second digit, it will directly compare with the target number.
-* If you enter a single digit, you need to press the "CYCLE" key again to start comparing with the target number.
-* If the guess is higher than the target, it will update the upper limit.
-* If the guess is lower, it will update the lower limit.
-* If the guess is correct, the LCD will show a success message, pause for 5 seconds, and then generate a new target number to reset the game.
+* Wenn Sie zwei Ziffern eingeben, wird nach der Eingabe der zweiten Ziffer direkt mit der Zielzahl verglichen.
+* Wenn Sie eine einzelne Ziffer eingeben, müssen Sie die "CYCLE"-Taste erneut drücken, um den Vergleich mit der Zielzahl zu starten.
+* Wenn die Eingabe höher als die Zielzahl ist, wird das obere Limit aktualisiert.
+* Wenn die Eingabe niedriger ist, wird das untere Limit aktualisiert.
+* Wenn die Eingabe korrekt ist, zeigt das LCD eine Erfolgsmeldung an, pausiert für 5 Sekunden und generiert dann eine neue Zielzahl, um das Spiel zurückzusetzen.
 
 .. raw:: html
 
@@ -489,13 +488,12 @@ Now, let's start writing the code to implement the number guessing game.
         Your browser does not support the video tag.
     </video>
 
-13. Finally, remember to save your code and tidy up your workspace.
+13. Zum Schluss denken Sie daran, Ihren Code zu speichern und Ihren Arbeitsplatz aufzuräumen.
 
-**Question**
+**Frage**
 
-What additional components can be added to enhance the fun of the game? What roles do they play in the game?
+Welche zusätzlichen Komponenten könnten hinzugefügt werden, um das Spiel zu erweitern? Welche Rolle würden sie im Spiel spielen?
 
-**Summary**
+**Zusammenfassung**
 
-In today's lesson, we successfully built a number guessing game using an Arduino board, integrating components like an IR receiver and an LCD for dynamic interaction. We explored various programming concepts such as random number generation, input handling, and conditional logic.
-
+In der heutigen Lektion haben wir erfolgreich ein Zahlenratespiel mit einem Arduino-Board erstellt, das Komponenten wie einen IR-Empfänger und ein LCD für dynamische Interaktionen integriert. Wir haben verschiedene Programmierkonzepte wie Zufallszahlengenerierung, Eingabeverarbeitung und bedingte Logik erforscht.

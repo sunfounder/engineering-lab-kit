@@ -1,44 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und ersten Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagspromotionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-Inventor Lab Kit with Original Arduino Uno R3
+Inventor Lab Kit mit Original Arduino Uno R3
 =================================================
 
-Thank You for Choosing the Inventor Lab Kit.
+Vielen Dank, dass Sie sich für das Inventor Lab Kit entschieden haben.
 
-.. image:: img/home_page.png
+ .. image:: img/home_page.png
     :width: 800
     :align: center
 
-.. .. note::
-..     This document is available in the following languages.
+ .. note::
+     Dieses Dokument ist in den folgenden Sprachen verfügbar.
 
-..         * |link_german_tutorials|
-..         * |link_jp_tutorials|
-..         * |link_en_tutorials|
+         * |link_german_tutorials|
+         * |link_en_tutorials|
+         * |link_jp_tutorials|
+
     
-..     Please click on the respective links to access the document in your preferred language.
+     Bitte klicken Sie auf die entsprechenden Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
 
-* :download:`Inventor Lab Kit Handbook with the Answers </_static/pdf/Inventor Lab Kit Handbook with the Answers.pdf>`
+* :download:`Inventor Lab Kit Handbuch mit den Antworten </_static/pdf/Inventor Lab Kit Handbook with the Answers.pdf>`
 
-Embark on your electronics journey with the Inventor Lab Kit, designed for learners and enthusiasts. Centered around the Arduino Uno R3, this kit includes everything from basic components like LEDs and buzzers to advanced modules such as RFID systems and ultrasonic sensors, along with a mini-multimeter for circuit analysis.
+Beginnen Sie Ihre Elektronikreise mit dem Inventor Lab Kit, das für Lernende und Enthusiasten entwickelt wurde. Im Mittelpunkt steht das Arduino Uno R3, und das Kit enthält alles von grundlegenden Komponenten wie LEDs und Buzzern bis hin zu fortgeschrittenen Modulen wie RFID-Systemen und Ultraschallsensoren sowie einem Mini-Multimeter zur Schaltungsanalyse.
 
-The kit excels in educational clarity, gradually introducing beginners to programming and circuit design. Instead of pre-written code, it guides you step-by-step through writing your own scripts, enhancing understanding and retention. Projects range from simple tasks like lighting LEDs and using a joystick, to complex applications such as building a radar system and an automatic soap dispenser.
+Das Kit zeichnet sich durch seine didaktische Klarheit aus und führt Anfänger schrittweise in die Programmierung und Schaltungsdesign ein. Anstatt vorgefertigten Code zu verwenden, werden Sie Schritt für Schritt durch das Schreiben eigener Skripte geführt, was das Verständnis und die Behaltensleistung fördert. Die Projekte reichen von einfachen Aufgaben wie dem Beleuchten von LEDs und der Nutzung eines Joysticks bis hin zu komplexen Anwendungen wie dem Bau eines Radarsystems und eines automatischen Seifenspenders.
 
-Ideal for both beginners and those looking to expand their skills, the Inventor Lab Kit makes learning both accessible and exciting, providing all the tools needed to explore and innovate in the world of electronics.
-
-
+Ideal für Anfänger und Fortgeschrittene, die ihre Fähigkeiten erweitern möchten, macht das Inventor Lab Kit das Lernen sowohl zugänglich als auch spannend und bietet alle Werkzeuge, die benötigt werden, um in der Welt der Elektronik zu forschen und zu innovieren.
 
 .. toctree::
     :maxdepth: 1
@@ -79,8 +78,7 @@ Ideal for both beginners and those looking to expand their skills, the Inventor 
     33_rfid_module 
     34_access_control_system
 
+**Urheberrechtshinweis**
 
-**Copyright Notice**
-
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Alle Inhalte, einschließlich, aber nicht beschränkt auf Texte, Bilder und Code in diesem Handbuch, sind Eigentum der SunFounder Company. Sie dürfen diese Inhalte nur für persönliche Studien, Untersuchungen, Unterhaltung oder andere nichtkommerzielle oder gemeinnützige Zwecke verwenden, gemäß den geltenden Vorschriften und Urheberrechtsgesetzen, ohne die gesetzlichen Rechte des Autors und der relevanten Rechteinhaber zu verletzen. Für jede Einzelperson oder Organisation, die diese Inhalte ohne Genehmigung kommerziell nutzt, behält sich das Unternehmen das Recht vor, rechtliche Schritte einzuleiten.
 

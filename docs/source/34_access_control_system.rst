@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Begeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-34. Access Control System
+34. Zugangskontrollsystem
 ===============================
-Welcome to our interactive workshop on building an Access Control System using Arduino! This course is designed for enthusiasts looking to delve into the world of electronics, robotics, and programming. You'll get hands-on experience with stepper motors, RFID technology, and LCD displays, creating a practical project that you can deploy in real-world scenarios. Whether you're looking to enhance your home security or just curious about electronic systems, this course offers a comprehensive guide to understanding and implementing basic automation and control systems.
+Willkommen zu unserem interaktiven Workshop zum Aufbau eines Zugangskontrollsystems mit Arduino! Dieser Kurs richtet sich an Enthusiasten, die tiefer in die Welt der Elektronik, Robotik und Programmierung eintauchen möchten. Du erhältst praktische Erfahrungen mit Schrittmotoren, RFID-Technologie und LCD-Displays, indem du ein praxisnahes Projekt erstellst, das du in realen Szenarien einsetzen kannst. Egal, ob du deine Haussicherheit verbessern möchtest oder einfach neugierig auf elektronische Systeme bist, dieser Kurs bietet eine umfassende Anleitung zum Verständnis und zur Implementierung grundlegender Automatisierungs- und Steuerungssysteme.
 
 .. raw:: html
 
@@ -23,91 +23,91 @@ Welcome to our interactive workshop on building an Access Control System using A
         Your browser does not support the video tag.
     </video>
 
-By the end of this course, you will be able to:
+Am Ende dieses Kurses wirst du in der Lage sein:
 
-* Understand the principles and operations of stepper motors and how they can be used to create mechanical movement.
-* Explore the functionality of RFID technology and how it can be integrated into projects for secure access control.
-* Program and connect an I2C LCD display to Arduino to provide user feedback and system status updates.
-* Design and implement a simple access control system that uses RFID technology to grant or deny access based on programmed criteria.
+* Die Funktionsweise von Schrittmotoren zu verstehen und wie sie mechanische Bewegungen erzeugen können.
+* Die Funktionalität der RFID-Technologie zu erkunden und zu erfahren, wie sie in Projekte zur sicheren Zugangskontrolle integriert werden kann.
+* Ein I2C-LCD-Display an Arduino zu programmieren und anzuschließen, um Benutzerfeedback und Systemstatusmeldungen bereitzustellen.
+* Ein einfaches Zugangskontrollsystem zu entwerfen und zu implementieren, das RFID-Technologie verwendet, um basierend auf programmierten Kriterien den Zugang zu gewähren oder zu verweigern.
 
-About the Stepper Motor and ULN2003 Module
-----------------------------------------------
+Über den Schrittmotor und das ULN2003-Modul
+------------------------------------------------
 
-**Stepper Motor**
+**Schrittmotor**
 
-The 28BYJ-48 is a 5-wire unipolar stepper motor that operates at 5V. Stepper motors are precision motors that can be controlled very accurately without needing feedback from sensors. This is because the motor's shaft is equipped with magnets and controlled by electromagnetic coils that turn on and off in a specific sequence, moving the shaft in precise small steps.
+Der 28BYJ-48 ist ein 5-adriger unipolarer Schrittmotor, der mit 5V betrieben wird. Schrittmotoren sind Präzisionsmotoren, die sehr genau gesteuert werden können, ohne Rückmeldung von Sensoren zu benötigen. Dies liegt daran, dass die Motorwelle mit Magneten ausgestattet ist und durch elektromagnetische Spulen gesteuert wird, die in einer bestimmten Reihenfolge ein- und ausgeschaltet werden, wodurch sich die Welle in präzisen kleinen Schritten bewegt.
 
 .. image:: img/34_step_stepper.png
   :align: center
 
-The stator of Stepper Motor we use has 32 magnetic poles, so a circle needs 32 steps. The output shaft of the Stepper Motor is connected with a reduction gear set, and the reduction ratio is 1/64. So the final output shaft rotates a circle requiring a 32*64=2048 step.
+Der Stator des von uns verwendeten Schrittmotors hat 32 magnetische Pole, sodass ein Kreis 32 Schritte benötigt. Die Ausgangswelle des Schrittmotors ist mit einem Untersetzungsgetriebe verbunden, und das Untersetzungsverhältnis beträgt 1/64. Daher benötigt die endgültige Ausgangswelle für eine volle Umdrehung 32 * 64 = 2048 Schritte.
 
-**How a Unipolar Stepper Motor Works**
+**Wie ein Unipolar-Schrittmotor funktioniert**
 
-A unipolar stepper motor typically has four phases and operates on DC power. By correctly timing the electrical current to the motor's phases, you can make the motor rotate step by step. Imagine the motor's center containing a gear-shaped magnet (the rotor) surrounded by several teeth numbered 0 to 5. Around these teeth are eight magnetic poles arranged in pairs (A to D), connected by coils.
+Ein unipolarer Schrittmotor hat typischerweise vier Phasen und arbeitet mit Gleichstrom. Durch korrektes Timing des elektrischen Stroms zu den Phasen des Motors kann der Motor Schritt für Schritt gedreht werden. Stell dir vor, dass das Zentrum des Motors ein zahnradförmiger Magnet (der Rotor) ist, der von mehreren Zähnen mit den Nummern 0 bis 5 umgeben ist. Um diese Zähne herum befinden sich acht magnetische Pole, die in Paaren (A bis D) angeordnet sind und durch Spulen verbunden sind.
 
 .. image:: img/34_step_interal.png
   :align: center
 
-When you power on different switches connected to these coils (labeled SA, SB, SC, and SD), you control which magnetic poles are activated. For example, if switch SB is on (and the others are off), magnetic poles B align with certain teeth on the rotor, causing it to move. When you turn on switch SC next, the rotor turns to align with magnetic poles C, and so on. By cycling through switches A, B, C, and D, the rotor spins continuously.
+Wenn du verschiedene Schalter einschaltest, die mit diesen Spulen verbunden sind (beschriftet mit SA, SB, SC und SD), steuerst du, welche magnetischen Pole aktiviert werden. Zum Beispiel, wenn Schalter SB eingeschaltet ist (und die anderen ausgeschaltet sind), richten sich die magnetischen Pole B an bestimmten Zähnen des Rotors aus, wodurch dieser sich bewegt. Wenn du den Schalter SC als nächstes einschaltest, dreht sich der Rotor, um sich mit den magnetischen Polen C auszurichten, und so weiter. Durch das Durchschalten der Schalter A, B, C und D dreht sich der Rotor kontinuierlich.
 
-**ULN2003 Module**
+**ULN2003-Modul**
 
 .. image:: img/34_step_uln2003.png
     :align: center
 
-The ULN2003 stepper motor driver module is vital for integrating the stepper motor into circuits. It works as a 7-channel inverter, meaning it converts input signals into the needed output actions for the motor. For example, if a high signal is sent to IN1 and low signals to IN2, IN3, and IN4, then OUT1 turns low, and the other outputs stay high, making the motor rotate a step. By providing specific sequences like this, the motor can rotate smoothly step by step. The ULN2003 simplifies controlling the timing sequences necessary for the motor's operation.
+Das ULN2003-Schrittmotor-Treibermodul ist entscheidend für die Integration des Schrittmotors in Schaltungen. Es funktioniert als 7-Kanal-Inverter, was bedeutet, dass es Eingangssignale in die benötigten Ausgangsaktionen für den Motor umwandelt. Zum Beispiel, wenn ein hohes Signal an IN1 gesendet wird und niedrige Signale an IN2, IN3 und IN4, dann wird OUT1 niedrig und die anderen Ausgänge bleiben hoch, wodurch sich der Motor um einen Schritt dreht. Durch das Bereitstellen spezifischer Sequenzen wie dieser kann der Motor sanft Schritt für Schritt rotieren. Der ULN2003 vereinfacht die Steuerung der Zeitsequenzen, die für den Betrieb des Motors erforderlich sind.
 
-Build the Circuit
+Baue die Schaltung
 ------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RFID Module and Tag
+     - 1 * RFID-Modul und Tag
      - 1 * I2C LCD1602
-     - 1 * Stepper Motor
+     - 1 * Schrittmotor
    * - |list_uno_r3|
      - |list_rc522_module| 
      - |list_i2c_lcd1602|
      - |list_stepper|
-   * - 1 * ULN2003 Module
-     - Jumper Wires
-     - 1 * Breadboard
-     - 1 * USB Cable
+   * - 1 * ULN2003-Modul
+     - Steckbrücken
+     - 1 * Steckbrett
+     - 1 * USB-Kabel
    * - |list_uln2003_module|
      - |list_wire|
      - |list_breadboard|
      - |list_usb_cable|
-   * - 1 * Breadboard Power Module
-     - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * Steckbrett-Stromversorgung
+     - 1 * 9V-Batterie
+     - 1 * Batterieanschlusskabel
      - 
    * - |list_power_module| 
      - |list_battery| 
      - |list_bat_cable| 
      -
 
-**Building Steps**
+**Aufbauschritte**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den unten aufgeführten Schritten, um deine Schaltung aufzubauen.
 
 .. image:: img/34_step_connect_lcd.png
     :width: 700
     :align: center
 
-1. Insert the stepper motor into the ULN2003 driver board.
+1. Stecke den Schrittmotor in das ULN2003-Treiberboard.
 
 .. image:: img/34_step_connect_uln2003_stepper.png
   :width: 500
   :align: center
 
 
-2. When using motors, servos, and other actuators, it's recommended to use an external power supply to avoid damaging the main board. Insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+2. Beim Einsatz von Motoren, Servos und anderen Aktuatoren wird empfohlen, eine externe Stromversorgung zu verwenden, um eine Beschädigung der Hauptplatine zu vermeiden. Stecke das Steckbrett-Stromversorgungsmodul in das Steckbrett und verbinde dann mit einem Steckbrücken-Kabel die negative Schiene des Steckbretts mit dem GND des Arduino Uno R3, um eine gemeinsame Masse zu erreichen.
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -115,9 +115,9 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    Die Reihenfolge der positiven und negativen Anschlüsse auf dem Steckbrett im Schaltplan ist im Vergleich zu dem im Kit enthaltenen Steckbrett umgekehrt.
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    Beim tatsächlichen Verdrahten musst du das Steckbrett-Stromversorgungsmodul von der Seite mit der höheren Nummer (60~65) einstecken, damit das "-" des Stromversorgungsmoduls in die negative Schiene "-" des Steckbretts geht und das "+" in die positive Schiene "+".
 
   .. raw:: html
 
@@ -126,19 +126,19 @@ Follow the wiring diagram, or the steps below to build your circuit.
           Your browser does not support the video tag.
       </video>
 
-3. Connect ULN2003's IN1 to Arduino Uno R3 pin 2, IN2 to pin 4, IN3 to pin 3, and IN4 to pin 5.
+3. Verbinde IN1 des ULN2003 mit Arduino Uno R3 Pin 2, IN2 mit Pin 4, IN3 mit Pin 3 und IN4 mit Pin 5.
 
 .. image:: img/34_step_connect_uln2003.png
   :width: 700
   :align: center
 
-4. Now, connect the "-" of the ULN2003 module to the negative terminal of the breadboard, and "+" to the positive terminal.
+4. Verbinde nun das "-" des ULN2003-Moduls mit dem negativen Anschluss des Steckbretts und "+" mit dem positiven Anschluss.
 
 .. image:: img/34_step_connect_power.png
   :width: 700
   :align: center
 
-5. Then, connect the RC522-RFID module and the Arduino Uno R3.
+5. Verbinde das RC522-RFID-Modul mit dem Arduino Uno R3.
 
 .. list-table::
     :widths: 20 20
@@ -151,7 +151,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - RST
         - 9
     *   - GND
-        - Negative rail on the breadboard
+        - Negative Schiene auf dem Steckbrett
     *   - IRQ
         -
     *   - MISO
@@ -167,188 +167,188 @@ Follow the wiring diagram, or the steps below to build your circuit.
   :width: 700
   :align: center
 
-6. Finally, connect the I2C LCD1602 module: GND to the GND on the Arduino Uno R3, VCC to the pin 5V, SDA to pin A4, and SCL to pin A5.
+6. Verbinde abschließend das I2C LCD1602-Modul: GND mit GND auf dem Arduino Uno R3, VCC mit dem 5V-Pin, SDA mit Pin A4 und SCL mit Pin A5.
 
 .. image:: img/34_step_connect_lcd.png
     :width: 700
     :align: center
 
 
-Code Creation - Making the Stepper Motor Rotate
+Code-Erstellung - Den Schrittmotor drehen lassen
 ------------------------------------------------------------
-Now, let's use code to drive the stepper motor to rotate.
+Jetzt werden wir den Code verwenden, um den Schrittmotor zu drehen.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson34_Stepper_Motor`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino-IDE und starte ein neues Projekt, indem du im Menü „Datei“ die Option „Neuer Sketch“ auswählst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson34_Stepper_Motor`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-3. Add the necessary library for the Stepper motor.
+3. Füge die notwendige Bibliothek für den Schrittmotor hinzu.
 
 .. code-block:: Arduino
   :emphasize-lines: 1
 
-  #include <Stepper.h>  // Include the Stepper library
+  #include <Stepper.h>  // Füge die Stepper-Bibliothek hinzu
 
   void setup() {
-    // put your setup code here, to run once:
+    // Hier kommt der Setup-Code hin, der einmal ausgeführt wird:
 
   }
 
-4. Define the number of steps per revolution for the motor and initialize stepper object and set pin connections (IN1, IN3, IN2, IN4).
+4. Definiere die Anzahl der Schritte pro Umdrehung des Motors, initialisiere das Stepper-Objekt und setze die Pin-Verbindungen (IN1, IN3, IN2, IN4).
 
 .. code-block:: Arduino
   :emphasize-lines: 4,7
 
-  #include <Stepper.h>  // Include the Stepper library
+  #include <Stepper.h>  // Füge die Stepper-Bibliothek hinzu
 
-  // Define the number of steps per revolution for the motor
+  // Definiere die Anzahl der Schritte pro Umdrehung des Motors
   #define STEPS 2048
 
-  // Initialize stepper object and set pin connections (IN1, IN3, IN2, IN4)
+  // Initialisiere das Stepper-Objekt und setze die Pin-Verbindungen (IN1, IN3, IN2, IN4)
   Stepper stepper(STEPS, 2, 3, 4, 5);
 
   void setup() {
-    // put your setup code here, to run once:
+    // Hier kommt der Setup-Code hin, der einmal ausgeführt wird:
 
   }
 
-5. There's no need to initialize anything in the ``setup()`` function, so leave it empty. In the ``loop()`` function, set the stepper motor's rotation speed to 5 RPM, rotate it 512 steps, pause for one second, then continue rotating at 5 RPM for 512 steps, and repeat.
+5. Im ``setup()``-Abschnitt muss nichts initialisiert werden, also lass ihn leer. Im ``loop()``-Abschnitt wird die Drehgeschwindigkeit des Schrittmotors auf 5 U/min eingestellt, er dreht sich 512 Schritte, pausiert für eine Sekunde und setzt dann die Drehung mit 5 U/min für weitere 512 Schritte fort.
 
 .. note::
 
-  From the previous discussion, we know the stepper motor takes 2048 steps to make one full revolution, setting the step count to 512 corresponds to a 1/4 turn. Thus, it will complete one full revolution in four seconds.
+  Aus der vorherigen Diskussion wissen wir, dass der Schrittmotor 2048 Schritte benötigt, um eine vollständige Umdrehung zu machen. Wenn du die Schrittanzahl auf 512 setzt, entspricht das einer 1/4 Umdrehung. Somit benötigt er vier Sekunden, um eine vollständige Umdrehung abzuschließen.
 
 
 .. code-block:: Arduino
   :emphasize-lines: 7-9
 
   void setup() {
-    // put your setup code here, to run once:
+    // Hier kommt der Setup-Code hin, der einmal ausgeführt wird:
   }
 
   void loop() {
-    // Rotate clockwise at 5 RPM
+    // Im Uhrzeigersinn mit 5 U/min drehen
     stepper.setSpeed(5);
-    stepper.step(512);  // Rotate 1/4 revolution
-    delay(1000);        // Wait for 1 second
+    stepper.step(512);  // Drehe 1/4 Umdrehung
+    delay(1000);        // Warte 1 Sekunde
   }
 
-* ``setSpeed(rpms)``: Sets the motor speed in rotations per minute (RPMs). This function doesn't make the motor turn, just sets the speed at which it will when you call ``step()``.
+* ``setSpeed(rpms)``: Legt die Drehgeschwindigkeit des Motors in Umdrehungen pro Minute (RPM) fest. Diese Funktion sorgt nicht dafür, dass der Motor sich dreht, sondern legt lediglich die Geschwindigkeit fest, mit der er sich dreht, wenn du ``step()`` aufrufst.
 
-  * ``rpms``: the speed at which the motor should turn in rotations per minute - a positive number (long)
+  * ``rpms``: Die Geschwindigkeit, mit der sich der Motor in Umdrehungen pro Minute drehen soll – eine positive Zahl (long).
 
-* ``step(steps)``: This function rotates the motor by a specified number of steps, using the speed set in the most recent call to ``setSpeed()``. It is important to note that this function operates in a blocking manner, meaning it will wait until the motor has completed its movement before allowing control to proceed to the next line in your sketch. For instance, if you were to set the speed at 1 RPM and called ``step(2048)`` on a motor with 2048 steps, it would take one full minute for this function to execute. To achieve more precise control, it is recommended to maintain a higher speed and only move a few steps with each call to ``step()``.
+* ``step(steps)``: Diese Funktion dreht den Motor um die angegebene Anzahl von Schritten unter Verwendung der in ``setSpeed()`` zuletzt festgelegten Geschwindigkeit. Wichtig ist, dass diese Funktion blockierend arbeitet, das heißt, sie wartet, bis der Motor seine Bewegung abgeschlossen hat, bevor sie zur nächsten Zeile im Sketch übergeht. Wenn du zum Beispiel die Geschwindigkeit auf 1 U/min einstellst und ``step(2048)`` aufrufst, würde der Motor eine volle Minute benötigen, um diese Funktion auszuführen. Um eine präzisere Steuerung zu erreichen, empfiehlt es sich, eine höhere Geschwindigkeit beizubehalten und nur wenige Schritte mit jedem Aufruf von ``step()`` zu machen.
 
-  * ``steps``: the number of steps to turn the motor - positive to turn one direction, negative to turn the other (int).
+  * ``steps``: Die Anzahl der Schritte, um die der Motor gedreht werden soll – positiv für eine Richtung, negativ für die andere (int).
 
-6. Here is your complete code, which you can upload to the Arduino board. Afterwards, you will see the stepper motor rotate 1/4 turn every second, completing a full revolution in four seconds.
+6. Hier ist dein vollständiger Code, den du auf das Arduino-Board hochladen kannst. Danach wirst du sehen, wie sich der Schrittmotor jede Sekunde um 1/4 Umdrehung dreht und in vier Sekunden eine vollständige Umdrehung abschließt.
 
 .. code-block:: Arduino
 
-  #include <Stepper.h>  // Include the Stepper library
+  #include <Stepper.h>  // Füge die Stepper-Bibliothek hinzu
 
-  // Define the number of steps per revolution for the motor
+  // Definiere die Anzahl der Schritte pro Umdrehung des Motors
   #define STEPS 2048
 
-  // Initialize stepper object and set pin connections (IN1, IN3, IN2, IN4)
+  // Initialisiere das Stepper-Objekt und setze die Pin-Verbindungen (IN1, IN3, IN2, IN4)
   Stepper stepper(STEPS, 2, 3, 4, 5);
 
   void setup() {
-    // put your setup code here, to run once:
+    // Hier kommt der Setup-Code hin, der einmal ausgeführt wird:
   }
 
   void loop() {
-    // Rotate clockwise at 5 RPM
+    // Im Uhrzeigersinn mit 5 U/min drehen
     stepper.setSpeed(5);
-    stepper.step(512);  // Rotate 1/4 revolution
-    delay(1000);        // Wait for 1 second
+    stepper.step(512);  // Drehe 1/4 Umdrehung
+    delay(1000);        // Warte 1 Sekunde
   }
+  
+**Frage**
 
-**Question**
-
-If you want to achieve a full rotation in one direction and then a full rotation in the opposite direction, continuing in this cycle, how should the code be modified?
+Wenn Sie eine vollständige Umdrehung in eine Richtung und dann eine vollständige Umdrehung in die entgegengesetzte Richtung erreichen möchten, wie sollte der Code entsprechend angepasst werden?
 
 
-Code Creation - Access Control System
+Code-Erstellung - Zugangskontrollsystem
 ------------------------------------------
-From the previous project, we have learned how to drive a stepper motor using code. Now, let's use a stepper motor, I2C LCD1602, and RC522-RFID module to create an access control system.
+Im vorherigen Projekt haben wir gelernt, wie man einen Schrittmotor mit Code steuert. Nun wollen wir einen Schrittmotor, ein I2C LCD1602 und ein RC522-RFID-Modul verwenden, um ein Zugangskontrollsystem zu erstellen.
 
-* The stepper motor is used to simulate the opening and closing of a door.
-* The RC522-RFID module is used to scan the cards or tags of visitors. If the ID matches the predefined one, the stepper motor is activated.
-* The I2C LCD1602 module displays the results of the card scan.
+* Der Schrittmotor wird verwendet, um das Öffnen und Schließen einer Tür zu simulieren.
+* Das RC522-RFID-Modul dient dazu, die Karten oder Tags von Besuchern zu scannen. Wenn die ID mit der vordefinierten übereinstimmt, wird der Schrittmotor aktiviert.
+* Das I2C LCD1602-Modul zeigt die Ergebnisse des Kartenscans an.
 
-Let's now write the code to see how to implement this access control system.
+Lassen Sie uns nun den Code schreiben, um zu sehen, wie dieses Zugangskontrollsystem implementiert wird.
 
 .. note::
 
-  If you are not familiar with the MCRF522 Module and I2C LCD1602, you can first learn their basic usage through the following projects:
+  Wenn Sie mit dem MCRF522-Modul und dem I2C LCD1602 nicht vertraut sind, können Sie deren grundlegende Verwendung zunächst durch die folgenden Projekte erlernen:
 
   * :ref:`ar_rfid_module`
   * :ref:`ar_i2c_lcd1602`
 
-  ``LiquidCrystal I2C`` and ``MFRC522`` libraries are used here, you can install them from the **Library Manager**.
+  Hier werden die Bibliotheken ``LiquidCrystal I2C`` und ``MFRC522`` verwendet, die Sie über den **Library Manager** installieren können.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson34_Stepper_Motor`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffnen Sie die Arduino-IDE und starten Sie ein neues Projekt, indem Sie im Menü „Datei“ die Option „Neuer Sketch“ auswählen.
+2. Speichern Sie Ihren Sketch unter dem Namen ``Lesson34_Stepper_Motor`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-3. Include the necessary libraries for I2C and SPI communication, then include the libraries for the RFID module, I2C LCD, and stepper motor.
+3. Fügen Sie die notwendigen Bibliotheken für die I2C- und SPI-Kommunikation hinzu, dann fügen Sie die Bibliotheken für das RFID-Modul, das I2C LCD und den Schrittmotor hinzu.
 
 .. code-block:: Arduino
 
-  #include <SPI.h>                // Include the SPI library for SPI communication
-  #include <MFRC522.h>            // Include the library for the RFID module
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the library for the I2C LCD
-  #include <Stepper.h>            // Include the library for the Stepper Motor
+  #include <SPI.h>                // Fügen Sie die SPI-Bibliothek für die SPI-Kommunikation hinzu
+  #include <MFRC522.h>            // Fügen Sie die Bibliothek für das RFID-Modul hinzu
+  #include <Wire.h>               // Fügen Sie die Wire-Bibliothek für die I2C-Kommunikation hinzu
+  #include <LiquidCrystal_I2C.h>  // Fügen Sie die Bibliothek für das I2C LCD hinzu
+  #include <Stepper.h>            // Fügen Sie die Bibliothek für den Schrittmotor hinzu
 
-4. This initializes the RFID reader and the LCD display with specified pin connections and LCD dimensions/configuration (address 0x27, 16 columns, 2 rows). Define the number of steps per revolution for the motor and initialize stepper object and set pin connections (IN1, IN3, IN2, IN4).
+4. Initialisieren Sie den RFID-Leser und das LCD-Display mit den angegebenen Pin-Verbindungen und LCD-Dimensionen/-Konfiguration (Adresse 0x27, 16 Spalten, 2 Reihen). Definieren Sie die Anzahl der Schritte pro Umdrehung für den Motor, initialisieren Sie das Stepper-Objekt und setzen Sie die Pin-Verbindungen (IN1, IN3, IN2, IN4).
 
 .. code-block:: Arduino
   :emphasize-lines: 7-17
 
-  #include <SPI.h>                // Include the SPI library for SPI communication
-  #include <MFRC522.h>            // Include the library for the RFID module
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the library for the I2C LCD
-  #include <Stepper.h>            // Include the library for the Stepper Motor
+  #include <SPI.h>                // Fügen Sie die SPI-Bibliothek für die SPI-Kommunikation hinzu
+  #include <MFRC522.h>            // Fügen Sie die Bibliothek für das RFID-Modul hinzu
+  #include <Wire.h>               // Fügen Sie die Wire-Bibliothek für die I2C-Kommunikation hinzu
+  #include <LiquidCrystal_I2C.h>  // Fügen Sie die Bibliothek für das I2C LCD hinzu
+  #include <Stepper.h>            // Fügen Sie die Bibliothek für den Schrittmotor hinzu
 
-  #define RST_PIN 9  // Reset pin for the RFID module
-  #define SS_PIN 10  // Slave select pin for the RFID module
+  #define RST_PIN 9  // Reset-Pin für das RFID-Modul
+  #define SS_PIN 10  // Slave-Select-Pin für das RFID-Modul
 
-  // Create an instance of the MFRC522 class to interface with the RFID module
+  // Erstellen Sie eine Instanz der MFRC522-Klasse, um mit dem RFID-Modul zu interagieren
   MFRC522 mfrc522(SS_PIN, RST_PIN);
-  // Create an instance of the LiquidCrystal_I2C class for the LCD
+  // Erstellen Sie eine Instanz der LiquidCrystal_I2C-Klasse für das LCD
   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-  // Define stepper motor configuration
-  const int stepsPerRevolution = 2048;              // Total number of steps per revolution
-  Stepper stepper(stepsPerRevolution, 2, 3, 4, 5);  // Pins for the stepper motor (IN1, IN2, IN3, IN4)
+  // Definieren Sie die Konfiguration des Schrittmotors
+  const int stepsPerRevolution = 2048;              // Gesamtanzahl der Schritte pro Umdrehung
+  Stepper stepper(stepsPerRevolution, 2, 3, 4, 5);  // Pins für den Schrittmotor (IN1, IN2, IN3, IN4)
 
-5. Set the number of steps for the stepper motor and the UID for authorized access.
+5. Setzen Sie die Anzahl der Schritte für den Schrittmotor und die UID für den autorisierten Zugang.
 
 .. code-block:: Arduino
   :emphasize-lines: 1,4
 
-  int doorStep = 512;  // Steps to open the door to 90 degrees
+  int doorStep = 512;  // Schritte, um die Tür um 90 Grad zu öffnen
 
-  // UID for authorized access
+  // UID für autorisierten Zugang
   const byte authorizedUID[4] = { 0x9B, 0x2F, 0x0A, 0x11 };
 
   void setup() {
-    // put your setup code here, to run once:
+    // Hier kommt der Setup-Code hin, der einmal ausgeführt wird:
 
   }
 
-6. The ``setup()`` function initializes serial communication, the SPI bus, the RFID reader, the stepper motor and the LCD. It sets up the LCD backlight and sends a readiness message to the serial monitor.
+6. Die Funktion ``setup()`` initialisiert die serielle Kommunikation, den SPI-Bus, den RFID-Leser, den Schrittmotor und das LCD. Es wird die Hintergrundbeleuchtung des LCD eingerichtet und eine Bereitschaftsnachricht an den seriellen Monitor gesendet.
  
 .. code-block:: Arduino
 
   void setup() {
     Serial.begin(9600);
     SPI.begin();
-    mfrc522.PCD_Init();    // Initialize the RFID reader
-    stepper.setSpeed(15);  // Set the stepper motor speed to 15 RPM
+    mfrc522.PCD_Init();    // Initialisieren Sie den RFID-Leser
+    stepper.setSpeed(15);  // Stellen Sie die Geschwindigkeit des Schrittmotors auf 15 U/min ein
 
-    // Initialize the LCD display
+    // Initialisieren Sie das LCD-Display
     lcd.init();
     lcd.backlight();
     lcd.clear();
@@ -357,51 +357,51 @@ Let's now write the code to see how to implement this access control system.
     Serial.println("Ready to read a card");
   }
 
-7. In the ``loop()`` function:
+7. In der Funktion ``loop()``:
 
-* Continuously checks for new RFID cards, reads their UID, and validates them against an authorized list. 
-* If the card's ID matches the set one, then call ``grantAccess()`` to display relevant information on the LCD and to open the door with the stepper motor. The door closes after 5 seconds.
-* If the card's ID does not match the set one, then call ``denyAccess()`` to display a message of access denial.
-* Finally, the card communication is halted, and encryption is stopped. A delay allows the displayed information to be read before the LCD is cleared, readying it for the next card.
+* Überprüft kontinuierlich, ob neue RFID-Karten vorhanden sind, liest deren UID und validiert sie gegen eine autorisierte Liste.
+* Wenn die ID der Karte mit der festgelegten übereinstimmt, wird ``grantAccess()`` aufgerufen, um relevante Informationen auf dem LCD anzuzeigen und die Tür mit dem Schrittmotor zu öffnen. Die Tür schließt sich nach 5 Sekunden.
+* Wenn die ID der Karte nicht mit der festgelegten übereinstimmt, wird ``denyAccess()`` aufgerufen, um eine Zugriffsverweigerungsnachricht anzuzeigen.
+* Schließlich wird die Kartenkommunikation gestoppt und die Verschlüsselung beendet. Eine Verzögerung ermöglicht es, die angezeigten Informationen zu lesen, bevor das LCD gelöscht wird, um es für die nächste Karte vorzubereiten.
 
 .. code-block:: Arduino
 
   void loop() {
-    // Check for the presence of a new card
+    // Überprüfen Sie, ob eine neue Karte vorhanden ist
     if (!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial()) {
-      return;  // Exit loop if no new card is present
+      return;  // Schleife beenden, wenn keine neue Karte vorhanden ist
     }
 
-    // Build and display the card UID
+    // Erstellen und zeigen Sie die UID der Karte an
     String uidStr = buildUIDString();
     Serial.print("Card ID: ");
     Serial.println(uidStr);
 
-    // Check card authorization and react accordingly
+    // Überprüfen Sie die Kartenautorisierung und reagieren Sie entsprechend
     if (isAuthorized(mfrc522.uid.uidByte)) {
       grantAccess();
     } else {
       denyAccess();
     }
 
-    delay(3000);  // Delay before next card read
+    delay(3000);  // Verzögerung vor dem nächsten Kartenlesevorgang
     lcd.clear();
     lcd.print("Scan your card");
 
-    // Halt PICC and stop encryption on PCD
+    // Beenden Sie die Kartenkommunikation und stoppen Sie die Verschlüsselung
     mfrc522.PICC_HaltA();
     mfrc522.PCD_StopCrypto1();
   }
 
-8. ``buildUIDString()`` Function:
+8. ``buildUIDString()`` Funktion:
 
-* Constructs a formatted string of the RFID card's UID for easy reading and display.
-* Each byte of the UID is converted to hexadecimal and separated by colons.
+* Erstellt eine formatierte Zeichenkette der UID der RFID-Karte zur einfachen Anzeige.
+* Jedes Byte der UID wird in Hexadezimal umgewandelt und durch Doppelpunkte getrennt.
 
 .. code-block:: Arduino
 
   String buildUIDString() {
-    String uidStr = "";  // Store UID as String for display
+    String uidStr = "";  // Speichern Sie die UID als Zeichenkette zur Anzeige
     for (byte i = 0; i < mfrc522.uid.size; i++) {
       char buff[3];
       sprintf(buff, "%02X", mfrc522.uid.uidByte[i]);
@@ -410,12 +410,12 @@ Let's now write the code to see how to implement this access control system.
     }
     return uidStr;
   }
+  
+9. ``grantAccess()`` Funktion: 
 
-9. ``grantAccess()`` Function: 
-
-* Operates the stepper motor to open and later close the door.
-* Displays welcoming messages on the LCD.
-* Manages power efficiently by disabling the motor when not in use.
+* Steuert den Schrittmotor, um die Tür zu öffnen und später wieder zu schließen.
+* Zeigt Begrüßungsnachrichten auf dem LCD an.
+* Verwaltet den Stromverbrauch effizient, indem der Motor deaktiviert wird, wenn er nicht in Gebrauch ist.
 
 .. code-block:: Arduino
 
@@ -424,14 +424,14 @@ Let's now write the code to see how to implement this access control system.
     lcd.print("Welcome!");
     lcd.setCursor(0, 1);
     lcd.print("Door Opening...");
-    stepper.step(doorStep);   // Open door
-    savePower();              // Power saving function after motor activity
-    delay(5000);              // Simulate door being open for a while
-    stepper.step(-doorStep);  // Close door
-    savePower();              // Power saving function after motor activity
+    stepper.step(doorStep);   // Tür öffnen
+    savePower();              // Energiesparfunktion nach Motoraktivität
+    delay(5000);              // Simuliert, dass die Tür eine Weile offen bleibt
+    stepper.step(-doorStep);  // Tür schließen
+    savePower();              // Energiesparfunktion nach Motoraktivität
   }
 
-10. ``denyAccess()`` Function: Informs the user via the LCD that access has been denied due to an unrecognized or unauthorized RFID card.
+10. ``denyAccess()`` Funktion: Informiert den Benutzer über das LCD, dass der Zugang aufgrund einer unzulässigen oder nicht autorisierten RFID-Karte verweigert wurde.
 
 .. code-block:: Arduino
 
@@ -442,69 +442,69 @@ Let's now write the code to see how to implement this access control system.
     lcd.print("Invalid Card");
   }
 
-11. ``savePower()`` Function: Turns off all pins connected to the stepper motor to reduce power consumption when the motor is not active.
+11. ``savePower()`` Funktion: Schaltet alle Pins, die mit dem Schrittmotor verbunden sind, ab, um den Stromverbrauch zu reduzieren, wenn der Motor nicht aktiv ist.
 
 .. code-block:: Arduino
 
   void savePower() {
-    // Disable all stepper motor pins to save power
+    // Deaktiviert alle Schrittmotor-Pins, um Strom zu sparen
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
     digitalWrite(5, LOW);
   }
 
-12. ``isAuthorized(byte *uid)`` Function:
+12. ``isAuthorized(byte *uid)`` Funktion:
 
-* Compares the scanned UID with a predefined list of authorized UIDs.
-* Determines whether to grant or deny access based on this comparison.
+* Vergleicht die gescannte UID mit einer vordefinierten Liste autorisierter UIDs.
+* Bestimmt, ob der Zugang gewährt oder verweigert wird, basierend auf diesem Vergleich.
 
 .. code-block:: Arduino
 
   bool isAuthorized(byte *uid) {
-    // Check if the scanned UID matches the authorized UID
+    // Überprüft, ob die gescannte UID mit der autorisierten UID übereinstimmt
     for (byte i = 0; i < 4; i++) {
       if (uid[i] != authorizedUID[i]) {
-        return false;  // Return false if any byte does not match
+        return false;  // Gibt false zurück, wenn ein Byte nicht übereinstimmt
       }
     }
-    return true;  // Return true if all bytes match
+    return true;  // Gibt true zurück, wenn alle Bytes übereinstimmen
   }
 
-13. Here is your complete code, which you can upload to the Arduino board.
+13. Hier ist Ihr vollständiger Code, den Sie auf das Arduino-Board hochladen können.
 
 .. code-block:: Arduino
 
-  #include <SPI.h>                // Include the SPI library for SPI communication
-  #include <MFRC522.h>            // Include the library for the RFID module
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the library for the I2C LCD
-  #include <Stepper.h>            // Include the library for the Stepper Motor
+  #include <SPI.h>                // Fügen Sie die SPI-Bibliothek für die SPI-Kommunikation hinzu
+  #include <MFRC522.h>            // Fügen Sie die Bibliothek für das RFID-Modul hinzu
+  #include <Wire.h>               // Fügen Sie die Wire-Bibliothek für die I2C-Kommunikation hinzu
+  #include <LiquidCrystal_I2C.h>  // Fügen Sie die Bibliothek für das I2C LCD hinzu
+  #include <Stepper.h>            // Fügen Sie die Bibliothek für den Schrittmotor hinzu
 
-  #define RST_PIN 9  // Reset pin for the RFID module
-  #define SS_PIN 10  // Slave select pin for the RFID module
+  #define RST_PIN 9  // Reset-Pin für das RFID-Modul
+  #define SS_PIN 10  // Slave-Select-Pin für das RFID-Modul
 
-  // Create an instance of the MFRC522 class to interface with the RFID module
+  // Erstellen Sie eine Instanz der MFRC522-Klasse, um mit dem RFID-Modul zu interagieren
   MFRC522 mfrc522(SS_PIN, RST_PIN);
-  // Create an instance of the LiquidCrystal_I2C class for the LCD
+  // Erstellen Sie eine Instanz der LiquidCrystal_I2C-Klasse für das LCD
   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-  // Define stepper motor configuration
-  const int stepsPerRevolution = 2048;              // Total number of steps per revolution
-  Stepper stepper(stepsPerRevolution, 2, 3, 4, 5);  // Pins for the stepper motor (IN1, IN2, IN3, IN4)
+  // Definieren Sie die Konfiguration des Schrittmotors
+  const int stepsPerRevolution = 2048;              // Gesamtanzahl der Schritte pro Umdrehung
+  Stepper stepper(stepsPerRevolution, 2, 3, 4, 5);  // Pins für den Schrittmotor (IN1, IN2, IN3, IN4)
 
-  int doorStep = 512;  // Steps to open the door to 90 degrees
+  int doorStep = 512;  // Schritte, um die Tür um 90 Grad zu öffnen
 
-  // UID for authorized access
+  // UID für autorisierten Zugang
   const byte authorizedUID[4] = { 0x9B, 0x2F, 0x0A, 0x11 };
 
   void setup() {
     Serial.begin(9600);
     SPI.begin();
-    mfrc522.PCD_Init();    // Initialize the RFID reader
-    stepper.setSpeed(15);  // Set the stepper motor speed to 15 RPM
+    mfrc522.PCD_Init();    // Initialisieren Sie den RFID-Leser
+    stepper.setSpeed(15);  // Stellen Sie die Geschwindigkeit des Schrittmotors auf 15 U/min ein
 
-    // Initialize the LCD display
+    // Initialisieren Sie das LCD-Display
     lcd.init();
     lcd.backlight();
     lcd.clear();
@@ -514,34 +514,34 @@ Let's now write the code to see how to implement this access control system.
   }
 
   void loop() {
-    // Check for the presence of a new card
+    // Überprüfen Sie, ob eine neue Karte vorhanden ist
     if (!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial()) {
-      return;  // Exit loop if no new card is present
+      return;  // Schleife beenden, wenn keine neue Karte vorhanden ist
     }
 
-    // Build and display the card UID
+    // Erstellen und zeigen Sie die UID der Karte an
     String uidStr = buildUIDString();
     Serial.print("Card ID: ");
     Serial.println(uidStr);
 
-    // Check card authorization and react accordingly
+    // Überprüfen Sie die Kartenautorisierung und reagieren Sie entsprechend
     if (isAuthorized(mfrc522.uid.uidByte)) {
       grantAccess();
     } else {
       denyAccess();
     }
 
-    delay(3000);  // Delay before next card read
+    delay(3000);  // Verzögerung vor dem nächsten Kartenlesevorgang
     lcd.clear();
     lcd.print("Scan your card");
 
-    // Halt PICC and stop encryption on PCD
+    // Beenden Sie die Kartenkommunikation und stoppen Sie die Verschlüsselung
     mfrc522.PICC_HaltA();
     mfrc522.PCD_StopCrypto1();
   }
 
   String buildUIDString() {
-    String uidStr = "";  // Store UID as String for display
+    String uidStr = "";  // Speichern Sie die UID als Zeichenkette zur Anzeige
     for (byte i = 0; i < mfrc522.uid.size; i++) {
       char buff[3];
       sprintf(buff, "%02X", mfrc522.uid.uidByte[i]);
@@ -556,11 +556,11 @@ Let's now write the code to see how to implement this access control system.
     lcd.print("Welcome!");
     lcd.setCursor(0, 1);
     lcd.print("Door Opening...");
-    stepper.step(doorStep);   // Open door
-    savePower();              // Power saving function after motor activity
-    delay(5000);              // Simulate door being open for a while
-    stepper.step(-doorStep);  // Close door
-    savePower();              // Power saving function after motor activity
+    stepper.step(doorStep);   // Tür öffnen
+    savePower();              // Energiesparfunktion nach Motoraktivität
+    delay(5000);              // Simuliert, dass die Tür eine Weile offen bleibt
+    stepper.step(-doorStep);  // Tür schließen
+    savePower();              // Energiesparfunktion nach Motoraktivität
   }
 
 
@@ -572,7 +572,7 @@ Let's now write the code to see how to implement this access control system.
   }
 
   void savePower() {
-    // Disable all stepper motor pins to save power
+    // Deaktiviert alle Schrittmotor-Pins, um Strom zu sparen
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
@@ -580,24 +580,24 @@ Let's now write the code to see how to implement this access control system.
   }
 
   bool isAuthorized(byte *uid) {
-    // Check if the scanned UID matches the authorized UID
+    // Überprüft, ob die gescannte UID mit der autorisierten UID übereinstimmt
     for (byte i = 0; i < 4; i++) {
       if (uid[i] != authorizedUID[i]) {
-        return false;  // Return false if any byte does not match
+        return false;  // Gibt false zurück, wenn ein Byte nicht übereinstimmt
       }
     }
-    return true;  // Return true if all bytes match
+    return true;  // Gibt true zurück, wenn alle Bytes übereinstimmen
   }
 
-14. Each card or tag's ID is unique, and you may encounter access denial messages the first time you scan your card. At this point, you can open the serial monitor to check your card's ID. Then replace your ID in the array ``authorizedUID[]``.
+14. Jede Karten- oder Tag-ID ist einzigartig, und Sie könnten beim ersten Scannen Ihrer Karte auf Zugang verweigert-Nachrichten stoßen. In diesem Fall können Sie den seriellen Monitor öffnen, um die ID Ihrer Karte zu überprüfen. Ersetzen Sie dann Ihre ID im Array ``authorizedUID[]``.
 
-For instance, if I read ``Card ID: 23:E7:03:33``, then I replace it with ``const byte authorizedUID[4] = { 0x23, 0xE7, 0x03, 0x33 };``
+Zum Beispiel, wenn ich ``Card ID: 23:E7:03:33`` lese, ersetze ich sie mit ``const byte authorizedUID[4] = { 0x23, 0xE7, 0x03, 0x33 };``
 
 .. image:: img/34_step_print_id.png
   :width: 600
   :align: center
 
-15. Re-upload the code, and when you bring your card close to the RFID module's antenna area, you will see a welcome message and the stepper motor rotate 512 steps (90 degrees) to simulate opening the door. After 5 seconds, it will return to its original position to close the door.
+15. Laden Sie den Code erneut hoch, und wenn Sie Ihre Karte in die Nähe des Antennenbereichs des RFID-Moduls bringen, sehen Sie eine Begrüßungsnachricht, und der Schrittmotor dreht sich 512 Schritte (90 Grad), um das Öffnen der Tür zu simulieren. Nach 5 Sekunden kehrt er in seine ursprüngliche Position zurück, um die Tür zu schließen.
 
 .. raw:: html
 
@@ -606,13 +606,14 @@ For instance, if I read ``Card ID: 23:E7:03:33``, then I replace it with ``const
         Your browser does not support the video tag.
     </video>
 
-16. Finally, remember to save your code and tidy up your workspace.
+16. Speichern Sie abschließend Ihren Code und räumen Sie Ihren Arbeitsplatz auf.
 
-**Question**
+**Frage**
 
-Now that a basic access control system has been set up, what additional components could be added to enhance its functionality and flexibility?
+Nachdem nun ein grundlegendes Zugangskontrollsystem eingerichtet wurde, welche zusätzlichen Komponenten könnten hinzugefügt werden, um dessen Funktionalität und Flexibilität zu verbessern?
 
 
-**Summary**
+**Zusammenfassung**
 
-Throughout this course, we've taken a deep dive into the functionalities of stepper motors, RFID modules, and I2C LCD displays, culminating in the creation of a fully functional Access Control System. You have learned to integrate various components to develop a system that reads RFID tags, controls door mechanisms via stepper motors, and displays system statuses and messages on an LCD. 
+In diesem Kurs haben wir uns intensiv mit den Funktionen von Schrittmotoren, RFID-Modulen und I2C-LCD-Displays auseinandergesetzt, was schließlich zur Entwicklung eines voll funktionsfähigen Zugangskontrollsystems führte. Sie haben gelernt, verschiedene Komponenten zu integrieren, um ein System zu entwickeln, das RFID-Tags liest, Türmechanismen über Schrittmotoren steuert und Systemstatus und Nachrichten auf einem LCD anzeigt.
+

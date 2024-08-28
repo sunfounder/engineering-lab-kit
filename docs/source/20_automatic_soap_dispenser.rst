@@ -1,64 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Fachkundige Unterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitige Informationen über neue Produktankündigungen und Vorschauen.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _automatic_soap_dispenser:
 
-20. Automatic Soap Dispenser
-================================
+20. Automatischer Seifenspender
+====================================
 
-Welcome to our course on building an Automatic Soap Dispenser using Arduino technology! In this course, we will explore the fascinating world of automated systems and how simple electronics can greatly enhance everyday objects. Our focus will be on creating a device that senses the proximity of a hand and automatically dispenses soap.
+Willkommen zu unserem Kurs über den Bau eines automatischen Seifenspenders mithilfe von Arduino-Technologie! In diesem Kurs erkunden wir die faszinierende Welt der automatisierten Systeme und wie einfache Elektronik Alltagsgegenstände erheblich verbessern kann. Unser Schwerpunkt liegt darauf, ein Gerät zu entwickeln, das die Nähe einer Hand erkennt und automatisch Seife ausgibt.
 
 .. raw:: html
 
     <video muted controls style = "max-width:90%">
         <source src="_static/video/20_automatic_soap_dispenser.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Dein Browser unterstützt das Video-Tag nicht.
     </video>
 
-By the end of this lesson, you will be able to:
+Am Ende dieser Lektion wirst du in der Lage sein:
 
 
-* Learn about the operational principles of water pump.
-* Develop an automatic soap dispenser that responds to the proximity of your hand using distance measurements from an ultrasonic sensor.
+* Die Funktionsweise einer Wasserpumpe zu verstehen.
+* Einen automatischen Seifenspender zu entwickeln, der auf die Nähe deiner Hand reagiert und mithilfe von Entfernungsmessungen eines Ultraschallsensors Seife ausgibt.
 
-Build the Circuit
-------------------------------------
 
-**Components Needed**
+
+Bau der Schaltung
+---------------------
+
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Pump
-     - 1 * Ultrasonic Module
-     - 1 * L293D Chip
+     - 1 * Pumpe
+     - 1 * Ultraschallmodul
+     - 1 * L293D-Chip
    * - |list_uno_r3|
      - |list_pump| 
      - |list_ultrasonic|
      - |list_l293d|
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Breadboard Power Module
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
+     - Verbindungskabel
+     - 1 * Steckbrett-Netzteilmodul
    * - |list_usb_cable|
      - |list_breadboard|
      - |list_wire|
      - |list_power_module|
-   * - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * 9V Batterie
+     - 1 * Batteriekabel
      - 
      -  
    * - |list_battery| 
@@ -66,15 +68,15 @@ Build the Circuit
      -
      -
 
-**Building Step-by-Step**
+**Schritt-für-Schritt Aufbau**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Verdrahtungsdiagramm oder den unten stehenden Schritten, um deine Schaltung aufzubauen.
 
 .. image:: img/20_dispenser_connect_pump.png
     :width: 600
     :align: center
 
-1. When using motors, servos, and other actuators, it's recommended to use an external power supply to avoid damaging the main board. Insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+1. Bei der Verwendung von Motoren, Servos und anderen Aktoren wird empfohlen, eine externe Stromversorgung zu verwenden, um Schäden an der Hauptplatine zu vermeiden. Setze das Steckbrett-Netzteilmodul in das Steckbrett ein und verwende ein Verbindungskabel, um die negative Schiene des Steckbretts mit dem GND des Arduino Uno R3 zu verbinden, um eine gemeinsame Masse zu erreichen.
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -82,9 +84,9 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    Die Anordnung der positiven und negativen Klemmen auf dem Steckbrett im Verdrahtungsdiagramm ist im Vergleich zum Steckbrett im Bausatz vertauscht.
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    Beim tatsächlichen Verdrahten musst du das Steckbrett-Netzteilmodul von der höheren Zahlenseite (60~65) einfügen, sodass das "-" des Netzteilmoduls in die negative Schiene "-" des Steckbretts und das "+" in die positive Schiene "+" gelangt.
 
     .. raw:: html
 
@@ -93,233 +95,231 @@ Follow the wiring diagram, or the steps below to build your circuit.
             Your browser does not support the video tag.
         </video>
 
-2. Insert the ultrasonic module into the breadboard.
+2. Setze das Ultraschallmodul in das Steckbrett ein.
 
 .. image:: img/20_dispenser_ultrasonic.png
     :width: 400
     :align: center
 
-
-3. Connect the VCC pin of the ultrasonic module to the positive side of the breadboard, the Trig pin to pin 8 on the Arduino board, the Echo pin to pin 7, and the GND to the negative side of the breadboard.
+3. Verbinde den VCC-Pin des Ultraschallmoduls mit der positiven Seite des Steckbretts, den Trig-Pin mit Pin 8 auf dem Arduino-Board, den Echo-Pin mit Pin 7 und den GND mit der negativen Seite des Steckbretts.
 
 .. image:: img/20_dispenser_ultrasonic_pins.png
     :width: 400
     :align: center
 
-4. Find the water pump.
+4. Finde die Wasserpumpe.
 
 .. image:: img/20_despenser_pump.png
   :width: 200
   :align: center
 
 
-This is the DC 2.5-6V mini submersible water pump, ideal for small-scale projects like tabletop fountains, aquariums, and hydroponic systems.
+Dies ist die DC 2.5-6V Mini-Tauchpumpe, ideal für kleine Projekte wie Tischbrunnen, Aquarien und Hydrokultursysteme.
 
-This pump employs centrifugal mechanics, using an electric motor to convert rotational energy into fluid dynamic energy, efficiently moving water through its system. Easy to install and maintain, it's a reliable choice for DIY enthusiasts.
+Diese Pumpe verwendet zentrifugale Mechanik, wobei ein Elektromotor Rotationsenergie in Strömungsenergie umwandelt und so effizient Wasser durch das System bewegt. Einfach zu installieren und zu warten, ist sie eine zuverlässige Wahl für DIY-Enthusiasten.
 
 .. image:: img/20_despenser_pump_intro.png
   :width: 400
   :align: center
 
 
-5. The water pump also requires a motor driver chip. Now, let's insert the L293D chip across the middle notch of the breadboard. Make sure the notch on the chip faces left.
+5. Die Wasserpumpe benötigt auch einen Motortreiber-Chip. Jetzt setzen wir den L293D-Chip in die mittlere Kerbe des Steckbretts ein. Achte darauf, dass die Kerbe auf dem Chip nach links zeigt.
 
 .. image:: img/20_dispenser_l293d.png
   :width: 600
   :align: center
 
-6. Connect the pins of the L293D chip as follows.
+6. Verbinde die Pins des L293D-Chips wie folgt:
 
-* **1(1,2EN)**: Connect to the positive rail of the breadboard to enable the chip.
-* **4(GND)**: Connect to the negative rail of the breadboard to ground the chip.
-* **8(VCC2)**: Connect to the positive rail of the breadboard to provide power to the motor.
-* **16(VCC1)**: Connect to the positive rail of the breadboard to power the chip.
+* **1(1,2EN)**: Verbinde mit der positiven Schiene des Steckbretts, um den Chip zu aktivieren.
+* **4(GND)**: Verbinde mit der negativen Schiene des Steckbretts, um den Chip zu erden.
+* **8(VCC2)**: Verbinde mit der positiven Schiene des Steckbretts, um die Pumpe mit Strom zu versorgen.
+* **16(VCC1)**: Verbinde mit der positiven Schiene des Steckbretts, um den Chip mit Strom zu versorgen.
 
 .. image:: img/20_dispenser_l293d_power_pins.png
   :width: 600
   :align: center
 
-7. Unlike motors, water pumps do not have a direction of rotation to distinguish. They just need a voltage difference across two pins to start pumping water. Therefore, connect pin 2 (1A) of the L293D to pin 2 on the Arduino Uno R3, and pin 3 (1Y) to the water pump, with the other pin of the water pump going to GND.
+7. Im Gegensatz zu Motoren haben Wasserpumpen keine Drehrichtung, die unterschieden werden muss. Sie benötigen lediglich eine Spannungsdifferenz an zwei Pins, um Wasser zu pumpen. Verbinde daher Pin 2 (1A) des L293D mit Pin 2 des Arduino Uno R3 und Pin 3 (1Y) mit der Wasserpumpe, wobei der andere Pin der Wasserpumpe mit GND verbunden wird.
 
-* By simply setting pin 2 to high, the water pump will start pumping water.
+* Indem Pin 2 einfach auf High gesetzt wird, beginnt die Wasserpumpe, Wasser zu pumpen.
 
 .. image:: img/20_dispenser_connect_pump.png
   :width: 600
   :align: center
 
-Code Creation - Making the Water Pump Work
----------------------------------------------
+Codeerstellung - So funktioniert die Wasserpumpe
+------------------------------------------------------
 
-First, let's see how the water pump works. You will need a cup of water, make sure it's enough to completely submerge the pump, and another empty cup to collect the water pumped out.
+Lass uns zunächst sehen, wie die Wasserpumpe funktioniert. Du benötigst ein Glas Wasser, das groß genug ist, um die Pumpe vollständig zu untertauchen, und ein weiteres leeres Glas, um das abgepumpte Wasser aufzufangen.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson20_Pump`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem „File“-Menü wählst.
+2. Speichere dein Sketch unter dem Namen ``Lesson20_Pump`` mit ``Ctrl + S`` oder durch Klicken auf „Save“.
 
-3. Operating the water pump is as simple as lighting up an LED. Just initialize the pump control pin, set it as output, then write it high.
+3. Das Betreiben der Wasserpumpe ist genauso einfach wie das Ansteuern einer LED. Initialisiere einfach den Pumpensteuerungspin, setze ihn als Ausgang und schalte ihn dann auf High.
 
 .. code-block:: Arduino
 
-  #define PUMP_PIN     2  // pump control pin
+  #define PUMP_PIN     2  // Pumpensteuerungspin
 
   void setup() {
-    pinMode(PUMP_PIN, OUTPUT);    // Set the pump control pin as output
+    pinMode(PUMP_PIN, OUTPUT);    // Setze den Pumpensteuerungspin als Ausgang
   }
 
   void loop() {
-    digitalWrite(PUMP_PIN, HIGH);       // Turn on the pump at full speed
+    digitalWrite(PUMP_PIN, HIGH);       // Schalte die Pumpe mit voller Geschwindigkeit ein
   }
 
-4. The code is complete. You can now upload it to the Arduino Uno R3 board. Afterward, you will see the water being transferred from the filled cup to the empty one through the pump's tubing.
+4. Der Code ist vollständig. Du kannst ihn jetzt auf das Arduino Uno R3 Board hochladen. Danach wirst du sehen, wie das Wasser durch den Schlauch der Pumpe vom vollen Glas in das leere Glas gepumpt wird.
 
-**Question**
+**Frage**
 
-In this project, you connected the water pump using a specific driver and setup. What do you think would happen if you reversed the connections of the pump? Would the pump work in reverse, stop working, or something else? Try this out and reflect on the outcome.
+In diesem Projekt hast du die Wasserpumpe mit einem speziellen Treiber und einer bestimmten Konfiguration angeschlossen. Was denkst du, würde passieren, wenn du die Anschlüsse der Pumpe umkehrst? Würde die Pumpe rückwärts arbeiten, aufhören zu funktionieren oder etwas anderes tun? Probiere es aus und reflektiere über das Ergebnis.
 
 .. image:: img/20_despenser_pump_change.png
   :width: 600
   :align: center
 
-Code Creation - Automatic Soap Dispenser
--------------------------------------------
-Here, we are building an automatic soap dispenser powered by a water pump that extracts soap liquid. The dispenser is triggered by an ultrasonic sensor that detects the proximity of a hand. When the distance measured by the sensor is less than 10 cm, indicating that a hand is near, the dispenser will expel soap.
+Codeerstellung - Automatischer Seifenspender
+-------------------------------------------------
+Hier bauen wir einen automatischen Seifenspender, der durch eine Wasserpumpe Seifenflüssigkeit abgibt. Der Spender wird durch einen Ultraschallsensor ausgelöst, der die Nähe einer Hand erkennt. Wenn die gemessene Entfernung weniger als 10 cm beträgt, was darauf hindeutet, dass eine Hand in der Nähe ist, wird der Spender Seife abgeben.
 
-To economize on soap usage, the pump operates for 500 milliseconds to dispense the soap. If a hand is still detected after a 2-second pause, the pump will activate once more for 500 milliseconds to ensure an adequate amount of soap is dispensed. This setup efficiently manages soap dispensing while accommodating user needs.
+Um den Seifenverbrauch zu optimieren, läuft die Pumpe 500 Millisekunden, um Seife abzugeben. Wird nach einer Pause von 2 Sekunden weiterhin eine Hand erkannt, aktiviert sich die Pumpe erneut für 500 Millisekunden, um eine ausreichende Menge Seife abzugeben. Dieses Setup verwaltet die Seifenabgabe effizient und berücksichtigt die Bedürfnisse des Benutzers.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson20_Soap_Dispenser`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem „File“-Menü wählst.
+2. Speichere dein Sketch unter dem Namen ``Lesson20_Soap_Dispenser`` mit ``Ctrl + S`` oder durch Klicken auf „Save“.
 
-3. Initialize the two pins for the ultrasonic sensor and the pump pin.
-
+3. Initialisiere die beiden Pins für den Ultraschallsensor und den Pumpenpin.
 
 .. code-block:: Arduino
   :emphasize-lines: 1-3
 
   #define TRIGGER_PIN 8
   #define ECHO_PIN 7
-  #define PUMP_PIN 2  // pump control pin
+  #define PUMP_PIN 2  // Pumpensteuerungspin
 
   void setup() {
-    // put your setup code here, to run once:
+    // füge hier den Setup-Code ein, der einmal ausgeführt wird:
 
   }
 
-4. In ``void setup()`` function, set the modes for each pin used in the project and initialize serial communication at 9600 bps for debugging and monitoring sensor output.
+4. In der Funktion ``void setup()``, setze die Modi für die im Projekt verwendeten Pins und initialisiere die serielle Kommunikation bei 9600 bps zur Fehlerbehebung und Überwachung der Sensorausgabe.
 
 .. code-block:: Arduino
   :emphasize-lines: 6-9
 
   #define TRIGGER_PIN 8
   #define ECHO_PIN 7
-  #define PUMP_PIN 2  // pump control pin
+  #define PUMP_PIN 2  // Pumpensteuerungspin
 
   void setup() {
-    pinMode(PUMP_PIN, OUTPUT);     // Set the pump control pin as output
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the Trig pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the Echo pin as input
-    Serial.begin(9600);            // Start serial communication for debugging
+    pinMode(PUMP_PIN, OUTPUT);     // Setze den Pumpensteuerungspin als Ausgang
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setze den Trig-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setze den Echo-Pin als Eingang
+    Serial.begin(9600);            // Starte die serielle Kommunikation zur Fehlerbehebung
   }
 
-5. You will need a specific function to retrieve the distance measured by the ultrasonic module. You can see how this function is implemented by referring to :ref:`ar_read_distance`.
+5. Du benötigst eine spezifische Funktion, um die vom Ultraschallmodul gemessene Entfernung abzurufen. Wie diese Funktion implementiert wird, kannst du unter :ref:`ar_read_distance` nachlesen.
 
 .. code-block:: Arduino
   :emphasize-lines: 7-17
   
   void loop() {
-    // put your main code here, to run repeatedly:
+    // füge hier den Hauptcode ein, der wiederholt ausgeführt wird:
 
   }
 
-  // Function to read the sensor data and calculate the distance
+  // Funktion zum Auslesen der Sensordaten und Berechnung der Entfernung
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+    digitalWrite(TRIGGER_PIN, LOW);  // Stelle sicher, dass der Trig-Pin vor einem Puls auf LOW ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH);  // Send a high pulse
-    delayMicroseconds(10);            // Pulse duration of 10 microseconds
-    digitalWrite(TRIGGER_PIN, LOW);   // End the high pulse
+    digitalWrite(TRIGGER_PIN, HIGH);  // Sende einen hohen Puls
+    delayMicroseconds(10);            // Pulsdauer von 10 Mikrosekunden
+    digitalWrite(TRIGGER_PIN, LOW);   // Beende den hohen Puls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance (in cm)
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messe die Dauer des hohen Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechne die Entfernung (in cm)
     return distance;
   }
 
-6. Now, move to the ``void loop()`` function, call the function ``measureDistance()`` to store the measured distance into the variable ``distance``, and print it to the serial monitor.
+6. Nun wechsle zur Funktion ``void loop()``, rufe die Funktion ``measureDistance()`` auf, um die gemessene Distanz in der Variablen ``distance`` zu speichern, und gib sie im seriellen Monitor aus.
 
 .. code-block:: Arduino
   :emphasize-lines: 2-4
 
   void loop() {
-    long distance = measureDistance();  // Call the function to measure distance
+    long distance = measureDistance();  // Ruft die Funktion zur Distanzmessung auf
     Serial.println(distance);
-    delay(100);  // Delay between measurements
+    delay(100);  // Verzögerung zwischen den Messungen
   }
 
-7. Next, based on the distance, decide the operational state of the pump. If the distance is between 2 and 10 cm, the pump is activated to dispense soap for 500 milliseconds, then turns off and waits for 2 seconds before another activation can occur.
+7. Anschließend wird basierend auf der gemessenen Distanz der Betriebszustand der Pumpe festgelegt. Wenn die Distanz zwischen 2 und 10 cm liegt, wird die Pumpe aktiviert, um für 500 Millisekunden Seife abzugeben, und schaltet sich dann ab. Danach wartet sie 2 Sekunden, bevor eine erneute Aktivierung erfolgen kann.
 
 .. code-block:: Arduino
   :emphasize-lines: 5-12
 
   void loop() {
-    long distance = measureDistance();  // Call the function to measure distance
+    long distance = measureDistance();  // Ruft die Funktion zur Distanzmessung auf
     Serial.println(distance);
 
-    if (distance > 2 && distance < 10) {  // If distance is between 2-10cm
-      digitalWrite(PUMP_PIN, HIGH);       // Turn on the pump
+    if (distance > 2 && distance < 10) {  // Wenn die Distanz zwischen 2 und 10 cm liegt
+      digitalWrite(PUMP_PIN, HIGH);       // Schalte die Pumpe ein
       delay(500);
-      digitalWrite(PUMP_PIN, LOW);  // Turn off the pump
+      digitalWrite(PUMP_PIN, LOW);  // Schalte die Pumpe aus
       delay(2000);
     } else {
-      digitalWrite(PUMP_PIN, LOW);  // Turn off the pump
+      digitalWrite(PUMP_PIN, LOW);  // Schalte die Pumpe aus
     }
-    delay(100);  // Delay between measurements
+    delay(100);  // Verzögerung zwischen den Messungen
   }
 
-8. Your complete code is as follows. You can upload it to the Arduino Uno R3 board.
+8. Hier ist dein vollständiger Code, den du auf das Arduino Uno R3 Board hochladen kannst.
 
 .. code-block:: Arduino
 
   #define TRIGGER_PIN 8
   #define ECHO_PIN 7
-  #define PUMP_PIN 2  // pump control pin
+  #define PUMP_PIN 2  // Pumpensteuerungspin
 
   void setup() {
-    pinMode(PUMP_PIN, OUTPUT);     // Set the pump control pin as output
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the Trig pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the Echo pin as input
-    Serial.begin(9600);            // Start serial communication for debugging
+    pinMode(PUMP_PIN, OUTPUT);     // Setze den Pumpensteuerungspin als Ausgang
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setze den Trig-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setze den Echo-Pin als Eingang
+    Serial.begin(9600);            // Starte die serielle Kommunikation zur Fehlerbehebung
   }
 
   void loop() {
-    long distance = measureDistance();  // Call the function to measure distance
+    long distance = measureDistance();  // Ruft die Funktion zur Distanzmessung auf
     Serial.println(distance);
 
-    if (distance > 2 && distance < 10) {  // If distance is between 2-10cm
-      digitalWrite(PUMP_PIN, HIGH);       // Turn on the pump
+    if (distance > 2 && distance < 10) {  // Wenn die Distanz zwischen 2 und 10 cm liegt
+      digitalWrite(PUMP_PIN, HIGH);       // Schalte die Pumpe ein
       delay(500);
-      digitalWrite(PUMP_PIN, LOW);  // Turn off the pump
+      digitalWrite(PUMP_PIN, LOW);  // Schalte die Pumpe aus
       delay(2000);
     } else {
-      digitalWrite(PUMP_PIN, LOW);  // Turn off the pump
+      digitalWrite(PUMP_PIN, LOW);  // Schalte die Pumpe aus
     }
-    delay(100);  // Delay between measurements
+    delay(100);  // Verzögerung zwischen den Messungen
   }
 
-  // Function to read the sensor data and calculate the distance
+  // Funktion zum Auslesen der Sensordaten und Berechnung der Entfernung
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+    digitalWrite(TRIGGER_PIN, LOW);  // Stelle sicher, dass der Trig-Pin vor einem Puls auf LOW ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH);  // Send a high pulse
-    delayMicroseconds(10);            // Pulse duration of 10 microseconds
-    digitalWrite(TRIGGER_PIN, LOW);   // End the high pulse
+    digitalWrite(TRIGGER_PIN, HIGH);  // Sende einen hohen Puls
+    delayMicroseconds(10);            // Pulsdauer von 10 Mikrosekunden
+    digitalWrite(TRIGGER_PIN, LOW);   // Beende den hohen Puls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance (in cm)
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messe die Dauer des hohen Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechne die Entfernung (in cm)
     return distance;
   }
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. Denke schließlich daran, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
 
-**Summary**
+**Zusammenfassung**
 
-In today's lesson, we successfully built and programmed an automatic soap dispenser. We explored the use of ultrasonic sensors for proximity detection and learned how to control a water pump through Arduino programming. The skills acquired today not only enhance your understanding of electronic circuits but also open up a wide range of possibilities for future projects.
+In der heutigen Lektion haben wir erfolgreich einen automatischen Seifenspender gebaut und programmiert. Wir haben den Einsatz von Ultraschallsensoren zur Erkennung von Annäherungen untersucht und gelernt, wie man eine Wasserpumpe über Arduino-Programmierung steuert. Die erworbenen Fähigkeiten erweitern nicht nur dein Verständnis von elektronischen Schaltungen, sondern eröffnen auch eine Vielzahl von Möglichkeiten für zukünftige Projekte.
 

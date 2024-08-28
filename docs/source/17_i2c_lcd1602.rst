@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit Gleichgesinnten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitig Zugang zu neuen Produktankündigungen und Sneak Peeks.
+    - **Exklusive Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _ar_i2c_lcd1602:
 
-17. Exploring the I2C LCD1602 Display
+17. Erkundung des I2C LCD1602 Displays
 ================================================
   
-Welcome to our practical guide on using the I2C LCD1602! In this lesson, we'll uncover the essentials of working with this versatile display module. You'll learn how to set up the I2C LCD1602 with your Arduino, find its unique I2C address, and install the necessary libraries to get it up and running. By the end, you'll know how to send commands and display text, turning lines of code into clear, readable information on your screen.
+Willkommen zu unserem praktischen Leitfaden zur Nutzung des I2C LCD1602! In dieser Lektion entdecken wir die Grundlagen der Arbeit mit diesem vielseitigen Display-Modul. Du wirst lernen, wie du das I2C LCD1602 mit deinem Arduino einrichtest, seine eindeutige I2C-Adresse findest und die notwendigen Bibliotheken installierst, um es zum Laufen zu bringen. Am Ende wirst du wissen, wie man Befehle sendet und Text anzeigt, sodass deine Codezeilen in klare, lesbare Informationen auf dem Bildschirm umgewandelt werden.
 
 .. raw:: html
 
@@ -26,17 +26,17 @@ Welcome to our practical guide on using the I2C LCD1602! In this lesson, we'll u
         Your browser does not support the video tag.
     </video>
 
-Upon completing this course, you will be able to:
+Nach Abschluss dieses Kurses wirst du in der Lage sein:
 
-* Understand the basic functions of the I2C LCD1602 module.
-* Learn how to obtain the I2C address of devices within the Arduino environment.
-* Master the installation and use of libraries in the Arduino IDE.
-* Implement the display of custom messages and data on the I2C LCD1602.
+* Die grundlegenden Funktionen des I2C LCD1602 Moduls zu verstehen.
+* Zu lernen, wie du die I2C-Adresse von Geräten innerhalb der Arduino-Umgebung herausfindest.
+* Die Installation und Nutzung von Bibliotheken in der Arduino IDE zu beherrschen.
+* Eigene Nachrichten und Daten auf dem I2C LCD1602 anzuzeigen.
 
-Build the Circuit
+Baue die Schaltung auf
 ------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -45,12 +45,12 @@ Build the Circuit
    * - 1 * Arduino Uno R3
      - 1 * I2C LCD1602
      - 1 * Breadboard
-     - 1 * USB Cable
+     - 1 * USB-Kabel
    * - |list_uno_r3|
      - |list_i2c_lcd1602| 
      - |list_breadboard|
      - |list_usb_cable|
-   * - Jumper Wires
+   * - Jumper-Kabel
      - 
      - 
      - 
@@ -60,64 +60,63 @@ Build the Circuit
      - 
 
 
-**Building Steps**
+**Aufbauschritte**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den folgenden Schritten, um deine Schaltung aufzubauen.
 
 .. image:: img/17_lcd_connect.png
     :width: 700
     :align: center
 
-1. Locate the I2C LCD1602 module.
+1. Finde das I2C LCD1602 Modul.
 
 .. image:: img/17_lcd_i2c_lcd1602.png
     :width: 600
     :align: center
 
-* **GND**: Ground
-* **VCC**: Voltage supply, 5V.
-* **SDA**: Serial data line. Connect to VCC through a pullup resistor.
-* **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
+* **GND**: Masse
+* **VCC**: Spannungsversorgung, 5V.
+* **SDA**: Serielle Datenleitung. Verbinde sie über einen Pullup-Widerstand mit VCC.
+* **SCL**: Serielle Taktleitung. Verbinde sie über einen Pullup-Widerstand mit VCC.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, they share a common weakness. When they are connected to a controller, multiple IOs will be occupied of the controller which has no so many outer ports. Also it restricts other functions of the controller. 
+Wie wir alle wissen, bereichern LCDs und einige andere Anzeigen die Mensch-Maschine-Interaktion erheblich, sie haben jedoch einen gemeinsamen Nachteil. Wenn sie mit einem Controller verbunden sind, werden mehrere IO-Pins des Controllers belegt, der nicht so viele externe Ports hat. Dies schränkt auch andere Funktionen des Controllers ein. 
 
-Therefore, LCD1602 with an I2C module is developed to solve the problem. The I2C module has a built-in PCF8574 I2C chip that converts I2C serial data to parallel data for the LCD display.        
+Daher wurde das LCD1602 mit einem I2C-Modul entwickelt, um dieses Problem zu lösen. Das I2C-Modul enthält einen integrierten PCF8574 I2C-Chip, der serielle I2C-Daten in parallele Daten für die LCD-Anzeige umwandelt.        
 
 * `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
 
-**Backlight/Contrast**
+**Hintergrundbeleuchtung/Kontrast**
 
-Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back is used to adjust the contrast (the ratio of brightness between the brightest white and the darkest black).
-
+Die Hintergrundbeleuchtung kann durch eine Kurzschlusskappe aktiviert werden, indem du die Kappe entfernst, wird die Hintergrundbeleuchtung deaktiviert. Das blaue Potentiometer auf der Rückseite wird verwendet, um den Kontrast (das Verhältnis zwischen dem hellsten Weiß und dem dunkelsten Schwarz) einzustellen.
 
 .. image:: img/17_lcd_back.jpg
     :width: 500
     :align: center
 
-* **Shorting Cap**: Backlight can be enabled by this cap, unplugg this cap to disable the backlight.
-* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
+* **Kurzschlusskappe**: Die Hintergrundbeleuchtung kann durch diese Kappe aktiviert werden, entferne die Kappe, um die Hintergrundbeleuchtung zu deaktivieren.
+* **Potentiometer**: Wird zur Einstellung des Kontrasts verwendet (die Klarheit des angezeigten Textes), der im Uhrzeigersinn erhöht und gegen den Uhrzeigersinn verringert wird.
 
-2. The Uno R3 board has two sets of I2C pins. You can connect the I2C LCD1602 to either set of pins.
+2. Das Uno R3 Board verfügt über zwei Sätze von I2C-Pins. Du kannst das I2C LCD1602 mit beiden Pin-Sets verbinden.
 
 .. image:: img/17_lcd_uno_i2c.jpg
     :width: 500
     :align: center
 
-3. Now, let's connect the I2C LCD1602 to the Arduino Uno R3 board.
+3. Nun verbinden wir das I2C LCD1602 mit dem Arduino Uno R3 Board.
 
 .. image:: img/17_lcd_connect.png
     :width: 700
     :align: center
 
-Code Creation - Retrieving the I2C Address
---------------------------------------------
+Code-Erstellung - Abrufen der I2C-Adresse
+----------------------------------------------
 
-Before using an I2C device, you generally need to find out its address. Let's see how to do that.
+Bevor du ein I2C-Gerät verwenden kannst, musst du normalerweise seine Adresse herausfinden. Schauen wir uns an, wie das geht.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson17_I2C_Scanner`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ „Neuer Sketch“ auswählst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson17_I2C_Scanner`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. Copy the following code into your new sketch, then save it.
+3. Kopiere den folgenden Code in deinen neuen Sketch und speichere ihn.
 
 .. code-block:: Arduino
 
@@ -126,7 +125,7 @@ Before using an I2C device, you generally need to find out its address. Let's se
     void setup() {
         Wire.begin();
         Serial.begin(9600);
-        while (!Serial); // Wait for the serial connection to be established
+        while (!Serial); // Warten auf die serielle Verbindung
         Serial.println("\nI2C Scanner");
     }
 
@@ -162,10 +161,10 @@ Before using an I2C device, you generally need to find out its address. Let's se
         }else {
             Serial.println("done\n");
         }
-        delay(5000); // Wait 5 seconds before scanning again
+        delay(5000); // 5 Sekunden warten, bevor erneut gescannt wird
     }
 
-4. Click the Upload button. If your I2C LCD1602 is connected correctly, you will see information displayed. The default address is basically 0x27, in a few cases it may be 0x3F.
+4. Klicke auf den Upload-Button. Wenn dein I2C LCD1602 korrekt angeschlossen ist, wirst du Informationen sehen. Die Standardadresse ist im Allgemeinen 0x27, in einigen Fällen kann sie 0x3F sein.
 
 .. code-block::
 
@@ -175,71 +174,70 @@ Before using an I2C device, you generally need to find out its address. Let's se
 
 
 
-Code Creation - Displaying Messages
---------------------------------------
-Now, let's look at how to display desired messages on the I2C LCD1602.
+Code-Erstellung - Nachrichten anzeigen
+------------------------------------------
+Schauen wir uns nun an, wie man gewünschte Nachrichten auf dem I2C LCD1602 anzeigt.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson17_I2C_Show`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ „Neuer Sketch“ auswählst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson17_I2C_Show`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-3. To use the I2C LCD1602 module, you need to include the appropriate library. However, unlike the ``Servo`` library we used before, Arduino does not come with the necessary library for the I2C LCD1602. You need to search for and install it from the Library Manager in the Arduino IDE. 
+3. Um das I2C LCD1602-Modul zu verwenden, musst du die entsprechende Bibliothek einbinden. Anders als die ``Servo``-Bibliothek, die wir zuvor verwendet haben, ist die benötigte Bibliothek für das I2C LCD1602 nicht standardmäßig in der Arduino IDE enthalten. Du musst sie im Bibliotheks-Manager suchen und installieren.
 
-Now, search for ``LiquidCrystal I2C`` on the **Library Manager**, then click **INSTALL**.
+Suche im **Bibliotheks-Manager** nach ``LiquidCrystal I2C`` und klicke auf **INSTALLIEREN**.
 
     .. image:: img/17_lcd_install_lib.png
 
-4. After the installation is complete, you will receive a notification. Typically, the library includes some example code to help you learn how to use its functions. You can find these examples by clicking **File** -> **Examples** -> **LiquidCrystal I2C**. There are three example codes available; you can open one of them, upload it to your Arduino board, and see what happens.
+4. Nach Abschluss der Installation erhältst du eine Benachrichtigung. Normalerweise enthält die Bibliothek einige Beispielcodes, um dir das Lernen der Funktionen zu erleichtern. Du findest diese Beispiele, indem du auf **Datei** -> **Beispiele** -> **LiquidCrystal I2C** klickst. Es gibt drei Beispielcodes; du kannst einen davon öffnen, auf dein Arduino-Board hochladen und sehen, was passiert.
 
-5. Now, let's start coding. Before using each library, it is essential to include it in your sketch. 
+5. Beginnen wir nun mit dem Programmieren. Vor der Nutzung jeder Bibliothek ist es wichtig, sie in deinem Sketch einzubinden. 
 
-* ``Wire.h`` is crucial for I2C communication, enabling the interface with the LCD. 
-* ``LiquidCrystal_I2C.h`` is specifically designed for managing LCD displays that connect through the I2C bus.
+* ``Wire.h`` ist entscheidend für die I2C-Kommunikation und ermöglicht die Schnittstelle mit dem LCD. 
+* ``LiquidCrystal_I2C.h`` ist speziell dafür ausgelegt, LCD-Displays zu steuern, die über den I2C-Bus verbunden sind.
 
 .. code-block:: Arduino
     :emphasize-lines: 1,2
 
-    #include <Wire.h>               // Includes I2C communication library.
-    #include <LiquidCrystal_I2C.h>  // Includes library for controlling the I2C LCD.
+    #include <Wire.h>               // Bindet die I2C-Kommunikationsbibliothek ein.
+    #include <LiquidCrystal_I2C.h>  // Bindet die Bibliothek zur Steuerung des I2C LCD ein.
 
 
     void setup() {
-        // put your setup code here, to run once:
+        // Code, der einmalig ausgeführt wird:
 
     }
 
-6. Now, we create an instance of the ``LiquidCrystal_I2C`` class named ``lcd``. The parameters (``0x27``, ``16``, ``2``) specify the I2C address of the LCD (``0x27``) and that the display has 16 characters per line and 2 lines.
+6. Erstelle nun eine Instanz der ``LiquidCrystal_I2C``-Klasse namens ``lcd``. Die Parameter (``0x27``, ``16``, ``2``) geben die I2C-Adresse des LCDs (``0x27``) sowie an, dass das Display 16 Zeichen pro Zeile und 2 Zeilen hat.
 
 .. code-block:: Arduino
     :emphasize-lines: 4
 
-    #include <Wire.h>               // Includes I2C communication library.
-    #include <LiquidCrystal_I2C.h>  // Includes library for controlling the I2C LCD.
+    #include <Wire.h>               // Bindet die I2C-Kommunikationsbibliothek ein.
+    #include <LiquidCrystal_I2C.h>  // Bindet die Bibliothek zur Steuerung des I2C LCD ein.
 
-    LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initializes LCD at address 0x27 for a 16x2 display.
+    LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initialisiert das LCD an Adresse 0x27 für ein 16x2 Display.
 
     void setup() {
-        // put your setup code here, to run once:
+        // Code, der einmalig ausgeführt wird:
 
     }
 
-7. In the ``void setup()`` function, initializes the LCD display with ``lcd.init()`` and then turns on the backlight with ``lcd.backlight()``. This makes the display visible.
-
+7. Im ``void setup()``-Block wird das LCD-Display mit ``lcd.init()`` initialisiert und die Hintergrundbeleuchtung mit ``lcd.backlight()`` eingeschaltet. Dadurch wird die Anzeige sichtbar.
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
 
-    #include <Wire.h>               // Includes I2C communication library.
-    #include <LiquidCrystal_I2C.h>  // Includes library for controlling the I2C LCD.
+    #include <Wire.h>               // Bindet die I2C-Kommunikationsbibliothek ein.
+    #include <LiquidCrystal_I2C.h>  // Bindet die Bibliothek zur Steuerung des I2C LCD ein.
     
-    LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initializes LCD at address 0x27 for a 16x2 display.
+    LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initialisiert das LCD an Adresse 0x27 für ein 16x2 Display.
 
     void setup() {
-        // put your setup code here, to run once:
-        lcd.init();       // initialize the lcd
-        lcd.backlight();  // Turns on the LCD backlight.
+        // Code, der einmalig ausgeführt wird:
+        lcd.init();       // Initialisiert das LCD
+        lcd.backlight();  // Schaltet die Hintergrundbeleuchtung ein.
     }
 
-8. Start by displaying “Let's count!” on row 0, column 0 of the I2C LCD1602 (which is actually the first row and first column). Use the ``lcd.setCursor()`` function to place the cursor at row 0, column 0, then use ``lcd.print()`` to print the desired characters. Remember to enclose the text in double quotes ("").
+8. Beginne damit, "Let's count!" in Zeile 0, Spalte 0 des I2C LCD1602 anzuzeigen (das ist eigentlich die erste Zeile und die erste Spalte). Verwende die Funktion ``lcd.setCursor()``, um den Cursor auf Zeile 0, Spalte 0 zu positionieren, und verwende anschließend ``lcd.print()``, um die gewünschten Zeichen auszugeben. Denke daran, den Text in doppelte Anführungszeichen ("") zu setzen.
 
 .. image:: img/17_lcd_row_column.png
     :width: 600
@@ -249,84 +247,82 @@ Now, search for ``LiquidCrystal I2C`` on the **Library Manager**, then click **I
     :emphasize-lines: 2,3
 
     void loop() {
-        lcd.setCursor(0, 0);       // Sets cursor to top-left corner.
-        lcd.print("Let's count");  // Displays "Hello World".
+        lcd.setCursor(0, 0);       // Positioniert den Cursor in die obere linke Ecke.
+        lcd.print("Let's count");  // Zeigt "Let's count" an.
     }
 
-9. Next, print "Count" followed by the count value on row 1, column 0 (which is actually the second row and first column). Note that for printing characters and strings, enclose them in double quotes (""), but for variables, just write the variable name inside the brackets.
+9. Als Nächstes zeige "Count" gefolgt vom Zählwert in Zeile 1, Spalte 0 an (das ist eigentlich die zweite Zeile und die erste Spalte). Beachte, dass bei der Ausgabe von Zeichen und Strings diese in doppelte Anführungszeichen ("") gesetzt werden müssen, während für Variablen nur der Variablenname in den Klammern stehen muss.
 
 .. code-block:: Arduino
     :emphasize-lines: 4-6
 
     void loop() {
-        lcd.setCursor(0, 0);       // Sets cursor to top-left corner.
-        lcd.print("Let's count");  // Displays "Hello World".
-        lcd.setCursor(0, 1);       // Moves cursor to second line.
-        lcd.print("Count: ");      // Displays "Count".
-        lcd.print(count);          // Prints current count next to "Count".
+        lcd.setCursor(0, 0);       // Positioniert den Cursor in die obere linke Ecke.
+        lcd.print("Let's count");  // Zeigt "Let's count" an.
+        lcd.setCursor(0, 1);       // Verschiebt den Cursor in die zweite Zeile.
+        lcd.print("Count: ");      // Zeigt "Count" an.
+        lcd.print(count);          // Gibt den aktuellen Zählwert neben "Count" aus.
     }
 
-10. Let the variable ``count`` increase by one every second using ``count++``, which adds 1 to the variable itself.
+10. Lass die Variable ``count`` jede Sekunde um eins erhöhen, indem du ``count++`` verwendest, was der Variable selbst 1 hinzufügt.
 
 .. code-block:: Arduino
     :emphasize-lines: 7,8
 
     void loop() {
-        lcd.setCursor(0, 0);       // Sets cursor to top-left corner.
-        lcd.print("Let's count");  // Displays "Hello World".
-        lcd.setCursor(0, 1);       // Moves cursor to second line.
-        lcd.print("Count: ");      // Displays "Count".
-        lcd.print(count);          // Prints current count next to "Count".
-        delay(1000);               // Pauses for one second.
-        count++;                   // Increments counter.
+        lcd.setCursor(0, 0);       // Positioniert den Cursor in die obere linke Ecke.
+        lcd.print("Let's count");  // Zeigt "Let's count" an.
+        lcd.setCursor(0, 1);       // Verschiebt den Cursor in die zweite Zeile.
+        lcd.print("Count: ");      // Zeigt "Count" an.
+        lcd.print(count);          // Gibt den aktuellen Zählwert neben "Count" aus.
+        delay(1000);               // Wartet eine Sekunde.
+        count++;                   // Erhöht den Zähler um 1.
     }
 
-11. Finally, clear the display with ``lcd.clear()`` to prepare for the next number to be displayed.
+11. Leere abschließend das Display mit ``lcd.clear()``, um es für die nächste Zahl vorzubereiten.
 
 .. code-block:: Arduino
     :emphasize-lines: 21
 
-    #include <Wire.h>               // Includes I2C communication library.
-    #include <LiquidCrystal_I2C.h>  // Includes library for controlling the I2C LCD.
+    #include <Wire.h>               // Inkludiert die I2C-Kommunikationsbibliothek.
+    #include <LiquidCrystal_I2C.h>  // Inkludiert die Bibliothek zur Steuerung des I2C LCD.
 
-    LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initializes LCD at address 0x27 for a 16x2 display.
+    LiquidCrystal_I2C lcd(0x27, 16, 2);  // Initialisiert das LCD an Adresse 0x27 für ein 16x2 Display.
 
-    int count = 0;  // Counter variable for tracking increments.
+    int count = 0;  // Zählervariable für die Erhöhung.
 
     void setup() {
-        lcd.init();       // Initializes LCD display.
-        lcd.backlight();  // Turns on LCD backlight for visibility.
+        lcd.init();       // Initialisiert das LCD-Display.
+        lcd.backlight();  // Schaltet die Hintergrundbeleuchtung des LCDs ein.
     }
 
     void loop() {
-        lcd.setCursor(0, 0);       // Sets cursor to top-left corner.
-        lcd.print("Let's count");  // Displays "Hello World".
-        lcd.setCursor(0, 1);       // Moves cursor to second line.
-        lcd.print("Count: ");      // Displays "Count".
-        lcd.print(count);          // Prints current count next to "Count".
-        delay(1000);               // Pauses for one second.
-        count++;                   // Increments counter.
-        lcd.clear();               // Clears the display for next iteration.
+        lcd.setCursor(0, 0);       // Positioniert den Cursor in die obere linke Ecke.
+        lcd.print("Let's count");  // Zeigt "Let's count" an.
+        lcd.setCursor(0, 1);       // Verschiebt den Cursor in die zweite Zeile.
+        lcd.print("Count: ");      // Zeigt "Count" an.
+        lcd.print(count);          // Gibt den aktuellen Zählwert neben "Count" aus.
+        delay(1000);               // Wartet eine Sekunde.
+        count++;                   // Erhöht den Zähler um 1.
+        lcd.clear();               // Leert das Display für die nächste Iteration.
     }
 
-12. Once you have finished the code, you can click Upload to see the results. You will see the first line of the I2C LCD1602 display "Let's count!", and the second line display "Count: " followed by the count value.
+12. Sobald du den Code fertiggestellt hast, kannst du auf Upload klicken, um die Ergebnisse zu sehen. Du wirst sehen, dass die erste Zeile des I2C LCD1602 "Let's count!" anzeigt und die zweite Zeile "Count: " gefolgt vom Zählwert.
 
 .. note::
 
-    If your wiring is correct but no characters are displayed on the LCD, you can flip it over to the back and use a screwdriver to adjust the blue potentiometer. Rotate it until the characters are clearly visible and the background is relatively dim, which indicates a successful adjustment.
+    Wenn deine Verdrahtung korrekt ist, aber keine Zeichen auf dem LCD angezeigt werden, kannst du es umdrehen und mit einem Schraubenzieher den blauen Potentiometer einstellen. Drehe ihn, bis die Zeichen klar sichtbar sind und der Hintergrund relativ gedimmt ist, was auf eine erfolgreiche Einstellung hinweist.
 
 .. image:: img/17_lcd_back.jpg
     :width: 500
     :align: center
 
-13. Finally, remember to save your code and tidy up your workspace.
+13. Denke schließlich daran, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
-**Question**
+**Frage**
 
-If you want to start displaying "Let's count" at the second column of the first row on the I2C LCD1602, how should you modify the code?
+Wie sollte der Code geändert werden, wenn du "Let's count" in der zweiten Spalte der ersten Zeile des I2C LCD1602 anzeigen möchtest?
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we explored how to interact with the Arduino Uno R3 board using the I2C LCD1602 module. You are learned how to retrieve the I2C address and install the necessary libraries in the Arduino IDE to drive the LCD module. By writing and uploading code, You are successfully displayed characters and count data on the LCD. These steps not only deepened our understanding of the I2C communication protocol but also enhanced our ability to handle display devices.
-
-
+In dieser Lektion haben wir gelernt, wie man mit dem Arduino Uno R3-Board unter Verwendung des I2C LCD1602-Moduls interagiert. Du hast gelernt, wie du die I2C-Adresse abrufst und die erforderlichen Bibliotheken in der Arduino IDE installierst, um das LCD-Modul zu steuern. Durch das Schreiben und Hochladen von Code hast du erfolgreich Zeichen und Zähldaten auf dem LCD angezeigt. Diese Schritte haben nicht nur unser Verständnis des I2C-Kommunikationsprotokolls vertieft, sondern auch unsere Fähigkeit verbessert, mit Anzeigegeräten umzugehen.

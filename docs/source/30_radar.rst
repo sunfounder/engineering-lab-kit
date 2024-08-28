@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und teile deine Begeisterung mit Gleichgesinnten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-30. Arduino Radar System
+30. Arduino-Radarsystem
 ===========================
 
-In this engaging lesson, you will construct a dynamic Arduino radar system that combines a servo and an ultrasonic module to detect and display the positions of nearby objects on an animated interface created with Processing PDE. 
+In dieser spannenden Lektion wirst du ein dynamisches Arduino-Radarsystem konstruieren, das einen Servo und ein Ultraschallmodul kombiniert, um die Positionen nahegelegener Objekte auf einer animierten Benutzeroberfläche, die mit Processing PDE erstellt wurde, zu erkennen und anzuzeigen.
 
 .. raw:: html
 
@@ -24,15 +24,15 @@ In this engaging lesson, you will construct a dynamic Arduino radar system that 
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+Am Ende dieser Lektion wirst du in der Lage sein:
 
-* Build a scanning radar using a servo and an ultrasonic module.
-* Transmit data from the Arduino IDE to the Processing PDE via serial communication.
-* Explore the basics of the Processing PDE, a tool that can be used to create simple animations and visualize data effectively.
-* Develop skills in real-time data visualization using the Processing PDE, enhancing your understanding of data flows and sensor dynamics.
+* Ein scannendes Radar mit einem Servo und einem Ultraschallmodul zu bauen.
+* Daten über die Arduino IDE per serieller Kommunikation an das Processing PDE zu übertragen.
+* Die Grundlagen des Processing PDE zu erkunden, ein Werkzeug, das zur Erstellung einfacher Animationen und zur effektiven Visualisierung von Daten verwendet werden kann.
+* Fähigkeiten in der Echtzeit-Datenvisualisierung mit dem Processing PDE zu entwickeln, um dein Verständnis von Datenflüssen und Sensordynamiken zu vertiefen.
 
-1. Components Needed
------------------------
+1. Benötigte Komponenten
+-----------------------------
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -40,22 +40,22 @@ By the end of this lesson, you will be able to:
 
    * - 1 * Arduino Uno R3
      - 1 * Servo
-     - 1 * Ultrasonic Module
+     - 1 * Ultraschallmodul
      - 
    * - |list_uno_r3|
      - |list_servo| 
      - |list_ultrasonic|
      - 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Breadboard Power Module
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
+     - Jumper-Wires
+     - 1 * Steckbrett-Strommodul
    * - |list_usb_cable|
      - |list_breadboard|
      - |list_wire|
      - |list_power_module|
-   * - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * 9V-Batterie
+     - 1 * Batterieclip
      - 
      -  
    * - |list_battery| 
@@ -63,20 +63,20 @@ By the end of this lesson, you will be able to:
      -
      -
 
-2. Prepare the Servo
--------------------------------
+2. Vorbereiten des Servos
+-----------------------------
 
 .. note::
 
-  If you are not familiar with the Servo, you can first learn its basic usage through the following project:
+  Wenn du mit dem Servo nicht vertraut bist, kannst du seine grundlegende Verwendung durch das folgende Projekt erlernen:
 
   * :ref:`ar_servo_usage`
 
-**1. Building the Circuit**
+**1. Aufbau der Schaltung**
 
-Now let's start building the circuit. 
+Nun beginnen wir mit dem Aufbau der Schaltung. 
 
-* First, insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+* Zuerst das Steckbrett-Strommodul in das Steckbrett einsetzen und dann ein Jumperkabel verwenden, um die negative Schiene des Steckbretts mit dem GND des Arduino Uno R3 zu verbinden, um eine gemeinsame Masse zu erreichen.
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -84,9 +84,9 @@ Now let's start building the circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    Die Anordnung der positiven und negativen Anschlüsse auf dem Steckbrett im Schaltplan ist im Vergleich zum im Kit bereitgestellten Steckbrett umgekehrt.
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    In der tatsächlichen Verdrahtung musst du das Steckbrett-Strommodul von der höheren Nummernseite (60~65) einstecken, damit das "-" des Strommoduls in die negative Schiene "-" des Steckbretts geht und das "+" in die positive Schiene "+".
 
     .. raw:: html
 
@@ -95,376 +95,374 @@ Now let's start building the circuit.
             Your browser does not support the video tag.
         </video>
 
-* Use three short jumper wires to extend the three wires of your servo: connect the yellow wire to pin 12 of the Arduino Uno R3, the red wire to the positive rail of the breadboard, and the brown wire to the negative rail of the breadboard.
+* Verwende drei kurze Jumper-Wires, um die drei Kabel deines Servos zu verlängern: Verbinde das gelbe Kabel mit Pin 12 des Arduino Uno R3, das rote Kabel mit der positiven Schiene des Steckbretts und das braune Kabel mit der negativen Schiene des Steckbretts.
 
 .. image:: img/30_radar_servo.png
     :width: 600
     :align: center
 
-**2. Writing the Code**
+**2. Schreiben des Codes**
 
-In our Arduino radar system, the servo sweeps back and forth from 0 to 180 degrees. Now, we need to set its initial angle to 90 degrees.
+In unserem Arduino-Radarsystem schwenkt der Servo von 0 bis 180 Grad hin und her. Jetzt müssen wir seinen Anfangswinkel auf 90 Grad einstellen.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson30_Sero_Angle`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „Neue Skizze“ im Menü „Datei“ auswählst.
+2. Speichere deine Skizze unter dem Namen ``Lesson30_Servo_Angle`` mit ``Ctrl + S`` oder indem du auf „Speichern“ klickst.
 
-3. Making the servo work is quite simple. Just include the ``Servo`` library in your code, then create a ``Servo`` object and attach the servo object to the specified pin. After that, you can use the ``write()`` function to set the servo to a specific angle, as shown below:
+3. Den Servo zum Laufen zu bringen, ist ganz einfach. Binde einfach die ``Servo``-Bibliothek in deinen Code ein, erstelle dann ein ``Servo``-Objekt und verbinde das Servo-Objekt mit dem angegebenen Pin. Danach kannst du die ``write()``-Funktion verwenden, um den Servo auf einen bestimmten Winkel einzustellen, wie unten gezeigt:
 
 .. code-block:: Arduino
 
   #include <Servo.h>
 
-  Servo myServo;  // Create a Servo object
+  Servo myServo;  // Erstelle ein Servo-Objekt
 
-  const int servoPin = 12;  // servo connected to digital pin 12
+  const int servoPin = 12;  // Servo an digitalen Pin 12 angeschlossen
 
   void setup() {
-    myServo.attach(servoPin);  // Attach the Servo object to the specified pin
-    myServo.write(90);         // Initial position set to 90 degrees
+    myServo.attach(servoPin);  // Verbinde das Servo-Objekt mit dem angegebenen Pin
+    myServo.write(90);         // Anfangsposition auf 90 Grad setzen
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Hier kommt der Hauptcode, der wiederholt ausgeführt wird:
   }
 
-4. Then, upload the code to your Arduino board. You will hear a sound from the servo, indicating that it has moved to the 90-degree position.
+4. Lade dann den Code auf dein Arduino-Board hoch. Du wirst ein Geräusch vom Servo hören, das darauf hinweist, dass er sich in die 90-Grad-Position bewegt hat.
 
-5. Now, attach the one-side servo arm to the servo at the specified angle. Try to keep the servo arm parallel to the servo body; a slight tilt won't affect its performance.
+5. Befestige nun den einseitigen Servoarm am Servo im angegebenen Winkel. Versuche, den Servoarm parallel zum Servogehäuse zu halten; eine leichte Neigung beeinträchtigt seine Leistung nicht.
 
 .. image:: img/30_radar_servo_arm.png
   :width: 600
   :align: center
 
-
-3. Preparing the Ultrasonic Module
+3. Vorbereitung des Ultraschallmoduls
 -----------------------------------------
 
 .. note::
 
-  If you are not familiar with the Ultrasonic module, you can first learn its basic usage through the following project:
+  Wenn du mit dem Ultraschallmodul nicht vertraut bist, kannst du dessen grundlegende Verwendung durch das folgende Projekt erlernen:
 
   * :ref:`ar_smart_trash_can`
 
-**1. Building the Circuit**
+**1. Aufbau der Schaltung**
 
-1. Find or manually create a mount for the ultrasonic module so that it can be attached to the servo.
+1. Finde oder baue eine Halterung für das Ultraschallmodul, damit es am Servo befestigt werden kann.
 
 .. note::
-  The kit does not include this mount, so you will need to purchase or create one yourself.
+  Das Kit enthält diese Halterung nicht, daher musst du eine kaufen oder selbst erstellen.
 
 .. image:: img/30_radar_ultrasonic_support.png
     :width: 600
     :align: center
 
-2. Now, secure the ultrasonic module to the mount, typically using M2x4 screws and M2 nuts.
+2. Befestige nun das Ultraschallmodul an der Halterung, in der Regel mit M2x4-Schrauben und M2-Muttern.
 
 .. image:: img/30_radar_ultrasonic_secure.png
     :width: 300
     :align: center
 
-3. Attach the ultrasonic mount to the servo arm. Ensure that when the Arduino board is powered on, the ultrasonic module is facing forward.
+3. Befestige die Ultraschallhalterung am Servoarm. Stelle sicher, dass das Ultraschallmodul nach dem Einschalten des Arduino-Boards nach vorne zeigt.
 
 .. image:: img/30_radar_ultrasonic_servo.png
   :width: 600
   :align: center
 
-4. Now, use jumper wires to connect the ultrasonic module: VCC to the positive rail on the breadboard, Trig pin to pin 10 on the Arduino board, Echo pin to pin 11, and GND to the negative rail on the breadboard.
+4. Verwende nun Jumper-Wires, um das Ultraschallmodul zu verbinden: VCC mit der positiven Schiene auf dem Steckbrett, Trig-Pin mit Pin 10 auf dem Arduino-Board, Echo-Pin mit Pin 11 und GND mit der negativen Schiene auf dem Steckbrett.
 
 .. image:: img/30_radar_ultrasonic_pins.png
   :width: 600
   :align: center
 
-**2. Writing the Code**
+**2. Schreiben des Codes**
 
-1. Open the sketch you saved earlier, ``Lesson30_Sero_Angle``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson30_Arduino_Radar``. Click "Save".
+1. Öffne die zuvor gespeicherte Skizze ``Lesson30_Sero_Angle``. Wähle "Speichern unter..." im "Datei"-Menü und benenne sie in ``Lesson30_Arduino_Radar`` um. Klicke auf "Speichern".
 
-2. Now, define the pins for the ultrasonic module and set their modes to ``OUTPUT`` and ``INPUT`` respectively. In this code, we need to use the serial monitor to communicate with the Processing PDE, so start serial communication at 9600 bps.
+2. Definiere nun die Pins für das Ultraschallmodul und setze ihre Modi entsprechend auf ``OUTPUT`` und ``INPUT``. In diesem Code müssen wir den seriellen Monitor zur Kommunikation mit dem Processing PDE verwenden, daher starte die serielle Kommunikation mit 9600 bps.
 
 .. code-block:: Arduino
   :emphasize-lines: 7,8,11-13
 
   #include <Servo.h>
 
-  Servo myServo;  // Create a Servo object
+  Servo myServo;  // Erstelle ein Servo-Objekt
 
-  const int servoPin = 12;  // servo connected to digital pin 12
+  const int servoPin = 12;  // Servo an digitalen Pin 12 angeschlossen
 
-  #define TRIGGER_PIN 10  // Pin to trigger the ultrasonic pulse
-  #define ECHO_PIN 11     // Pin to receive the echo
+  #define TRIGGER_PIN 10  // Pin für das Auslösen des Ultraschallimpulses
+  #define ECHO_PIN 11     // Pin zum Empfangen des Echos
 
   void setup() {
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the Trig pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the Echo pin as input
-    Serial.begin(9600);            // Start serial communication for debugging
-    myServo.attach(servoPin);      // Defines on which pin is the servo attached
-    myServo.write(90);             // Initial position set to 90 degrees
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setze den Trig-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setze den Echo-Pin als Eingang
+    Serial.begin(9600);            // Starte die serielle Kommunikation zur Fehlersuche
+    myServo.attach(servoPin);      // Definiert, an welchem Pin der Servo angeschlossen ist
+    myServo.write(90);             // Anfangsposition auf 90 Grad setzen
   }
 
-3. You will need a specific function to retrieve the distance measured by the ultrasonic module. You can see how this function is implemented by referring to :ref:`ar_read_distance`.
+3. Du benötigst eine spezielle Funktion, um die vom Ultraschallmodul gemessene Distanz abzurufen. Du kannst sehen, wie diese Funktion implementiert wird, indem du auf :ref:`ar_read_distance` verweist.
 
 .. code-block:: Arduino
   :emphasize-lines: 7-17
   
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Hauptcode, der wiederholt ausgeführt wird:
 
   }
 
-  // Function to read the sensor data and calculate the distance
+  // Funktion zum Lesen der Sensordaten und Berechnen der Distanz
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+    digitalWrite(TRIGGER_PIN, LOW);  // Sicherstellen, dass der Trig-Pin vor einem Impuls niedrig ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH);  // Send a high pulse
-    delayMicroseconds(10);            // Pulse duration of 10 microseconds
-    digitalWrite(TRIGGER_PIN, LOW);   // End the high pulse
+    digitalWrite(TRIGGER_PIN, HIGH);  // Sende einen hohen Impuls
+    delayMicroseconds(10);            // Impulsdauer von 10 Mikrosekunden
+    digitalWrite(TRIGGER_PIN, LOW);   // Beende den hohen Impuls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance (in cm)
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messe die Dauer des hohen Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechne die Distanz (in cm)
     return distance;
   }
 
-4. Use a ``for`` loop to limit the servo's rotation angle between 15 and 165 degrees. This range can be adjusted based on your setup; the servo can rotate from 0 to 180 degrees.
+4. Verwende eine ``for``-Schleife, um den Drehwinkel des Servos auf einen Bereich zwischen 15 und 165 Grad zu begrenzen. Dieser Bereich kann je nach Aufbau angepasst werden; der Servo kann sich von 0 bis 180 Grad drehen.
 
 .. code-block:: Arduino
   :emphasize-lines: 3-6
 
   void loop() {
-    // rotates the servo from 15 to 165 degrees
+    // Der Servo dreht sich von 15 bis 165 Grad
     for (int i = 15; i <= 165; i++) {
       myServo.write(i);
       delay(30);
     }
   }
 
-5. As the servo rotates, let the ultrasonic sensor detect the distance to surrounding objects and print the readings to the serial monitor. These data will then be transmitted to the Processing PDE via the serial port.
+5. Während sich der Servo dreht, soll der Ultraschallsensor die Entfernung zu den umliegenden Objekten erfassen und die Messwerte an den seriellen Monitor senden. Diese Daten werden dann über den seriellen Port an das Processing PDE übertragen.
 
 .. note::
 
-  * Do not modify the following 4 lines of the ``Serial.print()`` function. The data printed to the serial monitor needs to be transmitted to the Processing PDE in the specified format.
-  * In the Processing code, the character ``,`` is used to determine the servo angle and store it in a designated variable.
-  * In the Processing code, the character ``.`` is used to determine the detected distance and store it in a designated variable.
+  * Ändere die folgenden 4 Zeilen der ``Serial.print()``-Funktion nicht. Die Daten, die an den seriellen Monitor gesendet werden, müssen im angegebenen Format an das Processing PDE übertragen werden.
+  * Im Processing-Code wird das Zeichen ``,`` verwendet, um den Servo-Winkel zu bestimmen und in einer vorgesehenen Variablen zu speichern.
+  * Im Processing-Code wird das Zeichen ``.`` verwendet, um die gemessene Entfernung zu bestimmen und in einer vorgesehenen Variablen zu speichern.
 
 .. code-block:: Arduino
   :emphasize-lines: 6-10
 
   void loop() {
-    // rotates the servo from 15 to 165 degrees
+    // Der Servo dreht sich von 15 bis 165 Grad
     for (int i = 15; i <= 165; i++) {
       myServo.write(i);
       delay(30);
-      long distance = measureDistance();  // Call the function to measure distance
-      Serial.print(i);                    // Sends the current degree into the Serial Port
-      Serial.print(",");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
-      Serial.print(distance);             // Sends the distance value into the Serial Port
-      Serial.print(".");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
+      long distance = measureDistance();  // Ruf die Funktion zur Messung der Entfernung auf
+      Serial.print(i);                    // Sendet den aktuellen Winkel an den seriellen Port
+      Serial.print(",");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
+      Serial.print(distance);             // Sendet den Entfernungswert an den seriellen Port
+      Serial.print(".");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
     }
   }
 
-6. Let the servo rotate back from 165 degrees to 15 degrees, printing the angle and distance values to the serial port as before. These data will be transmitted to the Processing PDE via the serial port.
+6. Lasse den Servo von 165 Grad auf 15 Grad zurückdrehen und drucke die Winkel- und Entfernungswerte wie zuvor an den seriellen Port. Diese Daten werden über den seriellen Port an das Processing PDE übertragen.
 
 .. code-block:: Arduino
   :emphasize-lines: 13-21
 
   void loop() {
-    // rotates the servo from 15 to 165 degrees
+    // Der Servo dreht sich von 15 bis 165 Grad
     for (int i = 15; i <= 165; i++) {
       myServo.write(i);
       delay(30);
-      long distance = measureDistance();  // Call the function to measure distance
-      Serial.print(i);                    // Sends the current degree into the Serial Port
-      Serial.print(",");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
-      Serial.print(distance);             // Sends the distance value into the Serial Port
-      Serial.print(".");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
+      long distance = measureDistance();  // Ruf die Funktion zur Messung der Entfernung auf
+      Serial.print(i);                    // Sendet den aktuellen Winkel an den seriellen Port
+      Serial.print(",");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
+      Serial.print(distance);             // Sendet den Entfernungswert an den seriellen Port
+      Serial.print(".");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
     }
-    // rotates the servo from 165 to 15 degrees
+    // Der Servo dreht sich von 165 auf 15 Grad zurück
     for (int i = 165; i > 15; i--) {
       myServo.write(i);
       delay(30);
-      long distance = measureDistance();  // Call the function to measure distance
-      Serial.print(i);                    // Sends the current degree into the Serial Port
-      Serial.print(",");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
-      Serial.print(distance);             // Sends the distance value into the Serial Port
-      Serial.print(".");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
+      long distance = measureDistance();  // Ruf die Funktion zur Messung der Entfernung auf
+      Serial.print(i);                    // Sendet den aktuellen Winkel an den seriellen Port
+      Serial.print(",");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
+      Serial.print(distance);             // Sendet den Entfernungswert an den seriellen Port
+      Serial.print(".");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
     }
   }
 
-7. The complete code is shown below. Now, you can upload it to your Arduino board. You will see the servo with the ultrasonic module moving from left to right and back again, continuously. The data will be printed in one-line format in the serial monitor.
+7. Der vollständige Code ist unten dargestellt. Jetzt kannst du ihn auf dein Arduino-Board hochladen. Du wirst sehen, wie sich der Servo mit dem Ultraschallmodul kontinuierlich von links nach rechts und wieder zurück bewegt. Die Daten werden im seriellen Monitor in einem Ein-Zeilen-Format ausgegeben.
 
 .. code-block:: Arduino
 
   #include <Servo.h>
 
-  Servo myServo;  // Create a Servo object
+  Servo myServo;  // Erstelle ein Servo-Objekt
 
-  const int servoPin = 12;  // servo connected to digital pin 12
+  const int servoPin = 12;  // Servo verbunden mit digitalem Pin 12
 
-  #define TRIGGER_PIN 10  // Pin to trigger the ultrasonic pulse
-  #define ECHO_PIN 11     // Pin to receive the echo
+  #define TRIGGER_PIN 10  // Pin zum Auslösen des Ultraschallimpulses
+  #define ECHO_PIN 11     // Pin zum Empfangen des Echos
 
   void setup() {
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the Trig pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the Echo pin as input
-    Serial.begin(9600);            // Start serial communication for debugging
-    myServo.attach(servoPin);      // Defines on which pin is the servo attached
-    myServo.write(90);             // Initial position set to 90 degrees
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setze den Trig-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setze den Echo-Pin als Eingang
+    Serial.begin(9600);            // Starte die serielle Kommunikation zur Fehlersuche
+    myServo.attach(servoPin);      // Definiert, an welchem Pin der Servo angeschlossen ist
+    myServo.write(90);             // Anfangsposition auf 90 Grad setzen
   }
 
   void loop() {
-    // rotates the servo from 15 to 165 degrees
+    // Der Servo dreht sich von 15 bis 165 Grad
     for (int i = 15; i <= 165; i++) {
       myServo.write(i);
       delay(30);
-      long distance = measureDistance();  // Call the function to measure distance
-      Serial.print(i);                    // Sends the current degree into the Serial Port
-      Serial.print(",");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
-      Serial.print(distance);             // Sends the distance value into the Serial Port
-      Serial.print(".");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
+      long distance = measureDistance();  // Ruf die Funktion zur Messung der Entfernung auf
+      Serial.print(i);                    // Sendet den aktuellen Winkel an den seriellen Port
+      Serial.print(",");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
+      Serial.print(distance);             // Sendet den Entfernungswert an den seriellen Port
+      Serial.print(".");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
     }
-    // Repeats the previous lines from 165 to 15 degrees
+    // Wiederhole die vorherigen Zeilen von 165 bis 15 Grad
     for (int i = 165; i > 15; i--) {
       myServo.write(i);
       delay(30);
-      long distance = measureDistance();  // Call the function to measure distance
-      Serial.print(i);                    // Sends the current degree into the Serial Port
-      Serial.print(",");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
-      Serial.print(distance);             // Sends the distance value into the Serial Port
-      Serial.print(".");                  // Sends addition character right next to the previous value needed later in the Processing PDE for indexing
+      long distance = measureDistance();  // Ruf die Funktion zur Messung der Entfernung auf
+      Serial.print(i);                    // Sendet den aktuellen Winkel an den seriellen Port
+      Serial.print(",");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
+      Serial.print(distance);             // Sendet den Entfernungswert an den seriellen Port
+      Serial.print(".");                  // Sendet ein zusätzliches Zeichen direkt neben dem vorherigen Wert, das später im Processing PDE zum Indexieren verwendet wird
     }
   }
 
-  // Function to read the sensor data and calculate the distance
+  // Funktion zum Lesen der Sensordaten und Berechnen der Entfernung
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+    digitalWrite(TRIGGER_PIN, LOW);  // Sicherstellen, dass der Trig-Pin vor einem Impuls niedrig ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH);  // Send a high pulse
-    delayMicroseconds(10);            // Pulse duration of 10 microseconds
-    digitalWrite(TRIGGER_PIN, LOW);   // End the high pulse
+    digitalWrite(TRIGGER_PIN, HIGH);  // Sende einen hohen Impuls
+    delayMicroseconds(10);            // Impulsdauer von 10 Mikrosekunden
+    digitalWrite(TRIGGER_PIN, LOW);   // Beende den hohen Impuls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance (in cm)
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messe die Dauer des hohen Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechne die Entfernung (in cm)
     return distance;
   }
 
-8. Finally, remember to save your code and tidy up your workspace.
+8. Vergiss abschließend nicht, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
-**Question**
+**Frage**
 
-In the above code, the ultrasonic module takes a reading every degree. If you feel that the readings are too frequent and want to take a reading every 5 degrees, how should the code be modified?
+Im obigen Code misst das Ultraschallmodul bei jedem Grad eine Entfernung. Wenn du denkst, dass die Messungen zu häufig sind und du alle 5 Grad eine Messung durchführen möchtest, wie sollte der Code geändert werden?
 
-4. Preparing the Processing PDE
+4. Vorbereitung des Processing PDE
 -------------------------------------------
 
-With the servo and ultrasonic module ready, we now need to use the Processing PDE to write and run code that will generate a radar interface to display the radar's rotation angle and detected targets.
+Mit dem fertigen Servo und Ultraschallmodul müssen wir nun das Processing PDE verwenden, um Code zu schreiben und auszuführen, der eine Radaroberfläche generiert, um den Drehwinkel des Radars und die erkannten Ziele anzuzeigen.
 
-**1. Download and Install the Processing PDE**
+**1. Download und Installation des Processing PDE**
 
-1. Visit the Processing official download page: |link_processing_download|.
+1. Besuche die offizielle Download-Seite von Processing: |link_processing_download|.
 
-2. Choose the download according to your operating system.
+2. Wähle den Download entsprechend deinem Betriebssystem aus.
 
 .. image:: img/30_radar_processing_page.png
   :width: 600
   :align: center
 
-3. Installation on each machine is straightforward.
+3. Die Installation auf jedem Rechner ist einfach.
 
-* On Windows, you'll have a ``.zip`` file. Double-click it, and drag the folder inside to a location on your hard disk. It could be Program Files or simply the desktop, but the important thing is for the processing folder to be pulled out of that ``.zip`` file. Then double-click ``processing.exe`` to start.
+* Unter Windows hast du eine ``.zip``-Datei. Doppelklicke darauf und ziehe den Ordner auf einen Ort deiner Festplatte. Es könnte der Programmordner oder einfach der Desktop sein, aber das Wichtigste ist, dass der Processing-Ordner aus der ``.zip``-Datei herausgezogen wird. Doppelklicke dann auf ``processing.exe``, um es zu starten.
 
-* The Mac OS X version is also a ``.zip`` file. Double-click it and drag the **Processing** icon to the **Applications** folder. If you're using someone else's machine and can't modify the **Applications** folder, just drag the application to the desktop. Then double-click the **Processing** icon to start.
+* Die Mac OS X-Version ist ebenfalls eine ``.zip``-Datei. Doppelklicke darauf und ziehe das **Processing**-Symbol in den **Programme**-Ordner. Wenn du den Rechner einer anderen Person benutzt und den **Programme**-Ordner nicht ändern kannst, ziehe die Anwendung einfach auf den Desktop. Doppelklicke dann auf das **Processing**-Symbol, um es zu starten.
 
-* The Linux version is a ``.tar.gz`` file, which should be familiar to most Linux users. Download the file to your home directory, then open a terminal window, and type:
+* Die Linux-Version ist eine ``.tar.gz``-Datei, die den meisten Linux-Nutzern vertraut sein sollte. Lade die Datei in dein Home-Verzeichnis herunter, öffne dann ein Terminalfenster und gib ein:
 
 .. code-block:: Shell
 
   tar xvfz processing-xxxx.tgz
 
-(Replace xxxx with the rest of the file's name, which is the version number.) This will create a folder named processing-2.0 or something similar. Then change to that directory:
+(Ersetze xxxx durch den Rest des Dateinamens, der die Versionsnummer ist.) Dies erstellt einen Ordner namens processing-2.0 oder etwas Ähnliches. Wechsle dann in dieses Verzeichnis:
 
 .. code-block:: Shell
 
   cd processing-xxxx
 
-and run it:
+und führe es aus:
 
 .. code-block:: Shell
 
   ./processing
 
-4. With any luck, the main Processing window will now be visible. 
-
+4. Mit etwas Glück wird nun das Hauptfenster von Processing sichtbar sein. 
 
 .. image:: img/30_radar_processing_ide.png
   :align: center
 
-**2. Modify and Run the Code**
+**2. Code anpassen und ausführen**
 
-1. Download the code that needs to be run in the Processing PDE and then extract it.
+1. Lade den Code herunter, der im Processing PDE ausgeführt werden soll, und extrahiere ihn dann.
 
 * :download:`ArduinoRadarGUI </_static/zip/ArduinoRadarGUI.zip>`
 
-2. Click **File** -> **Open**.
+2. Klicke auf **Datei** -> **Öffnen**.
 
 .. image:: img/30_radar_open_example.png
   :align: center
 
-3. Navigate to the folder where you just extracted the code, select **ArduinoRadarGUI.pde**, and then click **Open**.
+3. Navigiere zu dem Ordner, in dem du gerade den Code extrahiert hast, wähle **ArduinoRadarGUI.pde** aus und klicke dann auf **Öffnen**.
 
 .. image:: img/30_radar_example_path.png
   :align: center
 
-4. Next, you need to modify the serial port in the code to match the one you set in the Arduino IDE.
+4. Als Nächstes musst du den seriellen Port im Code anpassen, um denjenigen zu verwenden, den du im Arduino IDE eingestellt hast.
 
 .. code-block:: Arduino
   :emphasize-lines: 6
 
   void setup() {
-    //fullScreen(); // comment out this line if you do not want full-screen display.
-    size (1680, 945); // ***CHANGE THIS TO YOUR SCREEN RESOLUTION***
+    //fullScreen(); // Kommentiere diese Zeile aus, wenn du keinen Vollbildmodus möchtest.
+    size (1680, 945); // ***ÄNDERE DAS AUF DEINE BILDSCHIRMAUFLÖSUNG***
 
     smooth();
-    myPort = new Serial(this, "COM39", 9600); // starts the serial communication
-    myPort.bufferUntil('.'); // reads the data from the serial port up to the character '.'. So actually it reads this: angle,distance.
+    myPort = new Serial(this, "COM39", 9600); // Startet die serielle Kommunikation
+    myPort.bufferUntil('.'); // Liest die Daten vom seriellen Port bis zum Zeichen '.'. Tatsächlich liest es dies: Winkel,Entfernung.
     orcFont = loadFont("OCRAExtended-30.vlw");
   }
-
-5. After changing the serial port, run the code. Before running the code, ensure that your Arduino Uno R3 is connected to the computer and the port is the one you set.
+  
+5. Nachdem du den seriellen Port geändert hast, führe den Code aus. Bevor du den Code startest, stelle sicher, dass dein Arduino Uno R3 mit dem Computer verbunden ist und der eingestellte Port korrekt ist.
 
 .. image:: img/30_radar_run.png
   :width: 800
   :align: center
 
-6. You will see the servo scanning left and right with the ultrasonic module, displaying the angles of detected objects within 40 cm on the Processing interface.
+6. Du wirst sehen, wie der Servo mit dem Ultraschallmodul nach links und rechts scannt und die Winkel der erkannten Objekte innerhalb von 40 cm auf der Processing-Oberfläche anzeigt.
 
 .. image:: img/30_radar_scan.png
   :width: 800
   :align: center
 
-7. If the display is not fully visible, you can adjust the resolution according to your screen, which should be in a 16:9 ratio. Additionally, you can uncomment ``fullScreen();``, which will make the Processing display fullscreen; press ``ESC`` to exit.
+7. Wenn die Anzeige nicht vollständig sichtbar ist, kannst du die Auflösung entsprechend deinem Bildschirm anpassen, wobei ein Seitenverhältnis von 16:9 empfohlen wird. Zusätzlich kannst du ``fullScreen();`` auskommentieren, um die Processing-Anzeige im Vollbildmodus darzustellen; drücke ``ESC``, um den Vollbildmodus zu verlassen.
 
 .. note::
 
-  You can also adjust the entire interface to your liking. For detailed information on the functions in the code, please refer to: |link_processing_reference|.
+  Du kannst auch die gesamte Benutzeroberfläche nach deinen Wünschen anpassen. Für detaillierte Informationen zu den Funktionen im Code, besuche bitte: |link_processing_reference|.
 
 .. code-block:: Arduino
   :emphasize-lines: 3,4
 
   void setup() {
 
-    //fullScreen(); // comment out this line if you do not want full-screen display.
-    size (1680, 945); // ***CHANGE THIS TO YOUR SCREEN RESOLUTION***
+    //fullScreen(); // Kommentiere diese Zeile aus, wenn du keinen Vollbildmodus möchtest.
+    size (1680, 945); // ***ÄNDERE DAS AUF DEINE BILDSCHIRMAUFLÖSUNG***
 
     smooth();
-    myPort = new Serial(this, "COM39", 9600); // starts the serial communication
-    myPort.bufferUntil('.'); // reads the data from the serial port up to the character '.'. So actually it reads this: angle,distance.
+    myPort = new Serial(this, "COM39", 9600); // Startet die serielle Kommunikation
+    myPort.bufferUntil('.'); // Liest die Daten vom seriellen Port bis zum Zeichen '.'. Tatsächlich liest es dies: Winkel, Entfernung.
     orcFont = loadFont("OCRAExtended-30.vlw");
   }
 
-8. Finally, remember to save your code and tidy up your workspace.
+8. Vergiss abschließend nicht, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we built a Arduino radar system using a servo and an ultrasonic module, which sweeps back and forth from 0 to 180 degrees. We then displayed the detected objects and their corresponding angles on an animated interface created with Processing PDE, simulating a real-life radar system.
+In dieser Lektion haben wir ein Arduino-Radarsystem mit einem Servo und einem Ultraschallmodul gebaut, das sich von 0 bis 180 Grad hin- und herbewegt. Anschließend haben wir die erkannten Objekte und ihre entsprechenden Winkel auf einer animierten Oberfläche, die mit Processing PDE erstellt wurde, angezeigt und so ein echtes Radarsystem simuliert.
 
-We learned how to transmit data from the Arduino IDE to the Processing PDE via serial communication, enabling data exchange between the two programming platforms. Additionally, we explored the basics of the Processing programming environment, a tool that can be used to create simple animations and visualize data effectively.
+Wir haben gelernt, wie man Daten von der Arduino-IDE an das Processing PDE über serielle Kommunikation überträgt, wodurch der Datenaustausch zwischen den beiden Programmierplattformen ermöglicht wird. Darüber hinaus haben wir die Grundlagen der Processing-Programmierumgebung erkundet, ein Werkzeug, das verwendet werden kann, um einfache Animationen zu erstellen und Daten effektiv zu visualisieren.
 
-Processing, while based on Java, has a very straightforward and simple set of programming elements, making it accessible even for beginners. You are encouraged to continue exploring Processing to fully leverage its capabilities for creative and visual projects. For more insights and tutorials, you can visit this Getting Started with Processing tutorial.
+Processing basiert zwar auf Java, bietet aber eine sehr einfache und unkomplizierte Programmiersprache, die auch für Anfänger zugänglich ist. Du wirst ermutigt, Processing weiter zu erforschen, um dessen Fähigkeiten für kreative und visuelle Projekte voll auszuschöpfen. Für weitere Einblicke und Tutorials kannst du dieses Getting Started with Processing-Tutorial besuchen.

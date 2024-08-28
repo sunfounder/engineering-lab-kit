@@ -1,24 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Enthusiasten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Peeks.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_rfid_module:
 
-33. Exploring the RF522-RFID Module
+33. Erkundung des RF522-RFID-Moduls
 ================================================
-Gone are the days of waiting in long checkout lines at the grocery store, thanks to RFID technology! Imagine an RFID-based automatic checkout system where you can simply fill up your cart and walk out the door. Each item, tagged with an RFID label, will be instantly detected and recorded. No more waiting for each item to be scanned one by one!
+Die Zeiten des Wartens in langen Kassenschlangen im Supermarkt sind dank der RFID-Technologie vorbei! Stell dir ein RFID-basiertes automatisches Kassensystem vor, bei dem du einfach deinen Wagen füllst und zur Tür hinausgehst. Jedes Produkt, das mit einem RFID-Label versehen ist, wird sofort erkannt und erfasst. Kein lästiges Scannen jedes einzelnen Artikels mehr!
 
-In this exciting lesson, we dive into the world of RFID technology using the RC522 RFID reader/writer module. This module is a favorite among hobbyists due to its low power consumption, affordability, durability, ease of interface, and widespread popularity.
+In dieser spannenden Lektion tauchen wir in die Welt der RFID-Technologie ein, indem wir das RC522 RFID-Lese-/Schreibmodul verwenden. Dieses Modul ist bei Hobbyisten sehr beliebt, da es einen geringen Stromverbrauch, Erschwinglichkeit, Langlebigkeit, einfache Schnittstellen und eine weit verbreitete Popularität bietet.
 
 .. raw:: html
 
@@ -27,91 +27,90 @@ In this exciting lesson, we dive into the world of RFID technology using the RC5
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will able to:
+In dieser Lektion wirst du:
 
-* Understand the basics of RFID technology and its applications.
-* Learn how to interface the RC522 RFID reader module with an Arduino.
-* Write personal data to an RFID tag using the RC522 module.
-* Read and verify the written data from the RFID tag.
-* Display the RFID tag information on an I2C LCD.
+* Die Grundlagen der RFID-Technologie und ihre Anwendungen verstehen.
+* Lernen, wie man das RC522 RFID-Lesemodul mit einem Arduino verbindet.
+* Persönliche Daten mit dem RC522-Modul auf ein RFID-Tag schreiben.
+* Die geschriebenen Daten vom RFID-Tag lesen und verifizieren.
+* Die RFID-Tag-Informationen auf einem I2C LCD anzeigen.
 
-What is RC522 Module and RFID technology?
--------------------------------------------------
-**RC522 Module**
+Was ist das RC522-Modul und die RFID-Technologie?
+------------------------------------------------------
+**RC522-Modul**
 
-The RC522 RFID reader module, operating at a frequency of 13.56MHz, is designed to communicate with RFID tags adhering to the ISO 14443A standard. This compact and versatile device is ideal for applications in access control, inventory tracking, and contactless payment systems due to its ability to interface with microcontrollers via a 4-pin SPI connection, supporting data rates up to 10 Mbps, and additional I2C and UART communication protocols.
+Das RC522 RFID-Lesemodul, das bei einer Frequenz von 13,56 MHz arbeitet, ist für die Kommunikation mit RFID-Tags ausgelegt, die dem ISO 14443A-Standard entsprechen. Dieses kompakte und vielseitige Gerät eignet sich hervorragend für Anwendungen in der Zugangskontrolle, Bestandsverfolgung und kontaktlosen Bezahlsystemen, da es über eine 4-polige SPI-Verbindung mit Mikrocontrollern kommuniziert, Datenraten von bis zu 10 Mbit/s unterstützt und zusätzliche I2C- und UART-Kommunikationsprotokolle bietet.
 
-Operating between 2.5 and 3.3V, its 5V tolerant logic pins facilitate easy integration with Arduino and other 5V logic microcontrollers, eliminating the need for a logic level converter.
+Es arbeitet mit einer Spannung zwischen 2,5 und 3,3 V, und seine 5V-toleranten Logikpins erleichtern die Integration mit Arduino und anderen 5V-Logik-Mikrocontrollern, wodurch die Notwendigkeit eines Pegelwandlers entfällt.
 
 .. image:: img/33_rfid_module.png
   :width: 400
   :align: center
 
-* **VCC**: Powers the module (2.5 to 3.3V). Connect to Arduino's 3.3V output. Do not connect to 5V as it can damage the module.
-* **RST**: Resets and powers down the module. Goes into power-down mode when low and resets on the rising edge.
-* **GND**: Ground pin, connect to Arduino's GND.
-* **IRQ**: Interrupt pin, alerts the microcontroller when an RFID tag is nearby.
-* **MISO / SCL / Tx**: Acts as master-in-slave-out for SPI, serial clock for I2C, and serial data output for UART.
-* **MOSI**: SPI input to the module.
-* **SCK**: Serial clock input from the SPI bus master (Arduino).
-* **SS / SDA / Rx**: Signal input for SPI, serial data for I2C, and serial data input for UART. Often marked with a square.
+* **VCC**: Versorgt das Modul mit Strom (2,5 bis 3,3 V). Verbinde es mit dem 3,3V-Ausgang des Arduino. Verbinde es nicht mit 5V, da dies das Modul beschädigen kann.
+* **RST**: Setzt das Modul zurück und schaltet es aus. Es geht in den Energiesparmodus, wenn es auf LOW gesetzt wird, und wird beim ansteigenden Signal wieder aktiviert.
+* **GND**: Erdungspin, verbinde ihn mit GND des Arduino.
+* **IRQ**: Interrupt-Pin, benachrichtigt den Mikrocontroller, wenn ein RFID-Tag in der Nähe ist.
+* **MISO / SCL / Tx**: Dient als Master-In-Slave-Out für SPI, als serieller Taktgeber für I2C und als serielle Datenausgabe für UART.
+* **MOSI**: SPI-Eingang zum Modul.
+* **SCK**: Serieller Takteingang vom SPI-Bus-Master (Arduino).
+* **SS / SDA / Rx**: Signal-Eingang für SPI, serielle Daten für I2C und serielle Dateneingabe für UART. Oft mit einem Quadrat markiert.
 
 
+**RFID-Technologie**
 
-**RFID Technology**
+Ein RFID-System, oder auch Radiofrequenz-Identifikationssystem, besteht aus zwei Hauptkomponenten: einem Tag, das an dem zu identifizierenden Objekt befestigt ist, und einem Leser, der dieses Tag ausliest.
 
-An RFID system, or radio frequency identification system, comprises two key components: a tag attached to the object to be identified and a reader that reads this tag.
-
-The reader contains an RF module and an antenna that creates a high-frequency electromagnetic field. Tags are typically passive, meaning they lack a battery. They consist of a microchip for storing and processing information and an antenna for receiving and transmitting signals.
+Der Leser enthält ein HF-Modul und eine Antenne, die ein hochfrequentes elektromagnetisches Feld erzeugt. Tags sind typischerweise passiv, was bedeutet, dass sie keine Batterie haben. Sie bestehen aus einem Mikrochip zur Speicherung und Verarbeitung von Informationen sowie einer Antenne zum Empfangen und Senden von Signalen.
 
 .. image:: img/33_rfid_com.png
   :width: 800
   :align: center
 
-When the tag is placed near the reader, the reader's electromagnetic field powers the tag's chip by inducing electron flow through its antenna.
+Wenn sich das Tag in der Nähe des Lesers befindet, versorgt das elektromagnetische Feld des Lesers den Chip des Tags, indem es einen Elektronenfluss durch seine Antenne induziert.
 
-The chip then transmits its stored data back to the reader via a radio signal, a process known as backscattering. The reader captures and decodes this signal, sending the information to a computer or microcontroller for further processing.
+Der Chip sendet dann seine gespeicherten Daten über ein Funksignal zurück an den Leser, ein Prozess, der als Rückstreuung bekannt ist. Der Leser erfasst und dekodiert dieses Signal und sendet die Informationen zur weiteren Verarbeitung an einen Computer oder Mikrocontroller.
 
-Build the Circuit
+Baue die Schaltung auf
 ------------------------------------
-Now that we know everything about the module, let's start connecting it to our Arduino!
+Jetzt, da wir alles über das Modul wissen, lass uns damit beginnen, es mit unserem Arduino zu verbinden!
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RFID Module and Tag
+     - 1 * RFID-Modul und Tag
      - 1 * I2C LCD1602
    * - |list_uno_r3|
      - |list_rc522_module| 
      - |list_i2c_lcd1602|
-   * - Jumper Wires
-     - 1 * Breadboard
-     - 1 * USB Cable
+   * - Jumper-Kabel
+     - 1 * Steckbrett
+     - 1 * USB-Kabel
    * - |list_wire|
      - |list_breadboard|
      - |list_usb_cable|
 
-**Building Steps**
+**Bauanleitung**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den folgenden Schritten, um deine Schaltung aufzubauen.
 
 .. image:: img/33_rfid_connect_lcd.png
     :width: 700
     :align: center
 
 
-1. First, insert RC522-RFID module into the breadboard.
+1. Stecke zunächst das RC522-RFID-Modul in das Steckbrett.
 
 .. image:: img/33_rfid_plug_rc522.png
     :width: 400
     :align: center
 
 
-2. Then, connect the RC522-RFID module and the Arduino Uno R3.
+2. Verbinde dann das RC522-RFID-Modul mit dem Arduino Uno R3.
 
 .. list-table::
     :widths: 20 20
@@ -140,52 +139,52 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-3. Finally, connect the I2C LCD1602 module: GND to the GND on the Arduino Uno R3, VCC to the pin 5V, SDA to pin A4, and SCL to pin A5.
+3. Abschließend verbinde das I2C LCD1602-Modul: GND mit GND am Arduino Uno R3, VCC mit dem 5V-Pin, SDA mit Pin A4 und SCL mit Pin A5.
 
 .. image:: img/33_rfid_connect_lcd.png
     :width: 700
     :align: center
   
 
-Code Creation - Write and Read
----------------------------------------
-In this section, we will install the libraries required for using the MFRC522 RFID module, and then open example code to write information to a tag and read information from the tag.
+Code-Erstellung - Schreiben und Lesen
+------------------------------------------
+In diesem Abschnitt installieren wir die für die Verwendung des MFRC522 RFID-Moduls erforderlichen Bibliotheken und öffnen dann Beispielcode, um Informationen auf ein Tag zu schreiben und diese wieder auszulesen.
 
-**Writing Information**
+**Informationen schreiben**
 
-1. To use the MFRC522 RFID module, you need to include the appropriate library. Now, search for ``MFRC522`` in the **Library Manager**, then click **INSTALL**.
+1. Um das MFRC522 RFID-Modul zu verwenden, musst du die entsprechende Bibliothek einbinden. Suche nun im **Library Manager** nach ``MFRC522`` und klicke dann auf **INSTALL**.
 
 .. image:: img/33_rfid_install_lib.png
   :align: center
 
-2. Now, by clicking **File** -> **Examples** -> **MFRC522**, you will see multiple example codes demonstrating different functionalities. Open the ``rfid_write_personal_data`` example code.
+2. Klicke nun auf **Datei** -> **Beispiele** -> **MFRC522**. Dort findest du mehrere Beispielcodes, die verschiedene Funktionen demonstrieren. Öffne den Beispielcode ``rfid_write_personal_data``.
 
 .. image:: img/33_rfid_open_write.png
   :align: center
 
-3. Click **Upload** to upload the code to your Arduino board. Then open the serial monitor, and you will see a prompt message.
+3. Klicke auf **Hochladen**, um den Code auf dein Arduino-Board hochzuladen. Öffne dann den seriellen Monitor, und du wirst eine Eingabeaufforderung sehen.
 
 .. image:: img/33_rfid_write_open.png
   :align: center
 
-4. Now place the provided white card or tag near the MFRC522 module. You will see the tag's UID, PICC type, and a prompt to enter the Family name, followed by a #.
+4. Lege nun die mitgelieferte weiße Karte oder das Tag in die Nähe des MFRC522-Moduls. Du wirst die UID des Tags, den PICC-Typ und eine Aufforderung sehen, den Nachnamen einzugeben, gefolgt von einem #.
 
 .. code-block::
 
-  Write personal data on a MIFARE PICC 
-  Card UID: 9B 2F 0A 11 PICC type: MIFARE 1KB
-  Type Family name, ending with #
+  Persönliche Daten auf eine MIFARE PICC schreiben
+  Karten-UID: 9B 2F 0A 11 PICC type: MIFARE 1KB
+  Gib den Nachnamen ein, gefolgt von #
 
-5. Now start typing, for example, I enter ``XIE#``. Press ``Enter`` to send your input to the Arduino board, which will then transfer it to the RFID module.
+5. Gib nun deinen Nachnamen ein, zum Beispiel ``XIE#``. Drücke ``Enter``, um deine Eingabe an das Arduino-Board zu senden, das die Daten dann an das RFID-Modul überträgt.
 
 .. note::
 
-  While entering data, ensure that your card or tag remains near the RFID module's antenna, or else an error will occur.
+  Achte beim Eingeben der Daten darauf, dass deine Karte oder dein Tag weiterhin in der Nähe der Antenne des RFID-Moduls bleibt, da sonst ein Fehler auftritt.
 
 .. image:: img/33_rfid_write_first_name.png
   :align: center
 
-6. You will see a success message for writing the data, followed by a prompt to enter the first name.
+6. Du wirst eine Erfolgsmeldung für das Schreiben der Daten sehen, gefolgt von einer Aufforderung, den Vornamen einzugeben.
 
 .. code-block::
 
@@ -197,7 +196,7 @@ In this section, we will install the libraries required for using the MFRC522 RF
   MIFARE_Write() success: 
   Type First name, ending with #
 
-7. Next, enter the first name, for example, ``Daisy#``. You will see another success message for writing the data.
+7. Gib als nächstes den Vornamen ein, zum Beispiel ``Daisy#``. Du wirst eine weitere Erfolgsmeldung für das Schreiben der Daten sehen.
 
 .. code-block::
 
@@ -211,98 +210,97 @@ In this section, we will install the libraries required for using the MFRC522 RF
   MIFARE_Write() success: 
   MIFARE_Write() success: 
 
-**Reading Information**
+**Informationen auslesen**
 
-We have just written our name to the card or tag. Now, let's open another example code to read the information from this card and check if the data was written correctly.
+Wir haben gerade unseren Namen auf die Karte oder das Tag geschrieben. Nun öffnen wir einen weiteren Beispielcode, um die Informationen von dieser Karte auszulesen und zu überprüfen, ob die Daten korrekt geschrieben wurden.
 
-1. Similarly, by clicking **File** -> **Examples** -> **MFRC522**, open the ``rfid_read_personal_data`` example code.
+1. Klicke erneut auf **Datei** -> **Beispiele** -> **MFRC522** und öffne den Beispielcode ``rfid_read_personal_data``.
 
 .. image:: img/33_rfid_read_open.png
   :align: center
 
-2. Once opened, upload the code to your Arduino board. Then place your card near the RFID module's antenna. You will see your UID and the previously written name information.
+2. Lade den Code nach dem Öffnen auf dein Arduino-Board hoch. Lege dann deine Karte in die Nähe der Antenne des RFID-Moduls. Du wirst deine UID und die zuvor geschriebenen Namensinformationen sehen.
 
 .. code-block::
 
-  **Card Detected:**
-  Card UID: 9B 2F 0A 11
-  Card SAK: 08
-  PICC type: MIFARE 1KB
+  **Karte erkannt:**
+  Karten-UID: 9B 2F 0A 11
+  Karten-SAK: 08
+  PICC-Typ: MIFARE 1KB
   Name: 
   Daisy XIE             
-  **End Reading**
+  **Ende des Lesens**
 
-Code Creation - Display on LCD
+Code-Erstellung - Anzeige auf LCD
 ---------------------------------------
 
-Here, we will learn how to display the card's name and UID on an I2C LCD.
+Hier lernen wir, wie man den Namen und die UID der Karte auf einem I2C LCD anzeigt.
 
 .. note::
 
-  If you are not familiar with the I2C LCD1602, you can first learn its basic usage through the following projects:
+  Falls du mit dem I2C LCD1602 nicht vertraut bist, kannst du zunächst dessen Grundfunktionen durch die folgenden Projekte erlernen:
 
   * :ref:`ar_i2c_lcd1602`
 
-  ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+  Die Bibliothek ``LiquidCrystal I2C`` wird hier verwendet und kann über den **Library Manager** installiert werden.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson33_RFID_LCD`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „Neue Skizze“ im Menü „Datei“ auswählst.
+2. Speichere deine Skizze als ``Lesson33_RFID_LCD`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-3. Libraries for SPI and I2C communication are included to interact with the RFID and LCD modules, respectively. The reset (``RST_PIN``) and slave select (``SS_PIN``) pins for the RFID reader are defined.
-
-.. code-block:: Arduino
-
-  #include <SPI.h>                // Include the SPI library for SPI communication
-  #include <MFRC522.h>            // Include the library for the RFID module
-  #include <Wire.h>               // Include the Wire library for I2C communication
-  #include <LiquidCrystal_I2C.h>  // Include the library for the I2C LCD
-
-  #define RST_PIN 9  // Reset pin for the RFID module
-  #define SS_PIN 10  // Slave select pin for the RFID module
-
-4. This initializes the RFID reader and the LCD display with specified pin connections and LCD dimensions/configuration (address 0x27, 16 columns, 2 rows).
+3. Bibliotheken für die SPI- und I2C-Kommunikation werden eingebunden, um mit den RFID- und LCD-Modulen zu interagieren. Die Reset-Pins (``RST_PIN``) und der Slave-Select-Pin (``SS_PIN``) für den RFID-Leser werden definiert.
 
 .. code-block:: Arduino
 
-  // Create an instance of the MFRC522 class to interface with the RFID module
+  #include <SPI.h>                // Einbindung der SPI-Bibliothek für die SPI-Kommunikation
+  #include <MFRC522.h>            // Einbindung der Bibliothek für das RFID-Modul
+  #include <Wire.h>               // Einbindung der Wire-Bibliothek für die I2C-Kommunikation
+  #include <LiquidCrystal_I2C.h>  // Einbindung der Bibliothek für das I2C-LCD
+
+  #define RST_PIN 9  // Reset-Pin für das RFID-Modul
+  #define SS_PIN 10  // Slave-Select-Pin für das RFID-Modul
+
+4. Die Initialisierung des RFID-Lesers und des LCD-Displays erfolgt mit den angegebenen Pin-Verbindungen und den LCD-Abmessungen/Konfigurationen (Adresse 0x27, 16 Spalten, 2 Zeilen).
+
+.. code-block:: Arduino
+
+  // Erstellen einer Instanz der MFRC522-Klasse zur Schnittstelle mit dem RFID-Modul
   MFRC522 mfrc522(SS_PIN, RST_PIN);
-  // Create an instance of the LiquidCrystal_I2C class for the LCD
+  // Erstellen einer Instanz der LiquidCrystal_I2C-Klasse für das LCD
   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-
-5. The ``setup()`` function initializes serial communication, the SPI bus, the RFID reader, and the LCD. It sets up the LCD backlight and sends a readiness message to the serial monitor.
+5. Die ``setup()``-Funktion initialisiert die serielle Kommunikation, den SPI-Bus, den RFID-Leser und das LCD. Sie schaltet die LCD-Hintergrundbeleuchtung ein und sendet eine Bereitschaftsmeldung an den seriellen Monitor.
 
 .. code-block:: Arduino
 
   void setup() {
-    Serial.begin(9600);                         // Start serial communication at 9600bps
-    SPI.begin();                                // Initialize the SPI bus
-    mfrc522.PCD_Init();                         // Initialize the RFID reader
-    lcd.init();                                 // Initialize the LCD display
-    lcd.backlight();                            // Turn on the backlight of the LCD
-    Serial.println(F("Ready to read a card"));  // Print a message to start read
+    Serial.begin(9600);                         // Starte die serielle Kommunikation mit 9600bps
+    SPI.begin();                                // Initialisiere den SPI-Bus
+    mfrc522.PCD_Init();                         // Initialisiere den RFID-Leser
+    lcd.init();                                 // Initialisiere das LCD-Display
+    lcd.backlight();                            // Schalte die Hintergrundbeleuchtung des LCD ein
+    Serial.println(F("Ready to read a card"));  // Drucke eine Nachricht zum Start des Lesens
   }
 
-6. The ``loop()`` function  continuously checks  for new RFID cards. If a card is detected, it reads and displays the UID, reads data from block 4, and then pauses for a moment before clearing the LCD.
+6. Die ``loop()``-Funktion prüft kontinuierlich, ob neue RFID-Karten vorhanden sind. Wenn eine Karte erkannt wird, liest und zeigt sie die UID an, liest Daten aus Block 4 und pausiert dann einen Moment, bevor das LCD gelöscht wird.
 
 .. code-block:: Arduino
 
   void loop() {
-    // Check if a new RFID card is present and can be read
+    // Prüfe, ob eine neue RFID-Karte vorhanden ist und gelesen werden kann
     if (!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial()) {
-      return;  // If no new card is present, exit the loop
+      return;  // Wenn keine neue Karte vorhanden ist, verlasse die Schleife
     }
 
-    displayCardUID();           // Function to display the UID of the card
-    readAndDisplayBlock(4);     // Function to read and display block4 of the RFID card
-    mfrc522.PICC_HaltA();       // Halt the RFID card to stop reading
-    mfrc522.PCD_StopCrypto1();  // Stop encryption on the communication
-    delay(5000);                // Delay for 5 seconds
-    lcd.clear();                // Clear the LCD display
+    displayCardUID();           // Funktion zur Anzeige der UID der Karte
+    readAndDisplayBlock(4);     // Funktion zum Lesen und Anzeigen von Block 4 der RFID-Karte
+    mfrc522.PICC_HaltA();       // Halte die RFID-Karte an, um das Lesen zu stoppen
+    mfrc522.PCD_StopCrypto1();  // Stoppe die Verschlüsselung der Kommunikation
+    delay(5000);                // Warte 5 Sekunden
+    lcd.clear();                // Lösche das LCD-Display
   }
 
 
-7. ``displayCardUID()`` function: Handles the display of the card's UID on both the serial monitor and the LCD. It formats the UID as hexadecimal values.
+7. Die Funktion ``displayCardUID()``: Handhabt die Anzeige der UID der Karte sowohl auf dem seriellen Monitor als auch auf dem LCD. Sie formatiert die UID als hexadezimale Werte.
 
 .. code-block:: Arduino
 
@@ -321,7 +319,7 @@ Here, we will learn how to display the card's name and UID on an I2C LCD.
     Serial.println();  // Print a newline on the serial monitor
   }
 
-8. ``authenticateBlock`` function: Handles reading a specific block from the RFID card, authenticating access to the block, and then displaying the retrieved data on the LCD.
+8. Die Funktion ``authenticateBlock``: Handhabt das Lesen eines spezifischen Blocks von der RFID-Karte, authentifiziert den Zugriff auf den Block und zeigt die abgerufenen Daten auf dem LCD an.
 
 .. code-block:: Arduino
 
@@ -351,8 +349,7 @@ Here, we will learn how to display the card's name and UID on an I2C LCD.
     return true;              // Return true if reading is successful
   }
 
-
-9. ``readAndDisplayBlock`` function: This function attempts to authenticate a specific block on the RFID card using a predefined key. It reads the data if authentication is successful.
+9. Funktion ``readAndDisplayBlock``: Diese Funktion versucht, einen bestimmten Block auf der RFID-Karte mit einem vordefinierten Schlüssel zu authentifizieren. Bei erfolgreicher Authentifizierung werden die Daten ausgelesen.
 
 .. code-block:: Arduino
 
@@ -370,8 +367,7 @@ Here, we will learn how to display the card's name and UID on an I2C LCD.
     }
   }
 
-
-10. The code is as follows. You can upload it to the Arduino Uno R3. Afterward, bring your card or tag close to the RFID module's antenna, and you will see the name and ID displayed on both the LCD and the serial monitor.
+10. Der Code sieht folgendermaßen aus. Du kannst ihn auf das Arduino Uno R3 hochladen. Anschließend bringst du deine Karte oder dein Tag in die Nähe der Antenne des RFID-Moduls, und du wirst den Namen und die ID sowohl auf dem LCD als auch auf dem seriellen Monitor sehen.
 
 .. code-block:: Arduino
 
@@ -462,15 +458,15 @@ Here, we will learn how to display the card's name and UID on an I2C LCD.
       // Print the name starting from the second character to skip the size byte
       lcd.print((char *)buffer + 1);
       Serial.print("Name: ");
-      Serial.println((char *)buffer + 1);  // Print the name on the serial monitor
+      Serial.println((char *)buffer + 1);  // Drucke den Namen auf dem seriellen Monitor
     }
   }
 
-**Question**
+**Frage**
 
-Now that you understand how to use the RC522-RFID module for reading or writing card or tag information and displaying it on an LCD, how would you design a common access control system for everyday use? Describe your design approach.
+Nachdem du nun verstanden hast, wie man das RC522-RFID-Modul zum Lesen oder Schreiben von Karten- oder Tag-Informationen und zur Anzeige auf einem LCD verwendet, wie würdest du ein gängiges Zugangskontrollsystem für den täglichen Gebrauch entwerfen? Beschreibe deinen Designansatz.
 
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we learned how to harness the power of RFID technology using the RC522 module. We explored the fundamental concepts, built the necessary circuits, wrote and read personal data to and from RFID tags, and displayed the information on an LCD. By the end of this lesson, you should be well-equipped to integrate RFID technology into your own projects, making your systems more efficient and user-friendly.
+In dieser Lektion haben wir gelernt, wie man die RFID-Technologie mithilfe des RC522-Moduls nutzt. Wir haben die grundlegenden Konzepte erkundet, die erforderlichen Schaltungen aufgebaut, persönliche Daten auf RFID-Tags geschrieben und gelesen und die Informationen auf einem LCD angezeigt. Am Ende dieser Lektion solltest du gut gerüstet sein, um RFID-Technologie in deine eigenen Projekte zu integrieren und deine Systeme effizienter und benutzerfreundlicher zu gestalten.

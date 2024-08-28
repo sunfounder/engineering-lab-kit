@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 gemeinsam mit anderen begeisterten Tüftlern.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugriff auf neue Produktankündigungen und erste Einblicke.
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Verlosungen und Sonderaktionen während der Feiertage teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-1. Get Started Arduino
-=========================
+1. Arduino für Anfänger
+==============================
 
-Welcome to our Arduino Exploration for Beginners course! Here, you'll embark on a journey that revisits groundbreaking ideas, inventions, and innovations that have shaped our world. Along the way, you'll apply these historical concepts to build circuits and electronic devices for today's needs, and be inspired to conceive new ideas and inventions for the future. Let's get started on this exciting adventure!
+Willkommen zu unserem Arduino-Einführungskurs für Anfänger! Hier begibst du dich auf eine Reise, die bahnbrechende Ideen, Erfindungen und Innovationen, die unsere Welt geprägt haben, wieder aufgreift. Dabei wirst du diese historischen Konzepte anwenden, um Schaltungen und elektronische Geräte für die heutigen Bedürfnisse zu bauen, und dich inspirieren lassen, neue Ideen und Erfindungen für die Zukunft zu entwickeln. Lass uns dieses spannende Abenteuer beginnen!
 
-Every journey begins with a single step. In this course, our first step is to explore the tools you'll be using. These include the hardware in your kit, the software that controls it, and essential safety guidelines. Let's dive into the hardware first.
+Jede Reise beginnt mit einem einzigen Schritt. In diesem Kurs ist unser erster Schritt, die Werkzeuge zu erkunden, die du verwenden wirst. Dazu gehören die Hardware in deinem Kit, die Software, die sie steuert, und wichtige Sicherheitsrichtlinien. Tauchen wir zuerst in die Hardware ein.
 
 .. toctree::
     :maxdepth: 1

@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer ein in Raspberry Pi, Arduino und ESP32 mit gleichgesinnten Technikbegeisterten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-23. Play “Twinkle, Twinkle, Little Star”
-===========================================
-In this lesson, we delve into the fascinating intersection of music and technology. You'll learn how different musical pitches are produced through frequency changes, and how this principle can be applied using a microcontroller like Arduino to control a buzzer. By the end of this lesson, you will not only understand the basics of musical frequencies but also be able to program an Arduino to play a simple melody.
+23. „Twinkle, Twinkle, Little Star“ spielen
+==============================================
+In dieser Lektion tauchen wir in die faszinierende Verbindung zwischen Musik und Technologie ein. Du lernst, wie verschiedene Tonhöhen durch Frequenzänderungen erzeugt werden und wie dieses Prinzip mit einem Mikrocontroller wie Arduino genutzt werden kann, um einen Piezo-Summer zu steuern. Am Ende dieser Lektion wirst du nicht nur die Grundlagen der musikalischen Frequenzen verstehen, sondern auch in der Lage sein, ein Arduino so zu programmieren, dass es eine einfache Melodie spielt.
 
 .. raw:: html
 
@@ -23,37 +23,36 @@ In this lesson, we delve into the fascinating intersection of music and technolo
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+Am Ende dieser Lektion wirst du in der Lage sein:
 
-* Learn how musical pitches correspond to specific frequencies.
-* Simplify programming by using arrays to store and manipulate musical notes.
-* Write and execute a program that controls a passive buzzer to play "Twinkle, Twinkle, Little Star" 
+* Zu verstehen, wie musikalische Tonhöhen spezifischen Frequenzen entsprechen.
+* Arrays zu verwenden, um Noten zu speichern und zu manipulieren und dadurch das Programmieren zu vereinfachen.
+* Ein Programm zu schreiben und auszuführen, das einen passiven Piezo-Summer steuert, um "Twinkle, Twinkle, Little Star" zu spielen.
 
-Musical Frequencies and Sound Production
-----------------------------------------------
+Musikalische Frequenzen und Klangerzeugung
+------------------------------------------------
 .. image:: img/7_sound.png
   :width: 400
   :align: center
 
-Various musical instruments produce different pitches by changing the frequency.
-For example, on a piano, striking the keys causes the corresponding strings to vibrate rapidly, producing specific pitches.
-Scientists and musicians have developed various music tuning methods and pitch standards by precisely measuring these vibration frequencies.
+Verschiedene Musikinstrumente erzeugen unterschiedliche Tonhöhen durch Änderung der Frequenz.
+Zum Beispiel bringen beim Klavier die Tasten die entsprechenden Saiten zum schnellen Schwingen, wodurch spezifische Tonhöhen erzeugt werden.
+Wissenschaftler und Musiker haben verschiedene Methoden der Musiksstimmung und Tonhöhenstandards entwickelt, indem sie diese Schwingungsfrequenzen präzise gemessen haben.
 
-When you control an Arduino or other microcontroller to send an electrical signal to a buzzer, the buzzer's diaphragm vibrates rapidly according to the frequency of the signal,
-thereby producing sound. For example, a signal set to 440 Hz will produce the standard musical pitch "A4," which is a reference point in music tuning.
-As the frequency increases or decreases, the pitch produced also rises or falls, thus achieving a range of pitches from low to high in musical composition.
+Wenn du ein Arduino oder einen anderen Mikrocontroller steuerst, um ein elektrisches Signal an einen Piezo-Summer zu senden, schwingt die Membran des Summers je nach Frequenz des Signals schnell hin und her und erzeugt so einen Klang. Ein auf 440 Hz eingestelltes Signal erzeugt zum Beispiel die Standard-Tonhöhe "A4", die als Referenzpunkt in der Musikstimmung dient.
+Wenn die Frequenz steigt oder fällt, ändert sich auch die erzeugte Tonhöhe entsprechend, sodass eine Bandbreite von tiefen bis hohen Tönen in einer musikalischen Komposition erreicht wird.
 
 
-In Western music, an octave includes 12 pitches (semitones), from C to B, and then back to a higher C.
+In der westlichen Musik umfasst eine Oktave 12 Tonhöhen (Halbtöne), von C bis B und dann zurück zu einem höheren C.
 
-For example, the frequency of Middle C (usually referred to as C4) is about 261.63 Hz. The frequency of a note can be calculated using the following formula:
+Zum Beispiel beträgt die Frequenz von Mittlerem C (meistens als C4 bezeichnet) etwa 261,63 Hz. Die Frequenz einer Note kann mit der folgenden Formel berechnet werden:
 
 .. image:: img/7_music_format.png
 
-where f_0 is the reference pitch (usually A4, frequency 440Hz), and n is the number of semitone steps from the reference pitch to the target pitch (positive numbers indicate a rise, negative numbers indicate a drop).
-Using this formula, we can calculate the frequency of any note.
+wobei f_0 die Referenztonhöhe (in der Regel A4 mit einer Frequenz von 440 Hz) ist, und n die Anzahl der Halbtonschritte von der Referenztonhöhe bis zur Zieltonhöhe angibt (positive Zahlen bedeuten eine Erhöhung, negative Zahlen eine Absenkung).
+Mit dieser Formel können wir die Frequenz jeder Note berechnen.
 
-Here is a set of frequency tables:
+Hier ist eine Frequenztabelle:
 
 * C (C4): 262 Hz (actually close to 261.63 Hz, rounded to 262)
 * D (D4): 294 Hz
@@ -63,15 +62,15 @@ Here is a set of frequency tables:
 * A (A4): 440 Hz
 * B (B4): 494 Hz
 
-Now we will explore the secrets of the notes through Arduino and a buzzer. Let's have the passive buzzer play the first two lines of "Twinkle, Twinkle, Little Star":
+Nun werden wir die Geheimnisse der Noten mit Arduino und einem Piezo-Summer erkunden. Lass uns den passiven Summer die ersten zwei Zeilen von „Twinkle, Twinkle, Little Star“ spielen lassen:
 
 .. note::
 
-  The melody of "Twinkle, Twinkle, Little Star" is based on simple note combinations,
-  and the melody of this song is based on variations of "Ah vous dirai-je, Maman" by French composer Wolfgang Amadeus Mozart,
-  which are very suitable for beginners to learn.
+  Die Melodie von „Twinkle, Twinkle, Little Star“ basiert auf einfachen Notenkombinationen,
+  und die Melodie dieses Liedes geht auf Variationen von „Ah vous dirai-je, Maman“ des französischen Komponisten Wolfgang Amadeus Mozart zurück,
+  was sie für Anfänger sehr geeignet macht.
 
-  Here is the basic sheet music for "Twinkle, Twinkle, Little Star," including each note:
+  Hier ist das grundlegende Notenblatt für „Twinkle, Twinkle, Little Star“, einschließlich jeder Note:
 
   .. code-block:: 
 
@@ -82,24 +81,24 @@ Now we will explore the secrets of the notes through Arduino and a buzzer. Let's
     C C G G A A G
     F F E E D D C
 
-Building the Circuit
+Schaltungsaufbau
 -----------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Breadboard
-     - 1 * Passive Buzzer
-     - Jumper Wires
+     - 1 * Steckbrett
+     - 1 * Passiver Summer
+     - Jumper-Kabel
    * - |list_uno_r3| 
      - |list_breadboard| 
      - |list_passive_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USB-Kabel
      -
      - 
      - 
@@ -110,25 +109,25 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt Aufbau**
 
-This lesson uses the same circuit as :ref:`ar_siren_sound`.
+Diese Lektion verwendet die gleiche Schaltung wie :ref:`ar_siren_sound`.
 
 .. image:: img/16_morse_code.png
     :width: 500
     :align: center
 
 
-Code Creation - Array
-----------------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson23_Array`` using ``Ctrl + S`` or by clicking “Save”.
+Codeerstellung - Array
+--------------------------
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du "Neue Datei" aus dem Menü "Datei" wählst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson23_Array`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. Now create an array at the very beginning of the code, storing the notes of Twinkle Twinkle Little Star into the array.
+3. Erstelle nun zu Beginn des Codes ein Array, das die Noten von „Twinkle, Twinkle, Little Star“ speichert.
 
 .. code-block:: Arduino
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Definiere die Frequenzen für die Noten der C-Dur-Tonleiter (Oktave beginnend mit mittlerem C)
   int c = 262;
   int d = 294;
   int e = 330;
@@ -136,26 +135,25 @@ Code Creation - Array
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // Hohes C
 
-  // Define an array containing the sequence of notes in the melody
+  // Definiere ein Array, das die Reihenfolge der Noten in der Melodie enthält
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
 
-An array is a data structure used to store multiple elements of the same type in Arduino programming.
-It is a very basic and powerful tool, and when used properly, it can greatly enhance programming efficiency and program performance.
-Arrays can store elements of types such as integers, floating-point numbers, and characters.
+Ein Array ist eine Datenstruktur, die in der Arduino-Programmierung verwendet wird, um mehrere Elemente des gleichen Typs zu speichern.
+Es ist ein sehr grundlegendes und leistungsfähiges Werkzeug, das bei richtiger Verwendung die Programmier-Effizienz und -Leistung erheblich steigern kann.
+Arrays können Elemente wie ganze Zahlen, Gleitkommazahlen und Zeichen speichern.
 
-Similar to creating variables and functions, creating an array also involves specifying the array type and array name - ``int melody[]``.
+Ähnlich wie bei der Erstellung von Variablen und Funktionen wird auch bei der Erstellung eines Arrays der Array-Typ und der Array-Name angegeben - ``int melody[]``.
 
-The elements inside ``{}`` are called array elements, starting from index 0, so ``melody[0]`` equals the first ``c(262)``, and ``melody[13]`` is also ``c(262)``. 
+Die Elemente innerhalb der ``{}`` Klammern werden als Array-Elemente bezeichnet, beginnend bei Index 0, sodass ``melody[0]`` dem ersten ``c(262)`` entspricht und ``melody[13]`` ebenfalls ``c(262)`` ist.
 
-
-4. Now print the elements at index 0 and 13 from the ``melody[]`` array in the serial monitor.
+4. Nun drucke die Elemente an den Indizes 0 und 13 des Arrays ``melody[]`` im seriellen Monitor aus.
 
 .. code-block:: Arduino
   :emphasize-lines: 17,18
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Definiere die Frequenzen für die Noten der C-Dur-Tonleiter (Oktave beginnend mit mittlerem C)
   int c = 262;
   int d = 294;
   int e = 330;
@@ -163,50 +161,50 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // Hohes C
 
-  // Define an array containing the sequence of notes in the melody
+  // Definiere ein Array, das die Reihenfolge der Noten in der Melodie enthält
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);  // Initialize serial communication at 9600 baud rate
+    // Stelle deinen Setup-Code hier bereit, der einmal ausgeführt wird:
+    Serial.begin(9600);  // Initialisiere die serielle Kommunikation mit einer Baudrate von 9600
     Serial.println(melody[0]);
     Serial.println(melody[13]);
   }
   
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Stelle deinen Hauptcode hier bereit, der wiederholt ausgeführt wird:
   }
 
-5. After uploading the code to the Arduino Uno R3, open the serial monitor, and you will see two 262s.
+5. Nach dem Hochladen des Codes auf das Arduino Uno R3 öffne den seriellen Monitor, und du wirst zweimal 262 sehen.
 
 .. code-block::
 
   262
   262
 
-6. If you want to print each element in the array ``melody[]`` one by one, you will first need to know the length of the array. You can use the ``sizeof()`` function to calculate the number of elements in the array.
+6. Wenn du jedes Element im Array ``melody[]`` einzeln ausdrucken möchtest, musst du zuerst die Länge des Arrays kennen. Du kannst die Funktion ``sizeof()`` verwenden, um die Anzahl der Elemente im Array zu berechnen.
 
 .. code-block:: Arduino
   :emphasize-lines: 4
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);  // Initialize serial communication at 9600 baud rate
-    int notes = sizeof(melody) / sizeof(melody[0]); // Calculate the number of element
+    // Stelle deinen Setup-Code hier bereit, der einmal ausgeführt wird:
+    Serial.begin(9600);  // Initialisiere die serielle Kommunikation mit einer Baudrate von 9600
+    int notes = sizeof(melody) / sizeof(melody[0]); // Berechne die Anzahl der Elemente
   }
 
   
-* ``sizeof(melody)`` gives the total bytes used by all elements in the array.
-* ``sizeof(melody[0])`` gives the number of bytes used by one element of the array.
-* Dividing the total bytes by the bytes per element gives the total number of elements in the array.
+* ``sizeof(melody)`` gibt die Gesamtanzahl der Bytes zurück, die alle Elemente im Array belegen.
+* ``sizeof(melody[0])`` gibt die Anzahl der Bytes zurück, die ein einzelnes Element im Array belegt.
+* Die Division der Gesamtbytes durch die Bytes pro Element ergibt die Gesamtanzahl der Elemente im Array.
 
-7. Then use a ``for`` statement to iterate through the elements in the array ``melody[]``, and print them out using the ``Serial.println()`` function.
+7. Verwende dann eine ``for``-Schleife, um durch die Elemente des Arrays ``melody[]`` zu iterieren und drucke sie mit der Funktion ``Serial.println()`` aus.
 
 .. code-block:: Arduino
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Definiere die Frequenzen für die Noten der C-Dur-Tonleiter (Oktave beginnend mit mittlerem C)
   int c = 262;
   int d = 294;
   int e = 330;
@@ -214,28 +212,27 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // Hohes C
 
-  // Define an array containing the sequence of notes in the melody
+  // Definiere ein Array, das die Reihenfolge der Noten in der Melodie enthält
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
 
-
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);                              // Initialize serial communication at 9600 baud rate
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // Stelle deinen Setup-Code hier bereit, der einmal ausgeführt wird:
+    Serial.begin(9600);                              // Initialisiere die serielle Kommunikation mit einer Baudrate von 9600
+    int notes = sizeof(melody) / sizeof(melody[0]);  // Berechne die Anzahl der Elemente
+    // Schleife durch jede Note im Melody-Array
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // Drucke die Frequenz jeder Note auf dem seriellen Monitor aus
       Serial.println(melody[i]);
     }
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Stelle deinen Hauptcode hier bereit, der wiederholt ausgeführt wird:
   }
 
-8. After uploading the code to the Arduino Uno R3, open the serial monitor, and you will see the elements in the array ``melody[]`` printed one by one.
+8. Nach dem Hochladen des Codes auf das Arduino Uno R3 öffne den seriellen Monitor, und du wirst die Elemente im Array ``melody[]`` nacheinander gedruckt sehen.
 
 .. code-block::
 
@@ -251,116 +248,116 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
   330
   ...
 
-**Questions**
+**Fragen**
 
-You can also perform operations on the elements in the array, such as changing to ``Serial.println(melody[i] * 1.3);`` What data will you get and why?
+Du kannst auch Operationen auf den Elementen im Array durchführen, wie zum Beispiel das Ändern zu ``Serial.println(melody[i] * 1.3);``. Welche Daten wirst du erhalten und warum?
 
 
-Code Creation - Play Little Star 
------------------------------------
+Codeerstellung - „Twinkle, Twinkle, Little Star“ spielen
+-----------------------------------------------------------------
 
-Now that we have a solid understanding of creating arrays, accessing array elements, and calculating their lengths and operations, let's apply this knowledge to program a passive buzzer to play 'Twinkle, Twinkle, Little Star' using stored frequencies and intervals.
+Da wir nun ein solides Verständnis für die Erstellung von Arrays, den Zugriff auf Array-Elemente und die Berechnung ihrer Längen und Operationen haben, wollen wir dieses Wissen anwenden, um einen passiven Piezo-Summer so zu programmieren, dass er „Twinkle, Twinkle, Little Star“ mit gespeicherten Frequenzen und Intervallen spielt.
 
-1. Open the sketch you saved earlier, ``Lesson23_Array``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson23_Little_Star``. Click "Save".
+1. Öffne den zuvor gespeicherten Sketch, ``Lesson23_Array``. Wähle „Speichern unter...“ aus dem Menü „Datei“ und benenne es in ``Lesson23_Little_Star`` um. Klicke auf "Speichern".
 
-2. First, define the buzzer pin.
+2. Definiere zuerst den Pin für den Summer.
 
 .. code-block:: Arduino
 
-  const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  const int buzzerPin = 9;  // Weist dem Pin 9 die Konstante für den Summer zu
 
 
-3. Now create another array to store the duration of the notes.
+3. Erstelle nun ein weiteres Array, um die Dauer der Noten zu speichern.
 
 .. code-block:: Arduino
   :emphasize-lines: 3
 
-  // Set up the sequence of notes and their durations in milliseconds
+  // Richte die Reihenfolge der Noten und deren Dauer in Millisekunden ein
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
   int noteDurations[] = { 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000 };
 
-4. Now move part of the code from ``void setup()`` into ``void loop()``.
+4. Verschiebe nun einen Teil des Codes von ``void setup()`` in ``void loop()``.
 
 .. code-block:: Arduino
   :emphasize-lines: 8-13
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);                              // Initialize serial communication at 9600 baud rate
+    // Stelle deinen Setup-Code hier bereit, der einmal ausgeführt wird:
+    Serial.begin(9600);                              // Initialisiere die serielle Kommunikation mit einer Baudrate von 9600
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // Stelle deinen Hauptcode hier bereit, der wiederholt ausgeführt wird:
+    int notes = sizeof(melody) / sizeof(melody[0]);  // Berechne die Anzahl der Elemente
+    // Schleife durch jede Note im Melody-Array
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // Drucke die Frequenz jeder Note auf dem seriellen Monitor aus
       Serial.println(melody[i]);
     }
   }
 
-5. In the ``for`` statement, comment out the printing code and use the ``tone()`` function to play the notes.
+5. Kommentiere im ``for``-Statement den Druckbefehl aus und verwende die ``tone()``-Funktion, um die Noten abzuspielen.
 
 .. code-block:: Arduino
   :emphasize-lines: 9
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // Hauptcode, der wiederholt ausgeführt wird:
+    int notes = sizeof(melody) / sizeof(melody[0]);  // Berechne die Anzahl der Elemente
+    // Schleife durch jede Note im Melody-Array
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // Drucke jede Frequenz der Noten auf den seriellen Monitor
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // Spiele die Note
     }
   }
 
 
-6. After each note is played, to make the melody more natural, add a brief pause between two notes. Here we multiply the duration of the notes by 1.30 to calculate the interval, making the melody sound less hurried.
+6. Um die Melodie natürlicher klingen zu lassen, füge nach jeder Note eine kurze Pause hinzu. Hier multiplizieren wir die Notendauer mit 1,30, um das Intervall zu berechnen und die Melodie weniger gehetzt wirken zu lassen.
 
 .. code-block:: Arduino
   :emphasize-lines: 10
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // Hauptcode, der wiederholt ausgeführt wird:
+    int notes = sizeof(melody) / sizeof(melody[0]);  // Berechne die Anzahl der Elemente
+    // Schleife durch jede Note im Melody-Array
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // Drucke jede Frequenz der Noten auf den seriellen Monitor
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
-      delay(noteDurations[i] * 1.30);                // Wait before changing the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // Spiele die Note
+      delay(noteDurations[i] * 1.30);                // Warte, bevor die nächste Note gespielt wird
     }
   }
 
-7. Use the ``noTone()`` function to stop the tone output from the current pin. This is a necessary step to ensure each note is clearly played without blending into the next one.
+7. Verwende die ``noTone()``-Funktion, um die Tonausgabe am aktuellen Pin zu stoppen. Dies ist ein notwendiger Schritt, um sicherzustellen, dass jede Note klar gespielt wird, ohne in die nächste überzugehen.
 
 .. code-block:: Arduino
   :emphasize-lines: 11
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // Hauptcode, der wiederholt ausgeführt wird:
+    int notes = sizeof(melody) / sizeof(melody[0]);  // Berechne die Anzahl der Elemente
+    // Schleife durch jede Note im Melody-Array
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // Drucke jede Frequenz der Noten auf den seriellen Monitor
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
-      delay(noteDurations[i] * 1.30);                // Wait before changing the note
-      noTone(buzzerPin);                             // Stop playing the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // Spiele die Note
+      delay(noteDurations[i] * 1.30);                // Warte, bevor die nächste Note gespielt wird
+      noTone(buzzerPin);                             // Stoppe das Spielen der Note
     }
   }
 
-8. Your complete code is shown below, and once you upload the code to the Arduino Uno R3, you will be able to hear the buzzer playing "Twinkle Twinkle Little Star".
+8. Dein vollständiger Code ist unten dargestellt. Sobald du den Code auf das Arduino Uno R3 hochgeladen hast, wirst du hören, wie der Summer "Twinkle Twinkle Little Star" spielt.
 
 .. code-block:: Arduino
 
-  int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  int buzzerPin = 9;  // Weist den Pin 9 als Konstante für den Summer zu
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Definiere die Frequenzen für die Noten der C-Dur-Tonleiter (Oktave beginnend mit mittlerem C)
   int c = 262;
   int d = 294;
   int e = 330;
@@ -368,44 +365,42 @@ Now that we have a solid understanding of creating arrays, accessing array eleme
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // Hohes C
 
-  // Set up the sequence of notes and their durations in milliseconds
+  // Richte die Reihenfolge der Noten und deren Dauer in Millisekunden ein
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
   int noteDurations[] = { 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000 };
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);                              // Initialize serial communication at 9600 baud rate
+    // Initialisiere den Setup-Code, der einmal ausgeführt wird:
+    Serial.begin(9600);  // Initialisiere die serielle Kommunikation mit einer Baudrate von 9600
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // Hauptcode, der wiederholt ausgeführt wird:
+    int notes = sizeof(melody) / sizeof(melody[0]);  // Berechne die Anzahl der Elemente
+    // Schleife durch jede Note im Melody-Array
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // Drucke jede Frequenz der Noten auf den seriellen Monitor
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
-      delay(noteDurations[i] * 1.30);                // Wait before changing the note
-      noTone(buzzerPin);                             // Stop playing the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // Spiele die Note
+      delay(noteDurations[i] * 1.30);                // Warte, bevor die nächste Note gespielt wird
+      noTone(buzzerPin);                             // Stoppe das Spielen der Note
     }
   }
   
-9. Finally, remember to save your code and tidy up your workspace.
+9. Vergiss nicht, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
-**Question**
+**Frage**
 
-If you replace the passive buzzer in the circuit with an active buzzer, can you positively play “Twinkle Twinkle Little Star”? Why?
+Wenn du den passiven Summer in der Schaltung durch einen aktiven Summer ersetzt, kannst du dann trotzdem „Twinkle Twinkle Little Star“ spielen? Warum?
 
-**Summary**
+**Zusammenfassung**
 
-Now that the class is over, in this lesson we learned how to use arrays to store data, calculate array lengths, index elements within an array, and perform operations on each element. By storing note frequencies and timing intervals in arrays and iterating through them with a for loop, we successfully programmed a passive buzzer to play 'Twinkle, Twinkle, Little Star'.
+Nachdem der Unterricht nun beendet ist, haben wir in dieser Lektion gelernt, wie man Arrays verwendet, um Daten zu speichern, die Länge von Arrays zu berechnen, Elemente innerhalb eines Arrays zu indexieren und Operationen mit jedem Element durchzuführen. Indem wir Notenfrequenzen und Zeitintervalle in Arrays speicherten und sie mithilfe einer For-Schleife durchliefen, haben wir erfolgreich einen passiven Summer so programmiert, dass er „Twinkle, Twinkle, Little Star“ spielt.
 
-Additionally, we learned how to pause the playback of a note using the ``noTone()`` function.
+Zusätzlich haben wir gelernt, wie man die Wiedergabe einer Note mit der ``noTone()``-Funktion pausiert.
 
-This lesson not only reinforced our understanding of array operations and control structures in programming but also demonstrated how these concepts can be applied to create music with electronic components, linking theoretical knowledge with practical applications in a fun and engaging way.
-
-
+Diese Lektion hat nicht nur unser Verständnis von Array-Operationen und Kontrollstrukturen in der Programmierung vertieft, sondern auch gezeigt, wie diese Konzepte angewendet werden können, um Musik mit elektronischen Komponenten zu erzeugen. Auf unterhaltsame und ansprechende Weise verknüpften wir theoretisches Wissen mit praktischen Anwendungen.
 

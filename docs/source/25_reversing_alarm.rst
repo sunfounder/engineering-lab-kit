@@ -1,24 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-25. Reverse Radar System
+25. Rückfahr-Radarsystem
 =====================================
 
-When reversing a car, it is crucial to be aware of obstacles behind the vehicle, especially in situations with limited visibility. 
-To enhance safety, many modern vehicles are equipped with reverse radar systems. 
+Beim Rückwärtsfahren eines Autos ist es entscheidend, sich der Hindernisse hinter dem Fahrzeug bewusst zu sein, insbesondere in Situationen mit eingeschränkter Sicht.
+Um die Sicherheit zu erhöhen, sind viele moderne Fahrzeuge mit Rückfahr-Radarsystemen ausgestattet.
 
-Today, we're going to learn how to build and program an ultrasonic radar system using Arduino. This system will use an ultrasonic sensor to measure distances and provide feedback through an LCD display and a buzzer. We'll go through each section of the code, explaining what it does and why it's important.
+Heute lernen wir, wie man ein Ultraschall-Radarsystem mit Arduino baut und programmiert. Dieses System verwendet einen Ultraschallsensor, um Entfernungen zu messen, und gibt Rückmeldungen über ein LCD-Display und einen Summer. Wir gehen jeden Abschnitt des Codes durch und erklären, was er bewirkt und warum er wichtig ist.
 
 .. raw:: html
 
@@ -27,222 +27,221 @@ Today, we're going to learn how to build and program an ultrasonic radar system 
         Your browser does not support the video tag.
     </video>
 
-Reverse Radar System Evolution
+Entwicklung des Rückfahr-Radarsystems
 ----------------------------------------
 
-The development of reverse radar systems, also known as parking sensors, began in the late 20th century to address the need for safer vehicle parking. Initially developed in the 1970s using ultrasonic technology similar to marine sonar, these systems used sound waves to detect objects and calculate distances.
+Die Entwicklung von Rückfahr-Radarsystemen, auch bekannt als Einparksensoren, begann im späten 20. Jahrhundert, um den Bedarf an sichererem Fahrzeugparken zu decken. Ursprünglich in den 1970er Jahren unter Verwendung von Ultraschalltechnologie, ähnlich der von Marinesonaren, entwickelt, nutzten diese Systeme Schallwellen, um Objekte zu erkennen und Entfernungen zu berechnen.
 
-Significant advancements came in the 1990s with the introduction of microcontroller-based systems and electromagnetic sensors, which provided more precise measurements and improved vehicle integration. This period saw the incorporation of these sensors into luxury vehicles, enhancing both safety and luxury appeal.
+Erhebliche Fortschritte gab es in den 1990er Jahren mit der Einführung von mikrocontrollerbasierten Systemen und elektromagnetischen Sensoren, die präzisere Messungen und eine bessere Integration in Fahrzeuge ermöglichten. In dieser Zeit fanden diese Sensoren ihren Weg in Luxusfahrzeuge, was sowohl die Sicherheit als auch den luxuriösen Charme steigerte.
 
-By the early 2000s, reverse radar systems had advanced to include visual, auditory, and haptic feedback, along with digital displays and integration with vehicle navigation systems, offering drivers real-time, comprehensible information about their surroundings.
+Bis Anfang der 2000er Jahre hatten sich Rückfahr-Radarsysteme so weit entwickelt, dass sie visuelles, akustisches und haptisches Feedback sowie digitale Anzeigen und die Integration in Navigationssysteme boten, um Fahrern Echtzeitinformationen über ihre Umgebung zu liefern.
 
-Today, the technology continues to evolve with the integration of AI and IoT, using a mix of cameras, radar, and ultrasonic sensors to provide a detailed view of the vehicle’s environment, reducing accident risks and easing parking. This technology is now a fundamental component of the autonomous driving systems poised to revolutionize the automotive industry.
+Heute entwickelt sich die Technologie weiter mit der Integration von KI und IoT, indem eine Mischung aus Kameras, Radar- und Ultraschallsensoren verwendet wird, um einen detaillierten Überblick über die Umgebung des Fahrzeugs zu bieten, das Unfallrisiko zu verringern und das Parken zu erleichtern. Diese Technologie ist mittlerweile ein wesentlicher Bestandteil der autonomen Fahrsysteme, die die Automobilindustrie revolutionieren sollen.
 
 .. image:: img/25_reverse_radar.png
   :width: 600
   :align: center
 
-Building the Circuit
+Aufbau der Schaltung
 --------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Ultrasonic Module
-     - 1 * Active Buzzer
+     - 1 * Ultraschall-Modul
+     - 1 * Aktiver Summer
      - 1 * I2C LCD1602
    * - |list_uno_r3| 
      - |list_ultrasonic| 
      - |list_active_buzzer| 
      - |list_i2c_lcd1602|
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
+     - Verbindungskabel
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt-Anleitung**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den unten aufgeführten Schritten, um die Schaltung aufzubauen.
 
 .. image:: img/25_reverse_circuit.png
     :width: 700
     :align: center
 
-1. Insert the ultrasonic module into the breadboard.
+1. Setze das Ultraschall-Modul in das Steckbrett ein.
 
 .. image:: img/25_reverse_ultrasonic.png
     :width: 400
     :align: center
 
-2. Connect the VCC pin of the ultrasonic module to the positive side of the breadboard, the Trig pin to pin 8 on the Arduino board, the Echo pin to pin 7, and the GND to the negative side of the breadboard.
+2. Verbinde den VCC-Pin des Ultraschall-Moduls mit der positiven Seite des Steckbretts, den Trig-Pin mit Pin 8 auf dem Arduino-Board, den Echo-Pin mit Pin 7 und GND mit der negativen Seite des Steckbretts.
 
 .. image:: img/25_reverse_ultrasonic_pins.png
     :width: 400
     :align: center
 
-3. Insert the active buzzer (with a white sticker) into the breadboard. Connect the "+" pin to pin 9 and the "-" pin to GND.
+3. Setze den aktiven Summer (mit weißem Aufkleber) in das Steckbrett ein. Verbinde den "+"-Pin mit Pin 9 und den "-" Pin mit GND.
 
 .. image:: img/25_reverse_pa_buzzer.png
     :width: 400
     :align: center
 
-4. Connect the I2C LCD1602 module: GND to the negative rail on the breadboard, VCC to the positive rail on the breadboard, SDA to pin A4, and SCL to pin A5.
+4. Schließe das I2C LCD1602-Modul an: GND an die negative Schiene des Steckbretts, VCC an die positive Schiene des Steckbretts, SDA an Pin A4 und SCL an Pin A5.
 
 .. image:: img/25_reverse_i2c_lcd1602.png
     :width: 700
     :align: center
 
-5. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails of the breadboard, respectively.
+5. Schließe abschließend die GND- und 5V-Pins des Arduino Uno R3 an die negative bzw. positive Schiene des Steckbretts an.
 
 .. image:: img/25_reverse_circuit.png
     :width: 700
     :align: center
 
-Code Creation
+Code-Erstellung
 --------------------
-In a reverse radar system, each component plays a critical role in ensuring accurate distance measurement and effective feedback:
+In einem Rückfahr-Radarsystem spielt jede Komponente eine entscheidende Rolle, um eine genaue Entfernungsmessung und effektives Feedback zu gewährleisten:
 
-* The ultrasonic sensor is used to detect the distance to objects in front of it.
-* The I2C LCD1602 is used to display the distance detected by the ultrasonic sensor.
-* The active buzzer is used to change the beeping interval based on the distance measured by the ultrasonic sensor.
+* Der Ultraschallsensor wird verwendet, um die Entfernung zu Objekten vor ihm zu erkennen.
+* Das I2C LCD1602 wird verwendet, um die vom Ultraschallsensor erkannte Entfernung anzuzeigen.
+* Der aktive Summer wird verwendet, um das Piepsintervall basierend auf der gemessenen Entfernung durch den Ultraschallsensor zu ändern.
 
-Here is how the system reacts based on different distance ranges:
+So reagiert das System basierend auf verschiedenen Entfernungsbereichen:
 
-* **Less than 10cm**: The buzzer beeps at a rapid interval of 100 milliseconds.
-* **Between 10cm and 20cm**: The beeping interval increases to 500 milliseconds.
-* **Between 20cm and 50cm**: The interval extends further to 1000 milliseconds (1 second).
-* **Greater than 50cm**: The buzzer beeps at a relaxed interval of 2000 milliseconds (2 seconds).
+* **Weniger als 10 cm**: Der Summer piept in einem schnellen Intervall von 100 Millisekunden.
+* **Zwischen 10 cm und 20 cm**: Das Piepsintervall erhöht sich auf 500 Millisekunden.
+* **Zwischen 20 cm und 50 cm**: Das Intervall verlängert sich weiter auf 1000 Millisekunden (1 Sekunde).
+* **Größer als 50 cm**: Der Summer piept in einem entspannten Intervall von 2000 Millisekunden (2 Sekunden).
 
-Now, let's start coding to see how we can implement the functionality described above.
+Nun lasst uns mit der Codierung beginnen, um zu sehen, wie wir die oben beschriebene Funktionalität implementieren können.
 
 .. note::
 
-  If you are not familiar with the ultrasonic sensor, I2C LCD1602, or active buzzer, you can first learn their basic usage in the following projects:
+  Wenn du mit dem Ultraschallsensor, dem I2C LCD1602 oder dem aktiven Summer nicht vertraut bist, kannst du deren grundlegende Verwendung in den folgenden Projekten erlernen:
 
   * :ref:`ar_i2c_lcd1602`
   * :ref:`ar_smart_trash_can`
   * :ref:`ar_morse_code`
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson25_Reverse_Radar_System`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem Menü „File“ auswählst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson25_Reverse_Radar_System`` mit ``Ctrl + S`` oder durch Klicken auf „Save“.
 
-3. First, we include the necessary libraries for using the LCD and initialize it with the correct I2C address and size.
+3. Zunächst binden wir die erforderlichen Bibliotheken zur Verwendung des LCDs ein und initialisieren es mit der richtigen I2C-Adresse und Größe.
 
 .. note::
 
-  ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+  Hier wird die ``LiquidCrystal I2C``-Bibliothek verwendet, die du über den **Library Manager** installieren kannst.
 
 .. code-block:: Arduino
 
   #include <Wire.h>
   #include <LiquidCrystal_I2C.h>
 
-  // Initialize the LCD with I2C address 0x27 and size 16x2
+  // Initialisiere das LCD mit der I2C-Adresse 0x27 und der Größe 16x2
   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-
-4. Next, define the pins on the Arduino that connect to the ultrasonic sensor's trigger, echo, and the buzzer.
-
-.. code-block:: Arduino
-
-  #define TRIGGER_PIN 8  // Pin to trigger the ultrasonic pulse
-  #define ECHO_PIN 7     // Pin to receive the echo
-  #define BUZZER_PIN 9   // Pin for the buzzer
-
-5. Set up variables to control how frequently the buzzer beeps based on the distance measured.
+4. Definiere als Nächstes die Pins am Arduino, die mit dem Trigger, Echo des Ultraschallsensors und dem Summer verbunden sind.
 
 .. code-block:: Arduino
 
-  // Timing variables to control the beeping frequency based on distance
-  unsigned long intervals = 1000;    // Default interval for beeping
-  unsigned long previousMillis = 0;  // Store last time the buzzer beeped
+  #define TRIGGER_PIN 8  // Pin zum Auslösen des Ultraschallpulses
+  #define ECHO_PIN 7     // Pin zum Empfangen des Echos
+  #define BUZZER_PIN 9   // Pin für den Summer
 
-  // Distance measurement variable
+5. Lege Variablen fest, um zu steuern, wie häufig der Summer basierend auf der gemessenen Entfernung piept.
+
+.. code-block:: Arduino
+
+  // Zeitsteuerungsvariablen zur Kontrolle der Piepsfrequenz basierend auf der Entfernung
+  unsigned long intervals = 1000;    // Standardintervall für das Piepsen
+  unsigned long previousMillis = 0;  // Speichert die letzte Zeit, zu der der Summer piepte
+
+  // Variable zur Entfernungsmesung
   long distance = 0;
 
-6. In the ``void setup()`` function, configure the pin modes and initialize the LCD and serial communication.
+6. In der Funktion ``void setup()``, konfiguriere die Pin-Modi und initialisiere das LCD sowie die serielle Kommunikation.
 
 .. code-block:: Arduino
 
   void setup() {
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the trigger pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the echo pin as input
-    pinMode(BUZZER_PIN, OUTPUT);   // Set the buzzer pin as output
-    lcd.init();                    // Initialize the LCD
-    lcd.backlight();               // Turn on LCD backlight
-    Serial.begin(9600);            // Start serial communication at 9600 baud rate
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setze den Trigger-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setze den Echo-Pin als Eingang
+    pinMode(BUZZER_PIN, OUTPUT);   // Setze den Summer-Pin als Ausgang
+    lcd.init();                    // Initialisiere das LCD
+    lcd.backlight();               // Schalte die LCD-Hintergrundbeleuchtung ein
+    Serial.begin(9600);            // Starte die serielle Kommunikation mit 9600 Baud
   }
 
-7. The main loop continuously measures the distance, adjusts the beeping interval, and updates the LCD display.
+7. Die Hauptschleife misst kontinuierlich die Entfernung, passt das Piepsintervall an und aktualisiert das LCD-Display.
 
 .. code-block:: Arduino
 
   void loop() {
-    distance = measureDistance();  // Measure distance
+    distance = measureDistance();  // Messe die Entfernung
 
-    // Adjust intervals based on distance
+    // Passe die Intervalle basierend auf der Entfernung an
     adjustBeepingInterval();
 
-    unsigned long currentMillis = millis();  // Get current time
-    // Check if it's time to beep
+    unsigned long currentMillis = millis();  // Hole die aktuelle Zeit
+    // Überprüfe, ob es Zeit ist zu piepen
     if (currentMillis - previousMillis >= intervals) {
       Serial.println("Beeping!");
       beep();
-      previousMillis = currentMillis;  // Update previousMillis directly here
+      previousMillis = currentMillis;  // Aktualisiere previousMillis direkt hier
     }
 
-    updateLCD();  // Update the LCD display
-    delay(100);   // Short delay to stabilize readings
+    updateLCD();  // Aktualisiere das LCD-Display
+    delay(100);   // Kurze Verzögerung zur Stabilisierung der Messwerte
   }
 
-* First, we use the ``measureDistance()`` function to determine the distance using the ultrasonic sensor.
+* Zuerst verwenden wir die Funktion ``measureDistance()``, um die Entfernung mit dem Ultraschallsensor zu bestimmen.
 
 .. code-block:: Arduino
 
-  distance = measureDistance();  // Measure distance
+  distance = measureDistance();  // Messe die Entfernung
 
-* Next, adjust the beeping frequency based on the newly measured distance using the ``adjustBeepingInterval()`` function. This dynamically changes how often the buzzer sounds based on how close the detected object is.
+* Als Nächstes passen wir die Piepsfrequenz basierend auf der neu gemessenen Entfernung mit der Funktion ``adjustBeepingInterval()`` an. Dies ändert dynamisch, wie oft der Summer ertönt, je nachdem, wie nah das erkannte Objekt ist.
 
 .. code-block:: Arduino
 
-  // Adjust intervals based on distance
+  // Passe die Intervalle basierend auf der Entfernung an
   adjustBeepingInterval();
 
-* The ``millis()`` function is then called to record the current time in milliseconds since the Arduino board started running the program.
+* Die Funktion ``millis()`` wird dann aufgerufen, um die aktuelle Zeit in Millisekunden zu erfassen, seitdem das Arduino-Board das Programm gestartet hat.
 
 .. code-block:: Arduino
 
   unsigned long currentMillis = millis();
 
-* Check if the time elapsed since the last beep is greater than or equal to the set interval. If it is, print a message to the serial monitor, activate the buzzer, and reset the ``previousMillis``. This ensures the buzzer operates at intervals adjusted to the distance, maintaining consistent alert timing.
+* Überprüfe, ob die seit dem letzten Piepsen vergangene Zeit größer oder gleich dem eingestellten Intervall ist. Falls ja, wird eine Nachricht an den seriellen Monitor ausgegeben, der Summer aktiviert und ``previousMillis`` zurückgesetzt. Dies stellt sicher, dass der Summer in Abständen piept, die der gemessenen Entfernung entsprechen, und die Warnintervalle konsistent bleiben.
 
 .. code-block:: Arduino
   
   if (currentMillis - previousMillis >= intervals) {
     Serial.println("Beeping!");
     beep();
-    previousMillis = currentMillis;  // Update previousMillis directly here
+    previousMillis = currentMillis;  // Aktualisiere previousMillis direkt hier
   }
 
-* Finallly, call ``updateLCD()`` function to update the LCD with the current distance measurement.
+* Schließlich wird die Funktion ``updateLCD()`` aufgerufen, um das LCD-Display mit der aktuellen Entfernungsanzeige zu aktualisieren.
 
 .. code-block:: Arduino
 
-  updateLCD();  // Update the LCD display
+  updateLCD();  // Aktualisiere das LCD-Display
 
-8. About ``adjustBeepingInterval()`` function: Adjust the beeping interval based on the distance measured. This function sets the ``intervals`` variable. The closer the object, the shorter the interval, making the buzzer beep more frequently as objects get closer.
+8. Zur Funktion ``adjustBeepingInterval()``: Diese passt das Piepsintervall basierend auf der gemessenen Entfernung an. Die Funktion setzt die Variable ``intervals``. Je näher das Objekt ist, desto kürzer wird das Intervall, wodurch der Summer häufiger piept, je näher sich Objekte befinden.
 
 .. code-block:: Arduino
 
-  // Function to adjust intervals based on distance
+  // Funktion zur Anpassung der Intervalle basierend auf der Entfernung
   void adjustBeepingInterval() {
     if (distance <= 10) {
       intervals = 100;
@@ -254,101 +253,101 @@ Now, let's start coding to see how we can implement the functionality described 
       intervals = 2000;
     }
   }
-
-9. About ``beep()`` function: Turn the buzzer on, then off after a brief pause.
+  
+9. Über die ``beep()``-Funktion: Schaltet den Summer ein und nach einer kurzen Pause wieder aus.
 
 .. code-block:: Arduino
 
-  // Function to make buzzer beep
+  // Funktion, um den Summer piepen zu lassen
   void beep() {
-    digitalWrite(BUZZER_PIN, HIGH);  // Turn buzzer ON
-    delay(100);                      // Beep duration: 100 milliseconds
-    digitalWrite(BUZZER_PIN, LOW);   // Turn buzzer OFF
+    digitalWrite(BUZZER_PIN, HIGH);  // Schaltet den Summer EIN
+    delay(100);                      // Piepdauer: 100 Millisekunden
+    digitalWrite(BUZZER_PIN, LOW);   // Schaltet den Summer AUS
   }
 
-10. About ``measureDistance()`` funtion: Measure distance using the ultrasonic sensor. This function sends ultrasonic waves and measures how long it takes for the echo to return. The ``distance`` is calculated based on the travel time of these waves.
+10. Über die Funktion ``measureDistance()``: Misst die Entfernung mithilfe des Ultraschallsensors. Diese Funktion sendet Ultraschallwellen aus und misst, wie lange es dauert, bis das Echo zurückkehrt. Die ``distance`` wird basierend auf der Laufzeit dieser Wellen berechnet.
 
 .. code-block:: Arduino
 
-  // Function to measure distance using the ultrasonic sensor
+  // Funktion zur Messung der Entfernung mithilfe des Ultraschallsensors
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure trigger pin is low
+    digitalWrite(TRIGGER_PIN, LOW);  // Sicherstellen, dass der Trigger-Pin niedrig ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH);  // Send a high pulse
-    delayMicroseconds(10);            // Pulse duration
-    digitalWrite(TRIGGER_PIN, LOW);   // End the pulse
+    digitalWrite(TRIGGER_PIN, HIGH);  // Sende einen hohen Impuls
+    delayMicroseconds(10);            // Impulsdauer
+    digitalWrite(TRIGGER_PIN, LOW);   // Beende den Impuls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance in cm
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messe die Dauer des hohen Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechne die Entfernung in cm
     return distance;
   }
 
-11. About ``updateLCD()`` function: Update the LCD only if the measured distance changes, reducing unnecessary updates. It displays the current distance on the LCD.
+11. Über die Funktion ``updateLCD()``: Aktualisiert das LCD nur, wenn sich die gemessene Entfernung ändert, um unnötige Updates zu vermeiden. Es zeigt die aktuelle Entfernung auf dem LCD an.
 
 .. code-block:: Arduino
 
-  // Function to update the LCD display with distance
+  // Funktion zum Aktualisieren des LCD-Displays mit der Entfernung
   void updateLCD() {
-    static float lastDistance = -1;  // Store last distance displayed
+    static float lastDistance = -1;  // Speichert die zuletzt angezeigte Entfernung
     if (distance != lastDistance) {
-      lcd.clear();          // Clear LCD display
-      lcd.setCursor(0, 0);  // Set cursor at beginning
+      lcd.clear();          // Lösche das LCD-Display
+      lcd.setCursor(0, 0);  // Setze den Cursor an den Anfang
       lcd.print("Dis: ");
       lcd.print(distance);
       lcd.print(" cm");
-      lastDistance = distance;  // Update last displayed distance
+      lastDistance = distance;  // Aktualisiere die zuletzt angezeigte Entfernung
     }
   }
 
-12. Now that you've written all parts of the code, upload it to your Arduino board to see if it works as expected.
+12. Jetzt, da du alle Teile des Codes geschrieben hast, lade ihn auf dein Arduino-Board hoch, um zu sehen, ob alles wie erwartet funktioniert.
 
 .. code-block:: Arduino
 
   #include <Wire.h>
   #include <LiquidCrystal_I2C.h>
 
-  // Initialize the LCD with I2C address 0x27 and size 16x2
+  // Initialisiere das LCD mit der I2C-Adresse 0x27 und der Größe 16x2
   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-  #define TRIGGER_PIN 8  // Pin to trigger the ultrasonic pulse
-  #define ECHO_PIN 7     // Pin to receive the echo
-  #define BUZZER_PIN 9   // Pin for the buzzer
+  #define TRIGGER_PIN 8  // Pin zum Auslösen des Ultraschallpulses
+  #define ECHO_PIN 7     // Pin zum Empfangen des Echos
+  #define BUZZER_PIN 9   // Pin für den Summer
 
-  // Timing variables to control the beeping frequency based on distance
-  unsigned long intervals = 1000;    // Default interval for beeping
-  unsigned long previousMillis = 0;  // Store last time the buzzer beeped
+  // Zeitsteuerungsvariablen zur Kontrolle der Piepsfrequenz basierend auf der Entfernung
+  unsigned long intervals = 1000;    // Standardintervall für das Piepsen
+  unsigned long previousMillis = 0;  // Speichert die letzte Zeit, zu der der Summer piepte
 
-  // Distance measurement variable
+  // Variable zur Entfernungsmesung
   long distance = 0;
 
   void setup() {
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the trigger pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the echo pin as input
-    pinMode(BUZZER_PIN, OUTPUT);   // Set the buzzer pin as output
-    lcd.init();                    // Initialize the LCD
-    lcd.backlight();               // Turn on LCD backlight
-    Serial.begin(9600);            // Start serial communication at 9600 baud rate
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setze den Trigger-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setze den Echo-Pin als Eingang
+    pinMode(BUZZER_PIN, OUTPUT);   // Setze den Summer-Pin als Ausgang
+    lcd.init();                    // Initialisiere das LCD
+    lcd.backlight();               // Schalte die LCD-Hintergrundbeleuchtung ein
+    Serial.begin(9600);            // Starte die serielle Kommunikation mit 9600 Baud
   }
 
   void loop() {
-    distance = measureDistance();  // Measure distance
+    distance = measureDistance();  // Messe die Entfernung
 
-    // Adjust intervals based on distance
+    // Passe die Intervalle basierend auf der Entfernung an
     adjustBeepingInterval();
 
-    unsigned long currentMillis = millis();  // Get current time
-    // Check if it's time to beep
+    unsigned long currentMillis = millis();  // Hole die aktuelle Zeit
+    // Überprüfe, ob es Zeit ist zu piepen
     if (currentMillis - previousMillis >= intervals) {
       Serial.println("Beeping!");
       beep();
-      previousMillis = currentMillis;  // Update previousMillis directly here
+      previousMillis = currentMillis;  // Aktualisiere previousMillis direkt hier
     }
 
-    updateLCD();  // Update the LCD display
-    delay(100);   // Short delay to stabilize readings
+    updateLCD();  // Aktualisiere das LCD-Display
+    delay(100);   // Kurze Verzögerung zur Stabilisierung der Messwerte
   }
 
-  // Function to adjust intervals based on distance
+  // Funktion zur Anpassung der Intervalle basierend auf der Entfernung
   void adjustBeepingInterval() {
     if (distance <= 10) {
       intervals = 100;
@@ -361,51 +360,48 @@ Now, let's start coding to see how we can implement the functionality described 
     }
   }
 
-  // Function to make buzzer beep
+  // Funktion, um den Summer piepen zu lassen
   void beep() {
-    digitalWrite(BUZZER_PIN, HIGH);  // Turn buzzer ON
-    delay(100);                      // Beep duration: 100 milliseconds
-    digitalWrite(BUZZER_PIN, LOW);   // Turn buzzer OFF
+    digitalWrite(BUZZER_PIN, HIGH);  // Schaltet den Summer EIN
+    delay(100);                      // Piepdauer: 100 Millisekunden
+    digitalWrite(BUZZER_PIN, LOW);   // Schaltet den Summer AUS
   }
 
-  // Function to measure distance using the ultrasonic sensor
+  // Funktion zur Messung der Entfernung mithilfe des Ultraschallsensors
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure trigger pin is low
+    digitalWrite(TRIGGER_PIN, LOW);  // Sicherstellen, dass der Trigger-Pin niedrig ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH);  // Send a high pulse
-    delayMicroseconds(10);            // Pulse duration
-    digitalWrite(TRIGGER_PIN, LOW);   // End the pulse
+    digitalWrite(TRIGGER_PIN, HIGH);  // Sende einen hohen Impuls
+    delayMicroseconds(10);            // Impulsdauer
+    digitalWrite(TRIGGER_PIN, LOW);   // Beende den Impuls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance in cm
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messe die Dauer des hohen Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechne die Entfernung in cm
     return distance;
   }
 
-  // Function to update the LCD display with distance
+  // Funktion zum Aktualisieren des LCD-Displays mit der Entfernung
   void updateLCD() {
-    static float lastDistance = -1;  // Store last distance displayed
+    static float lastDistance = -1;  // Speichert die zuletzt angezeigte Entfernung
     if (distance != lastDistance) {
-      lcd.clear();          // Clear LCD display
-      lcd.setCursor(0, 0);  // Set cursor at beginning
+      lcd.clear();          // Lösche das LCD-Display
+      lcd.setCursor(0, 0);  // Setze den Cursor an den Anfang
       lcd.print("Dis: ");
       lcd.print(distance);
       lcd.print(" cm");
-      lastDistance = distance;  // Update last displayed distance
+      lastDistance = distance;  // Aktualisiere die zuletzt angezeigte Entfernung
     }
   }
 
 
-13. Finally, remember to save your code and tidy up your workspace.
+13. Speichere abschließend deinen Code und räume deinen Arbeitsplatz auf.
 
-**Question**
+**Frage**
 
-In this project, we used an active buzzer to serve as an alert mechanism, but a passive buzzer could also be used to achieve similar functionality. If you were to replace the active buzzer with a passive buzzer, how should the code be modified?
+In diesem Projekt haben wir einen aktiven Summer als Alarmsystem verwendet, aber auch ein passiver Summer könnte ähnliche Funktionen erfüllen. Wie müsste der Code angepasst werden, wenn du den aktiven durch einen passiven Summer ersetzt?
 
-**Summary**
+**Zusammenfassung**
 
-Throughout this course, we embarked on a journey from conceptual understanding to practical implementation of a reverse radar system. Starting with assembling the circuit on a breadboard, we connected an ultrasonic sensor, an active buzzer, and an LCD display to an Arduino board. Following the hardware setup, we dove into the coding aspect where you learned to manipulate sensor data to trigger auditory and visual feedback based on the distance of obstacles behind a vehicle.
+Im Laufe dieses Kurses haben wir den Weg von der konzeptionellen Erfassung bis zur praktischen Implementierung eines Rückfahr-Radarsystems durchlaufen. Beginnend mit dem Aufbau der Schaltung auf einem Breadboard, haben wir einen Ultraschallsensor, einen aktiven Summer und ein LCD-Display mit einem Arduino-Board verbunden. Nach der Hardware-Einrichtung haben wir uns dem Codieren gewidmet, wobei du gelernt hast, Sensordaten zu verarbeiten, um akustische und visuelle Rückmeldungen basierend auf der Entfernung von Hindernissen hinter einem Fahrzeug auszulösen.
 
-You've now successfully programmed your Arduino to measure distances and provide alerts through a buzzer and visual feedback via an LCD, mimicking the functionality of advanced reverse radar systems found in modern cars. This not only demonstrates your ability to integrate various electronic components but also highlights your skill in creating a system that could enhance vehicular safety.
-
-
-
+Du hast nun erfolgreich dein Arduino so programmiert, dass es Entfernungen misst und Alarme durch einen Summer und visuelle Rückmeldungen über ein LCD ausgibt, ähnlich wie bei fortschrittlichen Rückfahrradarsystemen moderner Autos. Dies zeigt nicht nur deine Fähigkeit, verschiedene elektronische Komponenten zu integrieren, sondern auch deine Kompetenz, ein System zu erstellen, das die Fahrzeugsicherheit verbessern könnte.

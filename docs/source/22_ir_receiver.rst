@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit Gleichgesinnten ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Peeks.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 .. _ar_ir_receiver:
 
-22. Remote-Controlled Colorful Light
+22. Fernsteuerbares buntes Licht
 ===================================================
 
-As Christmas approaches, many people decorate their homes with colorful lights. Imagine creating your own remote-controlled colorful light setup! In this lesson, we'll use an Arduino, an infrared receiver, and an RGB LED to make a festive, programmable light display.
+Da Weihnachten näher rückt, schmücken viele Menschen ihre Häuser mit bunten Lichtern. Stell dir vor, du könntest dein eigenes fernsteuerbares buntes Licht-Setup erstellen! In dieser Lektion verwenden wir ein Arduino, einen Infrarotempfänger und eine RGB-LED, um ein festliches, programmierbares Lichtdisplay zu erstellen.
 
 .. raw:: html
 
@@ -26,210 +26,207 @@ As Christmas approaches, many people decorate their homes with colorful lights. 
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+Am Ende dieser Lektion wirst du in der Lage sein:
 
-* Understand how an infrared receiver works.
-* Decode infrared signals from a remote control.
-* Control an RGB LED using decoded signals to display various colors and effects.
+* Verstehen, wie ein Infrarotempfänger funktioniert.
+* Infrarotsignale von einer Fernbedienung dekodieren.
+* Eine RGB-LED mit dekodierten Signalen steuern, um verschiedene Farben und Effekte anzuzeigen.
 
-Building the Circuit
------------------------
+Schaltung aufbauen
+------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - 1 * IR Receiver
+     - 1 * RGB-LED
+     - 3 * 220Ω Widerstand
+     - 1 * IR-Empfänger
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_receiver| 
-   * - 1 * Remote Control
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+   * - 1 * Fernbedienung
+     - 1 * Steckbrett
+     - Jumper-Kabel
+     - 1 * USB-Kabel
    * - |list_remote| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt Aufbau**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den folgenden Schritten, um deine Schaltung aufzubauen.
 
 .. image:: img/22_receiver_gnd_5v.png
     :width: 400
     :align: center
 
-1. Find the infrared receiver.
+1. Finde den Infrarotempfänger.
 
 .. image:: img/22_receiver_pin.png
   :width: 300
   :align: center
 
-* **OUT**: Signal output
-* **GND**: Ground
-* **VCC**: Power supply, 2.5V~5V
+* **OUT**: Signalausgang
+* **GND**: Masse
+* **VCC**: Stromversorgung, 2,5V~5V
 
-The SL838 infrared receiver is a component that receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar in size to a normal plastic-packaged transistor and is suitable for all kinds of infrared remote control and infrared transmission.
+Der SL838-Infrarotempfänger ist eine Komponente, die Infrarotsignale empfängt und eigenständig Infrarotstrahlen sowie TTL-kompatible Signale ausgibt. Er ist in der Größe einem normalen Plastik-Transistor ähnlich und eignet sich für alle Arten von Infrarot-Fernbedienungen und Infrarot-Übertragungen.
 
-Infrared (IR) communication is a popular, low-cost, and easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, making it imperceptible to the human eye—ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+Infrarot (IR)-Kommunikation ist eine beliebte, kostengünstige und einfach zu verwendende drahtlose Kommunikationstechnologie. Infrarotlicht hat eine etwas längere Wellenlänge als sichtbares Licht, was es für das menschliche Auge unsichtbar macht – ideal für drahtlose Kommunikation. Ein gängiges Modulationsschema für Infrarotkommunikation ist die 38KHz-Modulation.
 
-2. The infrared receiver is paired with a 21-key remote control.
+2. Der Infrarotempfänger ist mit einer 21-Tasten-Fernbedienung gekoppelt.
 
 .. image:: img/22_receiver_remote_control.jpeg
   :width: 400
   :align: center
 
-This sleek remote features 21 keys for various functions, boasting an effective transmission distance of up to 8 meters. Its compact dimensions (85x39x6mm) make it ideal for small hands, while the 3V key-type lithium manganese battery ensures long-lasting performance. Operating at an infrared carrier frequency of 38KHz and wrapped in a durable 0.125mm PET surface, this remote is built to withstand over 20,000 uses, making it a reliable choice for controlling a wide range of devices.
+Diese elegante Fernbedienung verfügt über 21 Tasten für verschiedene Funktionen und bietet eine effektive Übertragungsdistanz von bis zu 8 Metern. Mit ihren kompakten Abmessungen (85x39x6mm) ist sie ideal für kleine Hände, während die 3V-Knopfbatterie eine lange Lebensdauer gewährleistet. Sie arbeitet bei einer Infrarot-Trägerfrequenz von 38KHz und ist mit einer strapazierfähigen 0,125mm PET-Oberfläche versehen, die für über 20.000 Verwendungen ausgelegt ist und somit eine zuverlässige Wahl zur Steuerung einer Vielzahl von Geräten darstellt.
 
-3. Insert the infrared receiver into the breadboard. The infrared receiver has a front and back side, with the protruding side being the front. The pin order from left to right is OUT, GND, and VCC.
+3. Setze den Infrarotempfänger in das Steckbrett ein. Der Infrarotempfänger hat eine Vorder- und Rückseite, wobei die herausstehende Seite die Vorderseite ist. Die Pin-Reihenfolge von links nach rechts ist OUT, GND und VCC.
 
 .. image:: img/22_receiver_receiver.png
     :width: 500
     :align: center
 
-4. Connect the OUT pin of the infrared receiver to pin 2 on the Arduino Uno R3, GND to the negative rail of the breadboard, and VCC to the positive rail of the breadboard.
+4. Verbinde den OUT-Pin des Infrarotempfängers mit Pin 2 des Arduino Uno R3, GND mit der negativen Schiene des Steckbretts und VCC mit der positiven Schiene des Steckbretts.
 
 .. image:: img/22_receiver_receiver_pins.png
     :width: 400
     :align: center
 
-5. Insert the RGB LED into the breadboard with its longest pin positioned in the second pin from the left.
+5. Setze die RGB-LED in das Steckbrett ein, wobei der längste Pin in der zweiten Reihe von links platziert wird.
 
 .. image:: img/22_receiver_rgb.png
     :width: 400
     :align: center
 
-6. Insert a 220-ohm resistor in the same row as the R, G, and B pins.
+6. Stecke einen 220-Ohm-Widerstand in dieselbe Reihe wie die R-, G- und B-Pins.
 
 .. image:: img/22_receiver_rgb_resistors.png
     :width: 400
     :align: center
 
-7. Connect these resistors to pins 9, 10, and 11 on the Arduino Uno R3 with jumper wires as illustrated.
+7. Verbinde diese Widerstände mit den Pins 9, 10 und 11 des Arduino Uno R3 mit Jumper-Kabeln, wie abgebildet.
 
 .. image:: img/22_receiver_rgb_pins.png
     :width: 400
     :align: center
 
-8. Connect the longest pin of the RGB LED to the breadboard's negative rail using a jumper wire.
+8. Verbinde den längsten Pin der RGB-LED mit der negativen Schiene des Steckbretts mit einem Jumper-Kabel.
 
 .. image:: img/22_receiver_rgb_gnd.png
     :width: 400
     :align: center
 
-9. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails of the breadboard, respectively.
+9. Verbinde abschließend die GND- und 5V-Pins des Arduino Uno R3 mit der negativen und positiven Schiene des Steckbretts.
 
 .. image:: img/22_receiver_gnd_5v.png
     :width: 400
     :align: center
 
+Codeerstellung - Ermitteln der Tastencodes
+-----------------------------------------------
 
-Code Creation - Getting the Key Values
----------------------------------------------
+Hier werden wir lernen, wie der Infrarotempfänger funktioniert und wie er verschiedene Tastencodes von der Infrarot-Fernbedienung erkennt.
 
-Here, we will learn how the infrared receiver works and how it recognizes different key values from the infrared remote control.
+1. Öffne die Arduino-IDE und starte ein neues Projekt, indem du "New Sketch" im Menü "File" auswählst.
+2. Speichere deinen Sketch als ``Lesson22_Get_Key_Value`` mit ``Ctrl + S`` oder durch Klicken auf "Save".
 
-
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson22_Get_Key_Value`` using ``Ctrl + S`` or by clicking “Save”.
-
-3. Like the I2C LCD1602, the Arduino IDE does not come with a built-in library for the infrared receiver. You need to manually download it from the Library Manager. Now, search for ``IRremote`` in the **Library Manager**, then click **INSTALL**.
+3. Ähnlich wie bei der I2C LCD1602 kommt die Arduino IDE nicht mit einer integrierten Bibliothek für den Infrarotempfänger. Du musst sie manuell über den Library Manager herunterladen. Suche nun nach ``IRremote`` im **Library Manager** und klicke auf **INSTALL**.
 
 .. image:: img/22_receiver_install_lib.png
   :width: 600
   :align: center
-
-4. Now, let's start coding. Before using each library, it is essential to include it in your sketch. Then, define the infrared receiver pin.
+  
+4. Jetzt beginnen wir mit dem Programmieren. Bevor du jede Bibliothek verwendest, ist es wichtig, sie in deinen Sketch einzubinden. Definiere dann den Pin des Infrarotempfängers.
 
 .. code-block:: Arduino
   :emphasize-lines: 1,3
 
   #include <IRremote.h>
 
-  const int receiverPin = 2;  // Define the pin number for the IR Sensor
+  const int receiverPin = 2;  // Definiere die Pinnummer für den IR-Sensor
 
   void setup() {
-    // put your setup code here, to run once:
+    // Setup-Code hier einfügen, um ihn einmal auszuführen:
 
   }
 
-5. In the ``void setup()`` function, initialize serial communication at 9600 bps and initialize the IR receiver on the specified pin with LED feedback enabled.
+5. In der ``void setup()``-Funktion initialisieren wir die serielle Kommunikation mit 9600 bps und den IR-Empfänger am angegebenen Pin mit aktivierter LED-Rückmeldung.
 
-* The specified pin usually refers to the built-in LED on pin 13 of the Arduino board. Every time you press a key on the remote towards the infrared receiver, the LED on pin 13 of the Arduino board will flash quickly once, indicating that an IR signal has been received.
+* Der angegebene Pin bezieht sich normalerweise auf die eingebaute LED an Pin 13 des Arduino-Boards. Jedes Mal, wenn du eine Taste auf der Fernbedienung in Richtung des Infrarotempfängers drückst, blinkt die LED an Pin 13 des Arduino-Boards kurz auf, was anzeigt, dass ein IR-Signal empfangen wurde.
 
 .. code-block:: Arduino
   :emphasize-lines: 3,5
 
   void setup() {
-    // Start serial communication at a baud rate of 9600
+    // Serielle Kommunikation mit einer Baudrate von 9600 starten
     Serial.begin(9600);
-    // Initialize the IR receiver on the specified pin with LED feedback enabled
+    // Den IR-Empfänger am angegebenen Pin mit aktivierter LED-Rückmeldung initialisieren
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
-
-6. In the ``loop()`` function, first use the ``IrReceiver.decode()`` function to check if the infrared receiver has received a signal. If a signal is received, it will return true.
+6. In der ``loop()``-Funktion wird zunächst die Funktion ``IrReceiver.decode()`` verwendet, um zu prüfen, ob der Infrarotempfänger ein Signal empfangen hat. Wenn ein Signal empfangen wurde, wird true zurückgegeben.
 
 .. code-block:: Arduino
   :emphasize-lines: 2
 
   void loop() {
-    if (IrReceiver.decode()) {                                // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {                                // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
 
     }
   }
 
-7. Next, print the received key value to the Serial Monitor. The ``Serial.println()`` function outputs numbers in decimal format by default. To get the hexadecimal key value, set the format to ``HEX``.
+7. Als Nächstes drucken wir den empfangenen Tastencode auf den seriellen Monitor. Die ``Serial.println()``-Funktion gibt Zahlen standardmäßig im Dezimalformat aus. Um den Hexadezimalwert zu erhalten, setze das Format auf ``HEX``.
 
 .. code-block:: Arduino
   :emphasize-lines: 3-5
 
   void loop() {
-    if (IrReceiver.decode()) {                                // Check if the IR receiver has received a signal
-      Serial.print("0x");                                     // print the "0x"
-      Serial.println(IrReceiver.decodedIRData.command, HEX);  // Print the command from the decoded IR data
+    if (IrReceiver.decode()) {                                // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
+      Serial.print("0x");                                     // drucke das "0x"
+      Serial.println(IrReceiver.decodedIRData.command, HEX);  // Gib den Befehl aus den dekodierten IR-Daten aus
       delay(100);
-      IrReceiver.resume();                                    // Prepare the IR receiver to receive the next signal
+      IrReceiver.resume();                                    // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-8. Here is your complete code. You can upload it to the Arduino Uno R3.
+8. Hier ist dein vollständiger Code. Du kannst ihn auf das Arduino Uno R3 hochladen.
 
 .. code-block:: Arduino
 
-  #include <IRremote.h>  // Include the IRremote library
+  #include <IRremote.h>  // Infrarotbibliothek einbinden
 
-  const int receiverPin = 2;  // Define the pin number for the IR Sensor
+  const int receiverPin = 2;  // Definiere die Pinnummer für den IR-Sensor
 
   void setup() {
-    // Start serial communication at a baud rate of 9600
+    // Serielle Kommunikation mit einer Baudrate von 9600 starten
     Serial.begin(9600);                                  
-    // Initialize the IR receiver on the specified pin with LED feedback enabled
+    // Den IR-Empfänger am angegebenen Pin mit aktivierter LED-Rückmeldung initialisieren
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);  
   }
 
   void loop() {
-    if (IrReceiver.decode()) {                                // Check if the IR receiver has received a signal
-      Serial.print("0x");                                     // print the "0x"
-      Serial.println(IrReceiver.decodedIRData.command, HEX);  // Print the command from the decoded IR data
+    if (IrReceiver.decode()) {                                // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
+      Serial.print("0x");                                     // drucke das "0x"
+      Serial.println(IrReceiver.decodedIRData.command, HEX);  // Gib den Befehl aus den dekodierten IR-Daten aus
       delay(100);
-      IrReceiver.resume();                                    // Prepare the IR receiver to receive the next signal
+      IrReceiver.resume();                                    // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-9. After uploading the code, you can try pressing different keys. You will see the hexadecimal key values being printed to the Serial Monitor.
+9. Nach dem Hochladen des Codes kannst du verschiedene Tasten drücken. Du wirst sehen, wie die hexadezimalen Tastencodes im seriellen Monitor ausgegeben werden.
 
 .. note::
 
-  * Before pressing the keys, you need to remove the plastic tab at the back of the remote to power it.
-  * You may notice that most key values are printed two or three times. This happens because the keys can bounce, so even though it feels like you pressed the key once, the Arduino might detect multiple presses.
+  * Bevor du die Tasten drückst, musst du die Plastiklasche auf der Rückseite der Fernbedienung entfernen, um sie mit Strom zu versorgen.
+  * Du wirst möglicherweise feststellen, dass die meisten Tastencodes zwei- oder dreimal ausgegeben werden. Dies geschieht, weil die Tasten prellen können, sodass der Arduino mehrere Drücke registriert, obwohl du nur einmal gedrückt hast.
 
 .. code-block::
 
@@ -240,9 +237,9 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
   0x7
   0x7
 
-**Questions**
+**Fragen**
 
-1. Please carefully press each key on the remote control and record the corresponding key values in the table in your manual.
+1. Drücke bitte sorgfältig jede Taste der Fernbedienung und notiere die entsprechenden Tastencodes in der Tabelle in deinem Handbuch.
 
 .. image:: img/22_receiver_remote_control.jpeg
   :width: 400
@@ -252,10 +249,10 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
    :widths: 20 20 20 20
    :header-rows: 1
 
-   * - Key Name
-     - Key Value
-     - Key Name
-     - Key Value
+   * - Tastenname
+     - Tastencode
+     - Tastenname
+     - Tastencode
    * - POWER
      - *0x45*
      - 0
@@ -272,11 +269,11 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
      -
      - 3
      -  
-   * - BACKWARD
+   * - ZURÜCK
      - 
      - 4
      - 
-   * - FORWARD
+   * - VOR
      - 
      - 5
      -
@@ -301,14 +298,14 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
      -
      - 
 
-Code Creation - Decoding
+Codeerstellung - Decodierung
 ------------------------------
 
-Now that we know the key value of each key, remembering each key value can be quite challenging. Let's write a decode function using a ``switch-case`` statement to combine these codes into a function, which can simplify recognizing and responding to each key press.
+Da wir nun den Tastencode jeder Taste kennen, kann es recht schwierig sein, sich jede Taste zu merken. Schreiben wir eine Decodierungsfunktion mit einer ``switch-case``-Anweisung, um diese Codes in einer Funktion zu kombinieren, die das Erkennen und Reagieren auf jede Tasteneingabe vereinfacht.
 
-1. Open the sketch you saved earlier, ``Lesson22_Get_Key_Value``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson22_Decode_Key_Value``. Click "Save".
+1. Öffne den Sketch, den du zuvor gespeichert hast, ``Lesson22_Get_Key_Value``. Wähle im Menü "Speichern unter..." und benenne ihn um in ``Lesson22_Decode_Key_Value``. Klicke auf "Speichern".
 
-2. Now, after the ``void loop()``, create a decode function - ``decodeKeyValue()`` to take a ``long`` integer ``result``, which is the command code received from the IR remote.
+2. Erstelle nun nach der ``void loop()``-Funktion eine Decodierungsfunktion - ``decodeKeyValue()``, die einen ``long``-Integer ``result`` annimmt, welcher den vom IR-Receiver empfangenen Befehlscode enthält.
 
 .. code-block:: Arduino
   :emphasize-lines: 6,8
@@ -317,16 +314,16 @@ Now that we know the key value of each key, remembering each key value can be qu
     ...
   }
 
-  // Function to map received IR signals to corresponding keys
+  // Funktion zur Zuordnung empfangener IR-Signale zu den entsprechenden Tasten
   String decodeKeyValue(long result) {
 
   }
 
-3. Now, uses a ``switch`` statement to match this ``result`` against predefined hex codes (0x45, 0x47, etc.). Each case in the ``switch`` corresponds to a different key on the remote, returning a string that represents the function of that key. If no cases match, ``ERROR`` is returned, indicating an unrecognized command.
+3. Verwende nun eine ``switch``-Anweisung, um diesen ``result`` mit vordefinierten Hexadezimalcodes (0x45, 0x47 usw.) abzugleichen. Jeder Fall in der ``switch``-Anweisung entspricht einer anderen Taste auf der Fernbedienung und gibt einen String zurück, der die Funktion dieser Taste darstellt. Wenn kein Fall zutrifft, wird ``ERROR`` zurückgegeben, was auf einen nicht erkannten Befehl hinweist.
 
 .. code-block:: Arduino
 
-  // Function to map received IR signals to corresponding keys
+  // Funktion zur Zuordnung empfangener IR-Signale zu den entsprechenden Tasten
   String decodeKeyValue(long result) {
     switch (result) {
       case 0x45: return "POWER";
@@ -355,66 +352,66 @@ Now that we know the key value of each key, remembering each key value can be qu
     }
   }
 
-4. Now, go back to the ``loop()`` function, create a ``String`` variable ``key`` to store the decoded string (key name), and then print it to the Serial Monitor.
+4. Gehe nun zurück zur ``loop()``-Funktion, erstelle eine ``String``-Variable ``key``, um den decodierten String (Tastenname) zu speichern, und gib ihn dann auf dem seriellen Monitor aus.
 
 .. code-block:: Arduino
   :emphasize-lines: 4
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
-      // Convert the decoded IR signal to a readable command.
+    if (IrReceiver.decode()) {  // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
+      // Konvertiere das decodierte IR-Signal in einen lesbaren Befehl.
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
-      Serial.println(key);  // Print the readable command
+      Serial.println(key);  // Gib den lesbaren Befehl aus
       delay(100);
-      IrReceiver.resume();           // Prepare the IR receiver to receive the next signal
+      IrReceiver.resume();  // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-5. Sometimes, some "error" messages are received. Now, using an ``if`` statement, only when ``key`` is not equal to ``ERROR`` will it print.
+5. Manchmal werden einige "Fehler"-Nachrichten empfangen. Verwende nun eine ``if``-Anweisung, die nur dann den Wert ausgibt, wenn ``key`` nicht gleich ``ERROR`` ist.
 
 .. code-block:: Arduino
   :emphasize-lines: 4
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {  // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
       bool result = 0;
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Gib den lesbaren Befehl aus
         delay(100);
       }
-    IrReceiver.resume();  // Prepare the IR receiver to receive the next signal
+    IrReceiver.resume();  // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-6. Here is your complete code. You can upload it to the Arduino Uno R3.
+6. Hier ist dein vollständiger Code. Du kannst ihn auf das Arduino Uno R3 hochladen.
 
 .. code-block:: Arduino
 
-  #include <IRremote.h>  // Include the IRremote library
+  #include <IRremote.h>  // Infrarotbibliothek einbinden
 
-  const int receiverPin = 2;  // Define the pin number for the IR Sensor
+  const int receiverPin = 2;  // Definiere die Pinnummer für den IR-Sensor
 
   void setup() {
-    // Start serial communication at a baud rate of 9600
+    // Serielle Kommunikation mit einer Baudrate von 9600 starten
     Serial.begin(9600);
-    // Initialize the IR receiver on the specified pin with LED feedback enabled
+    // Den IR-Empfänger am angegebenen Pin mit aktivierter LED-Rückmeldung initialisieren
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {  // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
       bool result = 0;
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Gib den lesbaren Befehl aus
         delay(100);
       }
-    IrReceiver.resume();  // Prepare the IR receiver to receive the next signal
+    IrReceiver.resume();  // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-  // Function to map received IR signals to corresponding keys
+  // Funktion zur Zuordnung empfangener IR-Signale zu den entsprechenden Tasten
   String decodeKeyValue(long result) {
     switch (result) {
       case 0x45: return "POWER";
@@ -443,7 +440,7 @@ Now that we know the key value of each key, remembering each key value can be qu
     }
   }
 
-7. After opening the Serial Monitor, press the keys on the remote control, and you will see the key names. It is recommended to press all 21 keys to see if the names match the actual keys.
+7. Nachdem du den Seriellen Monitor geöffnet hast, drücke die Tasten der Fernbedienung, und du wirst die Tastenbezeichnungen sehen. Es wird empfohlen, alle 21 Tasten zu drücken, um zu überprüfen, ob die Bezeichnungen den tatsächlichen Tasten entsprechen.
 
 .. code-block:: Arduino
 
@@ -457,154 +454,154 @@ Now that we know the key value of each key, remembering each key value can be qu
   BACKWARD
   BACKWARD
 
-Code Creation - Remote-Controlled Colorful Light
+Codeerstellung - Fernbedienung für bunte Lichter
 ------------------------------------------------------------
-Now that the infrared receiver and its code are ready, we can use it to control the RGB LED to display different colors. Here are the colors and effects we plan to achieve. You can also customize other colors and effects.
+Nachdem der Infrarotempfänger und der dazugehörige Code bereit sind, können wir ihn verwenden, um die RGB-LED anzusteuern und verschiedene Farben anzuzeigen. Hier sind die Farben und Effekte, die wir erzielen wollen. Du kannst auch weitere Farben und Effekte nach deinen Wünschen anpassen.
 
-* Press 1 to display red on the RGB LED.
-* Press 2 to display green on the RGB LED.
-* Press 3 to display blue on the RGB LED.
-* Press 4 to display a flashing orange effect on the RGB LED.
-* Press any other key to turn off the RGB LED.
+* Drücke 1, um Rot auf der RGB-LED anzuzeigen.
+* Drücke 2, um Grün auf der RGB-LED anzuzeigen.
+* Drücke 3, um Blau auf der RGB-LED anzuzeigen.
+* Drücke 4, um einen blinkenden Orange-Effekt auf der RGB-LED zu erzeugen.
+* Drücke eine andere Taste, um die RGB-LED auszuschalten.
 
 
-1. Open the sketch you saved earlier, ``Lesson22_Decode_Key_Value``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson22_Remote_Colorful_Light``. Click "Save".
+1. Öffne den zuvor gespeicherten Sketch, ``Lesson22_Decode_Key_Value``. Wähle "Speichern unter..." im Menü "Datei" und benenne ihn um in ``Lesson22_Remote_Colorful_Light``. Klicke auf "Speichern".
 
-2. Create three variables to store the three pins of the RGB LED and set them as OUTPUT.
+2. Erstelle drei Variablen, um die drei Pins der RGB-LED zu speichern und setze sie als OUTPUT.
 
 .. code-block:: Arduino
   :emphasize-lines: 6-8,12-14
 
-  #include <IRremote.h>  // Include the IRremote library
+  #include <IRremote.h>  // Infrarotbibliothek einbinden
 
-  const int receiverPin = 2;  // Define the pin number for the IR Sensor
+  const int receiverPin = 2;  // Definiere die Pinnummer für den IR-Sensor
 
-  // Define the pins of RBG LED
+  // Definiere die Pins der RGB-LED
   const int redPin = 11;
   const int greenPin = 10;
   const int bluePin = 9;
 
   void setup() {
-    // Initialize RGB LED pins
+    // Initialisiere die Pins der RGB-LED
     pinMode(redPin, OUTPUT);
     pinMode(greenPin, OUTPUT);
     pinMode(bluePin, OUTPUT);
 
-    // Start serial communication at a baud rate of 9600
+    // Starte die serielle Kommunikation mit einer Baudrate von 9600
     Serial.begin(9600);
-    // Initialize the IR receiver on the specified pin with LED feedback enabled
+    // Initialisiere den IR-Empfänger am angegebenen Pin mit aktivierter LED-Rückmeldung
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
-3. After the ``loop()`` function, create a ``setColor()`` function to drive the RGB LED to display colors.
+3. Nach der ``loop()``-Funktion erstelle eine Funktion ``setColor()``, um die RGB-LED zur Anzeige von Farben zu steuern.
 
 .. code-block:: Arduino
 
-  // Function to set the color of the RGB LED
+  // Funktion zur Einstellung der Farbe der RGB-LED
   void setColor(int red, int green, int blue) {
     analogWrite(redPin, red);
     analogWrite(greenPin, green);
     analogWrite(bluePin, blue);
   }
 
-4. Go back to the ``loop()`` function, use ``if else if`` statements to determine which key is pressed, and then display the corresponding effect on the RGB LED according to our plan.
+4. Gehe zurück zur ``loop()``-Funktion, verwende ``if else if``-Anweisungen, um zu bestimmen, welche Taste gedrückt wurde, und zeige dann den entsprechenden Effekt auf der RGB-LED gemäß unserem Plan an.
 
-* Press 1 to display red on the RGB LED.
-* Press 2 to display green on the RGB LED.
-* Press 3 to display blue on the RGB LED.
-* Press 4 to display a flashing orange effect on the RGB LED.
-* Press any other key to turn off the RGB LED.
+* Drücke 1, um Rot auf der RGB-LED anzuzeigen.
+* Drücke 2, um Grün auf der RGB-LED anzuzeigen.
+* Drücke 3, um Blau auf der RGB-LED anzuzeigen.
+* Drücke 4, um einen blinkenden Orange-Effekt auf der RGB-LED zu erzeugen.
+* Drücke eine andere Taste, um die RGB-LED auszuschalten.
 
 .. code-block:: Arduino
   :emphasize-lines: 8-22
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {  // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
       bool result = 0;
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Drucke den lesbaren Befehl aus
         delay(100);
       }
 
       if (key == "1") {
-        setColor(255, 0, 0);  // Red
+        setColor(255, 0, 0);  // Rot
       } else if (key == "2") {
-        setColor(0, 255, 0);  // Green
+        setColor(0, 255, 0);  // Grün
       } else if (key == "3") {
-        setColor(0, 0, 255);  // Blue
+        setColor(0, 0, 255);  // Blau
       } else if (key == "4") {
         setColor(255, 165, 0);  // Orange
         delay(100);
-        setColor(0, 0, 0);  // Turn off RGB LED
+        setColor(0, 0, 0);  // RGB-LED ausschalten
         delay(100);
       } else {
-        setColor(0, 0, 0);  // Turn off RGB LED for any other key
+        setColor(0, 0, 0);  // RGB-LED für jede andere Taste ausschalten
       }
-    IrReceiver.resume();  // Prepare the IR receiver to receive the next signal
+    IrReceiver.resume();  // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-5. Here is your complete code. You can upload it to the Arduino Uno R3. Afterward, press the keys on the remote control to see if the desired effects are achieved.
+5. Hier ist dein vollständiger Code. Du kannst ihn auf das Arduino Uno R3 hochladen. Danach drücke die Tasten auf der Fernbedienung, um zu überprüfen, ob die gewünschten Effekte erzielt werden.
 
 .. code-block:: Arduino
 
-  #include <IRremote.h>  // Include the IRremote library
+  #include <IRremote.h>  // Infrarotbibliothek einbinden
 
-  const int receiverPin = 2;  // Define the pin number for the IR Sensor
+  const int receiverPin = 2;  // Definiere die Pinnummer für den IR-Sensor
 
-  // Define the pins of RBG LED
+  // Definiere die Pins der RGB-LED
   const int redPin = 11;
   const int greenPin = 10;
   const int bluePin = 9;
 
   void setup() {
-    // Initialize RGB LED pins
+    // Initialisiere die Pins der RGB-LED
     pinMode(redPin, OUTPUT);
     pinMode(greenPin, OUTPUT);
     pinMode(bluePin, OUTPUT);
 
-    // Start serial communication at a baud rate of 9600
+    // Starte die serielle Kommunikation mit einer Baudrate von 9600
     Serial.begin(9600);
-    // Initialize the IR receiver on the specified pin with LED feedback enabled
+    // Initialisiere den IR-Empfänger am angegebenen Pin mit aktivierter LED-Rückmeldung
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
   void loop() {
-    if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+    if (IrReceiver.decode()) {  // Überprüfe, ob der IR-Empfänger ein Signal empfangen hat
       bool result = 0;
       String key = decodeKeyValue(IrReceiver.decodedIRData.command);
       if (key != "ERROR") {
-        Serial.println(key);  // Print the readable command
+        Serial.println(key);  // Drucke den lesbaren Befehl aus
         delay(100);
       }
 
       if (key == "1") {
-        setColor(255, 0, 0);  // Red
+        setColor(255, 0, 0);  // Rot
       } else if (key == "2") {
-        setColor(0, 255, 0);  // Green
+        setColor(0, 255, 0);  // Grün
       } else if (key == "3") {
-        setColor(0, 0, 255);  // Blue
+        setColor(0, 0, 255);  // Blau
       } else if (key == "4") {
         setColor(255, 165, 0);  // Orange
         delay(100);
-        setColor(0, 0, 0);  // Turn off RGB LED
+        setColor(0, 0, 0);  // RGB-LED ausschalten
         delay(100);
       } else {
-        setColor(0, 0, 0);  // Turn off RGB LED for any other key
+        setColor(0, 0, 0);  // RGB-LED für jede andere Taste ausschalten
       }
-    IrReceiver.resume();  // Prepare the IR receiver to receive the next signal
+    IrReceiver.resume();  // Bereite den IR-Empfänger darauf vor, das nächste Signal zu empfangen
     }
   }
 
-  // Function to set the color of the RGB LED
+  // Funktion zur Einstellung der Farbe der RGB-LED
   void setColor(int red, int green, int blue) {
     analogWrite(redPin, red);
     analogWrite(greenPin, green);
     analogWrite(bluePin, blue);
   }
 
-  // Function to map received IR signals to corresponding keys
+  // Funktion zur Zuordnung empfangener IR-Signale zu den entsprechenden Tasten
   String decodeKeyValue(long result) {
     switch (result) {
       case 0x45: return "POWER";
@@ -633,9 +630,10 @@ Now that the infrared receiver and its code are ready, we can use it to control 
     }
   }
 
-6. Finally, remember to save your code and tidy up your workspace.
+6. Denke zuletzt daran, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we explored how to use an infrared receiver to decode signals from a remote control and control an RGB LED to display different colors and effects. By integrating the ``IRremote`` library and writing functions to interpret remote signals, you learned to create a fun and interactive remote-controlled light display. This project not only enhances your understanding of infrared communication but also showcases how to bring holiday cheer with a custom light setup. Keep experimenting with different colors and patterns to make your lights even more festive!
+In dieser Lektion haben wir gelernt, wie man einen Infrarotempfänger verwendet, um Signale von einer Fernbedienung zu decodieren und eine RGB-LED zu steuern, um verschiedene Farben und Effekte anzuzeigen. Durch die Integration der ``IRremote``-Bibliothek und das Schreiben von Funktionen zur Interpretation von Fernbedienungssignalen hast du gelernt, eine unterhaltsame und interaktive Fernbedienungs-Lichtanzeige zu erstellen. Dieses Projekt verbessert nicht nur dein Verständnis der Infrarotkommunikation, sondern zeigt auch, wie du mit einer benutzerdefinierten Lichtinstallation festliche Stimmung verbreiten kannst. Experimentiere weiter mit verschiedenen Farben und Mustern, um deine Lichter noch festlicher zu gestalten!
+

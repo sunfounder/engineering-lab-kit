@@ -1,102 +1,101 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte vorab Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Feiertagspromotionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
-13. Joystick LED Navigator
+13. Joystick-LED-Navigator
 ===================================================
 
-When you think of a thumb joystick, a game controller likely comes to mind. However, beyond gaming, these versatile devices are excellent for various DIY electronics projects. They can be used to control robots or rovers, or even manage camera movements.
+Wenn du an einen Daumen-Joystick denkst, kommt dir wahrscheinlich ein Game-Controller in den Sinn. Allerdings sind diese vielseitigen Geräte nicht nur fürs Gaming geeignet, sondern auch für verschiedene DIY-Elektronikprojekte. Sie können verwendet werden, um Roboter oder Rover zu steuern oder sogar Kamerabewegungen zu verwalten.
 
-In this project-based course, you will learn how to interface a joystick with an Arduino to control LEDs according to the joystick's movements. We'll explore the working principles of the joystick, utilize the Serial Monitor to read and debug outputs, and develop control logic to activate LEDs in specified directions. This course emphasizes practical applications, making it directly applicable to real-life scenarios where precise directional control is crucial.
+In diesem praxisorientierten Kurs lernst du, wie du einen Joystick mit einem Arduino verbindest, um LEDs entsprechend den Bewegungen des Joysticks zu steuern. Wir werden die Funktionsweise des Joysticks untersuchen, den seriellen Monitor nutzen, um Ausgaben zu lesen und zu debuggen, und Kontrolllogik entwickeln, um LEDs in bestimmte Richtungen zu aktivieren. Dieser Kurs legt Wert auf praktische Anwendungen, die direkt auf reale Szenarien anwendbar sind, bei denen präzise Richtungssteuerung entscheidend ist.
 
 .. raw:: html
 
     <video muted controls style = "max-width:90%">
         <source src="_static/video/13_joystick_led.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Dein Browser unterstützt das Video-Tag nicht.
     </video>
 
-By the end of this course, you will be able to:
+Am Ende dieses Kurses wirst du in der Lage sein:
 
-* Understand the working principle of a joystick and its various outputs (X, Y, and SW).
-* Use the Serial Monitor to read and debug sensor values in Arduino.
-* Write and understand conditional statements (``if-else if``) to control hardware based on input values.
+* Die Funktionsweise eines Joysticks und dessen verschiedene Ausgaben (X, Y und SW) zu verstehen.
+* Den seriellen Monitor zu verwenden, um Sensorwerte in Arduino zu lesen und zu debuggen.
+* Bedingte Anweisungen (``if-else if``) zu schreiben und zu verstehen, um Hardware basierend auf Eingabewerten zu steuern.
 
-
-Build the Circuit
+Baue die Schaltung
 ------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 4 * LEDs with different colors
-     - 4 * 220Ω Resistor
-     - 1 * Joystick Module
+     - 4 * LEDs in verschiedenen Farben
+     - 4 * 220Ω Widerstände
+     - 1 * Joystick-Modul
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_joystick_module| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
+     - Verbindungskabel
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - 
      
-**Building Steps**
+**Bauanleitung**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den folgenden Schritten, um deine Schaltung zu bauen.
 
 .. image:: img/11_joystick_circuit.png
     :width: 700
     :align: center
 
-1. Find a Joystick module.
+1. Finde ein Joystick-Modul.
 
-A joystick module, also known as a joystick sensor, is an input device that measures the movement of a knob in two directions, horizontal (X-axis) and vertical (Y-axis).
+Ein Joystick-Modul, auch als Joystick-Sensor bekannt, ist ein Eingabegerät, das die Bewegung eines Knopfes in zwei Richtungen misst, horizontal (X-Achse) und vertikal (Y-Achse).
 
 
 .. image:: img/11_joystick_module.jpg
     :width: 300
     :align: center
 
-* **GND**: Connects to ground.
-* **+5V**: Powers the module, compatible with 3.3V to 5V.
-* **VRX**: Outputs analog values representing the X-axis position.
-* **VRY**: Outputs analog values representing the Y-axis position.
-* **SW**: Provides a digital output when the joystick button is pressed. For reliable operation, use an external pull-up resistor, which keeps the SW pin high when idle and low when pressed.
+* **GND**: Verbindet mit Masse.
+* **+5V**: Versorgt das Modul mit Strom, kompatibel mit 3,3V bis 5V.
+* **VRX**: Gibt analoge Werte aus, die die Position der X-Achse darstellen.
+* **VRY**: Gibt analoge Werte aus, die die Position der Y-Achse darstellen.
+* **SW**: Gibt ein digitales Signal aus, wenn der Joystick-Knopf gedrückt wird. Für einen zuverlässigen Betrieb sollte ein externer Pull-up-Widerstand verwendet werden, der den SW-Pin im Ruhezustand auf High hält und bei Betätigung auf Low setzt.
 
-Joystick operates based on the resistance change of two potentiometers (usually 10-kilo ohms). By changing resistance in x and y directions, Arduino receives varying voltages which are interpreted to x and y coordinates. The processor needs an ADC unit to change the joystick's analog values into digital values and perform necessary processing.
+Der Joystick arbeitet auf Basis des Widerstandswechsels zweier Potentiometer (normalerweise 10 Kiloohm). Durch Ändern des Widerstands in X- und Y-Richtung empfängt der Arduino unterschiedliche Spannungen, die in X- und Y-Koordinaten umgewandelt werden. Der Prozessor benötigt eine ADC-Einheit, um die analogen Werte des Joysticks in digitale Werte umzuwandeln und die notwendige Verarbeitung durchzuführen.
 
-Arduino boards have six 10-bits ADC channels. It means the Arduino's reference voltage (5 volts) is divided to 1024 segments. When joystick moves along the x-axis, the ADC value rises from 0 to 1023, with the value 512 in the middle. The image below displays the ADC approximate value based on the joystick position.
+Arduino-Boards verfügen über sechs 10-Bit-ADC-Kanäle. Das bedeutet, dass die Referenzspannung des Arduino (5 Volt) in 1024 Segmente unterteilt wird. Wenn sich der Joystick entlang der X-Achse bewegt, steigt der ADC-Wert von 0 auf 1023, wobei der Wert 512 in der Mitte liegt. Das Bild unten zeigt den ungefähren ADC-Wert basierend auf der Joystick-Position.
 
 .. image:: img/11_joystick_xy_range.jpg
     :width: 500
     :align: center
 
-The joystick also features an inward press function, like a button, useful for selecting menu options or other interactive elements.
+Der Joystick verfügt außerdem über eine Druckfunktion nach innen, ähnlich einem Knopf, die sich zum Auswählen von Menüoptionen oder anderen interaktiven Elementen eignet.
 
 .. image:: img/11_joystick_module_button.jpg
     :width: 300
     :align: center
 
-2. Here is how to connect each pin of the joystick module to the Arduino Uno R3
+2. Hier ist, wie du jeden Pin des Joystick-Moduls mit dem Arduino Uno R3 verbindest:
 
 .. list-table:: 
    :widths: 10 30
@@ -105,148 +104,147 @@ The joystick also features an inward press function, like a button, useful for s
    * - Arduino Uno R3
      - Joystick
    * - GND
-     - GND(negative rail of breadboard)
-   * - +5v
-     - 5v
+     - GND (Masseanschluss des Steckbretts)
+   * - +5V
+     - +5V
    * - VRX
      - A0
    * - VRY
      - A1
    * - SW
-     - 2
+     - Pin 2
 
 .. image:: img/11_joystick_circuit_joystick.png
     :width: 700
     :align: center
 
-3. Insert four differently colored LEDs into the breadboard. Connect the cathode (short pin) of each LED to the breadboard's negative rail, and the anode (long pin) into specific ports (58A, 53A, 49A, and 45A).
+3. Setze vier unterschiedlich farbige LEDs in das Steckbrett ein. Verbinde die Kathode (kurzer Pin) jeder LED mit der Masseleitung des Steckbretts und die Anode (langer Pin) in bestimmte Ports (58A, 53A, 49A und 45A).
 
 .. image:: img/11_joystick_circuit_led.png
     :width: 700
     :align: center
 
-4. Insert a 220-ohm resistor in the same row as each LED's anode, protecting the LEDs from excessive current.
+4. Setze einen 220-Ohm-Widerstand in die gleiche Reihe wie die Anode jeder LED ein, um die LEDs vor übermäßigem Strom zu schützen.
 
 .. image:: img/11_joystick_circuit_resistor.png
     :width: 700
     :align: center
 
-5. Use a jumper wire to connect 58J hole on the breadboard to pin 11 on the Arduino, enabling control over the first LED.
+5. Verwende ein Verbindungskabel, um das Loch 58J auf dem Steckbrett mit Pin 11 des Arduino zu verbinden, damit die erste LED gesteuert werden kann.
 
 .. image:: img/11_joystick_circuit_11.png
     :width: 700
     :align: center
 
-6. Similarly, connect the other three LEDs to pins 10, 9, and 8 on the Arduino, respectively.
+6. Verbinde entsprechend die anderen drei LEDs mit den Pins 10, 9 und 8 des Arduino.
 
 .. image:: img/11_joystick_circuit_8910.png
     :width: 700
     :align: center
 
-7. Do not forget to ground your circuit. Connect the Arduino Uno R3's GND pin to the breadboard's negative rail and use a jumper wire to connect both negative rails on the breadboard.
+7. Vergiss nicht, deine Schaltung zu erden. Verbinde den GND-Pin des Arduino Uno R3 mit der Masseleitung des Steckbretts und verwende ein Verbindungskabel, um beide Masseleitungen auf dem Steckbrett zu verbinden.
 
 .. image:: img/11_joystick_circuit.png
     :width: 700
     :align: center
 
 
-Code Creation- Read from Joystick Module
------------------------------------------------
-Let's take a look at what the values from the joystick module's X-axis, Y-axis, and button look like. For this, we'll use a tool called the Serial Monitor.
+Code-Erstellung - Werte vom Joystick-Modul lesen
+----------------------------------------------------
+Schauen wir uns an, welche Werte die X-Achse, Y-Achse und der Button des Joystick-Moduls ausgeben. Dafür verwenden wir ein Tool namens Serial Monitor.
 
-The Serial Monitor is an essential tool when creating projects with Arduino. It can be used as a debugging tool, testing out concepts or to communicate directly with the Arduino board.
+Der Serial Monitor ist ein unverzichtbares Werkzeug beim Erstellen von Arduino-Projekten. Er kann als Debugging-Tool verwendet werden, um Konzepte zu testen oder direkt mit der Arduino-Platine zu kommunizieren.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson13_Joystick_Module`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ die Option „Neuer Sketch“ auswählst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson13_Joystick_Module`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. Create three variables to store the values from the three pins of the joystick module.
+3. Erstelle drei Variablen, um die Werte von den drei Pins des Joystick-Moduls zu speichern.
 
 .. code-block:: Arduino
     :emphasize-lines: 1,2,3
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // Verbindung zu VRX
+    const int yPin = A1;  // Verbindung zu VRY
+    const int swPin = 2;  // Verbindung zu SW
 
     void setup() {
-        // put your main code here, to run repeatedly:
-
+        // Hauptcode hier, der wiederholt ausgeführt wird:
     }
 
-4. Also, using the Arduino software pull-up feature, set the ``swPin`` as input while also enabling it as ``PULLUP``.
+4. Verwende außerdem die Pull-up-Funktion der Arduino-Software, um den ``swPin`` als Eingang festzulegen und ihn gleichzeitig als ``PULLUP`` zu aktivieren.
 
 .. code-block:: Arduino
     :emphasize-lines: 7
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // Verbindung zu VRX
+    const int yPin = A1;  // Verbindung zu VRY
+    const int swPin = 2;  // Verbindung zu SW
 
     void setup() {
-        // put your main code here, to run repeatedly:
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
+        // Hauptcode hier, der wiederholt ausgeführt wird:
+        pinMode(swPin, INPUT_PULLUP);  // swPin als Eingang mit internem Pull-up-Widerstand festlegen
     }
 
-5. To activate the Serial Monitor, you must initiate serial communication on your Arduino Uno R3. This is typically done in the ``void setup()`` section of your sketch with the command ``Serial.begin(baud)``. Here, ``baud`` indicates the data transfer rate per second between the computer and the Arduino Uno R3, with common rates being 9600 and 115200 bits per second.
+5. Um den Serial Monitor zu aktivieren, musst du die serielle Kommunikation auf deinem Arduino Uno R3 einrichten. Dies geschieht normalerweise im Abschnitt ``void setup()`` deines Sketches mit dem Befehl ``Serial.begin(baud)``. Hierbei gibt ``baud`` die Übertragungsrate pro Sekunde zwischen dem Computer und dem Arduino Uno R3 an, wobei übliche Raten 9600 und 115200 Bits pro Sekunde sind.
 
 .. code-block:: Arduino
     :emphasize-lines: 8
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // Verbindung zu VRX
+    const int yPin = A1;  // Verbindung zu VRY
+    const int swPin = 2;  // Verbindung zu SW
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
-        Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
+        // Code zum einmaligen Ausführen
+        pinMode(swPin, INPUT_PULLUP);  // swPin als Eingang mit internem Pull-up-Widerstand festlegen
+        Serial.begin(9600);            // Serielle Kommunikation mit einer Baudrate von 9600 starten
     }
 
-6. Now, create three variables ``xValue``, ``yValue``, and ``swValue`` to store the values from the X, Y, and SW pins respectively.
+6. Erstelle nun drei Variablen ``xValue``, ``yValue`` und ``swValue``, um die Werte von den X-, Y- und SW-Pins zu speichern.
 
 .. code-block:: Arduino
     :emphasize-lines: 4-6
 
     void loop() {
 
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
     }
 
-7. You are now ready to use the Serial Monitor to print data. You will utilize ``Serial.print()`` to display data and other texts.
+7. Du bist jetzt bereit, den Serial Monitor zu verwenden, um Daten auszugeben. Du verwendest ``Serial.print()``, um Daten und andere Texte anzuzeigen.
 
-Here's how to use it:
+Hier ist, wie es geht:
 
-    * ``Serial.print(val)`` or ``Serial.print(val, format)``: Prints data to the serial port as human-readable ASCII text. 
+    * ``Serial.print(val)`` oder ``Serial.print(val, format)``: Gibt Daten als menschenlesbaren ASCII-Text an den seriellen Port aus.
 
-    **Parameters**
-        - ``Serial``: serial port object.
-        - ``val``: the value to print. Allowed data types: any data type.
+    **Parameter**
+        - ``Serial``: serielle Portobjekt.
+        - ``val``: der zu druckende Wert. Erlaubte Datentypen: jeder Datentyp.
 
-    **Returns**
-        ``print()`` returns the number of bytes written, though reading that number is optional. Data type: size_t.
+    **Rückgabewert**
+        ``print()`` gibt die Anzahl der geschriebenen Bytes zurück, das Lesen dieser Zahl ist jedoch optional. Datentyp: size_t.
 
-This command can represent various data types and formats, including numbers, floating points, bytes, and strings. For example:
+Dieser Befehl kann verschiedene Datentypen und Formate darstellen, darunter Zahlen, Gleitkommazahlen, Bytes und Zeichenketten. Zum Beispiel:
 
 .. code-block:: Arduino
 
-    Serial.print(78);                // outputs "78"
-    Serial.print(78, BIN);           // outputs "1001110"
-    Serial.print(1.23456);           // outputs "1.23"
-    Serial.print(1.23456, 0);        // outputs "1"
-    Serial.print('N');               // outputs "N"
-    Serial.print("Hello world.");    // outputs "Hello world."
+    Serial.print(78);                // gibt "78" aus
+    Serial.print(78, BIN);           // gibt "1001110" aus
+    Serial.print(1.23456);           // gibt "1.23" aus
+    Serial.print(1.23456, 0);        // gibt "1" aus
+    Serial.print('N');               // gibt "N" aus
+    Serial.print("Hello world.");    // gibt "Hello world." aus
 
-8. Now, use this command to print a prompt indicating the data about to be printed. This is helpful when differentiating multiple data prints at once.
+8. Verwende nun diesen Befehl, um eine Eingabeaufforderung auszugeben, die angibt, welche Daten gedruckt werden. Dies ist hilfreich, um mehrere Datendrucke gleichzeitig zu unterscheiden.
 
 .. code-block:: Arduino
     :emphasize-lines: 8
 
     void loop() {
 
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
@@ -254,90 +252,89 @@ This command can represent various data types and formats, including numbers, fl
         Serial.print("X: ");
     }
 
-9. Next, print the value from the Joystick module's VRX pin.
-    
+9. Gib als nächstes den Wert des VRX-Pins des Joystick-Moduls aus.
+
 .. code-block:: Arduino
     :emphasize-lines: 9
 
     void loop() {
 
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
 
         Serial.print("X: ");
-        Serial.print(xValue);  // print the value of VRX
+        Serial.print(xValue);  // Wert von VRX ausgeben
     }
 
-
-10. Use the same method to print the values from the VRY pin and SW pin.
+10. Verwende dieselbe Methode, um die Werte der VRY- und SW-Pins auszugeben.
 
 .. note::
 
-    * To ensure each output appears on a new line in the Serial Monitor, use ``Serial.println()`` for the SW pin value, which adds a newline character at the end of the print statement.
-    * Using ``delay(100)`` ensures a time interval before the next set of data appears. It is recommended to add a delay when printing data to the Serial Monitor to prevent it from refreshing too quickly, which could cause it to crash.
+    * Um sicherzustellen, dass jede Ausgabe im Serial Monitor in einer neuen Zeile erscheint, verwende ``Serial.println()`` für den SW-Pin-Wert, der ein Zeilenumbruchzeichen am Ende der Druckanweisung hinzufügt.
+    * Mit ``delay(100)`` wird ein Zeitintervall festgelegt, bevor die nächste Datenmenge erscheint. Es wird empfohlen, beim Drucken von Daten an den Serial Monitor eine Verzögerung hinzuzufügen, um zu verhindern, dass er zu schnell aktualisiert wird und möglicherweise abstürzt.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-14
 
     void loop() {
 
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
         
         Serial.print("X: ");
-        Serial.print(xValue);  // print the value of VRX
+        Serial.print(xValue);  // Wert von VRX ausgeben
         Serial.print(" | Y: ");
-        Serial.print(yValue);  // print the value of VRX
+        Serial.print(yValue);  // Wert von VRY ausgeben
         Serial.print(" | SW: ");
-        Serial.println(swValue);  // print the value of SW
+        Serial.println(swValue);  // Wert von SW ausgeben
         delay(100);
     }
 
-11. The complete code is shown below. You can now click **Upload** to transfer the code to your Arduino Uno R3.
+11. Der vollständige Code wird unten angezeigt. Du kannst nun auf **Hochladen** klicken, um den Code auf dein Arduino Uno R3 zu übertragen.
 
 .. code-block:: Arduino
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // Verbindung zu VRX
+    const int yPin = A1;  // Verbindung zu VRY
+    const int swPin = 2;  // Verbindung zu SW
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
-        Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
+        // Einmaliger Setup-Code:
+        pinMode(swPin, INPUT_PULLUP);  // Setze swPin als Eingang mit internem Pull-up-Widerstand
+        Serial.begin(9600);        // Starte serielle Kommunikation mit einer Baudrate von 9600
     }
 
     void loop() {
 
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
 
         Serial.print("X: ");
-        Serial.print(xValue);  // print the value of VRX
+        Serial.print(xValue);  // Wert von VRX ausgeben
         Serial.print(" | Y: ");
-        Serial.print(yValue);  // print the value of VRX
+        Serial.print(yValue);  // Wert von VRY ausgeben
         Serial.print(" | SW: ");
-        Serial.println(swValue);  // print the value of SW
+        Serial.println(swValue);  // Wert von SW ausgeben
         delay(100);
     }
 
-12. Afterward, click on the "Serial Monitor" button in the top right corner of the Arduino IDE.
+12. Klicke anschließend auf die Schaltfläche "Serial Monitor" oben rechts in der Arduino IDE.
 
 .. image:: img/11_joystick_serial_monitor.png
     :align: center
 
-13. If you see garbled data displayed, you will need to adjust the baud rate to match the one set in your code.
+13. Wenn du unleserliche Daten siehst, musst du die Baudrate anpassen, um sie mit der im Code eingestellten Baudrate abzugleichen.
 
 .. image:: img/11_joystick_baud.png
     :align: center
 
-14. Once uploaded, move the joystick around, and you'll notice the X and Y values fluctuate between 0 and 1023. Press and release the joystick, and observe the SW pin toggling between 0 and 1.
+14. Nachdem der Code hochgeladen wurde, bewege den Joystick, und du wirst bemerken, dass sich die X- und Y-Werte zwischen 0 und 1023 ändern. Drücke und lasse den Joystick los und beobachte, wie der SW-Pin zwischen 0 und 1 wechselt.
 
 .. code-block::
 
@@ -349,367 +346,358 @@ This command can represent various data types and formats, including numbers, fl
     X: 517 | Y: 524 | SW: 1
     X: 517 | Y: 524 | SW: 1
 
-15. Now that you know how to print data to the Serial Monitor, let's explore some buttons in the Serial Monitor:
+15. Jetzt, da du weißt, wie man Daten im Serial Monitor ausgibt, lassen uns einige Schaltflächen im Serial Monitor erkunden:
 
 .. image:: img/11_joystick_serial_button.png
         :align: center
 
-* **Toggle Autoscroll**: This allows the data to scroll so you can always see the latest readings.
-* **Toggle Timestamp**: Turn on timestamps to see data stamped with the exact time to the second.
-* **Clear Output**: This is used to clear the data currently displayed on the screen.
+* **Autoscroll umschalten**: Dadurch wird das Scrollen der Daten aktiviert, sodass du immer die neuesten Messwerte siehst.
+* **Zeitstempel umschalten**: Aktiviere Zeitstempel, um die Daten mit der genauen Uhrzeit in Sekunden zu versehen.
+* **Ausgabe löschen**: Dies dient dazu, die aktuell angezeigten Daten auf dem Bildschirm zu löschen.
 
 
-**Questions**
+**Fragen**
 
-The X and Y axes of the joystick module return analog values, while the SW pin returns a digital value. In previous steps, we've already seen these values on the Serial Monitor.
+Die X- und Y-Achsen des Joystick-Moduls geben analoge Werte zurück, während der SW-Pin einen digitalen Wert zurückgibt. In den vorherigen Schritten haben wir diese Werte bereits im Serial Monitor gesehen.
 
-Please summarize the differences between digital and analog values in Arduino programming.
+Bitte fasse die Unterschiede zwischen digitalen und analogen Werten in der Arduino-Programmierung zusammen.
 
-Code Creation - Controlling LEDs Based on Joystick Movements
+Code-Erstellung - LEDs basierend auf Joystick-Bewegungen steuern
 -------------------------------------------------------------------------
 
-This tutorial outlines how to program LEDs to respond to the movements of a joystick.
+In diesem Tutorial wird beschrieben, wie man LEDs programmiert, um auf die Bewegungen eines Joysticks zu reagieren.
 
 .. image:: img/11_joystick_xy_range.jpg
     :width: 500
     :align: center
 
-Setup each LED to indicate the direction of joystick movement:
+Richte jede LED so ein, dass sie die Richtung der Joystick-Bewegung anzeigt:
 
-* **Up Indicator**: Connect an LED to pin 10. It lights up when the joystick is pushed up (Y-axis value decreases).
-* **Down Indicator**: Connect an LED to pin 9. It lights up when the joystick is pushed down (Y-axis value increases).
-* **Left Indicator**: Connect an LED to pin 11. It lights up when the joystick is pushed left (X-axis value decreases).
-* **Right Indicator**: Connect an LED to pin 8. It lights up when the joystick is pushed right (X-axis value increases).
+* **Hoch-Anzeige**: Verbinde eine LED mit Pin 10. Sie leuchtet auf, wenn der Joystick nach oben gedrückt wird (Y-Achsen-Wert sinkt).
+* **Runter-Anzeige**: Verbinde eine LED mit Pin 9. Sie leuchtet auf, wenn der Joystick nach unten gedrückt wird (Y-Achsen-Wert steigt).
+* **Links-Anzeige**: Verbinde eine LED mit Pin 11. Sie leuchtet auf, wenn der Joystick nach links gedrückt wird (X-Achsen-Wert sinkt).
+* **Rechts-Anzeige**: Verbinde eine LED mit Pin 8. Sie leuchtet auf, wenn der Joystick nach rechts gedrückt wird (X-Achsen-Wert steigt).
 
-This raises a question: How does the Arduino Uno R3 know which direction you are moving the joystick?
+Dies wirft die Frage auf: Wie weiß der Arduino Uno R3, in welche Richtung du den Joystick bewegst?
 
-Ideally, when the joystick is centered, the values should be (1024/2=512). Therefore, to determine if the joystick is pushing up, down, left, or right, we simply check if the values are greater than or less than 512.
+Idealerweise sollten die Werte, wenn der Joystick zentriert ist, (1024/2=512) betragen. Um also festzustellen, ob der Joystick nach oben, unten, links oder rechts gedrückt wird, prüfen wir einfach, ob die Werte größer oder kleiner als 512 sind.
 
-However, due to possible design inaccuracies in the module or resistance in the connections, the values might deviate from 512 even when the joystick is centered. This could lead to misinterpretations by the Arduino Uno R3, such as mistakenly lighting the left indicator LED if the X value is already less than 512 without actual movement.
+Aufgrund möglicher Konstruktionsungenauigkeiten im Modul oder Widerstände in den Verbindungen können die Werte jedoch auch dann von 512 abweichen, wenn der Joystick zentriert ist. Dies könnte dazu führen, dass der Arduino Uno R3 die linke LED fälschlicherweise aktiviert, wenn der X-Wert bereits unter 512 liegt, ohne dass eine tatsächliche Bewegung stattgefunden hat.
 
-Therefore, a threshold around the midpoint (512±100) is used:
+Daher wird ein Schwellenwert um den Mittelpunkt (512±100) verwendet:
 
 .. image:: img/11_joystick_xy_200.png
     :width: 400
     :align: center
 
-* **Up**: Y-axis value less than 412.
-* **Down**: Y-axis value greater than 612.
-* **Left**: X-axis value less than 412.
-* **Right**: X-axis value greater than 612.
+* **Hoch**: Y-Achsen-Wert kleiner als 412.
+* **Runter**: Y-Achsen-Wert größer als 612.
+* **Links**: X-Achsen-Wert kleiner als 412.
+* **Rechts**: X-Achsen-Wert größer als 612.
 
-1. Now start writing the sketch. Open the sketch you saved earlier, ``Lesson13_Joystick_Module``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson13_Joystick_Module_LEDs``. Click "Save".
+1. Beginne nun mit dem Schreiben des Sketches. Öffne den zuvor gespeicherten Sketch ``Lesson13_Joystick_Module``. Wähle im Menü „Datei“ die Option „Speichern unter...“ und benenne ihn in ``Lesson13_Joystick_Module_LEDs`` um. Klicke auf „Speichern“.
 
-2. Initialize variables to define the four LEDs.
-
+2. Initialisiere Variablen, um die vier LEDs zu definieren.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
-    // Define pins for the LEDs
+    // Definiere Pins für die LEDs
     const int ledLeft = 11;
     const int ledRight = 8;
     const int ledUp = 10;
     const int ledDown = 9;
 
-    // Define pins for the joystick
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    // Definiere Pins für den Joystick
+    const int xPin = A0;  // Verbindung zu VRX
+    const int yPin = A1;  // Verbindung zu VRY
+    const int swPin = 2;  // Verbindung zu SW
 
     void setup() {
-        // put your main code here, to run repeatedly:
-
+        // Hauptcode hier, der wiederholt ausgeführt wird:
     }
 
-3. Now in ``void setup()`` set all four LED pins to output.
-
+3. Setze nun im ``void setup()`` alle vier LED-Pins auf Ausgang.
 
 .. code-block:: Arduino
     :emphasize-lines: 3-6
 
     void setup() {
-        // Initialize LED pins as outputs
+        // Initialisiere LED-Pins als Ausgänge
         pinMode(ledLeft, OUTPUT);
         pinMode(ledRight, OUTPUT);
         pinMode(ledUp, OUTPUT);
         pinMode(ledDown, OUTPUT);
         
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
-        Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
+        pinMode(swPin, INPUT_PULLUP);  // Setze swPin als Eingang mit internem Pull-up-Widerstand
+        Serial.begin(9600);        // Starte serielle Kommunikation mit einer Baudrate von 9600
     }
 
-4. In this project, we don't need to constantly check the joystick values, so select the five lines ``Serial.print()``, and press ``Ctrl + /`` to comment them out.
-
+4. In diesem Projekt müssen wir die Joystick-Werte nicht ständig überprüfen, also wähle die fünf Zeilen ``Serial.print()`` aus und drücke ``Strg + /``, um sie zu kommentieren.
 
 .. code-block:: Arduino
     :emphasize-lines: 7-12
 
     void loop() {
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
 
         // Serial.print("X: ");
-        // Serial.print(xValue);  // print the value of VRX
+        // Serial.print(xValue);  // Wert von VRX ausgeben
         // Serial.print(" | Y: ");
-        // Serial.print(yValue);  // print the value of VRX
+        // Serial.print(yValue);  // Wert von VRY ausgeben
         // Serial.print(" | SW: ");
-        // Serial.println(swValue);  // print the value of SW
+        // Serial.println(swValue);  // Wert von SW ausgeben
 
-        // Add a small delay to stabilize readings
+        // Füge eine kleine Verzögerung hinzu, um die Messwerte zu stabilisieren
         delay(100);
     }
 
-5. Before lighting up the corresponding LED according to the movement of the joystick, first turn off all four LEDs.
+5. Bevor du die entsprechende LED gemäß der Bewegung des Joysticks einschaltest, schalte zuerst alle vier LEDs aus.
 
 .. code-block:: Arduino
     :emphasize-lines: 15-18
 
     void loop() {
-        // Read the joystick values
+        // Joystick-Werte auslesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
 
         // Serial.print("X: ");
-        // Serial.print(xValue);  // print the value of VRX
+        // Serial.print(xValue);  // Wert von VRX ausgeben
         // Serial.print(" | Y: ");
-        // Serial.print(yValue);  // print the value of VRX
+        // Serial.print(yValue);  // Wert von VRY ausgeben
         // Serial.print(" | SW: ");
-        // Serial.println(swValue);  // print the value of SW
+        // Serial.println(swValue);  // Wert von SW ausgeben
 
-        // First, turn off all LEDs
+        // Zuerst schalte alle LEDs aus
         digitalWrite(ledLeft, LOW);
         digitalWrite(ledRight, LOW);
         digitalWrite(ledUp, LOW);
         digitalWrite(ledDown, LOW);
 
-        // Add a small delay to stabilize readings
+        // Füge eine kleine Verzögerung hinzu, um die Messwerte zu stabilisieren
         delay(100);
     }
 
-7. To sequentially light up each LED based on the X and Y values of the Joystick module, you will need multiple conditions. You can use ``if`` to specify actions for different ranges of potentiometer values:
-  
-* If the Y-axis value is less than 412, then the "up" indicator should be lit.
-* If the Y-axis value is greater than 612, then the "down" indicator should be lit.
-* If the X-axis value is less than 412, then the "left" indicator should be lit.
-* If the X-axis value is greater than 612, then the "right" indicator should be lit.
+7. Um jede LED nacheinander basierend auf den X- und Y-Werten des Joystick-Moduls zu aktivieren, benötigst du mehrere Bedingungen. Du kannst ``if`` verwenden, um Aktionen für verschiedene Bereiche der Potentiometerwerte festzulegen:
 
+* Wenn der Y-Achsen-Wert kleiner als 412 ist, sollte die "Up"-Anzeige leuchten.
+* Wenn der Y-Achsen-Wert größer als 612 ist, sollte die "Down"-Anzeige leuchten.
+* Wenn der X-Achsen-Wert kleiner als 412 ist, sollte die "Left"-Anzeige leuchten.
+* Wenn der X-Achsen-Wert größer als 612 ist, sollte die "Right"-Anzeige leuchten.
 
-However, managing these conditions separately can be inefficient, as Arduino needs to check each one in every loop cycle. 
+Das getrennte Verwalten dieser Bedingungen kann jedoch ineffizient sein, da Arduino bei jedem Schleifendurchlauf jede einzelne Bedingung überprüfen muss.
 
-To streamline this, utilize the ``if-else if`` structure:
+Um dies zu optimieren, verwende die ``if-else if``-Struktur:
 
 .. code-block:: Arduino
 
-    if (condition 1) {
-        // Execute if condition 1 is true
+    if (Bedingung 1) {
+        // Ausführen, wenn Bedingung 1 wahr ist
     }
-    else if (condition 2) {
-        // Execute if condition 2 is true
+    else if (Bedingung 2) {
+        // Ausführen, wenn Bedingung 2 wahr ist
     }
-    else if (condition 3) {
-        // Execute if condition 3 is true
+    else if (Bedingung 3) {
+        // Ausführen, wenn Bedingung 3 wahr ist
     }
     else {
-        // Execute if none of the conditions are true
+        // Ausführen, wenn keine der Bedingungen wahr ist
     }
 
 .. image:: img/if_else_if.png
     :width: 500
     :align: center
 
-In an ``if-else if`` structure, the first condition is tested. If it's true, the associated commands are executed, and all other conditions are skipped (even if some of them are true). If the first condition is false, it tests the second condition in the structure. If the second condition is true, it executes the commands associated with this condition and then skips the others. If it is false, it tests the third condition, and so on. In some scenarios, there can be multiple true conditions. Therefore, the order of conditions is important. Only the first true condition will have its associated commands run.
+In einer ``if-else if``-Struktur wird die erste Bedingung geprüft. Wenn sie wahr ist, werden die zugehörigen Befehle ausgeführt und alle anderen Bedingungen übersprungen (selbst wenn einige davon ebenfalls wahr sind). Ist die erste Bedingung falsch, wird die zweite Bedingung geprüft. Ist diese wahr, werden die zugehörigen Befehle ausgeführt, und die restlichen Bedingungen werden übersprungen. Wenn sie falsch ist, wird die nächste Bedingung geprüft und so weiter. In einigen Szenarien können mehrere Bedingungen gleichzeitig wahr sein. Daher ist die Reihenfolge der Bedingungen wichtig. Nur die erste wahre Bedingung wird ausgeführt.
 
-8. First, when the ``yValue`` is less than 412, use the ``digitalWrite()`` function to set the "up" indicator light to ``HIGH`` to turn it on.
-
+8. Zuerst, wenn der ``yValue`` kleiner als 412 ist, verwende die ``digitalWrite()``-Funktion, um die "Up"-Anzeige auf ``HIGH`` zu setzen und einzuschalten.
 
 .. code-block:: Arduino
     :emphasize-lines: 8-11
     
-    // First, turn off all LEDs
+    // Zuerst alle LEDs ausschalten
     digitalWrite(ledLeft, LOW);
     digitalWrite(ledRight, LOW);
     digitalWrite(ledUp, LOW);
     digitalWrite(ledDown, LOW);
 
-    // Check joystick positions and set LEDs accordingly
+    // Joystick-Positionen prüfen und LEDs entsprechend setzen
     if (yValue < 412) {
-        // Joystick up
+        // Joystick nach oben
         digitalWrite(ledUp, HIGH);
     }
 
-9. Add an ``else if`` statement to light up the "down" indicator when the ``yValue`` exceeds 612.
+9. Füge eine ``else if``-Anweisung hinzu, um die "Down"-Anzeige zu aktivieren, wenn der ``yValue`` 612 überschreitet.
 
 .. code-block:: Arduino
     :emphasize-lines: 12-15
     
-    // First, turn off all LEDs
+    // Zuerst alle LEDs ausschalten
     digitalWrite(ledLeft, LOW);
     digitalWrite(ledRight, LOW);
     digitalWrite(ledUp, LOW);
     digitalWrite(ledDown, LOW);
 
-    // Check joystick positions and set LEDs accordingly
+    // Joystick-Positionen prüfen und LEDs entsprechend setzen
     if (yValue < 412) {
-        // Joystick up
+        // Joystick nach oben
         digitalWrite(ledUp, HIGH);
     }
     else if (yValue > 612) {
-        // Joystick down
+        // Joystick nach unten
         digitalWrite(ledDown, HIGH);
     } 
 
-10. To light up the "left" indicator when the ``xValue`` is below 412, insert another ``else if`` condition like this:
-
+10. Um die "Left"-Anzeige zu aktivieren, wenn der ``xValue`` unter 412 liegt, füge eine weitere ``else if``-Bedingung ein:
 
 .. code-block:: Arduino
     :emphasize-lines: 8-11
     
-    // Check joystick positions and set LEDs accordingly
+    // Joystick-Positionen prüfen und LEDs entsprechend setzen
     if (yValue < 412) {
-        // Joystick up
+        // Joystick nach oben
         digitalWrite(ledUp, HIGH);
     } else if (yValue > 612) {
-        // Joystick down
+        // Joystick nach unten
         digitalWrite(ledDown, HIGH);
     } else if (xValue < 412) {
-        // Joystick left
+        // Joystick nach links
         digitalWrite(ledLeft, HIGH);
     }  
 
-11. Similarly, add another ``else if`` condition to light up the right indicator when the ``xValue`` exceeds 612.
-
+11. Füge ähnlich eine weitere ``else if``-Bedingung hinzu, um die "Right"-Anzeige zu aktivieren, wenn der ``xValue`` 612 überschreitet.
 
 .. code-block:: Arduino
     :emphasize-lines: 11-14 
 
-    // Check joystick positions and set LEDs accordingly
+    // Joystick-Positionen prüfen und LEDs entsprechend setzen
     if (yValue < 412) {
-        // Joystick up
+        // Joystick nach oben
         digitalWrite(ledUp, HIGH);
     } else if (yValue > 612) {
-        // Joystick down
+        // Joystick nach unten
         digitalWrite(ledDown, HIGH);
     } else if (xValue < 412) {
-        // Joystick left
+        // Joystick nach links
         digitalWrite(ledLeft, HIGH);
     } else if (xValue > 612) {
-        // Joystick right
+        // Joystick nach rechts
         digitalWrite(ledRight, HIGH);
     }
-
-12. Finally, inside the ``else`` block to turn off all four LEDs using ``digitalWrite()``. This block contains commands that run when none of the other conditions are true.
+    
+12. Schließlich soll im ``else``-Block mithilfe von ``digitalWrite()`` alle vier LEDs ausgeschaltet werden. Dieser Block enthält die Befehle, die ausgeführt werden, wenn keine der anderen Bedingungen zutrifft.
 
 .. code-block:: Arduino
     :emphasize-lines: 14-20
 
-    // Check joystick positions and set LEDs accordingly
+    // Joystick-Positionen prüfen und LEDs entsprechend setzen
     if (yValue < 412) {
-        // Joystick up
+        // Joystick nach oben
         digitalWrite(ledUp, HIGH);
     } else if (yValue > 612) {
-        // Joystick down
+        // Joystick nach unten
         digitalWrite(ledDown, HIGH);
     } else if (xValue < 412) {
-        // Joystick left
+        // Joystick nach links
         digitalWrite(ledLeft, HIGH);
     } else if (xValue > 612) {
-        // Joystick right
+        // Joystick nach rechts
         digitalWrite(ledRight, HIGH);
     } else {
-        // Joystick in the middle, turn off all LEDs
+        // Joystick in der Mitte, alle LEDs ausschalten
         digitalWrite(ledLeft, LOW);
         digitalWrite(ledRight, LOW);
         digitalWrite(ledUp, LOW);
         digitalWrite(ledDown, LOW);
     }
 
-13. Your complete code is as follows. Click "Upload" to send the code to your Arduino Uno R3.
+13. Dein vollständiger Code sieht wie folgt aus. Klicke auf "Upload", um den Code auf dein Arduino Uno R3 zu übertragen.
 
 .. code-block:: Arduino
 
-    // Define pins for the LEDs
+    // Pins für die LEDs definieren
     const int ledLeft = 11;
     const int ledRight = 8;
     const int ledUp = 10;
     const int ledDown = 9;
 
-    // Define pins for the joystick
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    // Pins für den Joystick definieren
+    const int xPin = A0;  // VRX angeschlossen an
+    const int yPin = A1;  // VRY angeschlossen an
+    const int swPin = 2;  // SW angeschlossen an
 
     void setup() {
-        // Initialize LED pins as outputs
+        // LED-Pins als Ausgänge initialisieren
         pinMode(ledLeft, OUTPUT);
         pinMode(ledRight, OUTPUT);
         pinMode(ledUp, OUTPUT);
         pinMode(ledDown, OUTPUT);
 
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
-        Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
+        pinMode(swPin, INPUT_PULLUP);  // Setze den SW-Pin als Eingang mit internem Pull-Up-Widerstand
+        Serial.begin(9600);  // Beginne serielle Kommunikation mit einer Baudrate von 9600
     }
 
     void loop() {
-        // Read the joystick values
+        // Joystick-Werte lesen
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
 
         // Serial.print("X: ");
-        // Serial.print(xValue);  // print the value of VRX
+        // Serial.print(xValue);  // Wert von VRX ausgeben
         // Serial.print(" | Y: ");
-        // Serial.print(yValue);  // print the value of VRX
+        // Serial.print(yValue);  // Wert von VRY ausgeben
         // Serial.print(" | SW: ");
-        // Serial.println(swValue);  // print the value of SW
+        // Serial.println(swValue);  // Wert von SW ausgeben
 
-        // First, turn off all LEDs
+        // Zuerst alle LEDs ausschalten
         digitalWrite(ledLeft, LOW);
         digitalWrite(ledRight, LOW);
         digitalWrite(ledUp, LOW);
         digitalWrite(ledDown, LOW);
 
-        // Check joystick positions and set LEDs accordingly
+        // Joystick-Positionen prüfen und LEDs entsprechend setzen
         if (yValue < 412) {
-            // Joystick up
+            // Joystick nach oben
             digitalWrite(ledUp, HIGH);
         } else if (yValue > 612) {
-            // Joystick down
+            // Joystick nach unten
             digitalWrite(ledDown, HIGH);
         } else if (xValue < 412) {
-            // Joystick left
+            // Joystick nach links
             digitalWrite(ledLeft, HIGH);
         } else if (xValue > 612) {
-            // Joystick right
+            // Joystick nach rechts
             digitalWrite(ledRight, HIGH);
         } else {
-            // Joystick in the middle, turn off all LEDs
+            // Joystick in der Mitte, alle LEDs ausschalten
             digitalWrite(ledLeft, LOW);
             digitalWrite(ledRight, LOW);
             digitalWrite(ledUp, LOW);
             digitalWrite(ledDown, LOW);
         }
-        // Add a small delay to stabilize readings
+        // Kleine Verzögerung einfügen, um die Stabilität der Messungen zu verbessern
         delay(100);
     }
 
-14. Now wiggle the joystick, and you will see the corresponding directional LEDs light up.
+14. Bewege jetzt den Joystick, und du wirst sehen, dass die entsprechenden Richtungs-LEDs aufleuchten.
 
-* **Up Indicator** lights up when the joystick is pushed up (Y-axis value decreases).
-* **Down Indicator** lights up when the joystick is pushed down (Y-axis value increases).
-* **Left Indicator** lights up when the joystick is pushed left (X-axis value decreases).
-* **Right Indicator** lights up when the joystick is pushed right (X-axis value increases).
+* **Up-Indikator** leuchtet, wenn der Joystick nach oben gedrückt wird (Y-Achsen-Wert sinkt).
+* **Down-Indikator** leuchtet, wenn der Joystick nach unten gedrückt wird (Y-Achsen-Wert steigt).
+* **Left-Indikator** leuchtet, wenn der Joystick nach links gedrückt wird (X-Achsen-Wert sinkt).
+* **Right-Indikator** leuchtet, wenn der Joystick nach rechts gedrückt wird (X-Achsen-Wert steigt).
 
-**Question**
+**Fragen**
 
-1. In the last code, we controlled the corresponding LEDs based on the X and Y values of the joystick. How would you modify the code to adjust the brightness of these LEDs while they are lit?
+1. Im letzten Code haben wir die LEDs entsprechend den X- und Y-Werten des Joysticks gesteuert. Wie würdest du den Code anpassen, um die Helligkeit dieser LEDs zu regulieren, während sie leuchten?
 
+2. Was ist der Unterschied im Verhalten der an Pin 8 angeschlossenen LED im Vergleich zu denen an den anderen Pins und warum?
 
-2. What is the difference in behavior of the LED connected to pin 8 compared to those on other pins, and why?
+**Zusammenfassung**
 
-**Summary**
-
-In this lesson, you learned about the operational principles of the Joystick module and utilized the Serial Monitor tool to read X, Y, and SW values from the joystick. You gained an understanding of the differences between analog and digital values in Arduino programming. Additionally, you mastered the use of advanced conditional statements, specifically if-else if constructs, to control hardware based on input values.
+In dieser Lektion hast du die Funktionsweise des Joystick-Moduls kennengelernt und das Serial Monitor-Tool verwendet, um X-, Y- und SW-Werte vom Joystick auszulesen. Du hast die Unterschiede zwischen analogen und digitalen Werten in der Arduino-Programmierung verstanden. Zusätzlich hast du den Einsatz fortgeschrittener bedingter Anweisungen, insbesondere der if-else if-Konstrukte, zur Steuerung von Hardware basierend auf Eingabewerten gemeistert.

@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, gemeinsam mit anderen Enthusiasten.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und ersten Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu kreieren? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-32. Stopwatch
+32. Stoppuhr
 ===================
-In this exciting project, we will learn how to use a 4-digit 7-segment display to create a functional stopwatch. By the end of this lesson, you'll understand how to control a multi-digit 7-segment display, and you'll be able to build a simple stopwatch that tracks time in minutes and seconds. Get ready to dive into the world of digital displays and enhance your Arduino skills!
+In diesem spannenden Projekt lernen wir, wie man ein 4-stelliges 7-Segment-Display verwendet, um eine funktionsfähige Stoppuhr zu erstellen. Am Ende dieser Lektion wirst du verstehen, wie man ein mehrstelliges 7-Segment-Display steuert, und in der Lage sein, eine einfache Stoppuhr zu bauen, die die Zeit in Minuten und Sekunden misst. Mach dich bereit, in die Welt der digitalen Anzeigen einzutauchen und deine Arduino-Fähigkeiten zu erweitern!
 
 .. raw:: html
 
@@ -23,84 +23,84 @@ In this exciting project, we will learn how to use a 4-digit 7-segment display t
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will:
+Am Ende dieser Lektion wirst du:
 
-* Learn how to multiplex a 4-digit 7-segment display.
-* Write code to display numbers on a single digit.
-* Create a scrolling number display.
-* Implement a stopwatch using a 4-digit 7-segment display to track minutes and seconds.
-* Learn ``AND`` operator and ``>>`` operator. 
+* Lernen, wie man ein 4-stelliges 7-Segment-Display multiplexiert.
+* Code schreiben, um Zahlen auf einer einzelnen Ziffer anzuzeigen.
+* Eine scrollende Zahlenanzeige erstellen.
+* Eine Stoppuhr implementieren, die ein 4-stelliges 7-Segment-Display verwendet, um Minuten und Sekunden zu verfolgen.
+* Den ``AND``-Operator und den ``>>``-Operator kennenlernen.
 
-Learn 4-Digit 7-Segment Display
-----------------------------------------
+Lerne das 4-stellige 7-Segment-Display kennen
+--------------------------------------------------
 
-**Introduction**
+**Einführung**
 
-1. Find the 4-Digit 7-segment display.
+1. Finde das 4-stellige 7-Segment-Display.
 
 .. image:: img/32_stopwatch_4_digit.png
   :align: center
 
-A 7-segment display is an 8-shaped component that packages 7 LEDs. Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from "a" to "g" representing each individual LED. 
+Ein 7-Segment-Display ist eine 8-förmige Komponente, die 7 LEDs enthält. Jede der LEDs im Display ist einem Positionssegment zugeordnet, dessen Anschlussstift aus dem rechteckigen Kunststoffgehäuse herausgeführt wird. Diese LED-Anschlüsse sind von "a" bis "g" beschriftet, wobei jeder Buchstabe ein individuelles LED-Segment darstellt.
 
 .. image:: img/32_stopwatch_7segment.png
   :align: center
 
 * :ref:`learn_7segment`
 
-A 4-digit display combines four 7-segment displays, each representing a single digit. To reduce the number of pins needed, the segments of each display are multiplexed, meaning each segment pin is connected to all corresponding segment pins of the other displays.
+Ein 4-stelliges Display kombiniert vier 7-Segment-Anzeigen, wobei jede einzelne Ziffer darstellt. Um die Anzahl der benötigten Pins zu reduzieren, werden die Segmente jedes Displays multiplexiert, d.h., jeder Segmentpin ist mit den entsprechenden Segmentpins der anderen Displays verbunden.
 
 .. image:: img/32_stopwatch_common_pins.png
   :width: 800
   :align: center
 
-This reduces the pin count but increases the control complexity. For example, applying voltage to the "a" pin lights up the "a" segments of all digits. To control which digit displays the segment, each digit has a separate control pin(d1 ~ d4).
+Dies reduziert die Anzahl der Pins, erhöht jedoch die Steuerungskomplexität. Zum Beispiel leuchtet das "a"-Segment bei Spannung an Pin "a" in allen Ziffern auf. Um zu steuern, welche Ziffer das Segment anzeigt, hat jede Ziffer einen separaten Steuerungspin (d1 ~ d4).
 
 .. image:: img/32_stopwatch_control_pins.png
   :width: 800
   :align: center
 
-As a result if we want to display the number 2222, we have to apply voltage to the d1, d2, d3 and d4 because all displays will show a digit. We also need to apply voltage to inputs a, b, d, e, g, dp as shown below:
+Wenn wir also die Zahl 2222 anzeigen wollen, müssen wir Spannung an die Pins d1, d2, d3 und d4 anlegen, da alle Anzeigen eine Ziffer anzeigen. Außerdem müssen wir Spannung an die Eingänge a, b, d, e, g und dp anlegen, wie unten gezeigt:
 
 .. image:: img/32_stopwatch_show_2.png
   :width: 800
   :align: center
 
-**Pinout**
+**Pinbelegung**
 
-A typical 4-digit 7-segment display has 12 pins, with six pins on each side.
+Ein typisches 4-stelliges 7-Segment-Display hat 12 Pins, sechs auf jeder Seite.
 
-Four pins (d1, d2, d3, and d4) control the individual digits. The remaining pins correspond to the segments.
+Vier Pins (d1, d2, d3 und d4) steuern die einzelnen Ziffern. Die verbleibenden Pins entsprechen den Segmenten.
 
 .. image:: img/32_stopwatch_pins.png
   :width: 600
   :align: center
 
-**Common Cathode or Common Anode**
+**Gemeinsame Kathode oder gemeinsame Anode**
 
-To determine whether a 4-digit 7-segment display is common cathode or common anode, you can use a multimeter. You can also use a multimeter to test if each segment of the display is working properly, as follows:
+Um festzustellen, ob ein 4-stelliges 7-Segment-Display eine gemeinsame Kathode oder eine gemeinsame Anode hat, kannst du ein Multimeter verwenden. Mit dem Multimeter kannst du auch testen, ob jedes Segment des Displays ordnungsgemäß funktioniert:
 
-1. Set the multimeter to diode test mode. The diode test is a function of the multimeter used to check the forward conduction of diodes or similar semiconductor devices (such as LEDs). The multimeter passes a small current through the diode. If the diode is intact, it will allow the current to pass.
+1. Stelle das Multimeter auf Diodentestmodus ein. Der Diodentest ist eine Funktion des Multimeters, die zur Überprüfung der Durchlassrichtung von Dioden oder ähnlichen Halbleiterbauelementen (wie LEDs) verwendet wird. Das Multimeter lässt einen kleinen Strom durch die Diode fließen. Wenn die Diode intakt ist, lässt sie den Strom durch.
 
 .. image:: img/multimeter_diode.png
     :width: 300
     :align: center
 
-2. Insert the 4-digit 7-segment display into a breadboard. Insert a wire in the same row as pin **d1** of the display, and touch it with the black lead of the multimeter. Insert another wire in the same row as pin **e** of the display, and touch it with the red lead.
+2. Setze das 4-stellige 7-Segment-Display in ein Steckbrett ein. Führe ein Kabel in dieselbe Reihe wie Pin **d1** des Displays ein und berühre es mit der schwarzen Messleitung des Multimeters. Führe ein weiteres Kabel in dieselbe Reihe wie Pin **e** des Displays ein und berühre es mit der roten Messleitung.
 
 .. image:: img/32_stopwatch_test_cathode.png
     :align: center
     :width: 500
 
-3. Observe whether any LED segment lights up. If so, it indicates that the display is common cathode. If not, swap the red and black leads; if a segment lights up after swapping, it indicates that the display is common anode.
+3. Beobachte, ob ein LED-Segment aufleuchtet. Wenn ja, zeigt dies an, dass das Display eine gemeinsame Kathode hat. Wenn nicht, vertausche die rote und schwarze Messleitung; wenn ein Segment nach dem Vertauschen aufleuchtet, zeigt dies an, dass das Display eine gemeinsame Anode hat.
 
 .. note::
 
-  Our kit includes a common cathode 4-digit 7-segment display. Set control pins d1-d4 to LOW and segment pins a-g to HIGH to make it work.
+  Unser Kit enthält ein 4-stelliges 7-Segment-Display mit gemeinsamer Kathode. Setze die Steuerpins d1-d4 auf LOW und die Segmentpins a-g auf HIGH, damit es funktioniert.
 
-**Question**
+**Frage**
 
-If you want the leftmost digit (d1) of the 4-digit 7-segment display to show "2", what should be the levels of d1~d4 and a~g pins?
+Wenn du möchtest, dass die linke Ziffer (d1) des 4-stelligen 7-Segment-Displays "2" anzeigt, welche Pegel sollten die Pins d1~d4 und a~g haben?
 
 .. image:: img/32_stopwatch_show_2d1.png
   :width: 800
@@ -110,10 +110,10 @@ If you want the leftmost digit (d1) of the 4-digit 7-segment display to show "2"
     :widths: 20 20 20 20
     :header-rows: 1
 
-    *   - 7-segment Display
-        - HIGH or LOW
-        - 7-segment Display
-        - HIGH or LOW
+    *   - 7-Segment-Anzeige
+        - HIGH oder LOW
+        - 7-Segment-Anzeige
+        - HIGH oder LOW
     *   - d1
         - 
         - a
@@ -148,25 +148,25 @@ If you want the leftmost digit (d1) of the 4-digit 7-segment display to show "2"
         - 
 
 
-Build the Circuit
+Den Schaltkreis aufbauen
 ------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * 4-digit 7-segment Display
-     - 4 * 220Ω Resistor
+     - 1 * 4-stelliges 7-Segment-Display
+     - 4 * 220Ω Widerstand
      - 1 * Multimeter
    * - |list_uno_r3|
      - |list_4digit| 
      - |list_220ohm|
      - |list_meter|
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
      - 
      -   
    * - |list_usb_cable| 
@@ -174,45 +174,45 @@ Build the Circuit
      - 
      - 
     
-**Building Steps**
+**Aufbauschritte**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Schaltplan oder den unten stehenden Schritten, um deinen Schaltkreis aufzubauen.
 
 .. image:: img/32_stopwatch_connect_ag.png
     :width: 500
     :align: center
 
-1. Insert the 4-digit 7-segment display into the breadboard.
+1. Setze das 4-stellige 7-Segment-Display in das Steckbrett ein.
 
 .. image:: img/32_stopwatch_connect_4digit.png
     :width: 500
     :align: center
 
-2. Insert four 220Ω resistors into the breadboard.
+2. Setze vier 220Ω Widerstände in das Steckbrett ein.
 
 .. image:: img/32_stopwatch_connect_resistors.png
     :width: 500
     :align: center
 
-3. Connect the control pin d1 to one side of the first resistor. Connect the other side of the resistor to pin 10 of the Arduino Uno R3. This connects the control pin d1 to pin 10 through the resistor.
+3. Verbinde den Steuerpin d1 mit einer Seite des ersten Widerstands. Verbinde die andere Seite des Widerstands mit Pin 10 des Arduino Uno R3. Dies verbindet den Steuerpin d1 über den Widerstand mit Pin 10.
 
 .. image:: img/32_stopwatch_connect_d1.png
     :width: 500
     :align: center
 
-4. Similarly, connect d2 to pin 11, d3 to pin 12, and d4 to pin 13.
+4. Verbinde auf ähnliche Weise d2 mit Pin 11, d3 mit Pin 12 und d4 mit Pin 13.
 
 .. image:: img/32_stopwatch_connect_d1d3.png
     :width: 500
     :align: center
   
-5. Now, connect the adp pins to pins 2~9 of the Arduino according to the wiring table.
+5. Verbinde nun die adp-Pins gemäß der Verdrahtungstabelle mit den Pins 2~9 des Arduino.
 
 .. list-table::
     :widths: 20 20
     :header-rows: 1
 
-    *   - 7-segment Display
+    *   - 7-Segment-Anzeige
         - Arduino Uno R3
     *   - a
         - 2
@@ -235,80 +235,79 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-Code Creation - Displaying 2 on One Digit
---------------------------------------------------
+Codeerstellung - Anzeige der Zahl 2 auf einer Ziffer
+--------------------------------------------------------
 
-Now let's write code to display a number on one digit of the 4-digit 7-segment display.
+Nun lass uns den Code schreiben, um eine Zahl auf einer Ziffer des 4-stelligen 7-Segment-Displays anzuzeigen.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson32_Show_2_One_Digit`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ auf „Neuer Sketch“ klickst.
+2. Speichere deinen Sketch unter dem Namen ``Lesson32_Show_2_One_Digit`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-
-3. First, create two arrays to store the segment and digit pins of the 4-digit 7-segment display.
+3. Erstelle zuerst zwei Arrays, um die Segment- und Ziffernpins des 4-stelligen 7-Segment-Displays zu speichern.
 
 .. code-block:: Arduino
 
-  // Define the pins of the segments and the digits on the 4-digit 7-segment display
-  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segments a~g and dp (decimal point)
-  int digitPins[] = { 10, 11, 12, 13 };            // Digits d1-d4
+  // Definiere die Pins der Segmente und Ziffern des 4-stelligen 7-Segment-Displays
+  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segmente a~g und dp (Dezimalpunkt)
+  int digitPins[] = { 10, 11, 12, 13 };            // Ziffern d1-d4
 
-4. In the ``void setup()`` function, set all pins as outputs. Since this is a common cathode 4-digit 7-segment display, set all segment pins to ``LOW`` and all digit pins to ``HIGH`` to initially turn off the display.
+4. Setze in der Funktion ``void setup()`` alle Pins als Ausgänge. Da dies ein 4-stelliges 7-Segment-Display mit gemeinsamer Kathode ist, setze alle Segmentpins auf ``LOW`` und alle Ziffernpins auf ``HIGH``, um das Display initial auszuschalten.
 
 .. code-block:: Arduino
 
   void setup() {
-    // Set all segment pins as output
+    // Setze alle Segmentpins als Ausgang
     for (int i = 0; i < 8; i++) {
       pinMode(segmentPins[i], OUTPUT);
-      digitalWrite(segmentPins[i], LOW);  // Ensure all segments are off initially
+      digitalWrite(segmentPins[i], LOW);  // Stelle sicher, dass alle Segmente initial ausgeschaltet sind
     }
 
-    // Set all digit pins as output and turn them off (common cathode, so HIGH is off)
+    // Setze alle Ziffernpins als Ausgang und schalte sie aus (gemeinsame Kathode, daher ist HIGH aus)
     for (int i = 0; i < 4; i++) {
       pinMode(digitPins[i], OUTPUT);
       digitalWrite(digitPins[i], HIGH);
     }
   }
 
-5. In the ``loop()`` function, to activate the first digit on the left (d1), set its state to ``LOW``. If you want to activate the first digit on the right (d4), change ``0`` to ``3``.
+5. Um in der Funktion ``loop()`` die erste Ziffer links (d1) zu aktivieren, setze ihren Zustand auf ``LOW``. Wenn du die erste Ziffer rechts (d4) aktivieren möchtest, ändere ``0`` in ``3``.
 
 .. code-block:: Arduino
 
   void loop() {
-    digitalWrite(digitPins[0], LOW);     // Turn on first digit
+    digitalWrite(digitPins[0], LOW);     // Schalte die erste Ziffer ein
   }
 
-6. To display a number, like 2, you need to set segments a, b, d, e, and g to HIGH. This will display the number 2.
+6. Um eine Zahl, wie zum Beispiel 2, anzuzeigen, müssen die Segmente a, b, d, e und g auf HIGH gesetzt werden. Dadurch wird die Zahl 2 angezeigt.
 
 .. code-block:: Arduino
   :emphasize-lines: 4-8
 
   void loop() {
-    digitalWrite(digitPins[1], LOW);     // Turn on first digit
+    digitalWrite(digitPins[1], LOW);     // Erste Ziffer einschalten
     
-    digitalWrite(segmentPins[0], HIGH);  //Turn on segment a
-    digitalWrite(segmentPins[1], HIGH);  //Turn on segment b
-    digitalWrite(segmentPins[3], HIGH);  //Turn on segment d
-    digitalWrite(segmentPins[4], HIGH);  //Turn on segment e
-    digitalWrite(segmentPins[6], HIGH);  //Turn on segment g
+    digitalWrite(segmentPins[0], HIGH);  // Segment a einschalten
+    digitalWrite(segmentPins[1], HIGH);  // Segment b einschalten
+    digitalWrite(segmentPins[3], HIGH);  // Segment d einschalten
+    digitalWrite(segmentPins[4], HIGH);  // Segment e einschalten
+    digitalWrite(segmentPins[6], HIGH);  // Segment g einschalten
   }
 
-7. Upload the code to the Arduino Uno R3 board, and you should see the first digit on the left display 2.
+7. Lade den Code auf das Arduino Uno R3 Board hoch, und du solltest sehen, dass die erste Ziffer links die Zahl 2 anzeigt.
 
 .. code-block:: Arduino
 
-  // Define the pins of the segments and the digits on the 4-digit 7-segment display
-  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segments a~g and dp (decimal point)
-  int digitPins[] = { 10, 11, 12, 13 };            // Digits d1-d4
+  // Definiere die Pins der Segmente und der Ziffern des 4-stelligen 7-Segment-Displays
+  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segmente a~g und dp (Dezimalpunkt)
+  int digitPins[] = { 10, 11, 12, 13 };            // Ziffern d1-d4
 
   void setup() {
-    // Set all segment pins as output
+    // Setze alle Segmentpins als Ausgang
     for (int i = 0; i < 8; i++) {
       pinMode(segmentPins[i], OUTPUT);
-      digitalWrite(segmentPins[i], LOW);  // Ensure all segments are off initially
+      digitalWrite(segmentPins[i], LOW);  // Stelle sicher, dass alle Segmente initial ausgeschaltet sind
     }
 
-    // Set all digit pins as output and turn them off (common cathode, so HIGH is off)
+    // Setze alle Ziffernpins als Ausgang und schalte sie aus (gemeinsame Kathode, daher ist HIGH aus)
     for (int i = 0; i < 4; i++) {
       pinMode(digitPins[i], OUTPUT);
       digitalWrite(digitPins[i], HIGH);
@@ -316,30 +315,29 @@ Now let's write code to display a number on one digit of the 4-digit 7-segment d
   }
 
   void loop() {
-    digitalWrite(digitPins[1], LOW);     // Turn on first digit
+    digitalWrite(digitPins[1], LOW);     // Erste Ziffer einschalten
     
-    digitalWrite(segmentPins[0], HIGH);  //Turn on segment a
-    digitalWrite(segmentPins[1], HIGH);  //Turn on segment b
-    digitalWrite(segmentPins[3], HIGH);  //Turn on segment d
-    digitalWrite(segmentPins[4], HIGH);  //Turn on segment e
-    digitalWrite(segmentPins[6], HIGH);  //Turn on segment g
+    digitalWrite(segmentPins[0], HIGH);  // Segment a einschalten
+    digitalWrite(segmentPins[1], HIGH);  // Segment b einschalten
+    digitalWrite(segmentPins[3], HIGH);  // Segment d einschalten
+    digitalWrite(segmentPins[4], HIGH);  // Segment e einschalten
+    digitalWrite(segmentPins[6], HIGH);  // Segment g einschalten
   }
 
-Code Creation - Scrolling Numbers on One Digit
--------------------------------------------------
-In the previous project, we learned how to display a single number like 2 on one digit. But what if we want to scroll through numbers 0~9? Using the same method would be very lengthy.
+Codeerstellung - Zahlen auf einer Ziffer scrollen lassen
+--------------------------------------------------------------
+Im vorherigen Projekt haben wir gelernt, wie man eine einzelne Zahl, wie zum Beispiel die 2, auf einer Ziffer anzeigt. Aber was ist, wenn wir die Zahlen von 0~9 scrollen möchten? Die Verwendung derselben Methode wäre sehr langwierig.
 
-In Lesson 28, we learned the binary, decimal, and hexadecimal codes for the numbers 0-9 on a common cathode display.
-
+In Lektion 28 haben wir die binären, dezimalen und hexadezimalen Codes für die Zahlen 0-9 auf einem Display mit gemeinsamer Kathode gelernt.
 
 .. list-table::
     :widths: 20 40 30 30
     :header-rows: 1
 
-    *   - Number
-        - Binary
-        - Decimal
-        - Hexadecimal
+    *   - Zahl
+        - Binär
+        - Dezimal
+        - Hexadezimal
     *   - 0
         - B00111111
         - 63
@@ -381,118 +379,118 @@ In Lesson 28, we learned the binary, decimal, and hexadecimal codes for the numb
         - 111
         - 0x6F
 
-Here's how to use this to scroll through numbers 0~9 on one digit.
+Hier ist, wie man dies verwenden kann, um die Zahlen von 0~9 auf einer Ziffer scrollen zu lassen.
 
-1. Open the sketch you saved earlier, ``Lesson32_Show_2_One_Digit``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson32_Scroll_Numbers_One_Digit``. Click "Save".
+1. Öffne den Sketch, den du zuvor gespeichert hast, ``Lesson32_Show_2_One_Digit``. Wähle im Menü „Datei“ die Option „Speichern unter...“, und benenne ihn in ``Lesson32_Scroll_Numbers_One_Digit`` um. Klicke auf "Speichern".
 
-2. Store the binary codes for numbers 0~9 in the array ``numArray[]``.
+2. Speichere die Binärcodes für die Zahlen 0~9 im Array ``numArray[]``.
 
 .. code-block:: Arduino
   :emphasize-lines: 6
 
-  // Define the pins of the segments and the digits on the 4-digit 7-segment display
-  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segments a~g and dp (decimal point)
-  int digitPins[] = { 10, 11, 12, 13 };            // Digits d1-d4
+  // Definiere die Pins der Segmente und der Ziffern des 4-stelligen 7-Segment-Displays
+  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segmente a~g und dp (Dezimalpunkt)
+  int digitPins[] = { 10, 11, 12, 13 };            // Ziffern d1-d4
 
-  //display 0,1,2,3,4,5,6,7,8,9
+  //Anzeige 0,1,2,3,4,5,6,7,8,9
   int numArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
-3. Now, create a function to display the selected number on the chosen digit.
+3. Erstelle nun eine Funktion, um die ausgewählte Zahl auf der gewünschten Ziffer anzuzeigen.
 
 .. code-block:: Arduino
 
   void displayNumberOnDigit(int number, int digit) {
-    // Turn off all digits to prevent ghosting when switching numbers
+    // Schalte alle Ziffern aus, um Geisterbilder beim Wechsel der Zahlen zu vermeiden
     for (int i = 0; i < 4; i++) {
-      // Turn off digit (common cathode -> HIGH is off)
+      // Ziffer ausschalten (gemeinsame Kathode -> HIGH ist aus)
       digitalWrite(digitPins[i], HIGH);
     }
 
-    // Set the segments for the current number
+    // Setze die Segmente für die aktuelle Zahl
     int value = numArray[number];
     for (int i = 0; i < 8; i++) {
-      digitalWrite(segmentPins[i], (value >> i) & 1);  // Set each segment
+      digitalWrite(segmentPins[i], (value >> i) & 1);  // Setze jedes Segment
     }
 
-    // Turn on the selected digit (common cathode -> LOW is on)
+    // Schalte die ausgewählte Ziffer ein (gemeinsame Kathode -> LOW ist an)
     digitalWrite(digitPins[digit], LOW);
   }
 
-* Turns off all digits to prevent ghosting, especially when changing the displayed number.
+* Schaltet alle Ziffern aus, um Geisterbilder zu vermeiden, insbesondere beim Ändern der angezeigten Zahl.
 
 .. code-block:: Arduino
   
-    // Turn off all digits to prevent ghosting when switching numbers
+    // Schalte alle Ziffern aus, um Geisterbilder beim Wechsel der Zahlen zu vermeiden
     for (int i = 0; i < 4; i++) {
-      // Turn off digit (common cathode -> HIGH is off)
+      // Ziffer ausschalten (gemeinsame Kathode -> HIGH ist aus)
       digitalWrite(digitPins[i], HIGH);
     }
 
-* Uses a bitwise operation to determine which segments to light up for each number. 
+* Verwendet eine bitweise Operation, um zu bestimmen, welche Segmente für jede Zahl aufleuchten sollen. 
   
   .. code-block:: Arduino
     :emphasize-lines: 4
     
-    // Set the segments for the current number
+    // Setze die Segmente für die aktuelle Zahl
     int value = numArray[number];
     for (int i = 0; i < 8; i++) {
-      digitalWrite(segmentPins[i], (value >> i) & 1);  // Set each segment
+      digitalWrite(segmentPins[i], (value >> i) & 1);  // Setze jedes Segment
     }
   
-  * Here, the element from the array ``numArray[]`` is assigned to the variable ``value``. If ``number`` is 2, the third element (``B01011011``) from ``numArray[]`` is assigned to ``value``.
-  * Then, a ``for`` loop writes each of the 8 bits of ``B01011011`` (excluding the B) to the array ``segmentPins[i]`` using ``digitalWrite()``. This means segments a, b, d, e, and g are set to 1, and c, f, and dp are set to 0, displaying the number 2.
-  * ``&`` is the ``AND`` operator, which performs a bitwise ``AND`` operation on the numbers. ``1&1`` equals 1, ``1&0`` equals 0.
+  * Hier wird das Element aus dem Array ``numArray[]`` der Variablen ``value`` zugewiesen. Wenn ``number`` 2 ist, wird das dritte Element (``B01011011``) aus ``numArray[]`` ``value`` zugewiesen.
+  * Dann schreibt eine ``for``-Schleife jedes der 8 Bits von ``B01011011`` (ohne das B) in das Array ``segmentPins[i]`` mithilfe von ``digitalWrite()``. Das bedeutet, dass die Segmente a, b, d, e und g auf 1 gesetzt werden, und c, f und dp auf 0, was die Zahl 2 anzeigt.
+  * ``&`` ist der ``AND``-Operator, der eine bitweise ``AND``-Operation auf die Zahlen durchführt. ``1&1`` ergibt 1, ``1&0`` ergibt 0.
 
   .. image:: img/32_stopwatch_and.png
     :width: 300
     :align: center
   
-  * ``>>`` is the right shift operator, which shifts the bits of the number to the right by the specified number of positions. For example, if ``i`` is 1, ``B01011011`` shifts right by one bit, dropping the rightmost bit and adding a 0 on the left. If ``i`` is 2, ``B01011011`` shifts right by two bits, dropping the two rightmost bits and adding two 0s on the left.
-  * The result of the right shift is then performed a bitwise AND with 1 to get either 1 or 0.
+  * ``>>`` ist der Rechtsverschiebeoperator, der die Bits der Zahl um die angegebene Anzahl von Positionen nach rechts verschiebt. Zum Beispiel, wenn ``i`` 1 ist, verschiebt ``B01011011`` nach rechts um ein Bit, wobei das rechteste Bit entfernt wird und eine 0 links hinzugefügt wird. Wenn ``i`` 2 ist, verschiebt ``B01011011`` nach rechts um zwei Bits, wobei die zwei rechtesten Bits entfernt werden und zwei 0en links hinzugefügt werden.
+  * Das Ergebnis der Rechtsverschiebung wird dann bitweise mit 1 verundet, um entweder 1 oder 0 zu erhalten.
 
   .. image:: img/32_stopwatch_shift_right.png
     :width: 500
     :align: center
 
-* Activates only the digit where the number should be displayed.
+* Aktiviert nur die Ziffer, auf der die Zahl angezeigt werden soll.
 
 .. code-block:: Arduino
   
-    // Turn on the selected digit (common cathode -> LOW is on)
+    // Schalte die ausgewählte Ziffer ein (gemeinsame Kathode -> LOW ist an)
     digitalWrite(digitPins[digit], LOW);
 
-4. In the ``void loop`` main program, use a ``for`` loop to make the first digit on the left scroll through numbers 0 to 9.
+4. Im Hauptprogramm ``void loop`` verwende eine ``for``-Schleife, um die erste Ziffer von links durch die Zahlen 0 bis 9 scrollen zu lassen.
 
 .. code-block:: Arduino
   :emphasize-lines: 4
 
   void loop() {
-    // Display numbers 0 to 9 sequentially on the first digit (D1)
+    // Zeige nacheinander die Zahlen 0 bis 9 auf der ersten Ziffer (D1) an
     for (int num = 0; num < 10; num++) {
-      displayNumberOnDigit(num, 0);  // Display the number on digit 1 (index 0)
-      delay(1000);                   // Display each number for 1 second
+      displayNumberOnDigit(num, 0);  // Zeige die Zahl auf der Ziffer 1 (Index 0) an
+      delay(1000);                   // Zeige jede Zahl für 1 Sekunde an
     }
   }
 
-5. The complete code is shown below. You can upload it to the Arduino Uno R3, and you will see the first digit on the left scroll through numbers 0 to 9.
+5. Der vollständige Code ist unten aufgeführt. Du kannst ihn auf das Arduino Uno R3 hochladen, und du wirst sehen, wie die erste Ziffer von links durch die Zahlen 0 bis 9 scrollt.
 
 .. code-block:: Arduino
 
-  // Define the pins of the segments and the digits on the 4-digit 7-segment display
-  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segments A-G and DP (decimal point)
-  int digitPins[] = { 10, 11, 12, 13 };            // Digits D1-D4
+  // Definiere die Pins der Segmente und der Ziffern des 4-stelligen 7-Segment-Displays
+  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segmente A-G und DP (Dezimalpunkt)
+  int digitPins[] = { 10, 11, 12, 13 };            // Ziffern D1-D4
 
-  //display 0,1,2,3,4,5,6,7,8,9
+  // Anzeige 0,1,2,3,4,5,6,7,8,9
   int numArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
   void setup() {
-    // Set all segment pins as output
+    // Setze alle Segmentpins als Ausgang
     for (int i = 0; i < 8; i++) {
       pinMode(segmentPins[i], OUTPUT);
-      digitalWrite(segmentPins[i], LOW);  // Ensure all segments are off initially
+      digitalWrite(segmentPins[i], LOW);  // Stelle sicher, dass alle Segmente initial ausgeschaltet sind
     }
 
-    // Set all digit pins as output and turn them off (common cathode, so HIGH is off)
+    // Setze alle Ziffernpins als Ausgang und schalte sie aus (gemeinsame Kathode, daher ist HIGH aus)
     for (int i = 0; i < 4; i++) {
       pinMode(digitPins[i], OUTPUT);
       digitalWrite(digitPins[i], HIGH);
@@ -500,114 +498,113 @@ Here's how to use this to scroll through numbers 0~9 on one digit.
   }
 
   void loop() {
-    // Display numbers 0 to 9 sequentially on the first digit (D1)
+    // Zeige nacheinander die Zahlen 0 bis 9 auf der ersten Ziffer (D1) an
     for (int num = 0; num < 10; num++) {
-      displayNumberOnDigit(num, 0);  // Display the number on digit 1 (index 0)
-      delay(1000);                   // Display each number for 1 second
+      displayNumberOnDigit(num, 0);  // Zeige die Zahl auf der Ziffer 1 (Index 0) an
+      delay(1000);                   // Zeige jede Zahl für 1 Sekunde an
     }
   }
 
   void displayNumberOnDigit(int number, int digit) {
-    // Turn off all digits to prevent ghosting when switching numbers
+    // Schalte alle Ziffern aus, um Geisterbilder beim Wechsel der Zahlen zu vermeiden
     for (int i = 0; i < 4; i++) {
-      // Turn off digit (common cathode -> HIGH is off)
+      // Ziffer ausschalten (gemeinsame Kathode -> HIGH ist aus)
       digitalWrite(digitPins[i], HIGH);
     }
 
-    // Set the segments for the current number
+    // Setze die Segmente für die aktuelle Zahl
     int value = numArray[number];
     for (int i = 0; i < 8; i++) {
-      digitalWrite(segmentPins[i], (value >> i) & 1);  // Set each segment
+      digitalWrite(segmentPins[i], (value >> i) & 1);  // Setze jedes Segment
     }
 
-    // Turn on the selected digit (common cathode -> LOW is on)
+    // Schalte die ausgewählte Ziffer ein (gemeinsame Kathode -> LOW ist an)
     digitalWrite(digitPins[digit], LOW);
   }
 
 
-**Question**
+**Frage**
 
-In programming, bitwise operations like ``AND`` and ``OR`` are crucial for manipulating individual bits of data. The bitwise ``AND`` operation (&), compares each bit of its operands, resulting in 1 if both bits are 1, and 0 otherwise. Conversely, the bitwise ``OR`` operation (``|``), results in 1 if at least one of the bits is 1, and 0 only if both bits are 0. 
+In der Programmierung sind bitweise Operationen wie ``AND`` und ``OR`` entscheidend, um einzelne Bits von Daten zu manipulieren. Die bitweise ``AND``-Operation (&) vergleicht jedes Bit ihrer Operanden, wobei das Ergebnis 1 ist, wenn beide Bits 1 sind, und 0, wenn eines der Bits 0 ist. Umgekehrt ergibt die bitweise ``OR``-Operation (``|``) 1, wenn mindestens eines der Bits 1 ist, und 0 nur dann, wenn beide Bits 0 sind. 
 
-Given this information, consider the expression ``(B01011011 >> 2) | 1``. After right-shifting the binary number ``B01011011`` by 2 positions, what is the result of applying the bitwise OR with 1?
+Angesichts dieser Informationen, betrachte den Ausdruck ``(B01011011 >> 2) | 1``. Nachdem die Binärzahl ``B01011011`` um 2 Positionen nach rechts verschoben wurde, was ist das Ergebnis der Anwendung des bitweisen OR mit 1?
 
 
-Code Creation - Stopwatch
+Code-Erstellung - Stoppuhr
 -----------------------------
 
-Previously, we learned how to display a single digit and scroll through numbers on one digit. Now, let's learn how to use the 4-digit 7-segment display to create a stopwatch.
+Zuvor haben wir gelernt, wie man eine einzelne Ziffer anzeigt und durch Zahlen auf einer Ziffer scrollt. Jetzt lernen wir, wie man das 4-stellige 7-Segment-Display verwendet, um eine Stoppuhr zu erstellen.
 
-* To create a stopwatch, you need the left two digits to display minutes and the right two digits to display seconds.
-* When the seconds count reaches 59, it resets to 0, and the minute count increases by 1.
-* When the minute count reaches 99, it resets to 0.
+* Um eine Stoppuhr zu erstellen, müssen die linken beiden Ziffern Minuten und die rechten beiden Ziffern Sekunden anzeigen.
+* Wenn die Sekundenanzeige 59 erreicht, wird sie auf 0 zurückgesetzt und die Minutenanzeige erhöht sich um 1.
+* Wenn die Minutenanzeige 99 erreicht, wird sie auf 0 zurückgesetzt.
 
+1. Öffne den zuvor gespeicherten Sketch, ``Lesson32_Show_2_One_Digit``. Wähle im Menü „Datei“ die Option „Speichern unter...“, und benenne ihn in ``Lesson32_Stopwatch`` um. Klicke auf "Speichern".
 
-1. Open the sketch you saved earlier, ``Lesson32_Show_2_One_Digit``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson32_Stopwatch``. Click "Save".
-
-2. Now create 3 variables to store time components, ``previousMillis`` is used to keep track of time since the last update, ``seconds`` and ``minutes`` store the stopwatch time.
+2. Erstelle nun 3 Variablen, um die Zeitkomponenten zu speichern. ``previousMillis`` wird verwendet, um die Zeit seit dem letzten Update zu verfolgen, ``seconds`` und ``minutes`` speichern die Zeit der Stoppuhr.
 
 .. code-block:: Arduino
   :emphasize-lines: 9-11
 
-  // Define the pins of the segments and the digits on the 4-digit 7-segment display
-  int segmentPins[] = {2, 3, 4, 5, 6, 7, 8, 9};  // Segments A-G and DP (decimal point)
-  int digitPins[] = {10, 11, 12, 13};            // Digits D1-D4
+  // Definiere die Pins der Segmente und der Ziffern des 4-stelligen 7-Segment-Displays
+  int segmentPins[] = {2, 3, 4, 5, 6, 7, 8, 9};  // Segmente A-G und DP (Dezimalpunkt)
+  int digitPins[] = {10, 11, 12, 13};            // Ziffern D1-D4
 
-  //display 0,1,2,3,4,5,6,7,8,9
+  // Anzeige 0,1,2,3,4,5,6,7,8,9
   int numArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
-  // Variables to store time components
-  unsigned long previousMillis = 0;  // Stores the last time the display was updated
-  int seconds = 0;  // Stores the second count
-  int minutes = 0;  // Stores the minute count
+  // Variablen zur Speicherung der Zeitkomponenten
+  unsigned long previousMillis = 0;  // Speichert die letzte Zeit, zu der die Anzeige aktualisiert wurde
+  int seconds = 0;  // Speichert die Sekunden
+  int minutes = 0;  // Speichert die Minuten
 
-3. In the ``void loop()`` function:
+3. In der Funktion ``void loop()``:
 
-* Use ``millis()`` function to return the number of milliseconds since the Arduino board began running the current program.
-* Then increment the seconds once every 1000 milliseconds (one second). When seconds reach 60, it resets to 0 and increments minutes. If minutes reach 100, it resets to 0, thereby starting the count again.
-* ``updateDisplay()`` is called within each loop iteration to actively multiplex the display based on the current seconds and minutes.
+* Verwende die Funktion ``millis()``, um die Anzahl der Millisekunden seit dem Start des aktuellen Programms auf dem Arduino-Board zurückzugeben.
+* Erhöhe dann die Sekundenanzeige einmal alle 1000 Millisekunden (eine Sekunde). Wenn die Sekundenanzeige 60 erreicht, wird sie auf 0 zurückgesetzt und die Minutenanzeige erhöht. Wenn die Minutenanzeige 100 erreicht, wird sie auf 0 zurückgesetzt, wodurch die Zählung erneut beginnt.
+* Die Funktion ``updateDisplay()`` wird in jeder Schleifeniteration aufgerufen, um die Anzeige basierend auf den aktuellen Sekunden und Minuten aktiv zu multiplexen.
 
 .. code-block:: Arduino
 
   void loop() {
-    unsigned long currentMillis = millis();        // Get the current time in milliseconds
-    if (currentMillis - previousMillis >= 1000) {  // Check if a second has passed
-      previousMillis = currentMillis;              // Reset the timer
-      seconds++;                                   // Increment the seconds
-      if (seconds >= 60) {                         // Check if 60 seconds have passed
-        seconds = 0;                               // Reset seconds
-        minutes++;                                 // Increment the minutes
-        if (minutes > 99) {                        // Check if 100 minutes have passed
-          minutes = 0;                             // Reset minutes
+    unsigned long currentMillis = millis();        // Aktuelle Zeit in Millisekunden abrufen
+    if (currentMillis - previousMillis >= 1000) {  // Überprüfen, ob eine Sekunde vergangen ist
+      previousMillis = currentMillis;              // Timer zurücksetzen
+      seconds++;                                   // Sekunden erhöhen
+      if (seconds >= 60) {                         // Überprüfen, ob 60 Sekunden vergangen sind
+        seconds = 0;                               // Sekunden zurücksetzen
+        minutes++;                                 // Minuten erhöhen
+        if (minutes > 99) {                        // Überprüfen, ob 100 Minuten vergangen sind
+          minutes = 0;                             // Minuten zurücksetzen
         }
       }
     }
-    updateDisplay();  // Update the display to show the current time
+    updateDisplay();  // Anzeige aktualisieren, um die aktuelle Zeit anzuzeigen
   }
 
-4. About ``updateDisplay()`` function: Instead of setting the display once per second, ``updateDisplay()`` is called continuously in the main loop. It cycles through each digit, turning it on for a short duration with the correct segments lit, then turns it off again. This process repeats quickly to give the appearance of a stable display.
+4. Zur Funktion ``updateDisplay()``: Anstatt die Anzeige einmal pro Sekunde zu setzen, wird ``updateDisplay()`` kontinuierlich in der Hauptschleife aufgerufen. Es durchläuft jede Ziffer, schaltet sie für kurze Zeit mit den richtigen Segmenten ein und schaltet sie dann wieder aus. Dieser Vorgang wiederholt sich schnell, um den Eindruck einer stabilen Anzeige zu erzeugen.
 
 .. code-block:: Arduino
 
   void updateDisplay() {
     for (int digit = 0; digit < 4; digit++) {
       setDigitValues(minutes, seconds, digit);
-      digitalWrite(digitPins[digit], LOW); // Turn on current digit
-      delay(5); // Delay to keep the digit visible
-      digitalWrite(digitPins[digit], HIGH); // Turn off digit
+      digitalWrite(digitPins[digit], LOW); // Schalte die aktuelle Ziffer ein
+      delay(5); // Verzögerung, um die Ziffer sichtbar zu halten
+      digitalWrite(digitPins[digit], HIGH); // Ziffer ausschalten
     }
   }
 
-5. About ``setDigitValues()`` function: ``setDigitValues()`` takes care of setting the segments for each digit based on the current time (minutes and seconds). This function is called each time a digit is activated to ensure it shows the correct value.
+5. Zur Funktion ``setDigitValues()``: ``setDigitValues()`` kümmert sich darum, die Segmente für jede Ziffer basierend auf der aktuellen Zeit (Minuten und Sekunden) zu setzen. Diese Funktion wird jedes Mal aufgerufen, wenn eine Ziffer aktiviert wird, um sicherzustellen, dass sie den richtigen Wert anzeigt.
 
 .. code-block:: Arduino
 
   void setDigitValues(int mins, int secs, int digit) {
     int values[] = {
-      mins / 10, // tens of minutes
-      mins % 10, // ones of minutes
-      secs / 10, // tens of seconds
-      secs % 10  // ones of seconds
+      mins / 10, // Zehner der Minuten
+      mins % 10, // Einer der Minuten
+      secs / 10, // Zehner der Sekunden
+      secs % 10  // Einer der Sekunden
     };
 
     int value = numArray[values[digit]];
@@ -617,30 +614,30 @@ Previously, we learned how to display a single digit and scroll through numbers 
     }
   }
 
-6. Your complete code is shown below. You can now upload it to the Arduino board to see the stopwatch effect on the 4-digit 7-segment display.
+6. Der vollständige Code ist unten aufgeführt. Du kannst ihn jetzt auf das Arduino-Board hochladen, um den Stoppuhr-Effekt auf dem 4-stelligen 7-Segment-Display zu sehen.
 
 .. code-block:: Arduino
 
-  // Define the pins of the segments and the digits on the 4-digit 7-segment display
-  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segments A-G and DP (decimal point)
-  int digitPins[] = { 10, 11, 12, 13 };            // Digits D1-D4
+  // Definiere die Pins der Segmente und der Ziffern des 4-stelligen 7-Segment-Displays
+  int segmentPins[] = { 2, 3, 4, 5, 6, 7, 8, 9 };  // Segmente A-G und DP (Dezimalpunkt)
+  int digitPins[] = { 10, 11, 12, 13 };            // Ziffern D1-D4
 
-  //display 0,1,2,3,4,5,6,7,8,9
+  // Anzeige 0,1,2,3,4,5,6,7,8,9
   int numArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
-  // Variables to store time components
-  unsigned long previousMillis = 0;  // Stores the last time the display was updated
-  int seconds = 0;                   // Stores the second count
-  int minutes = 0;                   // Stores the minute count
+  // Variablen zur Speicherung der Zeitkomponenten
+  unsigned long previousMillis = 0;  // Speichert die letzte Zeit, zu der die Anzeige aktualisiert wurde
+  int seconds = 0;                   // Speichert die Sekunden
+  int minutes = 0;                   // Speichert die Minuten
 
   void setup() {
-    // Set all segment pins as output
+    // Setze alle Segmentpins als Ausgang
     for (int i = 0; i < 8; i++) {
       pinMode(segmentPins[i], OUTPUT);
-      digitalWrite(segmentPins[i], LOW);  // Ensure all segments are off initially
+      digitalWrite(segmentPins[i], LOW);  // Stelle sicher, dass alle Segmente initial ausgeschaltet sind
     }
 
-    // Set all digit pins as output and turn them off (common cathode, so HIGH is off)
+    // Setze alle Ziffernpins als Ausgang und schalte sie aus (gemeinsame Kathode, daher ist HIGH aus)
     for (int i = 0; i < 4; i++) {
       pinMode(digitPins[i], OUTPUT);
       digitalWrite(digitPins[i], HIGH);
@@ -648,36 +645,36 @@ Previously, we learned how to display a single digit and scroll through numbers 
   }
 
   void loop() {
-    unsigned long currentMillis = millis();        // Get the current time in milliseconds
-    if (currentMillis - previousMillis >= 1000) {  // Check if a second has passed
-      previousMillis = currentMillis;              // Reset the timer
-      seconds++;                                   // Increment the seconds
-      if (seconds >= 60) {                         // Check if 60 seconds have passed
-        seconds = 0;                               // Reset seconds
-        minutes++;                                 // Increment the minutes
-        if (minutes > 99) {                        // Check if 100 minutes have passed
-          minutes = 0;                             // Reset minutes
+    unsigned long currentMillis = millis();        // Aktuelle Zeit in Millisekunden abrufen
+    if (currentMillis - previousMillis >= 1000) {  // Überprüfen, ob eine Sekunde vergangen ist
+      previousMillis = currentMillis;              // Timer zurücksetzen
+      seconds++;                                   // Sekunden erhöhen
+      if (seconds >= 60) {                         // Überprüfen, ob 60 Sekunden vergangen sind
+        seconds = 0;                               // Sekunden zurücksetzen
+        minutes++;                                 // Minuten erhöhen
+        if (minutes > 99) {                        // Überprüfen, ob 100 Minuten vergangen sind
+          minutes = 0;                             // Minuten zurücksetzen
         }
       }
     }
-    updateDisplay();  // Update the display to show the current time
+    updateDisplay();  // Anzeige aktualisieren, um die aktuelle Zeit anzuzeigen
   }
 
   void updateDisplay() {
     for (int digit = 0; digit < 4; digit++) {
       setDigitValues(minutes, seconds, digit);
-      digitalWrite(digitPins[digit], LOW);   // Turn on current digit
-      delay(5);                              // Delay to keep the digit visible
-      digitalWrite(digitPins[digit], HIGH);  // Turn off digit
+      digitalWrite(digitPins[digit], LOW);   // Schalte die aktuelle Ziffer ein
+      delay(5);                              // Verzögerung, um die Ziffer sichtbar zu halten
+      digitalWrite(digitPins[digit], HIGH);  // Ziffer ausschalten
     }
   }
 
   void setDigitValues(int mins, int secs, int digit) {
     int values[] = {
-      mins / 10,  // tens of minutes
-      mins % 10,  // ones of minutes
-      secs / 10,  // tens of seconds
-      secs % 10   // ones of seconds
+      mins / 10,  // Zehner der Minuten
+      mins % 10,  // Einer der Minuten
+      secs / 10,  // Zehner der Sekunden
+      secs % 10   // Einer der Sekunden
     };
 
     int value = numArray[values[digit]];
@@ -687,8 +684,8 @@ Previously, we learned how to display a single digit and scroll through numbers 
     }
   }
 
-7. Finally, remember to save your code and tidy up your workspace.
+7. Speichere abschließend deinen Code und räume deinen Arbeitsplatz auf.
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we explored the functionality of the 4-digit 7-segment display and learned how to control it using an Arduino. We started by displaying a single number on one digit and then progressed to scrolling through numbers. Finally, we combined these skills to create a simple stopwatch that displays minutes and seconds. This project not only taught us about digital displays but also enhanced our programming skills with Arduino. Well done on completing this lesson, and keep experimenting to create even more amazing projects!
+In dieser Lektion haben wir die Funktionalität des 4-stelligen 7-Segment-Displays erkundet und gelernt, wie man es mit einem Arduino steuert. Wir begannen damit, eine einzelne Zahl auf einer Ziffer anzuzeigen, und gingen dann dazu über, durch Zahlen zu scrollen. Schließlich haben wir diese Fähigkeiten kombiniert, um eine einfache Stoppuhr zu erstellen, die Minuten und Sekunden anzeigt. Dieses Projekt hat uns nicht nur die Arbeit mit digitalen Anzeigen nähergebracht, sondern auch unsere Programmierfähigkeiten mit dem Arduino verbessert. Gut gemacht, dass du diese Lektion abgeschlossen hast, und mach weiter mit dem Experimentieren, um noch erstaunlichere Projekte zu erstellen!

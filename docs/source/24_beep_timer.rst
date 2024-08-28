@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitig Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-24. The Pomodoro Timer
+24. Der Pomodoro-Timer
 ===========================================
 
-In this lesson, we'll explore the intersection of time management and technology by creating a Pomodoro Timer using an Arduino and an active buzzer. You'll learn how to utilize the Arduino's internal timing capabilities to construct a timer that segments work into 25-minute focused intervals followed by 5-minute breaks. This method, known as the Pomodoro Technique, enhances productivity and focus. Throughout the course, you'll gain a solid foundation in electronic timing and hands-on experience in programming and circuit assembly, culminating in the creation of a functional Pomodoro Timer. Join us to master your time and boost efficiency in your daily activities!
+In dieser Lektion werden wir die Schnittstelle zwischen Zeitmanagement und Technologie erkunden, indem wir einen Pomodoro-Timer mit einem Arduino und einem aktiven Summer erstellen. Du wirst lernen, wie du die internen Zeitfunktionen des Arduino nutzt, um einen Timer zu bauen, der Arbeitsintervalle von 25 Minuten Fokusarbeit und 5 Minuten Pause unterteilt. Diese Methode, bekannt als die Pomodoro-Technik, steigert Produktivität und Konzentration. Während des Kurses wirst du eine solide Grundlage in der elektronischen Zeitmessung erlangen und praktische Erfahrungen in Programmierung und Schaltungsaufbau sammeln. Am Ende wirst du einen funktionalen Pomodoro-Timer gebaut haben, der dir hilft, deine Zeit effizient zu nutzen!
 
 .. image:: img/19_tomato_timer.jpg
   :width: 500
@@ -28,47 +28,45 @@ In this lesson, we'll explore the intersection of time management and technology
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+Am Ende dieser Lektion wirst du in der Lage sein:
 
-* Understand the historical significance of sound in timekeeping.
-* Identify the components required to build an electronic timer circuit.
-* Program an Arduino to control a buzzer for time management using both ``delay()`` and ``millis()`` functions.
-* Apply the Pomodoro Technique in a practical context by creating a timer that alternates between work and break periods.
+* Die historische Bedeutung von Klang in der Zeitmessung zu verstehen.
+* Die Komponenten zu identifizieren, die zum Bau einer elektronischen Timer-Schaltung erforderlich sind.
+* Einen Arduino zu programmieren, um einen Summer für das Zeitmanagement mit den Funktionen ``delay()`` und ``millis()`` zu steuern.
+* Die Pomodoro-Technik in der Praxis anzuwenden, indem du einen Timer erstellst, der zwischen Arbeits- und Pausenphasen wechselt.
 
-Clocks and Sound
+Uhren und Klang
 --------------------
 
-In the ancient world, large-scale bell tolls were used to mark the passage of time and specific social events.
-For example, medieval European cities utilized church bell tolls to mark prayer times and the start and end of workdays.
-These tolls were more than just markers of time; they served as tools for social order, around which the daily life of the community revolved.
+In der Antike wurden große Glockenschläge verwendet, um den Zeitablauf und bestimmte gesellschaftliche Ereignisse zu markieren.
+Beispielsweise nutzten mittelalterliche europäische Städte Kirchenglocken, um Gebetszeiten sowie den Beginn und das Ende der Arbeitstage zu signalisieren.
+Diese Glockenschläge waren mehr als nur Zeitmarkierungen; sie dienten als Werkzeuge für die soziale Ordnung, um die sich das tägliche Leben der Gemeinschaft drehte.
 
-**Mechanical Clocks and Sound**
+**Mechanische Uhren und Klang**
 
 .. image:: img/7_big_ben.png
   :width: 500
   :align: center
 
-With the development of mechanical clocks, especially with the design of the Big Ben, clocks began to be equipped with more complex bells and timing mechanisms.
-The sound of Big Ben is carried by its large bronze bells, enhancing both the range of sound propagation and the precision of time announcements.
-In many towns and cities, the sound of Big Ben became a reference for residents to adjust their daily activities, playing a crucial role in more precise time scheduling for navigation,
-railroad timetables, and more.
+Mit der Entwicklung mechanischer Uhren, insbesondere mit der Konstruktion des Big Ben, wurden Uhren mit komplexeren Glocken- und Zeitmechanismen ausgestattet.
+Der Klang von Big Ben wird von seinen großen Bronzeklocken getragen, die sowohl die Reichweite des Schalls als auch die Präzision der Zeitansage verbessern.
+In vielen Städten und Gemeinden wurde der Klang von Big Ben zu einer Referenz für die Bewohner, ihre täglichen Aktivitäten zu koordinieren. Er spielte eine entscheidende Rolle bei der präziseren Zeitplanung für die Navigation, Zugfahrpläne und mehr.
 
-**Sound Timing in the Electronic Age**
+**Klangsteuerung im elektronischen Zeitalter**
 
 .. image:: img/19_timer.jpg
   :width: 500
   :align: center
 
-Entering the electronic era, sound timers evolved anew. The introduction of electronic buzzers, especially with the aid of microcontrollers like Arduino,
-allowed time marking to become independent of large mechanical devices. These small devices can produce sounds of different frequencies and pitches,
-which can be used for various timing applications, from simple kitchen timers to complex industrial process control systems.
-Examples include the nurse call systems in modern hospitals, school class bells, and reminders in personal electronic devices, all utilizing electronic buzzers for time management.
+Im elektronischen Zeitalter erlebten Klang-Timer eine neue Entwicklung. Durch die Einführung elektronischer Summer, insbesondere mit Hilfe von Mikrocontrollern wie Arduino,
+wurde die Zeitmessung unabhängig von großen mechanischen Geräten. Diese kleinen Geräte können Töne mit unterschiedlichen Frequenzen und Tonhöhen erzeugen,
+die für verschiedene Zeitsteuerungsanwendungen verwendet werden können, von einfachen Küchentimern bis hin zu komplexen industriellen Prozesssteuerungssystemen.
+Beispiele sind Rufsysteme in modernen Krankenhäusern, Schulglocken und Erinnerungen in persönlichen elektronischen Geräten, die alle elektronische Summer zur Zeitmessung verwenden.
 
+Aufbau der Schaltung
+--------------------------
 
-Building the Circuit
------------------------
-
-**Components Needed**
+**Benötigte Komponenten**
 
 
 .. list-table:: 
@@ -76,14 +74,14 @@ Building the Circuit
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Breadboard
-     - 1 * Active Buzzer
-     - Jumper Wires
+     - 1 * Steckbrett
+     - 1 * Aktiver Summer
+     - Verbindungskabel
    * - |list_uno_r3| 
      - |list_breadboard| 
      - |list_active_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USB-Kabel
      -
      - 
      - 
@@ -94,9 +92,9 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt-Anleitung**
 
-This lesson uses the same circuit as :ref:`ar_morse_code`.
+Diese Lektion verwendet denselben Schaltkreis wie :ref:`ar_morse_code`.
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -104,357 +102,353 @@ This lesson uses the same circuit as :ref:`ar_morse_code`.
 
 
 Coding Creation - Tick Tick
-----------------------------
+-------------------------------
 
-In Arduino, ``delay()`` is the simplest and most commonly used timing function.
-We often use it to pause the program for a short time, which, combined with loops, can create a blinking LED effect. Here, we use the ``delay()`` function to make the buzzer sound once every second.
+In Arduino ist ``delay()`` die einfachste und am häufigsten verwendete Zeitfunktion.
+Wir verwenden sie oft, um das Programm für kurze Zeit anzuhalten, was in Kombination mit Schleifen einen blinkenden LED-Effekt erzeugen kann. Hier verwenden wir die ``delay()``-Funktion, um den Summer einmal pro Sekunde ertönen zu lassen.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson24_Timer_Tick_Tick`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem Menü „Datei“ auswählst.
+2. Speichere deinen Sketch als ``Lesson24_Timer_Tick_Tick`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. Write the code as follows:
+3. Schreibe den folgenden Code:
 
 .. code-block:: Arduino
 
-  const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer  
+  const int buzzerPin = 9;   // Weist die Konstante für den Summer dem Pin 9 zu  
   
   void setup() {
-    // put your setup code here, to run once:
-    pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+    // Initialisierungscode, der einmal ausgeführt wird:
+    pinMode(buzzerPin, OUTPUT);  // Setzt Pin 9 auf Ausgang
   } 
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    digitalWrite(buzzerPin, HIGH);  // Turn buzzer ON
-    delay(100);                     // Beep duration: 100 milliseconds
-    digitalWrite(buzzerPin, LOW);   // Turn buzzer OFF
-    delay(1000);                     // Interval between signals: 1000 milliseconds
+    // Hauptcode, der wiederholt ausgeführt wird:
+    digitalWrite(buzzerPin, HIGH);  // Schaltet den Summer ein
+    delay(100);                     // Piepton-Dauer: 100 Millisekunden
+    digitalWrite(buzzerPin, LOW);   // Schaltet den Summer aus
+    delay(1000);                    // Intervall zwischen den Signalen: 1000 Millisekunden
   }
 
-In this setup, the first ``delay()`` function pauses the Arduino Uno R3 for 100 milliseconds, during which the buzzer continues to sound. The second ``delay()`` function pauses the Arduino for 1000 milliseconds (1 second), during which the buzzer is silent.
+In dieser Konfiguration hält die erste ``delay()``-Funktion das Arduino Uno R3 für 100 Millisekunden an, während der Summer ertönt. Die zweite ``delay()``-Funktion pausiert das Arduino für 1000 Millisekunden (1 Sekunde), während der Summer stumm bleibt.
 
-4. After uploading the code to the Arduino Uno R3, you will hear the buzzer beep once every second.
+4. Nachdem du den Code auf das Arduino Uno R3 hochgeladen hast, wirst du hören, wie der Summer einmal pro Sekunde piept.
 
 Coding Creation - ``millis()``
-------------------------------
+---------------------------------
 
-Using ``delay()`` pauses your code, which can be inconvenient.
+Die Verwendung von ``delay()`` pausiert deinen Code, was manchmal unpraktisch sein kann.
 
-For example, imagine heating a pizza in a microwave while waiting for some important emails.
-You put the pizza in the microwave and set it for 10 minutes. The analogy with using ``delay()`` is sitting in front of the microwave, watching the timer count down from 10 minutes to zero. If you receive an important email during this time, you'll miss it.
+Stell dir zum Beispiel vor, du erhitzt eine Pizza in der Mikrowelle und wartest auf wichtige E-Mails.
+Du stellst die Pizza in die Mikrowelle und stellst den Timer auf 10 Minuten. Der Vergleich mit der Nutzung von ``delay()`` wäre, vor der Mikrowelle zu sitzen und zuzusehen, wie der Timer von 10 Minuten auf null herunterzählt. Falls du während dieser Zeit eine wichtige E-Mail erhältst, wirst du sie verpassen.
 
-What you usually do is put the pizza in the microwave, then check your emails, perhaps even do something else, and periodically check back to see if the timer has reached zero, indicating that your pizza is done.
+Normalerweise würdest du die Pizza in die Mikrowelle stellen, dann deine E-Mails checken und zwischendurch gelegentlich nachsehen, ob der Timer abgelaufen ist.
 
-Arduino also has a timing tool that does not pause the program, which is ``millis()``.
+Arduino bietet auch eine Zeitfunktion, die das Programm nicht pausiert: ``millis()``.
 
-``millis()`` is a very important function in Arduino programming. It returns the number of milliseconds that have passed since the Arduino board was powered up or last reset.
+``millis()`` ist eine sehr wichtige Funktion in der Arduino-Programmierung. Sie gibt die Anzahl der Millisekunden zurück, die seit dem Start des Arduino-Boards vergangen sind.
+
+  * ``time = millis()``: Gibt die Anzahl der Millisekunden seit dem Start des Arduino-Boards oder dem letzten Reset zurück. Diese Zahl läuft nach etwa 50 Tagen über (zurück auf null).
+
+  **Parameter**
+    Keine
+
+  **Rückgabewert**
+    Anzahl der seit dem Programmstart vergangenen Millisekunden. Datentyp: unsigned long.
 
 
-  * ``time = millis()``: Returns the number of milliseconds passed since the Arduino board began running the current program. This number will overflow (go back to zero), after approximately 50 days.
+Hier lassen wir den Summer ebenfalls einmal pro Sekunde ertönen.
 
-  **Parameters**
-    None
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem Menü „Datei“ auswählst.
+2. Speichere deinen Sketch als ``Lesson24_Timer_Millis`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-  **Returns**
-    Number of milliseconds passed since the program started. Data type: unsigned long.
-
-
-Here, we similarly make the buzzer beep once every second.
-
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson24_Timer_Millis`` using ``Ctrl + S`` or by clicking “Save”.
-
-3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
+3. Erstelle zunächst eine Konstante namens ``buzzerPin`` und setze sie auf Pin 9.
 
 .. code-block:: Arduino
   :emphasize-lines: 1
 
-  const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+  const int buzzerPin = 9;   // Weist die Konstante für den Summer dem Pin 9 zu
 
   void setup() {
-    // put your setup code here, to run once:
+    // Initialisierungscode, der einmal ausgeführt wird:
   }
 
-4. Create two long-type variables, ``previousMillis`` will store the timestamp of the last time the buzzer beeped, ``interval`` sets how often the buzzer beeps, in milliseconds. Here, it’s set to beep every 1000 milliseconds (or every second).
+4. Erstelle zwei Variablen vom Typ „long“: ``previousMillis`` speichert den Zeitstempel des letzten Pieptons und ``interval`` legt fest, wie oft der Summer piept, in Millisekunden. Hier soll der Summer alle 1000 Millisekunden (oder jede Sekunde) ertönen.
 
 .. code-block:: Arduino
   :emphasize-lines: 3,4
 
-  const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  const int buzzerPin = 9;  // Weist die Konstante für den Summer dem Pin 9 zu
 
-  unsigned long previousMillis = 0;  // Store the timestamp of the last time the buzzer beeped
-  long interval = 1000;              // Interval at which to beep (milliseconds)
+  unsigned long previousMillis = 0;  // Speichert den Zeitstempel des letzten Pieptons
+  long interval = 1000;              // Intervall für das Piepen (Millisekunden)
 
 
 
-5. In the ``void setup()`` function, set the buzzer pin to output mode.
+5. Setze in der ``void setup()``-Funktion den Summer-Pin auf den Ausgangsmodus.
 
 .. code-block:: Arduino
   :emphasize-lines: 8
 
-  const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  const int buzzerPin = 9;  // Weist die Konstante für den Summer dem Pin 9 zu
 
-  unsigned long previousMillis = 0;  // Store the timestamp of the last time the buzzer beeped
-  long interval = 1000;              // Interval at which to beep (milliseconds)
+  unsigned long previousMillis = 0;  // Speichert den Zeitstempel des letzten Pieptons
+  long interval = 1000;              // Intervall für das Piepen (Millisekunden)
 
   void setup() {
-    // put your setup code here, to run once:
-    pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+    // Initialisierungscode, der einmal ausgeführt wird:
+    pinMode(buzzerPin, OUTPUT);  // Setzt Pin 9 auf Ausgang
   }
 
-6. In the ``void loop()`` create an ``unsigned long`` variable called ``currentMillis`` to store the current time.
+6. Erstelle in der Funktion ``void loop()`` eine Variable vom Typ ``unsigned long`` namens ``currentMillis``, um die aktuelle Zeit zu speichern.
 
 .. code-block:: Arduino
   :emphasize-lines: 3
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Hauptcode, der wiederholt ausgeführt wird:
     unsigned long currentMillis = millis();
   }
 
-7.  When the current running time minus the last update time exceeds 1000ms, trigger some functions. Also, update the ``previousMillis`` to the current time, so that the next trigger will happen in 1 second.
+7. Wenn die aktuelle Laufzeit abzüglich der letzten Aktualisierungszeit 1000ms überschreitet, löse einige Funktionen aus. Aktualisiere auch ``previousMillis`` auf die aktuelle Zeit, damit der nächste Auslöser nach 1 Sekunde erfolgt.
 
 .. code-block:: Arduino
   :emphasize-lines: 5,6
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Hauptcode, der wiederholt ausgeführt wird:
     unsigned long currentMillis = millis();
 
     if (currentMillis - previousMillis >= interval) {
-      previousMillis = currentMillis;  // Save the last time the buzzer beeped
+      previousMillis = currentMillis;  // Speichert die letzte Zeit, als der Summer ertönte
     }
   }
 
-8. Add the main functions that need to be executed periodically. In this case, make the buzzer sound.
+8. Füge die Hauptfunktionen hinzu, die periodisch ausgeführt werden sollen. In diesem Fall soll der Summer ertönen.
 
 .. code-block:: Arduino
   :emphasize-lines: 7,8,9
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Hauptcode, der wiederholt ausgeführt wird:
     unsigned long currentMillis = millis();
 
     if (currentMillis - previousMillis >= interval) {
-      previousMillis = currentMillis;  // Save the last time the buzzer beeped
-      digitalWrite(buzzerPin, HIGH);   // Make a voice
+      previousMillis = currentMillis;  // Speichert die letzte Zeit, als der Summer ertönte
+      digitalWrite(buzzerPin, HIGH);   // Lasse den Summer ertönen
       delay(100);
-      digitalWrite(buzzerPin, LOW);  // silence
+      digitalWrite(buzzerPin, LOW);  // Stille
     }
   }
 
-9. Your complete code should look like this, upload it to the Arduino Uno R3, and you will find the buzzer beeps once every second.
+9. Dein vollständiger Code sollte so aussehen. Lade ihn auf das Arduino Uno R3 hoch, und du wirst feststellen, dass der Summer einmal pro Sekunde ertönt.
 
 .. code-block:: Arduino
 
-  const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  const int buzzerPin = 9;  // Weist die Konstante für den Summer dem Pin 9 zu
 
-  unsigned long previousMillis = 0;  // Store the timestamp of the last time the buzzer beeped
-  long interval = 1000;              // Interval at which to beep (milliseconds)
+  unsigned long previousMillis = 0;  // Speichert den Zeitstempel des letzten Pieptons
+  long interval = 1000;              // Intervall für das Piepen (Millisekunden)
 
   void setup() {
-    // put your setup code here, to run once:
-    pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+    // Initialisierungscode, der einmal ausgeführt wird:
+    pinMode(buzzerPin, OUTPUT);  // Setzt Pin 9 auf Ausgang
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // Hauptcode, der wiederholt ausgeführt wird:
     unsigned long currentMillis = millis();
 
     if (currentMillis - previousMillis >= interval) {
-      previousMillis = currentMillis;  // Save the last time the buzzer beeped
-      digitalWrite(buzzerPin, HIGH);   // Make a voice
+      previousMillis = currentMillis;  // Speichert die letzte Zeit, als der Summer ertönte
+      digitalWrite(buzzerPin, HIGH);   // Lasse den Summer ertönen
       delay(100);
-      digitalWrite(buzzerPin, LOW);  // silence
+      digitalWrite(buzzerPin, LOW);  // Stille
     }
   }
 
-**Question**
+**Frage**
 
-If the ``delay(100);`` is changed to ``delay(1000);``, what will happen to the program? Why?
-
+Was passiert, wenn ``delay(100);`` auf ``delay(1000);`` geändert wird? Warum?
 
 Coding Creation - Pomodoro Timer
------------------------------------
+------------------------------------
 
-The Pomodoro Technique, also known as the Tomato Technique, is a time management method developed by Francesco Cirillo in the late 1980s.
-This method uses a timer to break work into 25-minute intervals, followed by short breaks.
-Each work interval is called a "pomodoro," after the tomato-shaped kitchen timer Cirillo used during his university days.
+Die Pomodoro-Technik, auch bekannt als Tomaten-Technik, ist eine Zeitmanagement-Methode, die in den späten 1980er Jahren von Francesco Cirillo entwickelt wurde.
+Diese Methode verwendet einen Timer, um die Arbeit in 25-minütige Intervalle zu unterteilen, gefolgt von kurzen Pausen.
+Jedes Arbeitsintervall wird als "Pomodoro" bezeichnet, benannt nach dem tomatenförmigen Küchentimer, den Cirillo während seiner Studienzeit verwendete.
 
 .. image:: img/19_tomato_timer.jpg
   :width: 500
   :align: center
 
-The basic steps of the Pomodoro Technique include:
+Die grundlegenden Schritte der Pomodoro-Technik umfassen:
 
-1. **Define the Task**: Decide on the task you need to complete before you start.
-2. **Set the Pomodoro Timer**: Set a timer for 25 minutes of work time.
-3. **Work Intensely**: Focus fully on the task for these 25 minutes, avoiding any form of distraction.
-4. **Take a Short Break**: Once the work time is up, take a 5-minute break. During this time, you can walk around, stretch, drink water, etc., but avoid engaging in work-related activities.
+1. **Definiere die Aufgabe**: Entscheide dich für die Aufgabe, die du vor dem Start erledigen möchtest.
+2. **Stelle den Pomodoro-Timer**: Stelle einen Timer auf 25 Minuten Arbeitszeit ein.
+3. **Arbeite intensiv**: Konzentriere dich voll auf die Aufgabe während dieser 25 Minuten und vermeide jede Form von Ablenkung.
+4. **Mache eine kurze Pause**: Sobald die Arbeitszeit abgelaufen ist, mache eine 5-minütige Pause. In dieser Zeit kannst du dich bewegen, strecken, Wasser trinken usw., aber vermeide arbeitsbezogene Aktivitäten.
 
-The benefits of the Pomodoro Technique include enhanced focus, reduced fatigue, clear delineation of work and break times helping manage distractions, and increased motivation and satisfaction from completing tasks. Additionally, the Pomodoro Technique does not require complex tools or technology—a simple timer is sufficient.
+Die Vorteile der Pomodoro-Technik umfassen eine verbesserte Konzentration, reduzierte Ermüdung, klare Abgrenzung von Arbeits- und Pausenzeiten, die dabei helfen, Ablenkungen zu minimieren, sowie eine erhöhte Motivation und Zufriedenheit durch das Erreichen von Aufgaben. Außerdem erfordert die Pomodoro-Technik keine komplizierten Werkzeuge oder Technologien – ein einfacher Timer ist ausreichend.
 
-Next, we will program a timer that will buzz every 25 minutes to signal the end of a work period followed by a reminder for a 5-minute break:
+Als Nächstes werden wir einen Timer programmieren, der alle 25 Minuten piept, um das Ende einer Arbeitsperiode anzuzeigen, gefolgt von einer Erinnerung an eine 5-minütige Pause:
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson24_Timer_Millis_Pomodoro`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem Menü „Datei“ auswählst.
+2. Speichere deinen Sketch als ``Lesson24_Timer_Millis_Pomodoro`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. Define some constants and variables before ``void setup()``.
+3. Definiere einige Konstanten und Variablen vor ``void setup()``.
 
-* ``buzzerPin`` identifies which pin the buzzer is connected to.
-* ``startMillis`` keeps track of when the timer started.
-* ``workPeriod`` and ``breakPeriod`` define how long each period lasts.
-* ``isWorkPeriod`` is a boolean variable used to track whether it's time to work or take a break.
+* ``buzzerPin`` identifiziert, an welchem Pin der Summer angeschlossen ist.
+* ``startMillis`` verfolgt, wann der Timer gestartet wurde.
+* ``workPeriod`` und ``breakPeriod`` definieren, wie lange jede Periode dauert.
+* ``isWorkPeriod`` ist eine boolesche Variable, die verwendet wird, um zu verfolgen, ob es Zeit zum Arbeiten oder für eine Pause ist.
 
 .. code-block:: Arduino
 
-  const int buzzerPin = 9;          // Assigns the pin 9 to the constant for the buzzer
-  unsigned long startMillis;        // Stores the time when the timer starts
-  const long workPeriod = 1500000;  // Work period of 25 minutes
-  const long breakPeriod = 300000;  // Break period of 5 minutes
-  static bool isWorkPeriod = true;  // Track whether it is a work or break period
-
-
-4. Initialize the buzzer pin as an output and start the timer by recording the start time with ``millis()``.
+  const int buzzerPin = 9;          // Weist die Konstante für den Summer dem Pin 9 zu
+  unsigned long startMillis;        // Speichert die Startzeit des Timers
+  const long workPeriod = 1500000;  // Arbeitsperiode von 25 Minuten
+  const long breakPeriod = 300000;  // Pausenperiode von 5 Minuten
+  static bool isWorkPeriod = true;  // Verfolgt, ob es eine Arbeits- oder Pausenperiode ist
+  
+4. Initialisiere den Summer-Pin als Ausgang und starte den Timer, indem du die Startzeit mit ``millis()`` speicherst.
 
 .. code-block:: Arduino
   :emphasize-lines: 2,3
   
   void setup() {
-    pinMode(buzzerPin, OUTPUT); // Initialize buzzer pin as an output
-    startMillis = millis(); // Record the start time
+    pinMode(buzzerPin, OUTPUT); // Initialisiere den Summer-Pin als Ausgang
+    startMillis = millis(); // Speichere die Startzeit
   }
 
-5. In the ``void loop()`` create an ``unsigned long`` variable called ``currentMillis`` to store the current time.
+5. Erstelle in der Funktion ``void loop()`` eine Variable vom Typ ``unsigned long`` namens ``currentMillis``, um die aktuelle Zeit zu speichern.
 
 .. code-block:: Arduino
   :emphasize-lines: 2
 
   void loop() {
-    unsigned long currentMillis = millis(); // Update the current time
+    unsigned long currentMillis = millis(); // Aktualisiere die aktuelle Zeit
   }
 
 
-6. Use ``if else if`` conditional statements to determine if it's a work period.
+6. Verwende ``if else if``-Bedingungsanweisungen, um festzustellen, ob es sich um eine Arbeitsperiode handelt.
 
 .. code-block:: Arduino
   :emphasize-lines: 4-6
 
   void loop() {
-    unsigned long currentMillis = millis(); // Update the current time
+    unsigned long currentMillis = millis(); // Aktualisiere die aktuelle Zeit
 
     if (isWorkPeriod){ 
     } else if (!isWorkPeriod){
     }
   }
 
-7. If it is, check if the current time has exceeded the ``workPeriod``. If so, reset the timer, switch to break period, and trigger the buzzer to sound twice for a long duration.
+7. Falls es eine Arbeitsperiode ist, prüfe, ob die aktuelle Zeit die ``workPeriod`` überschritten hat. Wenn ja, setze den Timer zurück, wechsle zur Pausenperiode und aktiviere den Summer, um zweimal für eine längere Dauer zu ertönen.
 
 .. code-block:: Arduino
   :emphasize-lines: 5-16
 
   void loop() {
-    unsigned long currentMillis = millis();  // Update the current time
+    unsigned long currentMillis = millis();  // Aktualisiere die aktuelle Zeit
 
     if (isWorkPeriod) {
       if (currentMillis - startMillis >= workPeriod) {
-        startMillis = currentMillis;  // Reset the timer
-        isWorkPeriod = false;         // Switch to break period
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-        delay(500);                     // Buzzer on for 500 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-        delay(200);                     // Buzzer off for 200 milliseconds
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-        delay(500);                     // Buzzer on for 500 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-        delay(200);                     // Buzzer off for 200 milliseconds
+        startMillis = currentMillis;  // Setze den Timer zurück
+        isWorkPeriod = false;         // Wechsle zur Pausenperiode
+        digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+        delay(500);                     // Summer an für 500 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+        delay(200);                     // Summer aus für 200 Millisekunden
+        digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+        delay(500);                     // Summer an für 500 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+        delay(200);                     // Summer aus für 200 Millisekunden
       }
     } else if (!isWorkPeriod) {
     }
   }
 
 
-8. Use ``else if`` conditional statements to determine if it's a break period, and similarly check if the current time has exceeded the ``breakPeriod``. If so, reset the timer, switch back to work period, and trigger the buzzer to sound briefly twice.
+8. Verwende ``else if``-Bedingungsanweisungen, um festzustellen, ob es sich um eine Pausenperiode handelt, und prüfe ähnlich, ob die aktuelle Zeit die ``breakPeriod`` überschritten hat. Wenn ja, setze den Timer zurück, wechsle zurück zur Arbeitsperiode und aktiviere den Summer, um zweimal kurz zu ertönen.
 
 .. code-block:: Arduino
 
   } else if (!isWorkPeriod) {
     if (currentMillis - startMillis >= breakPeriod) {
-      startMillis = currentMillis;  // Reset the timer
-      isWorkPeriod = true;          // Switch to work period
-      digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-      delay(200);                     // Buzzer on for 200 milliseconds
-      digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-      delay(200);                     // Buzzer off for 200 milliseconds
-      digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-      delay(200);                     // Buzzer on for 200 milliseconds
-      digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-      delay(200);                     // Buzzer off for 200 milliseconds
+      startMillis = currentMillis;  // Setze den Timer zurück
+      isWorkPeriod = true;          // Wechsle zur Arbeitsperiode
+      digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+      delay(200);                     // Summer an für 200 Millisekunden
+      digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+      delay(200);                     // Summer aus für 200 Millisekunden
+      digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+      delay(200);                     // Summer an für 200 Millisekunden
+      digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+      delay(200);                     // Summer aus für 200 Millisekunden
     }
   }
 
 
-9. Your complete code should look like this, and you can upload it to the Arduino Uno R3 to see the effects.
+9. Dein vollständiger Code sollte so aussehen, und du kannst ihn auf das Arduino Uno R3 hochladen, um die Effekte zu sehen.
 
 .. note::
 
-  If you find waiting 25 minutes for a work period and 5 minutes for a break too long during debugging, 
-  you can shorten ``workPeriod`` to 15000 milliseconds and ``breakPeriod`` to 3000 milliseconds. You will then hear the buzzer sound twice long every 15 seconds, followed by a short buzz twice after 3 seconds.
+  Wenn du das Warten auf eine 25-minütige Arbeitsperiode und eine 5-minütige Pause während des Debuggens zu lange findest, 
+  kannst du die ``workPeriod`` auf 15000 Millisekunden und die ``breakPeriod`` auf 3000 Millisekunden verkürzen. Du wirst dann hören, wie der Summer alle 15 Sekunden zweimal lang ertönt, gefolgt von zweimal kurzem Piepen nach 3 Sekunden.
 
 
 .. code-block:: Arduino
 
-  const int buzzerPin = 9;          // Assigns the pin 9 to the constant for the buzzer
-  unsigned long startMillis;        // Stores the time when the timer starts
-  const long workPeriod = 1500000;  // Work period of 25 minutes
-  const long breakPeriod = 300000;  // Break period of 5 minutes
-  static bool isWorkPeriod = true;  // Track whether it is a work or break period
+  const int buzzerPin = 9;          // Weist die Konstante für den Summer dem Pin 9 zu
+  unsigned long startMillis;        // Speichert die Startzeit des Timers
+  const long workPeriod = 1500000;  // Arbeitsperiode von 25 Minuten
+  const long breakPeriod = 300000;  // Pausenperiode von 5 Minuten
+  static bool isWorkPeriod = true;  // Verfolgt, ob es eine Arbeits- oder Pausenperiode ist
 
   void setup() {
-    pinMode(buzzerPin, OUTPUT); // Initialize buzzer pin as an output
-    startMillis = millis(); // Record the start time
+    pinMode(buzzerPin, OUTPUT); // Initialisiere den Summer-Pin als Ausgang
+    startMillis = millis(); // Speichere die Startzeit
   }
 
   void loop() {
-    unsigned long currentMillis = millis(); // Update the current time
+    unsigned long currentMillis = millis(); // Aktualisiere die aktuelle Zeit
 
     if (isWorkPeriod){ 
       if(currentMillis - startMillis >= workPeriod) {
-        startMillis = currentMillis; // Reset the timer
-        isWorkPeriod = false; // Switch to break period
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-        delay(500);                     // Buzzer on for 500 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-        delay(200);                     // Buzzer off for 200 milliseconds
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-        delay(500);                     // Buzzer on for 500 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-        delay(200);                     // Buzzer off for 200 milliseconds
+        startMillis = currentMillis; // Setze den Timer zurück
+        isWorkPeriod = false; // Wechsle zur Pausenperiode
+        digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+        delay(500);                     // Summer an für 500 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+        delay(200);                     // Summer aus für 200 Millisekunden
+        digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+        delay(500);                     // Summer an für 500 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+        delay(200);                     // Summer aus für 200 Millisekunden
       }
     } else if (!isWorkPeriod) 
       if(currentMillis - startMillis >= breakPeriod) {
-        startMillis = currentMillis; // Reset the timer
-        isWorkPeriod = true; // Switch to work period
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-        delay(200);                     // Buzzer on for 200 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-        delay(200);                     // Buzzer off for 200 milliseconds
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
-        delay(200);                     // Buzzer on for 200 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer off
-        delay(200);                     // Buzzer off for 200 milliseconds
+        startMillis = currentMillis; // Setze den Timer zurück
+        isWorkPeriod = true; // Wechsle zur Arbeitsperiode
+        digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+        delay(200);                     // Summer an für 200 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+        delay(200);                     // Summer aus für 200 Millisekunden
+        digitalWrite(buzzerPin, HIGH);  // Schalte den Summer ein
+        delay(200);                     // Summer an für 200 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schalte den Summer aus
+        delay(200);                     // Summer aus für 200 Millisekunden
       }
     }
   }
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. Denke daran, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
-**Question**
+**Frage**
 
-Think about other places in your life where you can 'hear' time. List a few examples and write them in your handbook!
+Denke über andere Situationen in deinem Leben nach, in denen du Zeit "hörst". Liste einige Beispiele auf und schreibe sie in dein Notizbuch!
 
-**Summary**
+**Zusammenfassung**
 
-In today's class, we successfully built an electronic version of the Pomodoro Timer, an invaluable tool for enhancing productivity through structured work and break periods. Through this project, students learned about the utility of buzzers in time management and the practical application of the ``millis()`` function to create non-blocking timer code in Arduino. This approach enables multitasking in microcontroller applications, mirroring more complex systems in technology and industry.
-
+Im heutigen Kurs haben wir erfolgreich eine elektronische Version des Pomodoro-Timers gebaut, ein wertvolles Werkzeug zur Steigerung der Produktivität durch strukturierte Arbeits- und Pausenintervalle. Durch dieses Projekt haben die Schüler die Nützlichkeit von Summern im Zeitmanagement und die praktische Anwendung der ``millis()``-Funktion kennengelernt, um nicht blockierende Timer-Code in Arduino zu erstellen. Dieser Ansatz ermöglicht Multitasking in Mikrocontroller-Anwendungen und spiegelt komplexere Systeme in Technologie und Industrie wider.
 

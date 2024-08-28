@@ -1,20 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Vorschauen.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-6. Blink LED
-======================
-Welcome to this lesson, you'll learn to manipulate the digital pins of the Arduino Uno R3 to programmatically control an LED—turning it on and off without manual intervention, a skill fundamental to both home and industrial electronics applications.
+6. LED Blinken lassen
+=========================
+
+Willkommen zu dieser Lektion! Hier lernst du, die digitalen Pins des Arduino Uno R3 zu steuern, um eine LED programmatisch ein- und auszuschalten, ohne manuelles Eingreifen. Diese Fähigkeit ist sowohl für Heim- als auch für Industrieelektronikanwendungen von grundlegender Bedeutung.
 
 .. raw:: html
 
@@ -23,35 +24,34 @@ Welcome to this lesson, you'll learn to manipulate the digital pins of the Ardui
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn to:
+In dieser Lektion wirst du lernen:
 
-* Create and save sketches using the Arduino IDE.
-* Use ``pinMode()`` and ``digitalWrite()`` functions to control circuit elements.
-* Upload sketches to the Arduino Uno R3 and understand their real-time effects.
-* Implement ``delay()`` in sketches to manage circuit behaviors.
+* Sketche mit der Arduino IDE zu erstellen und zu speichern.
+* Die Funktionen ``pinMode()`` und ``digitalWrite()`` zu verwenden, um Schaltungselemente zu steuern.
+* Sketche auf den Arduino Uno R3 hochzuladen und deren Echtzeiteffekte zu verstehen.
+* Die Funktion ``delay()`` in Sketchen einzusetzen, um das Verhalten der Schaltung zu steuern.
 
-By the end of this lesson, you will be able to build a circuit that not only lights up an LED but also makes it blink at intervals you set, giving you a basic understanding of how software interacts with hardware.
+Am Ende dieser Lektion wirst du in der Lage sein, eine Schaltung zu bauen, die nicht nur eine LED zum Leuchten bringt, sondern sie auch in von dir festgelegten Intervallen blinken lässt. Dies gibt dir ein grundlegendes Verständnis dafür, wie Software mit Hardware interagiert.
 
-Building the Circuit
+Aufbau der Schaltung
 --------------------------------
 
-**Components Needed**
-
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * Rote LED
+     - 1 * 220Ω Widerstand
+     - Jumperkabel
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
      - 1 * Multimeter
      -   
    * - |list_usb_cable| 
@@ -59,403 +59,392 @@ Building the Circuit
      - |list_meter|
      - 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt-Aufbau**
 
-Take the circuit built in :ref:`2_first_circuit`, and switch the wire from the 5V to pin 3, as shown in the image below.
+Nimm die im Abschnitt :ref:`2_first_circuit` aufgebaute Schaltung und verbinde das Kabel von Pin 5V mit Pin 3, wie im Bild unten gezeigt.
 
 .. image:: img/6_led_circuit.png
     :width: 600
     :align: center
 
-If you've dismantled the previous circuit, you can rebuild it following these steps:
+Falls du die vorherige Schaltung abgebaut hast, kannst du sie anhand der folgenden Schritte neu aufbauen:
 
-1. Connect the 220 ohm resistor to the breadboard. One wire should be in the negative terminal, and the other wire should be in hole 1B.
+1. Verbinde den 220-Ohm-Widerstand mit dem Steckbrett. Ein Draht sollte am negativen Anschluss und der andere Draht sollte in Loch 1B sein.
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-2. Add a red LED to the breadboard. The LED's anode (long leg) should be in hole 1F. The cathode (short leg) should be in hole 1E. Sometimes it's hard to distinguish the anode from the cathode by the length of the legs. Remember, the cathode side of the LED also has a flat edge on the colored lens, while the anode has a round edge.
+2. Füge eine rote LED zum Steckbrett hinzu. Die Anode der LED (das lange Bein) sollte in Loch 1F sein. Die Kathode (das kurze Bein) sollte in Loch 1E sein. Manchmal ist es schwierig, die Anode von der Kathode anhand der Beinlänge zu unterscheiden. Denke daran, dass die Kathodenseite der LED auch eine flache Kante an der farbigen Linse hat, während die Anodenseite eine runde Kante hat.
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-3. Use a short jumper wire to connect the LED and the power source. One end of the jumper wire should be in hole 1J. The other end should be in the positive terminal.
+3. Verwende ein kurzes Jumperkabel, um die LED und die Stromquelle zu verbinden. Ein Ende des Jumperkabels sollte in Loch 1J sein, das andere Ende sollte am positiven Anschluss sein.
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
-4. Connect the breadboard's positive terminal to pin 3 on the Arduino Uno R3.
+4. Verbinde den positiven Anschluss des Steckbretts mit Pin 3 des Arduino Uno R3.
 
 .. image:: img/6_led_circuit_3.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
+5. Verbinde den negativen Anschluss des Steckbretts mit einem der Masse-Pins des Arduino Uno R3. Die Masse-Pins sind mit "GND" markiert.
 
 .. image:: img/6_led_circuit.png
     :width: 600
     :align: center
 
-
-Bringing LED to Life
+LED zum Leben erwecken
 -----------------------------
 
-Alright, it's showtime for the LED! Instead of just diving into the Arduino's Blink example like before, we're going to start from scratch and create a brand new sketch. Let's jump right in!
+Los geht's, es ist Zeit, die LED in Aktion zu bringen! Anstatt direkt das Blink-Beispiel von Arduino zu verwenden, fangen wir von Grund auf an und erstellen einen völlig neuen Sketch. Los geht's!
 
-**1. Creating and Saving a Sketch**
+**1. Einen Sketch erstellen und speichern**
 
-1. Fire up the Arduino IDE. Go to the “File” menu and hit “New Sketch” to start fresh. You can close any other sketch windows that might be open.
+1. Starte die Arduino IDE. Gehe zum Menüpunkt „Datei“ und wähle „Neuer Sketch“, um einen neuen Sketch zu beginnen. Du kannst alle anderen geöffneten Sketch-Fenster schließen.
 
     .. image:: img/6_blink_ide_new.png
         :align: center
 
-
-2. Arrange the Arduino IDE window side by side with this online tutorial, so you can see both at once. Things might look a bit small, but it beats flipping back and forth between windows.
+2. Ordne das Arduino IDE-Fenster neben diesem Online-Tutorial an, damit du beides gleichzeitig sehen kannst. Es mag vielleicht etwas klein wirken, aber es erspart dir das ständige Hin- und Herschalten zwischen den Fenstern.
 
     .. image:: img/6_blink_ide_tutorials.png
 
-
-3. Time to save your sketch. Hit “Save” from the “File” menu or press ``Ctrl + S``. 
+3. Jetzt ist es Zeit, deinen Sketch zu speichern. Klicke im Menü „Datei“ auf „Speichern“ oder drücke ``Strg + S``.
 
     .. image:: img/6_blink_ide_save.png
 
+4. Du kannst deinen Sketch am Standardort oder an einem anderen Ort speichern. Benenne deinen Sketch sinnvoll, z. B. ``Lesson6_Light_up_LED``, und klicke auf „Speichern“.
 
-4. You can save your sketch in the default location or another place. Name your sketch something meaningful, like ``Lesson6_Light_up_LED``, and click “Save”.
+    * Benenne deinen Sketch nach seiner Funktion, um ihn später leichter wiederzufinden.
+    * Arduino-Sketch-Dateinamen dürfen keine Leerzeichen enthalten.
+    * Wenn du wesentliche Änderungen vornimmst, speichere sie als neue Version (z. B. V1) zur Sicherung.
 
-    * Naming your sketch after its function for easy later retrieval.
-    * Arduino sketch filenames can't have spaces.
-    * When saving significant changes, consider saving as a new version (e.g., V1) for backup.
-    
     .. image:: img/6_blink_ide_name.png
 
+5. Dein neuer Sketch besteht aus zwei Hauptteilen, ``void setup()`` und ``void loop()``, die in allen Arduino-Sketches verwendet werden.
 
-5. Your new sketch consists of two main parts, ``void setup()`` and ``void loop()``, which are functions used in all Arduino sketches.
-
-    * ``void setup()`` runs once when the program starts, setting up initial conditions.
-    * ``void loop()`` runs repeatedly, executing continuous actions.
-    * Place commands for each function within its curly brackets ``{}``.
-    * Any line starting with ``//`` is a comment. These are for your notes and won't affect the code execution.
+    * ``void setup()`` wird einmal ausgeführt, wenn das Programm startet, und richtet die Anfangsbedingungen ein.
+    * ``void loop()`` wird fortlaufend ausgeführt und führt kontinuierliche Aktionen aus.
+    * Befehle für jede Funktion werden innerhalb ihrer geschweiften Klammern ``{}`` platziert.
+    * Jede Zeile, die mit ``//`` beginnt, ist ein Kommentar. Diese dienen deinen Notizen und beeinflussen die Codeausführung nicht.
 
     .. code-block:: Arduino
 
         void setup() {
-        // Setup code here, to run once:
+        // Setup-Code hier, der einmal ausgeführt wird:
 
         }
 
         void loop() {
-        // put your main code here, to run repeatedly:
+        // Hauptcode hier, der wiederholt ausgeführt wird:
 
         }
 
-**2. Picking the Board and Port**
+**2. Das Board und den Port auswählen**
 
-1. Connect your Arduino Uno R3 to the computer with a USB cable. You'll see the power light come on the Arduino.
+1. Verbinde dein Arduino Uno R3 mit dem Computer über ein USB-Kabel. Die Stromanzeige auf dem Arduino wird leuchten.
 
     .. image:: img/1_connect_uno_pc.jpg
         :width: 600
         :align: center
 
-
-2. Let the IDE know we're using an **Arduino Uno**. Head to **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
+2. Teile der IDE mit, dass wir ein **Arduino Uno** verwenden. Gehe zu **Werkzeuge** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
 
     .. image:: img/6_blink_ide_board.png
         :width: 600
         :align: center
 
-
-3. Next, in the Arduino IDE, choose the port that your Arduino is connected to.
+3. Wähle in der Arduino IDE den Port aus, an den dein Arduino angeschlossen ist.
 
     .. note::
 
-        * Once a port is selected, the Arduino IDE should default to it every time the Arduino is plugged in via USB.
-        * If a different Arduino Board is connected, you might need to choose a new port. 
-        * Always check the port first if there's a connection issue.
+        * Sobald ein Port ausgewählt ist, sollte die Arduino IDE ihn jedes Mal automatisch erkennen, wenn das Arduino über USB angeschlossen ist.
+        * Wenn ein anderes Arduino-Board angeschlossen wird, musst du möglicherweise einen neuen Port auswählen.
+        * Überprüfe immer zuerst den Port, wenn Verbindungsprobleme auftreten.
 
     .. image:: img/6_blink_ide_port.png
         :width: 600
         :align: center
 
-**3. Writing the Code**
+**3. Den Code schreiben**
 
+1. In unserem Projekt verwenden wir den digitalen Pin 3 auf dem Board, um eine LED zu steuern. Jeder Pin kann entweder als Ausgang, der 5 Volt sendet, oder als Eingang, der eingehende Spannung liest, fungieren. Um die LED zu konfigurieren, setzen wir den Pin als Ausgang, indem wir die Funktion ``pinMode(pin, mode)`` verwenden.
 
-1. In our project, we utilize digital pin 3 on the board to control an LED. Each pin can function either as an output, sending out 5 volts, or as an input, reading the incoming voltage. To configure the LED, we set the pin as an output by using the ``pinMode(pin, mode)`` function.
-    
-Let's dive into the ``pinMode()`` syntax.
+Tauchen wir in die Syntax von ``pinMode()`` ein.
 
-    * ``pinMode(pin, mode)``: Sets a specific pin to ``INPUT`` or ``OUTPUT``. 
+    * ``pinMode(pin, mode)``: Setzt einen spezifischen Pin auf ``INPUT`` oder ``OUTPUT``.
 
-    **Parameters**
-        - ``pin``: the number of the pin you want to set the mode for.
-        - ``mode``: ``INPUT``, ``OUTPUT``, or ``INPUT_PULLUP``.
+    **Parameter**
+        - ``pin``: die Nummer des Pins, den du einstellen möchtest.
+        - ``mode``: ``INPUT``, ``OUTPUT`` oder ``INPUT_PULLUP``.
 
-    **Returns**
-        Nothing
-    
-2. Now, it's time to add our first line of code in the ``void setup()`` function.
+    **Rückgabewert**
+        Kein Rückgabewert
+
+2. Nun fügen wir unsere erste Codezeile in der Funktion ``void setup()`` hinzu.
         
     .. note::
 
-        - Arduino coding is case-sensitive. Make sure to write the functions exactly as they are.
-        - Notice the command ends with a semicolon. In the Arduino IDE, every command must end with one.
-        - Code comments are helpful for reminding yourself of what a line or section of code does.
+        - Arduino-Code ist case-sensitiv. Stelle sicher, dass du die Funktionen genau so schreibst, wie sie sind.
+        - Beachte, dass der Befehl mit einem Semikolon endet. In der Arduino-IDE muss jeder Befehl mit einem Semikolon enden.
+        - Kommentare im Code sind hilfreich, um sich selbst daran zu erinnern, was eine Zeile oder ein Abschnitt des Codes tut.
 
     .. code-block:: Arduino
         :emphasize-lines: 3
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3,OUTPUT); // set pin 3 as output
+            // Setup-Code hier, der einmal ausgeführt wird:
+            pinMode(3,OUTPUT); // Pin 3 als Ausgang setzen
         }
     
         void loop() {
-        // put your main code here, to run repeatedly:
+        // Hauptcode hier, der wiederholt ausgeführt wird:
 
         }
 
 
 
-**4. Verifying the Code**
+**4. Den Code verifizieren**
 
-Before activating our traffic lights, we'll verify the code. This checks if the Arduino IDE can understand and compile your commands into machine language.
+Bevor wir unsere Ampeln aktivieren, verifizieren wir den Code. Dies überprüft, ob die Arduino-IDE deine Befehle verstehen und in Maschinensprache übersetzen kann.
 
-1. To verify your code, click the **checkmark** button in the upper-left corner of the window.
+1. Um deinen Code zu verifizieren, klicke auf das **Häkchen** in der oberen linken Ecke des Fensters.
 
     .. image:: img/6_blink_ide_verify.png
         :width: 600
         :align: center
 
 
-2. If your code is machine-readable, a message at the bottom will indicate the code has been successfully compiled. This area also shows how much storage space your program uses.
+2. Wenn dein Code maschinenlesbar ist, erscheint unten eine Nachricht, die anzeigt, dass der Code erfolgreich kompiliert wurde. In diesem Bereich wird auch angezeigt, wie viel Speicherplatz dein Programm belegt.
 
     .. image:: img/6_blink_ide_verify_done.png
         :width: 600
         :align: center
 
 
-3. If there's an error in your code, you'll see an orange error message. The IDE often highlights where the issue might be, typically near the highlighted line. For example, a missing semicolon error will highlight the line right after the mistake.
+3. Falls ein Fehler in deinem Code vorliegt, wird eine orangefarbene Fehlermeldung angezeigt. Die IDE hebt oft hervor, wo das Problem liegen könnte, normalerweise in der Nähe der hervorgehobenen Zeile. Zum Beispiel wird ein fehlendes Semikolon einen Fehler in der Zeile direkt nach dem Fehler anzeigen.
 
     .. image:: img/6_blink_ide_verify_error.png
         :width: 600
         :align: center
 
 
-4. When you hit errors, it's time for debugging - finding and fixing mistakes in your code. Check for common issues like:
+4. Wenn du auf Fehler stößt, ist es Zeit zum Debuggen – das Finden und Beheben von Fehlern in deinem Code. Überprüfe häufige Probleme wie:
 
-    - Is the ``M`` in ``pinMode`` uppercase?
-    - Did you use all uppercase letters when typing ``OUTPUT``?
-    - Do you have both an opening and closing parenthesis in your ``pinMode`` function?
-    - Did you end your ``pinMode`` function with a semicolon?
-    - Is all your spelling correct? If you find errors, correct them and verify your code again. Keep debugging until your sketch is error-free.
+    - Ist das ``M`` in ``pinMode`` großgeschrieben?
+    - Hast du ``OUTPUT`` in Großbuchstaben geschrieben?
+    - Hast du in deiner ``pinMode``-Funktion sowohl eine öffnende als auch eine schließende Klammer?
+    - Hast du deine ``pinMode``-Funktion mit einem Semikolon beendet?
+    - Ist deine Rechtschreibung korrekt? Wenn du Fehler findest, korrigiere sie und verifiziere deinen Code erneut. Debugge weiter, bis dein Sketch fehlerfrei ist.
 
-The Arduino IDE stops compiling at the first error, so you might have to verify multiple times for multiple errors. Regularly verifying your code is good practice.
+Die Arduino-IDE stoppt das Kompilieren beim ersten Fehler, also musst du möglicherweise mehrmals verifizieren, um mehrere Fehler zu beheben. Regelmäßiges Verifizieren deines Codes ist eine gute Praxis.
 
-Debugging is a big part of programming. Professional programmers often spend a lot more time debugging than writing new code. Errors are normal, so don't get discouraged. Becoming a good problem solver is key to being a great programmer.
+Debugging ist ein großer Teil des Programmierens. Professionelle Programmierer verbringen oft viel mehr Zeit mit dem Debuggen als mit dem Schreiben neuer Codes. Fehler sind normal, also lass dich nicht entmutigen. Ein guter Problemlöser zu werden, ist der Schlüssel zu einem großartigen Programmierer.
 
-**5. Continuing to Write the Sketch**
+**5. Den Sketch weiter schreiben**
 
-1. Now you're ready to start on the ``void loop()`` function. This is where the main action of your sketch or program happens. To light up the LED connected to the Arduino Uno R3, we'll need to provide voltage to the circuit using ``digitalWrite()``.
+1. Jetzt bist du bereit, die Funktion ``void loop()`` zu starten. Hier passiert die Hauptaktion deines Sketches oder Programms. Um die LED, die mit dem Arduino Uno R3 verbunden ist, zum Leuchten zu bringen, müssen wir der Schaltung mit ``digitalWrite()`` Spannung zuführen.
 
-    * ``digitalWrite(pin, value)``: Sends a ``HIGH`` (5V) or ``LOW`` (0V) signal to a digital pin, changing the operating state of the component.
+    * ``digitalWrite(pin, value)``: Sendet ein ``HIGH`` (5V) oder ``LOW`` (0V) Signal an einen digitalen Pin, um den Betriebszustand der Komponente zu ändern.
 
-    **Parameters**
-        - ``pin``: the Arduino pin number.
-        - ``value``: ``HIGH`` or ``LOW``.
-    
-    **Returns**
-        Nothing
+    **Parameter**
+        - ``pin``: die Nummer des Arduino-Pins.
+        - ``value``: ``HIGH`` oder ``LOW``.
 
-5. Below the comment in the ``void loop()`` function, write a command to turn on the LED connected to pin 3. Don't forget to end the command with a semicolon. Verify and debug your code if necessary.
+    **Rückgabewert**
+        Kein Rückgabewert
+
+5. Schreibe unter den Kommentar in der Funktion ``void loop()`` einen Befehl, um die LED, die mit Pin 3 verbunden ist, einzuschalten. Vergiss nicht, den Befehl mit einem Semikolon zu beenden. Verifiziere und debugge deinen Code bei Bedarf.
 
     .. code-block:: Arduino
         :emphasize-lines: 8
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // Setup-Code hier, der einmal ausgeführt wird:
+            pinMode(3, OUTPUT);  // Pin 3 als Ausgang setzen
         }
 
         void loop() {
-            // put your main code here, to run repeatedly:
+            // Hauptcode hier, der wiederholt ausgeführt wird:
             digitalWrite(3, HIGH);
         }
 
-6. After the ``digitalWrite()`` command, add a code comment explaining what this line does. For instance:
+6. Füge nach dem ``digitalWrite()``-Befehl einen Kommentar hinzu, der erklärt, was diese Zeile bewirkt. Zum Beispiel:
 
     .. code-block:: Arduino
         :emphasize-lines: 8
 
         void setup() {
-            // Setup code here, to run once: 
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // Setup-Code hier, der einmal ausgeführt wird: 
+            pinMode(3, OUTPUT);  // Pin 3 als Ausgang setzen
         }
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
+            // Hauptcode hier, der wiederholt ausgeführt wird:
+            digitalWrite(3, HIGH);  // Die LED an Pin 3 einschalten
         }
 
 
-**6. Uploading the Code**
+**6. Den Code hochladen**
 
-With your code error-free and verified, it's time to upload it to the Arduino Uno R3 and see your traffic light come to life.
+Nachdem dein Code fehlerfrei und verifiziert ist, ist es an der Zeit, ihn auf den Arduino Uno R3 hochzuladen und deine Ampel zum Leben zu erwecken.
 
-1. In the IDE, click the “Upload” button. The computer will compile the code and then transfer it to the Arduino Uno R3. During the transfer, you should see some lights blinking on the board, indicating communication with the computer.
+1. In der IDE klicke auf den „Upload“-Button. Der Computer wird den Code kompilieren und dann auf den Arduino Uno R3 übertragen. Während der Übertragung solltest du einige Lichter auf dem Board blinken sehen, was auf die Kommunikation mit dem Computer hinweist.
 
 .. image:: img/6_blink_ide_upload.png
     :width: 600
     :align: center
 
 
-2. A message of “Done Uploading” means your code has no issues and you've selected the correct board and port.
+2. Eine Nachricht „Done Uploading“ bedeutet, dass dein Code keine Probleme aufweist und du das richtige Board und den richtigen Port ausgewählt hast.
 
 .. image:: img/6_blink_ide_upload_done.png
     :width: 600
     :align: center
 
 
-3. Once the transfer is complete, the code will run, and you should see the LED on the breadboard light up.
+3. Sobald die Übertragung abgeschlossen ist, wird der Code ausgeführt, und du solltest sehen, wie die LED auf dem Steckbrett aufleuchtet.
+**7. Messung der Spannung über der LED**
 
-**7. Measuring the Voltage Across the LED**
+Lass uns ein Multimeter verwenden, um die Spannung an Pin 3 zu messen und zu verstehen, was der ``HIGH``-Zustand im Code tatsächlich bedeutet.
 
-Let's use a multimeter to measure the voltage at pin 3 and understand what the ``HIGH`` state in the code actually means.
-
-1. Adjust the multimeter to the 20 volts DC setting.
+1. Stelle das Multimeter auf die Einstellung 20 Volt Gleichspannung (DC) ein.
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Start by measuring the voltage at Pin 3. Touch the red test lead of the multimeter to Pin 3 and the black test lead to GND.
+2. Beginne mit der Messung der Spannung an Pin 3. Berühre mit der roten Messleitung des Multimeters Pin 3 und mit der schwarzen Messleitung den GND-Pin.
 
 .. image:: img/6_blink_wiring_measure_high.png
     :width: 600
     :align: center
 
-3. Record the measured voltage in the table for Pin 3 under the row labeled "HIGH".
+3. Trage die gemessene Spannung in die Tabelle für Pin 3 unter der Zeile "HIGH" ein.
 
 .. list-table::
    :widths: 25 25
    :header-rows: 1
 
-   * - State
-     - Pin 3 Voltage
+   * - Zustand
+     - Pin 3 Spannung
    * - HIGH
-     - *≈4.95 volts*
+     - *≈4,95 Volt*
    * - LOW
      - 
 
 
-4. After measuring, remember to turn the multimeter off by setting it to the "OFF" position.
+4. Nach der Messung solltest du das Multimeter ausschalten, indem du es auf die "OFF"-Position stellst.
 
-Our measurements reveal that the voltage at all three pins is close to 5V. This indicates that setting a pin to ``HIGH`` in the code means the output voltage at that pin is close to 5V.
+Unsere Messungen zeigen, dass die Spannung an allen drei Pins nahe 5V liegt. Dies bedeutet, dass das Setzen eines Pins auf ``HIGH`` im Code dazu führt, dass die Ausgangsspannung an diesem Pin nahe 5V liegt.
 
-The R3's pin voltage is 5V, so setting it to ``HIGH`` reaches near 5V. However, some boards operate at 3.3V, meaning their ``HIGH`` state would be close to 3.3V.
+Die Spannung des Pin 3 am Arduino R3 beträgt 5V, sodass das Setzen auf ``HIGH`` fast 5V erreicht. Allerdings arbeiten einige Boards bei 3,3V, was bedeutet, dass ihr ``HIGH``-Zustand nahe 3,3V liegt.
 
 
-Make LED Blink
+LED zum Blinken bringen
 ------------------------------
-Now that your LED are on, it's time for them to blink.
+Nun, da deine LED leuchtet, ist es an der Zeit, sie zum Blinken zu bringen.
 
-1. Open the sketch you saved earlier, ``Lesson6_Light_up_LED``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson6_Blink_LED``. Click "Save".
+1. Öffne den Sketch, den du zuvor gespeichert hast, ``Lesson6_Light_up_LED``. Wähle im Menü "Datei" die Option "Speichern unter..." und benenne den Sketch in ``Lesson6_Blink_LED`` um. Klicke auf "Speichern".
 
-2. In the ``void loop()`` function of your sketch, copy the ``digitalWrite()`` commands and paste them after the originals. To make the LED blink, you previously turned it ON; now set its state to ``LOW`` to turn it OFF.
+2. In der Funktion ``void loop()`` deines Sketches kopierst du die ``digitalWrite()``-Befehle und fügst sie nach den Originalen ein. Um die LED zum Blinken zu bringen, hast du sie zuvor eingeschaltet; nun setze ihren Zustand auf ``LOW``, um sie auszuschalten.
 
     .. note::
-       * Copy and paste can be a coder's best friend. Replicate a clean section of code to a new position and adjust its parameters for quick and clean execution.
-       * Remember to update comments to better match the action performed.
-       * Use ``Ctrl+T`` to format your code neatly in one click, making it more readable and friendly.
+       * Kopieren und Einfügen kann ein großer Vorteil für Programmierer sein. Repliziere einen sauberen Codeabschnitt an einer neuen Position und passe die Parameter schnell und sauber an.
+       * Vergiss nicht, die Kommentare zu aktualisieren, um die ausgeführte Aktion besser zu beschreiben.
+       * Verwende ``Ctrl+T``, um deinen Code mit einem Klick ordentlich zu formatieren und besser lesbar zu machen.
 
     .. code-block:: Arduino
        :emphasize-lines: 8,9
 
        void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // Setup-Code hier, der einmal ausgeführt wird:
+            pinMode(3, OUTPUT);  // Pin 3 als Ausgang setzen
        }
 
        void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3   
-            digitalWrite(3, LOW);  // Switch off the LED on pin 3
+            // Hauptcode hier, der wiederholt ausgeführt wird:
+            digitalWrite(3, HIGH);  // LED an Pin 3 einschalten   
+            digitalWrite(3, LOW);  // LED an Pin 3 ausschalten
        }
 
-3. Press the “Upload” button to transfer the sketch to the Arduino Uno R3. After the transfer, you might notice the LED don't blink, or they blink so fast it's imperceptible.
+3. Drücke die „Upload“-Taste, um den Sketch auf den Arduino Uno R3 zu übertragen. Nach der Übertragung stellst du vielleicht fest, dass die LED nicht blinkt oder so schnell blinkt, dass es nicht wahrnehmbar ist.
 
-4. To visually observe the blinking, you can use the ``delay()`` command to make the Arduino Uno R3 wait for any duration you specify, in milliseconds.
+4. Um das Blinken sichtbar zu machen, kannst du den ``delay()``-Befehl verwenden, um den Arduino Uno R3 für eine von dir festgelegte Zeitspanne in Millisekunden warten zu lassen.
 
-    * ``delay(ms)``: Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
+    * ``delay(ms)``: Pausiert das Programm für die im Parameter angegebene Zeitspanne (in Millisekunden). (Es gibt 1000 Millisekunden in einer Sekunde.)
 
-    **Parameters**
-        - ``ms``: the number of milliseconds to pause. Allowed data types: unsigned long.
+    **Parameter**
+        - ``ms``: die Anzahl der Millisekunden, die das Programm pausieren soll. Zulässige Datentypen: unsigned long.
 
-    **Returns**
-        Nothing
+    **Rückgabewert**
+        Kein Rückgabewert
 
-5. Now, include the ``delay(time)`` command after each set of ON and OFF commands, setting the delay time to 3000 milliseconds (3 seconds). You may adjust this duration to make the LED blink faster or slower.
+5. Füge nun den ``delay(time)``-Befehl nach jedem Satz von EIN- und AUS-Befehlen hinzu und setze die Wartezeit auf 3000 Millisekunden (3 Sekunden). Du kannst diese Dauer anpassen, um die LED schneller oder langsamer blinken zu lassen.
 
     .. note::
 
-        During this delay, the Arduino Uno R3 can't perform any tasks or execute any other commands until the delay ends.
+        Während dieser Verzögerung kann der Arduino Uno R3 keine Aufgaben ausführen oder andere Befehle ausführen, bis die Verzögerung endet.
         
     .. code-block:: Arduino
        :emphasize-lines: 10,11
 
        void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // Setup-Code hier, der einmal ausgeführt wird:
+            pinMode(3, OUTPUT);  // Pin 3 als Ausgang setzen
        }
 
        void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            delay(3000); // Wait for 3 seconds   
-            digitalWrite(3, LOW);  // Switch off the LED on pin 3
-            delay(3000); // Wait for 3 seconds
+            // Hauptcode hier, der wiederholt ausgeführt wird:
+            digitalWrite(3, HIGH);  // LED an Pin 3 einschalten
+            delay(3000); // 3 Sekunden warten   
+            digitalWrite(3, LOW);  // LED an Pin 3 ausschalten
+            delay(3000); // 3 Sekunden warten
        }
 
+6. Lade deinen Sketch auf den Arduino Uno R3 hoch. Nach Abschluss sollte deine LED in einem Intervall von 3 Sekunden blinken.
 
-6. Upload your sketch to the Arduino Uno R3. After completion, your LED should blink at a 3 seconds interval.
+7. Überprüfe, ob alles wie erwartet funktioniert, und speichere dann deinen Sketch.
 
-7. Confirm everything is working as expected, then save your sketch.
-
-8. Let's use a multimeter to measure the voltage at three pins and understand what the ``LOW`` state in the code actually means. Adjust the multimeter to the 20 volts DC setting.
+8. Lass uns ein Multimeter verwenden, um die Spannung an den drei Pins zu messen und zu verstehen, was der ``LOW``-Zustand im Code tatsächlich bedeutet. Stelle das Multimeter auf die Einstellung 20 Volt Gleichspannung (DC) ein.
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-9. Start by measuring the voltage at Pin 3. Touch the red test lead of the multimeter to Pin 3 and the black test lead to GND.
+9. Beginne mit der Messung der Spannung an Pin 3. Berühre mit der roten Messleitung des Multimeters Pin 3 und mit der schwarzen Messleitung den GND-Pin.
 
 .. image:: img/6_blink_wiring_measure_high.png
     :width: 600
     :align: center
 
-10. With all three LED turned off, record the measured voltage for Pin 3 in the "LOW" row of your table.
+10. Wenn alle drei LEDs ausgeschaltet sind, trage die gemessene Spannung für Pin 3 in die Zeile "LOW" deiner Tabelle ein.
 
 .. list-table::
    :widths: 25 25
    :header-rows: 1
 
-   * - State
-     - Pin 3 Voltage 
+   * - Zustand
+     - Pin 3 Spannung 
    * - HIGH
-     - *≈4.95 volts*
+     - *≈4,95 Volt*
    * - LOW
-     - *0.00 volts*
+     - *0,00 Volt*
 
+Durch unsere Messungen haben wir festgestellt, dass, wenn die LEDs ausgeschaltet sind, die Spannung an Pin 3 auf 0V sinkt. Dies zeigt, dass das Setzen eines Pins auf "LOW" im Code die Ausgangsspannung an diesem Pin effektiv auf 0V reduziert und die angeschlossene LED ausschaltet. Dieses Prinzip ermöglicht es uns, die Ein- und Aus-Zustände der LED mit präzisem Timing zu steuern, was das Verhalten einer Ampel simuliert.
 
-Through our measurements, we found that when the LED are off, the voltage at Pin 3 drops to 0V. This demonstrates that in our code, setting a pin to "LOW" effectively reduces the output voltage at that pin to 0V, turning off the connected LED. This principle allows us to control the on and off states of LED with precise timing, mimicking the operation of a traffic light.
+**Frage**
 
-**Question**
+Lade den obigen Code hoch, und du wirst feststellen, dass die LED in einem Intervall von 3 Sekunden wiederholt blinkt. Wenn du möchtest, dass sie sich nur einmal ein- und ausschaltet, was musst du tun?
 
-Upload the above code, and you'll find the LED repeatedly blinking at a 3-second interval. If you just want it to turn on and off once, what should you do?
+**Zusammenfassung**
 
-**Summary**
+Herzlichen Glückwunsch zum Abschluss dieser Lektion, in der du erfolgreich eine LED programmiert hast, um mit dem Arduino Uno R3 zu blinken. Diese Lektion diente als Einführung in das Schreiben und Hochladen von Arduino-Sketches, das Setzen von Pin-Modi und das Manipulieren von Ausgaben, um gewünschte elektrische Reaktionen zu erzielen. Durch den Bau der Schaltung und die Programmierung des Arduino Uno R3 hast du wertvolle Einblicke in die Interaktion zwischen Softwarebefehlen und physikalischen Hardwareverhalten gewonnen.
 
-Congratulations on completing this lesson, where you successfully programmed an LED to blink using the Arduino Uno R3. This lesson served as an introduction to writing and uploading Arduino sketches, setting pin modes, and manipulating outputs to achieve desired electrical responses. Through building the circuit and programming the Arduino Uno R3, you gained valuable insights into the interaction between software commands and physical hardware behaviors.
-
-Your ability to control an LED is just the beginning—imagine what you can achieve as you expand on these basics!
+Deine Fähigkeit, eine LED zu steuern, ist nur der Anfang – stelle dir vor, was du erreichen kannst, wenn du auf diesen Grundlagen aufbaust!
