@@ -96,7 +96,7 @@ Connect components on the breadboard to each other and to the Arduino board.
 
 Male-to-female DuPont wires are specifically designed for connecting modules with male pin headers, like ultrasonic module, to breadboard. These wires are essential for interfacing different components in electronic projects, where breadboard-compatible male-to-female connections are needed.
 
-.. image:: img/1_dupont_wire.JPG
+.. image:: img/1_dupont_wire.jpg
     :width: 400
     :align: center
 
