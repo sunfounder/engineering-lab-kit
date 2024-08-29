@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで仲間と一緒にRaspberry Pi、Arduino、ESP32についてもっと深く学びましょう。
 
-    **Why Join?**
+    **参加のメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **エキスパートサポート**: アフターセールスの問題や技術的な課題をコミュニティやチームの助けを借りて解決。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品発表やプレビューをいち早くチェック。
+    - **特別割引**: 最新製品に関する特別割引をお楽しみください。
+    - **フェスティブプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 さあ、私たちと一緒に新しいことを探求し、創造を楽しみましょう！[|link_sf_facebook|] をクリックして今すぐ参加してください！
 
 .. _ar_morse_code:
 
-10. Morse Code
-========================
+10. モールス信号
+===========================
 
-Morse code is like a secret language using dots (.) and dashes (-) invented by Samuel Morse in the 1840s. It was created to send messages across long distances using telegraphs. Each letter of the alphabet and number is represented by a unique combination of these signals. For example, the most famous Morse code message is "SOS" (··· ––– ···), which is an international signal for help. Morse code used to be essential for communication before the invention of phones and the internet, and it was especially popular among ship and airplane operators. Today, it's fun to learn as a way to send secret messages to your friends!
+モールス信号は、1840年代にサミュエル・モールスによって発明された、ドット（.）とダッシュ（-）を使った秘密の言語のようなものです。これは、電信を使って長距離のメッセージを送るために作られました。アルファベットの各文字や数字は、これらの信号のユニークな組み合わせで表されます。たとえば、最も有名なモールス信号のメッセージは「SOS」（··· ––– ···）で、これは国際的な助けを求める信号です。電話やインターネットが発明される前は、モールス信号は通信に不可欠なもので、特に船や飛行機の操縦士に人気がありました。今日では、友達に秘密のメッセージを送る方法として学ぶのも楽しいですよ！
 
 .. raw:: html
 
@@ -26,42 +26,42 @@ Morse code is like a secret language using dots (.) and dashes (-) invented by S
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+このレッスンでは、次のことを学びます:
 
-* Understand the workings of an active buzzer.
-* Learn to code the SOS signal in Morse code, enabling you to send messages using Morse code with a buzzer.
+* アクティブブザーの仕組みを理解する。
+* モールス信号でSOS信号をコード化し、ブザーを使ってモールス信号を送信できるようになる。
 
 
-Morse Code Magic!
--------------------
+モールス信号の魔法！
+--------------------
 
 .. image:: img/7_morse.jpeg
 
-Imagine inventing a way to send secret messages using just dots and dashes! That's what Samuel Morse did back in 1836 with Morse code. Initially a painter, Morse got inspired on a boat trip and later, with his buddy Alfred Vail, created the telegraph to send messages across wires.
+ドットとダッシュだけを使って秘密のメッセージを送る方法を発明するなんて、想像してみてください！これは1836年にサミュエル・モールスがモールス信号でやったことです。もともとは画家だったモールスは、船旅の中でインスピレーションを得て、後に友人のアルフレッド・ベイルと共に、メッセージを電線で送るための電信機を作りました。
 
-Morse code uses dots (short signals) and dashes (long signals) to represent letters and numbers. The first Morse code message? "What hath God wrought"—sent in 1844 from Washington D.C. to Baltimore, kicking off the telegraph era.
+モールス信号では、ドット（短い信号）とダッシュ（長い信号）を使って文字や数字を表します。最初のモールス信号のメッセージは、「神のなされたこと」（What hath God wrought）で、1844年にワシントンD.C.からボルチモアへ送信され、電信時代の幕開けを告げました。
 
-Today, Morse code isn't used as much, but it's still cool for things like aviation and by amateur radio fans. Now, let's explore how Morse code works with Arduino and a buzzer and have some fun with this piece of communication history!
+今日、モールス信号はあまり使われなくなりましたが、航空業界やアマチュア無線愛好家の間では今でも使われています。では、Arduinoとブザーを使ってモールス信号の仕組みを探り、このコミュニケーションの歴史の一片を楽しみましょう！
 
 
-Building the Circuit
+回路を作成する
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Active Buzzer
-     - 1 * Breadboard
-     - Jumper Wires
+     - 1 * アクティブブザー
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_active_buzzer| 
      - |list_breadboard| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USBケーブル
      -
      - 
      - 
@@ -71,137 +71,135 @@ Building the Circuit
      - 
 
 
-**Building Step-by-Step**
+**ステップバイステップの作成手順**
 
-1. Locate an active buzzer which typically has a white sticker on the front and a sealed black back.
+1. フロントに白いステッカーが貼られ、バックが密閉されたアクティブブザーを見つけましょう。
 
 .. image:: img/7_beep_2.png
 
-Buzzers, as electronic sound devices, have a rich history that traces back to the 19th century. The precursor to modern buzzers is rooted in 1831, when Michael Faraday discovered electromagnetic induction, forming the foundational principle behind the operation of electromagnetic buzzers. Following Faraday's groundbreaking discovery, many scientists and inventors explored how to apply electromagnetic theories to practical devices. Today, Buzzers can be categorized as active and passive ones:
+ブザーは電子音響デバイスとして、19世紀にさかのぼる豊かな歴史を持っています。現代のブザーの前身は、1831年にマイケル・ファラデーが電磁誘導を発見し、電磁ブザーの動作原理の基礎を形成したことに由来します。ファラデーの画期的な発見の後、多くの科学者や発明家が電磁理論を実用的なデバイスに応用する方法を模索しました。今日、ブザーはアクティブブザーとパッシブブザーに分類されます。
 
-**Active Buzzer**
+**アクティブブザー**
 
 .. image:: img/7_beep_ac.png
     :width: 300
     :align: center
 
-Sealed at the back, active buzzers contain an internal oscillator that sounds when powered, typically producing a single-tone beep.
+バックが密閉されたアクティブブザーは、電源が供給されると内部オシレーターが作動し、単一トーンのビープ音を発します。
 
-**Passive Buzzer**
+**パッシブブザー**
 
 .. image:: img/7_beep_pa.png
     :width: 300
     :align: center
 
-Open at the back, passive buzzers require an external frequency signal from a microcontroller to generate sound, allowing for a range of tones.
+バックが開いているパッシブブザーは、音を生成するためにマイクロコントローラーから外部周波数信号を必要とし、さまざまなトーンを生成できます。
 
-1. Active buzzer is also polar device. The front side has a "+" sign indicating its positive terminal (anode), which is also the longer pin. Now insert the buzzer into the breadboard with the anode in hole 15F and the cathode in hole 18F.
+1. アクティブブザーも極性デバイスです。フロントには正端子（アノード）を示す「+」マークがあり、これは長いピンでもあります。ブザーをブレッドボードに挿入し、アノードを15F、カソードを18Fの穴に挿入します。
 
 .. image:: img/16_morse_code_buzzer.png
     :width: 500
     :align: center
 
-2. Connect the cathode to the GND pin on the Arduino Uno R3.
+2. カソードをArduino Uno R3のGNDピンに接続します。
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-3. If you insert the anode of the buzzer into the 5V pin of the Arduino Uno R3, you will hear the active buzzer emit sound directly. Of course, you can also use this method to verify if the buzzer you have is correct. A passive buzzer will not produce sound when directly connected to a power source.
+3. ブザーのアノードをArduino Uno R3の5Vピンに接続すると、アクティブブザーが直接音を発するのを聞くことができます。もちろん、この方法でブザーが正しいかどうかを確認することもできます。パッシブブザーは、電源に直接接続しても音を発しません。
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-4. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
+4. 5Vピンに挿入されたワイヤを取り外し、Arduino Uno R3のピン9に挿入して、コードでブザーを制御できるようにします。
 
 .. image:: img/16_morse_code.png
     :width: 500
     :align: center
 
-
-
-Code Creation - Make the buzzer sound
+コード作成 - ブザーを鳴らす
 -----------------------------------------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson10_Beep`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新規スケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson10_Beep`` として保存します（ ``Ctrl + S`` を押すか、「保存」をクリック）。
 
-3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
+3. まず、 ``buzzerPin`` という定数を作成し、ピン9に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 1
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // ブザー用の定数としてピン9を割り当てます
 
     void setup() {
-        // put your setup code here, to run once:
+        // ここに一度だけ実行されるセットアップコードを記述します
     }
 
-4. Initialize the pin: In the ``void setup()`` function, set the buzzer pin to output mode.
+4. ピンを初期化します。 ``void setup()`` 関数で、ブザーピンを出力モードに設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // ブザー用の定数としてピン9を割り当てます
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // ここに一度だけ実行されるセットアップコードを記述します
+        pinMode(buzzerPin, OUTPUT);  // ピン9を出力に設定
     }
 
-5. Making an active buzzer sound an alert is as simple as lighting an LED; you just need to use ``digitalWrite()`` to set pin 9 high or low and ``delay()`` to control the timing.
+5. アクティブブザーを鳴らすには、LEDを点灯させるのと同じくらい簡単です。ピン9をハイまたはローに設定し、「digitalWrite()」と「delay()」を使ってタイミングを制御します。
 
 .. code-block:: Arduino
     :emphasize-lines: 10-13
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // ブザー用の定数としてピン9を割り当てます
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // ここに一度だけ実行されるセットアップコードを記述します
+        pinMode(buzzerPin, OUTPUT);  // ピン9を出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer ON
-        delay(250);                     // Beep duration: 250 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer OFF
-        delay(250);                     // Interval between signals: 250 milliseconds
+        // ここに繰り返し実行されるメインコードを記述します
+        digitalWrite(buzzerPin, HIGH);  // ブザーをONにする
+        delay(250);                     // ビープ音の長さ：250ミリ秒
+        digitalWrite(buzzerPin, LOW);   // ブザーをOFFにする
+        delay(250);                     // 信号間の間隔：250ミリ秒
     }
 
-6. You can upload your code to the Arduino Uno R3, and then you will hear the "beep beep" sound.
+6. コードをArduino Uno R3にアップロードすると、「ビープビープ」という音が聞こえるはずです。
 
-Code Creation - "SOS"
+コード作成 - "SOS"
 --------------------------
-Now to write the code to make the buzzer signal in Morse code.
+次に、モールス信号でブザーを鳴らすコードを書きます。
 
-In Morse code, there are traditional timing rules for dots (short signals), dashes (long signals), and the intervals between signals to ensure the message is accurately received and understood. Here are some basic rules:
+モールス信号では、メッセージが正確に受信され理解されるために、ドット（短い信号）、ダッシュ（長い信号）、および信号間の間隔に関する伝統的なタイミングルールがあります。基本的なルールは次のとおりです：
 
-    * Length of a dot: the basic time unit.
-    * Length of a dash: equals three dots.
-    * Interval between dots: the length of one dot.
-    * Interval within a character (between dots and dashes of a letter or number): the length of one dot.
-    * Interval between characters (e.g., between two letters): three dots.
-    * Interval between words (e.g., between two words): seven dots.
+    * ドットの長さ：基本単位の時間。
+    * ダッシュの長さ：ドットの3倍。
+    * ドット間の間隔：ドット1つ分の長さ。
+    * 文字内の間隔（文字や数字のドットとダッシュの間）：ドット1つ分の長さ。
+    * 文字間の間隔（例：2つの文字の間）：ドット3つ分の長さ。
+    * 単語間の間隔（例：2つの単語の間）：ドット7つ分の長さ。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson10_Morse_Code`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新規スケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson10_Morse_Code`` として保存します ``Ctrl + S`` を押すか、「保存」をクリック）。
 
-3. First, initialize the pin connected to the buzzer.
+3. まず、ブザーに接続されているピンを初期化します。
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // ブザー用の定数としてピン9を割り当てます
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // ここに一度だけ実行されるセットアップコードを記述します
+        pinMode(buzzerPin, OUTPUT);  // ピン9を出力に設定
     }
 
-4. Now let's create a function for emitting dots (short signals). Throughout your coding journey, you've already been using built-in Arduino functions such as ``pinMode()``, ``digitalWrite()``, and ``delay()``. Now, we'll dive into creating custom functions. Custom functions allow you to simplify your code, making it more logical and manageable.
+4. 次に、ドット（短い信号）を出力するための関数を作成しましょう。これまでのコーディングで ``pinMode()`` 、 ``digitalWrite()`` 、 ``delay()`` などのArduinoの組み込み関数を使ってきましたが、今回はカスタム関数を作成します。カスタム関数を作成することで、コードを簡潔かつ論理的に整理しやすくなります。
 
-To create a function, simply add it to the bottom of your sketch after the ``void loop()`` brace. Like ``void setup()`` and ``void loop()``, functions start with void followed by a name you choose. The naming rules for functions are similar to those for variables or constants. You can name a function anything that isn't a keyword in the Arduino IDE, and you enclose its commands within curly braces.
+関数を作成するには、スケッチの ``void loop()`` ブレースの後に追加します。 ``void setup()`` や ``void loop()`` と同様に、関数は「void」から始まり、その後に任意の名前が続きます。関数の命名ルールは、変数や定数と同じです。Arduino IDEでキーワードでない名前を選び、そのコマンドを波括弧で囲みます。
 
 .. code-block:: Arduino
     :emphasize-lines: 9,10
@@ -217,7 +215,7 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
     void dot() {
     }
 
-5. In the created function void dot(), set the time interval for a dot to 250ms.
+5. 作成した関数 `void dot()` で、ドットの時間間隔を250ミリ秒に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 9-14
@@ -237,7 +235,7 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
         delay(250);  // Interval between signals
     }
 
-6. Now, create another function for emitting dashes (long signals). According to the basic rules of Morse code, set the time interval for a dash to 3 times that of a dot (750ms).
+6. 次に、ダッシュ（長い信号）を出力する関数を作成します。モールス信号の基本ルールに従い、ダッシュの時間間隔をドットの3倍（750ミリ秒）に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 8-13
@@ -251,12 +249,12 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
 
     void dash() {
         digitalWrite(buzzerPin, HIGH);
-        delay(750);  // Longer duration for a dash
+        delay(750);  // ダッシュの長い時間
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // 信号間の間隔
     }
 
-7. Now, you can transmit Morse code. For example, to send "SOS" (... --- ...), the Morse code for 'S' consists of three dots, and 'O' is three dashes, so you simply call the dot and dash functions three times respectively.
+7. これでモールス信号を送信できます。例えば、 "SOS" (... --- ...) を送信するには、モールス信号の'S'は3つのドット、'O'は3つのダッシュで構成されるので、ドットとダッシュの関数をそれぞれ3回呼び出すだけです。
 
 .. code-block:: Arduino
     :emphasize-lines: 2-11
@@ -271,18 +269,18 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
         dot();
         dot();
         dot();       // S: ...
-        delay(750);  // Repeat after a period
+        delay(750);  // 一定期間後に繰り返し
     }
 
-8. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3, after which you will hear the Morse code for "SOS" (... --- ...).
+8. これが完成したコードです。「アップロード」をクリックしてコードをArduino Uno R3にアップロードすると、「SOS」（... --- ...）のモールス信号が聞こえるはずです。
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // ブザー用の定数としてピン9を割り当てます
     
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // ここに一度だけ実行されるセットアップコードを記述します
+        pinMode(buzzerPin, OUTPUT);  // ピン9を出力に設定
     }
 
     void loop() {
@@ -295,46 +293,45 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
         dot();
         dot();
         dot();       // S: ...
-        delay(750);  // Repeat after a period
+        delay(750);  // 一定期間後に繰り返し
     }
 
     void dot() {
         digitalWrite(buzzerPin, HIGH);
-        delay(250);  // Short duration for a dot
+        delay(250);  // ドットの短い時間
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // 信号間の間隔
     }
 
     void dash() {
         digitalWrite(buzzerPin, HIGH);
-        delay(750);  // Longer duration for a dash
+        delay(750);  // ダッシュの長い時間
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // 信号間の間隔
     }
 
+9. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-9. Finally, remember to save your code and tidy up your workspace.
 
+**まとめ**
 
-**Summary**
+このレッスンでは、1840年代にサミュエル・モールスによって開発されたユニークな通信方法であるモールス信号の基本について学びました。また、アクティブブザーを使用して、世界的に認識されているSOSのモールス信号を送信する方法を学びました。このレッスンでは、アクティブブザーの設定とコーディング方法だけでなく、モールス信号が通信史において果たした歴史的な役割についても理解を深めました。これらのスキルを使って、友達にモールス信号で秘密のメッセージを送ったり、現代のデバイスでの応用をさらに探求することができます。
 
-In this lesson, you've explored the basics of Morse code, a unique form of communication developed in the 1840s by Samuel Morse. You learned how to use an active buzzer to send the Morse code for SOS, a universally recognized distress signal. This lesson not only taught you how to set up and code an active buzzer but also gave you a glimpse into the historical significance of Morse code in telecommunications. With these skills, you can now send secret Morse code messages to friends or further explore its applications in modern devices.
-
-In this lesson, we only used the Morse codes for the letters "S" and "O." Here is the chart of the Morse code 26 letters and 10 numerals.
+このレッスンでは、「S」と「O」のモールス信号のみを使用しました。以下は、モールス信号の26文字のアルファベットと10個の数字のチャートです。
 
 
 .. list-table::
     :widths: 8 8 8 8 8 8 8 8
     :header-rows: 1
 
-    * - Letter
-      - Code
-      - Letter
-      - Code
-      - Letter
-      - Code
-      - Letter
-      - Code
+    * - 文字
+      - コード
+      - 文字
+      - コード
+      - 文字
+      - コード
+      - 文字
+      - コード
     * - A
       - \.-
       - B
@@ -410,8 +407,7 @@ In this lesson, we only used the Morse codes for the letters "S" and "O." Here i
   
 
 
-**Question**
+**質問**
 
-Using the Morse code table provided, write a code to send the message "Hello".
-
+提供されたモールス信号の表を使って、「Hello」を送信するコードを書いてください。
 

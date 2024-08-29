@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで仲間と一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームのサポートで、購入後の問題や技術的な課題を解決。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換。
+    - **限定プレビュー**: 新製品発表や先行情報に早期アクセス。
+    - **特別割引**: 最新製品に対する限定割引を享受。
+    - **イベントプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-6. Blink LED
+6. LEDを点滅させる
 ======================
-Welcome to this lesson, you'll learn to manipulate the digital pins of the Arduino Uno R3 to programmatically control an LED—turning it on and off without manual intervention, a skill fundamental to both home and industrial electronics applications.
+このレッスンへようこそ。このレッスンでは、Arduino Uno R3のデジタルピンを操作し、LEDをプログラムで制御して手動操作なしで点灯および消灯する方法を学びます。これは家庭や産業用電子機器の応用において基本的なスキルです。
 
 .. raw:: html
 
@@ -23,19 +23,19 @@ Welcome to this lesson, you'll learn to manipulate the digital pins of the Ardui
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn to:
+このレッスンで学べること:
 
-* Create and save sketches using the Arduino IDE.
-* Use ``pinMode()`` and ``digitalWrite()`` functions to control circuit elements.
-* Upload sketches to the Arduino Uno R3 and understand their real-time effects.
-* Implement ``delay()`` in sketches to manage circuit behaviors.
+* Arduino IDEを使用してスケッチを作成および保存する方法。
+* ``pinMode()`` および ``digitalWrite()`` 関数を使用して回路要素を制御する方法。
+* スケッチをArduino Uno R3にアップロードし、そのリアルタイムの効果を理解する方法。
+*  ``delay()`` をスケッチに実装して回路動作を管理する方法。
 
-By the end of this lesson, you will be able to build a circuit that not only lights up an LED but also makes it blink at intervals you set, giving you a basic understanding of how software interacts with hardware.
+レッスンの終わりまでに、LEDを点灯させるだけでなく、設定した間隔で点滅させる回路を構築するスキルを身につけ、ソフトウェアがハードウェアとどのように連携するかの基本的な理解を深めることができます。
 
-Building the Circuit
+回路の構築
 --------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 
 .. list-table:: 
@@ -43,419 +43,421 @@ Building the Circuit
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * 赤色LED
+     - 1 * 220Ω抵抗
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - 1 * マルチメーター
      -   
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_meter|
      - 
 
-**Building Step-by-Step**
+**ステップバイステップでの構築**
 
-Take the circuit built in :ref:`2_first_circuit`, and switch the wire from the 5V to pin 3, as shown in the image below.
+:ref:`2_first_circuit` で構築した回路を取り出し、ワイヤーを5Vからピン3に切り替えます。以下の画像のように行います。
 
 .. image:: img/6_led_circuit.png
     :width: 600
     :align: center
 
-If you've dismantled the previous circuit, you can rebuild it following these steps:
+前の回路を解体した場合は、以下の手順に従って再構築できます:
 
-1. Connect the 220 ohm resistor to the breadboard. One wire should be in the negative terminal, and the other wire should be in hole 1B.
+1. 220Ω抵抗をブレッドボードに接続します。一方のワイヤーは負極端子に、もう一方のワイヤーは1Bの穴に差し込みます。
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-2. Add a red LED to the breadboard. The LED's anode (long leg) should be in hole 1F. The cathode (short leg) should be in hole 1E. Sometimes it's hard to distinguish the anode from the cathode by the length of the legs. Remember, the cathode side of the LED also has a flat edge on the colored lens, while the anode has a round edge.
+2. 赤色LEDをブレッドボードに追加します。LEDのアノード（長い足）は1Fの穴に、カソード（短い足）は1Eの穴に差し込みます。足の長さでアノードとカソードを区別するのが難しい場合がありますが、カソード側にはカラーレンズに平らなエッジがあり、アノード側には丸いエッジがあります。
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-3. Use a short jumper wire to connect the LED and the power source. One end of the jumper wire should be in hole 1J. The other end should be in the positive terminal.
+3. 短いジャンパーワイヤーを使って、LEDと電源を接続します。ジャンパーワイヤーの一端を1Jの穴に、もう一端を正極端子に差し込みます。
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
-4. Connect the breadboard's positive terminal to pin 3 on the Arduino Uno R3.
+4. ブレッドボードの正極端子をArduino Uno R3のピン3に接続します。
 
 .. image:: img/6_led_circuit_3.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
+5. ブレッドボードの負極端子をArduino Uno R3のGNDピンの一つに接続します。GNDピンは「GND」とマークされています。
 
 .. image:: img/6_led_circuit.png
     :width: 600
     :align: center
 
-
-Bringing LED to Life
+LEDを点灯させる
 -----------------------------
 
-Alright, it's showtime for the LED! Instead of just diving into the Arduino's Blink example like before, we're going to start from scratch and create a brand new sketch. Let's jump right in!
+さあ、LEDを点灯させる時が来ました！前回のArduinoのBlink例に飛び込むのではなく、一から新しいスケッチを作成しましょう。早速始めましょう！
 
-**1. Creating and Saving a Sketch**
+**1. スケッチの作成と保存**
 
-1. Fire up the Arduino IDE. Go to the “File” menu and hit “New Sketch” to start fresh. You can close any other sketch windows that might be open.
+1. Arduino IDEを起動します。「ファイル」メニューから「新しいスケッチ」を選択し、最初から新しいスケッチを開始します。開いている他のスケッチウィンドウは閉じても構いません。
 
     .. image:: img/6_blink_ide_new.png
         :align: center
 
 
-2. Arrange the Arduino IDE window side by side with this online tutorial, so you can see both at once. Things might look a bit small, but it beats flipping back and forth between windows.
+2. Arduino IDEのウィンドウを、このオンラインチュートリアルと並べて配置し、両方を同時に表示できるようにします。少し小さく見えるかもしれませんが、ウィンドウを行き来する手間が省けます。
 
     .. image:: img/6_blink_ide_tutorials.png
 
 
-3. Time to save your sketch. Hit “Save” from the “File” menu or press ``Ctrl + S``. 
+3. スケッチを保存します。「ファイル」メニューから「保存」を選択するか、 ``Ctrl + S`` を押します。
 
     .. image:: img/6_blink_ide_save.png
 
 
-4. You can save your sketch in the default location or another place. Name your sketch something meaningful, like ``Lesson6_Light_up_LED``, and click “Save”.
+4. スケッチをデフォルトの場所または他の場所に保存できます。スケッチに ``Lesson6_Light_up_LED`` のような意味のある名前を付けて、「保存」をクリックします。
 
-    * Naming your sketch after its function for easy later retrieval.
-    * Arduino sketch filenames can't have spaces.
-    * When saving significant changes, consider saving as a new version (e.g., V1) for backup.
+    * 後で簡単に見つけられるように、スケッチにその機能に関連する名前を付けます。
+    * Arduinoスケッチのファイル名にはスペースを含めることができません。
+    * 重要な変更を保存する際には、新しいバージョン（例: V1）として保存してバックアップすることを検討してください。
     
     .. image:: img/6_blink_ide_name.png
 
 
-5. Your new sketch consists of two main parts, ``void setup()`` and ``void loop()``, which are functions used in all Arduino sketches.
+5. 新しいスケッチは、 ``void setup()`` と ``void loop()`` という2つのメイン部分で構成されています。これらはすべてのArduinoスケッチで使用される関数です。
 
-    * ``void setup()`` runs once when the program starts, setting up initial conditions.
-    * ``void loop()`` runs repeatedly, executing continuous actions.
-    * Place commands for each function within its curly brackets ``{}``.
-    * Any line starting with ``//`` is a comment. These are for your notes and won't affect the code execution.
+    * ``void setup()`` はプログラムが開始されたときに一度だけ実行され、初期条件を設定します。
+    * ``void loop()`` は繰り返し実行され、連続的なアクションを実行します。
+    * 各関数の命令は、波括弧 ``{}`` 内に記述します。
+    * ``//`` で始まる行はコメントです。これらはメモとして役立ち、コードの実行には影響しません。
 
     .. code-block:: Arduino
 
         void setup() {
-        // Setup code here, to run once:
+        // ここにセットアップコードを記述し、一度だけ実行されます。
 
         }
 
         void loop() {
-        // put your main code here, to run repeatedly:
+        // ここにメインコードを記述し、繰り返し実行されます。
 
         }
 
-**2. Picking the Board and Port**
+**2. ボードとポートの選択**
 
-1. Connect your Arduino Uno R3 to the computer with a USB cable. You'll see the power light come on the Arduino.
+1. Arduino Uno R3をUSBケーブルでコンピュータに接続します。Arduinoの電源ライトが点灯します。
 
     .. image:: img/1_connect_uno_pc.jpg
         :width: 600
         :align: center
 
 
-2. Let the IDE know we're using an **Arduino Uno**. Head to **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
+2. IDEに **Arduino Uno** を使用していることを知らせます。 **ツール**  -> **ボード** -> **Arduino AVR Boards** -> **Arduino Uno** に進みます。
 
     .. image:: img/6_blink_ide_board.png
         :width: 600
         :align: center
 
 
-3. Next, in the Arduino IDE, choose the port that your Arduino is connected to.
+3. 次に、Arduino IDEでArduinoが接続されているポートを選択します。
 
     .. note::
 
-        * Once a port is selected, the Arduino IDE should default to it every time the Arduino is plugged in via USB.
-        * If a different Arduino Board is connected, you might need to choose a new port. 
-        * Always check the port first if there's a connection issue.
+        * 一度ポートが選択されると、Arduino IDEはUSB経由でArduinoが接続されるたびにそれをデフォルトにするはずです。
+        * 別のArduinoボードが接続された場合、新しいポートを選択する必要があるかもしれません。
+        * 接続に問題がある場合、まずポートを確認してください。
 
     .. image:: img/6_blink_ide_port.png
         :width: 600
         :align: center
 
-**3. Writing the Code**
+**3. コードの記述**
 
 
-1. In our project, we utilize digital pin 3 on the board to control an LED. Each pin can function either as an output, sending out 5 volts, or as an input, reading the incoming voltage. To configure the LED, we set the pin as an output by using the ``pinMode(pin, mode)`` function.
+1. このプロジェクトでは、ボードのデジタルピン3を使用してLEDを制御します。各ピンは出力として5ボルトを送り出すか、入力として電圧を読み取ることができます。LEDを設定するには、 ``pinMode(pin, mode)`` 関数を使用してピンを出力として設定します。
     
-Let's dive into the ``pinMode()`` syntax.
+    ``pinMode()`` の構文を見てみましょう。
 
-    * ``pinMode(pin, mode)``: Sets a specific pin to ``INPUT`` or ``OUTPUT``. 
+    * ``pinMode(pin, mode)`` : 特定のピンを ``INPUT`` または ``OUTPUT`` に設定します。
 
-    **Parameters**
-        - ``pin``: the number of the pin you want to set the mode for.
-        - ``mode``: ``INPUT``, ``OUTPUT``, or ``INPUT_PULLUP``.
+    **パラメータ**
+        - ``pin``: モードを設定したいピンの番号。
+        - ``mode``: ``INPUT``、 ``OUTPUT`` 、または ``INPUT_PULLUP`` 。
 
-    **Returns**
-        Nothing
+    **戻り値**
+        なし
     
-2. Now, it's time to add our first line of code in the ``void setup()`` function.
+2. 次に、 ``void setup()`` 関数に最初のコード行を追加します。
         
     .. note::
 
-        - Arduino coding is case-sensitive. Make sure to write the functions exactly as they are.
-        - Notice the command ends with a semicolon. In the Arduino IDE, every command must end with one.
-        - Code comments are helpful for reminding yourself of what a line or section of code does.
+        - Arduinoのコーディングは大文字小文字を区別します。関数は正確に記述する必要があります。
+        - コマンドの最後にセミコロンを付ける必要があります。Arduino IDEでは、すべてのコマンドはセミコロンで終わる必要があります。
+        - コードコメントは、コードの行やセクションが何をしているのかを思い出すのに役立ちます。
 
     .. code-block:: Arduino
         :emphasize-lines: 3
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3,OUTPUT); // set pin 3 as output
+            // ここにセットアップコードを記述し、一度だけ実行されます。
+            pinMode(3,OUTPUT); // ピン3を出力として設定
         }
     
         void loop() {
-        // put your main code here, to run repeatedly:
+        // ここにメインコードを記述し、繰り返し実行されます。
 
         }
 
 
 
-**4. Verifying the Code**
+**4. コードの検証**
 
-Before activating our traffic lights, we'll verify the code. This checks if the Arduino IDE can understand and compile your commands into machine language.
+トラフィックライトを作動させる前に、コードを検証しましょう。これは、Arduino IDEがあなたのコマンドを理解し、機械言語にコンパイルできるかどうかを確認するためです。
 
-1. To verify your code, click the **checkmark** button in the upper-left corner of the window.
+1. コードを検証するには、ウィンドウの左上隅にある**チェックマーク**ボタンをクリックします。
 
     .. image:: img/6_blink_ide_verify.png
         :width: 600
         :align: center
 
 
-2. If your code is machine-readable, a message at the bottom will indicate the code has been successfully compiled. This area also shows how much storage space your program uses.
+2. コードが機械で読み取れる場合、ウィンドウの下部にコードが正常にコンパイルされたことを示すメッセージが表示されます。このエリアには、プログラムが使用するストレージ容量も表示されます。
 
     .. image:: img/6_blink_ide_verify_done.png
         :width: 600
         :align: center
 
 
-3. If there's an error in your code, you'll see an orange error message. The IDE often highlights where the issue might be, typically near the highlighted line. For example, a missing semicolon error will highlight the line right after the mistake.
+3. コードにエラーがある場合、オレンジ色のエラーメッセージが表示されます。通常、IDEは問題がある場所を強調表示します。たとえば、セミコロンが欠落している場合、その直後の行がハイライトされます。
 
     .. image:: img/6_blink_ide_verify_error.png
         :width: 600
         :align: center
 
 
-4. When you hit errors, it's time for debugging - finding and fixing mistakes in your code. Check for common issues like:
+4. エラーが発生した場合は、デバッグが必要です。コードの間違いを見つけて修正します。次のような一般的な問題をチェックしてください：
 
-    - Is the ``M`` in ``pinMode`` uppercase?
-    - Did you use all uppercase letters when typing ``OUTPUT``?
-    - Do you have both an opening and closing parenthesis in your ``pinMode`` function?
-    - Did you end your ``pinMode`` function with a semicolon?
-    - Is all your spelling correct? If you find errors, correct them and verify your code again. Keep debugging until your sketch is error-free.
+    - ``pinMode`` の ``M`` は大文字ですか？
+    - ``OUTPUT`` はすべて大文字で入力しましたか？
+    - ``pinMode`` 関数には、開き括弧と閉じ括弧の両方が含まれていますか？
+    - ``pinMode`` 関数の最後にセミコロンを付けましたか？
+    - すべてのスペルは正しいですか？エラーが見つかったら修正し、もう一度コードを検証してください。エラーがなくなるまでデバッグを続けます。
 
-The Arduino IDE stops compiling at the first error, so you might have to verify multiple times for multiple errors. Regularly verifying your code is good practice.
+Arduino IDEは最初のエラーでコンパイルを停止するため、複数のエラーがある場合は複数回検証する必要があるかもしれません。定期的にコードを検証することは良い習慣です。
 
-Debugging is a big part of programming. Professional programmers often spend a lot more time debugging than writing new code. Errors are normal, so don't get discouraged. Becoming a good problem solver is key to being a great programmer.
+デバッグはプログラミングの大部分を占めます。プロのプログラマーは、しばしば新しいコードを書くよりもデバッグに多くの時間を費やします。エラーは普通のことなので、落胆しないでください。優れた問題解決者になることが、優れたプログラマーになる鍵です。
 
-**5. Continuing to Write the Sketch**
+**5. スケッチの続きを書く**
 
-1. Now you're ready to start on the ``void loop()`` function. This is where the main action of your sketch or program happens. To light up the LED connected to the Arduino Uno R3, we'll need to provide voltage to the circuit using ``digitalWrite()``.
+1. いよいよ ``void loop()`` 関数に進む準備が整いました。ここでは、スケッチやプログラムの主なアクションが実行されます。Arduino Uno R3に接続されたLEDを点灯させるためには、 ``digitalWrite()`` を使用して回路に電圧を供給する必要があります。
 
-    * ``digitalWrite(pin, value)``: Sends a ``HIGH`` (5V) or ``LOW`` (0V) signal to a digital pin, changing the operating state of the component.
+    * ``digitalWrite(pin, value)`` : デジタルピンに ``HIGH`` （5V）または ``LOW`` （0V）の信号を送り、コンポーネントの動作状態を変更します。
 
-    **Parameters**
-        - ``pin``: the Arduino pin number.
-        - ``value``: ``HIGH`` or ``LOW``.
+    **パラメータ**
+        - ``pin`` : Arduinoのピン番号。
+        - ``value`` : ``HIGH`` または ``LOW`` 。
     
-    **Returns**
-        Nothing
+    **戻り値**
+        なし
 
-5. Below the comment in the ``void loop()`` function, write a command to turn on the LED connected to pin 3. Don't forget to end the command with a semicolon. Verify and debug your code if necessary.
+5. ``void loop()`` 関数内のコメントの下に、ピン3に接続されたLEDを点灯させるコマンドを書きます。コマンドの最後にセミコロンを忘れないようにしてください。必要に応じてコードを検証してデバッグします。
 
     .. code-block:: Arduino
         :emphasize-lines: 8
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // ここにセットアップコードを記述し、一度だけ実行されます:
+            pinMode(3, OUTPUT);  // ピン3を出力として設定
         }
 
         void loop() {
-            // put your main code here, to run repeatedly:
+            // ここにメインコードを記述し、繰り返し実行されます:
             digitalWrite(3, HIGH);
         }
 
-6. After the ``digitalWrite()`` command, add a code comment explaining what this line does. For instance:
+6. ``digitalWrite()`` コマンドの後に、この行が何をしているのか説明するコードコメントを追加します。例えば：
 
     .. code-block:: Arduino
         :emphasize-lines: 8
 
         void setup() {
-            // Setup code here, to run once: 
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // ここにセットアップコードを記述し、一度だけ実行されます: 
+            pinMode(3, OUTPUT);  // ピン3を出力として設定
         }
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
+            // ここにメインコードを記述し、繰り返し実行されます:
+            digitalWrite(3, HIGH);  // ピン3に接続されたLEDを点灯
         }
 
 
-**6. Uploading the Code**
+**6. コードのアップロード**
 
-With your code error-free and verified, it's time to upload it to the Arduino Uno R3 and see your traffic light come to life.
+コードがエラーなしで検証されたら、Arduino Uno R3にアップロードして、トラフィックライトを点灯させましょう。
 
-1. In the IDE, click the “Upload” button. The computer will compile the code and then transfer it to the Arduino Uno R3. During the transfer, you should see some lights blinking on the board, indicating communication with the computer.
+1. IDEで「アップロード」ボタンをクリックします。コンピュータはコードをコンパイルし、それをArduino Uno R3に転送します。転送中にボード上のライトが点滅し、コンピュータとの通信が行われていることを示します。
 
 .. image:: img/6_blink_ide_upload.png
     :width: 600
     :align: center
 
 
-2. A message of “Done Uploading” means your code has no issues and you've selected the correct board and port.
+2. 「アップロード完了」のメッセージが表示されたら、コードに問題がなく、正しいボードとポートが選択されていることを意味します。
 
 .. image:: img/6_blink_ide_upload_done.png
     :width: 600
     :align: center
 
 
-3. Once the transfer is complete, the code will run, and you should see the LED on the breadboard light up.
+3. 転送が完了すると、コードが実行され、ブレッドボード上のLEDが点灯するはずです。
 
-**7. Measuring the Voltage Across the LED**
+**7. LEDの電圧を測定する**
 
-Let's use a multimeter to measure the voltage at pin 3 and understand what the ``HIGH`` state in the code actually means.
+マルチメータを使用して、ピン3の電圧を測定し、コード内の ``HIGH`` 状態が実際に何を意味するのかを理解しましょう。
 
-1. Adjust the multimeter to the 20 volts DC setting.
+1. マルチメータをDC 20ボルト設定に調整します。
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Start by measuring the voltage at Pin 3. Touch the red test lead of the multimeter to Pin 3 and the black test lead to GND.
+2. まず、ピン3の電圧を測定します。マルチメータの赤いテストリードをピン3に、黒いテストリードをGNDに触れさせます。
 
 .. image:: img/6_blink_wiring_measure_high.png
     :width: 600
     :align: center
 
-3. Record the measured voltage in the table for Pin 3 under the row labeled "HIGH".
+3. 測定した電圧を表に記録します。「HIGH」とラベル付けされた行の下にピン3の電圧を記録してください。
 
 .. list-table::
    :widths: 25 25
    :header-rows: 1
 
-   * - State
-     - Pin 3 Voltage
+   * - 状態
+     - ピン3の電圧
    * - HIGH
      - *≈4.95 volts*
    * - LOW
      - 
 
 
-4. After measuring, remember to turn the multimeter off by setting it to the "OFF" position.
+4. 測定後、マルチメータを「OFF」位置にして電源を切ることを忘れないでください。
 
-Our measurements reveal that the voltage at all three pins is close to 5V. This indicates that setting a pin to ``HIGH`` in the code means the output voltage at that pin is close to 5V.
+測定結果によると、すべてのピンの電圧は5Vに近いことが分かります。これにより、コード内でピンを ``HIGH`` に設定すると、そのピンの出力電圧が約5Vになることが確認されます。
 
-The R3's pin voltage is 5V, so setting it to ``HIGH`` reaches near 5V. However, some boards operate at 3.3V, meaning their ``HIGH`` state would be close to 3.3V.
+R3のピン電圧は5Vであり、 ``HIGH`` に設定すると約5Vに達します。ただし、3.3Vで動作するボードもあり、それらの ``HIGH`` 状態は約3.3Vになります。
 
 
-Make LED Blink
+LEDを点滅させる
 ------------------------------
-Now that your LED are on, it's time for them to blink.
 
-1. Open the sketch you saved earlier, ``Lesson6_Light_up_LED``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson6_Blink_LED``. Click "Save".
+LEDが点灯したら、次はそれを点滅させましょう。
 
-2. In the ``void loop()`` function of your sketch, copy the ``digitalWrite()`` commands and paste them after the originals. To make the LED blink, you previously turned it ON; now set its state to ``LOW`` to turn it OFF.
+1. 先ほど保存したスケッチ「 ``Lesson6_Light_up_LED`` 」を開き、「ファイル」メニューから「名前を付けて保存」を選択して、「 ``Lesson6_Blink_LED`` 」に名前を変更します。そして、「保存」をクリックします。
+
+2. スケッチの ``void loop()`` 関数で、 ``digitalWrite()`` コマンドをコピーし、元のコマンドの後に貼り付けます。LEDを点滅させるために、まずLEDを点灯させ、その後に ``LOW`` を設定してLEDを消灯させます。
 
     .. note::
-       * Copy and paste can be a coder's best friend. Replicate a clean section of code to a new position and adjust its parameters for quick and clean execution.
-       * Remember to update comments to better match the action performed.
-       * Use ``Ctrl+T`` to format your code neatly in one click, making it more readable and friendly.
+       * コピーペーストはプログラマーの強い味方です。きれいに書かれたコードを複製し、新しい場所に貼り付けてパラメータを調整することで、迅速かつ効率的な実行が可能です。
+       * コメントを更新して、実行されるアクションに適したものにしましょう。
+       *  ``Ctrl+T`` を使って、コードを一クリックできれいにフォーマットし、読みやすくしましょう。
 
     .. code-block:: Arduino
        :emphasize-lines: 8,9
 
        void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // セットアップコードをここに記述し、初回のみ実行されます:
+            pinMode(3, OUTPUT);  // ピン3を出力に設定
        }
 
        void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3   
-            digitalWrite(3, LOW);  // Switch off the LED on pin 3
+            // メインコードをここに記述し、繰り返し実行されます:
+            digitalWrite(3, HIGH);  // ピン3のLEDを点灯   
+            digitalWrite(3, LOW);  // ピン3のLEDを消灯
        }
 
-3. Press the “Upload” button to transfer the sketch to the Arduino Uno R3. After the transfer, you might notice the LED don't blink, or they blink so fast it's imperceptible.
+3. 「アップロード」ボタンを押して、スケッチをArduino Uno R3に転送します。転送後、LEDが点滅しないか、点滅が速すぎて目に見えないかもしれません。
 
-4. To visually observe the blinking, you can use the ``delay()`` command to make the Arduino Uno R3 wait for any duration you specify, in milliseconds.
+4. 点滅を視覚的に確認するには、 ``delay()`` コマンドを使用して、Arduino Uno R3に指定した時間（ミリ秒単位）だけ待機させます。
 
-    * ``delay(ms)``: Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
+    * ``delay(ms)`` : プログラムを指定された時間（ミリ秒単位）だけ一時停止させます。（1秒は1000ミリ秒です）
 
-    **Parameters**
-        - ``ms``: the number of milliseconds to pause. Allowed data types: unsigned long.
+    **パラメータ**
+        - ``ms``: 一時停止するミリ秒数。許容されるデータ型: unsigned long。
 
-    **Returns**
-        Nothing
+    **戻り値**
+        なし
 
-5. Now, include the ``delay(time)`` command after each set of ON and OFF commands, setting the delay time to 3000 milliseconds (3 seconds). You may adjust this duration to make the LED blink faster or slower.
+5. LEDのONとOFFの各コマンドの後に ``delay(time)`` コマンドを追加し、遅延時間を3000ミリ秒（3秒）に設定します。LEDが速く点滅するか、ゆっくり点滅するように調整することができます。
 
     .. note::
 
-        During this delay, the Arduino Uno R3 can't perform any tasks or execute any other commands until the delay ends.
+        この遅延中、Arduino Uno R3は他のタスクやコマンドを実行できません。遅延が終了するまで待機します。
         
     .. code-block:: Arduino
        :emphasize-lines: 10,11
 
        void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT);  // set pin 3 as output
+            // セットアップコードをここに記述し、初回のみ実行されます:
+            pinMode(3, OUTPUT);  // ピン3を出力に設定
        }
 
        void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            delay(3000); // Wait for 3 seconds   
-            digitalWrite(3, LOW);  // Switch off the LED on pin 3
-            delay(3000); // Wait for 3 seconds
+            // メインコードをここに記述し、繰り返し実行されます:
+            digitalWrite(3, HIGH);  // ピン3のLEDを点灯
+            delay(3000); // 3秒間待機   
+            digitalWrite(3, LOW);  // ピン3のLEDを消灯
+            delay(3000); // 3秒間待機
        }
 
 
-6. Upload your sketch to the Arduino Uno R3. After completion, your LED should blink at a 3 seconds interval.
+6. スケッチをArduino Uno R3にアップロードします。完了すると、LEDは3秒間隔で点滅するはずです。
 
-7. Confirm everything is working as expected, then save your sketch.
+7. すべてが期待通りに動作していることを確認し、スケッチを保存します。
 
-8. Let's use a multimeter to measure the voltage at three pins and understand what the ``LOW`` state in the code actually means. Adjust the multimeter to the 20 volts DC setting.
+8. マルチメータを使用して、3つのピンの電圧を測定し、コード内の ``LOW`` 状態が何を意味するかを理解しましょう。マルチメータをDC 20ボルト設定に調整します。
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-9. Start by measuring the voltage at Pin 3. Touch the red test lead of the multimeter to Pin 3 and the black test lead to GND.
+9. まず、ピン3の電圧を測定します。マルチメータの赤いテストリードをピン3に、黒いテストリードをGNDに触れさせます。
 
 .. image:: img/6_blink_wiring_measure_high.png
     :width: 600
     :align: center
 
-10. With all three LED turned off, record the measured voltage for Pin 3 in the "LOW" row of your table.
+10. すべてのLEDが消灯している状態で、ピン3の電圧を表の「LOW」行に記録します。
 
 .. list-table::
    :widths: 25 25
    :header-rows: 1
 
-   * - State
-     - Pin 3 Voltage 
+   * - 状態
+     - ピン3の電圧 
    * - HIGH
      - *≈4.95 volts*
    * - LOW
      - *0.00 volts*
 
 
-Through our measurements, we found that when the LED are off, the voltage at Pin 3 drops to 0V. This demonstrates that in our code, setting a pin to "LOW" effectively reduces the output voltage at that pin to 0V, turning off the connected LED. This principle allows us to control the on and off states of LED with precise timing, mimicking the operation of a traffic light.
+測定を通じて、LEDが消灯しているとき、ピン3の電圧が0Vに下がることがわかりました。これは、コード内でピンを``LOW``に設定すると、そのピンの出力電圧が0Vになり、接続されたLEDが消灯することを示しています。この原理により、LEDの点灯と消灯を正確なタイミングで制御し、信号機の動作を模倣することができます。
 
-**Question**
 
-Upload the above code, and you'll find the LED repeatedly blinking at a 3-second interval. If you just want it to turn on and off once, what should you do?
 
-**Summary**
+**質問**
 
-Congratulations on completing this lesson, where you successfully programmed an LED to blink using the Arduino Uno R3. This lesson served as an introduction to writing and uploading Arduino sketches, setting pin modes, and manipulating outputs to achieve desired electrical responses. Through building the circuit and programming the Arduino Uno R3, you gained valuable insights into the interaction between software commands and physical hardware behaviors.
+上記のコードをアップロードすると、LEDは3秒間隔で繰り返し点滅します。もし、LEDを一度だけ点灯させて消灯させたい場合、どうすればよいでしょうか？
 
-Your ability to control an LED is just the beginning—imagine what you can achieve as you expand on these basics!
+**まとめ**
+
+このレッスンを完了し、Arduino Uno R3を使用してLEDを点滅させるプログラムを作成することができました。このレッスンでは、Arduinoスケッチの作成とアップロード、ピンモードの設定、および出力の操作を学び、希望する電気的な応答を得る方法を紹介しました。回路の構築とArduino Uno R3のプログラミングを通じて、ソフトウェアコマンドとハードウェアの動作との相互作用について貴重な洞察を得ることができました。
+
+LEDを制御する能力は、始まりにすぎません。これらの基本を拡張することで、さらに多くのことを達成できるでしょう！

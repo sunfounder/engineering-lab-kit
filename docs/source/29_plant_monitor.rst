@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで仲間と一緒にRaspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換。
+    - **独占プレビュー**: 新製品の発表や予告をいち早く入手。
+    - **特別割引**: 新製品に対する特別割引を享受。
+    - **フェスティバルプロモーションとプレゼント企画**: プレゼント企画やホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造しましょう！今すぐ[|link_sf_facebook|]をクリックして参加しませんか？
 
-29. Plant Monitor
+29. 植物モニター
 =========================
 
-Welcome to our interactive lesson on building a Plant Monitor using Arduino! In this lesson, you'll dive into the world of electronic components and learn how to assemble a plant monitoring system from scratch.
+Arduinoを使用して植物モニターを作成するインタラクティブなレッスンへようこそ！このレッスンでは、電子部品の世界に触れ、植物のモニタリングシステムを一から組み立てる方法を学びます。
 
-This project automatically waters plants by activating a water pump when the soil moisture falls below a specific threshold. Additionally, it displays temperature, light value, and soil moisture on an LCD screen, providing users with insights into the plant's growth environment.
+このプロジェクトでは、土壌の湿度が特定のしきい値を下回ると、水ポンプが自動的に作動して植物に水を供給します。さらに、LCDスクリーンに温度、光量、土壌湿度が表示され、植物の成長環境に関するインサイトをユーザーに提供します。
 
 .. raw:: html
 
@@ -26,16 +26,16 @@ This project automatically waters plants by activating a water pump when the soi
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will able to:
+このレッスンで学べること:
 
-* Understand the workings of the soil moisture module.
-* Learn to integrate these sensors with Arduino to monitor environmental variables affecting plant health.
+* 土壌湿度モジュールの仕組みを理解する。
+* Arduinoとこれらのセンサーを統合して、植物の健康に影響を与える環境変数をモニタリングする方法を学ぶ。
 
 
-Building the Circuit
+回路の組み立て
 -----------------------
 
-**Components Needed**
+**必要な部品**
 
 
 .. list-table:: 
@@ -44,30 +44,30 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * I2C LCD1602
-     - 1 * Thermistor
-     - 1 * Photoresistor
+     - 1 * サーミスタ
+     - 1 * 光センサー
    * - |list_uno_r3| 
      - |list_i2c_lcd1602|
      - |list_thermistor|
      - |list_photoresistor|
-   * - Soil Moisture Module
-     - 1 * Pump
-     - 2 * 10KΩ Resistor
-     - 1 * L293D Chip
+   * - 土壌湿度モジュール
+     - 1 * ポンプ
+     - 2 * 10KΩ 抵抗
+     - 1 * L293D チップ
    * - |list_moisture_module|
      - |list_pump|
      - |list_10kohm|
      - |list_l293d|
-   * - Jumper Wires
-     - 1 * USB Cable
-     - 1 * Breadboard
-     - 1 * Breadboard Power Module
+   * - ジャンパーワイヤー
+     - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - 1 * ブレッドボード電源モジュール
    * - |list_wire|
      - |list_usb_cable|
      - |list_breadboard|
      - |list_power_module|
-   * - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * 9V バッテリー
+     - 1 * バッテリーケーブル
      - 
      -  
    * - |list_battery| 
@@ -75,15 +75,16 @@ Building the Circuit
      -
      -
 
-**Building Step-by-Step**
+**回路の組み立て手順**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+
+回路図に従うか、以下の手順に従って回路を組み立ててください。
 
 .. image:: img/29_plant_connect_mositure.png
   :width: 800
   :align: center
 
-1. First, insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+1. まず、ブレッドボードに電源モジュールを挿入し、ジャンパーワイヤーを使用してブレッドボードの負極レールをArduino Uno R3のGNDに接続し、共通のグラウンドを実現します。
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -91,9 +92,9 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    配線図では、ブレッドボードの正極と負極の端子の順序が、キットに提供されたブレッドボードとは逆になっています。
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60-65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    実際の配線では、ブレッドボードの電源モジュールを番号の高い側（60-65）から挿入し、電源モジュールの"-"がブレッドボードの負極レール"-"に、"+"が正極レール"+"に接続されるようにする必要があります。
 
     .. raw:: html
 
@@ -102,95 +103,95 @@ Follow the wiring diagram, or the steps below to build your circuit.
             Your browser does not support the video tag.
         </video>
 
-2. Connect the pins of the L293D chip as follows.
+2. 次に、L293Dチップのピンを以下のように接続します。
 
-* **1(1,2EN)**: Connect to the positive rail of the breadboard to enable the chip.
-* **4(GND)**: Connect to the negative rail of the breadboard to ground the chip.
-* **8(VCC2)**: Connect to the positive rail of the breadboard to provide power to the motor.
-* **16(VCC1)**: Connect to the positive rail of the breadboard to power the chip.
+* **1(1,2EN)**: ブレッドボードの正極レールに接続して、チップを有効化します。
+* **4(GND)**: ブレッドボードの負極レールに接続して、チップをグラウンドします。
+* **8(VCC2)**: ブレッドボードの正極レールに接続して、モーターに電力を供給します。
+* **16(VCC1)**: ブレッドボードの正極レールに接続して、チップに電力を供給します。
 
 .. image:: img/29_plant_connect_l293d.png
   :width: 500
   :align: center
 
-3. Unlike motors, water pumps do not have a direction of rotation to distinguish. They just need a voltage difference across two pins to start pumping water. Therefore, connect pin 2 (1A) of the L293D to pin 12 on the Arduino Uno R3, and pin 3 (1Y) to the water pump, with the other pin of the water pump going to GND.
+3. モーターとは異なり、水ポンプは回転方向を区別する必要がありません。単に2つのピン間に電圧差を与えることで水を汲み始めます。したがって、L293Dのピン2（1A）をArduino Uno R3のピン12に、ピン3（1Y）を水ポンプに接続し、水ポンプのもう一方のピンをGNDに接続します。
 
-* By simply setting pin 12 to high, the water pump will start pumping water.
+* ピン12を高レベルに設定するだけで、水ポンプが水を汲み始めます。
 
 .. image:: img/29_plant_connect_pump.png
   :width: 500
   :align: center
 
-4. Continue building the circuit. Connect one pin of the photoresistor to the negative terminal of the breadboard and the other pin to the A0 pin on the Arduino Uno R3.
+4. 回路の組み立てを続けます。光センサーの片方のピンをブレッドボードの負極端子に接続し、もう片方のピンをArduino Uno R3のA0ピンに接続します。
 
 .. image:: img/29_plant_phr.png
     :width: 500
     :align: center
 
-5. Insert a 10K resistor in the same pin as the photoresistor's connection to A0.
+5. フォトレジスタが接続されているA0ピンと同じピンに10KΩ抵抗を挿入します。
 
 .. image:: img/29_plant_phr_resistor.png
     :width: 500
     :align: center
 
-6. Connect the other pin of the 10K resistor to the positive terminal of the breadboard.
+6. 10KΩ抵抗のもう一方のピンをブレッドボードの正極端子に接続します。
 
 .. image:: img/29_plant_phr_vcc.png
     :width: 500
     :align: center
 
-7. Involves connecting a thermistor similarly to a photoresistor. Insert the thermistor into the breadboard, connect one pin to the positive rail of the breadboard and another to the A0 pin.
+7. サーミスタをフォトレジスタと同様に接続します。サーミスタをブレッドボードに挿入し、一方のピンをブレッドボードの正極レールに、もう一方をA0ピンに接続します。
 
 .. image:: img/29_plant_connect_thermistor.png
     :width: 500
     :align: center
 
-8. Insert a 10K resistor in the same pin as the thermistor's connection to A2.
+8. サーミスタが接続されているA2ピンと同じピンに10KΩ抵抗を挿入します。
 
 .. image:: img/29_plant_connect_thr_mistor.png
     :width: 500
     :align: center
 
-9. Connect the other pin of the 10K resistor to the negative terminal of the breadboard.
+9. 10KΩ抵抗のもう一方のピンをブレッドボードの負極端子に接続します。
 
 .. image:: img/29_plant_connect_resistor_vcc.png
     :width: 500
     :align: center
 
-10. Connect the I2C LCD1602 module: GND to the negative rail on the breadboard, VCC to the positive rail on the breadboard, SDA to pin A4, and SCL to pin A5.
+10. I2C LCD1602モジュールを接続します。GNDをブレッドボードの負極レールに、VCCを正極レールに、SDAをA4ピンに、SCLをA5ピンに接続します。
 
     .. image:: img/29_plant_connect_lcd.png
         :width: 800
         :align: center
 
-11. Find the soil moisture module, which is a module that hasn't been used before, designed for detecting soil moisture.
+11. 今回初めて使用する土壌湿度モジュールを探します。これは土壌の湿度を検出するためのモジュールです。
 
 .. image:: img/29_plant_soil_mositure.png
   :width: 500
   :align: center
 
-* **GND**: Ground
-* **VCC**: Power supply, 3.3v~5V
-* **AOUT**: Outputs the soil moisture value, the wetter the soil, the smaller its value.
+* **GND**: グラウンド
+* **VCC**: 電源供給、3.3V~5V
+* **AOUT**: 土壌湿度値を出力し、土壌が湿っているほどその値は小さくなります。
 
-This capacitive soil moisture sensor is different from most of the resistive sensors on the market, using the principle of capacitive induction to detect soil moisture. It avoids the problem that resistive sensors are highly susceptible to corrosion and greatly extends its working life.
+この容量式土壌湿度センサーは、市場にある多くの抵抗式センサーとは異なり、容量式誘導の原理を使用して土壌湿度を検出します。これにより、抵抗式センサーが腐食に非常に敏感であるという問題を回避し、その耐用年数を大幅に延ばします。
 
-It is made of corrosion-resistant materials and has an excellent service life. Insert it into the soil around plants and monitor real-time soil moisture data, the higher the soil moisture, the higher the capacitance of the sensor, which reduces the voltage on the signal line, and the smaller the value of the analog input through the microcontroller. The module includes an on-board voltage regulator that allows it to operate over a voltage range of 3.3 ~ 5.5 V.
+腐食に強い素材で作られており、優れた耐久性を誇ります。植物の周りの土壌に挿入してリアルタイムで土壌の湿度データをモニタリングできます。土壌の湿度が高いほどセンサーの容量が高まり、信号線の電圧が低下し、マイクロコントローラーを通じてアナログ入力の値が小さくなります。このモジュールにはオンボードの電圧レギュレータが含まれており、3.3V～5.5Vの電圧範囲で動作できます。
 
-12. Now connect it to the circuit. Ideally, connect its VCC and GND to the positive and negative terminals of the breadboard respectively. But to avoid crossing wires over the Arduino board and causing interference, connect its VCC and GND to the Arduino board's 5V and GND pins.
+12. 次に、それを回路に接続します。理想的には、VCCとGNDをそれぞれブレッドボードの正極端子と負極端子に接続します。しかし、Arduinoボードを跨いで配線を交差させて干渉を引き起こさないようにするために、VCCとGNDをArduinoボードの5VとGNDピンに接続します。
 
 .. image:: img/29_plant_connect_mositure.png
   :width: 800
   :align: center
 
-Code Creation - Read Soil Moisture
+コード作成 - 土壌湿度の読み取り
 ---------------------------------------------
-Now start writing the code to read the values from the soil moisture sensor.
+次に、土壌湿度センサーから値を読み取るコードを作成します。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson29_Read_Soil_Noisture`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. 「Ctrl + S」を押すか「保存」をクリックして、スケッチを ``Lesson29_Read_Soil_Noisture`` として保存します。
 
-3. Now start writing the code to read the values from the soil moisture module.
+3. 次に、土壌湿度モジュールから値を読み取るコードを作成します。
 
 .. code-block:: Arduino
 
@@ -209,7 +210,7 @@ Now start writing the code to read the values from the soil moisture sensor.
   }
 
 
-4. After running the code, you need to insert the soil moisture module into the soil. When you water the soil, you will notice that the displayed readings decrease. Moreover, the change in soil moisture is not linear and happens slowly.
+4. コードを実行した後、土壌湿度モジュールを土壌に挿入する必要があります。土壌に水を供給すると、表示される読み取り値が低下することに気付くでしょう。さらに、土壌の湿度の変化は線形ではなく、ゆっくりと変化します。
 
 .. code-block:: Arduino
 
@@ -220,37 +221,37 @@ Now start writing the code to read the values from the soil moisture sensor.
   Moisture Value: 323
   Moisture Value: 210
 
-**Question**
+**質問**
 
-In the code provided, we understand that higher moisture content results in a lower sensor value, and moisture is typically expressed as a percentage. How can we modify the code to display the soil moisture level as a percentage?
+提供されたコードでは、湿度が高いほどセンサーの値が低くなることがわかります。湿度は通常、パーセンテージで表されます。土壌湿度レベルをパーセンテージで表示するようにコードをどのように変更できますか？
 
 
-Code Creation - Plant Monitor
+コード作成 - 植物モニター
 ---------------------------------------------
-From the previous project, we have understood the data changes of the soil moisture module, now let's use the soil moisture module, photoresistor, thermistor, water pump, and I2C LCD1602 to create a plant monitoring system.
+前のプロジェクトから、土壌湿度モジュールのデータ変化を理解しました。次に、土壌湿度モジュール、光センサー、サーミスタ、水ポンプ、I2C LCD1602を使用して、植物モニタリングシステムを作成します。
 
-* The thermistor is used to detect temperature and displays both Celsius and Fahrenheit on the LCD.
-* The photoresistor is used to detect light conditions and display it on the LCD.
-* The soil moisture module is used to detect the percentage of soil moisture and display it on the LCD.
-* When the detected soil moisture is below 35%, the water pump operates for 3 seconds, and if the next check still shows below 35%, it operates again for 3 seconds. Multiple short watering sessions are used to reach the set soil moisture threshold.
+* サーミスタは温度を検出し、LCDに摂氏と華氏の両方を表示します。
+* 光センサーは光の状態を検出し、LCDに表示します。
+* 土壌湿度モジュールは土壌湿度のパーセンテージを検出し、LCDに表示します。
+* 検出された土壌湿度が35％未満の場合、水ポンプが3秒間作動し、次のチェックでも35％未満である場合、再び3秒間作動します。設定された土壌湿度のしきい値に達するまで、複数回の短時間の散水が行われます。
 
-Now, let's write the code to see how to implement the desired effects.
+では、目的の効果を実現するためにコードを書いてみましょう。
 
 .. note::
 
-  If you are not familiar with the Thermistor, Photoresistor, Pump or I2C LCD1602, you can first learn their basic usage through the following projects:
+  サーミスタ、光センサー、ポンプ、またはI2C LCD1602に慣れていない場合は、以下のプロジェクトで基本的な使い方を学ぶことができます。
 
   * :ref:`ar_temperature`
   * :ref:`ar_photoresistor`
   * :ref:`automatic_soap_dispenser` 
   * :ref:`ar_i2c_lcd1602`
 
-  ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+  ここでは ``LiquidCrystal I2C`` ライブラリを使用します。ライブラリマネージャーからインストールできます。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson29_plant_monitor`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2.  ``Ctrl + S`` を押すか「保存」をクリックして、スケッチを ``Lesson29_plant_monitor`` として保存します。
 
-3. Now, let's start coding. Include the library needed for the I2C LCD1602 and then initialize its address and display, next define the pins for each sensor.
+3. では、コーディングを開始しましょう。I2C LCD1602に必要なライブラリをインクルードし、そのアドレスとディスプレイを初期化します。次に、各センサーのピンを定義します。
 
 .. code-block:: Arduino
 
@@ -264,7 +265,7 @@ Now, let's write the code to see how to implement the desired effects.
   const int tempSensorPin = A2;   // NTC thermistor
   const int pumpPin = 12;         // Pump
 
-4. Next, define the parameters needed for the thermistor.
+4. 次に、サーミスタに必要なパラメータを定義します。
 
 .. code-block:: Arduino
   :emphasize-lines: 13
@@ -285,7 +286,7 @@ Now, let's write the code to see how to implement the desired effects.
   const float roomTempResistance = 10000;  // NTC resistance at 25°C
   const float roomTemp = 25 + 273.15;      // Room temperature in Kelvin
 
-5. In the ``void setup()`` function, set the water pump pin to output and initialize the LCD display. The analog pins are by default in input mode, so you don't need to manually set the input/output mode.
+5. ``void setup()`` 関数では、水ポンプのピンを出力に設定し、LCDディスプレイを初期化します。アナログピンはデフォルトで入力モードになっているため、入力/出力モードを手動で設定する必要はありません。
 
 .. code-block:: Arduino
 
@@ -295,7 +296,7 @@ Now, let's write the code to see how to implement the desired effects.
     lcd.backlight();           // Turns on LCD backlight for visibility
   }
 
-6. In the ``loop()`` function, read the values from the photoresistor, thermistor, and soil moisture module, and store them in corresponding variables. Convert the soil moisture into a percentage using the ``map()`` function.
+6. ``loop()`` 関数で、フォトレジスタ、サーミスタ、および土壌湿度モジュールからの値を読み取り、それらを対応する変数に格納します。土壌湿度を ``map()`` 関数を使用してパーセンテージに変換します。
 
 .. code-block:: Arduino
   :emphasize-lines: 3-5,8
@@ -310,7 +311,7 @@ Now, let's write the code to see how to implement the desired effects.
     float moisturePercent = map(moistureValue, 0, 1023, 100, 0);
   }
 
-7. Next, based on the thermistor's value, convert it into Celsius and Fahrenheit temperatures.
+7. 次に、サーミスタの値に基づいて、摂氏温度と華氏温度に変換します。
 
 .. code-block:: Arduino
   :emphasize-lines: 11-14
@@ -331,7 +332,7 @@ Now, let's write the code to see how to implement the desired effects.
     float tempF = tempC * 9.0 / 5.0 + 32.0;
   }
 
-8. Now, display the data on the I2C LCD. First, use the ``lcd.clear()`` function to clear the data on the LCD, then display the Celsius temperature on the first line and the Fahrenheit temperature on the second line for 2 seconds.
+8. 次に、I2C LCDにデータを表示します。まず、 ``lcd.clear()`` 関数を使用してLCD上のデータをクリアし、次に1行目に摂氏温度を、2行目に華氏温度を表示して2秒間保持します。
 
 .. code-block:: Arduino
   :emphasize-lines: 8-15
@@ -352,7 +353,7 @@ Now, let's write the code to see how to implement the desired effects.
   lcd.print(tempF);
   delay(2000);
 
-9. Next, display the light data on the first line and the moisture percentage on the second line, also for 2 seconds.
+9. 次に、光のデータを1行目に、土壌湿度のパーセンテージを2行目に表示し、同様に2秒間保持します。
 
 .. code-block:: Arduino
   :emphasize-lines: 12-20
@@ -378,7 +379,7 @@ Now, let's write the code to see how to implement the desired effects.
   lcd.print("%");
   delay(2000);
 
-10. Then, use an ``if`` statement to control the water pump operation, set to start pumping water for 3 seconds when the moisture is below 35%, but you can adjust this threshold based on actual conditions. After the pump stops, call ``lcd.init()`` to reinitialize the LCD to prevent display corruption.
+10. 次に、土壌湿度が35%未満の場合に水ポンプを3秒間作動させるように、 ``if`` ステートメントを使用してポンプを制御します。このしきい値は、実際の条件に応じて調整可能です。ポンプが停止した後、LCDの表示が乱れるのを防ぐために ``lcd.init()`` を呼び出して再初期化します。
 
 .. code-block:: Arduino
   :emphasize-lines: 2-7
@@ -391,7 +392,7 @@ Now, let's write the code to see how to implement the desired effects.
     lcd.init(); // Reinitialize LCD to prevent display corruption
   }
 
-11. Your complete code is shown below, you can upload it to the Arduino board and see if it achieves the set effects.
+11. 以下に完成したコードを示します。これをArduinoにアップロードして、設定された効果が得られるか確認してください。
 
 .. code-block:: Arduino
 
@@ -462,13 +463,12 @@ Now, let's write the code to see how to implement the desired effects.
     }
   }
 
-12. Finally, remember to save your code and tidy up your workspace.
+12. 最後に、コードを保存し、作業スペースを整理するのを忘れないでください。
 
 **Question**
 
-How you might improve or adjust the system if the sensors responded more slowly or too quickly to environmental changes.
+センサーが環境変化に対して反応が遅すぎる、または早すぎる場合、システムをどのように改善または調整できますか。
 
 **Summary**
 
-In today's lesson, you've successfully built and programmed a Plant Monitor using Arduino. This project not only introduced you to a variety of sensors and components but also demonstrated how these elements can be integrated to create a practical device. Through hands-on learning, you've observed how data from the real world can be collected and utilized to make informed decisions about plant care. By controlling the environment of your plants actively, you've taken a big step toward automating their care and ensuring they grow in optimal conditions.
-
+今回のレッスンでは、Arduinoを使用して植物モニターを構築し、プログラムすることに成功しました。このプロジェクトを通じて、さまざまなセンサーやコンポーネントに触れ、それらを統合して実用的なデバイスを作成する方法を学びました。実際に手を動かして学ぶことで、現実世界のデータを収集し、植物のケアに関する適切な意思決定を行う方法を理解しました。環境を積極的に制御することで、植物の最適な成長環境を確保するための大きな一歩を踏み出しました。

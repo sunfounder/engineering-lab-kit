@@ -1,151 +1,149 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookで他の愛好者たちと一緒に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品の発表や先行情報をいち早く入手できます。
+    - **特別割引**: 最新製品を特別価格で購入できます。
+    - **フェスティバルプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-1.2 What's Included in Your Kit
+1.2 キットに含まれるもの
 ======================================
 
+このコースを通じて回路を作成するために使用するさまざまなコンポーネントと部品がキットに含まれています。ここでは、キットに含まれるものの簡単なガイドを紹介します。
 
-Inside our kit, you'll find a variety of components and parts you'll use throughout this course to build circuits. Here's a quick guide to what's included.
+基本コンポーネント
+----------------------
 
-Basic Components
------------------
+**1 x オリジナルArduino Uno R3**
 
-**1 x Original Arduino Uno R3**
-
-A microcontroller board that's the brain of your circuits. It has everything needed to support the microcontroller; simply connect it to your computer with a USB cable or power it with an AC-to-DC adapter or battery to get started.
+回路の頭脳であるマイクロコントローラボードです。マイクロコントローラをサポートするために必要なすべてが揃っており、USBケーブルでコンピュータに接続するか、AC-DCアダプタやバッテリーで電源を供給して開始できます。
 
 .. image:: img/1_uno_r3.png
     :width: 400
     :align: center
 
-**1 x Multimeter with Red & Black Leads**
+**1 x 赤と黒のリード付きマルチメーター**
 
-This is a versatile multimeter capable of measuring voltage, current, and resistance, as well as performing other electrical tests, making it an indispensable tool for electronics and electrical work.
+電圧、電流、抵抗を測定できる多用途のマルチメーターで、他の電気テストも行うことができ、エレクトロニクスや電気作業に欠かせないツールです。
 
 .. image:: img/multimeter_pic.png
     :width: 200
     :align: center
 
-**1 x RAB Holder**
+**1 x RABホルダー**
 
-Designed for both Arduino and Raspberry Pi users, it ensures stability for all your devices. Beyond holding, it's a tool for innovation, suitable for everyone.
+ArduinoとRaspberry Piのユーザーのために設計されており、すべてのデバイスを安定させることができます。ホルダーとしての役割を超えて、すべての人に適した革新的なツールです。
 
 .. image:: img/1_rab_holder.jpg
     :width: 400
     :align: center
 
-**1 x 830-hole Breadboard**
+**1 x 830穴ブレッドボード**
 
-A solderless board that lets you easily build electronic circuits. It's filled with rows of holes for connecting wires and components.
+はんだ付け不要で電子回路を簡単に構築できるボードです。ワイヤやコンポーネントを接続するための穴が並んでいます。
 
 .. image:: img/2_breadboard_full+.png
     :width: 500
     :align: center
 
-**1 x Breadboard Power Module**
+**1 x ブレッドボードパワーモジュール**
 
-The breadboard power module is a handy accessory for prototyping, providing a stable 3.3V or 5V power supply from a DC adapter or USB. It fits standard breadboards, plugs into power rails, and includes an on/off switch and voltage regulators for consistent output, making it essential for electronics projects.
+ブレッドボードパワーモジュールは、DCアダプタやUSBから安定した3.3Vまたは5Vの電源を供給するためのプロトタイピング用の便利なアクセサリです。標準的なブレッドボードに適合し、電源レールに差し込み、オン/オフスイッチと電圧レギュレータを備えており、エレクトロニクスプロジェクトに不可欠な安定した出力を提供します。
 
 .. image:: img/1_breadboard_power_module.png
     :width: 300
     :align: center
 
-**120 x Resistors (10 of each, 30 of 220Ω resistor)**
+**120 x 抵抗器 (各10個、220Ω抵抗器は30個)**
 
-A resistor is a component that obstructs the flow of electric power, thereby altering the voltage and current within a circuit. The value of a resistor is measured in ohms, symbolized by the Greek letter omega (Ω). The colored stripes on a resistor indicate its resistance value and tolerance.
+抵抗器は電力の流れを阻害し、回路内の電圧と電流を調整するコンポーネントです。抵抗値はギリシャ文字のオメガ(Ω)で表され、抵抗器に描かれた色のストライプで抵抗値と許容誤差が示されます。
 
 .. image:: img/2_all_resistor.png
     :align: center
 
-**2 x 9V Battery**
+**2 x 9Vバッテリー**
 
-This is a non-rechargeable alkaline 9V battery. You need to install it in the multimeter, or use battery cable to power the Arduino Uno R3 or the breadboard power module.
+これは充電できないアルカリ9Vバッテリーです。マルチメーターに取り付けるか、バッテリーケーブルを使用してArduino Uno R3またはブレッドボードパワーモジュールに電源を供給します。
 
 .. image:: img/1_9v_battery.png
     :width: 300
     :align: center
 
-**1 x Battery Cable**
+**1 x バッテリーケーブル**
 
-This cable connects a 9V battery to the DC input of a breadboard power module or an Arduino Uno R3. It provides a convenient and portable power source for your electronic projects.
+このケーブルは9VバッテリーをブレッドボードパワーモジュールやArduino Uno R3のDC入力に接続します。電子プロジェクトに便利でポータブルな電源を提供します。
 
 .. image:: img/1_battery_cable.png
     :width: 300
     :align: center
 
-**65 x Jumper Wires**
+**65 x ジャンパーワイヤー**
 
-Connect components on the breadboard to each other and to the Arduino board.
+ブレッドボード上のコンポーネントを互いに、またはArduinoボードに接続します。
 
 .. image:: img/2_wire_color.jpg
     :width: 400
     :align: center
 
-**20 x Male-to-female DuPont Wires**
+**20 x オス-メス デュポンワイヤー**
 
-Male-to-female DuPont wires are specifically designed for connecting modules with male pin headers, like ultrasonic module, to breadboard. These wires are essential for interfacing different components in electronic projects, where breadboard-compatible male-to-female connections are needed.
+オスピンヘッダを持つモジュール（例えば、超音波モジュール）をブレッドボードに接続するために特別に設計されたオス-メス デュポンワイヤーです。これらのワイヤーは、ブレッドボード互換のオス-メス接続が必要な電子プロジェクトで、異なるコンポーネントをインターフェースするために不可欠です。
 
 .. image:: img/1_dupont_wire.jpg
     :width: 400
     :align: center
 
-**1 x USB Cable**
+**1 x USBケーブル**
 
-Connects the Arduino board to a computer. Allows you to write, compile, and transfer programs to the Arduino board. Also powers the board.
+Arduinoボードをコンピュータに接続します。これにより、Arduinoボードにプログラムを書き込み、コンパイルし、転送することができます。また、ボードに電源を供給します。
 
 .. image:: img/1_usb_cable.png
     :width: 400
     :align: center
 
-
-Displays
+ディスプレイ
 -------------
 
-**25 x LEDs (5 of each color)**
+**25 x LED (各色5個ずつ)**
 
-This colorful LED selection includes five colors: red, green, blue, yellow, and white, meeting various lighting and signaling needs. Suitable for applications ranging from simple status indicators to complex decorative lighting projects, these LEDs offer a rich color choice to enhance the visual appeal of any electronic project.
+このカラフルなLEDセットには、赤、緑、青、黄、白の5色が含まれており、さまざまな照明や信号のニーズに対応します。シンプルなステータスインジケータから複雑な装飾照明プロジェクトまで、これらのLEDは、あらゆる電子プロジェクトの視覚的魅力を高める豊かな色の選択肢を提供します。
 
 .. image:: img/2_led_color.png
     :align: center
 
 **1 x RGB LED**
 
-Combines red, green, and blue LEDs in one casing. It can display various colors by adjusting the input voltage, creating millions of colors.
+赤、緑、青のLEDを1つのケースにまとめたもので、入力電圧を調整することでさまざまな色を表示でき、数百万色を作り出すことができます。
 
 .. image:: img/12_rgb_led.jpg
     :width: 200
     :align: center
 
-**1 x 74HC595 Chip**
+**1 x 74HC595チップ**
 
-The 74HC594 is a shift register that is used to expand the input/output ports of digital circuits by converting serial input into parallel output, thus reducing the number of connection pins needed. This chip is suitable for controlling a large number of output devices, such as 7-segment Display, without occupying too many microcontroller pins.
+74HC594はシフトレジスタで、シリアル入力をパラレル出力に変換することでデジタル回路の入力/出力ポートを拡張し、必要な接続ピンの数を減らします。このチップは、マイクロコントローラのピンを占有することなく、多数の出力デバイス（例えば7セグメントディスプレイ）を制御するのに適しています。
 
 .. image:: img/24_74hc595.png
     :width: 300
     :align: center
 
-**1 x 7-segment Display (Common Cathode)**
+**1 x 7セグメントディスプレイ (共通カソード)**
 
-A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
+7セグメントディスプレイは、7つのLEDを組み合わせて8の形状を形成するコンポーネントです。各LEDはセグメントと呼ばれ、通電すると数字の一部を形成します。
 
 .. image:: img/23_7_segment.png
     :width: 300
     :align: center
 
-**1 x 4-digit 7-segment Display (Common Cathode)**
+**1 x 4桁7セグメントディスプレイ (共通カソード)**
 
-A 4-digit display combines four 7-segment displays, each representing a single digit. To reduce the number of pins needed, the segments of each display are multiplexed, meaning each segment pin is connected to all corresponding segment pins of the other displays.
+4桁ディスプレイは、4つの7セグメントディスプレイを組み合わせたもので、それぞれが1桁を表します。必要なピン数を減らすために、各ディスプレイのセグメントは多重化されており、各セグメントピンは他のディスプレイの対応するセグメントピンと接続されています。
 
 .. image:: img/32_stopwatch_4_digit.png
     :width: 300
@@ -153,180 +151,180 @@ A 4-digit display combines four 7-segment displays, each representing a single d
 
 **1 x I2C LCD1602**
 
-The I2C LCD1602 is a 16x2 character display module that uses the I2C communication protocol. This module is perfect for displaying text, such as sensor data or status messages, in your projects.
+I2C LCD1602は、I2C通信プロトコルを使用する16x2文字ディスプレイモジュールです。このモジュールは、センサーデータやステータスメッセージなどのテキストをプロジェクトに表示するのに最適です。
 
 .. image:: img/17_lcd_i2c_lcd1602.png
     :width: 600
     :align: center
 
-Actuators
--------------
+アクチュエータ
+-----------------
 
-**1 x L293D Chip**
+**1 x L293D チップ**
 
-The L293D is a dual H-bridge motor driver IC that allows you to control the speed and direction of two DC motors simultaneously. It is ideal for robotics and automation projects, providing reliable and efficient motor control.
+L293Dは、2つのDCモーターの速度と方向を同時に制御できるデュアルHブリッジモータードライバICです。ロボティクスや自動化プロジェクトに最適で、信頼性が高く効率的なモーター制御を提供します。
 
 .. image:: img/16_motor_l293d_pic.png
     :width: 200
     :align: center
 
-**1 x Motor**
+**1 x モーター**
 
-The 3V motor is a compact and efficient DC motor designed for low-voltage applications. It is ideal for small electronics projects, toys, and hobbyist robotics, providing reliable performance with low power consumption. 
+この3Vモーターは、低電圧アプリケーション向けに設計されたコンパクトで効率的なDCモーターです。小型エレクトロニクスプロジェクト、玩具、ホビーロボティクスに最適で、低消費電力で信頼性の高い性能を発揮します。
 
 .. image:: img/16_motor_pic.png
     :width: 300
     :align: center
 
-**1 x 3-leaf Fan Blade**
+**1 x 3枚羽根ファンブレード**
 
-The soft 3-leaf fan blade is a flexible and safe fan accessory designed for use with 3V motors. Made from soft, durable materials, it minimizes the risk of injury.
+柔軟で安全な3枚羽根ファンブレードは、3Vモーター用に設計されたアクセサリです。柔らかく耐久性のある素材で作られており、怪我のリスクを最小限に抑えます。
 
 .. image:: img/16_motor_fan.png
     :width: 300
     :align: center
 
-**1 x Servo**
+**1 x サーボモーター**
 
-A servo is a precise and versatile motor used for accurate control of angular or linear position, velocity, and acceleration. Commonly used in robotics, automation, and remote control systems, it ensures reliable and smooth movement for various applications.
+サーボモーターは、角度や直線位置、速度、加速度の正確な制御が可能な高精度かつ多用途なモーターです。ロボティクス、自動化、リモートコントロールシステムで一般的に使用され、さまざまなアプリケーションで信頼性の高いスムーズな動きを実現します。
 
 .. image:: img/14_servo_pic.jpg
     :width: 300
     :align: center
 
-**1 x Pump**
+**1 x ポンプ**
 
-This is the DC 2.5-6V mini submersible water pump, ideal for small-scale projects like tabletop fountains, aquariums, and hydroponic systems. This pump employs centrifugal mechanics, using an electric motor to convert rotational energy into fluid dynamic energy, efficiently moving water through its system.
+これはDC 2.5-6Vのミニ水中ポンプで、卓上噴水や水槽、水耕栽培システムなどの小規模プロジェクトに最適です。このポンプは遠心力を利用して電動モーターの回転エネルギーを流体力学的エネルギーに変換し、水を効率的に移動させます。
 
 .. image:: img/20_despenser_pump.png
     :width: 200
     :align: center
 
-**1 x Tube**
+**1 x チューブ**
 
-This is a 20cm long, 6mm diameter clear tube used to direct water from the outlet of a water pump.
+長さ20cm、直径6mmの透明なチューブで、水ポンプの出口から水を誘導するために使用されます。
 
 .. image:: img/1_tube.png
     :width: 300
     :align: center
 
-**1 x Stepper Motor**
+**1 x ステッピングモーター**
 
-The 28BYJ-48 is a 5-wire unipolar stepper motor that operates at 5V. It is ideal for applications requiring precise control of rotation, such as robotics, 3D printers, and automation projects.
+28BYJ-48は5本線のユニポーラステッピングモーターで、5Vで動作します。ロボティクス、3Dプリンター、自動化プロジェクトなど、回転の正確な制御が求められるアプリケーションに最適です。
 
 .. image:: img/34_step_stepper.png
     :width: 600
     :align: center
 
-**1 x ULN2003 Module**
+**1 x ULN2003モジュール**
 
-The ULN2003 module is a high-voltage, high-current Darlington transistor array used to drive stepper motors, relays, and other inductive loads. It features seven open-collector Darlington pairs, making it ideal for interfacing with TTL and CMOS logic levels in various control applications.
+ULN2003モジュールは、高電圧・高電流に対応するダーリントントランジスタアレイで、ステッピングモーターやリレー、その他の誘導負荷を駆動するために使用されます。7つのオープンコレクタダーリントンペアを備えており、さまざまな制御アプリケーションでTTLおよびCMOSロジックレベルとのインターフェースに最適です。
 
 .. image:: img/34_step_uln2003.png
     :width: 300
     :align: center
 
-Sounds
+サウンド
 ---------------
 
-**1 x Active Buzzer & 1 x Passive Buzzer**
+**1 x アクティブブザー & 1 x パッシブブザー**
 
-A buzzer, available in active and passive types, is an audio signaling device that emits sound when electric current is applied. It is commonly used in alarms, timers, and notification systems.
+ブザーは、アクティブタイプとパッシブタイプがあり、電流が流れると音を発する音響信号装置です。アラーム、タイマー、通知システムで一般的に使用されます。
 
 .. image:: img/7_beep_2.png
     :width: 600
     :align: center
 
-Sensors
+センサー
 -----------
 
-**1 x Photoresistor**
+**1 x フォトレジスタ**
 
-A photoresistor is a light-sensitive component that changes its resistance based on the intensity of light it is exposed to, ideal for creating light-activated controls and sensors in electronic projects.
+フォトレジスタは光に敏感なコンポーネントで、照射される光の強度に応じて抵抗が変化します。電子プロジェクトで光に反応する制御やセンサーを作成するのに最適です。
 
 .. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
-**1 x NTC Thermistor**
+**1 x NTCサーミスタ**
 
-A thermistor is a resistor sensitive to temperature changes. NTC thermistors decrease resistance as temperature rises, while PTC thermistors increase resistance with temperature.
+サーミスタは、温度変化に敏感な抵抗器です。NTCサーミスタは温度が上昇すると抵抗が減少し、PTCサーミスタは温度が上がると抵抗が増加します。
 
 .. image:: img/1_thermistor.png
     :width: 100
     :align: center
 
-**1 x Potentiometer**
+**1 x ポテンショメータ**
 
-A potentiometer is a variable resistor with three pins. Two pins connect to the ends of a resistor, while the middle pin attaches to a movable wiper, dividing the resistor into two parts. Potentiometers, often used to adjust voltage in circuits, are like the volume knobs on radios.
+ポテンショメータは、3つのピンを持つ可変抵抗器です。2つのピンは抵抗器の両端に接続され、中央のピンは可動ワイパーに接続されており、これにより抵抗器が2つの部分に分割されます。ポテンショメータは、回路内の電圧調整に使用され、ラジオのボリュームノブのような役割を果たします。
 
 .. image:: img/9_dimmer_pot.png
     :width: 200
     :align: center
 
-**10 x Small Buttons**
+**10 x 小型ボタン**
 
-A small push-button is used to provide a physical response when pressed, commonly used in electronic devices to initiate actions or input commands.
+小型プッシュボタンは、押されたときに物理的な応答を提供するために使用され、電子機器でアクションを開始したり、コマンドを入力したりするためによく使用されます。
 
 .. image:: img/1_button.png
     :width: 200
     :align: center
 
 
-**1 x Ultrasonic Module**
+**1 x 超音波モジュール**
 
-This is an ultrasonic module that uses ultrasonic waves to measure distances, accurately detecting and measuring the position and distance of objects. Widely used in robotics, obstacle avoidance systems, and automatic control fields, it is a key component for environmental perception and spatial navigation.
+この超音波モジュールは、超音波を使用して距離を測定し、物体の位置と距離を正確に検出します。ロボティクス、障害物回避システム、自動制御分野で広く使用され、環境認識や空間ナビゲーションのための重要なコンポーネントです。
 
 .. image:: img/19_ultrasonic_pic.png
     :width: 300
     :align: center
 
-**1 x Joystick Module**
+**1 x ジョイスティックモジュール**
 
-A joystick module, also known as a joystick sensor, is an input device that measures the movement of a knob in two directions, horizontal (X-axis) and vertical (Y-axis).
+ジョイスティックモジュール、別名ジョイスティックセンサーは、ノブの水平方向（X軸）と垂直方向（Y軸）の2方向の動きを測定する入力デバイスです。
 
 .. image:: img/11_joystick_module.jpg
     :width: 300
     :align: center
 
-**1 x Soil Moisture Module**
+**1 x 土壌水分モジュール**
 
-A capacitive sensor for detecting soil moisture, corrosion-resistant, and operates at 3.3V to 5.5V. Outputs moisture value, with wetter soil giving a smaller analog value.
+腐食に強く、3.3Vから5.5Vで動作する土壌水分を検出するための容量センサーです。湿った土壌ほどアナログ値が小さくなります。
 
 .. image:: img/29_plant_soil_mositure.png
     :width: 600
     :align: center
 
-**1 x RC522-RFID Module with a Tag and a White Card**
+**1 x RC522-RFIDモジュール（タグとホワイトカード付き）**
 
-The RC522 RFID reader module, operating at a frequency of 13.56MHz, is designed to communicate with RFID tags adhering to the ISO 14443A standard. This compact and versatile device is ideal for applications in access control, inventory tracking, and contactless payment systems due to its ability to interface with microcontrollers via a 4-pin SPI connection, supporting data rates up to 10 Mbps.
+RC522 RFIDリーダーモジュールは、13.56MHzの周波数で動作し、ISO 14443A規格に準拠したRFIDタグと通信するように設計されています。このコンパクトで多用途なデバイスは、4ピンのSPI接続を介してマイクロコントローラとインターフェースし、最大10 Mbpsのデータレートをサポートするため、アクセス制御、在庫管理、および非接触決済システムに最適です。
 
 .. image:: img/33_rfid_module.png
     :width: 300
     :align: center
 
-Others
+その他
 ------------
 
-**1 x Relay Module**
+**1 x リレーモジュール**
 
-A relay module enables microcontrollers to control high-voltage devices by providing an electrically isolated switch. It is ideal for applications requiring the control of AC or high-current loads from low-voltage digital signals.
+リレーモジュールは、マイクロコントローラが電気的に絶縁されたスイッチを提供することで高電圧デバイスを制御するのを可能にします。低電圧デジタル信号でACや大電流負荷を制御する必要があるアプリケーションに最適です。
 
 .. image:: img/10_relay_module.png
     :width: 300
     :align: center
 
-**1 x IR Receiver**
+**1 x 赤外線受信機**
 
-The SL838 infrared receiver is a component that receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar in size to a normal plastic-packaged transistor and is suitable for all kinds of infrared remote control and infrared transmission.
+SL838赤外線受信機は、赤外線信号を受信し、TTLレベルに対応した信号を出力することができるコンポーネントです。通常のプラスチックパッケージトランジスタと同じサイズで、あらゆる種類の赤外線リモコンや赤外線伝送に適しています。
 
 .. image:: img/1_ir_receiver.jpg
     :width: 300
     :align: center
 
-**1 x Remote Control**
+**1 x リモコン**
 
-This 21-key remote, compact at 85x39x6mm, has an 8-meter range and is powered by a 3V lithium battery. With a 38KHz infrared frequency and durable PET surface, it ensures over 20,000 uses, making it perfect for various devices.
+この21キーリモコンは、コンパクトな85x39x6mmサイズで、8メートルの範囲を持ち、3Vリチウム電池で動作します。38KHzの赤外線周波数と耐久性のあるPET表面を備えており、20,000回以上の使用が可能で、さまざまなデバイスに最適です。
 
 .. image:: img/22_receiver_remote_control.jpeg
     :width: 500

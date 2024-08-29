@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookでラズベリーパイ、Arduino、ESP32に興味を持つ仲間たちと一緒に、これらのデバイスをさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表やスニークピークにいち早くアクセスできます。
+    - **特別割引**: 最新製品に対する限定割引をお楽しみください。
+    - **フェスティブプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造する準備ができましたか？[|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ar_smart_trash_can:
 
-19. Smart Trash Can
+19. スマートゴミ箱
 ===========================
 
-Welcome to our exciting project-based course where we'll be building a Smart Trash Can! This course offers a practical approach to integrating an ultrasonic sensor with a servo motor to create a trash can that responds to your presence. By the end of this course, you'll understand how to make everyday objects smarter and more interactive.
+スマートゴミ箱を作るエキサイティングなプロジェクトベースのコースへようこそ！このコースでは、超音波センサーとサーボモーターを組み合わせて、存在に反応するゴミ箱を作成する実践的なアプローチを提供します。このコースの終わりには、日常の物をよりスマートでインタラクティブにする方法を理解することができるでしょう。
 
 .. raw:: html
 
@@ -26,38 +26,38 @@ Welcome to our exciting project-based course where we'll be building a Smart Tra
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+このレッスンの終わりには、以下のことができるようになります：
 
-* Understand and utilize ultrasonic sensors for distance measurement.
-* Integrate a servo to automate physical actions.
-* Program an Arduino to control device behavior based on sensor inputs.
+* 距離測定のための超音波センサーの理解と活用。
+* サーボモーターを統合して物理的な動作を自動化。
+* センサー入力に基づいてデバイスの動作を制御するArduinoのプログラミング。
 
-Learn the Ultrasonic Module
+超音波モジュールの学習
 ---------------------------------
 
-Imagine you are in a dark room and can't see the objects around you. In this situation, you could clap your hands to produce a sound that travels outward. When this sound hits a wall or another object, it bounces back as an echo. If you listen carefully, you can hear this echo. By calculating the time it takes for the sound to travel out and the echo to return, you can roughly estimate how far away the wall or object is. Ultrasonic sensors work in a similar way to “see” the world around them.
+暗い部屋にいて、周囲の物が見えないと想像してみてください。この状況では、手を叩いて音を出し、その音が外に広がります。この音が壁や他の物体に当たると、エコーとして反射します。注意深く耳を澄ませば、このエコーを聞くことができます。音が外に出てエコーが戻ってくるまでの時間を計算することで、壁や物体までの距離を大まかに推定することができます。超音波センサーは、これと似た方法で周囲の世界を「見る」ことができます。
 
 .. image:: img/19_ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: トリガーパルス入力
+* **ECHO**: エコーパルス出力
+* **GND**: グランド
+* **VCC**: 5V電源
 
-The HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+HC-SR04超音波距離センサーは、2cmから400cmまでの非接触測定を提供し、範囲精度は最大3mmです。モジュールには超音波送信機、受信機、および制御回路が含まれています。
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+使用するには、4つのピン（VCC（電源）、Trig（トリガー）、Echo（受信）、GND（グランド））を接続するだけで、測定プロジェクトで簡単に使用できます。
 
-**Principle**
+**原理**
 
-The basic principles are as follows:
+基本的な原理は次のとおりです：
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* IOトリガーを使用して、少なくとも10usの高レベル信号を送信します。
+* モジュールは40kHzの超音波を8サイクル送信し、パルス信号が受信されるかどうかを検出します。
+* 信号が戻ってきた場合、Echoは高レベルを出力します。高レベルの継続時間は、放射から戻りまでの時間です。
+* 距離 = （高レベル時間 x 音速（340M/S）） / 2
 
 .. image:: img/19_ultrasonic_ms.png
     :width: 600
@@ -65,37 +65,37 @@ The basic principles are as follows:
 
 .. note::
 
-  This module should not be connected under power up, if necessary, let the module’s GND be connected first. Otherwise, it will affect the work of the module.
+  このモジュールは電源を入れて接続しないでください。必要に応じて、まずモジュールのGNDを接続してください。さもないと、モジュールの動作に影響を与える可能性があります。
 
-  The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+  測定対象の物体の面積は少なくとも0.5平方メートルで、できるだけ平坦である必要があります。さもないと、結果に影響を与える可能性があります。
 
-Build the Circuit
+回路の構築
 ------------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Servo
-     - 1 * Ultrasonic Module
-     - 1 * Breadboard Power Module 
+     - 1 * サーボ
+     - 1 * 超音波モジュール
+     - 1 * ブレッドボードパワーモジュール 
    * - |list_uno_r3|
      - |list_servo| 
      - |list_ultrasonic|
      - |list_power_module|
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
      -
    * - |list_usb_cable|
      - |list_breadboard|
      - |list_wire|
      -
-   * - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * 9V電池
+     - 1 * 電池ケーブル
      - 
      -  
    * - |list_battery| 
@@ -103,15 +103,15 @@ Build the Circuit
      -
      -
 
-**Building Step-by-Step**
+**ステップごとの構築**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図または以下の手順に従って回路を構築します。
 
 .. image:: img/19_trashcan_ultrasonic_pins.png
     :width: 600
     :align: center
 
-1. When using motors, servos, and other actuators, it's recommended to use an external power supply to avoid damaging the main board. Insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+1. モーターやサーボ、その他のアクチュエータを使用する場合、メインボードを損傷しないように外部電源を使用することをお勧めします。ブレッドボードにパワーモジュールを挿入し、ジャンパーワイヤーを使用して、ブレッドボードの負極レールをArduino Uno R3のGNDに接続して、共通グランドを実現します。
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -119,9 +119,9 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    配線図のブレッドボード上の正極端子と負極端子の順序は、キットに含まれているブレッドボードとは逆です。
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    実際の配線では、ブレッドボードのパワーモジュールを数字の大きい方（60〜65）から挿入し、パワーモジュールの「-」がブレッドボードの負極レール「-」に、「+」が正極レール「+」に入るようにします。
 
     .. raw:: html
 
@@ -130,20 +130,20 @@ Follow the wiring diagram, or the steps below to build your circuit.
             Your browser does not support the video tag.
         </video>
 
-2. Use three short jumper wires to extend the three wires of your servo: connect the yellow wire to pin 9 of the Arduino Uno R3, the red wire to the positive rail of the breadboard, and the brown wire to the negative rail of the breadboard.
+2. サーボの3本のワイヤーを短いジャンパーワイヤーで延長し、黄色のワイヤーをArduino Uno R3のピン9に、赤いワイヤーをブレッドボードの正極レールに、茶色のワイヤーを負極レールに接続します。
 
 .. image:: img/19_trashcan_servo.png
     :width: 600
     :align: center
 
-4. Insert the ultrasonic module into the breadboard.
+4. 超音波モジュールをブレッドボードに挿入します。
 
 .. image:: img/19_trashcan_ultrasonic.png
     :width: 600
     :align: center
 
 
-5. Connect the VCC pin of the ultrasonic module to the positive side of the breadboard, the Trig pin to pin 8 on the Arduino board, the Echo pin to pin 7, and the GND to the negative side of the breadboard.
+5. 超音波モジュールのVCCピンをブレッドボードの正極側に、TrigピンをArduinoボードのピン8に、Echoピンをピン7に、GNDをブレッドボードの負極側に接続します。
 
 .. image:: img/19_trashcan_ultrasonic_pins.png
     :width: 600
@@ -151,14 +151,14 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 .. _ar_read_distance:
 
-Code Creation - Read the Distance
+コード作成 - 距離の読み取り
 -----------------------------------------
-Now, let's see how to get the distance measurements from the ultrasonic module.
+それでは、超音波モジュールから距離測定を取得する方法を見てみましょう。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson19_Read_Distance`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して、新しいプロジェクトを開始します。
+2. スケッチを ``Lesson19_Read_Distance`` として保存します（ ``Ctrl + S`` または「保存」をクリックして行います）。
 
-3. Firstly, we need to define the pins on the Arduino that are connected to the ultrasonic module.
+3. まず、Arduinoに接続されている超音波モジュールのピンを定義する必要があります。
 
 .. code-block:: Arduino
   :emphasize-lines: 1,2
@@ -167,27 +167,27 @@ Now, let's see how to get the distance measurements from the ultrasonic module.
   #define ECHO_PIN     7
 
 
-4. In the ``setup()`` function, we set the mode for each pin. The Trig pin needs to be set to output (as it sends the signal), the Echo pin is set to input (as it receives the signal).
+4. ``setup()`` 関数内で、各ピンのモードを設定します。Trigピンは信号を送信するため、出力に設定し、Echoピンは信号を受信するため、入力に設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 2,3
   
   void setup() {
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the Trig pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the Echo pin as input
-    Serial.begin(9600);            // Start serial communication for debugging
+    pinMode(TRIGGER_PIN, OUTPUT);  // Trigピンを出力に設定
+    pinMode(ECHO_PIN, INPUT);      // Echoピンを入力に設定
+    Serial.begin(9600);            // デバッグ用にシリアル通信を開始
   }
 
-5. Writing the ``measureDistance()`` Function:
+5. ``measureDistance()`` 関数の作成:
 
-The ``measureDistance()`` function encapsulates the logic required to trigger the ultrasonic sensor and read the distance based on the echo received:
+``measureDistance()`` 関数は、超音波センサーをトリガーし、エコーに基づいて距離を読み取るためのロジックをカプセル化します。
 
-a. Triggering the Ultrasonic Pulse
+a. 超音波パルスのトリガー
 
-  * Set the ``TRIGGER_PIN`` low initially to ensure a clean pulse.
-  * A short delay of 2 microseconds ensures the line is clear.
-  * Send a 10-microsecond high pulse to the ``TRIGGER_PIN``. This pulse tells the sensor to emit an ultrasonic sound wave.
-  * Set the ``TRIGGER_PIN`` back to low to end the pulse.
+  * ``TRIGGER_PIN`` を最初に低に設定し、クリーンなパルスを保証します。
+  * 2マイクロ秒の短い遅延により、ラインがクリアになります。
+  * ``TRIGGER_PIN`` に10マイクロ秒の高パルスを送信します。このパルスは、センサーに超音波を発射するように指示します。
+  * パルスを終了するために、 ``TRIGGER_PIN`` を低に戻します。
 
   .. code-block:: Arduino
 
@@ -200,10 +200,10 @@ a. Triggering the Ultrasonic Pulse
     }
 
 
-b. Reading the Echo
+b. エコーの読み取り
 
-  * The ``pulseIn()`` function is used on the ``ECHO_PIN`` to measure the duration of the incoming pulse. This function waits for the pin to go ``HIGH``, times how long it stays ``HIGH``, and then returns the duration in microseconds.
-  * This ``duration`` is the time taken for the ultrasonic pulse to travel to the object and back.
+  * ``pulseIn()`` 関数を ``ECHO_PIN`` で使用して、入力パルスの継続時間を測定します。この関数は、ピンが ``HIGH`` になるのを待ち、それが ``HIGH`` である時間を計測し、その継続時間をマイクロ秒で返します。
+  * この ``duration`` は、超音波パルスが対象物まで移動して戻るまでの時間です。
 
   .. code-block:: Arduino
     :emphasize-lines: 7
@@ -217,10 +217,10 @@ b. Reading the Echo
       long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
     }
 
-c. Calculating the Distance
+c. 距離の計算
 
-  * The speed of sound in air (approximately 340 m/s) is used here. The formula to calculate the distance is (duration * speed of sound) / 2. We divide by 2 because the sound wave travels to the object and back, so we only need half the distance for a one-way measurement.
-  * In our code, 0.034 cm/us (speed of sound in cm/microsecond) is used as a conversion factor.
+  * ここでは、空気中の音速（約340m/s）を使用します。距離を計算するための式は（継続時間 * 音速）/ 2です。音波は対象物まで移動して戻ってくるため、片道の距離を得るために2で割ります。
+  * コード内では、0.034cm/us（音速のcm/マイクロ秒単位）が変換係数として使用されます。
 
   .. code-block:: Arduino
     :emphasize-lines: 8,9
@@ -236,7 +236,7 @@ c. Calculating the Distance
       return distance;
     }
 
-6. In the ``loop()`` function, call the ``measureDistance()`` function to measure the distance, and then print it to the serial monitor.
+6. ``loop()``関数内で、 ``measureDistance()`` 関数を呼び出して距離を測定し、その結果をシリアルモニタに表示します。
 
 .. code-block:: Arduino
 
@@ -251,12 +251,12 @@ c. Calculating the Distance
 
 .. note::
 
-  In previous lessons, we worked with ``int`` and ``float`` types of variables or constants. Now, let's understand what ``long`` and ``unsigned long`` variables are about:
+  前のレッスンでは、 ``int`` や ``float`` 型の変数や定数を使用してきました。ここで ``long`` や ``unsigned long`` 型の変数が何であるかを理解しましょう：
 
-  * ``long``: A ``long`` integer is an extended version of an ``int``. It is used to store larger integer values that exceed the capacity of standard ``int``. A long typically occupies 32 or 64 bits of memory, which allows it to hold much larger values, both positive and negative.
-  * ``unsigned long``: An ``unsigned long`` is similar to a ``long`` but can only represent non-negative values. It uses the bit normally reserved for the sign to extend the range of possible values it can hold, but strictly in the positive spectrum.
+  * ``long``: ``long`` 整数は ``int`` の拡張バージョンです。標準の ``int`` の容量を超える大きな整数値を保存するために使用されます。通常、 ``long`` は32ビットまたは64ビットのメモリを占有し、正負の値の両方で非常に大きな値を保持できます。
+  * ``unsigned long`` : ``unsigned long`` は ``long`` に似ていますが、正の値のみを表すことができます。符号のために予約されたビットを使用して、保持できる値の範囲を拡張しますが、正の範囲に限定されます。
 
-7. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+7. 完成したコードは以下の通りです。今すぐ「アップロード」ボタンをクリックして、コードをArduino Uno R3にアップロードできます。
 
 .. code-block:: Arduino
 
@@ -290,7 +290,7 @@ c. Calculating the Distance
     return distance;
   }
 
-8. Open the serial monitor, and you will see the printed distance values. You can move the object in front of the ultrasonic sensor to see if the printed distance changes. If it does, this indicates that the ultrasonic module is functioning correctly.
+8. シリアルモニタを開くと、距離の値が表示されます。超音波センサーの前に物体を動かして、表示される距離が変わるか確認できます。変わる場合、それは超音波モジュールが正常に機能していることを示します。
 
 .. code-block::
 
@@ -302,38 +302,38 @@ c. Calculating the Distance
   Distance: 25 cm
   Distance: 25 cm
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Question**
+**質問**
 
-If you want the distance detected by this device to be more accurate to decimals, how should you modify the code?
+この装置で検出される距離を小数点以下までより正確にしたい場合、コードをどのように修正すべきでしょうか？
 
-Code Creation - Smart Trash Can
+コード作成 - スマートゴミ箱
 -------------------------------------
-We already know how to measure the distance to objects using an ultrasonic module. Now, let's write code to create a smart trash can. This trash can will automatically open its lid when the ultrasonic sensor detects an object closer than 20cm—indicating that you intend to dispose of trash. After the trash is thrown in, the lid will automatically close.
+超音波モジュールを使って物体までの距離を測定する方法はすでに学びました。次に、スマートゴミ箱を作成するためのコードを書いてみましょう。このゴミ箱は、超音波センサーが20cm以内に物体を検出すると自動的にフタを開けます。ゴミを捨てた後、フタは自動的に閉じます。
 
-The lid's movement is controlled by a servo:
+フタの動作はサーボモーターによって制御されます：
 
-* At a servo angle of 90 degrees, the servo shaft is parallel to the servo, meaning the trash can lid is closed.
-* At 0 degrees, the servo shaft is perpendicular to the servo, lifting the lid open via a rod attached to the shaft.
+* サーボ角度が90度のとき、サーボシャフトはサーボと平行になり、ゴミ箱のフタは閉じています。
+* 0度では、サーボシャフトはサーボに対して垂直になり、シャフトに取り付けられたロッドによってフタが持ち上げられ開きます。
 
-Let's explore how to implement this using code.
+これをコードでどのように実装するかを見てみましょう。
 
-1. Open the sketch you saved earlier, ``Lesson19_Read_Distance``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson19_Smart_Trashcan``. Click "Save".
+1. 以前保存したスケッチ ``Lesson19_Read_Distance`` を開きます。「ファイル」メニューから「名前を付けて保存」を選択し、名前を ``Lesson19_Smart_Trashcan`` に変更して「保存」をクリックします。
 
-2. To control the servo, we need to include the ``Servo`` library and create an instance of the ``Servo`` class to control the servo.
+2. サーボを制御するために、 ``Servo`` ライブラリをインクルードし、サーボを制御するための ``Servo`` クラスのインスタンスを作成します。
 
 .. code-block:: Arduino
   :emphasize-lines: 1,3
 
   #include <Servo.h>
 
-  Servo myServo;  // Create a Servo object
+  Servo myServo;  // サーボオブジェクトの作成
 
   #define TRIGGER_PIN 8
   #define ECHO_PIN 7
 
-3. Let's start by defining the servo pin, and create two variables ``openAngle`` and ``closeAngle`` to store the angles for opening and closing the trash can lid respectively.
+3. まずサーボピンを定義し、ゴミ箱のフタを開ける角度と閉じる角度をそれぞれ格納するために、 ``openAngle`` および ``closeAngle`` の2つの変数を作成します。
 
 .. code-block:: Arduino
   :emphasize-lines: 9-11
@@ -350,7 +350,7 @@ Let's explore how to implement this using code.
   const int openAngle = 0;
   const int closeAngle = 90;
 
-4. In the ``void setup()`` function, attach the servo object to the specified pin.
+4. ``void setup()`` 関数内で、サーボオブジェクトを指定したピンにアタッチします。
 
 .. code-block:: Arduino
   :emphasize-lines: 6
@@ -363,9 +363,9 @@ Let's explore how to implement this using code.
     myServo.attach(servoPin);
   }
 
-5. Now we've reached the main program. First, comment out the code for the three serial print statements to avoid interfering with the program's process.
+5. これでメインプログラムに移ります。プログラムの処理に干渉しないように、3つのシリアルプリントステートメントのコードをコメントアウトします。
 
-.. code-block:: Arduino
+.. code-block:: Arduino 
   :emphasize-lines: 6
 
   void loop() {
@@ -376,10 +376,10 @@ Let's explore how to implement this using code.
     delay(100);  // Delay between measurements
   }
 
-6. As planned, if the ultrasonic sensor detects a distance less than 20cm, the servo should rotate to 0 degrees to open the trash can lid. Otherwise, the servo should remain at 90 degrees to keep the lid closed.
+6. 計画通り、超音波センサーが20cm未満の距離を検出した場合、サーボが0度に回転してゴミ箱のフタを開けるべきです。そうでない場合、サーボは90度のままでフタを閉じたままにします。
 
-  * ``delay(2000);`` is used here to give you enough time to throw away the trash without the lid closing too quickly. You can adjust this timing as needed.
-  * In ``if (distance > 2 && distance < 20)``, the condition ``distance > 2`` is used to filter out invalid values. The effective detection range of the ultrasonic sensor is from 2cm to 400cm. Distances that are too far or too close will return invalid values of -1 or 0.
+  * ``delay(2000);`` は、フタが閉じる前にゴミを捨てるのに十分な時間を与えるために使用します。必要に応じて、このタイミングを調整できます。
+  * ``if (distance > 2 && distance < 20)`` の条件で、 ``distance > 2`` を使用して無効な値を除外します。超音波センサーの有効検出範囲は2cmから400cmです。距離が遠すぎるか近すぎる場合、無効な値である-1または0が返されます。
 
 .. code-block:: Arduino
   :emphasize-lines: 7-12
@@ -400,7 +400,7 @@ Let's explore how to implement this using code.
     delay(100);  // Delay between measurements
   }
 
-7. Your complete code is as follows. You can upload it and test to see if your trash can automatically opens and then closes after you've disposed of your trash.
+7. 完成したコードは以下のとおりです。アップロードして、ゴミを捨てた後にゴミ箱が自動的に開閉するかどうかをテストしてみてください。
 
 .. code-block:: Arduino
 
@@ -453,10 +453,8 @@ Let's explore how to implement this using code.
     return distance;
   }
 
-8. Finally, remember to save your code and tidy up your workspace.
+8. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Summary**
+**まとめ**
 
-Today, we successfully built a smart trash can that opens its lid automatically when an object is within 20 cm. We explored how ultrasonic sensors work, similar to echolocation, and applied this technology to control a servo motor. We also discussed best practices in wiring and provided tips for effective Arduino programming. The interactive nature of the project provided hands-on experience with real-world applications of sensors and servo motors.
-
-
+今回は、20cm以内に物体があると自動的にフタが開くスマートゴミ箱を無事に作成しました。超音波センサーがどのように機能するか、エコーロケーションに似た仕組みを学び、この技術を使ってサーボモーターを制御しました。また、配線のベストプラクティスを検討し、効果的なArduinoプログラミングのためのヒントも提供しました。プロジェクトのインタラクティブな性質により、センサーとサーボモーターの現実世界での応用に関する実践的な経験を得ることができました。

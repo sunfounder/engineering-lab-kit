@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで、ラズベリーパイ、Arduino、ESP32に興味を持つ仲間たちと共に、これらのデバイスをさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表やスニークピークにいち早くアクセスできます。
+    - **特別割引**: 最新製品に対する限定割引をお楽しみください。
+    - **フェスティブプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造する準備ができましたか？[|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _automatic_soap_dispenser:
 
-20. Automatic Soap Dispenser
+20. 自動ソープディスペンサー
 ================================
 
-Welcome to our course on building an Automatic Soap Dispenser using Arduino technology! In this course, we will explore the fascinating world of automated systems and how simple electronics can greatly enhance everyday objects. Our focus will be on creating a device that senses the proximity of a hand and automatically dispenses soap.
+Arduino技術を使用して自動ソープディスペンサーを構築するコースへようこそ！このコースでは、自動化システムの魅力的な世界を探求し、シンプルな電子機器が日常の物をどのように大幅に改善できるかを学びます。私たちの焦点は、手の近接を感知して自動的にソープを分配する装置を作成することにあります。
 
 .. raw:: html
 
@@ -26,39 +26,39 @@ Welcome to our course on building an Automatic Soap Dispenser using Arduino tech
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+このレッスンの終わりには、以下のことができるようになります：
 
 
-* Learn about the operational principles of water pump.
-* Develop an automatic soap dispenser that responds to the proximity of your hand using distance measurements from an ultrasonic sensor.
+* 水ポンプの動作原理について学ぶ。
+* 超音波センサーによる距離測定を利用して、手の近接に反応する自動ソープディスペンサーを開発する。
 
-Build the Circuit
+回路の構築
 ------------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Pump
-     - 1 * Ultrasonic Module
-     - 1 * L293D Chip
+     - 1 * ポンプ
+     - 1 * 超音波モジュール
+     - 1 * L293Dチップ
    * - |list_uno_r3|
      - |list_pump| 
      - |list_ultrasonic|
      - |list_l293d|
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Breadboard Power Module
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * ブレッドボードパワーモジュール
    * - |list_usb_cable|
      - |list_breadboard|
      - |list_wire|
      - |list_power_module|
-   * - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * 9V電池
+     - 1 * 電池ケーブル
      - 
      -  
    * - |list_battery| 
@@ -66,15 +66,15 @@ Build the Circuit
      -
      -
 
-**Building Step-by-Step**
+**ステップごとの構築**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図または以下の手順に従って回路を構築します。
 
 .. image:: img/20_dispenser_connect_pump.png
     :width: 600
     :align: center
 
-1. When using motors, servos, and other actuators, it's recommended to use an external power supply to avoid damaging the main board. Insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+1. モーターやサーボ、その他のアクチュエータを使用する場合、メインボードを損傷しないように外部電源を使用することをお勧めします。ブレッドボードにパワーモジュールを挿入し、ジャンパーワイヤーを使用して、ブレッドボードの負極レールをArduino Uno R3のGNDに接続して、共通グランドを実現します。
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -82,9 +82,9 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    配線図のブレッドボード上の正極端子と負極端子の順序は、キットに含まれているブレッドボードとは逆です。
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    実際の配線では、ブレッドボードのパワーモジュールを数字の大きい方（60〜65）から挿入し、パワーモジュールの「-」がブレッドボードの負極レール「-」に、「+」が正極レール「+」に入るようにします。
 
     .. raw:: html
 
@@ -93,69 +93,69 @@ Follow the wiring diagram, or the steps below to build your circuit.
             Your browser does not support the video tag.
         </video>
 
-2. Insert the ultrasonic module into the breadboard.
+2. 超音波モジュールをブレッドボードに挿入します。
 
 .. image:: img/20_dispenser_ultrasonic.png
     :width: 400
     :align: center
 
 
-3. Connect the VCC pin of the ultrasonic module to the positive side of the breadboard, the Trig pin to pin 8 on the Arduino board, the Echo pin to pin 7, and the GND to the negative side of the breadboard.
+3. 超音波モジュールのVCCピンをブレッドボードの正極側に、TrigピンをArduinoボードのピン8に、Echoピンをピン7に、GNDピンをブレッドボードの負極側に接続します。
 
 .. image:: img/20_dispenser_ultrasonic_pins.png
     :width: 400
     :align: center
 
-4. Find the water pump.
+4. 水ポンプを見つけます。
 
 .. image:: img/20_despenser_pump.png
   :width: 200
   :align: center
 
 
-This is the DC 2.5-6V mini submersible water pump, ideal for small-scale projects like tabletop fountains, aquariums, and hydroponic systems.
+これはDC 2.5-6Vのミニ水中ポンプで、卓上噴水や水槽、ハイドロポニクスシステムなどの小規模なプロジェクトに最適です。
 
-This pump employs centrifugal mechanics, using an electric motor to convert rotational energy into fluid dynamic energy, efficiently moving water through its system. Easy to install and maintain, it's a reliable choice for DIY enthusiasts.
+このポンプは遠心力を利用しており、電動モーターを使って回転エネルギーを流体力学的エネルギーに変換し、水を効率的に移動させます。設置とメンテナンスが簡単で、DIY愛好家にとって信頼性の高い選択です。
 
 .. image:: img/20_despenser_pump_intro.png
   :width: 400
   :align: center
 
 
-5. The water pump also requires a motor driver chip. Now, let's insert the L293D chip across the middle notch of the breadboard. Make sure the notch on the chip faces left.
+5. 水ポンプにはモータードライバーチップも必要です。では、L293Dチップをブレッドボードの中央の切り欠き部分に挿入しましょう。チップの切り欠きが左を向くようにしてください。
 
 .. image:: img/20_dispenser_l293d.png
   :width: 600
   :align: center
 
-6. Connect the pins of the L293D chip as follows.
+6. L293Dチップのピンを次のように接続します。
 
-* **1(1,2EN)**: Connect to the positive rail of the breadboard to enable the chip.
-* **4(GND)**: Connect to the negative rail of the breadboard to ground the chip.
-* **8(VCC2)**: Connect to the positive rail of the breadboard to provide power to the motor.
-* **16(VCC1)**: Connect to the positive rail of the breadboard to power the chip.
+* **1(1,2EN)**: チップを有効にするためにブレッドボードの正極レールに接続します。
+* **4(GND)**: チップをグランドするためにブレッドボードの負極レールに接続します。
+* **8(VCC2)**: モーターに電力を供給するためにブレッドボードの正極レールに接続します。
+* **16(VCC1)**: チップに電力を供給するためにブレッドボードの正極レールに接続します。
 
 .. image:: img/20_dispenser_l293d_power_pins.png
   :width: 600
   :align: center
 
-7. Unlike motors, water pumps do not have a direction of rotation to distinguish. They just need a voltage difference across two pins to start pumping water. Therefore, connect pin 2 (1A) of the L293D to pin 2 on the Arduino Uno R3, and pin 3 (1Y) to the water pump, with the other pin of the water pump going to GND.
+7. モーターとは異なり、水ポンプには回転方向を区別する必要はありません。2つのピン間に電圧差を与えるだけで水の汲み上げが始まります。したがって、L293Dのピン2（1A）をArduino Uno R3のピン2に接続し、ピン3（1Y）を水ポンプに接続し、水ポンプの他のピンをGNDに接続します。
 
-* By simply setting pin 2 to high, the water pump will start pumping water.
+* ピン2を高に設定するだけで、水ポンプが動作を開始します。
 
 .. image:: img/20_dispenser_connect_pump.png
   :width: 600
   :align: center
 
-Code Creation - Making the Water Pump Work
+コード作成 - 水ポンプを動作させる
 ---------------------------------------------
 
-First, let's see how the water pump works. You will need a cup of water, make sure it's enough to completely submerge the pump, and another empty cup to collect the water pumped out.
+まず、水ポンプの動作を確認しましょう。水ポンプを完全に浸すことができるだけの水を入れたコップと、汲み上げた水を集めるための空のコップを用意します。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson20_Pump`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson20_Pump`` として保存します（ ``Ctrl + S`` または「保存」をクリックして行います）。
 
-3. Operating the water pump is as simple as lighting up an LED. Just initialize the pump control pin, set it as output, then write it high.
+3. 水ポンプの操作は、LEDを点灯させるのと同じくらい簡単です。ポンプ制御ピンを初期化し、出力として設定し、次にそれを高に設定します。
 
 .. code-block:: Arduino
 
@@ -169,27 +169,26 @@ First, let's see how the water pump works. You will need a cup of water, make su
     digitalWrite(PUMP_PIN, HIGH);       // Turn on the pump at full speed
   }
 
-4. The code is complete. You can now upload it to the Arduino Uno R3 board. Afterward, you will see the water being transferred from the filled cup to the empty one through the pump's tubing.
+4. コードはこれで完成です。Arduino Uno R3ボードにアップロードできます。アップロード後、ポンプのチューブを通じて水が満たされたコップから空のコップへ移動するのが確認できるでしょう。
 
-**Question**
+**質問**
 
-In this project, you connected the water pump using a specific driver and setup. What do you think would happen if you reversed the connections of the pump? Would the pump work in reverse, stop working, or something else? Try this out and reflect on the outcome.
+このプロジェクトでは、特定のドライバーとセットアップを使用して水ポンプを接続しました。もしポンプの接続を逆にした場合、何が起こると思いますか？ポンプは逆回転するのか、それとも動作を停止するのか、それとも何か他のことが起きるのでしょうか？これを試して、その結果を考えてみてください。
 
 .. image:: img/20_despenser_pump_change.png
   :width: 600
   :align: center
 
-Code Creation - Automatic Soap Dispenser
+コード作成 - 自動ソープディスペンサー
 -------------------------------------------
-Here, we are building an automatic soap dispenser powered by a water pump that extracts soap liquid. The dispenser is triggered by an ultrasonic sensor that detects the proximity of a hand. When the distance measured by the sensor is less than 10 cm, indicating that a hand is near, the dispenser will expel soap.
+ここでは、ソープ液を抽出する水ポンプを利用した自動ソープディスペンサーを構築します。このディスペンサーは、手の近接を検知する超音波センサーによって作動します。センサーで測定された距離が10cm未満の場合、手が近くにあると判断され、ディスペンサーがソープを排出します。
 
-To economize on soap usage, the pump operates for 500 milliseconds to dispense the soap. If a hand is still detected after a 2-second pause, the pump will activate once more for 500 milliseconds to ensure an adequate amount of soap is dispensed. This setup efficiently manages soap dispensing while accommodating user needs.
+ソープの使用量を抑えるために、ポンプは500ミリ秒間だけ動作してソープを分配します。2秒間の停止後も手が検知されている場合、ポンプは再び500ミリ秒間作動して、十分な量のソープが分配されるようにします。このセットアップにより、効率的にソープを管理しつつ、ユーザーのニーズに対応します。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson20_Soap_Dispenser`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson20_Soap_Dispenser`` として保存します（ ``Ctrl + S`` または「保存」をクリックして行います）。
 
-3. Initialize the two pins for the ultrasonic sensor and the pump pin.
-
+3. 超音波センサーの2つのピンとポンプのピンを初期化します。
 
 .. code-block:: Arduino
   :emphasize-lines: 1-3
@@ -203,7 +202,7 @@ To economize on soap usage, the pump operates for 500 milliseconds to dispense t
 
   }
 
-4. In ``void setup()`` function, set the modes for each pin used in the project and initialize serial communication at 9600 bps for debugging and monitoring sensor output.
+4. ``void setup()`` 関数内で、プロジェクトで使用する各ピンのモードを設定し、センサー出力のデバッグとモニタリングのために9600 bpsでシリアル通信を初期化します。
 
 .. code-block:: Arduino
   :emphasize-lines: 6-9
@@ -219,7 +218,7 @@ To economize on soap usage, the pump operates for 500 milliseconds to dispense t
     Serial.begin(9600);            // Start serial communication for debugging
   }
 
-5. You will need a specific function to retrieve the distance measured by the ultrasonic module. You can see how this function is implemented by referring to :ref:`ar_read_distance`.
+5. 超音波モジュールで測定された距離を取得するための特定の関数が必要です。この関数の実装方法については、:ref:`ar_read_distance` を参照してください。
 
 .. code-block:: Arduino
   :emphasize-lines: 7-17
@@ -242,7 +241,7 @@ To economize on soap usage, the pump operates for 500 milliseconds to dispense t
     return distance;
   }
 
-6. Now, move to the ``void loop()`` function, call the function ``measureDistance()`` to store the measured distance into the variable ``distance``, and print it to the serial monitor.
+6. 次に、 ``void loop()`` 関数に移動し、 ``measureDistance()`` 関数を呼び出して測定された距離を ``distance`` 変数に格納し、シリアルモニターに出力します。
 
 .. code-block:: Arduino
   :emphasize-lines: 2-4
@@ -253,7 +252,7 @@ To economize on soap usage, the pump operates for 500 milliseconds to dispense t
     delay(100);  // Delay between measurements
   }
 
-7. Next, based on the distance, decide the operational state of the pump. If the distance is between 2 and 10 cm, the pump is activated to dispense soap for 500 milliseconds, then turns off and waits for 2 seconds before another activation can occur.
+7. 次に、距離に基づいてポンプの動作状態を決定します。距離が2cmから10cmの間であれば、ポンプが作動して500ミリ秒間ソープを分配し、その後ポンプを停止し、2秒待ってから再度作動します。
 
 .. code-block:: Arduino
   :emphasize-lines: 5-12
@@ -273,7 +272,7 @@ To economize on soap usage, the pump operates for 500 milliseconds to dispense t
     delay(100);  // Delay between measurements
   }
 
-8. Your complete code is as follows. You can upload it to the Arduino Uno R3 board.
+8. 完成したコードは以下の通りです。これをArduino Uno R3ボードにアップロードしてください。
 
 .. code-block:: Arduino
 
@@ -316,10 +315,10 @@ To economize on soap usage, the pump operates for 500 milliseconds to dispense t
     return distance;
   }
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. 最後に、コードを保存して作業スペースを整理することを忘れないでください。
 
 
-**Summary**
+**まとめ**
 
-In today's lesson, we successfully built and programmed an automatic soap dispenser. We explored the use of ultrasonic sensors for proximity detection and learned how to control a water pump through Arduino programming. The skills acquired today not only enhance your understanding of electronic circuits but also open up a wide range of possibilities for future projects.
+今日のレッスンでは、自動ソープディスペンサーの構築とプログラミングに成功しました。超音波センサーを使用して近接検知を行い、Arduinoプログラミングを通じて水ポンプを制御する方法を学びました。今日習得したスキルは、電子回路の理解を深めるだけでなく、将来のプロジェクトの幅広い可能性を開くものです。
 

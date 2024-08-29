@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで仲間たちと一緒にRaspberry Pi、Arduino、ESP32をもっと深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品発表やスニークピークへの早期アクセスをゲット。
+    - **特別割引**: 最新製品の特別割引をお楽しみください。
+    - **フェスティブプロモーションとプレゼント企画**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、クリエイトする準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-16. Summer Fan
-===================
+16. サマーファン
+======================
 
-As summer approaches, it's the perfect time to dive into a fun and engaging project. In this lesson, you'll learn how to build a simple yet fascinating summer fan using Arduino. We'll explore the fundamentals of motor control, the importance of using a motor driver, and how to control motor speed and direction with buttons. By the end of this lesson, you'll be able to create a project that mimics a real-life fan, just in time to beat the summer heat!
+夏が近づくこの時期に、楽しくて魅力的なプロジェクトに挑戦してみましょう。このレッスンでは、Arduinoを使って簡単でありながら魅力的な夏のファンを作る方法を学びます。モーター制御の基本、モータードライバの重要性、ボタンを使ったモーターの速度と方向の制御方法について探求します。このレッスンが終わる頃には、実際のファンを模倣するプロジェクトを作成し、夏の暑さを乗り切る準備が整います！
 
 .. raw:: html
 
@@ -24,74 +24,74 @@ As summer approaches, it's the perfect time to dive into a fun and engaging proj
         Your browser does not support the video tag.
     </video>
   
-By the end of this lesson, you will be able to:
+このレッスンが終わる頃には、以下ができるようになります：
 
-* Learn the purpose and functionality of the L293D chip.
-* Build a circuit using an Arduino, motor, and motor driver.
-* Write Arduino code to control motor speed and direction.
-* Utilize buttons to adjust motor speed, simulating the controls of a fan.
+* L293Dチップの目的と機能を学ぶ。
+* Arduino、モーター、モータードライバを使用して回路を構築する。
+* Arduinoのコードを作成し、モーターの速度と方向を制御する。
+* ボタンを使ってモーターの速度を調整し、ファンの制御をシミュレートする。
 
-Build the Circuit
+回路を構築する
 ------------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Motor
-     - 4 * Button
-     - 1 * L293D Chip
+     - 1 * モーター
+     - 4 * ボタン
+     - 1 * L293Dチップ
    * - |list_uno_r3|
      - |list_motor| 
      - |list_button|
      - |list_l293d|
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * マルチメーター
    * - |list_usb_cable|
      - |list_breadboard|
      - |list_wire|
      - |list_meter|
-   * - 1 * Breadboard Power Module
-     - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * ブレッドボードパワーモジュール
+     - 1 * 9Vバッテリー
+     - 1 * バッテリーケーブル
      - 
    * - |list_power_module| 
      - |list_battery| 
      - |list_bat_cable| 
      -
 
-**Building Steps**
+**構築手順**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図に従うか、以下の手順に従って回路を構築します。
 
 .. image:: img/16_motor_button_gnd.png
   :width: 500
   :align: center
 
-**1. Connecting the L293D Chip**
+**1. L293Dチップの接続**
 
-Normally, connecting a motor's terminals directly to a battery or the GND and 5V pins on a control board will make it spin.
+通常、モーターの端子をバッテリーやコントロールボードのGNDや5Vピンに直接接続すると、モーターが回転します。
 
-However, to control a motor programmatically, connect it to the signal pins on an Arduino board. These pins only output about 20mA, not enough for a motor, hence the need for a motor driver like the L293D.
+しかし、プログラムでモーターを制御するためには、Arduinoボードの信号ピンに接続する必要があります。これらのピンは約20mAしか出力しないため、モーターには十分ではありません。そのため、L293Dのようなモータードライバが必要です。
 
 .. image:: img/16_motor_l293d_pic.png
   :width: 300
   :align: center
 
-The L293D is a 4-channel driver capable of handling high voltages and currents, suitable for driving DC and stepper motors among other inductive loads. It works with standard DTL, TTL logic levels.
+L293Dは、高電圧および高電流を処理できる4チャンネルドライバで、DCモーターやステッピングモーターなどのインダクティブ負荷を駆動するのに適しています。標準のDTL、TTLロジックレベルで動作します。
 
 .. image:: img/16_motor_l293d_pinout.png
   :align: center
 
-* The L293D has two power supply pins, Vcc1 and Vcc2. Vcc2 powers the motor, while Vcc1 powers the chip itself. For a small-sized DC motor, connect both pins to +5V.
-* Pin **EN** is an enable pin and only works with high level; **A** stands for input and **Y** for output. 
-* When pin **EN** is High level, if **A** is High, **Y** outputs high level; if **A** is Low, **Y** outputs Low level. 
-* When pin **EN** is Low level, the L293D does not work.
+* L293Dには、Vcc1とVcc2という2つの電源ピンがあります。Vcc2はモーターに電力を供給し、Vcc1はチップ自体に電力を供給します。小型のDCモーターには、両方のピンを+5Vに接続します。
+* ピン **EN** はイネーブルピンで、高レベルで動作します。 **A** は入力を、 **Y** は出力を示します。
+* ピン **EN** が高レベルの場合、 **A** が高レベルならば **Y** は高レベルを出力し、 **A** が低レベルならば **Y** は低レベルを出力します。
+* ピン **EN** が低レベルの場合、L293Dは動作しません。
 
 .. list-table:: 
    :widths: 25 25 25
@@ -110,10 +110,10 @@ The L293D is a 4-channel driver capable of handling high voltages and currents, 
      - X
      - X 
 
-Let's now build a circuit to test this motor driver chip.
+さあ、このモータードライバチップをテストするための回路を構築しましょう。
 
 
-1. When using motors, servos, and other actuators, it's recommended to use an external power supply to avoid damaging the main board. Insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+1. モーターやサーボ、その他のアクチュエータを使用する際は、メインボードを損傷しないように外部電源を使用することをお勧めします。ブレッドボードパワーモジュールをブレッドボードに挿入し、ジャンパーワイヤーを使用して、ブレッドボードの負のレールをArduino Uno R3のGNDに接続し、共通グランドを実現します。
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -121,9 +121,9 @@ Let's now build a circuit to test this motor driver chip.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    回路図におけるブレッドボードの正負端子の順序は、キットに含まれているブレッドボードの配置とは逆です。
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    実際の配線では、ブレッドボードパワーモジュールを番号が大きい側（60〜65）から挿入し、パワーモジュールの「-」がブレッドボードの負のレール「-」に入り、「+」が正のレール「+」に入るようにします。
 
     .. raw:: html
 
@@ -132,42 +132,42 @@ Let's now build a circuit to test this motor driver chip.
             Your browser does not support the video tag.
         </video>
 
-2. Insert the L293D chip across the middle notch of the breadboard. Make sure the notch on the chip faces left.
+2. L293Dチップをブレッドボードの中央の切れ目にまたがるように挿入します。チップの切り欠きが左を向いていることを確認してください。
 
 .. image:: img/16_motor_l293d.png
   :width: 500
   :align: center
 
-3. Connect the pins of the L293D chip as follows.
+3. L293Dチップのピンを次のように接続します。
 
-* **1(1,2EN)**: Connect to the positive rail of the breadboard to enable the chip.
-* **4(GND)**: Connect to the negative rail of the breadboard to ground the chip.
-* **8(VCC2)**: Connect to the positive rail of the breadboard to provide power to the motor.
-* **16(VCC1)**: Connect to the positive rail of the breadboard to power the chip.
+* **1(1,2EN)**: チップを有効にするために、ブレッドボードの正のレールに接続します。
+* **4(GND)**: チップをグランドするために、ブレッドボードの負のレールに接続します。
+* **8(VCC2)**: モーターに電力を供給するために、ブレッドボードの正のレールに接続します。
+* **16(VCC1)**: チップに電力を供給するために、ブレッドボードの正のレールに接続します。
 
 .. image:: img/16_motor_l293d_power.png
   :width: 500
   :align: center
 
-4. You can now connect the A pins of the chip (1A, 2A, 3A, 4A) to either 5V or GND to observe the voltage at the Y pins (1Y, 2Y, 3Y, 4Y). Use 1A and 1Y for testing, first connect 2(1A) to the positive rail of the breadboard.
+4. 次に、チップのAピン（1A、2A、3A、4A）を5VまたはGNDに接続し、Yピン（1Y、2Y、3Y、4Y）の電圧を確認できます。1Aと1Yを使用してテストします。まず、2(1A)をブレッドボードの正のレールに接続します。
 
 .. image:: img/16_motor_l293d_1a_5v.png
   :width: 500
   :align: center
 
-5. Adjust the multimeter to the 20 volts DC setting.
+5. マルチメーターを直流20ボルトの設定に調整します。
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
   
-6. Touch the red lead of the multimeter to pin 3(1Y), and the black lead to any GND.
+6. マルチメーターの赤いリードをピン3(1Y)に、黒いリードを任意のGNDに接触させます。
 
 .. image:: img/16_motor_l293d_1y.png
   :width: 500
   :align: center
 
-7. Record the voltage at pin 3(1Y) in the table below.
+7. 以下の表に、ピン3(1Y)での電圧を記録します。
 
 .. list-table:: 
    :widths: 25 25 25
@@ -183,13 +183,13 @@ Let's now build a circuit to test this motor driver chip.
      - 0V
      - 
 
-8. Now connect 2(1A) to the negative rail of the breadboard.
+8. 次に、2(1A)をブレッドボードの負のレールに接続します。
 
 .. image:: img/16_motor_l293d_1a.png
   :width: 500
   :align: center
 
-9. Similarly, measure the voltage at 3(1Y) using the multimeter, and fill in the results in the table.
+9. 同様に、マルチメーターで3(1Y)の電圧を測定し、結果を表に記入します。
 
 .. image:: img/16_motor_l293d_1y.png
   :width: 500
@@ -209,42 +209,42 @@ Let's now build a circuit to test this motor driver chip.
      - 0V
      - *≈0V*  
 
-From the above test results, it is evident that when EN is high, the L293D chip starts working, and if A pins (1A, 2A, 3A, 4A) on the chip are High, the Y pins (1Y, 2Y, 3Y, 4Y) output high level; if A pins (1A, 2A, 3A, 4A) are Low, the Y pins (1Y, 2Y, 3Y, 4Y) output Low level. 
+上記のテスト結果から、ENが高レベルのとき、L293Dチップが動作し、Aピン（1A、2A、3A、4A）が高レベルの場合、Yピン（1Y、2Y、3Y、4Y）が高レベルを出力し、Aピンが低レベルの場合、Yピンも低レベルを出力することが確認されます。
 
-10. Now insert pin 2 (1A) of the L293D chip into pin 10 of the Arduino Uno R3, and pin 7 (2A) into pin 9, thus controlling the input of channels 1 and 2 through pins 9 and 10.
+10. 次に、L293Dチップのピン2(1A)をArduino Uno R3のピン10に、ピン7(2A)をピン9に接続し、ピン9とピン10を使用してチャネル1および2の入力を制御します。
 
 .. image:: img/16_motor_l293d_910.png
   :width: 500
   :align: center
 
-**2. Connecting the Motor**
+**2. モーターの接続**
 
-This is a 3V DC motor. When you give a high level and a low level to each of the 2 terminals, it will rotate.
+これは3VのDCモーターです。2つの端子にそれぞれ高レベルと低レベルを与えると、回転します。
 
 .. image:: img/16_motor_pic.png
   :width: 300
   :align: center
 
-Motors play an integral part in our daily lives. They're everywhere! From the electric fans that cool us on hot days, the mixers that help us make delicious cakes, to the electric cars that whizz by on the streets - motors make things move!
+モーターは私たちの日常生活で重要な役割を果たしています。いたるところに存在します！暑い日に私たちを涼しくする扇風機や、おいしいケーキを作るミキサー、街中を走る電動自動車など、モーターが物を動かしてくれます！
 
 .. image:: img/motor_application.jpg
   :width: 600
   :align: center
 
-A motor is like the heart of a machine. It converts electrical energy into mechanical energy, making our toys, appliances, and even big vehicles come to life!
+モーターは機械の心臓のようなものです。電気エネルギーを機械エネルギーに変換し、私たちのおもちゃや家電製品、さらには大きな車両にまで命を吹き込みます！
 
-Here's how it works: when electricity is supplied to a motor, it generates a magnetic field. This magnetic field then interacts with other magnets within the motor, causing the motor to spin. This spin, like spinning a top, can then be used to move wheels, propellers, or any other moving parts of a machine.
+仕組みはこうです。モーターに電気が供給されると、磁場が発生します。この磁場がモーター内の他の磁石と相互作用し、モーターが回転します。この回転は、トップを回すように、車輪やプロペラ、その他の機械の可動部分を動かすのに使用されます。
 
 .. image:: img/motor_rotate1.gif
   :align: center
 
-Now connect the two terminals of the motor to pins 3 (1Y) and 6 (2Y) of the L293D chip.
+次に、モーターの2つの端子をL293Dチップのピン3(1Y)とピン6(2Y)に接続します。
 
 .. image:: img/16_motor_motor.png
   :width: 500
   :align: center
 
-The truth table for controlling the motor is as follows.
+モーターを制御するための真理値表は以下の通りです。
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -253,56 +253,56 @@ The truth table for controlling the motor is as follows.
    * - 1,2EN
      - 1A
      - 2A
-     - Motor State
+     - モーターの状態
    * - H
      - H
      - L 
-     - Motor rotates
+     - モーターが回転
    * - H
      - L
      - H 
-     - Motor rotates in reverse
+     - モーターが逆回転
    * - H
      - L
      - L 
-     - Motor inactive
+     - モーターが停止
    * - H
      - H
      - H 
-     - Motor inactive
+     - モーターが停止
 
-**3. Connecting 4 Buttons**
+**3. 4つのボタンの接続**
 
-We need 4 buttons to control the motor speed, each button representing a speed setting.
+モーターの速度を制御するために4つのボタンが必要であり、それぞれのボタンは速度設定を表します。
 
-1. Insert 4 buttons on the breadboard, each spanning the middle groove.
+1. ブレッドボードに4つのボタンを取り付け、それぞれが中央の溝をまたぐように配置します。
 
 .. image:: img/16_motor_button.png
   :width: 700
   :align: center
 
-2. Connect the lower left pin of each button to Arduino pins 4, 5, 6, 7 respectively.
+2. 各ボタンの左下のピンをArduinoのピン4、5、6、7にそれぞれ接続します。
 
 .. image:: img/16_motor_button_pin.png
   :width: 700
   :align: center
 
-3. Finally, connect the upper right pin of each button to GND. We are not using pull-down resistors here; planning to use Arduino's internal pull-up for simpler wiring.
+3. 最後に、各ボタンの右上のピンをGNDに接続します。ここではプルダウン抵抗を使用せず、Arduinoの内部プルアップを利用して配線を簡略化しています。
 
 .. image:: img/16_motor_button_gnd.png
   :width: 700
   :align: center
 
 
-Code Creation - Making the Motor Move
+コード作成 - モーターを動かす
 ---------------------------------------
 
-Let's write the code to see how to drive a motor.
+次に、モーターを駆動するためのコードを書いてみましょう。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson16_Motor`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. ``Ctrl + S`` を押すか、「保存」ボタンをクリックして、スケッチを ``Lesson16_Motor`` として保存します。
 
-3. Initialize the motor control pins.
+3. モーター制御ピンを初期化します。
 
 .. code-block:: Arduino
   :emphasize-lines: 2,3,7,8
@@ -317,7 +317,7 @@ Let's write the code to see how to drive a motor.
     pinMode(motor2A, OUTPUT);
   }
 
-4. In ``void loop()`` use the ``digitalWrite()`` function to write ``HIGH`` and ``LOW`` states to the two control pins of the motor, making the motor rotate.
+4. ``void loop()`` の中で、 ``digitalWrite()`` 関数を使って、モーターの2つの制御ピンに ``HIGH`` と ``LOW`` の状態を書き込み、モーターを回転させます。
 
 .. code-block:: Arduino
   :emphasize-lines: 13,14
@@ -338,9 +338,9 @@ Let's write the code to see how to drive a motor.
     digitalWrite(motor2A, LOW);
   }
 
-5. At this point, you can upload the code to the Arduino, and you will find that the motor moves.
+5. ここまで完了したら、コードをArduinoにアップロードし、モーターが動作することを確認します。
 
-6. Next, let's see how to reverse the direction of the motor and stop it. To reverse the motor direction, simply swap the levels of the two control pins.
+6. 次に、モーターの回転方向を逆にする方法と停止する方法を見てみましょう。モーターの回転方向を逆にするには、2つの制御ピンのレベルを入れ替えるだけです。
 
 .. code-block:: Arduino
   :emphasize-lines: 7,8
@@ -356,7 +356,7 @@ Let's write the code to see how to drive a motor.
     delay(2000);  // Motor runs for 1 seconds
   }
 
-7. To stop the motor, simply set both control pins to either ``HIGH`` or ``LOW``, which will stop the motor.
+7. モーターを停止させるには、2つの制御ピンをどちらも ``HIGH`` または ``LOW`` に設定するだけで、モーターが停止します。
 
 .. code-block:: Arduino
   :emphasize-lines: 23,24
@@ -388,18 +388,18 @@ Let's write the code to see how to drive a motor.
     delay(3000);  // Motor stops for 2 second
   }
 
-8. The code is complete, you can upload it to the Arduino board. Afterwards, you will notice the motor rotates forward for 2 seconds, reverses for 2 seconds, then stops for 3 seconds, and this cycle repeats.
+8. コードが完成したので、Arduinoボードにアップロードできます。これにより、モーターが2秒間前進し、次に2秒間逆回転し、3秒間停止するサイクルが繰り返されることが確認できます。
 
-Code Creation - Summer Fan
+コード作成 - 夏の扇風機
 -----------------------------------
-Let's explore how to use four buttons to control motor speed, similar to adjusting a fan's speed in real life.
+次に、4つのボタンを使用してモーターの速度を制御する方法を探ってみましょう。これは、実際の扇風機の速度を調整するのに似ています。
 
-1. Open the sketch you saved earlier, ``Lesson16_Motor``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson16_Summer_Fan``. Click "Save".
+1. 以前保存したスケッチ ``Lesson16_Motor`` を開きます。「ファイル」メニューから「名前を付けて保存...」を選択し、名前を ``Lesson16_Summer_Fan`` に変更します。「保存」をクリックします。
 
-2. Here we need to control the speed of the motor's rotation, so create a ``motorRotate()`` function to control its speed.
+2. ここでは、モーターの回転速度を制御する必要があるため、 ``motorRotate()`` 関数を作成して速度を制御します。
 
-* In the function, use the ``analogWrite()`` function to write a PWM value to the ``motor1A`` pin, motor2A set to 0, thus the motor will rotate in one direction.
-* The higher the ``speed`` value, the faster the motor rotates.
+* この関数では、 ``analogWrite()`` 関数を使用して ``motor1A`` ピンにPWM値を書き込み、 ``motor2A`` は0に設定されます。これにより、モーターは一方向に回転します。
+* ``speed`` の値が大きいほど、モーターの回転速度が速くなります。
 
 .. code-block:: Arduino
   :emphasize-lines: 12, 14-17
@@ -423,9 +423,9 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
     analogWrite(motor2A, 0);      // Control motor speed
   }
 
-3. After uploading the code to the Arduino board, you will find that the motor rotates in one direction. When you change the value of ``motorRotate(150)``, the motor speed changes, the higher the value, the faster the speed.
+3. コードをArduinoボードにアップロードした後、モーターが一方向に回転することが確認できます。 ``motorRotate(150)`` の値を変更すると、モーターの速度が変化し、値が大きいほど速度が速くなります。
 
-4. Now initialize four button pins.
+4. 次に、4つのボタンピンを初期化します。
 
 .. code-block:: Arduino
   :emphasize-lines: 6-9
@@ -440,7 +440,7 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
   const int button3 = 6;
   const int button4 = 7;
 
-5. In ``void setup()`` set all four buttons to ``INPUT_PULLUP``.
+5. ``void setup()`` で、4つのボタンをすべて ``INPUT_PULLUP`` に設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 7-10
@@ -456,8 +456,8 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
     pinMode(button3, INPUT_PULLUP);
     pinMode(button4, INPUT_PULLUP);
   }
-
-6. Now write the main program part. When ``button1`` is read as ``LOW``, it means button1 is pressed, at this time the motor speed should be set to 0, i.e., turn it off.
+  
+6. 次に、メインプログラム部分を書いてみましょう。 ``button1`` が ``LOW`` と読み取られると、それは ``button1`` が押されたことを意味し、この時点でモーターの速度を0に設定し、つまりモーターを停止させます。
 
 .. code-block:: Arduino
   :emphasize-lines: 2-4
@@ -468,7 +468,7 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
     }
   }
 
-7. Similarly, when ``button2`` is pressed, set the motor speed to 150.
+7. 同様に、 ``button2`` が押された場合、モーターの速度を150に設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 4-6
@@ -481,7 +481,7 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
     }
   }
 
-8. When ``button3`` is pressed, set the motor speed to 200.
+8. ``button3`` が押された場合、モーターの速度を200に設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 6-8
@@ -496,7 +496,7 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
     } 
   }
 
-9. Finally, if ``button4`` is pressed, set the motor speed to 250.
+9. 最後に、 ``button4`` が押された場合、モーターの速度を250に設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 8-10
@@ -513,8 +513,7 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
     }
   }
 
-10. Here is your complete code. At this point, you can upload the code to your Arduino board and then press each of the 4 buttons to see if the motor speed changes.
-
+10. これで、プログラムが完成しました。コードをArduinoボードにアップロードし、4つのボタンをそれぞれ押してモーターの速度が変わるか確認してみてください。
 
 .. code-block:: Arduino
 
@@ -558,16 +557,12 @@ Let's explore how to use four buttons to control motor speed, similar to adjusti
   }
 
 
-11. Finally, remember to save your code and tidy up your workspace.
+11. 最後に、コードを保存し、作業スペースを片付けることを忘れないでください。
 
-**Question**
+**質問**
 
-How should the code be modified if you want to control the motor's direction as well?
+モーターの回転方向も制御したい場合、コードをどのように修正する必要がありますか？
 
-**Summary**
+**まとめ**
 
-In this lesson, we delved into the working principles of the L293D motor driver chip and the basic operation of motors. You learned how to make a motor rotate and how to control its direction using Arduino. Finally, we put it all together in a complete project that simulates a fan, using four buttons to control different motor speeds.
-
-
-
- 
+このレッスンでは、L293Dモータードライバーチップの動作原理と、モーターの基本操作について学びました。Arduinoを使用してモーターを回転させ、その方向を制御する方法を学びました。最後に、4つのボタンを使用して異なるモーター速度を制御する、扇風機をシミュレートした完全なプロジェクトをまとめました。

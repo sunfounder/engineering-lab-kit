@@ -1,24 +1,23 @@
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Community（Facebook）へようこそ！このコミュニティで、Raspberry Pi、Arduino、ESP32について他のエンスージアストと共にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**：購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決しましょう。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表や先行公開にいち早くアクセスできます。
+    - **特別割引**：最新製品に対する限定割引をお楽しみください。
+    - **フェスティバルプロモーションとギブアウェイ**：ギブアウェイやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備ができましたか？[|link_sf_facebook|]をクリックして、今日参加しましょう！
 
-14. Play Dinosaur Game
+14. 恐竜ゲームをプレイ
 =========================
 
-Ever tried your hand at the addictive Dinosaur game on Chrome when offline? Many have spent countless minutes trying to beat their own high scores, relying solely on quick reflexes. But what if you could engineer a way to smash those high scores without breaking a sweat? 
+オフライン時にChromeで楽しむ中毒性のある恐竜ゲームをプレイしたことがありますか？多くの人が自分のハイスコアを超えるために、素早い反射神経を駆使して数分を費やしてきました。しかし、汗をかかずにハイスコアを叩き出す方法をエンジニアリングできたらどうでしょう？
 
-This lesson will transform how you play the game by integrating simple electronics like photoresistor and servo to automate gameplay. It's not just about playing the game; it's about rewriting the rules!
+このレッスンでは、フォトレジスタやサーボなどの簡単なエレクトロニクスを組み合わせて、ゲームプレイを自動化する方法を紹介します。ただゲームをプレイするだけでなく、ルールを再定義するのです！
 
 .. raw:: html
 
@@ -27,15 +26,15 @@ This lesson will transform how you play the game by integrating simple electroni
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+このレッスンを終える頃には、以下のことができるようになっています：
 
-* Identify and describe the functions of servo and photoresistor.
-* Construct a basic circuit using Arduino, integrating servos and photoresistors effectively.
-* Write and upload Arduino code that controls servo movements based on photoresistor readings.
-* Use the assembled circuit and programmed Arduino to automatically play the Chrome Dinosaur game.
+* サーボとフォトレジスタの機能を識別し、説明することができる。
+* Arduinoを使用して、サーボとフォトレジスタを効果的に統合した基本的な回路を構築できる。
+* フォトレジスタの読み取りに基づいてサーボの動きを制御するArduinoコードを書いてアップロードできる。
+* 組み立てた回路とプログラム済みのArduinoを使って、Chromeの恐竜ゲームを自動的にプレイできる。
 
 
-1. Components Needed
+1. 必要なコンポーネント
 -----------------------
 
 .. list-table:: 
@@ -43,24 +42,24 @@ By the end of this lesson, you will be able to:
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Photoresistor
-     - 1 * 10KΩ Resistor
-     - 1 * Servo
+     - 1 * フォトレジスタ
+     - 1 * 10KΩ抵抗
+     - 1 * サーボモーター
    * - |list_uno_r3| 
      - |list_photoresistor| 
      - |list_10kohm| 
      - |list_servo| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * マルチメーター
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_meter|
-   * - 1 * Breadboard Power Module
-     - 1 * 9V Battery
-     - 1 * Battery Cable
+   * - 1 * ブレッドボードパワーモジュール
+     - 1 * 9Vバッテリー
+     - 1 * バッテリーケーブル
      - 
    * - |list_power_module| 
      - |list_battery| 
@@ -69,44 +68,44 @@ By the end of this lesson, you will be able to:
 
 .. _ar_servo_usage:
 
-2. Prepare the Servo
+2. サーボの準備
 -----------------------
 
-**1. Introduce the Servo**
+**1. サーボの紹介**
 
 .. image:: img/14_servo_pic.jpg
     :width: 300
     :align: center
 
-A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board.
+サーボは通常、ケース、シャフト、ギアシステム、ポテンショメータ、DCモーター、および埋め込みボードで構成されています。
 
-It works like this: 
+動作の仕組みは次のとおりです：
 
-* The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. 
-* As a result, the motor drives the gear system and then moves the shaft after deceleration. 
-* The shaft and potentiometer of the servo are connected together. When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. 
-* Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there.
+* マイクロコントローラがサーボにPWM信号を送信し、サーボ内の埋め込みボードが信号ピンを通じて信号を受信し、内部のモーターを制御して回転させます。
+* その結果、モーターがギアシステムを駆動し、減速後にシャフトを動かします。
+* サーボのシャフトとポテンショメータは一緒に接続されており、シャフトが回転するとポテンショメータを駆動し、ポテンショメータは埋め込みボードに電圧信号を出力します。
+* 次に、ボードは現在の位置に基づいて回転の方向と速度を決定し、定義された位置で正確に停止してそこに保持されます。
 
 .. image:: img/14_servo_internal.png
     :width: 500
     :align: center
 
-Servo positioning is controlled through Pulse Width Modulation (PWM):
+サーボの位置制御はパルス幅変調（PWM）を通じて行われます：
 
-* The servo receives a pulse every 20 ms, with the pulse duration determining the motor's rotation.
-* A 1.5ms pulse aligns the motor at the 90-degree neutral position.
-* Pulses shorter than 1.5 ms rotate the servo counterclockwise from neutral, while longer pulses rotate it clockwise.
-* Pulse widths typically range from 0.5 ms (minimum) to 2.5 ms (maximum) to command valid servo positions.
+* サーボは20msごとにパルスを受信し、パルスの長さがモーターの回転を決定します。
+* 1.5msのパルスはモーターを90度のニュートラル位置に合わせます。
+* 1.5ms未満のパルスはニュートラルから反時計回りに回転させ、長いパルスは時計回りに回転させます。
+* 通常、パルス幅は0.5ms（最小）から2.5ms（最大）の範囲で、これにより有効なサーボの位置が指示されます。
 
 .. image:: img/14_servo_duty.png
     :width: 600
     :align: center
 
-**2. Building the Circuit**
+**2. 回路の構築**
 
-Now let's start building the circuit. 
+さあ、回路を作り始めましょう。
 
-* First, insert the breadboard power module into the breadboard, then use a jumper wire to connect the negative rail of the breadboard to the GND of the Arduino Uno R3 to achieve a common ground.
+* まず、ブレッドボードにパワーモジュールを挿入し、ジャンパーワイヤーを使用してブレッドボードの負のレールをArduino Uno R3のGNDに接続して、共通のグランドを確保します。
 
 .. image:: img/14_dinosaur_power_module.png
     :width: 400
@@ -114,9 +113,9 @@ Now let's start building the circuit.
 
 .. note::
 
-    The order of the positive and negative terminals on the breadboard in the wiring diagram is reversed compared to the breadboard provided in the kit.
+    配線図のブレッドボード上の正負端子の順序は、キットに含まれるブレッドボードとは逆になっています。
 
-    In actual wiring, you need to insert the breadboard power module from the higher number side (60~65) so that the "-" of the power module goes into the negative rail "-" of the breadboard, and the "+" into the positive rail "+".
+    実際の配線では、ブレッドボードのパワーモジュールを番号の高い側（60～65）から挿入し、パワーモジュールの"-"がブレッドボードの負のレール"-"に、"+"が正のレール"+"に入るようにします。
 
     .. raw:: html
 
@@ -125,26 +124,24 @@ Now let's start building the circuit.
             Your browser does not support the video tag.
         </video>
 
-* Use three short jumper wires to extend the three wires of your servo: connect the yellow wire to pin 9 of the Arduino Uno R3, the red wire to the positive rail of the breadboard, and the brown wire to the negative rail of the breadboard.
+* サーボの3本のワイヤーを短いジャンパーワイヤーで延長し、黄色いワイヤーをArduino Uno R3のピン9に、赤いワイヤーをブレッドボードの正のレールに、茶色いワイヤーをブレッドボードの負のレールに接続します。
 
 .. image:: img/14_dinosaur_servo.png
     :width: 600
     :align: center
 
-**3. Writing the Code**
+**3. コードの作成**
 
-Now let's write the code to see how to drive the servo.
+では、サーボを駆動するためのコードを書いてみましょう。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson14_Servo`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して、新しいプロジェクトを開始します。
+2. スケッチを ``Ctrl + S`` で保存するか、「保存」をクリックして ``Lesson14_Servo`` として保存します。
 
-3. Include the Servo Library.
+3. サーボライブラリをインクルードします。
 
-In Arduino programming, there are some functions that are built into the core Arduino environment and can be used directly, such as ``pinMode()``, ``digitalWrite()``, ``analogWrite()`` that we have used in previous lessons.
+Arduinoプログラミングでは、 ``pinMode()`` , ``digitalWrite()``, ``analogWrite()`` など、コアのArduino環境に組み込まれている関数があり、これらは直接使用できますが、特殊な機能を提供するいくつかの関数はライブラリの一部であり、それらを使用する前にインクルードする必要があります。例えば、 ``Servo`` , ``LiquidCrystal`` , ``Stepper`` などがあり、これらはArduinoの公式サイトの |link_arduino_lib_page| ページで見つけることができます。
 
-However, some specialized functions are part of libraries that need to be included before you can use them. For example, ``Servo``, ``LiquidCrystal``, ``Stepper``, etc., which you can find on the Arduino website's |link_arduino_lib_page| page.
-
-To control the servo, we need to include the ``Servo`` library, which provides functions to control the motor.
+サーボを制御するためには、モーターを制御するための関数を提供する ``Servo`` ライブラリをインクルードする必要があります。
 
 .. code-block:: Arduino
     :emphasize-lines: 1
@@ -152,29 +149,29 @@ To control the servo, we need to include the ``Servo`` library, which provides f
     #include <Servo.h>
 
     void setup() {
-        // put your setup code here, to run once:
+        // 初期設定をここに記述します。最初に一度だけ実行されます。
 
     }
 
-4. Create an instance of the ``Servo`` class to control the servo and define the pin for the Servo.
+4. ``Servo`` クラスのインスタンスを作成し、サーボを制御するピンを定義します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3,5
 
     #include <Servo.h>
 
-    Servo myServo;  // Create a Servo object
+    Servo myServo;  // サーボオブジェクトを作成します。
 
-    const int servoPin = 9;         // servo connected to digital pin 9
+    const int servoPin = 9;  // サーボをデジタルピン9に接続します。
 
-5. In the ``void setup()`` function, use the ``attach()`` function from the ``Servo`` library to attach the servo object to the specified pin.
+5. ``void setup()`` 関数内で、 ``Servo`` ライブラリの ``attach()`` 関数を使用して、サーボオブジェクトを指定したピンに接続します。
 
-* ``servo.attach(pin)``: Attach the Servo variable to a pin.
+* ``servo.attach(pin)`` : サーボ変数をピンに接続します。
 
-    **Parameters**
+    **パラメータ**
 
-    * ``servo``: a variable of type Servo.
-    * ``pin``: the number of the pin that the servo is attached to.
+    * ``servo`` : Servo型の変数。
+    * ``pin`` : サーボが接続されているピン番号。
 
 .. code-block:: Arduino
     :emphasize-lines: 2,3
@@ -183,59 +180,58 @@ To control the servo, we need to include the ``Servo`` library, which provides f
         myServo.attach(servoPin);  // Attach the Servo object to the specified pin
     }
 
-6. Set the initial position of the servo to 0 degrees with ``write()`` in Servo library. 
+6. Servoライブラリの ``write()`` を使用して、サーボの初期位置を0度に設定します。
 
-* ``servo.write(angle)``: Writes a value to the servo, controlling the shaft accordingly.
+* ``servo.write(angle)`` : サーボに値を書き込み、シャフトを対応する角度に制御します。
 
-    Parameters
+    **パラメータ**
 
-    * ``servo``: a variable of type Servo.
-    * ``angle``: the value to write to the servo, from 0 to 180.
+    * ``servo`` : Servo型の変数。
+    * ``angle`` : サーボに書き込む値（0～180）。
 
 .. code-block:: Arduino
     :emphasize-lines: 9
 
     #include <Servo.h>
 
-    Servo myServo;  // Create a Servo object
+    Servo myServo;  // サーボオブジェクトを作成します。
 
-    const int servoPin = 9;         // servo connected to digital pin 9
+    const int servoPin = 9;  // サーボをデジタルピン9に接続します。
 
     void setup() {
-        myServo.attach(servoPin);  // Attach the Servo object to the specified pin
-        myServo.write(0);          // Initial position set to 0 degrees
+        myServo.attach(servoPin);  // 指定したピンにサーボオブジェクトを接続します。
+        myServo.write(0);  // 初期位置を0度に設定します。
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // 繰り返し実行されるメインコードをここに記述します。
 
     }
 
-7. Now that the code is complete, click the Upload button to transfer the code to your Arduino Uno R3 board. Locate a two-sided servo arm in your servo package and attach it so that it is parallel to the servo.
-
+7. コードが完成したら、Uploadボタンをクリックして、コードをArduino Uno R3ボードに転送します。サーボパッケージに付属の両面サーボアームを取り付け、サーボに対して平行になるようにしてください。
 
 .. image:: img/14_servo_arm.png
     :width: 600
     :align: center
 
-**Question**
+**質問**
 
-If the servo is connected to pin 8 or another non-PWM pin on an Arduino, will it still operate correctly? Why or why not?
+サーボがArduinoのピン8または他のPWM非対応のピンに接続されている場合、それでも正しく動作しますか？その理由を説明してください。
 
-You can test this first before answering.
+最初にテストしてから回答してください。
 
 
-**3. Adjusting the Servo Angle**
+**3. サーボ角度の調整**
 
-Since the servo arm needs to press the space bar on the keyboard, you need to attach the servo in a specific position and then use code to control the servo arm to press the space bar.
+サーボアームがキーボードのスペースキーを押す必要があるため、特定の位置にサーボを取り付け、コードでサーボアームを制御してスペースキーを押すようにします。
 
-1. Tape the servo next to your keyboard, with the servo shaft above the space bar. Use strong tape to ensure the servo does not loosen when the shaft moves.
+1. サーボシャフトをスペースキーの上に置き、キーボードの横にサーボをテープで固定します。シャフトが動いてもサーボが緩まないように強力なテープを使用してください。
 
 .. image:: img/14_attach_servo.png
     :width: 500
     :align: center
 
-2. Continue with the above code. In the ``void loop()`` function, use the ``write()`` function to set the servo to 30 degrees.
+2. 上記のコードを続行します。 ``void loop()`` 関数内で、 ``write()`` 関数を使用して、サーボを30度に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 14
@@ -256,22 +252,20 @@ Since the servo arm needs to press the space bar on the keyboard, you need to at
         myServo.write(30);          // Set to 30 degrees
     }
 
-3. Now upload the code to the Arduino board. Observe the angle of the servo shaft to see if it presses the space bar and that the servo body is not lifted.
-
+3. これでコードをArduinoボードにアップロードします。サーボシャフトの角度を観察し、それがスペースキーを押しているか、サーボ本体が持ち上がっていないかを確認してください。
 
 .. note::
 
-    Everyone's keyboard height varies, so you need to adjust accordingly. After each adjustment, upload the code to make it effective.
+    キーボードの高さは人によって異なるため、適宜調整が必要です。調整後はコードをアップロードして有効にしてください。
     
-    * If the space bar is not pressed, increase the servo angle.
-    * If the space bar is pressed but the servo body is lifted, decrease the angle.
+    * スペースキーが押されていない場合は、サーボ角度を増やしてください。
+    * スペースキーが押されているが、サーボ本体が持ち上がっている場合は、角度を減らしてください。
 
 .. image:: img/14_servo_30.png
     :width: 500
     :align: center
 
-4. Now write the code to make the servo repeatedly move between 0 and 30 degrees.
-
+4. 次に、サーボが0度から30度の間を繰り返し動作するコードを書きます。
 
 .. code-block:: Arduino
     :emphasize-lines: 13-16
@@ -294,7 +288,7 @@ Since the servo arm needs to press the space bar on the keyboard, you need to at
         delay(100);         // delay 100ms
     }
 
-5. After uploading the code, check if the servo can press the space bar every time. If it can, the servo is ready.
+5. コードをアップロードした後、サーボが毎回スペースキーを押せるかどうか確認してください。押せるならば、サーボの準備は完了です。
 
 .. .. raw:: html
 
@@ -305,31 +299,30 @@ Since the servo arm needs to press the space bar on the keyboard, you need to at
 
 .. _ar_photoresistor:
 
-3. Ready the Photoresistor
+3. 光抵抗器の準備
 --------------------------------
 
-**1. Introduction and Measurement of the Photoresistor**
+**1. 光抵抗器の紹介と測定**
 
-1. Start with a Photoresistor.
+1. 光抵抗器から始めましょう。
 
 .. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
-A photoresistor or photocell is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photoconductivity.
+光抵抗器またはフォトセルは、光制御型の可変抵抗器です。光抵抗器の抵抗値は、入射光の強度が増加するにつれて減少します。つまり、光導電性を示します。
 
-Photoresistors can be used as resistive semiconductors in light-sensitive detector circuits and in light-activated and dark-activated switching circuits. In darkness, the resistance of a photoresistor can be as high as several megaohms (MΩ), while in lighted conditions, it can drop to a few hundred ohms.
+光抵抗器は、光感知検出回路や光作動および暗作動スイッチ回路の中で抵抗性半導体として使用できます。暗い環境では、光抵抗器の抵抗は数メガオーム（MΩ）に達することがあり、明るい環境では数百オームまで低下します。
 
-The kit includes a resistor rated at 10K at 25°C. Now, use a multimeter to measure the resistance of the photoresistor under normal light, illuminated, and dark conditions.
+キットには、25°Cで10KΩの抵抗が含まれています。次に、マルチメータを使用して、通常の光、照明された状態、暗い状態での光抵抗器の抵抗を測定します。
 
-2. You need to use two DuPont wires to extend the photoresistor.
-
+2. 光抵抗器を拡張するために、2本のデュポンワイヤーを使用する必要があります。
 
 .. image:: img/14_pho_wire.png
     :width: 500
     :align: center
 
-If you are not sure how to connect it, you can watch the following video.
+接続方法が不明な場合は、以下のビデオをご覧ください。
 
 .. raw:: html
 
@@ -338,161 +331,160 @@ If you are not sure how to connect it, you can watch the following video.
         Your browser does not support the video tag.
     </video>
 
-3. Since the rated resistance of the photoresistor is 10K, set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+3. 光抵抗器の公称抵抗値が10KΩなので、マルチメータを20キロオーム（20KΩ）範囲で抵抗を測定するように設定します。
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-4. Insert the photoresistor into the breadboard. The pins are non-directional and can be inserted freely.
+4. 光抵抗器をブレッドボードに挿入します。ピンには方向性がないため、自由に挿入できます。
 
 .. image:: img/14_dinosaur_pho.png
     :width: 600
     :align: center
 
-5. Now, touch the two pins of the photoresistor with the red and black test leads of the multimeter.
+5. 次に、光抵抗器の2本のピンに、マルチメータの赤と黒のテストリードを接触させます。
 
 .. image:: img/14_dinosaur_pho_multimeter.png
     :width: 600
     :align: center
 
-6. Read the resistance value under the current ambient light and record it in the table below.
+6. 現在の環境光下での抵抗値を読み取り、以下の表に記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 通常の光
      - *5.48*
-   * - Bright Light
+   * - 明るい光
      -
-   * - Darkness
+   * - 暗闇
      -
 
-7. Now, have a friend help by shining a flashlight or another light source directly on the photoresistor, record the resistance value, which might be just a few hundred ohms. Therefore, you might need to set the multimeter to 2K, or even to 200 ohms for a more precise reading.
+7. 友人に手伝ってもらい、懐中電灯や他の光源を直接光抵抗器に照射し、抵抗値を記録します。この値は数百オームに過ぎないかもしれません。そのため、マルチメータを2KΩ、またはさらに200Ωに設定して、より正確な測定を行う必要があるかもしれません。
 
 .. note::
 
-    We've set the resistance unit in the table to kilohms. 1 kilohm (kΩ) = 1000 ohms.
+    表の抵抗単位をキロオームに設定しました。1キロオーム（kΩ）= 1000オームです。
 
-    If you chose the 200 ohm range and got a reading of 164.5 ohms, convert it to 0.16 kilohms (rounding recommended to two decimal places), and enter the converted value in the table.
+    200Ωの範囲を選択し、164.5Ωの読み取り値を得た場合、これを0.16キロオームに変換し（小数点以下2桁に丸めることを推奨）、変換した値を表に入力してください。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 通常の光
      - *≈5.48*
-   * - Bright Light
+   * - 明るい光
      - *≈0.16*
-   * - Darkness
+   * - 暗闇
      - 
 
-8. For dark conditions, the resistance of the photoresistor can reach several megaohms, so we need to set the multimeter to the 2 megaohm position.
+8. 暗い環境では、フォトレジスタの抵抗値が数メガオームに達することがあるため、マルチメータを2メガオームの位置に設定する必要があります。
 
 .. image:: img/multimeter_2mΩ.png
     :width: 300
     :align: center
 
-9. Completely cover the photoresistor with a black object, then record the measured resistance in the table.
+9. フォトレジスタを黒い物体で完全に覆い、その後、測定された抵抗値を表に記録します。
 
 .. note::
-    We have set the resistance unit in the table to kilohms. 1 megohm (MΩ) = 1000 kilohms.
+    表の抵抗単位をキロオームに設定しました。1メガオーム（MΩ）= 1000キロオームです。
 
-    If you chose the 2 megaohm range and obtained a reading of 1.954 megohms, convert it to 1954 kilohms, which is the value you should enter.
+    2メガオームの範囲を選択し、1.954メガオームの読み取り値を得た場合、それを1954キロオームに変換して、この値を入力してください。
 
-    If the reading is directly higher than 2MΩ, it will display "1.", at which point you can directly enter 2 megohms, or you might consider using a more precise multimeter to measure the exact value.
+    読み取り値が2MΩを超えて「1.」と表示された場合は、直接2メガオームと入力するか、より正確な値を測定するために、より精密なマルチメータを使用することを検討してください。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 通常の光
      - *≈5.48*
-   * - Bright Light
+   * - 明るい光
      - *≈0.16*
-   * - Darkness
+   * - 暗闇
      - *≈1954*
 
-From the measurements, we have confirmed the photoconductive properties of the photoresistor: the stronger the light, the lower the resistance; the dimmer the light, the higher the resistance, which can reach several megaohms.
+これらの測定から、フォトレジスタの光導電特性を確認しました。光が強くなるほど抵抗値は低くなり、光が弱くなるほど抵抗値は高くなり、数メガオームに達することがあります。
 
 
-**2. Build the Circuit**
+**2. 回路の構築**
 
-1. Continue building the circuit. Connect one pin of the photoresistor to the negative terminal of the breadboard and the other pin to the A0 pin on the Arduino Uno R3.
+1. 回路の構築を続けます。フォトレジスタの片方のピンをブレッドボードの負端子に、もう片方のピンをArduino Uno R3のA0ピンに接続します。
 
 .. image:: img/14_dinosaur_pho_gnd_5v.png
     :width: 600
     :align: center
 
-2. Insert a 10K resistor in the same row as the photoresistor's connection to A0.
+2. フォトレジスタがA0に接続されているのと同じ列に10KΩ抵抗を挿入します。
 
 .. image:: img/14_dinosaur_resistor.png
     :width: 600
     :align: center
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the A0 pin reads the value after the voltage conversion of the photoresistor.
+この回路では、10KΩ抵抗とフォトレジスタが直列に接続されており、流れる電流は同じです。10KΩ抵抗は保護として機能し、A0ピンはフォトレジスタの電圧変換後の値を読み取ります。
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from the A0 pin will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of the A0 pin will be close to 0. At this time, the 10K resistor plays a protective role, preventing a short circuit by keeping the 5V and GND from being directly connected.
+光が強くなると、フォトレジスタの抵抗値が下がり、それに伴い電圧も下がるため、A0ピンの値も下がります。光が十分に強い場合、フォトレジスタの抵抗はほぼ0に近くなり、A0ピンの値もほぼ0に近づきます。このとき、10KΩ抵抗が保護役を果たし、5VとGNDが直接接続されてショートするのを防ぎます。
 
-If you place the photoresistor in a dark situation, the value of the A0 pin will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 5V (the 10K resistor becomes negligible), and the value of the A0 pin will be close to 1023.
+フォトレジスタを暗い場所に置くと、A0ピンの値が上がります。十分に暗い場合、フォトレジスタの抵抗は無限大になり、その電圧は5Vに近づき（10KΩ抵抗は無視できる）、A0ピンの値は1023に近づきます。
 
-3. Connect the other pin of the 10K resistor to the positive terminal of the breadboard.
+3. 10KΩ抵抗のもう片方のピンをブレッドボードの正端子に接続します。
 
 .. image:: img/14_dinosaur_resistor_vcc.png
     :width: 600
     :align: center
 
-**3. Writing the Code**
+**3. コードの作成**
 
-Here, you need to read the photoresistor values.
+ここでは、フォトレジスタの値を読み取るコードを作成します。
 
-1. Open the sketch you saved earlier, ``Lesson14_Servo``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson14_Photoresistor``. Click "Save".
+1. 前に保存したスケッチを開き、 ``Lesson14_Servo`` を選択して「ファイル」メニューから「名前を付けて保存」を選び、 ``Lesson14_Photoresistor`` として保存します。「保存」をクリックします。
 
-2. First, initialize the pin for the photoresistor.
+2. まず、フォトレジスタ用のピンを初期化します。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     #include <Servo.h>
 
-    Servo myServo;  // Create a Servo object
+    Servo myServo;  // サーボオブジェクトを作成
 
-    const int servoPin = 9;         // Servo motor connected to digital pin 9
-    const int lightSensorPin = A0;  // Light sensor connected to analog pin A0
+    const int servoPin = 9;  // サーボモーターをデジタルピン9に接続
+    const int lightSensorPin = A0;  // 光センサーをアナログピンA0に接続
 
-3. We need to use the serial monitor to print the values from the photoresistor, so initialize serial communication at a baud rate of 9600 in ``void setup()``.
+3. フォトレジスタからの値を表示するために、 ``void setup()`` 内でシリアル通信を9600のボーレートで初期化します。
 
 .. code-block:: Arduino
     :emphasize-lines: 9
 
     #include <Servo.h>
 
-    Servo myServo;  // Create a Servo object
+    Servo myServo;  // サーボオブジェクトを作成
 
-    const int servoPin = 9;  // servo connected to digital pin 9
-    const int lightSensorPin = A0;  // Light sensor connected to analog pin A0
+    const int servoPin = 9;  // サーボをデジタルピン9に接続
+    const int lightSensorPin = A0;  // 光センサーをアナログピンA0に接続
 
     void setup() {
-        Serial.begin(9600);        // Start serial communication
-        myServo.attach(servoPin);  // Attach the Servo object to the specified pin
-        myServo.write(0);          // Initial position set to 0 degrees
+        Serial.begin(9600);  // シリアル通信を開始
+        myServo.attach(servoPin);  // 指定したピンにサーボオブジェクトを接続
+        myServo.write(0);  // 初期位置を0度に設定
     }
 
-4. Now, in ``void loop()``, create a variable ``lightValue`` to store the read value from the photoresistor, then print it to the serial monitor.
+4. ``void loop()`` 内で、フォトレジスタから読み取った値を格納する変数 ``lightValue`` を作成し、それをシリアルモニタに表示します。
 
 .. note::
 
-    To avoid interference from the servo, you can comment out the servo-related code using ``Ctrl+/``.
+    サーボからの干渉を避けるために、サーボ関連のコードを ``Ctrl+/`` でコメントアウトできます。
 
-    Keep a ``delay(100)`` to see the data printed in the serial monitor.
-
+    シリアルモニタに表示されるデータを見るために、 ``delay(100)`` を維持してください。
 
 .. code-block:: Arduino
     :emphasize-lines: 15-17,22
@@ -521,60 +513,59 @@ Here, you need to read the photoresistor values.
         delay(100);         // delay 100ms
     }
 
-5. Now, upload the code to the Arduino Uno R3 to see the printed data.
+5. それでは、コードをArduino Uno R3にアップロードして、データを確認しましょう。
 
-**4. Viewing the Data**
+**4. データの確認**
 
-You need to open the Dinosaur Game on Chrome's offline page and use the photoresistor to detect the difference in data between the blank space and the black cactus icon to set a threshold. This way, you can determine whether a black cactus is detected by comparing the value to the threshold.
+Chromeのオフラインページで恐竜ゲームを開き、フォトレジスタを使用して、白いスペースと黒いサボテンのアイコンとの間のデータの違いを検出し、閾値を設定します。これにより、フォトレジスタの値を閾値と比較することで、黒いサボテンが検出されたかどうかを判断できます。
 
-Open Google Chrome, enter ``chrome://dino/``. You will see a prompt saying “Press space to play”. Press the space bar and let the dinosaur hit a black cactus to get a stable screen.
+Google Chromeを開き、 ``chrome://dino/`` と入力します。「スペースキーを押してゲームを開始」と表示されるプロンプトが表示されます。スペースキーを押し、恐竜が黒いサボテンに衝突するまでゲームを進め、画面を安定させます。
 
 .. image:: img/14_dinosaur_google.png
     :width: 600
     :align: center
 
-2. Open Google Chrome and Arduino IDE side by side.
+2. Google ChromeとArduino IDEを並べて開きます。
 
 .. image:: img/14_dinosaur_google_arduino.png
     :width: 600
     :align: center
 
-3. Now, place the breadboard on the computer screen and use the photoresistor to detect the value printed in the serial monitor on the white space. Mine is around 268.
+3. 次に、ブレッドボードをコンピュータの画面に置き、フォトレジスタを使用してシリアルモニタに表示される白いスペースの値を検出します。私の場合、約268でした。
 
 .. note::
 
-    * Ensure the photoresistor is fully against the computer screen.
-    * It is recommended to set the screen brightness to the maximum for the best contrast value.
-
+    * フォトレジスタをコンピュータの画面にしっかりと密着させてください。
+    * 画面の明るさを最大に設定することで、コントラストが最大化され、最適な値を取得できます。
 
 .. image:: img/14_dinosaur_read_pho_white.png
 
-4. Now, move the photoresistor to the place where the dinosaur is and record the printed value. Mine is around 355.
+4. 次に、恐竜がいる場所にフォトレジスタを移動し、表示された値を記録します。私の場合、約355でした。
 
 .. image:: img/14_dinosaur_read_pho_black.png
 
-5. You can press the space bar to let the game run and test several times to see the values you get in the blank space and on the black cactus.
+5. スペースキーを押してゲームを進め、白いスペースと黒いサボテンの上で得られる値を何度かテストしてください。
 
 .. note::
 
-    * Based on my test results, I would set the threshold to 310(Any value between 268 and 355 is acceptable, but it is best to set a median value.). 
-    * If the value from the photoresistor is greater than 310, it means it detects the black cactus icon; otherwise, it detects the blank space.
+    * テスト結果に基づき、閾値を310に設定することをお勧めします（268と355の間の任意の値で構いませんが、中央値を設定するのが最適です）。 
+    * フォトレジスタの値が310を超える場合は、黒いサボテンアイコンが検出されたことを意味し、それ以下の場合は白いスペースが検出されたことを意味します。
 
-Now the photoresistor is ready, and you can proceed to the next step of combining the servo and the photoresistor to play the dinosaur game.
+フォトレジスタの準備が整ったので、次のステップでサーボとフォトレジスタを組み合わせて恐竜ゲームをプレイします。
 
-4. Play Dinosaur Game
+4. 恐竜ゲームのプレイ
 --------------------------
-Here, we need to attach the photoresistor in a suitable position on the computer screen and then write code to make the servo turn based on the value of the photoresistor. For example, when the value of the photoresistor exceeds 310, the servo should turn to 30 degrees; otherwise, it should remain at 0 degrees.
+ここでは、フォトレジスタをコンピュータの画面の適切な位置に取り付け、その値に基づいてサーボが回転するコードを書きます。例えば、フォトレジスタの値が310を超えた場合、サーボは30度に回転してスペースキーを押し、恐竜がサボテンを飛び越えるようにします。それ以外の場合は0度の位置に保ちます。
 
-Let's see how to do it.
+やり方を見てみましょう。
 
-**1. Writing the Code**
+**1. コードの作成**
 
-Open the sketch you saved earlier, ``Lesson14_Photoresistor``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson14_Dinosaur_Game``. Click "Save".
+前に保存したスケッチを開き、 ``Lesson14_Photoresistor`` を選択して「ファイル」メニューから「名前を付けて保存」を選び、 ``Lesson14_Dinosaur_Game`` として保存します。「保存」をクリックします。
 
-In ``void loop()``, use an ``if else`` statement to set the conditions for the servo's movement.
+``void loop()``内で、 ``if else`` 文を使用してサーボの動作条件を設定します。
 
-As determined in the previous step, when the photoresistor value exceeds 310, indicating a black cactus icon is detected, the servo needs to turn to 30 degrees to press the space bar and make the dinosaur jump over the cactus.
+前のステップで確認したように、フォトレジスタの値が310を超えた場合、黒いサボテンアイコンが検出されたことを示し、サーボは30度に回転してスペースキーを押し、恐竜をジャンプさせます。
 
 .. code-block:: Arduino
     :emphasize-lines: 19-24
@@ -605,19 +596,19 @@ As determined in the previous step, when the photoresistor value exceeds 310, in
         }
     }
 
-3. Now you can upload the code to the Arduino Uno R3.
+3. これでコードをArduino Uno R3にアップロードできます。
 
-**2. Attaching the Photoresistor**
+**2. フォトレジスタの取り付け**
 
-The position of the photoresistor will affect the gaming experience.
+フォトレジスタの位置がゲーム体験に影響を与えます。
 
-* If it's too close to the dinosaur, the cactus is detected too late, and the dinosaur doesn't have enough time to jump.
-* If it's too far from the dinosaur, it jumps too early after detecting the cactus.
-* The height from the horizontal line affects the sensitivity of detecting the black cactus.
+* 恐竜に近すぎると、サボテンが遅れて検出され、恐竜がジャンプする時間が足りなくなります。
+* 恐竜から遠すぎると、サボテンを検出した後、ジャンプが早すぎます。
+* 水平線からの高さが、黒いサボテンを検出する感度に影響を与えます。
 
-Now attach the photoresistor in a position using tape. Press the space bar to start the game and see if the dinosaur can jump over the black cactus. If it doesn't jump over, move the breadboard a bit to the right; if it jumps too early, move it a bit to the left. Adjust back and forth multiple times to find the best position.
+テープを使って適切な位置にフォトレジスタを取り付けます。スペースキーを押してゲームを開始し、恐竜が黒いサボテンを飛び越えられるか確認します。飛び越えられない場合は、ブレッドボードを少し右に移動させ、早すぎる場合は少し左に移動させてください。何度も調整して、最適な位置を見つけてください。
 
-Now you can press the space bar to start playing the Dinosaur Game.
+これで、スペースキーを押して恐竜ゲームを開始できます。
 
 .. raw:: html
 
@@ -626,8 +617,7 @@ Now you can press the space bar to start playing the Dinosaur Game.
         Your browser does not support the video tag.
     </video>
 
-**Summary**
+**まとめ**
 
-In this engaging lesson, we embarked on a journey from understanding the basics of servos and photoresistors to creating a setup that plays the Chrome Dinosaur game on its own. We learned to assemble a circuit that interprets light signals with a photoresistor and commands a servo to react accordingly. Our final setup not only tackled the game but adapted to its challenges, marking a fantastic fusion of simple gaming and the basics of electronic automation. By automating the Dinosaur game, we've stepped into the basics of robotic controls and sensors, paving the way for more complex and exciting projects in the future.
-
+この楽しいレッスンでは、サーボとフォトレジスタの基本を理解するところから始め、最終的には自動でChromeの恐竜ゲームをプレイする仕組みを作り上げました。光センサーを使用して信号を解釈し、それに応じてサーボを制御する回路を組み立てる方法を学びました。最終的なセットアップは、ゲームに挑戦するだけでなく、ゲームの課題に適応するものでした。これにより、簡単なゲームと電子自動化の基本が融合し、将来のより複雑でエキサイティングなプロジェクトへの道が開けました。
 

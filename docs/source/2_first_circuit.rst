@@ -1,39 +1,39 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！FacebookでRaspberry Pi、Arduino、ESP32についてさらに深く学び、仲間たちと交流しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品に対する特別割引をお楽しみください。
+    - **季節のプロモーションとギブアウェイ**: プレゼントや季節限定のプロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造しませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _2_first_circuit:
 
-2. Your First Circuit
+2. 初めての回路
 =========================
 
-Welcome to the electrifying world of your first circuit, where a simple switch can light up your surroundings, and a single click can bring gadgets to life. This lesson is your gateway to understanding the unseen force of electricity that powers the devices we use every day. Ever curious about how your favorite gadgets operate or what makes lights glow? It's time to embark on a hands-on exploration of circuit building.
+初めての回路の世界へようこそ！スイッチ一つで周りを照らし、一つのクリックでガジェットを動かすことができるこの世界は、私たちが毎日使用するデバイスに電力を供給する目に見えない力である電気を理解するための入り口です。お気に入りのガジェットがどのように動作するのか、またはライトがどのように光るのかに興味がありませんか？さあ、回路を組み立てる実践的な探検に出かけましょう。
 
-As we begin this adventure, we'll explore the origins of electricity and trace the pathways of electrons as they flow through circuits. This lesson serves as a practical introduction to the components of a circuit and how they interact to perform various functions. You'll also play the role of an electrical detective, discovering how to effectively harness and measure this lively force.
+この冒険の始まりとして、電気の起源を探り、電子が回路を流れる経路をたどります。このレッスンは、回路の構成要素とそれらがどのように相互作用してさまざまな機能を果たすかを実践的に紹介します。また、電気の流れを効果的に活用し、測定する方法を発見する電気探偵の役割も果たします。
 
-Get ready for some electrifying experiments! Here's what you'll achieve:
+さあ、エキサイティングな実験の準備をしましょう！以下のことが達成できます：
 
-* Use a breadboard for easy circuit construction.
-* Read resistor color codes to manage electrical flow.
-* Understand how LEDs control the direction of current.
-* Learn about voltage from Arduino Uno R3.
-* Discover how electrons flow through a circuit.
-* Recognize different types of circuits and their functions.
+* ブレッドボードを使って簡単に回路を構築する。
+* 抵抗の色コードを読み取って電気の流れを管理する。
+* LEDが電流の方向をどのように制御するかを理解する。
+* Arduino Uno R3から電圧について学ぶ。
+* 電子が回路を通る流れを発見する。
+* さまざまな回路の種類とその機能を認識する。
 
-Are you ready to dive into your first circuit-building experience? Let's get charged up and begin this enlightening journey!
+さあ、初めての回路作りの体験に飛び込む準備はできましたか？電気に満ちたこの旅を始めましょう！
 
 
-Components Needed
+必要な部品
 ----------------------
 
 .. list-table:: 
@@ -41,15 +41,15 @@ Components Needed
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * 赤色LED
+     - 1 * 220Ω抵抗
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
      -
      -   
    * - |list_usb_cable| 
@@ -58,70 +58,67 @@ Components Needed
      - 
 
 
-Breadboard
--------------
+ブレッドボード
+------------------
 
-1. Locate your breadboard. 
+1. ブレッドボードを見つけましょう。
 
-The breadboard you'll be using is called a solderless breadboard. Each hole on the breadboard contains a metal connector that grips the wire when inserted. This helps to prevent the wire from being pulled out, ensuring a secure connection in your circuit.
+あなたが使用するブレッドボードは、「はんだ付け不要のブレッドボード」と呼ばれます。ブレッドボードの各穴には金属コネクタが入っており、挿入されたワイヤーをしっかりと保持します。これにより、ワイヤーが引き抜かれにくくなり、回路内での確実な接続が保証されます。
 
 .. image:: img/2_breadboard_half.png
     :width: 500
     :align: center
 
 
-Ever wonder why the essential electronic tool in your hand shares a name with the kitchen board used for slicing bread? It's quite a story! Back in the days before the 1970s, electronics were assembled on literal wooden boards, sometimes repurposed kitchen breadboards, by nailing or gluing components onto them and making connections with wires.
+手にしているこの基本的な電子ツールが、なぜ「パンを切るためのキッチンボード」と同じ名前を持っているのか、疑問に思ったことはありませんか？それには興味深い歴史があります！1970年代以前、電子機器は実際の木製ボード、時にはキッチンのまな板を再利用して組み立てられ、部品がそれに釘打ちされたり、接着されたりしていました。
 
 .. image:: img/2_breadboard_circuit.jpg
     :width: 500
     :align: center
 
-From the 1960s to the 1980s, engineers experimented with wire wrapping for more complex circuits, which was semi-permanent and required specific tools but was eventually deemed too cumbersome and not suited for repeated use.
+1960年代から1980年代にかけて、エンジニアたちはより複雑な回路のためにワイヤラッピングを試みましたが、これは半永久的なものであり、特定の工具が必要で、結局はあまりにも手間がかかり、繰り返し使用には向いていませんでした。
 
 .. image:: img/2_breadboard_wire_wrap.jpg
     :width: 500
     :align: center
 
-Then, in the early 1970s, Ronald J. Portugal revolutionized prototyping with the invention of the "solderless breadboard," making circuit assembly faster, easier, and requiring no soldering. This innovative tool quickly outshined wire wrapping, leading to the breadboards we know today, named for their historical predecessors but designed for the modern maker.
+その後、1970年代初頭に、ロナルド・J・ポルトガルが「はんだ付け不要のブレッドボード」を発明し、回路の組み立てがより迅速かつ簡単に行えるようになり、はんだ付けが不要となりました。この革新的なツールは、ワイヤラッピングをすぐに凌駕し、今日私たちが知っているブレッドボードに進化しました。それは、歴史的な前身の名前を引き継いでいますが、現代のメイカーに向けて設計されています。
 
 .. image:: img/2_breadboard_full+.png
     :width: 500
     :align: center
 
-Ever curious about what lies beneath the surface of a breadboard? Hidden behind its plastic facade and a layer of sticky foam, covered by yellow protective paper, lies the heart of the breadboard's functionality: dozens of metal strips.
 
 .. note::
-    It's best not to peel away this protective layer. We've done it here just to show you what's inside.
+    この保護層を剥がすのはおすすめしません。ここでは中身を見せるために剥がしています。
 
 .. image:: img/2_breadboard_internal0.jpg
     :width: 500
     :align: center
 
-If you were to (though we strongly advise against it) pull out these metal parts with pliers, you'd discover that each piece is a metal clip with small teeth. Each strip features five teeth, correlating with the five holes on the breadboard's surface for each row. The power rails have longer strips with fifty teeth.
+もし仮に（お勧めはしませんが）これらの金属部分をペンチで引き抜くと、各ピースは小さな歯が付いた金属クリップであることがわかるでしょう。各ストリップには5つの歯があり、それぞれがブレッドボードの表面の5つの穴に対応しています。電源レールには、50本の歯がある長いストリップが使われています。
 
 .. image:: img/2_breadboard_internal1.jpg
     :width: 500
     :align: center
 
-These tiny teeth are perfect for gripping onto the legs of electronic components. When a component is inserted into the breadboard, the clip opens slightly to snugly grasp the metal leg. Any other component inserted into the same row of teeth will be electrically connected.
+これらの小さな歯は、電子部品の足をしっかりと固定するのに最適です。部品をブレッドボードに挿入すると、クリップが少し開いて金属の足をしっかりと掴みます。同じ列に挿入された他の部品は、電気的に接続されます。
 
 .. image:: img/2_breadboard_internal2.jpg
     :width: 500
     :align: center
 
-This clever design allows for easy and flexible prototyping without the need for soldering, making breadboards an essential tool for electronics enthusiasts and professionals alike.
+この巧妙な設計により、はんだ付けを必要とせずに簡単で柔軟なプロトタイピングが可能になり、ブレッドボードは電子工学の愛好者や専門家にとって不可欠なツールとなっています。
 
-
-Most breadboards have some numbers, letters and plus and minus signs on them. Although the labels will vary from breadboard to breadboard, the function is basically the same. These labels allow you to find the corresponding holes more quickly when building your circuit. The row numbers and column letters help you to precisely locate the holes on the breadboard, for example, hole "C15" is where column C intersects row 15.
-
+ほとんどのブレッドボードには、数字、文字、プラスマイナス記号などが付いています。ラベルはブレッドボードによって異なることがありますが、基本的な機能は同じです。これらのラベルは、回路を組むときに対応する穴を素早く見つけるのに役立ちます。列番号と行のアルファベットは、たとえば「C15」の穴が列Cと行15の交点にあることを正確に指し示すのに役立ちます。
 
 .. image:: img/2_breadboard_letter_number.jpg
     :width: 500
     :align: center
 
-
-The sides of the breadboard are usually distinguished by red and blue (or other colors), as well as plus and minus signs, and are usually used to connect to the power supply, known as the power bus.
-When building a circuit, it is common to connect the negative terminal to the blue (-) column and the positive terminal to the red (+) column.
+ブレッドボードの側面は通常、赤と青（または他の色）で区別されており、
+プラスとマイナス記号があり、通常は電源に接続される部分として使用されます。
+回路を組み立てる際、負極を青（-）の列に、正極を赤（+）の列に接続するのが一般的です。
 
 .. image:: img/2_breadboard_plus_minus.jpg
     :width: 500
@@ -129,196 +126,186 @@ When building a circuit, it is common to connect the negative terminal to the bl
 
 
 
-Resistor
+抵抗
 ---------------------
 
-2. Locate a 220-ohm resistor.
+2. 220Ωの抵抗を見つけましょう。
 
 .. image:: img/2_220_resistor.png
     :align: center
 
-Resistors help manage the flow of electricity in a circuit by converting electrical energy into heat. Each resistor has two wires, one on each end, allowing electricity to pass in either direction, which means they can be placed in any direction on the circuit.
+抵抗器は、回路内の電気の流れを管理し、電気エネルギーを熱に変換する役割を果たします。各抵抗器には両端に2本のワイヤーがあり、どちらの方向にも電気を通すことができるため、回路上のどちらの方向にも配置することができます。
 
-A resistor's ohm value tells us the amount of resistance it adds. A higher ohm value means more resistance. For instance, a 220-ohm resistor adds 220 ohms of resistance, and a 10 kiloohm resistor adds 10 kilo ohms.
+抵抗器のオーム値は、抵抗器が追加する抵抗の量を示しています。オーム値が高いほど、抵抗が大きくなります。たとえば、220Ωの抵抗器は220オームの抵抗を追加し、10キロオームの抵抗器は10キロオームの抵抗を追加します。
 
-To read a resistor's value, check the color bands. This chart explains the meaning behind each color band on a resistor. The multiplier is represented in scientific notation, where the exponent indicates the number of zeros added to the number represented by the color bands. For instance, a 4-band resistor shown at the top of the chart starts with a green band. Green stands for the number 5, so the resistance value begins with 5. The second band is brown, so the next number is 1. The multiplier band is red, valued at 2, meaning we add two zeros. This results in a total resistance of 5100 ohms, or 5.1 kilohms (5.1kΩ).
+抵抗器の値を読み取るには、色帯を確認します。このチャートは、抵抗器の色帯が何を意味しているのかを説明しています。乗数は科学的記法で表されており、指数は色帯によって表される数字に追加されるゼロの数を示します。たとえば、チャートの一番上に示されている4バンドの抵抗器は、緑の帯から始まります。緑は数字の5を表しているため、抵抗値は5から始まります。次の帯は茶色で、次の数字は1です。乗数帯は赤であり、値は2なので、2つのゼロを追加します。これにより、抵抗値は5100オーム、つまり5.1キロオーム（5.1kΩ）となります。
 
 .. image:: img/2_resistor_card.png
 
-
-The chart shown here represents all the resistors included in your kit. For this lesson, we'll be using a 220-ohm resistor.
+ここに示されているチャートは、キットに含まれるすべての抵抗器を表しています。このレッスンでは、220Ωの抵抗器を使用します。
 
 .. image:: img/2_all_resistor.png
     :width: 500
     :align: center
 
-3. Bend the leads of the resistor so they face the same direction.
+3. 抵抗器のリードを同じ方向に曲げます。
 
 .. image:: img/2_220_resistor_pin.png
     :width: 200
     :align: center
 
-4. Insert one lead into the top hole of the breadboard's negative side, connecting the resistor to the power source. Insert the other lead of the 220 ohm resistor into hole 1b of the breadboard.
+4. 抵抗器の片方のリードをブレッドボードの負側の最上部の穴に挿入し、抵抗器を電源に接続します。もう一方の220Ωのリードをブレッドボードの1bの穴に挿入します。
 
     .. note::
         
-        Resistors are considered non-polarized components, meaning the direction they face in a circuit doesn't matter.
-
+        抵抗器は非極性部品と見なされているため、回路内での向きは問題になりません。
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-
 LED
 -----------------
 
-5. Find the red LED.
+5. 赤色LEDを見つけます。
 
 .. image:: img/2_red_led.png
     :align: center
 
-
-LEDs, or Light Emitting Diodes, are specialized electronic components that emit light when an electric current flows through them in a specific direction.
+LED（発光ダイオード）は、特定の方向に電流が流れると光を放つ特殊な電子部品です。
 
 .. image:: img/2_led_polarity.jpg
     :width: 200
     :align: center
 
-The most common LED colors are red, yellow, blue, green, and white, with the emitted light typically matching the color of the LED itself.
+最も一般的なLEDの色は、赤、黄、青、緑、白で、放射される光は通常、LED自体の色と一致しています。
 
 .. image:: img/2_led_color.png
     :width: 600
     :align: center
 
-These devices are designed with two leads: a longer one known as the anode and a shorter one called the cathode. To function properly, the anode should be connected to the positive terminal of the power source, and the cathode should be connected to the negative terminal or ground. Some LEDs feature a flat edge on the side of the cathode to aid in correct placement. 
+これらのデバイスには2本のリードがあり、長い方はアノード、短い方はカソードと呼ばれます。正しく動作させるには、アノードを電源の正極に、カソードを負極またはグランドに接続する必要があります。いくつかのLEDには、正しい配置を補助するためにカソード側に平らなエッジがあるものもあります。
 
 .. image:: img/2_led_pin.jpg
     :width: 100
     :align: center
 
-
-6. Insert the cathode of the LED (the short lead) into hole 1e on the breadboard. This connects the LED to the 220Ω resistor. Remember, holes 1b and 1e are connected underneath the breadboard.
+6. LEDのカソード（短いリード）をブレッドボードの1eの穴に挿入します。これでLEDが220Ωの抵抗器に接続されます。ブレッドボードの下で1bと1eの穴が接続されていることを覚えておいてください。
 
 .. note::
 
-    LEDs are considered to be polarized components, meaning that current can only flow through them in one direction. If you find that the LED does not light up, try swapping the connections.
+    LEDは極性のあるコンポーネントであり、電流は一方向にしか流れません。LEDが点灯しない場合は、接続を逆にしてみてください。
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-Jumper Wire
+ジャンパーワイヤー
 ----------------------
 
-7. Find a jumper wire.
+7. ジャンパーワイヤーを見つけます。
 
-
-Your kit includes jumper wires of different colors and lengths, all functioning the same. Use varying colors for easy circuit identification and shorter wires for a tidy setup. Each wire consists of a conductive core and an insulated coating to prevent unintended contacts.
+キットには、さまざまな色や長さのジャンパーワイヤーが含まれていますが、すべて同じ機能を持っています。回路の識別を容易にするために色分けされたワイヤーを使用し、整然としたセットアップには短いワイヤーを使用します。各ワイヤーは導電性の芯と、意図しない接触を防ぐための絶縁コーティングで構成されています。
 
 .. image:: img/2_wire_color.jpg
     :width: 500
     :align: center
 
-8. Insert one end of the jumper wire into hole 1j on the breadboard. This connects the jumper wire to the LED, as holes 1f and 1j are linked underneath the breadboard. Insert the other end of the jumper wire into the top hole of the breadboard's positive rail. Now, the jumper wire connects the LED and the ground wire together.
+8. ジャンパーワイヤーの片方の端をブレッドボードの1jの穴に挿入します。これにより、ジャンパーワイヤーがLEDに接続されます。1fと1jの穴はブレッドボードの下で繋がっています。ジャンパーワイヤーのもう一方の端を、ブレッドボードの正極レールの最上部の穴に挿入します。これで、ジャンパーワイヤーがLEDとグランドワイヤーを接続します。
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
 Arduino Uno R3
---------------
+-------------------
 
-9. Find your Arduino Uno R3.
+9. Arduino Uno R3を見つけます。
 
 .. image:: img/1_uno_board.png
     :width: 400
     :align: center
 
-In this lesson, we're using the Arduino Uno R3 as a power supply. Its 5V pin serves as the positive terminal and the GND pin as the negative terminal, supplying a steady 5V to the circuit.
+このレッスンでは、Arduino Uno R3を電源として使用します。その5Vピンは正極として、GNDピンは負極として機能し、回路に安定した5Vを供給します。
 
 .. image:: img/1_uno_power_pin.png
     :width: 500
     :align: center
 
-However, connecting the power supply's terminals directly without a load can cause a short circuit, generating heat and potentially causing damage or fire. Always include a load, like an LED or resistor, to prevent short circuits.
+ただし、負荷がない状態で電源端子を直接接続すると、ショート回路が発生し、熱を生じ、損傷や火災の原因となることがあります。LEDや抵抗器のような負荷を含めることで、ショート回路を防ぐことができます。
 
 .. image:: img/2_short_circuit.png
     :width: 500
     :align: center
 
-10. Connect a wire from the positive rail on the right side of the breadboard to the 5V pin on the Arduino Uno R3. It is recommended to use a red or orange wire to represent the positive terminal, which can be particularly helpful for quickly identifying connections in complex projects.
+10. ブレッドボードの右側の正極レールからArduino Uno R3の5Vピンまでワイヤーを接続します。正極端子を表すために、赤またはオレンジ色のワイヤーを使用することをお勧めします。これは、複雑なプロジェクトで接続を迅速に識別するのに特に役立ちます。
 
 .. image:: img/2_uno_5v.png
     :width: 600
     :align: center
 
-11. Finally, connect a wire from the negative rail on the left side of the breadboard to the GND pin on the Arduino Uno R3. A black or green wire is suggested for consistency, using the same color to represent the negative terminal across all circuits.
-
+11. 最後に、ブレッドボードの左側の負極レールからArduino Uno R3のGNDピンまでワイヤーを接続します。負極端子を表すために黒または緑のワイヤーを使用することが推奨されます。
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
-12. Finally, power the Arduino Uno R3 by connecting it to a computer or a power socket using the USB cable provided in the kit, and the LED should light up.
+12. 最後に、Arduino Uno R3をコンピュータや電源コンセントにUSBケーブルで接続して電源を供給すると、LEDが点灯するはずです。
 
     .. image:: img/2_first_circuit.png
         :width: 600
         :align: center
 
 
-After connecting your Arduino Uno R3 and witnessing the LED light up, you're not just looking at a simple circuit — you're observing the fundamentals of electricity at work. Let's delve into what makes your circuit come to life.
+Arduino Uno R3を接続し、LEDが点灯するのを確認したら、単純な回路を見るだけでなく、電気の基本的な仕組みを観察しています。あなたの回路がどのようにして動き出すのかを詳しく見ていきましょう。
 
 
-Understanding Electricity in Circuits
+回路における電気の理解
 ----------------------------------------
 
-**Electricity Essentials**
+**電気の基本**
 
-The flow of electrons from the negative to the positive is what we understand as the actual electron flow. Initially, scientists like Ben Franklin believed that the current was a movement of positive charges, which is why conventional current is defined as flowing from positive to negative.
+電子が負極から正極に流れることが、私たちが理解している「実際の電子の流れ」です。最初の頃、ベンジャミン・フランクリンのような科学者は、電流は正の電荷の移動であると信じていました。これが、従来の電流が正極から負極へ流れると定義されている理由です。
 
 .. image:: img/2_uno_current.png
     :width: 600
     :align: center
 
-
-However, in reality, electrons, which carry a negative charge, move from the negative terminal to the positive terminal. Most countries today still use the conventional current flow model. Thus, in diagrams and when designing electronic components, current is depicted as flowing from the positive to the negative terminal, even though electrons actually flow in the opposite direction.
+しかし実際には、負の電荷を持つ電子が負極から正極へ移動します。今日でも、多くの国が従来の電流の流れのモデルを使用しています。そのため、図や電子部品の設計では、電流は正極から負極へ流れると表示されますが、実際には電子は反対方向に流れます。
 
 .. image:: img/2_uno_electron.png
     :width: 600
     :align: center
 
-* **A** Traditional current direction
-* **B** Actual electron flow direction
-* **C** Electrons (not to scale)
-* **D** Wire
+* **A** 伝統的な電流の方向
+* **B** 実際の電子の流れの方向
+* **C** 電子（スケール外）
+* **D** ワイヤー
 
-There are two types of current generated by a power source: alternating current (AC) and direct current (DC). A battery or a Microcontroller like Arduino Uno R3 provides DC, where the current flows in one direction—from the positive to the negative terminal.
+電源から生成される電流には、交流（AC）と直流（DC）の2種類があります。バッテリーやArduino Uno R3のようなマイクロコントローラはDCを提供し、電流は一方向に流れます（正極から負極へ）。
 
-With AC, however, the current changes direction periodically. The voltage in the circuit reverses as the current changes direction, compelling it to flow the other way. Most homes and buildings are powered by AC circuits, such as the 120 volts at 60 Hz from wall outlets in American homes or 220 volts at 50 Hz in many European homes.
+一方、ACでは電流の方向が周期的に変わります。電圧が逆転することで、電流も逆方向に流れることを強制されます。ほとんどの家庭や建物はAC回路で電力を供給されており、たとえば、アメリカの家庭では120ボルト60Hz、ヨーロッパの多くの家庭では220ボルト50Hzです。
 
-**Safety in Circuitry**
+**回路における安全性**
 
-When connecting a power source, a prudent approach is to attach the positive end to the circuit first, followed by the negative. Conversely, when disconnecting, you should remove the negative end first to prevent short circuits. This course utilizes low voltage and current, so there's no risk of electric shock or injury. But good safety practices can prevent harm when working with higher voltages and currents, like replacing car batteries or repairing outlets.
+電源を接続する際は、まず正極端子を回路に接続し、次に負極端子を接続するのが賢明です。逆に、切断する際は、最初に負極端子を外してショート回路を防ぐことができます。このコースでは低電圧と低電流を使用しているため、感電や怪我のリスクはありません。しかし、車のバッテリーの交換やコンセントの修理など、高い電圧や電流を扱う際には、適切な安全対策を講じることが重要です。
 
-**Closed and Open Circuits**
+**閉回路と開回路**
 
-As electricity flows through the LED, resistor, jumper wires, and back into the breadboard's negative rail, it forms what is known as a closed circuit. If you were to remove a wire from the breadboard, the LED would go out because the current has stopped — the circuit is now open.
+電気がLED、抵抗器、ジャンパーワイヤーを通り、ブレッドボードの負極レールに戻ると、それは「閉回路」として知られる状態になります。ブレッドボードからワイヤーを取り外すと、LEDが消灯します。これは、電流が停止し、回路が「開回路」となったためです。
 
 .. image:: img/2_open_circuit.png
     :width: 600
     :align: center
 
-By mastering these basics, you're on your way to understanding and creating more complex electronics that power our world.
+これらの基本をマスターすることで、私たちの世界を動かしている、より複雑な電子機器の理解と構築への第一歩を踏み出しています。
 
+**質問:**
 
-**Questions:**
-
-1. Remove the red wire from the breadboard and experiment by placing it in different holes on the breadboard. Observe any changes in the LED. Sketch the hole positions that allow the LED to light up.
+1. ブレッドボードから赤いワイヤーを取り外し、他の穴に挿して実験してみてください。LEDに何か変化があるか観察してください。LEDが点灯する穴の位置をスケッチしてみましょう。
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
-
-2. What happens if you reverse the pins of the LED? Will it light up? Why or why not?
+2. LEDのピンを逆にした場合、どうなりますか？LEDは点灯しますか？その理由を考えてみましょう。

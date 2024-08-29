@@ -1,22 +1,22 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 愛好者コミュニティのFacebookページへようこそ！ここでは、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求し、他の愛好者と一緒に楽しむことができます。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **エキスパートサポート**: アフターセールスの問題や技術的な課題を、コミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表や先行プレビューに早期アクセスできます。
+    - **特別割引**: 最新の製品に対する特別割引を楽しむことができます。
+    - **フェスティブプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造する準備はできましたか？今すぐ[|link_sf_facebook|]をクリックして参加しましょう！
 
-31. Guess Number
+31. 数字当てゲーム
 ==========================
-Welcome to today's lesson! This interactive lesson combines fun with learning as we explore the integration of an IR Remote Controller and LCD display to create a game that challenges you to guess a hidden number.
+今日のレッスンへようこそ！このインタラクティブなレッスンでは、IRリモコンとLCDディスプレイを使って、隠された数字を当てるゲームを作成し、楽しく学びましょう。
 
-Guessing Numbers is a fun party game where you and your friends take turns inputting a number (0~99). The range will be smaller with the inputting of the number till a player answers the riddle correctly. Then the player is defeated and punished. For example, if the lucky number is 51 which the players cannot see, and the player 1 inputs 50, the prompt of number range changes to 50~99; if the player 2 inputs 70, the range of number can be 50~70; if the player 3 inputs 51, he or she is the unlucky one. Here, we use IR Remote Controller to input numbers and use LCD to output outcomes.
+「数字当てゲーム」は、友達と一緒に楽しむパーティーゲームです。0～99の数字を交互に入力し、プレイヤーが正解を当てるまで範囲が狭まります。正解したプレイヤーは罰ゲームを受けます。例えば、ラッキーナンバーが51で、プレイヤー1が50を入力すると、次の範囲は50～99に狭まり、プレイヤー2が70を入力すると範囲が50～70になります。そして、プレイヤー3が51を入力すると、そのプレイヤーが罰ゲームとなります。ここでは、IRリモコンで数字を入力し、LCDに結果を表示します。
 
 .. raw:: html
 
@@ -25,92 +25,92 @@ Guessing Numbers is a fun party game where you and your friends take turns input
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will able to:
+このレッスンで学べること：
 
-* Learn how to generate random numbers that serve as the secret target in the game.
-* Implement user inputs using an infrared remote to guess numbers.
-* Use an LCD to give immediate feedback about guesses, telling if they're too high, too low, or correct.
-* Utilize conditional and loop structures to manage game logic and flow.
+* ゲームの秘密のターゲットとして使うランダムな数字の生成方法を学びます。
+* 赤外線リモコンを使用してユーザー入力を行い、数字を推測します。
+* 推測が高すぎるか低すぎるか、または正しいかをLCDで即座にフィードバックします。
+* ゲームロジックとフローを管理するために条件文とループ構造を利用します。
 
 
-Building the Circuit
+回路の構築
 --------------------------------
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * I2C CDL1602
-     - 1 * IR Receiver
-     - 1 * Remote Control
+     - 1 * I2C LCD1602
+     - 1 * IR受信機
+     - 1 * リモコン
    * - |list_uno_r3| 
      - |list_i2c_lcd1602| 
      - |list_receiver| 
      - |list_remote| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - 
 
-**Building Step-by-Step**
+**ステップごとの構築手順**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図に従って回路を構築するか、以下の手順に従ってください。
 
 .. image:: img/31_guess_circuit.png
     :width: 700
     :align: center
 
-1. Insert the infrared receiver into the breadboard. The infrared receiver has a front and back side, with the protruding side being the front. The pin order from left to right is OUT, GND, and VCC.
+1. 赤外線受信機をブレッドボードに差し込みます。赤外線受信機には表と裏があり、突起がある方が前面です。左から右へのピン順は、OUT、GND、VCCです。
 
 .. image:: img/31_guess_receiver.png
     :width: 500
     :align: center
 
-2. Connect the OUT pin of the infrared receiver to pin 2 on the Arduino Uno R3, GND to the negative rail of the breadboard, and VCC to the positive rail of the breadboard.
+2. 赤外線受信機のOUTピンをArduino Uno R3のピン2に接続し、GNDをブレッドボードの負極に、VCCをブレッドボードの正極に接続します。
 
 .. image:: img/31_guess_receiver_pins.png
     :width: 500
     :align: center
 
-3. Connect the I2C LCD1602 module: GND to the negative rail on the breadboard, VCC to the positive rail on the breadboard, SDA to pin A4, and SCL to pin A5.
+3. I2C LCD1602モジュールを接続します：GNDをブレッドボードの負極に、VCCをブレッドボードの正極に、SDAをピンA4に、SCLをピンA5に接続します。
 
 .. image:: img/31_guess_i2c_lcd1602.png
     :width: 700
     :align: center
 
-4. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails of the breadboard, respectively.
+4. 最後に、Arduino Uno R3のGNDと5Vピンをそれぞれブレッドボードの負極と正極に接続します。
 
 .. image:: img/31_guess_circuit.png
     :width: 700
     :align: center
 
-Code Creation
+コードの作成
 ------------------
-To implement a number guessing game, you need to carefully consider the following aspects:
+数字当てゲームを実装するには、以下の点を慎重に検討する必要があります：
 
-* **Random Number**: Implement a method to generate a random target number.
-* **User Input**: Decide how players will input their guesses (e.g., keypad, IR remote).
-* **Feedback**: Determine how to inform players if their guess is too high, too low, or correct.
-* **Game Limits**: Set boundaries for guesses to structure the game and adjust difficulty.
+* **ランダムな数字**: ランダムなターゲット数字を生成する方法を実装します。
+* **ユーザー入力**: プレイヤーがどのようにして数字を入力するかを決定します（例：キーパッド、IRリモコン）。
+* **フィードバック**: プレイヤーに推測が高すぎるか低すぎるか、または正しいかをどのように伝えるかを決定します。
+* **ゲームの制限**: 推測の範囲を設定し、ゲームの構造を決定し、難易度を調整します。
 
-Now, let's start writing the code to implement the number guessing game.
+それでは、数字当てゲームを実装するコードを書き始めましょう。
 
 .. note::
 
-  If you are not familiar with the IR Receiver and I2C LCD1602, you can first learn their basic usage through the following projects:
+  IR受信機とI2C LCD1602に不慣れな場合は、以下のプロジェクトを通じてその基本的な使用方法を学んでください：
 
   * :ref:`ar_ir_receiver`
   * :ref:`ar_i2c_lcd1602`
 
-  ``LiquidCrystal I2C`` and ``IRremote`` libraries are used here, you can install them from the **Library Manager**.
+  ここでは ``LiquidCrystal I2C`` および ``IRremote`` ライブラリを使用します。これらのライブラリは、 **Library Manager** からインストールできます。
 
-1. Open the sketch you saved earlier, ``Lesson22_Decode_Key_Value``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson31_Guess_Number``. Click "Save".
+1. 以前に保存したスケッチ ``Lesson22_Decode_Key_Value`` を開きます。 ``File`` メニューから「名前を付けて保存」をクリックし、ファイル名を ``Lesson31_Guess_Number`` に変更して「保存」をクリックします。
 
 .. code-block:: Arduino
 
@@ -166,7 +166,7 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-2. Include the necessary libraries for using the LCD and initialize it with the correct I2C address and size.
+2. 必要なライブラリをインクルードし、LCDを正しいI2Cアドレスとサイズで初期化します。
 
 .. code-block:: Arduino
   :emphasize-lines: 2,3,5
@@ -179,7 +179,7 @@ Now, let's start writing the code to implement the number guessing game.
 
   const int receiverPin = 2;  // IR sensor pin
 
-3. Now, create four variables to store your entered number, the randomly generated target number, the upper limit of the guessing range (99), and the lower limit (0).
+3. 次に、入力された数字、ランダムに生成されたターゲットナンバー、推測範囲の上限（99）、および下限（0）を格納するための4つの変数を作成します。
 
 .. code-block:: Arduino
   :emphasize-lines: 9-12
@@ -197,7 +197,7 @@ Now, let's start writing the code to implement the number guessing game.
   int upper = 99;         // Upper bound of guessing range
   int lower = 0;          // Lower bound of guessing range
 
-4. In the ``setup()`` function, add code to initialize the LCD and generate a new target number.
+4. ``setup()`` 関数内で、LCDを初期化し、新しいターゲットナンバーを生成するコードを追加します。
 
 .. code-block:: Arduino
   :emphasize-lines: 4-6
@@ -210,7 +210,7 @@ Now, let's start writing the code to implement the number guessing game.
     NewTargetNumber();                                   // Initialize game values
   }
 
-5. In the ``loop()`` function, first create a boolean variable ``result``, and then check if the pressed key is "power". If it is, call ``NewTargetNumber()`` to generate a new target number.
+5. ``loop()`` 関数内で、最初にboolean型変数 ``result`` を作成し、「パワー」キーが押されたかどうかを確認します。押された場合は、新しいターゲットナンバーを生成するために ``NewTargetNumber()`` を呼び出します。
 
 .. code-block:: Arduino
   :emphasize-lines: 9, 12-14
@@ -233,11 +233,11 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-6. If you press a digit between 0 and 9, store the entered number in the variable ``guessedNumber``.
+6. 0から9までの数字を押した場合、入力された数字を変数 ``guessedNumber`` に格納します。
 
-* If the accumulated number is greater than or equal to 10, then call the ``checkGuess()`` function to determine if the guessed number matches the target number. The result (true or false) is stored in the ``result`` variable.
-* If a single digit is entered, directly call the ``displayResult()`` function to display it on the LCD.
-* ``guessedNumber = guessedNumber * 10 + key.toInt();``: This line is used to accumulate the digits typed by the user to form a complete number. For example, if the user presses '3' and then '5', guessedNumber will first be 3, and then it will become 35. ``key.toInt()`` converts the string representation of the number to an integer.
+* 蓄積された数字が10以上の場合、 ``checkGuess()`` 関数を呼び出して、推測した数字がターゲットナンバーと一致するかどうかを確認します。結果（trueまたはfalse）は ``result`` 変数に格納されます。
+* 1桁の数字が入力された場合、 ``displayResult()`` 関数を直接呼び出して、LCDに表示します。
+* ``guessedNumber = guessedNumber * 10 + key.toInt();``: この行は、ユーザーが入力した桁を蓄積して完全な数字を形成するために使用されます。たとえば、ユーザーが '3' を押し、その後 '5' を押すと、guessedNumber は最初は3で、次に35になります。 ``key.toInt()`` は数字の文字列表現を整数に変換します。
 
 .. code-block:: Arduino
   :emphasize-lines: 4-11
@@ -254,14 +254,13 @@ Now, let's start writing the code to implement the number guessing game.
     displayResult(result);  // Display input and result on LCD
   }
 
-7. If the "CYCLE" key is pressed, then call the ``checkGuess()`` function to check if the entered guessed number is correct. If it is correct, return ``true``; otherwise, return ``false``, and store the returned value in the variable ``result``. Then, call the ``displayResult()`` function to display information on the LCD.
+7. 「CYCLE」キーが押された場合、 ``checkGuess()`` 関数を呼び出して、入力された推測ナンバーが正しいかどうかを確認します。正しければ ``true`` を返し、正しくなければ ``false`` を返し、その結果を ``result`` 変数に格納します。その後、 ``displayResult()`` 関数を呼び出して、LCDに情報を表示します。
 
 .. note::
 
-  In the previous ``else if`` statement, only if the number is greater than 10 will it be compared with the target number. For numbers less than 10, they are just displayed on the LCD.
+  前述の ``else if`` 文では、10以上の数字のみがターゲットナンバーと比較されます。10未満の数字はLCDに表示されるだけです。
 
-  Therefore, a "CYCLE" key is added here. When you need to enter a single digit, you can press the "CYCLE" key after entering the digit to compare it with the target number.
-
+  そのため、ここで「CYCLE」キーを追加しました。1桁の数字を入力する場合、数字を入力した後に「CYCLE」キーを押してターゲットナンバーと比較できます。
 
 .. code-block:: Arduino
   :emphasize-lines: 8-11
@@ -281,10 +280,10 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-8. The ``NewTargetNumber()`` function initializes the game by generating a new target number for the user to guess. 
+8. ``NewTargetNumber()`` 関数は、ユーザーが推測するための新しいターゲットナンバーを生成することで、ゲームを初期化します。
 
-* It sets the ``upper`` and ``lower`` limits of the guessing range to their initial values, clears the LCD screen, and displays a welcome message along with instructions. 
-* It also resets the guessed number and prints the target number to the serial monitor for debugging purposes.
+* 推測範囲の ``upper`` および ``lower`` の限界を初期値に設定し、LCD画面をクリアしてウェルカムメッセージと指示を表示します。
+* また、推測された数字をリセットし、デバッグ目的でターゲットナンバーをシリアルモニターに出力します。
 
 .. code-block:: Arduino
 
@@ -302,12 +301,12 @@ Now, let's start writing the code to implement the number guessing game.
     Serial.println(targetNumber);  // Print the target number in serial monitor for debugging
   }
 
-9. The ``checkGuess()`` function checks the user's guessed number against the target number.
+9. ``checkGuess()`` 関数は、ユーザーが推測した数字をターゲットナンバーと比較します。
 
-* If the guess is higher than the target, it updates the upper limit. 
-* If the guess is lower, it updates the lower limit. 
-* If the guess is correct, it resets the guessed number and returns ``true``. 
-* Otherwise, it resets the guessed number and returns false.
+* 推測がターゲットナンバーより高い場合、上限を更新します。 
+* 推測が低い場合、下限を更新します。 
+* 推測が正しい場合、推測された数字をリセットし、 ``true`` を返します。 
+* それ以外の場合、推測された数字をリセットし、 ``false`` を返します。
 
 .. code-block:: Arduino
 
@@ -324,10 +323,10 @@ Now, let's start writing the code to implement the number guessing game.
     return false;  // Incorrect guess
   }
 
-10. The ``displayResult()`` function updates the LCD display based on whether the user's guess is correct or not. 
+10. ``displayResult()`` 関数は、ユーザーの推測が正しいかどうかに基づいてLCDディスプレイを更新します。
 
-* If the guess is correct, it shows a success message, pauses for 5 seconds, and then generates a new target number to reset the game. 
-* If the guess is incorrect, it shows the current guessed number and the updated guessing range.
+* 推測が正しい場合、成功メッセージを表示し、5秒間一時停止してから新しいターゲットナンバーを生成し、ゲームをリセットします。 
+* 推測が不正解の場合、現在の推測ナンバーと更新された推測範囲を表示します。
 
 .. code-block:: Arduino
 
@@ -348,7 +347,7 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-11. Your complete code is as follows, which you can upload to your Arduino board.
+11. 完全なコードは以下の通りです。これをArduinoボードにアップロードできます。
 
 .. code-block:: Arduino
 
@@ -474,13 +473,13 @@ Now, let's start writing the code to implement the number guessing game.
     }
   }
 
-12. Now, you can press any digit key, and then enter numbers according to the prompted number range.
+12. これで、任意の数字キーを押し、表示された数字範囲に従って数字を入力できます。
 
-* If you enter two digits, after entering the second digit, it will directly compare with the target number.
-* If you enter a single digit, you need to press the "CYCLE" key again to start comparing with the target number.
-* If the guess is higher than the target, it will update the upper limit.
-* If the guess is lower, it will update the lower limit.
-* If the guess is correct, the LCD will show a success message, pause for 5 seconds, and then generate a new target number to reset the game.
+* 2桁の数字を入力した場合、2桁目を入力後、直接ターゲットナンバーと比較します。
+* 1桁の数字を入力した場合、「CYCLE」キーを再度押してターゲットナンバーと比較を開始する必要があります。
+* 推測がターゲットナンバーより高い場合、上限が更新されます。
+* 推測が低い場合、下限が更新されます。
+* 推測が正しい場合、LCDに成功メッセージが表示され、5秒間一時停止した後、新しいターゲットナンバーが生成され、ゲームがリセットされます。
 
 .. raw:: html
 
@@ -489,13 +488,12 @@ Now, let's start writing the code to implement the number guessing game.
         Your browser does not support the video tag.
     </video>
 
-13. Finally, remember to save your code and tidy up your workspace.
+13. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
 **Question**
 
-What additional components can be added to enhance the fun of the game? What roles do they play in the game?
+ゲームの楽しさを高めるために追加できるコンポーネントは何ですか？ それらはゲームでどのような役割を果たしますか？
 
 **Summary**
 
-In today's lesson, we successfully built a number guessing game using an Arduino board, integrating components like an IR receiver and an LCD for dynamic interaction. We explored various programming concepts such as random number generation, input handling, and conditional logic.
-
+本日のレッスンでは、Arduinoボードを使用してナンバー推測ゲームを構築し、IR受信機やLCDなどのコンポーネントを統合して、ダイナミックなインタラクションを実現しました。ランダムナンバーの生成、入力処理、条件分岐といったさまざまなプログラミングの概念を探求しました。

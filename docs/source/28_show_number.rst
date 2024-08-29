@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebookへようこそ！このコミュニティで、Raspberry Pi、Arduino、ESP32に関する知識を深め、他の愛好者とともに学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けながら解決できます。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表やプレビューに早期アクセスできます。
+    - **特別割引**: 最新製品に対する特別割引をお楽しみいただけます。
+    - **お祭りプロモーションとプレゼント企画**: プレゼント企画や季節ごとのプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造を楽しむ準備ができましたか？今すぐ[|link_sf_facebook|]をクリックして参加しましょう！
 
-28. Show Number with 74hc595
-==================================
+28. 74HC595を使用して数字を表示する
+=====================================
 
-In the previous lesson, you may have noticed that the 74HC595 and the 7-segment display make a perfect pair. The 74HC595 can simultaneously output 8-bit signals, while the 7-segment display is controlled by 8 electrical signals (including the decimal point LED segment, i.e., the dp segment).
+前回のレッスンで、74HC595と7セグメントディスプレイが完璧にペアを組むことに気づいたかもしれません。74HC595は同時に8ビットの信号を出力でき、7セグメントディスプレイは8つの電気信号（小数点LEDセグメントを含む）で制御されます。
 
-So, can the 74HC595 be used to control the 7-segment display? The answer is yes.
+では、74HC595を使用して7セグメントディスプレイを制御できるでしょうか？答えはイエスです。
 
-In this lesson, we will use the 74HC595 to control the 7-segment display and make it show different numbers.
+このレッスンでは、74HC595を使用して7セグメントディスプレイを制御し、異なる数字を表示させる方法を学びます。
 
 .. raw:: html
 
@@ -28,115 +28,115 @@ In this lesson, we will use the 74HC595 to control the 7-segment display and mak
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will able to:
+このレッスンで学べること:
 
-* Understand how to use the 74HC595 shift register to drive a 7-segment display.
-* Learn the binary representations of digits 0 to 9 and how to convert them to decimal and hexadecimal formats.
-* Understand how to use the Serial Monitor to input data and display it on the 7-segment display.
+* 74HC595シフトレジスタを使用して7セグメントディスプレイを駆動する方法を理解する。
+* 数字0から9のバイナリ表現を学び、それを10進数と16進数形式に変換する方法を習得する。
+* シリアルモニタを使用してデータを入力し、それを7セグメントディスプレイに表示する方法を理解する。
 
 
 
-Building the Circuit
---------------------------------
+回路の構築
+----------------------------
 
-**Components Needed**
+**必要な部品**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * 7-segment Display
-     - 1 * 220Ω Resistor
+     - 1 * 7セグメントディスプレイ
+     - 1 * 220Ω抵抗
      - 1 * 74HC595
    * - |list_uno_r3| 
      - |list_7segment| 
      - |list_220ohm| 
      - |list_74hc595| 
-   * - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+   * - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * USBケーブル
      -
    * - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
      -
 
-**Building Step-by-Step**
+**ステップバイステップの構築**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図に従うか、以下のステップに従って回路を構築してください。
 
 .. image:: img/25_show_number.png
     :width: 500
     :align: center
 
-1. Insert the 7-segment display into the breadboard with the decimal point at the bottom right corner.
+1. 小数点が右下に来るように7セグメントディスプレイをブレッドボードに挿入します。
 
 .. image:: img/25_show_number_7segment.png
     :width: 500
     :align: center
 
-2. Connect the negative (-) terminal of the 7-segment display to the ground rail of the breadboard using a jumper wire.
+2. 7セグメントディスプレイの負極（-）端子をジャンパーワイヤーを使用してブレッドボードのグランドレールに接続します。
 
 .. image:: img/25_show_number_resistor.png
     :width: 500
     :align: center
 
-3. Locate the 74HC595 chip and insert it into the breadboard. Ensure that the chip spans the middle gap.
+3. 74HC595チップを見つけ、ブレッドボードに挿入します。チップが中央のギャップをまたぐように配置してください。
 
 .. image:: img/25_show_number_74hc595.png
     :width: 500
     :align: center
 
-4. Connect the VCC and MR pins of the 74HC595 to the positive rail on the breadboard.
+4. 74HC595のVCCピンとMRピンをブレッドボードの正のレールに接続します。
 
 .. image:: img/25_show_number_vcc.png
     :width: 500
     :align: center
 
-5. Connect the CE and GND pins of the 74HC595 to the negative rail on the breadboard.
+5. 74HC595のCEピンとGNDピンをブレッドボードの負のレールに接続します。
 
 .. image:: img/25_show_number_gnd.png
     :width: 500
     :align: center
 
-6. Connect Q0 of the 74HC595 to the 'a' pin of the 7-segment display, Q1 to the 'b' pin, Q2 to the 'c' pin, Q3 to the 'd' pin, and Q4 to the 'e' pin.
+6. 74HC595のQ0を7セグメントディスプレイの'a'ピンに、Q1を'b'ピンに、Q2を'c'ピンに、Q3を'd'ピンに、Q4を'e'ピンに接続します。
 
 .. image:: img/25_show_number_q0_q4.png
     :width: 500
     :align: center
 
-7. Connect Q5 of the 74HC595 to the 'f' pin of the 7-segment display, Q6 to the 'g' pin, and Q7 to the 'dp' pin.
+7. 74HC595のQ5を7セグメントディスプレイの'f'ピンに、Q6を'g'ピンに、Q7を'dp'ピンに接続します。
 
 .. image:: img/25_show_number_q5_q7.png
     :width: 500
     :align: center
 
-8. Connect the DS pin of the 74HC595 to pin 11 of the Arduino Uno R3.
+8. 74HC595のDSピンをArduino Uno R3のピン11に接続します。
 
 .. image:: img/25_show_number_pin11.png
     :width: 500
     :align: center
 
-9. Connect the ST_CP pin of the 74HC595 to pin 12 of the Arduino Uno R3.
+9. 74HC595のST_CPピンをArduino Uno R3のピン12に接続します。
 
 .. image:: img/25_show_number_pin12.png
     :width: 500
     :align: center
 
-10. Connect the SH_CP pin of the 74HC595 to pin 8 of the Arduino Uno R3.
+10. 74HC595のSH_CPピンをArduino Uno R3のピン8に接続します。
 
 .. image:: img/25_show_number_pin8.png
     :width: 500
     :align: center
 
-11. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails on the breadboard, respectively.
+11. 最後に、Arduino Uno R3のGNDピンと5Vピンを、それぞれブレッドボードの負のレールと正のレールに接続します。
 
 .. image:: img/25_show_number.png
     :width: 500
     :align: center
 
-12. The following tables shows the pin connections between the 74HC595, the Arduino Uno R3, the 7-segment Display.
+12. 以下の表は、74HC595とArduino Uno R3、および7セグメントディスプレイのピン接続を示しています。
 
 .. list-table::
     :widths: 20 20
@@ -182,18 +182,18 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - Q7
         - dp
 
-Binary Numbers for Digits 0 to 9
+数字0から9のバイナリ表現
 ------------------------------------
 
-In this project, we use the 74HC595 shift register to drive the 7-segment display to show different numbers. However, the 74HC595 receives binary numbers, so before programming, we need to know the corresponding binary numbers for digits 0 to 9.
+このプロジェクトでは、74HC595シフトレジスタを使用して7セグメントディスプレイを駆動し、異なる数字を表示します。しかし、74HC595はバイナリ数を受け取るため、プログラムを作成する前に、数字0から9に対応するバイナリ数を知る必要があります。
 
-Assuming we want to display a digit 2 on the 7-segment display, we need to turn off segments f and c and turn on the remaining segments.
+たとえば、7セグメントディスプレイに数字2を表示したい場合、セグメントfとcをオフにし、他のセグメントをオンにする必要があります。
 
 .. image:: img/23_segment_2.png
     :align: center
     :width: 200
 
-According to the wiring diagram, the output pins Q0 to Q7 of the 74HC595 correspond to the respective pins of the 7-segment display, as shown in the diagram. In binary, 0 represents off (closed), and 1 represents on (open). To display the digit 2, dp, f, and c should be 0, while the other segments should be 1, resulting in the binary number ``B01011011``.
+配線図に従うと、74HC595の出力ピンQ0からQ7がそれぞれ7セグメントディスプレイの対応するピンに接続されていることがわかります。バイナリでは、0がオフ（閉）を、1がオン（開）を表します。数字2を表示するために、dp、f、cが0で、他のセグメントが1になるようにし、バイナリ数は``B01011011``となります。
 
 .. image:: img/25_display_2_binary.png
     :align: center
@@ -201,20 +201,20 @@ According to the wiring diagram, the output pins Q0 to Q7 of the 74HC595 corresp
 
 .. note::
 
-    When you only have one 7-segment display, the DP pin is always set to 0. When you have multiple 7-segment displays in a daisy-chain configuration, you can use the DP pin to indicate the decimal point.
+    7セグメントディスプレイが1つしかない場合、DPピンは常に0に設定されます。複数の7セグメントディスプレイをデイジーチェーン接続している場合、DPピンを使用して小数点を示すことができます。
 
-To display the digit 0, dp and g should be 0, and all other segments should be 1, giving the binary number ``B00111111``.
+数字0を表示するために、dpとgが0で、他のセグメントがすべて1になるようにし、バイナリ数は ``B00111111`` となります。
 
-**Question**
+**質問**
 
-Now that we know the binary representations for digits 0 and 2, please fill in the binary numbers for the remaining digits in the table below.
+数字0と2のバイナリ表現がわかったので、以下の表に残りの数字のバイナリ数を記入してください。
 
 .. list-table::
     :widths: 20 20
     :header-rows: 1
 
-    *   - Number
-        - Binary
+    *   - 数字
+        - バイナリ
     *   - 0
         - B00111111
     *   - 1
@@ -234,27 +234,27 @@ Now that we know the binary representations for digits 0 and 2, please fill in t
     *   - 8
         -
     *   - 9
-        -        
+        -
 
 
-Code Creation - Displaying Numbers
+コード作成 - 数字の表示
 ------------------------------------------
 
-1. Open the sketch you saved earlier, ``Lesson28_Flowing_Light``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson28_Show_Number_Binary``. Click "Save".
+1. 先ほど保存したスケッチ「 ``Lesson28_Flowing_Light`` 」を開きます。「ファイル」メニューから「名前を付けて保存」を選択し、「 ``Lesson28_Show_Number_Binary`` 」に名前を変更して「保存」をクリックします。
 
-2. Change the ``datArray[]`` to display the binary numbers corresponding to digits 0 to 9.
+2. ``datArray[]`` を変更して、数字0から9に対応するバイナリ数を表示します。
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int STcp = 12;  //Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   //Pin connected to SH_CP of 74HC595
-    const int DS = 11;    //Pin connected to DS of 74HC595
-    //display 0,1,2,3,4,5,6,7,8,9
+    const int STcp = 12;  // 74HC595のST_CPに接続されたピン
+    const int SHcp = 8;   // 74HC595のSH_CPに接続されたピン
+    const int DS = 11;    // 74HC595のDSに接続されたピン
+    // 数字0,1,2,3,4,5,6,7,8,9を表示
     int datArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
 
-3. Since the ``datArray[]`` array contains 10 elements, modify the range of the variable ``num`` to ``num <= 9``.
+3. ``datArray[]`` 配列には10個の要素が含まれているため、変数 ``num`` の範囲を ``num <= 9`` に変更します。
 
 .. code-block:: Arduino
     :emphasize-lines: 2
@@ -268,8 +268,7 @@ Code Creation - Displaying Numbers
         }
     }
 
-4. Your complete code should look like the following. At this point, you can upload the code to the Arduino Uno R3, and you'll see the 7-segment display scrolling through digits 0 to 9.
-
+4. 完全なコードは以下のようになります。これでコードをArduino Uno R3にアップロードすると、7セグメントディスプレイに数字0から9が順番に表示されます。
 
 .. code-block:: Arduino
 
@@ -295,63 +294,63 @@ Code Creation - Displaying Numbers
         }
     }
 
-Binary Conversion
+バイナリ変換
 ------------------
 
-In practical applications, writing binary numbers can more clearly express the state of each bit in the data. However, for general numerical representation, writing decimal numbers is more convenient.
+実際のアプリケーションでは、バイナリ数を書くことでデータの各ビットの状態をより明確に表現できます。しかし、一般的な数値表現には、10進数を使う方が便利です。
 
 .. note::
 
-    Writing binary, decimal, or even hexadecimal numbers does not affect the program's result but only the code's readability. For example, writing the decimal number ``91`` will be internally converted to binary form ``B01011011``.
+    バイナリ、10進数、または16進数で数値を書くことは、プログラムの結果には影響しませんが、コードの読みやすさには影響します。たとえば、10進数の ``91`` を書くと、それは内部的にバイナリ形式の ``B01011011`` に変換されます。
 
-Let's see how to convert binary numbers to decimal.
+バイナリ数を10進数に変換する方法を見てみましょう。
 
-**Conversion to Decimal**
+**10進数への変換**
 
-In the binary system, each bit represents a corresponding place value. The place value is a power of 2, such as 2^0, 2^1, 2^2…, etc. By multiplying each bit by its corresponding place value and adding all the results together, we get the decimal number.
+バイナリシステムでは、各ビットが対応する位の値を表します。位の値は2の累乗であり、2^0、2^1、2^2…などです。各ビットをその対応する位の値で掛け合わせ、それらの結果をすべて合計することで、10進数が得られます。
 
-For example, the binary number ``B01011011`` converts to the decimal number 91.
+たとえば、バイナリ数 ``B01011011`` は10進数では91に変換されます。
 
 .. image:: img/25_binary_dec.png
     :align: center
     :width: 600
  
-**Using a Calculator**
+**電卓の使用**
 
-In practical applications, you can use the calculator on your computer. Switch to Programmer mode, and you can easily convert between binary, decimal, and hexadecimal.
+実際のアプリケーションでは、コンピュータの電卓を使用することができます。電卓をプログラマーモードに切り替えれば、バイナリ、10進数、16進数間の変換が簡単に行えます。
 
-1. Search for "Calculator" on your computer, then switch to **Programmer** mode.
+1. コンピュータで「電卓」を検索し、「プログラマー」モードに切り替えます。
 
 .. image:: img/25_calculator_programmer.png
     :align: center
 
-2. If you already know the binary number and want to convert it to another base, select **BIN**.
+2. すでにバイナリ数がわかっている場合は、「BIN」を選択します。
 
 .. image:: img/25_calculator_binary.png
     :align: center
 
-3. Now, you can start entering the binary number.
+3. これで、バイナリ数の入力を開始できます。
 
-* The effective bits in binary refer to the range from the most significant bit (leftmost non-zero bit) to the least significant bit (rightmost non-zero bit).
-* So for the binary number ``B00111111``, the effective bits are ``111111``. 
-* Now, enter ``111111`` into the calculator to get the corresponding decimal and hexadecimal numbers.
+* バイナリの有効ビットとは、最上位ビット（左端の0以外のビット）から最下位ビット（右端の0以外のビット）までの範囲を指します。
+* たとえば、バイナリ数 ``B00111111`` の有効ビットは ``111111`` です。
+* これで、電卓に ``111111`` を入力して、対応する10進数と16進数を取得できます。
 
 .. image:: img/25_calculator_binary_0.png
     :align: center
     :width: 300
 
-**Question**
+**質問**
 
-Please convert the binary numbers representing digits 0 to 9 into decimal and hexadecimal numbers using a calculator, and fill in the table. This will give you a quick reference guide for base conversions.
+バイナリ数で表される数字0から9を、電卓を使用して10進数および16進数に変換し、表に記入してください。これにより、基数変換のクイックリファレンスガイドが得られます。
 
 .. list-table::
     :widths: 20 40 30 30
     :header-rows: 1
 
-    *   - Number
-        - Binary
-        - Decimal
-        - Hexadecimal
+    *   - 数字
+        - バイナリ
+        - 10進数
+        - 16進数
     *   - 0
         - B00111111
         - 63
@@ -393,11 +392,11 @@ Please convert the binary numbers representing digits 0 to 9 into decimal and he
         -
         -
 
-**Modify the Sketch**
+**スケッチの修正**
 
-Now, open your ``Lesson28_Show_Number_Binary`` sketch in the Arduino IDE. Click "File" -> "Save As...", name the file ``Lesson28_Show_Number_Decimal``. Click "Save".
+まず、Arduino IDEで「 ``Lesson28_Show_Number_Binary`` 」スケッチを開きます。「ファイル」 -> 「名前を付けて保存」をクリックし、ファイル名を「 ``Lesson28_Show_Number_Decimal`` 」に変更して「保存」をクリックします。
 
-Change all the elements of ``datArray[]`` to decimal, as shown in the code. Once modified, you can upload the code to the Arduino Uno R3 to see the effect.
+次に、 ``datArray[]`` のすべての要素を10進数に変更します。修正後、このコードをArduino Uno R3にアップロードして、その効果を確認してください。
 
 .. code-block:: Arduino
 
@@ -424,16 +423,16 @@ Change all the elements of ``datArray[]`` to decimal, as shown in the code. Once
     }
 
 
-Code Creation - Serial Input
+コード作成 - シリアル入力
 ---------------------------------
 
-The Serial Monitor is a powerful tool provided by the Arduino IDE for communication with the Arduino board. We have used it to monitor data output from the Arduino, such as reading analog values from a photoresistor. It can also be used to send data to the Arduino, allowing it to perform actions based on received data.
+シリアルモニタは、Arduino IDEが提供する強力なツールで、Arduinoボードとの通信を行うために使用されます。これを使用して、Arduinoからのデータ出力を監視することができます。例えば、フォトレジスタからのアナログ値を読み取る場合です。また、データをArduinoに送信し、受信したデータに基づいて動作を実行させることも可能です。
 
-In this activity, we will write a number between 0 and 9 into the Serial Monitor to display it on the 7-segment display.
+このアクティビティでは、シリアルモニタに0から9の数字を入力し、それを7セグメントディスプレイに表示します。
 
-1.  Open your ``Lesson28_Show_Number_Decimal`` sketch in the Arduino IDE. Click "File" -> "Save As...", name the file ``Lesson28_Show_Number_Serial``. Click "Save".
+1. Arduino IDEで「 ``Lesson28_Show_Number_Decimal`` 」スケッチを開きます。「ファイル」 -> 「名前を付けて保存」をクリックし、ファイル名を「 ``Lesson28_Show_Number_Serial`` 」に変更して「保存」をクリックします。
 
-2. In ``void setup()``, start the serial monitor and set its baud rate to 9600.
+2. ``void setup()`` で、シリアルモニタを開始し、ボーレートを9600に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
@@ -446,16 +445,16 @@ In this activity, we will write a number between 0 and 9 into the Serial Monitor
         Serial.begin(9600);  // Serial communication setup at 9600 baud
     }
 
-3.  When using the Serial Monitor, you can read data entered into it through Arduino code. Here, you need to understand two functions:
+3. シリアルモニタを使用すると、Arduinoコードを通じて入力されたデータを読み取ることができます。ここで、2つの関数について理解しておく必要があります。
 
-* ``Serial.available()``: Get the number of bytes (characters) available for reading from the serial port. This is data that's already arrived and stored in the serial receive buffer (which holds 64 bytes).
-* ``Serial.read()``: Returns the ASCII code of the character received via the serial input.
+* ``Serial.available()`` : シリアルポートから読み取ることができるバイト（文字）の数を取得します。これは、すでに到着し、シリアル受信バッファに保存されたデータです（64バイトまで保持できます）。
+* ``Serial.read()`` : シリアル入力を通じて受信された文字のASCIIコードを返します。
 
-Now, use an ``if`` statement in void ``loop()`` to check if data has been read from the port, then print it.
+次に、 ``void loop()`` 内で ``if`` ステートメントを使用して、ポートからデータが読み取られたかどうかを確認し、それを表示します。
 
 .. note::
 
-    Temporarily comment out the for statement in ``void loop()`` that displays characters on the 7-segment display to avoid affecting the printing process.
+    7セグメントディスプレイに文字を表示するための ``void loop()`` 内のforステートメントを一時的にコメントアウトし、印刷プロセスに影響を与えないようにします。
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
@@ -474,7 +473,7 @@ Now, use an ``if`` statement in void ``loop()`` to check if data has been read f
         // }
     }
 
-4. Your complete code is shown below. At this point, you can upload the code to the Arduino Uno R3.
+4. 完全なコードは以下のようになります。これでコードをArduino Uno R3にアップロードできます。
 
 .. code-block:: Arduino
 
@@ -506,36 +505,35 @@ Now, use an ``if`` statement in void ``loop()`` to check if data has been read f
         // }
     }
 
-5. After uploading, open the Serial Monitor. In the input box, enter the number ``0`` (or any digit between 0-9) and press enter. At this moment, you will find that the Serial outputs a number ``48``.
+5. アップロード後、シリアルモニタを開きます。入力ボックスに「 ``0`` 」を（または0-9の任意の数字）入力してEnterキーを押します。このとき、シリアルモニタには「 ``48`` 」という数字が表示されるはずです。
 
 .. note::
 
-    * If "Newline" is selected in the line ending option of the serial monitor, you can also see a ``10``. 
-    * ``10`` is the ASCII code for a newline character (also called LF - Line Feed).
-
+    * シリアルモニタの行末設定で「Newline」を選択している場合、 ``10`` も表示されます。
+    * ``10`` は、改行文字（LF - Line Feedとも呼ばれる）のASCIIコードです。
 
 .. image:: img/25_serial_read.png
     :align: center
     :width: 600
 
-So, where did our input of ``0`` go? Where did that ``48`` come from? Is it possible that ``0`` is ``48``?
+では、入力した「 ``0`` 」はどこに行ったのでしょうか？そして「 ``48`` 」はどこから来たのでしょうか？「 ``0`` 」が「 ``48`` 」になる可能性があるのでしょうか？
 
-This is because the ``0`` we input in the Serial Monitor is considered a "character," not a "number."
+これは、シリアルモニタで入力した「 ``0`` 」が「数字」ではなく「文字」として認識されるためです。
 
-The character transfer follows a coding standard known as ASCII (American Standard Code for Information Interchange).
+文字の転送は、ASCII（American Standard Code for Information Interchange）という標準に従っています。
 
-ASCII includes common characters like uppercase letters (A-Z), lowercase letters (a-z), digits (0-9), and punctuation marks (such as periods, commas, exclamation marks, etc.). It also defines some control characters used to control devices and communication protocols. These control characters typically do not display on the screen but are used to control the behavior of devices like printers, terminals, etc., such as line feed, backspace, carriage return, etc.
+ASCIIには、大文字（A-Z）、小文字（a-z）、数字（0-9）、句読点（ピリオド、コンマ、感嘆符など）が含まれます。また、デバイスや通信プロトコルを制御するための制御文字も定義されています。これらの制御文字は通常画面に表示されませんが、プリンターや端末などのデバイスの動作を制御するために使用されます。例えば、改行、バックスペース、キャリッジリターンなどです。
 
-Here is an ASCII table:
+以下は、ASCII表です。
 
 .. image:: img/25_ascii_table.png
     :align: center
     :width: 800
 
-When you type the character ``0`` in the Serial Monitor, the ASCII code for the character ``0`` is sent to the Arduino.
-In ASCII, the code for the character ``0`` is ``48`` in decimal.
+シリアルモニタで「 ``0`` 」を入力すると、「 ``0`` 」のASCIIコードがArduinoに送信されます。
+ASCIIでは、「 ``0`` 」のコードは10進数で「 ``48`` 」です。
 
-6. Before you continue coding, you need to comment out the previous code that prints the ASCII code to avoid conflicts with the following code.
+6. コーディングを続ける前に、以下のコードと競合しないように、ASCIIコードを出力する前のコードをコメントアウトする必要があります。
 
 .. code-block:: Arduino
     :emphasize-lines: 4
@@ -554,7 +552,7 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
         // }
     }
 
-7. You need to create a new ``char`` variable to store the character read from the Serial Monitor. 
+7. シリアルモニタから読み取った文字を格納するために、新しい ``char`` 変数を作成する必要があります。
 
 .. code-block:: Arduino
     :emphasize-lines: 6,7
@@ -569,7 +567,7 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
         }
     }
 
-8. Now, convert the character to a number. In ASCII, the value for the character ``'0'`` is ``48``, ``'1'`` is ``49``, and so on. Therefore, by subtracting the ASCII code for ``'0'``, we can get the corresponding numeric value.
+8. 次に、その文字を数値に変換します。ASCIIでは、文字 ``'0'`` の値は ``48`` 、 ``'1'`` は ``49`` などとなっています。そのため、ASCIIコードから ``'0'`` を引くことで対応する数値を得ることができます。
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
@@ -586,10 +584,10 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
         }
     }
 
-9. In this example, we assume the input is numeric characters ``'0'`` to ``'9'``. Therefore, we only care if the input character is within this range. Hence, you need to check if the number is within the valid range:
+9. この例では、入力が ``'0'`` から ``'9'`` の数字文字であると仮定しています。したがって、入力文字がこの範囲内であるかどうかだけを気にする必要があります。そのため、数字が有効範囲内かどうかを確認する必要があります。
 
-* Select the previously commented-out ``for`` loop statement and press ``Ctrl + /`` to uncomment it.
-* Then modify the ``for`` statement to an ``if`` statement to check if the input character is within the range of ``'0'`` to ``'9'``. If it is, let the 7-segment display show the corresponding number.
+* 先にコメントアウトした ``for`` ループステートメントを選択し、 ``Ctrl + /`` を押してコメントを解除します。
+* 次に、 ``for`` ステートメントを ``if`` ステートメントに変更して、入力文字が ``'0'`` から ``'9'`` の範囲内であるかどうかを確認します。もしそうであれば、7セグメントディスプレイに対応する数字を表示させます。
 
 .. code-block:: Arduino
     :emphasize-lines: 9
@@ -613,7 +611,7 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
         }
     }
 
-10. Your complete code should be as follows. You can now upload the code to the Arduino Uno R3 and open the Serial Monitor. Enter any number between 0 and 9 to see if the 7-segment display shows the corresponding number.
+10. 完全なコードは以下のようになります。これでコードをArduino Uno R3にアップロードし、シリアルモニタを開いて、0から9の任意の数字を入力すると、7セグメントディスプレイに対応する数字が表示されるかどうかを確認してください。
 
 .. code-block:: Arduino
 
@@ -650,15 +648,13 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
         }
     }
 
-11. Finally, remember to save your code and tidy up your workspace.
+11. 最後に、コードを保存し、作業環境を整頓することを忘れないでください。
 
-**Summary**
+**まとめ**
 
-In this lesson, you learned how to use the 74HC595 shift register to drive a 7-segment display and reduce the number of pins required on the Arduino Uno R3. You also explored the binary representations for digits to be displayed and understood how to convert binary numbers to decimal and hexadecimal formats, making the code more readable.
+このレッスンでは、74HC595シフトレジスタを使用して7セグメントディスプレイを駆動し、Arduino Uno R3のピン数を減らす方法を学びました。また、表示する数字のための2進数の表現を探り、2進数を10進数や16進数に変換する方法を理解し、コードをより読みやすくする方法について学びました。
 
-Additionally, you learned how to use the Serial Monitor for serial input and how the input characters are internally converted to ASCII codes. By understanding this conversion, you could map characters to their numeric equivalents, enabling accurate display on the 7-segment display.
+さらに、シリアルモニタを使用してシリアル入力を行い、入力された文字が内部でASCIIコードに変換される仕組みを学びました。この変換を理解することで、文字を対応する数字にマッピングし、7セグメントディスプレイに正確に表示させることができるようになりました。
 
-Overall, this lesson provided a comprehensive understanding of using shift registers, controlling 7-segment displays, and handling serial communication for interactive projects.
-
-
+総じて、このレッスンでは、シフトレジスタの使用、7セグメントディスプレイの制御、およびインタラクティブなプロジェクトのためのシリアル通信の処理に関する包括的な理解を提供しました。
 

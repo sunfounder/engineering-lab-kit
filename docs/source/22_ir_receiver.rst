@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookでラズベリーパイ、Arduino、ESP32に関心を持つ仲間たちと一緒に、さらに深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行プレビューにいち早くアクセスできます。
+    - **特別割引**: 最新の製品を対象にした特別割引をお楽しみください。
+    - **フェスティバルプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しむ準備はできましたか？こちらをクリックして[|link_sf_facebook|]、今すぐ参加しましょう！
 
 .. _ar_ir_receiver:
 
-22. Remote-Controlled Colorful Light
+22. リモコン操作のカラフルライト
 ===================================================
 
-As Christmas approaches, many people decorate their homes with colorful lights. Imagine creating your own remote-controlled colorful light setup! In this lesson, we'll use an Arduino, an infrared receiver, and an RGB LED to make a festive, programmable light display.
+クリスマスが近づくと、多くの人々が家をカラフルなライトで飾ります。自分でリモコン操作のカラフルライトを作ることを想像してみてください！このレッスンでは、Arduino、赤外線受信機、RGB LEDを使って、フェスティバルにぴったりのプログラム可能なライトディスプレイを作成します。
 
 .. raw:: html
 
@@ -26,16 +26,16 @@ As Christmas approaches, many people decorate their homes with colorful lights. 
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+このレッスンの終わりには、以下ができるようになります：
 
-* Understand how an infrared receiver works.
-* Decode infrared signals from a remote control.
-* Control an RGB LED using decoded signals to display various colors and effects.
+* 赤外線受信機の仕組みを理解する。
+* リモコンからの赤外線信号をデコードする。
+* デコードされた信号を使ってRGB LEDを操作し、さまざまな色や効果を表示する。
 
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -43,110 +43,109 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - 1 * IR Receiver
+     - 3 * 220Ω 抵抗
+     - 1 * IR 受信機
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_receiver| 
-   * - 1 * Remote Control
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+   * - 1 * リモコン
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * USB ケーブル
    * - |list_remote| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
 
-**Building Step-by-Step**
+**ステップバイステップの構築**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図に従うか、以下の手順に従って回路を構築してください。
 
 .. image:: img/22_receiver_gnd_5v.png
     :width: 400
     :align: center
 
-1. Find the infrared receiver.
+1. 赤外線受信機を見つけてください。
 
 .. image:: img/22_receiver_pin.png
   :width: 300
   :align: center
 
-* **OUT**: Signal output
-* **GND**: Ground
-* **VCC**: Power supply, 2.5V~5V
+* **OUT**: 信号出力
+* **GND**: グランド
+* **VCC**: 電源供給、2.5V~5V
 
-The SL838 infrared receiver is a component that receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar in size to a normal plastic-packaged transistor and is suitable for all kinds of infrared remote control and infrared transmission.
+SL838赤外線受信機は、赤外線信号を受信し、TTLレベルと互換性のある信号を出力することができるコンポーネントです。通常のプラスチックパッケージトランジスタに似たサイズで、あらゆる種類の赤外線リモコンや赤外線通信に適しています。
 
-Infrared (IR) communication is a popular, low-cost, and easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, making it imperceptible to the human eye—ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+赤外線（IR）通信は、一般的で低コスト、かつ使いやすいワイヤレス通信技術です。赤外線は可視光よりもわずかに長い波長を持ち、人間の目には見えないため、ワイヤレス通信に最適です。赤外線通信で一般的な変調方式は38KHz変調です。
 
-2. The infrared receiver is paired with a 21-key remote control.
+2. 赤外線受信機は21キーのリモコンとペアになっています。
 
 .. image:: img/22_receiver_remote_control.jpeg
   :width: 400
   :align: center
 
-This sleek remote features 21 keys for various functions, boasting an effective transmission distance of up to 8 meters. Its compact dimensions (85x39x6mm) make it ideal for small hands, while the 3V key-type lithium manganese battery ensures long-lasting performance. Operating at an infrared carrier frequency of 38KHz and wrapped in a durable 0.125mm PET surface, this remote is built to withstand over 20,000 uses, making it a reliable choice for controlling a wide range of devices.
+このスリムなリモコンは、さまざまな機能を持つ21個のキーを備えており、最大8メートルの有効送信距離を誇ります。コンパクトなサイズ（85x39x6mm）で、小さな手にもぴったりです。3Vのリチウムマンガンバッテリーにより、長持ちするパフォーマンスを提供します。赤外線キャリア周波数は38KHzで、耐久性のある0.125mm PET表面で包まれており、20,000回以上の使用にも耐える信頼性の高いリモコンです。
 
-3. Insert the infrared receiver into the breadboard. The infrared receiver has a front and back side, with the protruding side being the front. The pin order from left to right is OUT, GND, and VCC.
+3. 赤外線受信機をブレッドボードに挿入します。赤外線受信機には前面と背面があり、突起のある側が前面です。ピンの順序は左からOUT、GND、VCCです。
 
 .. image:: img/22_receiver_receiver.png
     :width: 500
     :align: center
 
-4. Connect the OUT pin of the infrared receiver to pin 2 on the Arduino Uno R3, GND to the negative rail of the breadboard, and VCC to the positive rail of the breadboard.
+4. 赤外線受信機のOUTピンをArduino Uno R3のピン2に、GNDをブレッドボードの負電源レールに、VCCをブレッドボードの正電源レールに接続します。
 
 .. image:: img/22_receiver_receiver_pins.png
     :width: 400
     :align: center
 
-5. Insert the RGB LED into the breadboard with its longest pin positioned in the second pin from the left.
+5. RGB LEDをブレッドボードに挿入し、最も長いピンを左から2番目のピンに配置します。
 
 .. image:: img/22_receiver_rgb.png
     :width: 400
     :align: center
 
-6. Insert a 220-ohm resistor in the same row as the R, G, and B pins.
+6. R、G、Bピンと同じ列に220オームの抵抗を挿入します。
 
 .. image:: img/22_receiver_rgb_resistors.png
     :width: 400
     :align: center
 
-7. Connect these resistors to pins 9, 10, and 11 on the Arduino Uno R3 with jumper wires as illustrated.
+7. これらの抵抗をジャンパーワイヤーを使用して、Arduino Uno R3のピン9、10、11に接続します。
 
 .. image:: img/22_receiver_rgb_pins.png
     :width: 400
     :align: center
 
-8. Connect the longest pin of the RGB LED to the breadboard's negative rail using a jumper wire.
+8. RGB LEDの最も長いピンをジャンパーワイヤーを使用してブレッドボードの負電源レールに接続します。
 
 .. image:: img/22_receiver_rgb_gnd.png
     :width: 400
     :align: center
 
-9. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails of the breadboard, respectively.
+9. 最後に、Arduino Uno R3のGNDピンと5Vピンを、それぞれブレッドボードの負電源レールと正電源レールに接続します。
 
 .. image:: img/22_receiver_gnd_5v.png
     :width: 400
     :align: center
 
-
-Code Creation - Getting the Key Values
+コード作成 - キー値の取得
 ---------------------------------------------
 
-Here, we will learn how the infrared receiver works and how it recognizes different key values from the infrared remote control.
+ここでは、赤外線受信機の動作原理と、赤外線リモコンから異なるキー値をどのように認識するかを学びます。
 
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson22_Get_Key_Value`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson22_Get_Key_Value`` として保存します。 ``Ctrl + S`` を押すか、「保存」をクリックします。
 
-3. Like the I2C LCD1602, the Arduino IDE does not come with a built-in library for the infrared receiver. You need to manually download it from the Library Manager. Now, search for ``IRremote`` in the **Library Manager**, then click **INSTALL**.
+3. I2C LCD1602と同様に、Arduino IDEには赤外線受信機用のライブラリがデフォルトでは含まれていません。ライブラリマネージャから手動でダウンロードする必要があります。今、 **ライブラリマネージャ** で ``IRremote`` を検索し、 **インストール** をクリックします。
 
 .. image:: img/22_receiver_install_lib.png
   :width: 600
   :align: center
 
-4. Now, let's start coding. Before using each library, it is essential to include it in your sketch. Then, define the infrared receiver pin.
+4. さて、コードを書き始めましょう。各ライブラリを使用する前に、スケッチにインクルードすることが重要です。その後、赤外線受信機のピンを定義します。
 
 .. code-block:: Arduino
   :emphasize-lines: 1,3
@@ -160,9 +159,9 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
 
   }
 
-5. In the ``void setup()`` function, initialize serial communication at 9600 bps and initialize the IR receiver on the specified pin with LED feedback enabled.
+5. ``void setup()`` 関数内で、9600bpsでシリアル通信を初期化し、指定されたピンでIR受信機をLEDフィードバックを有効にして初期化します。
 
-* The specified pin usually refers to the built-in LED on pin 13 of the Arduino board. Every time you press a key on the remote towards the infrared receiver, the LED on pin 13 of the Arduino board will flash quickly once, indicating that an IR signal has been received.
+* 指定されたピンは通常、Arduinoボードのピン13に内蔵されたLEDを指します。赤外線受信機に向かってリモコンのキーを押すたびに、Arduinoボードのピン13のLEDが一瞬速く点滅し、IR信号が受信されたことを示します。
 
 .. code-block:: Arduino
   :emphasize-lines: 3,5
@@ -174,8 +173,7 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
-
-6. In the ``loop()`` function, first use the ``IrReceiver.decode()`` function to check if the infrared receiver has received a signal. If a signal is received, it will return true.
+6. ``loop()`` 関数内で、まず ``IrReceiver.decode()`` 関数を使用して、赤外線受信機が信号を受信したかどうかを確認します。信号が受信されると、trueが返されます。
 
 .. code-block:: Arduino
   :emphasize-lines: 2
@@ -186,7 +184,7 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
     }
   }
 
-7. Next, print the received key value to the Serial Monitor. The ``Serial.println()`` function outputs numbers in decimal format by default. To get the hexadecimal key value, set the format to ``HEX``.
+7. 次に、受信したキー値をシリアルモニタに出力します。 ``Serial.println()`` 関数は、デフォルトで数値を10進形式で出力します。16進数のキー値を取得するには、フォーマットを ``HEX`` に設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 3-5
@@ -200,7 +198,7 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
     }
   }
 
-8. Here is your complete code. You can upload it to the Arduino Uno R3.
+8. これが完成したコードです。Arduino Uno R3にアップロードできます。
 
 .. code-block:: Arduino
 
@@ -224,12 +222,12 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
     }
   }
 
-9. After uploading the code, you can try pressing different keys. You will see the hexadecimal key values being printed to the Serial Monitor.
+9. コードをアップロードした後、異なるキーを押してみてください。シリアルモニタに16進数のキー値が表示されるのがわかるでしょう。
 
 .. note::
 
-  * Before pressing the keys, you need to remove the plastic tab at the back of the remote to power it.
-  * You may notice that most key values are printed two or three times. This happens because the keys can bounce, so even though it feels like you pressed the key once, the Arduino might detect multiple presses.
+  * キーを押す前に、リモコンの裏側にあるプラスチックのタブを外して電源を入れる必要があります。
+  * ほとんどのキー値が2回または3回表示されることに気づくかもしれません。これは、キーがバウンスするためです。キーを一度押しただけでも、Arduinoは複数回の押下を検出することがあります。
 
 .. code-block::
 
@@ -240,9 +238,9 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
   0x7
   0x7
 
-**Questions**
+**質問**
 
-1. Please carefully press each key on the remote control and record the corresponding key values in the table in your manual.
+1. リモコンの各キーを慎重に押し、マニュアルの表に対応するキー値を記録してください。
 
 .. image:: img/22_receiver_remote_control.jpeg
   :width: 400
@@ -252,10 +250,10 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
    :widths: 20 20 20 20
    :header-rows: 1
 
-   * - Key Name
-     - Key Value
-     - Key Name
-     - Key Value
+   * - キー名
+     - キー値
+     - キー名
+     - キー値
    * - POWER
      - *0x45*
      - 0
@@ -301,14 +299,14 @@ Here, we will learn how the infrared receiver works and how it recognizes differ
      -
      - 
 
-Code Creation - Decoding
+コード作成 - デコード
 ------------------------------
 
-Now that we know the key value of each key, remembering each key value can be quite challenging. Let's write a decode function using a ``switch-case`` statement to combine these codes into a function, which can simplify recognizing and responding to each key press.
+各キーのキー値がわかったので、すべてのキー値を覚えるのはかなり難しいかもしれません。そこで、 ``switch-case`` 文を使用してこれらのコードを関数にまとめ、各キー押下の認識と応答を簡素化するデコード関数を書きましょう。
 
-1. Open the sketch you saved earlier, ``Lesson22_Get_Key_Value``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson22_Decode_Key_Value``. Click "Save".
+1. 先ほど保存したスケッチ ``Lesson22_Get_Key_Value`` を開きます。「ファイル」メニューから「名前を付けて保存」をクリックし、 ``Lesson22_Decode_Key_Value`` に名前を変更して保存します。
 
-2. Now, after the ``void loop()``, create a decode function - ``decodeKeyValue()`` to take a ``long`` integer ``result``, which is the command code received from the IR remote.
+2. 次に、 ``void loop()`` の後に、IRリモコンから受信したコマンドコードを受け取る``long``整数``result``を引数に取るデコード関数 ``decodeKeyValue()`` を作成します。
 
 .. code-block:: Arduino
   :emphasize-lines: 6,8
@@ -322,11 +320,11 @@ Now that we know the key value of each key, remembering each key value can be qu
 
   }
 
-3. Now, uses a ``switch`` statement to match this ``result`` against predefined hex codes (0x45, 0x47, etc.). Each case in the ``switch`` corresponds to a different key on the remote, returning a string that represents the function of that key. If no cases match, ``ERROR`` is returned, indicating an unrecognized command.
+3. 次に、 ``switch`` 文を使用して、この ``result`` を事前定義された16進コード（0x45、0x47など）と照合します。 ``switch`` の各ケースはリモコンの異なるキーに対応しており、そのキーの機能を表す文字列を返します。いずれのケースにも一致しない場合は、未認識のコマンドを示す ``ERROR`` が返されます。
 
 .. code-block:: Arduino
 
-  // Function to map received IR signals to corresponding keys
+  // 受信したIR信号を対応するキーにマッピングする関数
   String decodeKeyValue(long result) {
     switch (result) {
       case 0x45: return "POWER";
@@ -355,7 +353,7 @@ Now that we know the key value of each key, remembering each key value can be qu
     }
   }
 
-4. Now, go back to the ``loop()`` function, create a ``String`` variable ``key`` to store the decoded string (key name), and then print it to the Serial Monitor.
+4. 次に、 ``loop()`` 関数に戻り、デコードされた文字列（キー名）を保存するための ``String`` 変数 ``key`` を作成し、それをシリアルモニタに表示します。
 
 .. code-block:: Arduino
   :emphasize-lines: 4
@@ -370,7 +368,7 @@ Now that we know the key value of each key, remembering each key value can be qu
     }
   }
 
-5. Sometimes, some "error" messages are received. Now, using an ``if`` statement, only when ``key`` is not equal to ``ERROR`` will it print.
+5. 時々、「エラー」メッセージが受信されることがあります。 ``if`` 文を使用し、 ``key`` が ``ERROR`` と等しくない場合のみ、表示するようにします。
 
 .. code-block:: Arduino
   :emphasize-lines: 4
@@ -387,7 +385,7 @@ Now that we know the key value of each key, remembering each key value can be qu
     }
   }
 
-6. Here is your complete code. You can upload it to the Arduino Uno R3.
+6. これが完成したコードです。Arduino Uno R3にアップロードしてください。
 
 .. code-block:: Arduino
 
@@ -443,7 +441,7 @@ Now that we know the key value of each key, remembering each key value can be qu
     }
   }
 
-7. After opening the Serial Monitor, press the keys on the remote control, and you will see the key names. It is recommended to press all 21 keys to see if the names match the actual keys.
+7. シリアルモニタを開いた後、リモコンのキーを押すと、キー名が表示されます。21個すべてのキーを押して、名前が実際のキーと一致するか確認することをお勧めします。
 
 .. code-block:: Arduino
 
@@ -457,20 +455,19 @@ Now that we know the key value of each key, remembering each key value can be qu
   BACKWARD
   BACKWARD
 
-Code Creation - Remote-Controlled Colorful Light
+コード作成 - リモコン操作のカラフルライト
 ------------------------------------------------------------
-Now that the infrared receiver and its code are ready, we can use it to control the RGB LED to display different colors. Here are the colors and effects we plan to achieve. You can also customize other colors and effects.
+赤外線受信機とそのコードの準備が整ったので、それを使ってRGB LEDを操作し、さまざまな色を表示できるようにします。ここでは、実現する予定の色と効果を示します。他の色や効果をカスタマイズすることも可能です。
 
-* Press 1 to display red on the RGB LED.
-* Press 2 to display green on the RGB LED.
-* Press 3 to display blue on the RGB LED.
-* Press 4 to display a flashing orange effect on the RGB LED.
-* Press any other key to turn off the RGB LED.
+* 「1」を押すと、RGB LEDに赤が表示されます。
+* 「2」を押すと、RGB LEDに緑が表示されます。
+* 「3」を押すと、RGB LEDに青が表示されます。
+* 「4」を押すと、RGB LEDにオレンジの点滅効果が表示されます。
+* その他のキーを押すと、RGB LEDがオフになります。
 
+1. 先ほど保存したスケッチ ``Lesson22_Decode_Key_Value`` を開き、「ファイル」メニューから「名前を付けて保存」を選択して、これを ``Lesson22_Remote_Colorful_Light`` にリネームし、「保存」をクリックします。
 
-1. Open the sketch you saved earlier, ``Lesson22_Decode_Key_Value``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson22_Remote_Colorful_Light``. Click "Save".
-
-2. Create three variables to store the three pins of the RGB LED and set them as OUTPUT.
+2. RGB LEDの3つのピンを格納する変数を作成し、それらを出力（OUTPUT）として設定します。
 
 .. code-block:: Arduino
   :emphasize-lines: 6-8,12-14
@@ -496,24 +493,24 @@ Now that the infrared receiver and its code are ready, we can use it to control 
     IrReceiver.begin(receiverPin, ENABLE_LED_FEEDBACK);
   }
 
-3. After the ``loop()`` function, create a ``setColor()`` function to drive the RGB LED to display colors.
+3. ``loop()`` 関数の後に、RGB LEDの色を表示するための ``setColor()`` 関数を作成します。
 
 .. code-block:: Arduino
 
-  // Function to set the color of the RGB LED
+  // RGB LEDの色を設定する関数
   void setColor(int red, int green, int blue) {
     analogWrite(redPin, red);
     analogWrite(greenPin, green);
     analogWrite(bluePin, blue);
   }
 
-4. Go back to the ``loop()`` function, use ``if else if`` statements to determine which key is pressed, and then display the corresponding effect on the RGB LED according to our plan.
+4. ``loop()`` 関数に戻り、 ``if else if`` 文を使用して、どのキーが押されたかを判断し、計画に従ってRGB LEDに対応する効果を表示します。
 
-* Press 1 to display red on the RGB LED.
-* Press 2 to display green on the RGB LED.
-* Press 3 to display blue on the RGB LED.
-* Press 4 to display a flashing orange effect on the RGB LED.
-* Press any other key to turn off the RGB LED.
+* 「1」を押すと、RGB LEDに赤が表示されます。
+* 「2」を押すと、RGB LEDに緑が表示されます。
+* 「3」を押すと、RGB LEDに青が表示されます。
+* 「4」を押すと、RGB LEDにオレンジの点滅効果が表示されます。
+* その他のキーを押すと、RGB LEDがオフになります。
 
 .. code-block:: Arduino
   :emphasize-lines: 8-22
@@ -633,9 +630,9 @@ Now that the infrared receiver and its code are ready, we can use it to control 
     }
   }
 
-6. Finally, remember to save your code and tidy up your workspace.
+6. 最後に、コードを保存して作業スペースを整理することを忘れないでください。
 
+**まとめ**
 
-**Summary**
+このレッスンでは、赤外線受信機を使用してリモコンからの信号をデコードし、RGB LEDを制御してさまざまな色や効果を表示する方法を学びました。 ``IRremote`` ライブラリを統合し、リモコン信号を解釈する関数を作成することで、楽しくインタラクティブなリモコン操作のライトディスプレイを作成しました。このプロジェクトは、赤外線通信の理解を深めるだけでなく、カスタムライトセットアップでホリデーシーズンを盛り上げる方法も示しています。さまざまな色やパターンを試して、さらに華やかなライトにしてみてください！
 
-In this lesson, we explored how to use an infrared receiver to decode signals from a remote control and control an RGB LED to display different colors and effects. By integrating the ``IRremote`` library and writing functions to interpret remote signals, you learned to create a fun and interactive remote-controlled light display. This project not only enhances your understanding of infrared communication but also showcases how to bring holiday cheer with a custom light setup. Keep experimenting with different colors and patterns to make your lights even more festive!

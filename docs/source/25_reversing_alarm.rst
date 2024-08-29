@@ -1,24 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebookへようこそ！このコミュニティで、Raspberry Pi、Arduino、ESP32についてさらに深く学び、他の愛好者たちと一緒に楽しみましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家サポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: スキルを高めるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表やプレビューをいち早く受け取れます。
+    - **特別割引**: 最新製品に対して、特別割引を楽しめます。
+    - **イベントプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備ができましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-25. Reverse Radar System
+25. リバースレーダーシステム
 =====================================
 
-When reversing a car, it is crucial to be aware of obstacles behind the vehicle, especially in situations with limited visibility. 
-To enhance safety, many modern vehicles are equipped with reverse radar systems. 
+車をバックさせる際、特に視界が限られた状況では、車両の後方にある障害物を把握することが非常に重要です。
+安全性を高めるために、多くの現代の車両にはリバースレーダーシステムが装備されています。
 
-Today, we're going to learn how to build and program an ultrasonic radar system using Arduino. This system will use an ultrasonic sensor to measure distances and provide feedback through an LCD display and a buzzer. We'll go through each section of the code, explaining what it does and why it's important.
+今日は、Arduinoを使用して超音波レーダーシステムを構築し、プログラムする方法を学びます。このシステムでは、超音波センサーを使用して距離を測定し、LCDディスプレイとブザーを通じてフィードバックを提供します。コードの各部分を段階的に解説し、その重要性についても説明します。
 
 .. raw:: html
 
@@ -27,118 +27,118 @@ Today, we're going to learn how to build and program an ultrasonic radar system 
         Your browser does not support the video tag.
     </video>
 
-Reverse Radar System Evolution
+リバースレーダーシステムの進化
 ----------------------------------------
 
-The development of reverse radar systems, also known as parking sensors, began in the late 20th century to address the need for safer vehicle parking. Initially developed in the 1970s using ultrasonic technology similar to marine sonar, these systems used sound waves to detect objects and calculate distances.
+リバースレーダーシステム、またはパーキングセンサーの開発は、より安全な車両駐車のニーズに応えるために20世紀後半に始まりました。最初は1970年代に海洋ソナーと同様の超音波技術を使用して開発され、音波を使って物体を検出し、距離を計算していました。
 
-Significant advancements came in the 1990s with the introduction of microcontroller-based systems and electromagnetic sensors, which provided more precise measurements and improved vehicle integration. This period saw the incorporation of these sensors into luxury vehicles, enhancing both safety and luxury appeal.
+1990年代には、マイクロコントローラーを搭載したシステムや電磁センサーの導入により、より正確な測定と車両への統合が進みました。この時期には、これらのセンサーが高級車に搭載され、安全性とラグジュアリー性が向上しました。
 
-By the early 2000s, reverse radar systems had advanced to include visual, auditory, and haptic feedback, along with digital displays and integration with vehicle navigation systems, offering drivers real-time, comprehensible information about their surroundings.
+2000年代初頭までに、リバースレーダーシステムは視覚、聴覚、触覚フィードバック、デジタルディスプレイ、車両ナビゲーションシステムとの統合を含むまでに進化し、ドライバーにリアルタイムでわかりやすい情報を提供するようになりました。
 
-Today, the technology continues to evolve with the integration of AI and IoT, using a mix of cameras, radar, and ultrasonic sensors to provide a detailed view of the vehicle’s environment, reducing accident risks and easing parking. This technology is now a fundamental component of the autonomous driving systems poised to revolutionize the automotive industry.
+今日では、この技術はAIやIoTと統合され、カメラ、レーダー、超音波センサーの組み合わせを利用して車両の周囲を詳細に把握し、事故のリスクを減らし、駐車を容易にしています。この技術は、自動運転システムの基本要素となり、今後の自動車産業の革新を支えるでしょう。
 
 .. image:: img/25_reverse_radar.png
   :width: 600
   :align: center
 
-Building the Circuit
+回路の構築
 --------------------------------
 
-**Components Needed**
+**必要な部品**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Ultrasonic Module
-     - 1 * Active Buzzer
+     - 1 * 超音波モジュール
+     - 1 * アクティブブザー
      - 1 * I2C LCD1602
    * - |list_uno_r3| 
      - |list_ultrasonic| 
      - |list_active_buzzer| 
      - |list_i2c_lcd1602|
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - 
 
-**Building Step-by-Step**
+**段階的な構築手順**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+回路を構築するには、配線図または以下の手順に従ってください。
 
 .. image:: img/25_reverse_circuit.png
     :width: 700
     :align: center
 
-1. Insert the ultrasonic module into the breadboard.
+1. 超音波モジュールをブレッドボードに挿入します。
 
 .. image:: img/25_reverse_ultrasonic.png
     :width: 400
     :align: center
 
-2. Connect the VCC pin of the ultrasonic module to the positive side of the breadboard, the Trig pin to pin 8 on the Arduino board, the Echo pin to pin 7, and the GND to the negative side of the breadboard.
+2. 超音波モジュールのVCCピンをブレッドボードの正極側に接続し、TrigピンをArduinoボードのピン8に、Echoピンをピン7に、GNDをブレッドボードの負極側に接続します。
 
 .. image:: img/25_reverse_ultrasonic_pins.png
     :width: 400
     :align: center
 
-3. Insert the active buzzer (with a white sticker) into the breadboard. Connect the "+" pin to pin 9 and the "-" pin to GND.
+3. 白いステッカーのついたアクティブブザーをブレッドボードに挿入します。"+"ピンをピン9に、"-"ピンをGNDに接続します。
 
 .. image:: img/25_reverse_pa_buzzer.png
     :width: 400
     :align: center
 
-4. Connect the I2C LCD1602 module: GND to the negative rail on the breadboard, VCC to the positive rail on the breadboard, SDA to pin A4, and SCL to pin A5.
+4. I2C LCD1602モジュールを接続します：GNDをブレッドボードの負極レールに、VCCを正極レールに、SDAをピンA4に、SCLをピンA5に接続します。
 
 .. image:: img/25_reverse_i2c_lcd1602.png
     :width: 700
     :align: center
 
-5. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails of the breadboard, respectively.
+5. 最後に、Arduino Uno R3のGNDと5Vピンをそれぞれブレッドボードの負極と正極レールに接続します。
 
 .. image:: img/25_reverse_circuit.png
     :width: 700
     :align: center
 
-Code Creation
+コード作成
 --------------------
-In a reverse radar system, each component plays a critical role in ensuring accurate distance measurement and effective feedback:
+リバースレーダーシステムでは、各コンポーネントが正確な距離測定と効果的なフィードバックを保証するために重要な役割を果たします：
 
-* The ultrasonic sensor is used to detect the distance to objects in front of it.
-* The I2C LCD1602 is used to display the distance detected by the ultrasonic sensor.
-* The active buzzer is used to change the beeping interval based on the distance measured by the ultrasonic sensor.
+* 超音波センサーは、前方の物体までの距離を検出します。
+* I2C LCD1602は、超音波センサーで検出された距離を表示します。
+* アクティブブザーは、超音波センサーで測定された距離に基づいてビープ音の間隔を変化させます。
 
-Here is how the system reacts based on different distance ranges:
+システムは、以下の距離範囲に基づいて反応します：
 
-* **Less than 10cm**: The buzzer beeps at a rapid interval of 100 milliseconds.
-* **Between 10cm and 20cm**: The beeping interval increases to 500 milliseconds.
-* **Between 20cm and 50cm**: The interval extends further to 1000 milliseconds (1 second).
-* **Greater than 50cm**: The buzzer beeps at a relaxed interval of 2000 milliseconds (2 seconds).
+* **10cm未満** : ブザーが100ミリ秒の間隔で急速にビープ音を鳴らします。
+* **10cmから20cmの間** : ビープ音の間隔が500ミリ秒に増加します。
+* **20cmから50cmの間** : 間隔がさらに延び、1000ミリ秒（1秒）になります。
+* **50cm以上** : ブザーが2000ミリ秒（2秒）の間隔でゆったりとビープ音を鳴らします。
 
-Now, let's start coding to see how we can implement the functionality described above.
+それでは、上記の機能を実装するためのコーディングを開始しましょう。
 
 .. note::
 
-  If you are not familiar with the ultrasonic sensor, I2C LCD1602, or active buzzer, you can first learn their basic usage in the following projects:
+  超音波センサー、I2C LCD1602、またはアクティブブザーの基本的な使用方法に慣れていない場合は、以下のプロジェクトで基礎を学ぶことができます：
 
   * :ref:`ar_i2c_lcd1602`
   * :ref:`ar_smart_trash_can`
   * :ref:`ar_morse_code`
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson25_Reverse_Radar_System`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新規スケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson25_Reverse_Radar_System`` として保存します。 ``Ctrl + S`` または「保存」をクリックしてください。
 
-3. First, we include the necessary libraries for using the LCD and initialize it with the correct I2C address and size.
+3. まず、LCDを使用するために必要なライブラリをインクルードし、正しいI2Cアドレスとサイズで初期化します。
 
 .. note::
 
-  ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+  ここでは ``LiquidCrystal I2C`` ライブラリを使用します。 **ライブラリマネージャ** からインストールできます。
 
 .. code-block:: Arduino
 
@@ -149,7 +149,7 @@ Now, let's start coding to see how we can implement the functionality described 
   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 
-4. Next, define the pins on the Arduino that connect to the ultrasonic sensor's trigger, echo, and the buzzer.
+4. 次に、Arduinoのピンと超音波センサーのトリガー、エコー、およびブザーを接続するためのピンを定義します。
 
 .. code-block:: Arduino
 
@@ -157,7 +157,7 @@ Now, let's start coding to see how we can implement the functionality described 
   #define ECHO_PIN 7     // Pin to receive the echo
   #define BUZZER_PIN 9   // Pin for the buzzer
 
-5. Set up variables to control how frequently the buzzer beeps based on the distance measured.
+5. 測定された距離に基づいて、ブザーがどのくらいの頻度でビープ音を鳴らすかを制御するための変数を設定します。
 
 .. code-block:: Arduino
 
@@ -165,10 +165,10 @@ Now, let's start coding to see how we can implement the functionality described 
   unsigned long intervals = 1000;    // Default interval for beeping
   unsigned long previousMillis = 0;  // Store last time the buzzer beeped
 
-  // Distance measurement variable
+  // 距離測定用の変数
   long distance = 0;
 
-6. In the ``void setup()`` function, configure the pin modes and initialize the LCD and serial communication.
+6. ``void setup()`` 関数で、ピンモードを設定し、LCDとシリアル通信を初期化します。
 
 .. code-block:: Arduino
 
@@ -181,7 +181,7 @@ Now, let's start coding to see how we can implement the functionality described 
     Serial.begin(9600);            // Start serial communication at 9600 baud rate
   }
 
-7. The main loop continuously measures the distance, adjusts the beeping interval, and updates the LCD display.
+7. メインループでは、距離を連続的に測定し、ビープ音の間隔を調整し、LCDディスプレイを更新します。
 
 .. code-block:: Arduino
 
@@ -203,26 +203,26 @@ Now, let's start coding to see how we can implement the functionality described 
     delay(100);   // Short delay to stabilize readings
   }
 
-* First, we use the ``measureDistance()`` function to determine the distance using the ultrasonic sensor.
+* まず、 ``measureDistance()`` 関数を使用して、超音波センサーを用いて距離を測定します。
 
 .. code-block:: Arduino
 
   distance = measureDistance();  // Measure distance
 
-* Next, adjust the beeping frequency based on the newly measured distance using the ``adjustBeepingInterval()`` function. This dynamically changes how often the buzzer sounds based on how close the detected object is.
+* 次に、 ``adjustBeepingInterval()`` 関数を使用して、新たに測定された距離に基づいてビープ音の周波数を調整します。これにより、検出された物体が近づくほどブザーの鳴る頻度が動的に変わります。
 
 .. code-block:: Arduino
 
   // Adjust intervals based on distance
   adjustBeepingInterval();
 
-* The ``millis()`` function is then called to record the current time in milliseconds since the Arduino board started running the program.
+* 次に、 ``millis()`` 関数を呼び出して、Arduinoボードがプログラムを実行し始めてからのミリ秒数を記録します。
 
 .. code-block:: Arduino
 
   unsigned long currentMillis = millis();
 
-* Check if the time elapsed since the last beep is greater than or equal to the set interval. If it is, print a message to the serial monitor, activate the buzzer, and reset the ``previousMillis``. This ensures the buzzer operates at intervals adjusted to the distance, maintaining consistent alert timing.
+* 最後のビープ音から経過した時間が設定された間隔以上であるかどうかを確認します。もしそうであれば、シリアルモニターにメッセージを表示し、ブザーを作動させ、 ``previousMillis`` をリセットします。これにより、距離に応じて調整された間隔でブザーが動作し、一貫した警告タイミングが維持されます。
 
 .. code-block:: Arduino
   
@@ -231,14 +231,14 @@ Now, let's start coding to see how we can implement the functionality described 
     beep();
     previousMillis = currentMillis;  // Update previousMillis directly here
   }
-
-* Finallly, call ``updateLCD()`` function to update the LCD with the current distance measurement.
+ 
+* 最後に、 ``updateLCD()`` 関数を呼び出して、現在の距離測定値でLCDを更新します。
 
 .. code-block:: Arduino
 
   updateLCD();  // Update the LCD display
 
-8. About ``adjustBeepingInterval()`` function: Adjust the beeping interval based on the distance measured. This function sets the ``intervals`` variable. The closer the object, the shorter the interval, making the buzzer beep more frequently as objects get closer.
+8. ``adjustBeepingInterval()`` 関数について: 測定された距離に基づいてビープ音の間隔を調整します。この関数は ``intervals`` 変数を設定します。物体が近づくほど、間隔が短くなり、物体が近づくにつれてブザーが頻繁に鳴ります。
 
 .. code-block:: Arduino
 
@@ -255,7 +255,7 @@ Now, let's start coding to see how we can implement the functionality described 
     }
   }
 
-9. About ``beep()`` function: Turn the buzzer on, then off after a brief pause.
+9. ``beep()`` 関数について: ブザーをオンにし、短い間隔の後にオフにします。
 
 .. code-block:: Arduino
 
@@ -266,7 +266,7 @@ Now, let's start coding to see how we can implement the functionality described 
     digitalWrite(BUZZER_PIN, LOW);   // Turn buzzer OFF
   }
 
-10. About ``measureDistance()`` funtion: Measure distance using the ultrasonic sensor. This function sends ultrasonic waves and measures how long it takes for the echo to return. The ``distance`` is calculated based on the travel time of these waves.
+10. ``measureDistance()`` 関数について: 超音波センサーを使用して距離を測定します。この関数は超音波を発信し、その反射が戻ってくるまでの時間を測定します。この波の移動時間に基づいて ``distance`` が計算されます。
 
 .. code-block:: Arduino
 
@@ -283,7 +283,7 @@ Now, let's start coding to see how we can implement the functionality described 
     return distance;
   }
 
-11. About ``updateLCD()`` function: Update the LCD only if the measured distance changes, reducing unnecessary updates. It displays the current distance on the LCD.
+11. ``updateLCD()`` 関数について: 測定された距離が変わった場合のみLCDを更新し、不要な更新を減らします。これにより、現在の距離がLCDに表示されます。
 
 .. code-block:: Arduino
 
@@ -300,7 +300,7 @@ Now, let's start coding to see how we can implement the functionality described 
     }
   }
 
-12. Now that you've written all parts of the code, upload it to your Arduino board to see if it works as expected.
+12. すべてのコード部分を書き終えたら、Arduinoボードにアップロードして期待どおりに動作するか確認してください。
 
 .. code-block:: Arduino
 
@@ -395,17 +395,15 @@ Now, let's start coding to see how we can implement the functionality described 
   }
 
 
-13. Finally, remember to save your code and tidy up your workspace.
+13. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Question**
+**質問**
 
-In this project, we used an active buzzer to serve as an alert mechanism, but a passive buzzer could also be used to achieve similar functionality. If you were to replace the active buzzer with a passive buzzer, how should the code be modified?
+このプロジェクトでは、アラートメカニズムとしてアクティブブザーを使用しましたが、パッシブブザーでも同様の機能を実現できます。アクティブブザーをパッシブブザーに置き換える場合、コードをどのように修正する必要がありますか？
 
-**Summary**
+**まとめ**
 
-Throughout this course, we embarked on a journey from conceptual understanding to practical implementation of a reverse radar system. Starting with assembling the circuit on a breadboard, we connected an ultrasonic sensor, an active buzzer, and an LCD display to an Arduino board. Following the hardware setup, we dove into the coding aspect where you learned to manipulate sensor data to trigger auditory and visual feedback based on the distance of obstacles behind a vehicle.
+この授業を通じて、逆転レーダーシステムの概念的理解から実際の実装までの道のりを辿りました。ブレッドボード上で回路を組み立てることから始まり、超音波センサー、アクティブブザー、およびLCDディスプレイをArduinoボードに接続しました。ハードウェアのセットアップの後、コード作成に進み、センサーデータを操作して、車両後方の障害物の距離に基づいて音声および視覚フィードバックをトリガーする方法を学びました。
 
-You've now successfully programmed your Arduino to measure distances and provide alerts through a buzzer and visual feedback via an LCD, mimicking the functionality of advanced reverse radar systems found in modern cars. This not only demonstrates your ability to integrate various electronic components but also highlights your skill in creating a system that could enhance vehicular safety.
-
-
+あなたは現在、Arduinoをプログラムして距離を測定し、ブザーを通じたアラートやLCDによる視覚フィードバックを提供することに成功し、現代の車両に搭載されている高度な逆転レーダーシステムの機能を模倣しています。これにより、さまざまな電子部品を統合する能力が示されるだけでなく、車両の安全性を向上させるシステムを作成するスキルも強調されます。
 

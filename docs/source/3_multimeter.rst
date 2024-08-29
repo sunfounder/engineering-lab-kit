@@ -1,46 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 愛好者コミュニティのFacebookページへようこそ！ここでは、Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深く探求していきます。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームからのサポートで、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表やプレビューにいち早くアクセスできます。
+    - **特別割引**: 最新の商品を特別価格で購入できます。
+    - **祭りのプロモーションとプレゼント**: プレゼントや季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、ものづくりを始めたい方は、[|link_sf_facebook|]をクリックして今日参加しましょう！
 
-3. Measure with Multimeter
+3. マルチメーターの使い方を学ぶ
 ==========================================
-Welcome to our exploration of the multimeter, an essential tool in electronics. This lesson will guide you through the functionality and application of the multimeter, teaching you how to measure various electrical properties effectively. Starting from the basics of setting up your multimeter with a battery and test leads, we'll delve into adjusting settings and utilizing its numerous functions. This hands-on experience will not only impart theoretical knowledge but also equip you with the skills to perform accurate measurements on any circuit.
+マルチメーターの基本的な使い方を学ぶためのレッスンへようこそ。電子機器の世界で不可欠なツールであるマルチメーターについて、その機能や活用法を実際に操作しながら学びましょう。バッテリーやテストリードの設定から始め、さまざまな電気的性質を正確に測定するための手順と設定調整を探ります。このハンズオン体験を通じて、理論的な知識だけでなく、実際の回路で正確な測定を行うスキルも身に付けることができます。
 
-Here's what you'll achieve:
+ここで学ぶこと:
 
-* Understand the Components and Functions of a Multimeter
-* Master Measuring Voltage, Current, and Resistance.
-* Enhance your understanding of electronic fundamentals through hands-on practice
+* マルチメーターの構成要素と機能を理解する
+* 電圧、電流、抵抗の測定をマスターする
+* 実際に手を動かすことで電子工学の基礎理解を深める
 
-This lesson will not only boost your technical skills but also provide practical knowledge that lays a strong foundation for your future electronics learning and projects.
+このレッスンは、技術スキルを向上させるだけでなく、将来の電子工学学習やプロジェクトの基礎を築く実用的な知識を提供します。
 
-Know More about Multimeter
------------------------------
+マルチメーターについて詳しく知る
+---------------------------------
 
-A multimeter is a device used to measure various electrical properties. Most multimeters can measure voltage, current, resistance, and continuity (whether electricity can flow). 
+マルチメーターは、さまざまな電気的性質を測定するための装置です。多くのマルチメーターは、電圧、電流、抵抗、導通（電気が流れるかどうか）を測定できます。
 
-The dial on the multimeter allows you to select the type of electrical measurement and the range you wish to measure in. Now, let's explore the various functions available on the dial.
+マルチメーターのダイヤルを使って、測定したい電気的性質と希望する測定範囲を選択します。それでは、ダイヤルで利用可能なさまざまな機能を見ていきましょう。
 
 .. image:: img/multimeter_dashboard.png
     :width: 300
     :align: center
 
-
-**DC Voltage**
+**DC電圧**
  
-In this image, the selected position is used for measuring direct current (DC) voltage.Voltage is represented by a capital V. DC is denoted by three dashed lines with a straight line above them.
+この画像では、直流（DC）電圧を測定するための位置が選択されています。電圧は大文字のVで表されます。DCは、上に一直線がある3本の破線で表されます。
 
-Your multimeter has five different DC voltage ranges — 200m (millivolts), 2V (volts), 20V (volts), 200V (volts), and 600V (volts). These numbers represent the maximum voltage that can be measured in each setting.
+お使いのマルチメーターには、200m（ミリボルト）、2V（ボルト）、20V（ボルト）、200V（ボルト）、600V（ボルト）の5つのDC電圧範囲があります。これらの数値は、それぞれの設定で測定できる最大電圧を表しています。
 
 .. image:: img/multimeter_dc.png
     :width: 300
@@ -48,46 +47,44 @@ Your multimeter has five different DC voltage ranges — 200m (millivolts), 2V (
 
 .. note::
 
-    Here's the conversion between Volts:
+    ボルトの変換は以下の通りです:
 
-    * 1 millivolt (mV) = 0.001 volt (V)
+    * 1ミリボルト（mV）= 0.001ボルト（V）
 
-    For example, if you have a voltage of 500 millivolts (mV), it can also be expressed as 0.5 volts (V).
-
-
-**Measuring Method**: Before measuring voltage, you need to select an appropriate measuring range. In all of our courses, the circuit voltage will not exceed 5V, so you can simply select the 20V position. When the circuit is functioning normally, you can test the voltage by placing the red and black test leads on either side of the device.
+    例えば、500ミリボルト（mV）の電圧がある場合、これは0.5ボルト（V）と表現できます。
 
 
-**AC Voltage**
+**測定方法**: 電圧を測定する前に、適切な測定範囲を選択する必要があります。私たちのコース内では、回路電圧は5Vを超えないため、単に20Vの位置を選択すれば良いでしょう。回路が正常に機能している場合、赤と黒のテストリードをデバイスの両側に配置して電圧をテストできます。
 
-This image shows the setting for measuring alternating current (AC) voltage. AC is represented by a wavy line.
+
+**AC電圧**
+
+この画像は、交流（AC）電圧を測定するための設定を示しています。ACは波形で表されます。
 
 .. image:: img/multimeter_ac.png
     :width: 300
     :align: center
 
 
-**Transistors**
+**トランジスタ**
 
-The hFE NPN PNP setting is for measuring transistors. You will not use this setting in this course.
+hFE NPN PNP設定はトランジスタを測定するためのものです。このコースでは、この設定は使用しません。
 
 .. image:: img/multimeter_hfe.png
     :width: 300
     :align: center
 
-
 **1.5V mA**
 
-
-The "1.5V mA" setting on a meter is used to measure the current at a 1.5V voltage level, typically for testing how much current a circuit or device draws at this voltage
+"1.5V mA"の設定は、1.5Vの電圧レベルでの電流を測定するためのものです。通常、この電圧で回路やデバイスがどれだけの電流を消費するかをテストする際に使用します。
 
 .. image:: img/multimeter_1.5v.png
     :width: 300
     :align: center
 
-**Current**
+**電流**
 
-For measuring current, the multimeter has settings for 2m (2 milliamp), 20m (20 milliamp), 200m (200 milliamp), and 10A (10 amp).
+電流を測定するために、マルチメーターには2m（2ミリアンペア）、20m（20ミリアンペア）、200m（200ミリアンペア）、10A（10アンペア）の設定があります。
 
 .. image:: img/multimeter_current.png
     :width: 300
@@ -95,37 +92,36 @@ For measuring current, the multimeter has settings for 2m (2 milliamp), 20m (20 
 
 .. note::
 
-    Here's the conversion between amperes:
+    アンペアの変換は以下の通りです:
 
-    * 1 milliampere (mA) = 0.001 ampere (A)
+    * 1ミリアンペア（mA）= 0.001アンペア（A）
 
-    For example, if you have a current of 50 milliamperes (mA), it can also be expressed as 0.05 amperes (A).
+    例えば、50ミリアンペア（mA）の電流がある場合、これは0.05アンペア（A）と表現できます。
 
 
-To measure currents less than 200 milliamps, you can insert the red test lead into the VΩmA port. Then, turn the dial to one of the milliamp settings. The circuits you build in this course and project will always have currents less than 200 mA.
+200ミリアンペア未満の電流を測定するには、赤のテストリードをVΩmAポートに挿入します。その後、ダイヤルをミリアンペアの設定に回します。このコースやプロジェクトで構築する回路は、常に200mA未満の電流を持っています。
 
-For measuring currents up to 10 amperes, you must insert the red test lead into the 10ADC port. Then, turn the dial to the 10A setting.
+最大10アンペアの電流を測定するには、赤のテストリードを10ADCポートに挿入し、ダイヤルを10A設定に回します。
 
 .. image:: img/multimeter_10a.png
     :width: 300
     :align: center
 
-**Measuring Method**: To measure the current in a circuit, the multimeter must be inserted into the circuit. In other words, it must become part of the circuit. This is different from measuring voltage or resistance, which can be done by across a component in the circuit. You will have the opportunity to make these measurements later when you start building circuits.
+**測定方法**: 回路の電流を測定するには、マルチメーターを回路に挿入する必要があります。つまり、回路の一部として機能させる必要があります。これは、電圧や抵抗を測定するのとは異なり、回路内のコンポーネントを跨いで測定できるものです。回路を構築し始めたときに、これらの測定を行う機会があります。
 
 
 
-**Continuity**
+**導通**
 
-The setting with a diode symbol and a sound icon is used for measuring continuity. When measuring continuity, if there can be current flow between the test leads, the multimeter will emit a "beep" sound.
+ダイオードのシンボルと音のアイコンがある設定は導通を測定するためのものです。導通を測定する際、テストリード間に電流が流れると、マルチメーターが「ビーッ」という音を発します。
 
 .. image:: img/multimeter_diode.png
     :width: 300
     :align: center
 
-**Resistance**
+**抵抗**
 
-
-The final set of options on the multimeter is designated for assessing resistance, symbolized by the Greek letter omega (Ω). Typically, multimeters offer a variety of ranges for resistance measurements. This particular multimeter is equipped with five ranges: 200 ohms, 2k (2,000 ohms), 20k (20,000 ohms), 200k (200,000 ohms), and 2M (2,000,000 ohms). Each range specifies the highest resistance value it can accurately measure. To achieve the most precise readings, select a range that can measure the resistance without surpassing its upper limit.
+マルチメーターの最後のセットは、抵抗を測定するためのもので、ギリシャ文字のオメガ（Ω）で表されます。通常、マルチメーターには抵抗測定用の複数の範囲があります。この特定のマルチメーターには、200オーム、2k（2,000オーム）、20k（20,000オーム）、200k（200,000オーム）、2M（2,000,000オーム）の5つの範囲があり、それぞれの範囲は正確に測定できる最大の抵抗値を示しています。最も正確な測定結果を得るには、測定対象の抵抗が範囲の上限を超えないように範囲を選択します。
 
 .. image:: img/multimeter_resistance.png
     :width: 300
@@ -133,51 +129,49 @@ The final set of options on the multimeter is designated for assessing resistanc
 
 .. note::
 
-    Here's the conversion between ohms:
+    オームの変換は以下の通りです:
 
-    * 1 kilohm (kΩ) = 1000 ohms (Ω)
-    * 1 megohm (MΩ) = 1000000 ohms (Ω)
+    * 1キロオーム（kΩ）= 1000オーム（Ω）
+    * 1メガオーム（MΩ）= 1000000オーム（Ω）
 
-For example, if you have a resistance of 1000 ohms (Ω), it can also be expressed as 1 kilohm (kΩ).
+例えば、1000オーム（Ω）の抵抗がある場合、これは1キロオーム（kΩ）と表現できます。
 
+**ヒント**
 
-**Tips**
+抵抗、電圧、または電流の測定中に、表示される値が変動することに気づくかもしれません。特定の測定値を安定させて記録するには、HOLD機能を使用します。この操作により、現在の値が表示に固定され、HOLDボタンをもう一度押すまでそのまま保持されます。
 
+電圧、電流、または抵抗を測定する際に、どの範囲を選択するか迷った場合は、まず利用可能な最大範囲から始めることをお勧めします。このアプローチにより、扱っている値の初期見積もりを得た上で、正確な測定を行うためにより適切な範囲に絞り込むことができます。
 
-During the measurement of resistance, voltage, or current, you might notice that the values on the display tend to vary. To stabilize and capture a specific reading, you can utilize the HOLD feature. This action freezes the current value on the display, where it stays until the HOLD button is pressed once more.
+**質問**
 
-If you're uncertain about the appropriate range to choose for measuring voltage, current, or resistance, it's advisable to begin with the maximum range available. This approach provides an initial estimate of the values you're working with, allowing you to subsequently narrow down to a more accurate range for precise measurements.
-
-**Question**
-
-Now that you have a detailed understanding of how to use a multimeter, consider which multimeter setting you would use to measure the following electrical values?
+マルチメーターの使い方を詳しく理解したところで、次の電気的な値を測定する際にどの設定を使用するか考えてみてください。
 
 .. list-table::
   :widths: 25 25
   :header-rows: 1
 
-  * - Measurement Object
-    - Multimeter Setting
-  * - 9V volts DC
+  * - 測定対象
+    - マルチメーター設定
+  * - 9V DC電圧
     -
-  * - 1K ohms
+  * - 1Kオーム
     -
-  * - 40 milliamps
+  * - 40ミリアンペア
     - 
-  * - 110 volts AC
+  * - 110V AC電圧
     -
 
 
-Measuring with a Multimeter
+マルチメーターを使った測定
 --------------------------------
 
-In the previous lesson, you set up a simple circuit to light an LED. Now, we will use a multimeter to measure the voltage, current, and resistance in this circuit. Let's see how to do it now!
+前のレッスンでは、LEDを点灯させるための簡単な回路を設定しました。今回は、マルチメーターを使ってこの回路の電圧、電流、および抵抗を測定します。さっそくやってみましょう！
 
-**Preparing the Multimeter**
+**マルチメーターの準備**
 
-Before using the multimeter, you need to install the battery and connect the two test leads, so it's ready to use at any time.
+マルチメーターを使用する前に、バッテリーを取り付け、テストリードを接続して、いつでも使用できるようにします。
 
-1. Follow the video below to connect the battery to your multimeter.
+1. 以下のビデオに従って、マルチメーターにバッテリーを接続します。
 
   .. raw:: html
 
@@ -186,210 +180,208 @@ Before using the multimeter, you need to install the battery and connect the two
           Your browser does not support the video tag.
       </video>
 
-2. Find your multimeter and the red and black test leads. Ensure the multimeter is in the "off" position. Insert the black test lead into the COM port of the multimeter. Insert the red test lead into the voltage-ohm-milliamp (VΩmA) port.
+2. マルチメーターと赤と黒のテストリードを用意し、マルチメーターが「オフ」の位置にあることを確認します。黒のテストリードをマルチメーターのCOMポートに挿入します。赤のテストリードを電圧・オーム・ミリアンペア（VΩmA）ポートに挿入します。
 
 .. image:: img/multimeter_test_wire.png
   :width: 300
   :align: center
 
-**Measuring Voltage**
+**電圧の測定**
 
-1. Turn the multimeter to the DC 20 volts setting.
+1. マルチメーターをDC 20ボルト設定に回します。
 
 .. image:: img/multimeter_dc_20v.png
   :width: 300
   :align: center
 
-2. Slightly pull apart the positive and negative wires on the breadboard to expose the metal ends without fully detaching them.
+2. ブレッドボードの正負のワイヤーを軽く引き離して、金属端が露出するようにしますが、完全には取り外さないでください。
 
-3. Then, touch the exposed metal ends with the multimeter's red and black test leads to measure the voltage.
+3. その後、マルチメーターの赤と黒のテストリードで露出した金属端を触れて電圧を測定します。
 
 .. image:: img/3_measure_volmeter.png
 
-4. Record the voltage, you can also record the observed phenomena in the Notes column.
+4. 電圧を記録し、メモ欄に観察した現象も記録できます。
 
 .. note::
 
-    * Mine was 5.13 volts, fill in according to your measurement.
+    * 私の結果は5.13ボルトでしたが、あなたの測定結果に基づいて記入してください。
 
-    * Due to wiring issues and instability of your hand, you may see the voltage fluctuate. Keep your hand steady, observe a few times, and you will get a fairly stable voltage reading.
+    * 配線の問題や手の不安定さにより、電圧が変動することがあります。手を安定させて数回観察し、安定した電圧値を得るようにしてください。
 
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Type
-     - Units
-     - Measurement Results
-     - Notes
-   * - Voltage
-     - Volts
-     - *≈5.13 volts*
+   * - タイプ
+     - 単位
+     - 測定結果
+     - メモ
+   * - 電圧
+     - ボルト
+     - *約5.13ボルト*
      - 
-   * - Current
-     - Milliamps
+   * - 電流
+     - ミリアンペア
      - 
      - 
-   * - Resistance
-     - Ohms
+   * - 抵抗
+     - オーム
      - 
      -
+     
+5. 最後に、他の測定を行う際にジャンパーワイヤーが抜けないように、すべてのジャンパーワイヤーをブレッドボードに再挿入してください。
 
-5. Finally, reinsert all the jumper wires into the breadboard to prevent them from being pulled out while you conduct other measurements.
+**電流の測定**
 
-**Measuring Current**
+回路内の電圧を測定した後、次は回路内の電流を測定します。
 
-You have measured the voltage in the circuit. Next, you will measure the current in the circuit.
-
-1. For current measurement, the multimeter needs to be integrated into the circuit's flow path, essentially becoming a segment of the circuit's conductive route. A straightforward method involves adjusting the LED's placement: keep the LED's anode in hole 1F while shifting its cathode (the shorter leg) from hole 1E to hole 3E.
+1. 電流を測定するために、マルチメーターを回路の導電経路に組み込む必要があります。簡単な方法としては、LEDの配置を調整することです。LEDのアノードを1Fに残し、カソード（短い脚）を1Eから3Eに移動させます。
 
 .. image:: img/3_measure_current.png
   :width: 600
   :align: center
 
-2. Set the multimeter to the 200 milliamps position.
+2. マルチメーターを200ミリアンペアの位置にセットします。
 
 .. image:: img/multimeter_200ma.png
   :width: 300
   :align: center
 
-3. Place the black test lead on the wire connected to hole 1B and the red test lead on the LED's cathode in hole 3E. Completing this setup, the red LED should begin to blink.
+3. 黒のテストリードを1Bに接続されたワイヤーに、赤のテストリードをLEDのカソードである3Eに置きます。この設定が完了すると、赤色LEDが点滅を開始するはずです。
 
   .. note::
 
-    When measuring voltage across the resistor and LED, ensuring a solid connection with the multimeter test leads can be tricky. To get a better grip, attach the test leads where the component legs enter the breadboard. This way, you can press down harder without dislodging anything.
+    抵抗とLEDをまたいで電圧を測定する際、マルチメーターのテストリードとの接続を確実にするのは難しいことがあります。より良いグリップを得るために、コンポーネントの脚がブレッドボードに挿入される場所にテストリードを取り付けてください。そうすることで、何かを外すことなく、より強く押し込むことができます。
 
 .. image:: img/3_measure_current2.png
 
-4. You will find the read current is less than 20mA, so we can switch to the 20mA position to get a more accurate reading.
+4. 読み取った電流が20mA未満であることがわかるので、より正確な読み取りを得るために20mAの位置に切り替えることができます。
 
 .. image:: img/multimeter_20a.png
   :width: 300
   :align: center
 
-
-5. Measure and record the current in the circuit, in milliamps.
+5. 回路内の電流をミリアンペア単位で測定し、記録します。
 
 .. note::
 
-  Please be aware that fluctuations in the measured current are normal due to various factors such as contact stability, power supply variations, and temperature effects. We recommend simply recording the current value you measure at any given moment. If the value is within theoretical expectations, it should be considered acceptable.
+  接触の安定性、電源の変動、温度の影響など、さまざまな要因により測定された電流が変動することがあります。理論的な予測範囲内であれば、測定された電流値は受け入れられるものと見なすべきです。
 
   
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Type
-     - Units
-     - Measurement Results
-     - Notes
-   * - Voltage
-     - Volts
-     - *≈5.13 volts*
+   * - タイプ
+     - 単位
+     - 測定結果
+     - メモ
+   * - 電圧
+     - ボルト
+     - *約5.13ボルト*
      - 
-   * - Current
-     - Milliamps
-     - *≈13.54 milliamps*
+   * - 電流
+     - ミリアンペア
+     - *約13.54ミリアンペア*
      - 
-   * - Resistance
-     - Ohms
+   * - 抵抗
+     - オーム
      - 
      -
 
-6. Put the LED back in its original position, with the anode in hole 1F and the cathode in hole 1E.
+6. LEDを元の位置に戻し、アノードを1Fに、カソードを1Eに戻します。
 
-**Calculating Total Resistance**
+**総抵抗の計算**
 
-Measuring resistance in a circuit with a multimeter gets tricky when LEDs are involved, because LEDs need a specific amount of voltage to turn on, called the forward voltage. If the voltage isn't high enough, the LED won't light up, and the circuit stays open, which complicates measuring resistance. Moreover, you can't have any voltage in the circuit other than what's coming from the multimeter when you're trying to measure resistance.
+LEDが関与する回路でマルチメーターを使用して抵抗を測定することは、困難です。なぜなら、LEDは点灯するために特定の電圧（順方向電圧）が必要であり、この電圧が十分でない場合、LEDは点灯せず、回路が開いたままになり、抵抗の測定が複雑になります。さらに、抵抗を測定する際には、マルチメーターからの電圧以外の電圧が回路に存在してはなりません。
 
-So, directly measuring the circuit's resistance with a multimeter isn't straightforward. What should we do then?
+そのため、回路の抵抗をマルチメーターで直接測定することは簡単ではありません。では、どうすればよいでしょうか？
 
-Here, we will use the formula shown below to calculate resistance from voltage and current, which is Ohm's Law. We will provide a detailed introduction to this in the next lesson.
-
+ここでは、オームの法則に基づいて、電圧と電流から抵抗を計算します。この詳細については次のレッスンで詳しく説明します。
 
 .. code-block::
 
-    Voltage = Current x Resistance
+    電圧 = 電流 × 抵抗
 
-    Or
+    または
 
     V = I • R
 
-When rearranged, the equation becomes:
+式を整理すると、次のようになります:
 
 .. code-block::
 
-    Resistance = Voltage / Current
+    抵抗 = 電圧 / 電流
 
-    Or
+    または
 
     R = V / I
 
-Using the formula above, with the voltage and current you measured, you can calculate the total resistance in the circuit and fill it into the table.
+上記の式を使って、測定した電圧と電流から回路全体の抵抗を計算し、表に記入してください。
 
 .. note::
 
-    Voltage is in volts, resistance is in ohms, and current in the table is in milliamps, you need to convert milliamps to amperes:
+    電圧はボルト、抵抗はオーム、表中の電流はミリアンペアです。ミリアンペアをアンペアに変換する必要があります。
 
-    1 Amps = 1000 Milliamps
+    1アンペア = 1000ミリアンペア
 
-    Meaning you need to divide the measured current by 1000 before using the formula to calculate total resistance. The final calculated result may not be a whole number, please round to two decimal places. For example, my calculated value is 378.8774002954, which I round to 378.88.
+    つまり、計算する前に測定した電流を1000で割る必要があります。計算された結果は整数でないかもしれませんので、小数点以下2桁に四捨五入してください。例えば、私の計算値は378.8774002954で、それを378.88に四捨五入します。
 
-    R = 5.13 / (13.54 / 1000) = 378.88 ohms
+    R = 5.13 / (13.54 / 1000) = 378.88オーム
 
 
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Type
-     - Units
-     - Measurement Results
-     - Notes
-   * - Voltage
-     - Volts
-     - *≈5.13 volts*
+   * - タイプ
+     - 単位
+     - 測定結果
+     - メモ
+   * - 電圧
+     - ボルト
+     - *約5.13ボルト*
      - 
-   * - Current
-     - Milliamps
-     - *≈13.54 milliamps*
+   * - 電流
+     - ミリアンペア
+     - *約13.54ミリアンペア*
      - 
-   * - Resistance
-     - Ohms
-     - *≈378.88 ohms*
+   * - 抵抗
+     - オーム
+     - *約378.88オーム*
      -
 
-**Measuring the Resistance Value**
+**抵抗値の測定**
 
-Now that we've figured out the circuit's total resistance, it's time to see how much of it is because of the resistor and how much is due to the LED. Our resistor is marked as 220 ohms, but with a 5% tolerance, it could actually be anywhere from 209 to 231 ohms. Let's use the multimeter to find out its exact value.
+回路全体の抵抗を求めたので、次はそのうちどれだけが抵抗器によるもので、どれだけがLEDによるものかを確認します。抵抗器には220オームと表示されていますが、許容誤差が5%あるため、実際には209オームから231オームの範囲内である可能性があります。マルチメーターを使用して正確な値を確認してみましょう。
 
-1. When measuring resistance, your multimeter has to act as the only source of voltage; make sure there are no other power sources connected to the circuit. So, unplug any jumper wires from the Arduino Uno R3 to ensure the breadboard is isolated.
+1. 抵抗を測定する際には、マルチメーターが唯一の電圧源として機能する必要があります。回路に他の電源が接続されていないことを確認してください。そのため、Arduino Uno R3からジャンパーワイヤーをすべて外して、ブレッドボードを孤立させます。
 
 .. image:: img/3_measure_resistance.png
   :width: 600
   :align: center
 
-2. For an accurate measure of the resistor's resistance, dial your multimeter to the 2K (2000 ohms) resistance mode.
+2. 抵抗器の抵抗を正確に測定するために、マルチメーターを2K（2000オーム）抵抗モードに設定します。
 
 .. image:: img/multimeter_2k.png
   :width: 300
   :align: center
 
-3. Place the multimeter's red and black test leads on either side of the resistor, and record the reading from the multimeter.
+3. マルチメーターの赤と黒のテストリードを抵抗器の両端に当て、マルチメーターの表示を記録します。
 
 .. image:: img/3_measure_resistor.png
 
-4. After measuring, remember to turn the multimeter off by setting it to the "OFF" position.
+4. 測定が終わったら、マルチメーターを「OFF」位置にして電源を切ることを忘れないでください。
 
-**Calculating the LED's Resistance**
+**LEDの抵抗値の計算**
 
-To determine the LED's resistance, subtract the resistor's resistance from the total resistance in the circuit.
+LEDの抵抗値を求めるには、回路全体の抵抗から抵抗器の抵抗を引きます。
 
 .. code-block::
 
+    LEDの抵抗 = 回路全体の抵抗 - 抵抗器の抵抗
 
-    LED Resistance = Total Resistance - Resistor's Resistance
+私の測定結果によると、LEDの抵抗値は378.88オーム - 215オーム = 163.88オームです。
 
-So, according to my measurements, the LED's resistance should be: 378.88 - 215 = 163.88 ohms.
+このレッスンでは、マルチメーターを使用して回路内の電圧、電流、抵抗を測定する基本的なスキルを実践しました。シンプルなLED回路を構築し、LEDを含む回路で抵抗を測定する方法を詳しく探り、オームの法則を適用して直列回路や並列回路の動作を理解しました。これからも、これらの基本的なスキルが、より高度なプロジェクトやエレクトロニクスの深い理解への土台となることを忘れずに、引き続き実験と学習を楽しみましょう。そして、一緒に電子の世界をさらに明るくしていきましょう。
 
-We've taken a hands-on journey through the essentials of using a multimeter to measure voltage, current, and resistance in a circuit. From building a simple LED circuit to delving into the nuances of measuring resistance in circuits with LEDs, we've explored how to practically apply Ohm's Law and understand the dynamics of series and parallel circuits. As we move forward, remember that these foundational skills lay the groundwork for more complex projects and deeper understanding of electronics. Keep experimenting, keep learning, and let's continue to illuminate the path of electronic exploration together.

@@ -1,42 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで同じ興味を持つ仲間たちと一緒に、Raspberry Pi、Arduino、ESP32の世界をさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加のメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを通じて解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品の発表や先行情報をいち早く入手できます。
+    - **特別割引**: 最新の製品に対する特別割引をお楽しみいただけます。
+    - **フェスティブプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造してみませんか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 Inventor Lab Kit with Original Arduino Uno R3
-=================================================
+====================================================
 
-Thank You for Choosing the Inventor Lab Kit.
+インベンターラボキットをお選びいただきありがとうございます。
 
-.. image:: img/home_page.png
+ .. image:: img/home_page.png
     :width: 800
     :align: center
 
-.. .. note::
-..     This document is available in the following languages.
+ .. note::
+     This document is available in the following languages.
 
-..         * |link_german_tutorials|
-..         * |link_jp_tutorials|
-..         * |link_en_tutorials|
+         * |link_german_tutorials|
+         * |link_jp_tutorials|
+         * |link_en_tutorials|
     
-..     Please click on the respective links to access the document in your preferred language.
+     Please click on the respective links to access the document in your preferred language.
 
 * :download:`Inventor Lab Kit Handbook with the Answers </_static/pdf/Inventor Lab Kit Handbook with the Answers.pdf>`
 
-Embark on your electronics journey with the Inventor Lab Kit, designed for learners and enthusiasts. Centered around the Arduino Uno R3, this kit includes everything from basic components like LEDs and buzzers to advanced modules such as RFID systems and ultrasonic sensors, along with a mini-multimeter for circuit analysis.
+インベンターラボキットを使って、エレクトロニクスの旅を始めましょう。このキットは、学習者やエンスージアスト向けに設計されており、Arduino Uno R3を中心に、LEDやブザーといった基本的なコンポーネントから、RFIDシステムや超音波センサーといった高度なモジュール、さらに回路解析用のミニマルチメーターまでが含まれています。
 
-The kit excels in educational clarity, gradually introducing beginners to programming and circuit design. Instead of pre-written code, it guides you step-by-step through writing your own scripts, enhancing understanding and retention. Projects range from simple tasks like lighting LEDs and using a joystick, to complex applications such as building a radar system and an automatic soap dispenser.
+このキットは教育的な明確さに優れており、初心者を対象にプログラミングや回路設計を段階的に導入します。あらかじめ書かれたコードに頼るのではなく、自分自身でスクリプトを書く過程を丁寧にガイドし、理解と記憶の定着を促します。プロジェクトは、LEDを点灯させる簡単な作業やジョイスティックの使用から、レーダーシステムの構築や自動ソープディスペンサーの作成といった複雑な応用まで、多岐にわたります。
 
-Ideal for both beginners and those looking to expand their skills, the Inventor Lab Kit makes learning both accessible and exciting, providing all the tools needed to explore and innovate in the world of electronics.
+初心者からスキルアップを目指す方まで、インベンターラボキットは学習を手軽に楽しくし、エレクトロニクスの世界で探求し、革新するために必要なすべてのツールを提供します。
 
 
 
@@ -80,7 +80,6 @@ Ideal for both beginners and those looking to expand their skills, the Inventor 
     34_access_control_system
 
 
-**Copyright Notice**
+**著作権について**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+本マニュアルに含まれるすべての内容（テキスト、画像、コードなど）は、SunFounder社の所有物です。これらは、関連する規制および著作権法に基づき、個人的な学習、調査、楽しみ、またはその他の非営利目的でのみ使用され、著者および関連する権利者の法的権利を侵害しないようにする必要があります。許可なく商業的利益を目的としてこれらを使用する個人または組織に対して、SunFounder社は法的措置を取る権利を留保します。

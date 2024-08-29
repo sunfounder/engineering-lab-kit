@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookで他のエンスージアストたちと一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**: 新製品の発表や先行情報をいち早く入手できます。
+    - **特別割引**: 新製品に対する限定割引を利用できます。
+    - **イベントプロモーションとプレゼント企画**: プレゼント企画や季節のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造を私たちと共に始めましょう！[|link_sf_facebook|] をクリックして、今日から参加しましょう！
 
-13. Joystick LED Navigator
+13. ジョイスティック LED ナビゲーター
 ===================================================
 
-When you think of a thumb joystick, a game controller likely comes to mind. However, beyond gaming, these versatile devices are excellent for various DIY electronics projects. They can be used to control robots or rovers, or even manage camera movements.
+サムスティックと聞くと、ゲームコントローラーを思い浮かべるかもしれませんが、実はゲーム以外にも多用途で、様々なDIYエレクトロニクスプロジェクトに最適です。例えば、ロボットやローバーの制御や、カメラの動きを管理するためにも使用できます。
 
-In this project-based course, you will learn how to interface a joystick with an Arduino to control LEDs according to the joystick's movements. We'll explore the working principles of the joystick, utilize the Serial Monitor to read and debug outputs, and develop control logic to activate LEDs in specified directions. This course emphasizes practical applications, making it directly applicable to real-life scenarios where precise directional control is crucial.
+このプロジェクトベースのコースでは、ジョイスティックをArduinoに接続し、ジョイスティックの動きに応じてLEDを制御する方法を学びます。ジョイスティックの動作原理を探り、シリアルモニタを活用して出力を読み取り、デバッグし、指定された方向でLEDを点灯させるための制御ロジックを開発します。このコースは、実際のシナリオで重要となる精密な方向制御を強調し、実践的な応用に直接役立つ内容となっています。
 
 .. raw:: html
 
@@ -26,86 +26,86 @@ In this project-based course, you will learn how to interface a joystick with an
         Your browser does not support the video tag.
     </video>
 
-By the end of this course, you will be able to:
+このコースの終了時には、以下のことができるようになります:
 
-* Understand the working principle of a joystick and its various outputs (X, Y, and SW).
-* Use the Serial Monitor to read and debug sensor values in Arduino.
-* Write and understand conditional statements (``if-else if``) to control hardware based on input values.
+* ジョイスティックの動作原理と、その出力（X軸、Y軸、SW）を理解する。
+* Arduinoでセンサ値を読み取り、デバッグするためのシリアルモニタの使用方法を学ぶ。
+* ハードウェアを入力値に基づいて制御するための条件文（ ``if-else if`` ）を記述し、理解する。
 
 
-Build the Circuit
+回路の構築
 ------------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 4 * LEDs with different colors
-     - 4 * 220Ω Resistor
-     - 1 * Joystick Module
+     - 4 * 色の異なるLED
+     - 4 * 220Ω抵抗
+     - 1 * ジョイスティックモジュール
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_joystick_module| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパワイヤ
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - 
      
-**Building Steps**
+**構築手順**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図または以下の手順に従って回路を構築します。
 
 .. image:: img/11_joystick_circuit.png
     :width: 700
     :align: center
 
-1. Find a Joystick module.
+1. ジョイスティックモジュールを見つけます。
 
-A joystick module, also known as a joystick sensor, is an input device that measures the movement of a knob in two directions, horizontal (X-axis) and vertical (Y-axis).
+ジョイスティックモジュール、別名ジョイスティックセンサーは、ノブの動きを水平方向（X軸）と垂直方向（Y軸）の2方向で測定する入力デバイスです。
 
 
 .. image:: img/11_joystick_module.jpg
     :width: 300
     :align: center
 
-* **GND**: Connects to ground.
-* **+5V**: Powers the module, compatible with 3.3V to 5V.
-* **VRX**: Outputs analog values representing the X-axis position.
-* **VRY**: Outputs analog values representing the Y-axis position.
-* **SW**: Provides a digital output when the joystick button is pressed. For reliable operation, use an external pull-up resistor, which keeps the SW pin high when idle and low when pressed.
+* **GND**: グランドに接続します。
+* **+5V**: モジュールに電源を供給し、3.3Vから5Vまで対応可能です。
+* **VRX**: X軸位置を表すアナログ値を出力します。
+* **VRY**: Y軸位置を表すアナログ値を出力します。
+* **SW**: ジョイスティックボタンが押されたときにデジタル出力を提供します。信頼性の高い動作のためには、SWピンをアイドル時に高、押されたときに低に保つ外部プルアップ抵抗を使用してください。
 
-Joystick operates based on the resistance change of two potentiometers (usually 10-kilo ohms). By changing resistance in x and y directions, Arduino receives varying voltages which are interpreted to x and y coordinates. The processor needs an ADC unit to change the joystick's analog values into digital values and perform necessary processing.
+ジョイスティックは通常、10キロオームの2つのポテンショメータの抵抗変化に基づいて動作します。X軸とY軸の方向に応じて抵抗を変化させることで、Arduinoは電圧の変化を受け取り、それをX座標およびY座標に変換します。プロセッサは、ジョイスティックのアナログ値をデジタル値に変換し、必要な処理を行うためにADCユニットを必要とします。
 
-Arduino boards have six 10-bits ADC channels. It means the Arduino's reference voltage (5 volts) is divided to 1024 segments. When joystick moves along the x-axis, the ADC value rises from 0 to 1023, with the value 512 in the middle. The image below displays the ADC approximate value based on the joystick position.
+Arduinoボードには6つの10ビットADCチャンネルがあります。これは、Arduinoの基準電圧（5ボルト）が1024セグメントに分割されることを意味します。ジョイスティックがX軸に沿って動くと、ADC値は0から1023まで上昇し、中央の値は512になります。以下の画像は、ジョイスティック位置に基づくADCの概略値を示しています。
 
 .. image:: img/11_joystick_xy_range.jpg
     :width: 500
     :align: center
 
-The joystick also features an inward press function, like a button, useful for selecting menu options or other interactive elements.
+ジョイスティックには、ボタンのように押し込む機能もあり、メニューオプションの選択や他のインタラクティブ要素に便利です。
 
 .. image:: img/11_joystick_module_button.jpg
     :width: 300
     :align: center
 
-2. Here is how to connect each pin of the joystick module to the Arduino Uno R3
+2. ジョイスティックモジュールの各ピンをArduino Uno R3に接続します。
 
 .. list-table:: 
    :widths: 10 30
    :header-rows: 0
 
    * - Arduino Uno R3
-     - Joystick
+     - ジョイスティック
    * - GND
-     - GND(negative rail of breadboard)
+     - GND(ブレッドボードの負のレール)
    * - +5v
      - 5v
    * - VRX
@@ -119,47 +119,48 @@ The joystick also features an inward press function, like a button, useful for s
     :width: 700
     :align: center
 
-3. Insert four differently colored LEDs into the breadboard. Connect the cathode (short pin) of each LED to the breadboard's negative rail, and the anode (long pin) into specific ports (58A, 53A, 49A, and 45A).
+3. 異なる色の4つのLEDをブレッドボードに挿入します。各LEDの陰極（短いピン）をブレッドボードの負のレールに接続し、陽極（長いピン）を指定されたポート（58A、53A、49A、45A）に接続します。
 
 .. image:: img/11_joystick_circuit_led.png
     :width: 700
     :align: center
 
-4. Insert a 220-ohm resistor in the same row as each LED's anode, protecting the LEDs from excessive current.
+4. 各LEDの陽極と同じ行に220オームの抵抗を挿入し、LEDを過電流から保護します。
 
 .. image:: img/11_joystick_circuit_resistor.png
     :width: 700
     :align: center
 
-5. Use a jumper wire to connect 58J hole on the breadboard to pin 11 on the Arduino, enabling control over the first LED.
+5. ジャンパワイヤを使用して、ブレッドボードの58J穴をArduinoのピン11に接続し、最初のLEDの制御を可能にします。
 
 .. image:: img/11_joystick_circuit_11.png
     :width: 700
     :align: center
 
-6. Similarly, connect the other three LEDs to pins 10, 9, and 8 on the Arduino, respectively.
+6. 同様に、他の3つのLEDをそれぞれArduinoのピン10、9、8に接続します。
 
 .. image:: img/11_joystick_circuit_8910.png
     :width: 700
     :align: center
 
-7. Do not forget to ground your circuit. Connect the Arduino Uno R3's GND pin to the breadboard's negative rail and use a jumper wire to connect both negative rails on the breadboard.
+7. 回路をグランドに接続することを忘れないでください。Arduino Uno R3のGNDピンをブレッドボードの負のレールに接続し、ジャンパワイヤを使用してブレッドボードの両方の負のレールを接続します。
 
 .. image:: img/11_joystick_circuit.png
     :width: 700
     :align: center
 
 
-Code Creation- Read from Joystick Module
------------------------------------------------
-Let's take a look at what the values from the joystick module's X-axis, Y-axis, and button look like. For this, we'll use a tool called the Serial Monitor.
+コード作成 - ジョイスティックモジュールからの読み取り
+-------------------------------------------------------
 
-The Serial Monitor is an essential tool when creating projects with Arduino. It can be used as a debugging tool, testing out concepts or to communicate directly with the Arduino board.
+ジョイスティックモジュールのX軸、Y軸、およびボタンから取得される値がどのようなものかを見てみましょう。そのために、シリアルモニタというツールを使用します。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson13_Joystick_Module`` using ``Ctrl + S`` or by clicking “Save”.
+シリアルモニタは、Arduinoプロジェクトを作成する際に欠かせないツールです。デバッグツールとして、概念をテストしたり、Arduinoボードと直接通信したりするために使用されます。
 
-3. Create three variables to store the values from the three pins of the joystick module.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して、新しいプロジェクトを開始します。
+2. スケッチを ``Lesson13_Joystick_Module`` として保存します（ ``Ctrl + S`` を押すか、「保存」をクリックします）。
+
+3. ジョイスティックモジュールの3つのピンからの値を保存するための3つの変数を作成します。
 
 .. code-block:: Arduino
     :emphasize-lines: 1,2,3
@@ -173,73 +174,73 @@ The Serial Monitor is an essential tool when creating projects with Arduino. It 
 
     }
 
-4. Also, using the Arduino software pull-up feature, set the ``swPin`` as input while also enabling it as ``PULLUP``.
+4. また、Arduinoソフトウェアのプルアップ機能を使用して、 ``swPin`` を入力として設定し、 ``PULLUP`` として有効にします。
 
 .. code-block:: Arduino
     :emphasize-lines: 7
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // VRXに接続
+    const int yPin = A1;  // VRYに接続
+    const int swPin = 2;  // SWに接続
 
     void setup() {
-        // put your main code here, to run repeatedly:
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
+        // ここにメインコードを繰り返し実行するために書きます:
+        pinMode(swPin, INPUT_PULLUP);  // 内部プルアップ抵抗でsw Pinを入力として設定
     }
 
-5. To activate the Serial Monitor, you must initiate serial communication on your Arduino Uno R3. This is typically done in the ``void setup()`` section of your sketch with the command ``Serial.begin(baud)``. Here, ``baud`` indicates the data transfer rate per second between the computer and the Arduino Uno R3, with common rates being 9600 and 115200 bits per second.
+5. シリアルモニタを有効にするには、Arduino Uno R3でシリアル通信を開始する必要があります。これは通常、スケッチの ``void setup()`` セクションで ``Serial.begin(baud)`` コマンドを使用して行われます。ここで ``baud`` は、コンピュータとArduino Uno R3の間のデータ転送速度を示し、一般的な速度は9600ビット/秒および115200ビット/秒です。
 
 .. code-block:: Arduino
     :emphasize-lines: 8
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // VRXに接続
+    const int yPin = A1;  // VRYに接続
+    const int swPin = 2;  // SWに接続
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
-        Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
+        // ここにセットアップコードを一度だけ実行するために書きます:
+        pinMode(swPin, INPUT_PULLUP);  // 内部プルアップ抵抗でsw Pinを入力として設定
+        Serial.begin(9600);        // 9600ボーレートでシリアル通信を開始
     }
 
-6. Now, create three variables ``xValue``, ``yValue``, and ``swValue`` to store the values from the X, Y, and SW pins respectively.
+6. 次に、X、Y、およびSWピンからの値を保存するための3つの変数 ``xValue`` 、 ``yValue`` 、 ``swValue`` を作成します。
 
 .. code-block:: Arduino
     :emphasize-lines: 4-6
 
     void loop() {
 
-        // Read the joystick values
+        // ジョイスティックの値を読み取ります
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
     }
 
-7. You are now ready to use the Serial Monitor to print data. You will utilize ``Serial.print()`` to display data and other texts.
+7. これで、シリアルモニタを使用してデータを表示する準備が整いました。データやその他のテキストを表示するために ``Serial.print()`` を使用します。
 
-Here's how to use it:
+使用方法は以下の通りです:
 
-    * ``Serial.print(val)`` or ``Serial.print(val, format)``: Prints data to the serial port as human-readable ASCII text. 
+    * ``Serial.print(val)`` または ``Serial.print(val, format)`` : データをシリアルポートに人間が読めるASCIIテキストとして表示します。
 
-    **Parameters**
-        - ``Serial``: serial port object.
-        - ``val``: the value to print. Allowed data types: any data type.
+    **パラメータ**
+        - ``Serial`` : シリアルポートオブジェクト。
+        - ``val`` : 表示する値。許可されるデータ型: 任意のデータ型。
 
-    **Returns**
-        ``print()`` returns the number of bytes written, though reading that number is optional. Data type: size_t.
+    **戻り値**
+        ``print()`` は書き込まれたバイト数を返しますが、その数を読むことはオプションです。データ型: size_t。
 
-This command can represent various data types and formats, including numbers, floating points, bytes, and strings. For example:
+このコマンドは、数字、浮動小数点、バイト、文字列など、さまざまなデータ型と形式を表現できます。例えば:
 
 .. code-block:: Arduino
 
-    Serial.print(78);                // outputs "78"
-    Serial.print(78, BIN);           // outputs "1001110"
-    Serial.print(1.23456);           // outputs "1.23"
-    Serial.print(1.23456, 0);        // outputs "1"
-    Serial.print('N');               // outputs "N"
-    Serial.print("Hello world.");    // outputs "Hello world."
+    Serial.print(78);                // "78"と表示
+    Serial.print(78, BIN);           // "1001110"と表示
+    Serial.print(1.23456);           // "1.23"と表示
+    Serial.print(1.23456, 0);        // "1"と表示
+    Serial.print('N');               // "N"と表示
+    Serial.print("Hello world.");    // "Hello world."と表示
 
-8. Now, use this command to print a prompt indicating the data about to be printed. This is helpful when differentiating multiple data prints at once.
+8. 次に、このコマンドを使用して、印刷されるデータを示すプロンプトを表示します。これにより、複数のデータを同時に表示するときに区別しやすくなります。
 
 .. code-block:: Arduino
     :emphasize-lines: 8
@@ -254,7 +255,7 @@ This command can represent various data types and formats, including numbers, fl
         Serial.print("X: ");
     }
 
-9. Next, print the value from the Joystick module's VRX pin.
+9. 次に、ジョイスティックモジュールのVRXピンからの値を表示します。
     
 .. code-block:: Arduino
     :emphasize-lines: 9
@@ -271,12 +272,12 @@ This command can represent various data types and formats, including numbers, fl
     }
 
 
-10. Use the same method to print the values from the VRY pin and SW pin.
+10. 同じ方法を使用して、VRYピンとSWピンの値を表示します。
 
 .. note::
 
-    * To ensure each output appears on a new line in the Serial Monitor, use ``Serial.println()`` for the SW pin value, which adds a newline character at the end of the print statement.
-    * Using ``delay(100)`` ensures a time interval before the next set of data appears. It is recommended to add a delay when printing data to the Serial Monitor to prevent it from refreshing too quickly, which could cause it to crash.
+    * Serial Monitorで各出力が新しい行に表示されるようにするには、SWピンの値に ``Serial.println()`` を使用します。これにより、印刷文の最後に改行文字が追加されます。
+    * 次のデータが表示される前に時間間隔を確保するために、 ``delay(100)`` を使用します。Serial Monitorにデータを出力する際、更新が早すぎるとクラッシュの原因になるため、遅延を追加することをお勧めします。
 
 .. code-block:: Arduino
     :emphasize-lines: 10-14
@@ -297,23 +298,23 @@ This command can represent various data types and formats, including numbers, fl
         delay(100);
     }
 
-11. The complete code is shown below. You can now click **Upload** to transfer the code to your Arduino Uno R3.
+11. 完全なコードは以下の通りです。 **Upload** をクリックして、コードをArduino Uno R3に転送できます。
 
 .. code-block:: Arduino
 
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    const int xPin = A0;  // VRXはA0に接続
+    const int yPin = A1;  // VRYはA1に接続
+    const int swPin = 2;  // SWは2に接続
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(swPin, INPUT_PULLUP);  // Set sw Pin as input with an internal pull-up resistor
-        Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
+        // セットアップコードは一度だけ実行されます:
+        pinMode(swPin, INPUT_PULLUP);  // 内部プルアップ抵抗を使用してSWピンを入力に設定
+        Serial.begin(9600);        // 9600ボーのレートでシリアル通信を開始
     }
 
     void loop() {
 
-        // Read the joystick values
+        // ジョイスティックの値を読み取ります
         int xValue = analogRead(xPin);
         int yValue = analogRead(yPin);
         int swValue = digitalRead(swPin);
@@ -327,17 +328,17 @@ This command can represent various data types and formats, including numbers, fl
         delay(100);
     }
 
-12. Afterward, click on the "Serial Monitor" button in the top right corner of the Arduino IDE.
+12. その後、Arduino IDEの右上にある「Serial Monitor」ボタンをクリックします。
 
 .. image:: img/11_joystick_serial_monitor.png
     :align: center
 
-13. If you see garbled data displayed, you will need to adjust the baud rate to match the one set in your code.
+13. もしデータが乱れて表示された場合は、コードで設定したボー・レートに合わせてボー・レートを調整する必要があります。
 
 .. image:: img/11_joystick_baud.png
     :align: center
 
-14. Once uploaded, move the joystick around, and you'll notice the X and Y values fluctuate between 0 and 1023. Press and release the joystick, and observe the SW pin toggling between 0 and 1.
+14. アップロードが完了したら、ジョイスティックを動かして、XとYの値が0から1023の間で変動するのを確認します。ジョイスティックを押したり離したりすると、SWピンが0から1に切り替わる様子が観察できます。
 
 .. code-block::
 
@@ -349,81 +350,79 @@ This command can represent various data types and formats, including numbers, fl
     X: 517 | Y: 524 | SW: 1
     X: 517 | Y: 524 | SW: 1
 
-15. Now that you know how to print data to the Serial Monitor, let's explore some buttons in the Serial Monitor:
+15. Serial Monitorにデータを表示する方法を学んだところで、Serial Monitorのいくつかのボタンを見てみましょう：
 
 .. image:: img/11_joystick_serial_button.png
         :align: center
 
-* **Toggle Autoscroll**: This allows the data to scroll so you can always see the latest readings.
-* **Toggle Timestamp**: Turn on timestamps to see data stamped with the exact time to the second.
-* **Clear Output**: This is used to clear the data currently displayed on the screen.
+* **Autoscrollの切り替え**: 最新のデータを常に確認できるようにスクロールを有効にします。
+* **タイムスタンプの切り替え**: データに秒単位でタイムスタンプを付けて表示します。
+* **出力をクリア**: 現在画面に表示されているデータをクリアします。
 
 
-**Questions**
+**質問**
 
-The X and Y axes of the joystick module return analog values, while the SW pin returns a digital value. In previous steps, we've already seen these values on the Serial Monitor.
+ジョイスティックモジュールのX軸およびY軸はアナログ値を返し、SWピンはデジタル値を返します。前の手順で、これらの値がすでにSerial Monitorに表示されていることを確認しました。
 
-Please summarize the differences between digital and analog values in Arduino programming.
+Arduinoプログラミングにおけるデジタル値とアナログ値の違いを要約してください。
 
-Code Creation - Controlling LEDs Based on Joystick Movements
--------------------------------------------------------------------------
+Code Creation - ジョイスティックの動きに基づくLED制御
+----------------------------------------------------------
 
-This tutorial outlines how to program LEDs to respond to the movements of a joystick.
+このチュートリアルでは、ジョイスティックの動きに応じてLEDをプログラムする方法を説明します。
 
 .. image:: img/11_joystick_xy_range.jpg
     :width: 500
     :align: center
 
-Setup each LED to indicate the direction of joystick movement:
+各LEDをジョイスティックの動きに応じた方向を示すように設定します：
 
-* **Up Indicator**: Connect an LED to pin 10. It lights up when the joystick is pushed up (Y-axis value decreases).
-* **Down Indicator**: Connect an LED to pin 9. It lights up when the joystick is pushed down (Y-axis value increases).
-* **Left Indicator**: Connect an LED to pin 11. It lights up when the joystick is pushed left (X-axis value decreases).
-* **Right Indicator**: Connect an LED to pin 8. It lights up when the joystick is pushed right (X-axis value increases).
+* **上方向インジケーター**: LEDをピン10に接続します。ジョイスティックを上に押すと（Y軸の値が減少）、LEDが点灯します。
+* **下方向インジケーター**: LEDをピン9に接続します。ジョイスティックを下に押すと（Y軸の値が増加）、LEDが点灯します。
+* **左方向インジケーター**: LEDをピン11に接続します。ジョイスティックを左に押すと（X軸の値が減少）、LEDが点灯します。
+* **右方向インジケーター**: LEDをピン8に接続します。ジョイスティックを右に押すと（X軸の値が増加）、LEDが点灯します。
 
-This raises a question: How does the Arduino Uno R3 know which direction you are moving the joystick?
+ここで疑問が生じます。Arduino Uno R3はどのようにしてジョイスティックがどの方向に動いているかを認識するのでしょうか？
 
-Ideally, when the joystick is centered, the values should be (1024/2=512). Therefore, to determine if the joystick is pushing up, down, left, or right, we simply check if the values are greater than or less than 512.
+理想的には、ジョイスティックが中央にあるときの値は(1024/2=512)になるはずです。したがって、ジョイスティックが上、下、左、右のどちらに押されているかを判断するには、値が512より大きいか小さいかを確認すればよいのです。
 
-However, due to possible design inaccuracies in the module or resistance in the connections, the values might deviate from 512 even when the joystick is centered. This could lead to misinterpretations by the Arduino Uno R3, such as mistakenly lighting the left indicator LED if the X value is already less than 512 without actual movement.
+しかし、モジュールの設計上の不正確さや接続の抵抗により、ジョイスティックが中央にあるときでも512から値がずれる可能性があります。このため、Arduino Uno R3が誤ってX値が512未満であると解釈し、実際には動いていないのに左方向インジケーターLEDが点灯する場合があります。
 
-Therefore, a threshold around the midpoint (512±100) is used:
+そのため、中央の値（512±100）の周囲に閾値を設定します：
 
 .. image:: img/11_joystick_xy_200.png
     :width: 400
     :align: center
 
-* **Up**: Y-axis value less than 412.
-* **Down**: Y-axis value greater than 612.
-* **Left**: X-axis value less than 412.
-* **Right**: X-axis value greater than 612.
+* **上方向**: Y軸の値が412未満。
+* **下方向**: Y軸の値が612より大きい。
+* **左方向**: X軸の値が412未満。
+* **右方向**: X軸の値が612より大きい。
 
-1. Now start writing the sketch. Open the sketch you saved earlier, ``Lesson13_Joystick_Module``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson13_Joystick_Module_LEDs``. Click "Save".
+1. それではスケッチの作成を始めましょう。前回保存したスケッチ ``Lesson13_Joystick_Module`` を開きます。「ファイル」メニューから「名前を付けて保存」を選択し、 ``Lesson13_Joystick_Module_LEDs``  として保存します。「保存」をクリックします。
 
-2. Initialize variables to define the four LEDs.
-
+2. 4つのLEDを定義する変数を初期化します。
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
-    // Define pins for the LEDs
+    // LEDのピンを定義
     const int ledLeft = 11;
     const int ledRight = 8;
     const int ledUp = 10;
     const int ledDown = 9;
 
-    // Define pins for the joystick
-    const int xPin = A0;  //the VRX attach to
-    const int yPin = A1;  //the VRY attach to
-    const int swPin = 2;  //the SW attach to
+    // ジョイスティックのピンを定義
+    const int xPin = A0;  // VRXが接続されるピン
+    const int yPin = A1;  // VRYが接続されるピン
+    const int swPin = 2;  // SWが接続されるピン
 
     void setup() {
-        // put your main code here, to run repeatedly:
+        // メインコードは繰り返し実行されます:
 
     }
 
-3. Now in ``void setup()`` set all four LED pins to output.
-
+3. 次に、 ``void setup()``  内で4つのLEDピンを全て出力に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3-6
@@ -439,8 +438,7 @@ Therefore, a threshold around the midpoint (512±100) is used:
         Serial.begin(9600);        // Begin serial communication with a baud rate of 9600
     }
 
-4. In this project, we don't need to constantly check the joystick values, so select the five lines ``Serial.print()``, and press ``Ctrl + /`` to comment them out.
-
+4. このプロジェクトでは、ジョイスティックの値を常にチェックする必要はないため、5行の ``Serial.print()`` を選択し、 ``Ctrl + /`` を押してコメントアウトします。
 
 .. code-block:: Arduino
     :emphasize-lines: 7-12
@@ -462,7 +460,7 @@ Therefore, a threshold around the midpoint (512±100) is used:
         delay(100);
     }
 
-5. Before lighting up the corresponding LED according to the movement of the joystick, first turn off all four LEDs.
+5. ジョイスティックの動きに応じて対応するLEDを点灯させる前に、まず4つのLED全てを消灯します。
 
 .. code-block:: Arduino
     :emphasize-lines: 15-18
@@ -490,17 +488,16 @@ Therefore, a threshold around the midpoint (512±100) is used:
         delay(100);
     }
 
-7. To sequentially light up each LED based on the X and Y values of the Joystick module, you will need multiple conditions. You can use ``if`` to specify actions for different ranges of potentiometer values:
+7. ジョイスティックモジュールのX軸およびY軸の値に基づいて、各LEDを順次点灯させるには、複数の条件が必要です。 ``if`` を使用してポテンショメータの値の異なる範囲に対する動作を指定できます：
   
-* If the Y-axis value is less than 412, then the "up" indicator should be lit.
-* If the Y-axis value is greater than 612, then the "down" indicator should be lit.
-* If the X-axis value is less than 412, then the "left" indicator should be lit.
-* If the X-axis value is greater than 612, then the "right" indicator should be lit.
+* Y軸の値が412未満の場合、"上"インジケーターを点灯させる。
+* Y軸の値が612より大きい場合、"下"インジケーターを点灯させる。
+* X軸の値が412未満の場合、"左"インジケーターを点灯させる。
+* X軸の値が612より大きい場合、"右"インジケーターを点灯させる。
 
+しかし、これらの条件を個別に管理するのは効率的ではなく、Arduinoはループサイクルごとに各条件をチェックする必要があります。
 
-However, managing these conditions separately can be inefficient, as Arduino needs to check each one in every loop cycle. 
-
-To streamline this, utilize the ``if-else if`` structure:
+これを効率化するために、 ``if-else if`` 構造を利用します：
 
 .. code-block:: Arduino
 
@@ -521,10 +518,8 @@ To streamline this, utilize the ``if-else if`` structure:
     :width: 500
     :align: center
 
-In an ``if-else if`` structure, the first condition is tested. If it's true, the associated commands are executed, and all other conditions are skipped (even if some of them are true). If the first condition is false, it tests the second condition in the structure. If the second condition is true, it executes the commands associated with this condition and then skips the others. If it is false, it tests the third condition, and so on. In some scenarios, there can be multiple true conditions. Therefore, the order of conditions is important. Only the first true condition will have its associated commands run.
-
-8. First, when the ``yValue`` is less than 412, use the ``digitalWrite()`` function to set the "up" indicator light to ``HIGH`` to turn it on.
-
+``if-else if`` 構造では、最初に条件1がテストされます。条件1が真であれば、関連するコマンドが実行され、それ以外の条件はすべてスキップされます（たとえそれらが真であっても）。条件1が偽であれば、次に条件2がテストされ、条件2が真であれば、そのコマンドが実行され、他の条件はスキップされます。もし条件2も偽であれば、条件3がテストされ、以下同様に処理が続きます。あるシナリオでは、複数の条件が真である場合があります。そのため、条件の順序が重要です。最初の真の条件のみが実行されるコマンドを持ちます。
+8. まず、 ``yValue`` が412未満の場合、 ``digitalWrite()`` 関数を使用して「上」インジケーターライトを ``HIGH`` に設定し、点灯させます。
 
 .. code-block:: Arduino
     :emphasize-lines: 8-11
@@ -541,7 +536,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledUp, HIGH);
     }
 
-9. Add an ``else if`` statement to light up the "down" indicator when the ``yValue`` exceeds 612.
+9. ``yValue`` が612を超えたときに「下」インジケーターを点灯させるために、 ``else if`` 文を追加します。
 
 .. code-block:: Arduino
     :emphasize-lines: 12-15
@@ -562,8 +557,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledDown, HIGH);
     } 
 
-10. To light up the "left" indicator when the ``xValue`` is below 412, insert another ``else if`` condition like this:
-
+10. ``xValue`` が412未満のときに「左」インジケーターを点灯させるために、次のように ``else if`` 条件を挿入します。
 
 .. code-block:: Arduino
     :emphasize-lines: 8-11
@@ -580,8 +574,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledLeft, HIGH);
     }  
 
-11. Similarly, add another ``else if`` condition to light up the right indicator when the ``xValue`` exceeds 612.
-
+11. 同様に、 ``xValue`` が612を超えたときに「右」インジケーターを点灯させるために、さらに ``else if`` 条件を追加します。
 
 .. code-block:: Arduino
     :emphasize-lines: 11-14 
@@ -601,7 +594,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledRight, HIGH);
     }
 
-12. Finally, inside the ``else`` block to turn off all four LEDs using ``digitalWrite()``. This block contains commands that run when none of the other conditions are true.
+12. 最後に、 ``else`` ブロック内で ``digitalWrite()`` を使用して4つのLEDすべてを消灯します。このブロックには、他のどの条件も当てはまらない場合に実行されるコマンドが含まれています。
 
 .. code-block:: Arduino
     :emphasize-lines: 14-20
@@ -627,7 +620,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(ledDown, LOW);
     }
 
-13. Your complete code is as follows. Click "Upload" to send the code to your Arduino Uno R3.
+13. 完成したコードは以下の通りです。「Upload」ボタンをクリックして、コードをArduino Uno R3に送信してください。
 
 .. code-block:: Arduino
 
@@ -696,20 +689,19 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         delay(100);
     }
 
-14. Now wiggle the joystick, and you will see the corresponding directional LEDs light up.
+14. ジョイスティックを動かすと、対応する方向のLEDが点灯するのが確認できるでしょう。
 
-* **Up Indicator** lights up when the joystick is pushed up (Y-axis value decreases).
-* **Down Indicator** lights up when the joystick is pushed down (Y-axis value increases).
-* **Left Indicator** lights up when the joystick is pushed left (X-axis value decreases).
-* **Right Indicator** lights up when the joystick is pushed right (X-axis value increases).
+* **上方向インジケーター** は、ジョイスティックが上に押されたとき（Y軸の値が減少したとき）に点灯します。
+* **下方向インジケーター** は、ジョイスティックが下に押されたとき（Y軸の値が増加したとき）に点灯します。
+* **左方向インジケーター** は、ジョイスティックが左に押されたとき（X軸の値が減少したとき）に点灯します。
+* **右方向インジケーター** は、ジョイスティックが右に押されたとき（X軸の値が増加したとき）に点灯します。
 
-**Question**
+**質問**
 
-1. In the last code, we controlled the corresponding LEDs based on the X and Y values of the joystick. How would you modify the code to adjust the brightness of these LEDs while they are lit?
+1. 前のコードでは、ジョイスティックのXおよびY値に基づいて対応するLEDを制御しました。点灯しているLEDの明るさを調整するには、コードをどのように変更すればよいでしょうか？
 
+2. ピン8に接続されたLEDの動作が他のピンに接続されたLEDと異なるのはなぜでしょうか？
 
-2. What is the difference in behavior of the LED connected to pin 8 compared to those on other pins, and why?
+**まとめ**
 
-**Summary**
-
-In this lesson, you learned about the operational principles of the Joystick module and utilized the Serial Monitor tool to read X, Y, and SW values from the joystick. You gained an understanding of the differences between analog and digital values in Arduino programming. Additionally, you mastered the use of advanced conditional statements, specifically if-else if constructs, to control hardware based on input values.
+このレッスンでは、ジョイスティックモジュールの動作原理を学び、シリアルモニターを使用してジョイスティックからX、Y、およびSWの値を読み取る方法を習得しました。また、Arduinoプログラミングにおけるアナログ値とデジタル値の違いを理解し、if-else if構造を用いた条件分岐を使って、入力値に基づいてハードウェアを制御する方法も学びました。

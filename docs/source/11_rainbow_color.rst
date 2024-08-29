@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookでさらに深くRaspberry Pi、Arduino、ESP32を楽しみましょう。同じ興味を持つ仲間と一緒に学び、共有しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題をコミュニティと私たちのチームがサポートします。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行プレビューに早くアクセスできます。
+    - **特別割引**: 最新の製品に対して特別な割引を受けられます。
+    - **フェスティバルプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造しましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
-11. The Colors of the Rainbow
+11. 虹の色彩
 =======================================
-Imagine if you could paint with light, blending red, green, and blue to create every hue imaginable—just like mixing paints on a palette but with beams of light.
+光で絵を描くことを想像してみてください。赤、緑、青を混ぜ合わせて、あらゆる色合いを作り出すことができます。まるでパレット上の絵の具を混ぜ合わせるように、光のビームで色を作り出すのです。
 
 .. .. image:: img/12_rgb_mix.png
 ..     :width: 300
@@ -27,20 +27,20 @@ Imagine if you could paint with light, blending red, green, and blue to create e
         Your browser does not support the video tag.
     </video>
 
-Welcome to this lesson, where you will explore the captivating world of RGB LEDs and discover how the combination of primary colors can create a vibrant spectrum of hues. This hands-on course will guide you through the principles of RGB LED functionality and introduce you to the practical applications of programming and circuit building.
+このレッスンでは、RGB LEDの魅力的な世界を探求し、基本色の組み合わせがどのようにして豊かな色彩のスペクトルを生み出すかを学びます。この実践的なコースは、RGB LEDの機能の原理を理解し、プログラミングと回路作成の実際の応用を紹介します。
 
-In this lesson, you will learn:
+このレッスンで学ぶこと：
 
-* Understand the operational principles of RGB LEDs.
-* Learn to create and utilize functions in your code to simplify tasks and enhance readability.
-* Explore the impact of different color combinations by manipulating the RGB LED.
-* Learn to use Pulse Width Modulation (PWM) for nuanced color mixing with RGB LED.
-* Enhance your coding efficiency and clarity by creating functions that take parameters in Arduino.
+* RGB LEDの動作原理を理解する
+* コード内で関数を作成し、タスクを簡素化し、可読性を向上させる方法を学ぶ
+* RGB LEDを操作して、さまざまな色の組み合わせが与える影響を探る
+* パルス幅変調（PWM）を使用して、RGB LEDで繊細な色の混合を行う
+* Arduinoでパラメータを受け取る関数を作成し、コードの効率と明確さを向上させる
 
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -48,96 +48,96 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 3 * 220Ω 抵抗器
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - 1 * マルチメーター
      -
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_meter|
      -
-     
-**Step-by-Step Building Instructions**
 
-Follow the wiring diagram or these steps to construct the circuit.
+**手順に従った構築方法**
+
+配線図または以下の手順に従って回路を構築します。
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 500
     :align: center
 
-1. Start with an RGB LED.
+1. まず、RGB LEDから始めましょう。
 
-RGB LEDs emit light in various colors by integrating red, green, and blue LEDs within a single package. By varying the voltage input on the three pins, these LEDs can combine to produce up to 16,777,216 different colors.
+RGB LEDは、赤、緑、青のLEDを1つのパッケージに統合し、さまざまな色を発光します。この3つのピンに供給される電圧を調整することで、最大16,777,216色を作り出すことができます。
 
 .. image:: img/12_mix_color_rgb.png
     :width: 400
     :align: center
 
-Depending on their design, RGB LEDs can be either common anode or common cathode. For this project, we use a **common cathode** RGB LED, where all three LEDs share a negative connection.
+RGB LEDは設計により、共通アノードまたは共通カソードのいずれかになります。このプロジェクトでは、 **共通カソード** のRGB LEDを使用します。このLEDでは、3つのLEDがすべて負極を共有しています。
 
-* Common cathode RGB LEDs have a shared negative connection.
-* Common anode RGB LEDs have a shared positive connection.
+* 共通カソードRGB LEDは、負極を共有しています。
+* 共通アノードRGB LEDは、正極を共有しています。
 
 .. image:: img/12_rgb_cc_ca.jpg
     :width: 600
     :align: center
 
-An RGB LED typically has 4 pins; the longest one is the ground. When placing the RGB LED, ensure the longest lead is second from the left, configuring the pins as Red, GND, Green, and Blue from left to right.
+通常、RGB LEDには4つのピンがあり、最も長いピンがグランドです。RGB LEDを配置する際は、最も長いリードが左から2番目になるように配置し、ピンを左から右に向かって赤、GND、緑、青とします。
 
 .. image:: img/12_mix_color_rgb_1.jpg
     :width: 200
     :align: center
 
-You can also use a multimeter in Diode Test mode to identify the color each pin emits.
+ダイオードテストモードのマルチメーターを使用して、各ピンが発光する色を識別することもできます。
 
-Set the multimeter to the **Continuity** setting for resistance measurement.
+マルチメーターを **Continuity** 設定にセットして、抵抗を測定します。
 
 .. image:: img/multimeter_diode_measure.png
     :width: 300
     :align: center
 
-Touch the black lead of the multimeter to the RGB LED's longest pin, and touch the red lead to the other pins individually. You will see the RGB LED light up in red, green, or blue accordingly.
+RGB LEDの最も長いピンにマルチメーターの黒いリードを接触させ、他のピンに赤いリードを個別に接触させます。これにより、赤、緑、青のいずれかの色でLEDが点灯するのを確認できます。
 
 .. image:: img/12_mix_color_measure_pin.png
     :width: 500
     :align: center
 
-2. Insert the RGB LED into the breadboard with the longest pin going into hole 17D, and the other three pins into 18C, 16C, and 15C, respectively.
+2. RGB LEDを、最も長いピンを穴17Dに、他の3つのピンをそれぞれ18C、16C、15Cに挿入して、ブレッドボードに配置します。
 
 .. image:: img/12_mix_color_bb_1.png
     :width: 500
     :align: center
 
-3. Insert three 220ohm resistors as shown from holes 15E to 15G, 16E to 16G, and 18E to 18G.
+3. 3つの220Ωの抵抗器を、穴15Eから15G、16Eから16G、18Eから18Gの位置に挿入します。
 
 .. image:: img/12_mix_color_bb_2.png
     :width: 500
     :align: center
 
-4. Connect these resistors to pins 9, 10, and 11 on the Arduino Uno R3 with jumper wires as illustrated.
+4. これらの抵抗器を、ジャンパーワイヤーを使ってArduino Uno R3のピン9、10、11に接続します。
 
 .. image:: img/12_mix_color_bb_3.png
     :width: 500
     :align: center
 
-5. Connect the longest pin of the RGB LED to breadboard's negative rail using a jumper wire.
+5. RGB LEDの最も長いピンを、ジャンパーワイヤーを使ってブレッドボードの負極レールに接続します。
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 500
     :align: center
 
-Code Creation - Lighting Up an RGB LED
+コード作成 - RGB LEDを点灯させる
 ----------------------------------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson11_Rainbow_Color`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して、新しいプロジェクトを開始します。
+2. スケッチを ``Lesson11_Rainbow_Color`` として保存し、 ``Ctrl + S`` または「保存」をクリックして保存します。
 
-3. Create three variables to store the three pins of the RGB LED and set them as OUTPUT.
+3. RGB LEDの3つのピンを保存するための変数を作成し、それらをOUTPUTとして設定します。
 
 .. code-block:: Arduino
 
@@ -146,46 +146,46 @@ Code Creation - Lighting Up an RGB LED
     const int bluePin = 9;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(bluePin, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(greenPin, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(redPin, OUTPUT);  // Set Red pin of RGB LED as output
+        // ここに一度だけ実行するセットアップコードを記述します:
+        pinMode(bluePin, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(greenPin, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(redPin, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // ここに繰り返し実行するメインコードを記述します:
     }
 
-4. Now in the ``void loop()`` set the RGB LED's red pin to ``HIGH``, and the other two pins to ``LOW``.
+4. 次に、 ``void loop()`` 関数内で、RGB LEDのレッドピンを ``HIGH`` に設定し、他の2つのピンを ``LOW`` に設定します。
 
 .. note::
 
-    Since we are using PWM pins 9, 10, and 11, you have the option to use either ``digitalWrite()`` or ``analogWrite()`` to output a high or low level. 
+    9、10、および11のPWMピンを使用しているため、 ``digitalWrite()`` または ``analogWrite()`` を使用して高または低のレベルを出力することができます。
     
-    For this lesson, as we are simply setting the pins to high or low, we'll use ``digitalWrite()``.
+    このレッスンでは、ピンを単に高低に設定するだけなので、 ``digitalWrite()`` を使用します。
 
 .. code-block:: Arduino
     :emphasize-lines: 10-12
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(bluePin, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(greenPin, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(redPin, OUTPUT);  // Set Red pin of RGB LED as output
+        // ここに一度だけ実行するセットアップコードを記述します:
+        pinMode(bluePin, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(greenPin, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(redPin, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(bluePin, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(greenPin, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(redPin, HIGH);  // Turn on the Red pin of RGB LED
+        // ここに繰り返し実行するメインコードを記述します:
+        digitalWrite(bluePin, LOW);    // RGB LEDのブルーピンをオフにする
+        digitalWrite(greenPin, LOW);   // RGB LEDのグリーンピンをオフにする
+        digitalWrite(redPin, HIGH);  // RGB LEDのレッドピンをオンにする
     }
 
-5. Save the code and click “Upload” to send it to your Arduino Uno R3. Let's see what happens.
+5. コードを保存し、「アップロード」をクリックしてArduino Uno R3に送信します。どうなるか見てみましょう。
 
-6. You will see the RGB LED light up red. But what if you want to light up green and blue too? How should you modify the code?
+6. RGB LEDが赤色に点灯するのが見えます。しかし、緑と青も点灯させたい場合はどうすればいいでしょうか？コードをどのように変更すればよいでしょうか？
 
-Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want to display as ``HIGH`` and the others as ``LOW``. Each color lighting up should be given a second to shine.
+次に、3つの ``digitalWrite()`` コマンドを2回コピーして、それぞれのピンを表示したい色に対応して ``HIGH`` に設定し、他のピンを ``LOW`` に設定します。各色が点灯するたびに1秒間待つようにしましょう。
 
 .. code-block:: Arduino
     :emphasize-lines: 17-25
@@ -195,33 +195,33 @@ Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want 
     const int bluePin = 9;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(bluePin, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(greenPin, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(redPin, OUTPUT);  // Set Red pin of RGB LED as output
+        // ここに一度だけ実行するセットアップコードを記述します:
+        pinMode(bluePin, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(greenPin, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(redPin, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(bluePin, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(greenPin, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(redPin, HIGH);  // Turn on the Red pin of RGB LED
-        delay(1000);              //Wait for 1 second
-        digitalWrite(bluePin, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(greenPin, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(redPin, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);              //Wait for 1 second
-        digitalWrite(bluePin, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(greenPin, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(redPin, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);              //Wait for 1 second
+        // ここに繰り返し実行するメインコードを記述します:
+        digitalWrite(bluePin, LOW);    // RGB LEDのブルーピンをオフにする
+        digitalWrite(greenPin, LOW);   // RGB LEDのグリーンピンをオフにする
+        digitalWrite(redPin, HIGH);  // RGB LEDのレッドピンをオンにする
+        delay(1000);              // 1秒待機
+        digitalWrite(bluePin, LOW);    // RGB LEDのブルーピンをオフにする
+        digitalWrite(greenPin, HIGH);  // RGB LEDのグリーンピンをオンにする
+        digitalWrite(redPin, LOW);   // RGB LEDのレッドピンをオフにする
+        delay(1000);              // 1秒待機
+        digitalWrite(bluePin, HIGH);   // RGB LEDのブルーピンをオンにする
+        digitalWrite(greenPin, LOW);   // RGB LEDのグリーンピンをオフにする
+        digitalWrite(redPin, LOW);   // RGB LEDのレッドピンをオフにする
+        delay(1000);              // 1秒待機
     }
 
-7. Upload the code again to see the effects. You will find the RGB LED cycles through red, green, and blue.
+7. コードを再度アップロードして効果を確認しましょう。RGB LEDが赤、緑、青の順に点灯するのがわかるでしょう。
 
-**Questions**:
+**質問**:
 
-1. If you want other colors, what should you do? Refer to the diagram below and fill in your ideas in your handbook.
+1. 他の色を作りたい場合はどうすればよいでしょうか？以下の図を参照し、アイデアを手帳に記入してください。
 
 .. image:: img/12_rgb_mix.png
     :width: 300
@@ -231,50 +231,50 @@ Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want 
    :widths: 20 20 20 20
    :header-rows: 1
 
-   * - Color
-     - Red Pin
-     - Green Pin
-     - Blue Pin
-   * - Red
+   * - 色
+     - 赤ピン
+     - 緑ピン
+     - 青ピン
+   * - 赤
      - *HIGH*
      - *LOW*
      - *LOW*
-   * - Green
+   * - 緑
      - *LOW*
      - *HIGH*
      - *LOW*
-   * - Blue
+   * - 青
      - *LOW*
      - *LOW*
      - *HIGH*
-   * - Yellow
+   * - 黄
      -
      -
      -
-   * - Pink
+   * - ピンク
      -
      -
      -
-   * - Cyan
+   * - シアン
      - 
      -
      -
-   * - White
+   * - 白
      -
      -
      -
 
-Code Creation - Displaying Colors
+コード作成 - 色の表示
 ------------------------------------
 
-In our journey to master the control of RGB LEDs, we've seen how using ``digitalWrite()`` can light up the LED in basic colors. To further explore and unlock the full spectrum of colors that an RGB LED can produce, we'll now delve into using ``analogWrite()`` to send PWM (Pulse Width Modulation) signals, allowing us to achieve a wide range of hues.
+RGB LEDの制御をマスターするための旅で、 ``digitalWrite()`` を使用して基本的な色を点灯させる方法を学びました。次に、RGB LEDが生成できる全色域を探索し、PWM（パルス幅変調）信号を送信するために ``analogWrite()`` を使用することで、さまざまな色を実現する方法を学びます。
 
-Let's see how we can implement this with code.
+これをコードで実装する方法を見てみましょう。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson11_PWM_Color_Mixing`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して、新しいプロジェクトを開始します。
+2. スケッチを ``Lesson11_PWM_Color_Mixing`` として保存し、 ``Ctrl + S`` または「保存」をクリックして保存します。
 
-3. Create three variables to store the three pins of the RGB LED and set them as OUTPUT.
+3. RGB LEDの3つのピンを保存するための変数を作成し、それらをOUTPUTとして設定します。
 
 .. code-block:: Arduino
 
@@ -283,13 +283,13 @@ Let's see how we can implement this with code.
     const int bluePin = 9;
 
     void setup() {
-        // Set up code to run once:
-        pinMode(bluePin, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(greenPin, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(redPin, OUTPUT);  // Set Red pin of RGB LED as output
+        // 一度だけ実行するセットアップコード:
+        pinMode(bluePin, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(greenPin, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(redPin, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
-4. Use ``analogWrite()`` to send PWM values to the RGB LED. From Lesson 9, we know that PWM values can change an LED's brightness, and the PWM range is 0-255. To display red, we set the PWM value of the RGB LED's red pin to 255, and the other two pins to 0.
+4. ``analogWrite()`` を使用してRGB LEDにPWM値を送信します。レッスン9で学んだように、PWM値はLEDの明るさを変えることができ、PWM範囲は0〜255です。赤を表示するには、RGB LEDのレッドピンのPWM値を255に設定し、他の2つのピンを0に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 14-16
@@ -299,31 +299,31 @@ Let's see how we can implement this with code.
     const int bluePin = 9;
 
     void setup() {
-        // Set up code to run once:
-        pinMode(bluePin, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(greenPin, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(redPin, OUTPUT);  // Set Red pin of RGB LED as output
+        // 一度だけ実行するセットアップコード:
+        pinMode(bluePin, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(greenPin, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(redPin, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
     void loop() {
-        // Main code to run repeatedly:
-        analogWrite(bluePin, 0);    // Set the PWM value of Blue pin to 0
-        analogWrite(greenPin, 0);   // Set the PWM value of Green pin to 0
-        analogWrite(redPin, 255);  // Set the PWM value of Red pin to 255
+        // 繰り返し実行するメインコード:
+        analogWrite(bluePin, 0);    // ブルーピンのPWM値を0に設定
+        analogWrite(greenPin, 0);   // グリーンピンのPWM値を0に設定
+        analogWrite(redPin, 255);  // レッドピンのPWM値を255に設定
     }
 
-5. With this setup, after uploading the code to the Arduino Uno R3, you will see the RGB LED display red.
+5. この設定で、コードをArduino Uno R3にアップロードすると、RGB LEDが赤色を表示します。
 
-6. The ``analogWrite()`` function allows the RGB LED to display not only the seven basic colors but many other different hues. Now you can adjust the values of pins 9, 10, and 11 separately, and record the observed colors in your handbook.
+6. ``analogWrite()`` 関数を使用すると、RGB LEDは7つの基本色だけでなく、さまざまな色合いも表示できます。9、10、11のピンの値を個別に調整し、観察した色を手帳に記録してください。
 
 .. list-table::
     :widths: 20 20 20 40
     :header-rows: 1
 
-    *   - Red Pin    
-        - Green Pin  
-        - Blue Pin
-        - Color
+    *   - レッドピン    
+        - グリーンピン  
+        - ブルーピン
+        - 色
     *   - 0
         - 128
         - 128
@@ -341,96 +341,95 @@ Let's see how we can implement this with code.
         - 0
         -     
 
-Code Creation - Parameterized Functions
+コード作成 - パラメータ化された関数
 ------------------------------------------------
 
-Using the ``analogWrite()`` function to display different colors can make your code lengthy if you want to display many colors simultaneously. Therefore, we need to create functions.
+異なる色を表示するために ``analogWrite()`` 関数を使用すると、同時に多くの色を表示したい場合、コードが長くなることがあります。したがって、関数を作成する必要があります。
 
-Unlike the previous lesson, we are preparing to create a function with parameters. 
+前のレッスンとは異なり、今回はパラメータを持つ関数を作成する準備をしています。
 
-A parameterized function allows you to pass specific values into the function, which can then use these values to perform its tasks. This is incredibly useful for adjusting properties like color intensity on the fly. It makes your code more flexible and easier to read.
+パラメータ化された関数を使用すると、特定の値を関数に渡し、その値を使用してタスクを実行できます。これにより、色の強度などのプロパティを動的に調整することができ、コードが柔軟で読みやすくなります。
 
-When defining a parameterized function, you specify what values it needs to operate through parameters listed in parentheses right after the function name. These parameters act like placeholders that get replaced by actual values when the function is called.
+パラメータ化された関数を定義する際には、関数名の後にかっこ内に必要なパラメータを指定します。これらのパラメータは、関数が呼び出されたときに実際の値に置き換えられるプレースホルダとして機能します。
 
-Here's how to define a parameterized function for setting the color of an RGB LED:
+以下は、RGB LEDの色を設定するためのパラメータ化された関数を定義する方法です。
 
-1. Open the sketch you saved earlier, ``Lesson11_PWM_Color_Mixing``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson11_PWM_Color_Mixing_Function``. Click "Save".
+1. 以前保存したスケッチ ``Lesson11_PWM_Color_Mixing`` を開き、「ファイル」メニューから「名前を付けて保存」を選択し、 ``Lesson11_PWM_Color_Mixing_Function`` に名前を変更します。保存をクリックします。
 
-2. Start by declaring the function after the ``void loop()`` with the keyword ``void``, followed by the function name and parameters in parentheses. For our ``setColor`` function, we'll use three parameters— ``red``, ``green``, and ``blue``—each representing the intensity of the corresponding color component of the RGB LED.
+2. ``void loop()`` の後に ``void`` キーワードを使用して関数を宣言し、関数名とパラメータをかっこ内に記述します。 ``setColor`` 関数には、RGB LEDの各色成分の強度を表す3つのパラメータ（ ``red`` 、 ``green`` 、 ``blue`` ）を使用します。
 
 .. code-block:: Arduino
     :emphasize-lines: 5,6
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // 繰り返し実行するメインコードをここに記述します:
     }
 
     void setColor(int red, int green, int blue) {
     }
 
    
-3. Within the function body, use the ``analogWrite()`` command to send PWM signals to the RGB LED pins. The values passed to ``setColor`` will determine the brightness of each color. The parameters ``red``, ``green``, and ``blue`` are used here to directly control the intensity of each LED pin.
+3. 関数の本体内で、 ``analogWrite()`` コマンドを使用してRGB LEDのピンにPWM信号を送信します。``setColor``に渡された値が各色の明るさを決定します。ここで使用するパラメータ ``red`` 、 ``green`` 、 ``blue`` は、各LEDピンの強度を直接制御します。
 
 .. code-block:: Arduino
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // 赤、緑、青のPWM値をRGB LEDに書き込む
         analogWrite(redPin, red);
         analogWrite(greenPin, green);
         analogWrite(bluePin, blue);
     }
 
-
-4. Now you can call your newly created ``setColor()`` function in the ``void loop()``. Since you created a function with parameters, you need to fill in the arguments in the ``()`` such as ``(255, 0, 0)``. Remember to write comments.
+4. 作成した ``setColor()`` 関数を ``void loop()`` 内で呼び出すことができます。パラメータを持つ関数を作成したので、 ``(255, 0, 0)`` のように引数を ``()`` 内に入力する必要があります。コメントを記述することを忘れないでください。
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        setColor(255, 0, 0); // Display red color
+        // 繰り返し実行するメインコードをここに記述します:
+        setColor(255, 0, 0); // 赤色を表示
     }
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // 赤、緑、青のPWM値をRGB LEDに書き込む
         analogWrite(redPin, red);
         analogWrite(greenPin, green);
         analogWrite(bluePin, blue);
     }
 
-5. We already know that by providing different values to the three pins of the RGB LED, we can light up different colors of light. So, how do we make the RGB LED light up exactly the color we want? This requires the aid of a color palette. Open **Paint** (this software comes with Windows) or any drawing software on your personal computer.
+5. RGB LEDの3つのピンに異なる値を提供することで、異なる色の光を点灯できることはすでにわかっています。では、RGB LEDをどのようにして正確に希望の色に点灯させるのでしょうか？これにはカラーパレットが必要です。 **ペイント** （Windowsに付属しているソフトウェア）や、個人のコンピュータにインストールされている任意の描画ソフトウェアを開いてください。
 
 .. image:: img/13_mix_color_paint.png
 
-6. Choose a color you like, record its RGB values.
+6. 好きな色を選び、そのRGB値を記録してください。
 
 .. note::
 
-    Note that before you select a color, adjust the lumens to the proper position.
+    色を選択する前に、輝度を適切な位置に調整することを忘れないでください。
 
 .. image:: img/13_mix_color_paint_2.png
 
-7. Fill in the color you selected into the ``setColor()`` function in the ``void loop()``, use the ``delay()`` function to specify the display time for each color.
+7. 選んだ色を ``void loop()`` の ``setColor()`` 関数に入力し、 ``delay()`` 関数を使用して各色の表示時間を指定します。
 
 .. code-block:: Arduino
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        setColor(255, 0, 0);      // Display red color
-        delay(1000);              // Wait for 1 second
-        setColor(0, 128, 128);    // Display teal color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 0, 255);    // Display purple color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 128, 255);  // Display Light blue color
-        delay(1000);              // Wait for 1 second
-        setColor(255, 128, 0);    // Display orange color
-        delay(1000);              // Wait for 1 second
+        // 繰り返し実行するメインコードをここに記述します:
+        setColor(255, 0, 0);      // 赤色を表示
+        delay(1000);              // 1秒待機
+        setColor(0, 128, 128);    // ティール色を表示
+        delay(1000);              // 1秒待機
+        setColor(128, 0, 255);    // 紫色を表示
+        delay(1000);              // 1秒待機
+        setColor(128, 128, 255);  // ライトブルー色を表示
+        delay(1000);              // 1秒待機
+        setColor(255, 128, 0);    // オレンジ色を表示
+        delay(1000);              // 1秒待機
     }
 
-8. Below is the complete code; you can click "Upload" to upload the code to the Arduino Uno R3 to see the effects.
+8. 以下に完全なコードがあります。「アップロード」をクリックして、コードをArduino Uno R3にアップロードし、効果を確認してください。
 
 .. code-block:: Arduino
 
@@ -439,37 +438,37 @@ Here's how to define a parameterized function for setting the color of an RGB LE
     const int bluePin = 9;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(bluePin, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(greenPin, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(redPin, OUTPUT);  // Set Red pin of RGB LED as output
+        // 一度だけ実行するセットアップコード:
+        pinMode(bluePin, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(greenPin, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(redPin, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        setColor(255, 0, 0);      // Display red color
-        delay(1000);              // Wait for 1 second
-        setColor(0, 128, 128);    // Display teal color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 0, 255);    // Display purple color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 128, 255);  // Display Light blue color
-        delay(1000);              // Wait for 1 second
-        setColor(255, 128, 0);    // Display orange color
-        delay(1000);              // Wait for 1 second
+        // 繰り返し実行するメインコードをここに記述します:
+        setColor(255, 0, 0);      // 赤色を表示
+        delay(1000);              // 1秒待機
+        setColor(0, 128, 128);    // ティール色を表示
+        delay(1000);              // 1秒待機
+        setColor(128, 0, 255);    // 紫色を表示
+        delay(1000);              // 1秒待機
+        setColor(128, 128, 255);  // ライトブルー色を表示
+        delay(1000);              // 1秒待機
+        setColor(255, 128, 0);    // オレンジ色を表示
+        delay(1000);              // 1秒待機
     }
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // 赤、緑、青のPWM値をRGB LEDに書き込む
         analogWrite(redPin, red);
         analogWrite(greenPin, green);
         analogWrite(bluePin, blue);
     }
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Summary**
+**まとめ**
 
-Through a series of coding exercises, you will write sketches that dynamically change the color of the RGB LED. Starting with basic commands to control each color, you will then refactor your code to use functions, making your setup more modular and maintainable. This approach not only makes the code cleaner but also teaches you about the importance of function in programming.
+一連のコーディング演習を通じて、RGB LEDの色を動的に変化させるスケッチを作成します。各色を制御するための基本的なコマンドから始め、関数を使用してコードをリファクタリングし、セットアップをよりモジュール化し、保守しやすくします。このアプローチにより、コードがよりクリーンになり、プログラミングにおける関数の重要性についても学ぶことができます。
 

@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookでラズベリーパイ、Arduino、ESP32に興味を持つ仲間たちと一緒に、より深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティとチームの助けを借りて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表やスニークピークにいち早くアクセスできます。
+    - **特別割引**: 最新製品に対する限定割引をお楽しみください。
+    - **フェスティブプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索し、創造する準備ができましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _onoff_desk_lamp:
 
-18. ON/OFF Desk Lamp
+18. ON/OFF デスクランプ
 ====================================
 
-Welcome to our hands-on tutorial where you will learn how to build a relay-controlled desk lamp using an Arduino Uno R3. This project simulates real-world applications of relays in controlling high-power devices through low-voltage control systems. 
+Arduino Uno R3を使用してリレー制御のデスクランプを作成する方法を学ぶハンズオンチュートリアルへようこそ。このプロジェクトでは、低電圧制御システムを通じて高電力デバイスを制御するリレーの実際の応用をシミュレートします。
 
 .. .. image:: img/10_desk_lamp_button.jpg
 ..     :width: 500
@@ -30,47 +30,44 @@ Welcome to our hands-on tutorial where you will learn how to build a relay-contr
         Your browser does not support the video tag.
     </video>
 
-For safety, we will not directly connect a high-power lamp to the relay's load end but will use an LED to simulate the operation of turning a lamp on and off by pressing the button.
+安全のために、高電力のランプをリレーの負荷端に直接接続するのではなく、LEDを使用して、ボタンを押してランプをオン/オフする操作をシミュレートします。
 
-By the end of this lesson, you will be able to:
+このレッスンの終わりまでに、以下のことができるようになります：
 
-* Understand and operate relay modules with Arduino.
-* Implement safety measures for controlling high-current loads.
-* Use ``INPUT_PULLUP`` mode for efficient button management.
-* Detect changes in state to control outputs responsively.
+* Arduinoを使用してリレーモジュールを理解し、操作する。
+* 高電流負荷を安全に制御するための対策を実装する。
+* 効率的なボタン管理のための ``INPUT_PULLUP`` モードを使用する。
+* 状態の変化を検知して出力を応答的に制御する。
 
-
-Understanding the Relay Module
+リレーモジュールの理解
 -------------------------------------------
 
-Find the relay module.
+リレーモジュールを見つけましょう。
 
-Relays are electrically operated switches designed to allow a small current to control a much larger one. This capability makes them ideal for interfacing low-voltage control systems, such as those found in Arduino boards (typically operating between 3.3V and 5V), with high-voltage devices. In most residential and office environments, where standard voltages range from 110V to 240V, relay modules offer a practical solution for safely controlling these higher voltages.
-
+リレーは、比較的小さい電流でより大きな電流を制御するために設計された電気的に操作されるスイッチです。この能力により、Arduinoボード（通常3.3Vから5Vで動作）などの低電圧制御システムと高電圧デバイスを接続するための理想的なインターフェースとなります。ほとんどの家庭やオフィス環境では、標準電圧が110Vから240Vの範囲であるため、リレーモジュールはこれらの高電圧を安全に制御するための実用的な解決策を提供します。
 
 .. image:: img/10_relay_module.png
     :width: 300
     :align: center
 
-
-The construction of a relay typically includes an electromagnet, an armature, a spring, and a pair of contact points. The electromagnet is created by a coil wound around an iron core. When the coil is de-energized, the electromagnet loses its magnetism, releasing the armature and maintaining a connection between the Normally Closed (NC) and Common (COM) contact points.
+リレーの構造には、通常、電磁石、アーマチュア、バネ、および接点が含まれています。電磁石は、鉄芯に巻かれたコイルによって作られます。コイルが無通電になると、電磁石は磁力を失い、アーマチュアが解放され、通常閉（NC）と共通（COM）の接点間の接続が維持されます。
 
 .. image:: img/10_relay_nc.jpg
     :width: 500
     :align: center
 
-* **NC**: Normally Closed. Connected to the COM pin by default when not energized.
-* **COM**: Common pin
-* **NO**: Normally Open. Disconnected from the COM pin by default when not energized.
-* **Coil Pin**: These are the terminals at either end of the coil, with no directionality.
+* **NC**: 通常閉。無通電時にデフォルトでCOMピンに接続されています。
+* **COM**: 共通ピン
+* **NO**: 通常開。無通電時にデフォルトでCOMピンから切断されています。
+* **コイルピン**: コイルの両端にある端子で、方向性はありません。
 
-When the coil is energized, the electromagnet generates a magnetic field, attracting the armature and bringing the metal contact points between COM and NO together. Once the coil is de-energized, the spring tension pulls the COM and NC contacts back together.
+コイルに通電すると、電磁石が磁場を発生させ、アーマチュアを引き寄せ、COMとNOの間にある金属接点が接触します。コイルの通電が切れると、バネの張力がCOMとNCの接点を再び引き戻します。
 
 .. image:: img/10_relay_no.jpg
     :width: 500
     :align: center
 
-The relay module consists of a relay, transistor, LED, resistor, and three screw terminals mounted on a PCB. Here’s a brief description of the module’s pins:
+リレーモジュールは、リレー、トランジスタ、LED、抵抗、および3つのネジ端子がPCB上に取り付けられています。以下は、モジュールのピンについての簡単な説明です：
 
 .. image:: img/10_relay_pinout.jpg
     :width: 500
@@ -78,187 +75,186 @@ The relay module consists of a relay, transistor, LED, resistor, and three screw
 
 * **-**: GND
 * **+**: VCC
-* **S**: Signal pin, used to control this relay. Input high and the relay closes, input low and the relay opens.
-* **COM**: Common pin
-* **NC**: Normally Closed
-* **NO**: Normally Open
+* **S**: このリレーを制御するために使用される信号ピン。入力が高でリレーが閉じ、入力が低でリレーが開きます。
+* **COM**: 共通ピン
+* **NC**: 通常閉
+* **NO**: 通常開
 
-The schematic of the module is as follows:
+モジュールの回路図は次のとおりです：
 
-When a high signal is input to the **S** pin, it passes through the indicator light and current-limiting resistor, turning on the NPN transistor. This current energizes the relay's coil, generating a magnetic field that attracts the armature, causing a "click" sound and connecting the COM and NO terminals, thus completing the circuit.
+**S** ピンに高信号が入力されると、それがインジケータライトと電流制限抵抗を通過し、NPNトランジスタがオンになります。この電流がリレーのコイルに電流を流し、磁場を発生させ、アーマチュアを引き寄せ、「カチッ」という音を伴い、COMとNO端子が接触して回路が完成します。
 
 .. image:: img/10_relay_circuit.png
     :width: 600
     :align: center
 
 
-Build the Circuit
+回路の組み立て
 ------------------------------------
-Now let's build a circuit to drive an LED and explore the working principle of the relay module.
+次に、LEDを駆動し、リレーモジュールの動作原理を探るための回路を構築しましょう。
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * 220Ω Resistor
-     - 1 * Relay Module
+     - 1 * 赤色LED
+     - 1 * 220Ω抵抗
+     - 1 * リレーモジュール
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm|  
      - |list_relay_module| 
-   * - 1 * Button
-     - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * ボタン
+     - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
    * - |list_button| 
      - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire|
 
 
-**Building Steps**
+**組み立て手順**
 
-Typically, you could use a relay to retrofit your home lamp to be controlled programmatically.
+通常、リレーを使用して家庭のランプをプログラムで制御できるように改造できます。
 
     .. warning::
 
-        Do not attempt this modification without prior electrical knowledge, as it involves handling 220V voltage, which is extremely dangerous.
+        220Vの電圧を扱うため、事前の電気知識がない場合は、この改造を試みないでください。非常に危険です。
 
 .. image:: img/10_relay_lamp.jpg
     :width: 600
     :align: center
 
-For safety, in this course, we will use an LED to simulate a high-power load. Follow the wiring diagram or the steps below to build your circuit.
+安全のため、このコースでは高電力負荷をシミュレートするためにLEDを使用します。配線図または以下の手順に従って回路を構築してください。
 
 .. image:: img/10_relay_led.png
     :width: 500
     :align: center
 
-1. On the breadboard, connect the 5V of the Arduino Uno R3 to the positive rail of the breadboard, and GND to the negative rail.
+1. ブレッドボードで、Arduino Uno R3の5Vをブレッドボードの正極レールに、GNDを負極レールに接続します。
 
 .. image:: img/10_relay_led_power.png
     :width: 600
     :align: center
 
-2. Connect the S pin of the relay module to pin 2 on the Arduino Uno R3. Connect the "+" and "-" pins to the positive and negative rails of the breadboard, respectively.
+2. リレーモジュールのSピンをArduino Uno R3のピン2に接続します。 ``+`` ピンと ``-`` ピンはそれぞれブレッドボードの正極レールと負極レールに接続します。
 
 .. image:: img/10_relay_led_relay_module.png
     :width: 600
     :align: center
 
-3. Typically, the COM terminal of the relay module connects to an external power source, but for this lesson, simply plug it into the positive rail of the breadboard to light up an LED.
+3. 通常、リレーモジュールのCOM端子は外部電源に接続しますが、このレッスンでは、単にそれをブレッドボードの正極レールに差し込み、LEDを点灯させます。
 
 .. image:: img/10_relay_led_relay_com.png
     :width: 600
     :align: center
 
-4. Insert a red LED on the breadboard with the anode in hole 41E and the cathode in hole 40E.
+4. 赤色LEDをブレッドボードに挿入し、アノードを41Eに、カソードを40Eに配置します。
 
 .. image:: img/10_relay_led_led.png
     :width: 600
     :align: center
 
-5. Now connect the cathode of the LED to GND.
+5. 次に、LEDのカソードをGNDに接続します。
 
 .. image:: img/10_relay_led_gnd.png
     :width: 600
     :align: center
 
-6. Insert a 220Ω resistor between holes 41C and 45C to serve as a current-limiting resistor for the LED's anode.
+6. LEDのアノード用の電流制限抵抗として、41Cと45Cの穴の間に220Ωの抵抗を挿入します。
 
 .. image:: img/10_relay_led_resistor.png
     :width: 600
     :align: center
 
-7. Connect hole 45A to the NO terminal of the relay module with a jumper wire.
+7. 45Aの穴をジャンパーワイヤーでリレーモジュールのNO端子に接続します。
 
 .. image:: img/10_relay_led.png
     :width: 600
     :align: center
 
-8. Insert a button between holes 13E, 13F, 15E, and 15F on the breadboard.
+8. ブレッドボードの13E、13F、15E、15Fの穴にボタンを挿入します。
 
 .. image:: img/10_relay_led_button_wire.png
     :width: 600
     :align: center
 
-9. Finally, connect a jumper wire from 13A to the negative rail and another from 15A to pin 7.
+9. 最後に、13Aから負極レールへ、15Aからピン7へジャンパーワイヤーを接続します。
 
 .. image:: img/10_relay_led_button.png
     :width: 600
     :align: center
 
 
-**Test Relay Module**
+**リレーモジュールのテスト**
 
-Now, use a multimeter to measure the continuity between the COM, NO, and NC to validate the working principle of the relay module.
+次に、リレーモジュールの動作原理を確認するために、COM、NO、NCの間の導通をマルチメータで測定します。
 
-
-1. Set the multimeter to **Continuity**, the setting with a diode symbol and a sound icon is used for measuring continuity.
+1. マルチメータを **Continuity** モードに設定します。ダイオードのシンボルと音のアイコンが表示される設定を使用して導通を測定します。
 
 .. image:: img/multimeter_diode.png
     :width: 300
     :align: center
 
-2. Touch the multimeter test leads to the COM and NC terminals of the relay module, you will hear a "beep" sound from the multimeter, indicating that these two terminals are connected.
+2. マルチメータのテストリードをリレーモジュールのCOM端子とNC端子に接触させると、マルチメータから「ビープ」音が聞こえ、これらの端子が接続されていることを示します。
 
 .. image:: img/10_relay_led_com_nc.png
     :width: 600
     :align: center
 
-3. Record the measurement results in the table below.
+3. 以下の表に測定結果を記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - State
-     - NO or NC connected to the COM terminal?
-   * - Default
+   * - 状態
+     - NOまたはNCがCOM端子に接続されていますか？
+   * - デフォルト
      - *NC*
-   * - S pin High
+   * - SピンがHigh
      - 
 
-4. Connect the S pin of the relay module to the positive rail of the breadboard. You will hear a "click" sound, and the signal indicator on the relay module as well as the load LED will light up.
+4. リレーモジュールのSピンをブレッドボードの正極レールに接続します。「カチッ」という音が聞こえ、リレーモジュールの信号インジケータと負荷LEDが点灯します。
 
 .. image:: img/10_relay_led_s_5v.png
     :width: 600
     :align: center
 
-5. Again, touch the multimeter test leads to the COM and NO terminals of the relay module, you will hear a "beep" sound from the multimeter, indicating that these two terminals are connected.
+5. 再び、マルチメータのテストリードをリレーモジュールのCOM端子とNO端子に接触させると、マルチメータから「ビープ」音が聞こえ、これらの端子が接続されていることを示します。
 
 .. image:: img/10_relay_led_com_no.png
     :width: 600
     :align: center
 
-6. Record the measurement results in the table below.
+6. 以下の表に測定結果を記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - State
-     - NO OR NC connected to the COM terminal?
-   * - Default
+   * - 状態
+     - NOまたはNCがCOM端子に接続されていますか？
+   * - デフォルト
      - *NC*
-   * - S pin High
+   * - SピンがHigh
      - *NO*
 
-These tests confirm that the relay module is activated by a high signal. When the S pin receives a high signal, it causes the COM and NO terminals to connect, thereby allowing the circuit to control high-power loads effectively.
+これらのテストにより、リレーモジュールが高信号で作動することが確認されました。Sピンが高信号を受け取ると、COMとNO端子が接続され、回路が高電力負荷を効果的に制御できるようになります。
 
-Code Creation
+コード作成
 ---------------------------------
 
-Now let's write the code to toggle the relay module's state with a button press. This way, you can see the relay close and the LED light up when you press the button, and the relay open and the LED turn off when you press the button again, switching repeatedly.
+次に、ボタンを押してリレーモジュールの状態を切り替えるコードを書いてみましょう。これにより、ボタンを押すとリレーが閉じてLEDが点灯し、再度押すとリレーが開いてLEDが消灯する様子が繰り返されることになります。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson18_Desk_Lamp_Relay`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson18_Desk_Lamp_Relay`` として保存します（ ``Ctrl + S`` または「保存」をクリックして行います）。
 
-3. Initialize the pins connected to the button and the relay module. In Lesson 8, we used a button with a manually connected 10K pull-down resistor between GND and the button. However, in this circuit, we did not connect a resistor. Instead, we can use the Arduino software pull-up feature. You need to set the pin connected to the button as input while also setting it to ``PULLUP``.
+3. ボタンとリレーモジュールに接続されたピンを初期化します。Lesson 8では、GNDとボタンの間に手動で接続された10Kプルダウン抵抗を使用しましたが、この回路では抵抗を接続していません。その代わりに、Arduinoのソフトウェアプルアップ機能を使用します。ボタンに接続されたピンを入力として設定し、さらに``PULLUP``として設定する必要があります。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
@@ -271,7 +267,7 @@ Now let's write the code to toggle the relay module's state with a button press.
         pinMode(7, INPUT_PULLUP);  // Set pin 7 as input with an internal pull-up resistor
     }
 
-4. Before entering the ``void loop()``, we also need to create two variables to initialize the states of the button and the Relay module. The initial state of the relay is LOW. Since the button uses an internal pull-up resistor, it will read as HIGH when not pressed.
+4. ``void loop()`` に入る前に、ボタンとリレーモジュールの状態を初期化するために2つの変数を作成する必要があります。リレーの初期状態はLOWです。ボタンは内部プルアップ抵抗を使用しているため、押されていないときはHIGHと読み取られます。
 
 .. code-block:: Arduino
     :emphasize-lines: 1,2
@@ -284,7 +280,7 @@ Now let's write the code to toggle the relay module's state with a button press.
         pinMode(7, INPUT_PULLUP);  // Set pin 7 as input with an internal pull-up resistor
     }
 
-5. Now, in the ``void loop()``, first read the state of the button using ``digitalRead()`` and store it in the variable ``buttonState``. 
+5. 次に、 ``void loop()`` 内で、まず ``digitalRead()`` を使用してボタンの状態を読み取り、その結果を ``buttonState`` 変数に格納します。
 
 .. code-block:: Arduino
     :emphasize-lines: 2
@@ -293,23 +289,23 @@ Now let's write the code to toggle the relay module's state with a button press.
         int buttonState = digitalRead(7);  // Read the state of the button
     }
 
-6. Let's start with the core function that monitors the button press.
+6. まずはボタンの押下を監視するコア機能から始めましょう。
 
-Previously, we learned how to determine if a button is pressed by reading its state as ``HIGH`` or ``LOW``. However, this lesson aims to respond to a single press without the need to keep the button held down. This requires us to detect a change in the button's state.
+以前のレッスンで、ボタンが押されたかどうかを``HIGH``または``LOW``の状態で判断する方法を学びました。しかし、このレッスンでは、ボタンを押し続ける必要なく、単一の押下に応答することを目指します。そのためには、ボタンの状態変化を検出する必要があります。
 
-To achieve this, we use an ``if`` statement that compares the button's previous state (``lastButtonState``) with its current state (``buttonState``). The logical operator ``&&`` is used here, meaning both conditions must be true for the block of code within the ``if`` statement to execute.
+これを実現するために、 ``if`` 文を使用して、ボタンの前回の状態（ ``lastButtonState`` ）と現在の状態（ ``buttonState`` ）を比較します。ここでは論理演算子 ``&&`` を使用し、両方の条件が真である場合に ``if`` 文内のコードが実行されます。
 
 .. code-block:: Arduino
     :emphasize-lines: 4
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
+        int buttonState = digitalRead(7);  // ボタンの状態を読み取ります
+        // ボタンの状態が前回のループの時と変わったかを確認します
+        if (lastButtonState == HIGH && buttonState == LOW) {  // ボタンの押下を検出
         }
     }
 
-7. When the button is detected as pressed, we toggle the Relay's state. This means if the relay module was off, it turns on, and if it was on, it turns off. The ``!`` operator is used to invert the state of the ``relayState`` variable.
+7. ボタンが押されたと検出された場合、リレーの状態を切り替えます。つまり、リレーモジュールがオフだった場合はオンになり、オンだった場合はオフになります。 ``!`` 演算子を使用して ``relayState`` 変数の状態を反転させます。
 
 .. code-block:: Arduino
     :emphasize-lines: 5
@@ -322,7 +318,7 @@ To achieve this, we use an ``if`` statement that compares the button's previous 
         }
     }
 
-8. Then use the ``digitalWrite()`` function to write ``relayState`` to pin 2.
+8. 次に ``digitalWrite()`` 関数を使用して ``relayState`` をピン2に書き込みます。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
@@ -336,7 +332,7 @@ To achieve this, we use an ``if`` statement that compares the button's previous 
         }
     }
 
-9. After checking the button's state and updating the relay accordingly, we need to record the current state of the button as the new 'last known state'. This step is crucial for detecting the next state change.
+9. ボタンの状態を確認し、それに応じてリレーを更新した後、ボタンの現在の状態を新しい「最後に確認した状態」として記録する必要があります。このステップは、次の状態変化を検出するために重要です。
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
@@ -352,9 +348,9 @@ To achieve this, we use an ``if`` statement that compares the button's previous 
         delay(200);                     // Optional: Simple software debouncing
     }
 
-10. Your complete code is as follows; you can click the **Upload** button to upload the code to the Arduino Uno R3. 
+10. 完成したコードは以下のとおりです。 **Upload** ボタンをクリックして、コードをArduino Uno R3にアップロードできます。
 
-After the code is successfully uploaded, when you press the button, the relay closes with a "click" sound, and the indicator light on the relay module as well as the external LED light up. Press the button again, and you will hear the same "click" sound, the indicator light and LED turn off. This cycle repeats.
+コードが正常にアップロードされた後、ボタンを押すとリレーが「カチッ」という音とともに閉じ、リレーモジュールのインジケータライトと外部LEDが点灯します。再度ボタンを押すと、同じ「カチッ」という音が聞こえ、インジケータライトとLEDが消灯します。このサイクルが繰り返されます。
 
 .. code-block:: Arduino
 
@@ -377,12 +373,11 @@ After the code is successfully uploaded, when you press the button, the relay cl
         delay(200);                     // Optional: Simple software debouncing
     }
 
-11. Finally, remember to save your code and tidy up your workspace.
+11. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Question**
+**質問**
 
-
-1. What would happen if you set digital pin 7 to INPUT only? Why?
+1. デジタルピン7を``INPUT``のみに設定した場合、どうなりますか？その理由は？
 
 .. code-block::
     :emphasize-lines: 3
@@ -393,10 +388,11 @@ After the code is successfully uploaded, when you press the button, the relay cl
         Serial.begin(9600);        // Serial communication setup at 9600 baud
     }
 
-2. If pin 7 is set only to ``INPUT``, what adjustments would need to be made to the circuit?
+2. ピン7が ``INPUT`` のみに設定されている場合、回路にどのような調整が必要ですか？
 
-**Summary**
+**まとめ**
 
-In this course, you engaged in building a relay-controlled circuit that simulates a desk lamp using an LED as a proxy for high-power loads. The project included setting up a circuit on a breadboard, wiring components, and programming an Arduino to control the relay based on button inputs. Through testing with a multimeter, you confirmed the functionality of the relay module and understood its operation under different signal conditions.
+このコースでは、LEDを高電力負荷の代わりとして使用し、リレー制御された回路を構築することに取り組みました。プロジェクトでは、ブレッドボード上での回路構築、コンポーネントの配線、ボタン入力に基づいてリレーを制御するためのArduinoのプログラミングが含まれていました。マルチメータを使用したテストを通じて、リレーモジュールの機能を確認し、異なる信号条件での動作を理解しました。
 
-The code creation segment reinforced the concept of state changes and the use of conditional logic to control physical devices through programming. By completing this course, you've enhanced your understanding of both the theoretical and practical aspects of using relays in electronic projects, enabling you to apply these concepts to more complex and diverse applications in the future.
+コード作成セグメントでは、状態変化の概念と、条件付きロジックを使用して物理デバイスを制御する方法が強化されました。このコースを完了することで、リレーを使用した電子プロジェクトの理論的および実用的な側面を理解し、将来より複雑で多様な応用にこれらの概念を適用する能力を向上させました。
+
