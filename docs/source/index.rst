@@ -22,6 +22,7 @@ Vielen Dank, dass Sie sich für das Inventor Lab Kit entschieden haben.
     :align: center
 
  .. note::
+<<<<<<< HEAD
      Dieses Dokument ist in den folgenden Sprachen verfügbar.
 
          * |link_german_tutorials|
@@ -30,6 +31,15 @@ Vielen Dank, dass Sie sich für das Inventor Lab Kit entschieden haben.
 
     
      Bitte klicken Sie auf die entsprechenden Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
+=======
+     This document is available in the following languages.
+
+         * |link_german_tutorials|
+         * |link_jp_tutorials|
+         * |link_en_tutorials|
+    
+     Please click on the respective links to access the document in your preferred language.
+>>>>>>> 38112afe7114ced36963e672d0e1946f547fb419
 
 * :download:`Inventor Lab Kit Handbuch mit den Antworten </_static/pdf/Inventor Lab Kit Handbook with the Answers.pdf>`
 
