@@ -101,7 +101,7 @@ rst_epilog = """
 
 .. |link_processing_get_started| raw:: html
 
-    <a href="https://processing.org/tutorials/gettingstarted" target="_blank">Getting Started</a>
+    <a href="https://processing.org/tutorials/gettingstarted" target="_blank">Einstieg</a>
 
 
 .. |link_processing_reference| raw:: html
@@ -110,7 +110,7 @@ rst_epilog = """
 
 .. |link_processing_download| raw:: html
 
-    <a href="https://processing.org/download" target="_blank">Download Processing </a>
+    <a href="https://processing.org/download" target="_blank">Processing herunterladen</a>
 
 .. |link_arduino_lib_page| raw:: html
 
@@ -118,7 +118,7 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">hier</a>
 
 
 .. |link_wiki_avometer| raw:: html
@@ -238,7 +238,7 @@ rst_epilog += """
 
 .. |link_Inventor_Lab_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/esp32-1/products/sunfounder-esp32-ultimate-starter-kit-with-esp32-camera-extension-board-battery" target="_blank">Purchase Link for Inventor Lab Kit</a>
+    <a href="https://www.sunfounder.com/collections/esp32-1/products/sunfounder-esp32-ultimate-starter-kit-with-esp32-camera-extension-board-battery" target="_blank">Kauflink für Inventor Lab Kit</a>
 
 .. |link_Inventor_kit| raw:: html
 
