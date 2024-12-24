@@ -101,7 +101,7 @@ rst_epilog = """
 
 .. |link_processing_get_started| raw:: html
 
-    <a href="https://processing.org/tutorials/gettingstarted" target="_blank">Getting Started</a>
+    <a href="https://processing.org/tutorials/gettingstarted" target="_blank">はじめに</a>
 
 
 .. |link_processing_reference| raw:: html
@@ -110,7 +110,7 @@ rst_epilog = """
 
 .. |link_processing_download| raw:: html
 
-    <a href="https://processing.org/download" target="_blank">Download Processing </a>
+    <a href="https://processing.org/download" target="_blank">ダウンロード Processing </a>
 
 .. |link_arduino_lib_page| raw:: html
 
@@ -118,7 +118,7 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">ここ</a>
 
 
 .. |link_wiki_avometer| raw:: html
