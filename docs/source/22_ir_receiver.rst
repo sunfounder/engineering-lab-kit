@@ -306,7 +306,7 @@ SL838赤外線受信機は、赤外線信号を受信し、TTLレベルと互換
 
 1. 先ほど保存したスケッチ ``Lesson22_Get_Key_Value`` を開きます。「ファイル」メニューから「名前を付けて保存」をクリックし、 ``Lesson22_Decode_Key_Value`` に名前を変更して保存します。
 
-2. 次に、 ``void loop()`` の後に、IRリモコンから受信したコマンドコードを受け取る``long``整数``result``を引数に取るデコード関数 ``decodeKeyValue()`` を作成します。
+2. 次に、 ``void loop()`` の後に、IRリモコンから受信したコマンドコードを受け取る ``long`` 整数 ``result`` を引数に取るデコード関数 ``decodeKeyValue()`` を作成します。
 
 .. code-block:: Arduino
   :emphasize-lines: 6,8

@@ -236,7 +236,7 @@ c. 距離の計算
       return distance;
     }
 
-6. ``loop()``関数内で、 ``measureDistance()`` 関数を呼び出して距離を測定し、その結果をシリアルモニタに表示します。
+6. ``loop()`` 関数内で、 ``measureDistance()`` 関数を呼び出して距離を測定し、その結果をシリアルモニタに表示します。
 
 .. code-block:: Arduino
 

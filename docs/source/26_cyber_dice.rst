@@ -368,7 +368,7 @@
     :align: center
     :width: 600
 
-9. ``displayDigit()``関数内で ``switch-case`` を使用して、7セグメントディスプレイに数字を表示します。例えば、1を表示するには、BおよびCセグメントのみをHIGHにし、2を表示するにはFおよびCセグメントをLOWにし、他のセグメントをHIGHにします。
+9. ``displayDigit()`` 関数内で ``switch-case`` を使用して、7セグメントディスプレイに数字を表示します。例えば、1を表示するには、BおよびCセグメントのみをHIGHにし、2を表示するにはFおよびCセグメントをLOWにし、他のセグメントをHIGHにします。
 
 .. code-block:: Arduino
 

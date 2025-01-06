@@ -369,7 +369,7 @@ RGB LEDの制御をマスターするための旅で、 ``digitalWrite()`` を�
     }
 
    
-3. 関数の本体内で、 ``analogWrite()`` コマンドを使用してRGB LEDのピンにPWM信号を送信します。``setColor``に渡された値が各色の明るさを決定します。ここで使用するパラメータ ``red`` 、 ``green`` 、 ``blue`` は、各LEDピンの強度を直接制御します。
+3. 関数の本体内で、 ``analogWrite()`` コマンドを使用してRGB LEDのピンにPWM信号を送信します。 ``setColor`` に渡された値が各色の明るさを決定します。ここで使用するパラメータ ``red`` 、 ``green`` 、 ``blue`` は、各LEDピンの強度を直接制御します。
 
 .. code-block:: Arduino
 

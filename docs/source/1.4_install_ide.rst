@@ -73,7 +73,7 @@ macOSユーザー向け
     .. image:: img/1_ide_download_page.png
         :align: center
 
-2. ダウンロードしたファイル（ ``arduino_ide_xxxx.dmg`` ）をダブルクリックします。画面の指示に従い、 **Arduino IDE** アプリを**アプリケーション**フォルダにドラッグします。
+2. ダウンロードしたファイル（ ``arduino_ide_xxxx.dmg`` ）をダブルクリックします。画面の指示に従い、 **Arduino IDE** アプリを **アプリケーション** フォルダにドラッグします。
 
     .. image:: img/1_ide_macos_install.png
         :width: 800
